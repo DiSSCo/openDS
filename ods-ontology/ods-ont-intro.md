@@ -23,7 +23,7 @@ In the [OBI](http://www.obofoundry.org/ontology/obi.html) there is the concept o
 The result of a specimen_collection_process is a specimen ([OBI_0100051](http://purl.obolibrary.org/obo/OBI_0100051)), which can be further elaborated as a PreservedSpecimen or a LivingSpecimen. And here we arrive at the conjunction between the ontologies of the OBO Foundry and the terms vocabularies/schema of TDWG [Darwin Core (DwC)](https://dwc.tdwg.org/) and [Access to Biological Collections Data (ABCD)](https://abcd.tdwg.org/) and its [Extension for Geosciences (EFG)](http://terms.tdwg.org/wiki/ABCD_EFG).
 
 
-that appears in the [BCO](http://www.obofoundry.org/ontology/bco.html) 
+The concepts 'specimen_collection_process' and 'specimen' are replicated forward into the [BCO](http://www.obofoundry.org/ontology/bco.html) as [BCO:OBI_0000659](http://www.ontobee.org/ontology/BCO?iri=http://purl.obolibrary.org/obo/OBI_0000659) and [BCO:OBI_0100051](http://www.ontobee.org/ontology/BCO?iri=http://purl.obolibrary.org/obo/OBI_0100051) respectively.
 
 ODS situates the act of planned digitization activities as a new kind of OBI:planned_process that we name as 'digitization_event' or 'digitization_process' (ODS_00000nn). This sits alongside the familiar notion of collecting specimens as another major activity performed by institutions holding natural science collections.
 
