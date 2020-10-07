@@ -31,5 +31,7 @@ The output of a digitization_process is a new class ‘digital specimen’ (ODS_
 
 *To do: digitization_event or digitization_process? Go back to earlier notes and have a look at why is event rather than process.*
 
+*To do: assign numbers/IRI to the new concepts in ODS - two above.*
+
 
 END.
