@@ -7,6 +7,10 @@ openDS is still very much in the early stage of development and this repository 
 
 To get you started, we've provided answers to some [frequently asked questions about Digital Specimens and openDS](faq.md). You can also find there an explanation of how openDS and the Extended Specimen Network are related.
 
+You can also read:
+- [Introduction to the openDS data model](/data-model/data-model-intro.md);
+- [Introduction to the ODS ontology](/ods-ontology/ods-ont-intro.md).
+
 ## Moving forward
 
 Specification and agreement of openDS is an iterative, spiral process of continuous development (implementation) and improvement (specification) that can begin with the building of one or more 'Hello World' kind of demonstrators. One such example is the demonstrator at [nsidr.org](https://nsidr.org/) / [demo.nsidr.org](https://demo.nsidr.org/). Lessons can be learned from such implementations and fed into the specification process.
