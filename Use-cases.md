@@ -10,7 +10,7 @@ They are organised into those of interest from the point of view of being enabli
 
 In this category we are thinking of the cases 1 - 4 shown in the following illustration.* 
 
-![](technical-cases.png)
+![illustration of technical cases](\images\technical-cases.png)
 
 ### Use case T1: ....
 ### Use case T2: ....
@@ -35,7 +35,7 @@ e.g., in moves towards more community-oriented curatorial practices for data abo
 
 ### Use case S4: Linking information from/to other (sub-)disciplines
 
-Linking information makes taxonomic work easier and enables linkage of data and information from and to other disciplines. Community curation saves you a lot of effort in making these links compared to the case where every collection must make all the (semantic) links on their own.
+Linking information makes taxonomic work easier and enables linkage of data and information from and to other disciplines. Community curation saves a lot of effort in making these links compared to the case where every collection must make all the (semantic) links on their own.
 
 ### Use case S5: Facilitate tracking of specimen use
 
@@ -55,11 +55,13 @@ Handling specimens openly on the Internet offers opportunities for establishing 
 ### Use case S9: Assess data suitability and/or reliability
 Provenance data supplied with an open Digital Specimen can help to assess suitability and/or reliability of data for specific purposes. Available metadata can inform about possible usage restrictions and/or obligations associated with use (licenses, Nagoya protocol, etc.).
 
+### Use case S10: Notification of change
+
+Bringing changes in content to notice of researchers, educators and others without the need for them to actively look for that. A subscribe/notify capability (i.e., subscribe to a specimen of interest and be notified that its content has changed or that it’s been used in some way).
+
 ### Use case Sn: ... ...
 
-... ... 
-
-### Use case Sn: ... ...
+... ...
 
 To be completed. 
 
