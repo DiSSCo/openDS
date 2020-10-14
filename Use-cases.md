@@ -12,10 +12,21 @@ In this category we are thinking of the cases 1 - 4 shown in the following illus
 
 ![illustration of technical cases](/images/technical-cases.png)
 
-### Use case T1: ....
-### Use case T2: ....
-### Use case T3: ....
-### Use case T4: ....
+### Use case T1: Transfer Digital Specimen data from one system to another
+
+On request, one system (computer, software) transfers Digital Specimen data to another system (computer, software). Either across a network or within the same machine. 
+
+### Use case T2: Allow operations to act on Digital Specimen remotely 
+
+Machines or machine agents acting on behalf of humans can perform designated operations on a Digital Specimen located on a remote machine across a network.
+
+### Use case T3: Package one or more Digital Specimens for preservation/download
+
+Digital Speciment data (or a subset of it) can be packaged for preservation or download.
+
+### Use case T4: Guide (but not constrain) the internal design of systems
+
+The internal design of a system is guided by but not constrained by the specification of openDS and its requirements e.g., for object model, compliance, etc.
 
 ## Use cases for science
 
