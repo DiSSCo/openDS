@@ -10,7 +10,7 @@ They are organised into those of interest from the point of view of being enabli
 
 In this category we are thinking of the cases 1 - 4 shown in the following illustration.* 
 
-![illustration of technical cases](\images\technical-cases.png)
+![illustration of technical cases](/images/technical-cases.png)
 
 ### Use case T1: ....
 ### Use case T2: ....
