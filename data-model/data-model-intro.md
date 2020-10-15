@@ -1,14 +1,16 @@
 # Introduction to the openDS data model
 
-Our design proposal (October 2020) for openDS aligns perfectly with the basic, three-axiom model based on PROV entities (Entity, Activity, Agent) as outlined in the [final recommendations of the RDA/TDWG Attribution Metadata Working Group](http://dx.doi.org/10.15497/RDA00029) to support standardized metadata for attributing work and tracking provenance in the curation and maintenance of research collections.
+Our design proposal (October 2020) for openDS aligns perfectly with the basic, three-axiom provenance model based on PROV entities (Entity, Activity, Agent) as outlined in the [final recommendations of the RDA/TDWG Attribution Metadata Working Group](http://dx.doi.org/10.15497/RDA00029) to support standardized metadata for attributing work and tracking provenance in the curation and maintenance of research collections.
 
 > **<span style="color: red;">6th October 2020: Note that the content of this page is work-in-progress and therefore incomplete. It does not yet describe all aspects of the model as elaborated in various Powerpoint presentations over the past months.</span>**
 
-We achieve this by defining a three-level class hierarchy that is comprised of:
+We achieve this by defining a three-level class hierarchy comprised of:
 
-1. **Primary (abstract) class** definitions matching the PROV and other surrounding object/data models necessary to give context to the openDS model;
+1. **Primary (abstract) class** definitions matching the PROV/Attribution metadata and other surrounding object/data models necessary to give context to the openDS model;
 2. **Secondary (concrete) class** definitions that are subclasses of the abstract classes and which are actually the main classes making up the practical openDS data model; and,
-3. **Traits** definitions that extend and further compose the secondary classes to more specific subclasses associated with different kinds of specimen representation.
+3. **Traits (extenders)** definitions that extend and further compose (or precise) the secondary classes to more specific subclasses associated with different kinds of specimen representation e.g., for botany, for zoology, for geology, etc.
+
+For now, the class definitions for each of these levels are given below. As these become accepted and grow in size and complexity they will eventually be split out into separate pages. To help keep track of the class definitions and their development, an [openDS class index spreadsheet](https://docs.google.com/spreadsheets/d/1Tb3zZZWY-TY50nttg3Jj8T0S2ZhJaNQKftv-a4ywV1I/) is maintained for quick reference. This also helps with synchronisation and alignment with the [MIDS](https://github.com/tdwg/cd/tree/master/mids) and [CD](https://github.com/tdwg/cd) standards developments.
 
 ## Primary (abstract) class definitions
 
@@ -23,8 +25,23 @@ We achieve this by defining a three-level class hierarchy that is comprised of:
 > | Dimension | Elements that sub-divide a digital specimen in the openDS data model. <br>Note, compatible with CD | cd:Dimension |
 > | Metric | Numeric attributes measuring the secondary objects within the data model. Used for counting, reporting and other purposes. <br> Note, compatible with CD | cd:Metric |
 
-*To do: insert an image that illustrates the model.*
+Figure 1, reproduced from the [final recommendations of the RDA/TDWG Attribution Metadata Working Group](http://dx.doi.org/10.15497/RDA00029) illustrates the PROV/Attribution model with its three principal PROV classes (entity, activity, agent) that form the foundation of openDS. The figure also illustrates additional classes added for proper tracking and attribution of work carried. 
 
+![figure: attribution model concept](/images/attributionmodel.png)
+
+**Figure 1: RDA PROV/Attribution metadata model**
+
+Figure 2 illustrates how the principal object classes relate to one another in a high-level object model concept.
+
+![figure: high-level object model concept](/images/modelconcept.png)
+
+**Figure 2: High-level object model concept**
+
+Using two examples (yellow and green), Figure 3 illustrates how the secondary (concrete) classes are instances of a specific primary (abstract) classes. Figure 1 also illustrates how a specific concrete class, such as DigitalSpecimen and ObjectClassification can be extended with traits that make the object instance more precise for specific circumstances. 
+
+![figure: secondary classes are instances of primary classes and traits extend secondary classes](/images/classhierarchy.png)
+
+**Figure 3: Seconday (concrete) classes as instances of primary (abstract) classes, with trait extenders**
 
 ## Secondary (concrete) class definitions
 
@@ -38,7 +55,7 @@ Just a few examples at present:
 
 To be completed - take from @wouteraddink document on DiSSCo data types
 
-## Trait definitions and their use
+## Traits (extenders) definitions and their use
 
 To be completed.
 == sub-types as suggested by @wouteraddink
