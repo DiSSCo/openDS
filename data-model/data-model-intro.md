@@ -67,6 +67,7 @@ To be completed - take from @wouteraddink document on DiSSCo data types
 
 ### Classes with parent class Dimension
 
+> | Secondary (concrete) class | Description | Source<br> (linked IRI where applicable) |
 > | --- | --- | --- |
 > | GeographicOrigin |  |  |
 > | GeologicalTimeRange |  |  |
