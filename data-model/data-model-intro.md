@@ -14,7 +14,7 @@ For now, the class definitions for each of these levels are given below. As thes
 
 ## Primary (abstract) class definitions
 
-> | Abstract class | Description | Source<br> (linked IRI where applicable) |
+> | Primary (abstract) class | Description | Source<br> (linked IRI where applicable) |
 > | --- | --- | --- |
 > | Entity | An entity is a thing with some fixed aspects (properties) that is the subject of an activity. | [prov:Entity](http://www.w3.org/ns/prov#Entity) |
 > | Activity | An activity is something that occurs over a period of time and acts upon or with entities. It may include consuming, processing, transforming, modifying, relocating, using, or generating entities. | [prov:Activity](http://www.w3.org/ns/prov#Activity) |
@@ -37,7 +37,7 @@ Figure 2 illustrates how the principal object classes relate to one another in a
 
 **Figure 2: High-level object model concept**
 
-Using two examples (yellow and green), Figure 3 illustrates how the secondary (concrete) classes are instances of a specific primary (abstract) classes. Figure 1 also illustrates how a specific concrete class, such as DigitalSpecimen and ObjectClassification can be extended with traits that make the object instance more precise for specific circumstances. 
+Using two examples (yellow and green), Figure 3 illustrates how the secondary (concrete) classes are instances of a specific primary (abstract) classes. Figure 1 also illustrates how a specific concrete class, such as `DigitalSpecimen` and `ObjectClassification` can be extended with traits that make the object instance more precise for specific circumstances. 
 
 ![figure: secondary classes are instances of primary classes and traits extend secondary classes](/images/classhierarchy.png)
 
@@ -46,7 +46,7 @@ Using two examples (yellow and green), Figure 3 illustrates how the secondary (c
 ## Secondary (concrete) class definitions
 
 Just a few examples at present:
-- Digital Specimen - is an example (subclass) of an Entity.
+- DigitalSpecimen - is an example (subclass) of an Entity.
 - Loan and Visit - are examples (subclasses) of a Transaction.
 - Annotation and Intepretation - are examples (subclasses) of a Transaction.
 - GeographicOrigin - is an example (subclass) of a Dimension.
@@ -55,10 +55,32 @@ Just a few examples at present:
 
 To be completed - take from @wouteraddink document on DiSSCo data types
 
+### Classes with parent class Entity
+
+> | Secondary (concrete) class | Description | Source<br> (linked IRI where applicable) |
+> | --- | --- | --- |
+> | DigitalSpecimen |  |  |
+> | Loan |  |  |
+> | Visit |  |  |
+> | Annotation |  |  |
+> | Interpretation |  |  |
+
+### Classes with parent class Dimension
+
+> | --- | --- | --- |
+> | GeographicOrigin |  |  |
+> | GeologicalTimeRange |  |  |
+> | ObjectClassification |  |  |
+
 ## Traits (extenders) definitions and their use
 
 To be completed.
 == sub-types as suggested by @wouteraddink
+
+> | Traits (extenders) | Description | Source<br> (linked IRI where applicable) |
+> | --- | --- | --- |
+> |  |  |  |
+
 
 
 END.
