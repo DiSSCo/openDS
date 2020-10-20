@@ -5,7 +5,7 @@ openDS is still very much in the early stage of development and this repository 
 
 ## Getting started
 
-To get you started, we've provided answers to some [frequently asked questions about Digital Specimens and openDS](faq\faq.md). You can also find there an explanation of how openDS and the Extended Specimen Network are related.
+To get you started, we've provided answers to some [frequently asked questions about Digital Specimens and openDS](faq/faq.md). You can also find there an explanation of how openDS and the Extended Specimen Network are related.
 
 You can also read:
 - [Introduction to the openDS data model](/data-model/data-model-intro.md);
