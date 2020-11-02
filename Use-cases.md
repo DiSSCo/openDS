@@ -70,12 +70,31 @@ Provenance data supplied with an open Digital Specimen can help to assess suitab
 
 Bringing changes in content to notice of researchers, educators and others without the need for them to actively look for that. A subscribe/notify capability (i.e., subscribe to a specimen of interest and be notified that its content has changed or that it’s been used in some way).
 
+### Use case S11: Linking new taxonomic knowledge with type specimen collections data 
+
+New scientific discovery will provide new insight about organisms and might lead to a new taxonomic classification. New names will generate new identifiers and data. As a curator for type specimens, where can I find the link to the previous and current names (pointing to two different types of specimens and identifiers), without going through the taxonomic literature? 
+
+Some of the links and information about the type specimens are stored in local systems and published in aggregators. As a curator, how I can maintain these links to prevent link rot? 
+
+Example scenario: 
+*Chromis agilis* is a ray-finned fish species from the reef bass or damselfly family. It has a [fishbase id](https://www.fishbase.de/summary/5669),[WoRMS](http://www.marinespecies.org/aphia.php?p=taxdetails&id=212808) and [gbif occurrence id](https://www.gbif.org/occurrence/1230334143). GBIF has links to the CMS data at the The South African Institute for Aquatic Biodiversity (SAIAB). 
+
+In 2020, a new species name assigned was assigned this fish. *Chromis agilis* now refers to the fish found in the Red and Indian sea. *Chromis pacifica* found in the Pacific Ocean. 
+
+This new knowledge generated new sets of identifiers [http://www.marinespecies.org/aphia.php?p=taxdetails&id=145592](WoRMS) id.
+
+And new data in another collections (Western Australia Museum). 
+
+- How do we make all the links FAIR and machine-actionable? 
+- How to prevent link rot? 
+- Alert for change (in this case name change; also S10) 
+
+
 ### Use case Sn: ... ...
 
 ... ...
 
 To be completed. 
-
 
 
 END.
