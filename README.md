@@ -41,34 +41,41 @@ You can become involved and contribute by:
 | *name* | *affiliation* | *@GitHubname or Email* |  
 
 ## Repository structure
-The directories in this repository are organised to keep the principal components of openDS (data model, ontology, API specification) separate from one another, as shown in the tree diagram below. As well as containing the introductory README.md file, the top-level directory contains other material applicable to the specification as a whole. 
+The directories in this repository are organised to keep the principal components of openDS (data model, ontology, API specification) separate from one another, and separate from other bits and pieces necessary for the specification work.
+
+The diagram below illustrates the directory structure logically although in reality it appears alphabetically within the repository. At each directory level is a short explanations for orientation.
 
 ```
-/openDS
+/openDS             <!-- introduction and material relevant to the specification as a whole -->
 │   README.md
 │   positioning-opends.md
 |   serialization.md
 |   use-cases.md
 |   ... ...    
 │
-+---/api-spec
++---/api-spec       <!-- the api specification -->
 |       api-intro.md
 │       etc. ...
 |
-+---/data-model
++---/data-model     <!-- the data model -->
 │       data-model-intro.md
 │       etc. ...
+|
++---ods-ontology    <!-- the ontology -->
+|       ods-ont-intro.md
+|       etc. ...
 │
-+---/faqs
++---/faqs           <!-- frequently asked questions and answers -->
 │       faq.md
 |       etc. ...
 │
-+---/images
-|       ... ...
++---/images         <!-- images used throughout -->
+|       etc. ...
 |
-+---ods-ontology
-|       ods-ont-intro.md
-|       ... ...
++---/templates      <!-- markdown templates for definitions and issues -->
+|       etc. ...
+|
+|
 
 ```
 
