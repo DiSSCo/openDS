@@ -32,13 +32,13 @@ openDS goes further than data exchange and integration to provide active (specim
 
 No. Linked (Open) Data is a mechanism for creating the Semantic Web, whereby data is interlinked with other data in a structured way such that it receives meaning and can be queried semantically by processing the actual relationships between information and inferring answer(s) to that query.
 
-openDS is an encapsulating approach that works at a more fundamental level of ensuring stable binding between informational entities that are required for machine actionability just linking data; although it does include that the data within Digital Specimen objects is linked, such that it receives meaning.
+openDS is an encapsulating approach that works at a more fundamental level. More than just linking data it ensures stable binding between informational entities required for machine actionability. However, openDS does include that the data within Digital Specimen objects is linked, such that the data receives meaning.
 
 In that sense, the data content of a Digital Specimen can be cast as RDF to a triple store if that is what is needed.
 
 **Q206. What about the implementation? What do I have to do?**
 
-To be answered, from the data provider perspective (and others).
+*To be answered, from the data provider perspective (and others).*
 
 **Q207. What is the scope of openDS version 1.0?**
 

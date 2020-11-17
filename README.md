@@ -5,11 +5,15 @@ openDS is still very much in the early stage of development and this repository 
 
 ## Getting started
 
-To get you started, we've provided answers to some [frequently asked questions about Digital Specimens and openDS](faq/faq.md). You can also find there an explanation of how openDS and the Extended Specimen Network are related.
+To help you get started, we've provided answers to [frequently asked questions about Digital Specimens and openDS](faq/faq.md). You can also find there an explanation of [how openDS and the Extended Specimen Network are related](faq/faqcompare.md), as well as several other faq documents.
 
-You can also read:
-- [Introduction to the openDS data model](/data-model/data-model-intro.md);
-- [Introduction to the ODS ontology](/ods-ontology/ods-ont-intro.md).
+The openDS data model relates to other important structures, standards and initiatives in the wider world, as well as to information science in different domains of scientific discourse. [Positioning openDS in the landscape](positioning-opends.md) is one of the first and most important steps in development of the specification. Making sure that everyone likely to make use of the model agrees on this is essential to progress.
+
+openDS consists of three principal and interrelated components, as follows:
+
+- The openDS data model. Read the [introduction to the openDS data model](/data-model/data-model-intro.md);
+- The Ontology for open Digital Specimens (ODS). Read the [introduction to the ODS ontology](/ods-ontology/ods-ont-intro.md); and,
+- The openDS Application Programming Interface (API). Read the [introduction to the openDS API](api-spec/api-intro.md).
 
 ## Moving forward
 
@@ -36,13 +40,41 @@ You can become involved and contribute by:
 | --- | --- | --- |  
 | *name* | *affiliation* | *@GitHubname or Email* |  
 
-## Repo structure
+## Repository structure
+The directories in this repository are organised to keep the principal components of openDS (data model, ontology, API specification) separate from one another, as shown in the tree diagram below. As well as containing the introductory README.md file, the top-level directory contains other material applicable to the specification as a whole. 
 
-To be completed.
+```
+/openDS
+│   README.md
+│   positioning-opends.md
+|   serialization.md
+|   use-cases.md
+|   ... ...    
+│
++---/api-spec
+|       api-intro.md
+│       etc. ...
+|
++---/data-model
+│       data-model-intro.md
+│       etc. ...
+│
++---/faqs
+│       faq.md
+|       etc. ...
+│
++---/images
+|       ... ...
+|
++---ods-ontology
+|       ods-ont-intro.md
+|       ... ...
+
+```
 
 ## Way of working
 
-To be completed.
+*To be completed.*
 
 ## Convergence and global participation
 
@@ -58,7 +90,7 @@ This page of [use cases](usecases.md) explains some of the scenarios of use envi
 
 ## Resources
 
-To be added.
+*To be added.*
 
 
 END.

@@ -16,7 +16,7 @@ DiSSCo explains a Digital Specimen (DS) as a curated and authoritative open pack
 
 ESN explains an Extended Specimen (ES) as being the linkage between a physical specimen and all its derived preparation materials to all its local and externally derived digital products.
 
-Thus, DS and ES are conceptually very alike. Technical notions and how DS/ES might be implemented have evolved somewhat independently in Europe and the USA, giving rise to the openDS initiative and the Extended Specimen Network respectively. Nevertheless, with their common origin in the concept work by [Webster and colleagues](https://isbnsearch.org/isbn/9781498729154), they share the same basic idea nd goals of connecting all the data derived from or about a physical specimen to that specimen.
+Thus, DS and ES are conceptually very alike. Technical notions of how DS and ES might be implemented have emerged independently in Europe and the USA, giving rise to the openDS initiative and the Extended Specimen Network respectively. Nevertheless, with their common origin in the concept work by [Webster and colleagues](https://isbnsearch.org/isbn/9781498729154), they share the same basic idea and goals of connecting all the data derived from or about a physical specimen to that specimen in order to extend what is known about it.
 
 
 END.
