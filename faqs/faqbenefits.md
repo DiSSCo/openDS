@@ -4,29 +4,28 @@
 
 There are multiple benefits to all sectors of the scientific community, society and the general public from the openDS approach. Many of these benefits are associated with specific use case examples. We give some examples below, but this is not an exhaustive list.
 
-- Adding information to collections.
+- *Adding information to collections.*  
 In paleontology (for example, but not limited to that) some collections can contain many specimens that have not been identified. This can be because of lack of appropriate expertise within/of the collection owner or it may simply be due to lack of enough time and resources to do the work. Publishing the bare details of available specimens as Digital Specimens and allowing external experts to carry out identification and curation work on a community basis can add valuable information to an otherwise less informative collection. Of course, such work can be subject to moderation by a small number of responsible, expert persons. Such a community co-identification and/or co-curation approach can be attractive for engaging citizen experts from the wider public, as well as showing that scientists don’t yet know everything. Individuals can be acknowledged and recognised for work they perform.
 
-- Enhancing value chains that begin in natural science collections.
+- *Enhancing value chains that begin in natural science collections.*  
 Open Digital Specimens (or ‘specimens on the Internet’) enhance the value chains that begin in natural science collections with the combination of the hard evidence (the physical specimens themselves) and the expertise that interprets that evidence. openDS extends the value chains from initial gathering and organisation of specimens, through conduct and commercialization of specific science based on specimens, to sharing the ensuing economic and social benefits in a fair and equitable way. Products of digital value chains provide the translational research evidence for regulatory processes in health, food, security, sustainability and environmental change, and new educational uses. Digital Specimens are essential for recently described notions of extended specimens [Webster 2017], next generation collections [Schindel 2018] and visions of virtual collections underlining research infrastructure initiatives such as Europe’s Distributed System of Scientific Collections (DiSSCo) and the One World Collection [Owens 2019]. In the future, new software applications can work with and on Digital Specimen objects to provide more sophisticated computer assistance to both the present day known work tasks and to unimaginable future works of collection specialists, scientists and other translational researchers working daily with specimens.
 
-- Representing a physical thing in cyberspace (i.e., on the Internet) with context and meaning that allows processing in vast numbers by machines i.e., machine actionable, human readable.
+- *Representing a physical thing in cyberspace (i.e., on the Internet) with context and meaning that allows processing in vast numbers by machines i.e., machine actionable, human readable.*  
 As a new kind of philosophical object alongside natural objects and fabricated tools, machine-actionable open Digital Specimen objects on the Internet are amenable to processing by and transport between heterogeneous information systems. Interoperability difficulties are much reduced through the type and operations definition mechanisms underlying the digital object concept. These objects are unambiguously identified by a persistent identifier (PID) mechanism that transcends changes in underlying Internet and World Wide Web technologies. Such objects have the implicit capability to remain findable, accessible, interoperable and reusable (FAIR) over timescales familiar to collection-holding institutions of many decades (100 years) and in this way integrate collection data in the data rich world of (*inter alia*) the Earth System Sciences and Life Sciences.
 
-- Easy exchange of data between different information/computer systems.
+- *Easy exchange of data between different information/computer systems.*  
 
-- Trusted, secure by design against unauthorised usage and/or modification.
+- *Trusted, secure by design against unauthorised usage and/or modification.*  
 openDS, working together with the [Digital Object Interface Protocol (DOIP)](https://hdl.handle.net/0.DOIP/DOIPV2.0) specification brings digital specimen data out into the community, making them systematically organized mutable objects (units) with a standardized structure and representation to be shared, interpreted, annotated and acted upon by many. Implicit role-based access ensures that only those with authority can curate and modify the core data (what, where, when, who) whilst a wider range of approved individuals can easily supplement the core data with links to third-party sources, interpretations and annotations.
 
-- Capturing and anchoring all the data derived from physical specimens
+- *Capturing and anchoring all the data derived from physical specimens.*  
 Digital Specimens are different from traditional databased specimen records in their ability as a container object to capture and anchor all the data derived from physical specimens by a multiplicity of processes that includes morphological, DNA, chemical, imaging analysis and many more. The key lies in distributed curation (without institutional boundaries) of open, authoritative packages of information linking all the different data classes back to the physical specimen from which they were derived; and in ensuring such packages, anchored with globally unique, persistent identifiers become the efficient and reliable, trusted and human- and machine-actionable source of scholarly data about a specimen. 
 
-- Can be referenced unambiguously when needed i.e., easily citable.
+- *Can be referenced unambiguously when needed i.e., easily citable.*  
 Assignment and registration of unambiguous persistent identifiers to digital specimen information can begin immediately. *Natural Science Identifier* (*NSId*) names can be easily registered to immediately point to locations where authoritative units of specimen data can be found, in the same manner as DOIs locate journal articles; no matter where those are published or stored.
 
-- Have the scale, form and precision required for modern data science (mining, analysis, inference).
+- *Have the scale, form and precision required for modern data science (mining, analysis, inference).*  
 
-- Enabling new freedoms and opportunities arising from digital transformation of natural science collections.
-
+- *Enabling new freedoms and opportunities arising from digital transformation of natural science collections.*  
 
 END.
