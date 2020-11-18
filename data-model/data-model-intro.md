@@ -35,19 +35,19 @@ For now, the class definitions for each of these levels are given below. As thes
 
 Figure 1 illustrates the PROV/Attribution model with its three starting point PROV classes (Entity, Activity, Agent) and two qualified classes (Role, Association) that form the foundation of openDS. 
 
-![figure: attribution model concept](/images/attributionmodel.png)
+![figure: attribution model concept](/images/attributionmode680.png)
 
 **Figure 1: RDA PROV/Attribution metadata model**<br>Reproduced from the RDA Recommendation on '[Attribution Metadata](http://dx.doi.org/10.15497/RDA00029)'.
 
 Figure 2 illustrates how the principal object classes relate to one another in a high-level object model concept.
 
-![figure: high-level object model concept](/images/modelconcept.png)
+![figure: high-level object model concept](/images/modelconcept680.png)
 
 **Figure 2: High-level object model concept**
 
 Using two examples (yellow and green), Figure 3 illustrates how the secondary (concrete) classes are instances of a specific primary (abstract) classes. Figure 1 also illustrates how a specific concrete class, such as `DigitalSpecimen` and `ObjectClassification` can be extended with traits that make the object instance more precise for specific circumstances. 
 
-![figure: secondary classes are instances of primary classes and traits extend secondary classes](/images/classhierarchy.png)
+![figure: secondary classes are instances of primary classes and traits extend secondary classes](/images/classhierarchy680.png)
 
 **Figure 3: Seconday (concrete) classes as instances of primary (abstract) classes, with trait extenders**
 

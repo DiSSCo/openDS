@@ -38,12 +38,14 @@ You can become involved and contribute by:
 
 | Name | Affiliation | GitHub name or Email |  
 | --- | --- | --- |  
+| Wouter Addink | Naturalis Biodiversity Center | @wouteraddink |
+| Sharif Islam | Naturalis Biodiversity Center | @sharifX |  
 | *name* | *affiliation* | *@GitHubname or Email* |  
 
 ## Repository structure
 The directories in this repository are organised to keep the principal components of openDS (data model, ontology, API specification) separate from one another, and separate from other bits and pieces necessary for the specification work.
 
-The diagram below illustrates the directory structure logically although in reality it appears alphabetically within the repository. At each directory level is a short explanations for orientation.
+The diagram below illustrates the directory structure logically although in reality it appears alphabetically within the repository. At each directory level is a short explanation for orientation.
 
 ```
 /openDS             <!-- introduction and material relevant to the specification as a whole -->
