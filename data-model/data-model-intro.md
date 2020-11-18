@@ -35,7 +35,7 @@ For now, the class definitions for each of these levels are given below. As thes
 
 Figure 1 illustrates the PROV/Attribution model with its three starting point PROV classes (Entity, Activity, Agent) and two qualified classes (Role, Association) that form the foundation of openDS. 
 
-![figure: attribution model concept](/images/attributionmode680.png)
+![figure: attribution model concept](/images/attributionmodel680.png)
 
 **Figure 1: RDA PROV/Attribution metadata model**<br>Reproduced from the RDA Recommendation on '[Attribution Metadata](http://dx.doi.org/10.15497/RDA00029)'.
 
