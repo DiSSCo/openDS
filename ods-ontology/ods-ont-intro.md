@@ -16,7 +16,7 @@ For an explanation of how the BCO is related to the OBI and IAO ontologies, this
 
 With reference to the following figure, 
 
-![new classes in ODS ontology (dark green)](/images/ods-newconcepts.png)
+![new classes in ODS ontology (dark green)](/images/ods-newconcepts680.png)
 
 In the [OBI](http://www.obofoundry.org/ontology/obi.html) there is the concept of a ‘planned_process’ ([OBI_0000011](http://purl.obolibrary.org/obo/OBI_0000011)) that captures the idea of performing some kind of process that has previously been planned. Present examples (subclasses) include: carrying out investigations, assays, creating datasets, developing software and (of immediate relevance) collecting specimens ('specimen_collection_process',[OBI_000659](http://purl.obolibrary.org/obo/OBI_0000659)). 
 
