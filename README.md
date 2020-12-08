@@ -5,7 +5,7 @@ openDS is still very much in the early stage of development and this repository 
 
 ## Getting started
 
-To help you get started, we've provided answers to [frequently asked questions about Digital Specimens and openDS](faq/faq.md). You can also find there an explanation of [how openDS and the Extended Specimen Network are related](faq/faqcompare.md), as well as several other faq documents.
+To help you get started, we've provided answers to [frequently asked questions about Digital Specimens and openDS](faqs/faq.md). You can also find there an explanation of [how openDS and the Extended Specimen Network are related](faqs/faqcompare.md), as well as several other faq documents.
 
 The openDS data model relates to other important structures, standards and initiatives in the wider world, as well as to information science in different domains of scientific discourse. [Positioning openDS in the landscape](positioning-opends.md) is one of the first and most important steps in development of the specification. Making sure that everyone likely to make use of the model agrees on this is essential to progress.
 
