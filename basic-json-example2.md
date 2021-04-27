@@ -1,22 +1,29 @@
 ---
-# Structure of openDS json schemas
+# Basic json - example 2
 ---
 
 ## Introduction
-Using examples, this page explains the structure of an [open Digital Specimen](https://github.com/DiSSCo/openDS) and declares the [JSON schema](https://json-schema.org/) to support those.
+Continuing from the [JSON for example 1 and its corresponding schema](basic-json-schema.md), let's add some images.
 
-In this form it serves as a basis for discussion and understanding.
+## Example 2: MIDS level 1, authoritative information and available images
 
-Important starting points for understanding are the following:
+If we look at the [source of the data](https://science.mnhn.fr/institution/mnhn/collection/im/item/2013-8488) we can find there are two images available:
+- a low resolution image: http://imager.mnhn.fr/imager3/w400/media/1427463506459UAeHPJw9jXoET1sF 
+- a higher resolution image: http://mediaphoto.mnhn.fr/media/1427463506459UAeHPJw9jXoET1sF 
 
-- The structure of an openDS corresponds to the Minimum Information about a Digital Specimen (MIDS), level by level.
-- The definition of an openDS here corresponds to the Digital Specimen class in the [object model](https://github.com/DiSSCo/openDS/blob/master/data-model/data-model-intro.md).
+Inspecting the image files with a suitable [Exif metadata viewer](https://exifinfo.org/), we discover the format is [JFIF](https://fileinfo.com/extension/jfif), a JPEG variation intended to allow easy exchange of images across platforms and to provide additional useful metadata not provided for by the base JPEG standard. The low res image has very little information given about it - just an indication of size (400 x 280) pixels with no resolution information. It's a 'thumbnail' image that displays on a standard computer screen with a resolution of 72dpi. For the high res image, considerably more information is [available](https://exifinfo.org/detail/UAO-L0dx_KQM5DDMXxKv8w). The image is 3780 x 2646 pixels at a resolution of 300dpi in each of the X and Y directions. It uses standard RGB colour representation with a specified standard International Colour Consortium (ICC) colour profile for rendering/printing on specialist display/printer devices. The image was created on March 27th, 2015.
 
-## Example 1: MIDS level 1, authoritative information only
-An example DS for a physical specimen in the collection of the Muséum National d'Histoire Naturelle, Paris (MNHN) with the identifier "MNHN-IM-2013-8488"; compliant with MIDS level 1 and having no images or supplementary information.
+A machine could deduce the above details by examining the files directly, for example using the [EXifTool Perl library](https://exiftool.org/). Even so, there is little information provided that would allow a user to deduce where the image had come from, who made it or why. A human can read from the [webpage](https://science.mnhn.fr/institution/mnhn/collection/im/item/2013-8488) that the image was created in 2015 by Manuel Caballer as part of the French e-ReColNat project, and that it is licensed as [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This is information about the image but it is part of the webpage for the specimen and not part of the image metadata itself. Nevertheless, from the openDS perspective this is useful information to include with the image. 
 
-Source of data: https://science.mnhn.fr/institution/mnhn/collection/im/item/2013-8488
+For the present example, we'll assume we want to include the following as the specimen image information:
 
+- the thumbnail image itself, with its pixel dimensions so people can immediately see a picture of the specimen;
+- the location of the high resolution image, such that it can be retrieved for further use by someone interested in the specimen;
+- the metadata about the high res image i.e., pixel dimensions, resolution, colour profile, creation date, name of the person creating the image, the project producing it and licensing details.
+
+From the JSON perspective, this indicates we need to provide for an array of one or more image objects. We can extend our earlier [example 1](basic-json-schema.md) as follows below with an images (i_) section that contains an array of image objects. Since, in the general case we don't know how many images can be associated with a specimen we do not name the objects within the JSON `availableImages` array.
+
+>>Update this uri once we've put the example into nsidr.org
 Location of DS: https://nsidr.org/objects/20.5000.1025/64ae0cf0dacb7bd20ba5?pretty
 
 ```json
@@ -33,9 +40,78 @@ Location of DS: https://nsidr.org/objects/20.5000.1025/64ae0cf0dacb7bd20ba5?pret
     ],
     "materialType": "Alcohol, 95%",
     "name": "Pygmaepterys pointieri Garrigues & Merle, 2014"
-  }
+  },
+  "images": {
+    "availableImages": [
+      {
+        "imageName": "thumbnail",
+        "source": "#/payloads",
+        "mediaType": "image/jpeg", 
+        "imageWidth": "400",
+        "imageHeight": "280",
+        "xResolution": "",
+        "yResolution": "", 
+        "colorSpace": "",
+        "iccProfileName": "", 
+        "creator": "",
+        "created": "",
+        "project": "",
+        "license": "CC BY 4.0" 
+      },
+      {
+        "imageName": "hi-res",
+        "source": "http://mediaphoto.mnhn.fr/media/1427463506459UAeHPJw9jXoET1sF",
+        "mediaType": "image/jpeg",
+        "imageWidth": "3780",
+        "imageHeight": "2646",
+        "xResolution": "300",
+        "yResolution": "300",
+        "colorSpace": "sRGB",
+        "iccProfileName": "sRGB IEC61966-2.1", 
+        "creator": "Manuel Caballer",
+        "created": "2015:03:27T14:33:02Z",
+        "project": "e-ReColNat",
+        "license": "CC BY 4.0" 
+      }
+    ]
+  },
+  "payloads": [
+    {
+      "name": "thumbnail",
+      "filename": "1427463506459UAeHPJw9jXoET1sF.jfif",
+      "mediaType": "image/jpeg",
+      "size": 15063
+    }
+  ]
 }
 ```
+
+# Validation
+
+There are several JSON validators available online we can use to work with this JSON fragment.
+
+Simple validators and/or formatters can tell us the fragment is syntactically correct and reveal the structure of complex fragments. Some offer transformation between JSON and other representations such as XML and CSV. Here are a few to try:
+- [JSONLint validator](https://jsonlint.com/)
+- [jsonformatter.org](https://jsonformatter.org/)
+- [curiousconcept.com](https://jsonformatter.curiousconcept.com/#)
+
+More interesting and useful is these tools that validate a JSON fragment against a JSON schema supplied by the user:
+- [jsonschemavalidator.net](https://www.jsonschemavalidator.net/)
+- [with common java json tools](https://json-schema-validator.herokuapp.com/)
+- [jsonschemalint](https://jsonschemalint.com/)
+
+
+JSON schema generators
+
+- [jsonschema.net](https://www.jsonschema.net/home) - looks a good one. Has a graph depiction too.
+- [extendsclass](https://extendsclass.com/json-schema-validator.html)
+- [liquid-technologies](https://www.liquid-technologies.com/online-json-to-schema-converter) - has tools for both directions
+
+
+
+
+
+
 
 To explain this JSON fragment, 
 - The `id` is the persistent identifier of the DS. We use 20.5000.1025/*\_suffix\_* for the examples here, where the *\_suffix\_* is randomly generated by the repository server where this DS object is first created.
@@ -68,6 +144,52 @@ The JSON schema for the above example begins with the definition of the schema i
   "required": [ "id", "typeName", "authoritative" ]
 }
 ```
+
+```json
+  "availableImages": {
+      "$id": "#/properties/availableImages",
+      "items": {
+        "$id": "#/properties/availableImages/image",
+        "items": [
+          {
+            "type": "string",
+            "title": "Creator"
+          },
+          {
+            "type": "string",
+            "title": "Format"
+          },
+          {
+            "type": "string",
+            "title": "Resolution"
+          },
+          {
+            "type": "string",
+            "title": "Rights holder"
+          },
+          {
+            "type": "string",
+            "title": "Rights"
+          },
+          {
+            "format": "uri",
+            "type": "string",
+            "title": "Image"
+          }
+        ],
+        "type": "array",
+        "title": "Image"
+      },
+      "title": "Available images",
+      "type": "array",
+      "$ref": "#/definitions/previewInResultsFalse"
+    },
+  ```
+
+
+
+
+
 
 The schema then specifies as its properties what is being defined i.e., an object of type "ODStype1802" with its included subsets of specimen related properties. The first subset of specimen related properties - the authoritative properties - appears next. At the end of the authoritative (a_section) a list of those property keys that are mandatory in that section appears as the `required` validation array. This `required` array is empty in the fragment above and will be filled in later on below. The ODS object's  `id`, `typeName` and `authoritative` section are all required for an open Digital Specimen to be a valid construct. So, this is the minimum viable construct for an open Digital Specimen. The ODS object's `id` must be a valid Handle. This constraint still needs to be added to the schema fragment.
 
