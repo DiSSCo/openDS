@@ -1,0 +1,31 @@
+{
+    "id": "20.5000.1025/64ae0cf0dacb7bd20ba5",
+    "typeName": "ODStypeBIO-1901",
+    "images": {
+      "availableImages": [
+        {
+          "imageName": "hi-res",
+          "source": "#/payloads",
+          "mediaType": "image/jpeg", 
+          "imageWidth": "400",
+          "imageHeight": "280",
+          "xResolution": "",
+          "yResolution": "", 
+          "colorSpace": "",
+          "iccProfileName": "", 
+          "creator": "",
+          "created": "",
+          "project": "",
+          "license": "CC BY 4.0" 
+        },
+      ]
+    },
+    "payloads": [
+      {
+        "name": "hi-res",
+        "filename": "1427463506459UAeHPJw9jXoET1sF.jfif",
+        "mediaType": "image/jpeg",
+        "size": 15063
+      }
+    ]
+  }  
