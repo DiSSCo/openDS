@@ -4,7 +4,7 @@ The [Specimen Data Refinery (SDR)](https://github.com/DiSSCo/sdr) has a specific
 
 Within this object, the image will be a payload file in jpeg format. This is accompanied by some basic information about the image, such as technical details of the image, the owning institution, the license for use of the image, etc. A controlled vocabulary is used to describe what the image contains. A PID is assigned automatically when the image object is first created. 
 
-Further fields are required later on. These will either provide additional information to accompany the image as it serves as an input to a workflow; and/or they can be enriched by specific workflow steps and filled as output of the workflow. These fields will be defined later. It is an open issue as to whether they are part of the image object type or a separate object type.
+Further fields are required later on. These will either provide additional information to accompany the image as it serves as an input to a workflow; and/or they can be enriched by specific workflow steps and filled as output of the workflow. These fields will be defined later. It is an open issue as to whether they are part of the image object type or a separate object type. It is also an open issue as to whether such fields should be based on/compatible with the TDWG [Audubon Core (AC)](https://www.tdwg.org/standards/ac/) vocabularies for representing metadata for biodiversity multimedia resources and collections.
 
 ## Design
 The initial design of openDS posits an 'i_section' of a Digital Specimen containing metadata about and references to images or the images themselves as payload files within the DS object. The i_section is represented by a self-contained `images` JSON object structure.
