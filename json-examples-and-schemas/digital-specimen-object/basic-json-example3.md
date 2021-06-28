@@ -45,7 +45,7 @@ Let's turn this object into a semantically meaningful ODS by adding JSON-LD `@co
   "id": "20.5000.1025/ae88bb3a666ec72dbc52",
   "typeName": "ODStype1802",
   "@context": {
-    "ods": "http://github.com/hardistyar/openDS/terms/"
+    "ods": "http://github.com/hardistyar/openDS/ods-ontology/terms/"
   },
   "@graph" : [
     {
