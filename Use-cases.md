@@ -90,6 +90,50 @@ And new data in another collections (Western Australia Museum).
 - Alert for change (in this case name change; also S10) 
 
 
+### Use case S12: Documenting anthropogenic materials used for bird nests 
+
+Anthropogenic materials such as foil, plastics, face masks, gloves and pieces of clothing are incorporated into nests of many birds and used by other animals. Researchers are interested in using specimens to understand the impact of such materials. Example studies: [A fish tale: a century of museum specimens reveal increasing microplastic concentrations in freshwater fish](https://doi.org/10.1002/eap.2320); [Plastic ingestion by marine fish in the wild](https://doi.org/10.1080/10643389.2019.1631990); [Use of anthropogenic-related nest material and nest parasite prevalence have increased over the past two centuries in Australian birds](https://doi.org/10.1007/s00442-021-04982-z). 
+These studies describe not only the specimens but the properties of the materials found with the specimen such as type and description of the material (Polyethylene terephthalate), frequency of occurrence of plastic ingestion, plastic load, the amount of plastic per fish for example. There are also observational data submitted via various apps (https://www.covidlitter.com/) that has location and other observational details (such as entanglement, ingestion). 
+
+We need structured data elements to capture these. We also need to describe the relationship between the bird nest and the eggs found. Example specimens from Naturalis: [bird nest of Turdus merula merula Linnaeus, 1758](https://bioportal.naturalis.nl/specimen/RMNH.AVES.175460.a), specimen id: RMNH.AVES.175460.a and [a clutch of 5 eggs](https://bioportal.naturalis.nl/specimen/RMNH.AVES.175460.b), specimen id: RMNH.AVES.175460.b. Bird eggs are also used for color analysis to study evolution and impact of pollution. The associated images could be useful for image processing for patter analysis. 
+
+The following is an instance of a Digital Specimen of a bird nest specimen. There are two new data elements created for illustration:   *particleIdentification* or *particleDescription* to describe the water bottle found with the nest. 
+	
+		
+```
+{
+  "id": "20.5000.1025/abcd",
+  "type": "openDS",
+  "content": {
+    "id": "20.5000.1025/abcd",
+    "typeName": "openDS",
+    "authoritative": {
+      "modified": "2020-06-10T09:18:02.130Z",
+      "midsLevel": "1",
+      "physicalSpecimenId": "https://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.257939",
+      "institution": [
+        "Naturalis Biodiversity Center",
+        "https://ror.org/0566bfb96"
+      ],
+      "objectType": "bird nest",
+      "name": "Fulica atra Linnaeus, 1758"
+    },
+    "images": {
+      "availableImages": [
+        {
+          "imageName": "hi-res",
+          "source": "https://medialib.naturalis.nl/file/id/RMNH.AVES.257939_1/format/large",
+          "license": "CC0 1.0"
+        }
+      ]
+    },
+    "particleIdentification": "plastic",
+    "particleDescription": "plastic water bottle"
+  }
+}
+
+```
+
 ### Use case Sn: ... ...
 
 ... ...
