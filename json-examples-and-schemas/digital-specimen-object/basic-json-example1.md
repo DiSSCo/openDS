@@ -28,8 +28,8 @@ Location of DS: https://nsidr.org/objects/20.5000.1025/64ae0cf0dacb7bd20ba5?pret
     "midsLevel": 1,
     "physicalSpecimenId": "MNHN-IM-2013-8488",
     "institution": [
-      "MNHN",
-      "https://ror.org/03wkt5x30"
+      "Code (GRSciColl)": "MNHN",
+      "Referent": "https://ror.org/03wkt5x30"
     ],
     "materialType": "Alcohol, 95%",
     "name": "Pygmaepterys pointieri Garrigues & Merle, 2014"
