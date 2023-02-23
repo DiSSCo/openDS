@@ -1,7 +1,7 @@
 # Introduction to event-based transactions with openDS
 
 
-![Interaction paths between DiSSCo technical infrastructure, CMSes and additional research or application systems](https://github.com/DiSSCo/openDS/blob/jbstatgen_events/events/FullPath_Detail_20221102b.drawio.pdf "FullPath_Detail_pdf")
+![Interaction paths between DiSSCo technical infrastructure, CMSes and additional research or application systems](https://github.com/DiSSCo/openDS/blob/jbstatgen_events/events/FullPath_Detail_20221102b.drawio.png "FullPath_Detail_png")
 
 **Figure 1**: Graphical summary of the interaction between CMSes, DOA and additional external systems for research and application, e.g. analytical environments or national reporting for biodiversity monitoring.
 
