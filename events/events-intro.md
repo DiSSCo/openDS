@@ -1,4 +1,4 @@
-# Introduction to openDigitalEvents
+# Introduction to event-based transactions with openDS
 
 
 
