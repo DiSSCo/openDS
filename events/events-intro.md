@@ -5,7 +5,7 @@
 
 **Figure 1**: Graphical summary of the interaction between CMSes, DOA and additional external systems for research and application, e.g. analytical environments or national reporting for biodiversity monitoring.
 
-This introduction describes the use case of a local Content Management System (CMS) in use by a natural science institution or scientific collection interacting the an online infrastructure, in this case the technical Research Infrastructure of the European [Distributed System of Scientific Collections](https://www.dissco.eu/) (DiSSCo RI). The DiSSCo RI will be implemented following the concept of a [Digital Object Architecture](https://www.dona.net/digitalobjectarchitecture) (DOA) and will be part of a globally integrated DOA.
+This introduction describes the use case of a local Content Management System (CMS) in use by a natural science institution or scientific collection interacting with an online infrastructure, in this case the technical Research Infrastructure of the European [Distributed System of Scientific Collections](https://www.dissco.eu/) (DiSSCo RI). The DiSSCo RI will be implemented following the concept of a [Digital Object Architecture](https://www.dona.net/digitalobjectarchitecture) (DOA) and will be part of a globally integrated DOA.
 
 ## Basic CMS - DiSSCo DOA interaction
 
