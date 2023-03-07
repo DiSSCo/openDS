@@ -95,7 +95,7 @@ The openDS initiative is open to global participation and supports movement towa
 
 DS/ES and openDS must simultaneously simplify and answer the needs of all actors in the landscape – publishers, aggregators, relevant authority repositories and downstream users (consumers) of specimen data.
 
-This page of [use cases](usecases.md) explains some of the scenarios of use envisaged for openDS.
+This page of [use cases](Use-cases.md) explains some of the scenarios of use envisaged for openDS.
 
 ## Resources
 
