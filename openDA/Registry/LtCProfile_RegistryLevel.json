@@ -1,79 +1,91 @@
 {
 	"$schema": "https://json-schema.org/draft/2020-12/schema",
 	"$id": "https://raw.githubusercontent.com/jbstatgen/dissco_registry/main/LtCProfile_RegistryLevel_20230207.json?token=GHSAT0AAAAAAB6WZYLAAT7QUDYLKKKY74RAY7KJGDA",
-    "title": "DiSSCo Registry Profile",
-    "description": "JSON Schema- and Latimer Core-based profile describing a registry of collection facilities for the DiSSCo RI in a standardized way.",
-	"$ref": "#/definitions/Registry",
-	"definitions": {
+	"title": "DiSSCo Registry Profile",
+	"description": "JSON Schema- and Latimer Core-based profile describing a registry of collection facilities for the DiSSCo RI in a standardized way.",
+	"type": "object",
+	"properties": {
+		"$ref": "#/$defs/Registry"
+	},
+	"$defs": {
 		"Registry": {
+			"description": "A registry assembling the authorative list of DiSSCo collection facility records."
 			"type": "object",
 			"additionalProperties": true,
 			"required": [
-				"RegistryRecords",
-				"RecordLevel",
-				"References"
+				"hasRegistryRecord",
+				"ltc:hasRecordLevel",
+				"ltc:hasReference"
 			],
-			"properties": {
-				"RegistryRecords": {
+			"properties": [{
+					"name": "hasRegistryRecord",
+					"description": "This property refers to one or more related instances of DiSSCo collection facility records.",
 					"type": "array",
 					"items": {
-						"type": "object",
 						"description": "Each item in the array is the record of a DiSSCo collection facility. These records share in common the  DiSSCo record-level schema defined in the linked file.",
+						"type": "object",
 						"$ref": "https://raw.githubusercontent.com/jbstatgen/dissco_registry/main/LtCProfile_RecordLevel_20230207.json?token=GHSAT0AAAAAAB6WZYLAJZOUSQPX6K4MEDT4Y7KO26Q",
-						"properties": {
-						}
+						"properties": { }
 						"title": "A single schema shared by all registry records"
 					},
 					"minItems": 0,
 					"uniqueItems": true,
 					"title": "The list of DiSSCo collection facility records stored within the registry"
-				},
-				"ltc:hasRecordLevel": {
+				},{
+					"name": "ltc:hasRecordLevel",
+					"description": "This property refers to one or more related instances of the RecordLevel class."
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/RecordLevelRegistry"
+						"description": "This property refers to an instance of the RecordLevel class at the registry-level",
+						"type": "object",
+						"$ref": "#/$defs/RecordLevelRegistry"
 					},
 					"minItems": 1,
 					"maxItems": 1,
 					"uniqueItems": true,
-					"title": "(P)ID, license, & registry admin"
-				},
-				"ltc:hasReference": {
+					"title": "(P)ID, license, rights holder & registry admin(s)"
+				},{
+					"name": "ltc:hasReference",
+					"description": "This property refers to one or more related instances of the Reference class."
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/LtcHasReference"
+						"description": "This property refers to an instance of the RecordLevel class at the registry-level",
+						"type": "object",
+						"$ref": "#/$defs/ReferenceRegistry"
 					},
 					"minItems": 1,
 					"uniqueItems": true,
 					"title": "eg registry citation, homepage, logo, IRI"
-				}
-			},
+			}],
 			"title": "Overall structure at the registry-level"
 		},
 		"RecordLevelRegistry": {
 			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/record-level.json",
+			"description": "The machine-actionable information profile for the collection description digital object. Linked to the RDA PID Kernel recommendation (https://www.rd-alliance.org/system/files/RDA%20Recommendation%20on%20PID%20Kernel%20Information_final.pdf)",
 			"type": "object",
 			"additionalProperties": true,
 			"required": [
 				"ltc:hasIdentifier",
 				"ltc:license",
-				"ltc:rightsHolder"
+				"ltc:rightsHolder",
+				"ltc:hasPersonRole"
 			],
-			"properties": {
-				"ltc:hasIdentifier": {
+			"properties": [{
+					"name": "ltc:hasIdentifier",
+					"description": "This property refers to one or more related instances of the Identifier class.",
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/ltc:Identifier"
+						"description": "This property refers to an instance of the Identifier class.",
+						"type": "object",
+						"$ref": "#/$defs/ltc:Identifier"
 					},
 					"minItems": 1,
 					"uniqueItem": true
-				},
-				"ltc:license": {
+				},{
+					"name": "ltc:license",
+					"description": "A legal document giving official permission to do something with the resource. Allowed entries are predefined in array.",
 					"type": "string",
-					"format": "uri",
-					"qt-uri-protocols": [
-						"https"
-					],
+					"default": "https://creativecommons.org/publicdomain/zero/1.0/",
 					"enum": [
 						"https://creativecommons.org/publicdomain/zero/1.0/",
 						"https://creativecommons.org/licenses/by/4.0/",
@@ -83,89 +95,35 @@
 						"unknown",
 						"notApplicable"
 					]
-				},
-				"ltc:hasPersonRole": {
+				},{
+					"name": "ltc:licenseOther",
+					"description": "A legal document giving official permission to do something with the resource. Alternative subschema applicable if ltc:license was set to Other. Accepts IRIs to licenses not predefined in ltc:license. For selection see allOf directly following the properties entity.",
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					]
+				},{
+					"name": "ltc:hasPersonRole",
+					"description": "This property refers to one or more related instances of the PersonRole class.",
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/RecordLevelRegistryPersonRole"
-					}
-					"minItem": 0,
-					"uniqueItem": true
-				}
-			},
-			"title": "RecordLevelRegistry"
-		},
-		"RecordLevelRegistryPersonRole": {
-			"type": "object",
-			"additionalProperties": true,
-			"required": [
-				"ltc:role",
-				"ltc:hasPerson",
-				"ltc:endedAtTime",
-				"ltc:startedAtTime"
-			],
-			"properties": {
-				"ltc:role": {
-					"$ref": "#/definitions/Role"
-				},
-				"ltc:startedAtTime": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"ltc:endedAtTime": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"ltc:hasPerson": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/RecordLevelRegistryPerson"
+						"description": "This property refers to an instance of the PersonRole class.",
+						"type": "object",
+						"$ref": "#/$defs/RecordLevelRegistryPersonRole"
 					},
 					"minItem": 1,
 					"uniqueItem": true
-				}
-			},
-			"title": "RecordLevelRegistryPersonRole"
-		},
-		"Role": {
-			"type": "string",
-			"enum": [
-				"recordCreator",
-				"recordEditor"
-			],
-			"title": "Role"
-		},
-		"RecordLevelRegistryPerson": {
-			"type": "object",
-			"additionalProperties": true,
-			"required": [
-				"ltc:hasIdentifier",
-				"ltc:fullName"
-			],
-			"properties": {
-				"ltc:fullName": {
-					"$ref": "#/definitions/adminFullName"
-				},
-				"ltc:hasIdentifier": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Identifier"
-					}
-					"minItem": 1,
-					"uniqueItem": true
-				}
-			}
-			"title": "RecordLevelRegistryPerson"
-		},
-		"adminFullName": {
-			"type": "string",
-			"enum": [
-				"WouterAddink",
-				"PatrickSemal"
-			],
-			"title": "adminFullName"
+			}],
+			"allOf": [{
+					"properties": { "ltc:license": { "const": "other" } }
+				},{
+					"required": ["ltc:licenseOther"]
+			}],
+			"title": "RecordLevelRegistry"
 		},
 		"ltc:Identifier": {
+			"description": "A numeric, textual value, or reference such as an IRI, that can be used to uniquely identify the object to which it is attached. Use this class to document stable identifiers that describe the collections and associated entities being represented in the collection description. For example, person identifiers, taxon identifiers, institution identifiers, organisational unit identifiers, gazetteer identifiers. Identifiers represented by this class may be globally unique, or unique within a given context.",
 			"type": "object",
 			"additionalProperties": true,
 			"required": [
@@ -173,34 +131,41 @@
 				"ltc:identifierSource",
 				"ltc:identifierType"
 			],
-			"properties": {
-				"ltc:identifierValue": {
-					"$ref": "#/definitions/LtcIdentifierValue"
-				},
-				"ltc:identifierSource": {
-					"$ref": "#/definitions/LtcIdentifierSource"
-				},
-				"ltc:identifierType": {
-					"type": "string"
+			"properties": [{
+					"name": "ltc:identifierValue",
+					"description": "An unambiguous reference to the resource within a given context.",
+					"type": "string",
+					"$ref": "#/$defs/LtcIdentifierValue"
+				},{
+					"name": "ltc:identifierSource",
+					"description": "The source or creator of the identifier.",
+					"type": "string",
+					"$ref": "#/$defs/LtcIdentifierSource"
+				},{
+					"name": "ltc:identifierType",
+					"description": "The type and format of the value in the identifier field.",
+					"type": "string",
 					"enum": [
 						"Internal database identifier",
 						"Collection code",
-						"URI"
+						"IRI"
 					]
-				}
-			},
+			}],
 			"title": "Identifier"
 		},
 		"LtcIdentifierValue": {
 			"anyOf": [
 				{
+					"description": "",
 					"type": "string",
 					"format": "integer"
 				},
 				{
+					"description": "",
 					"type": "null"
 				},
 				{
+					"description": "",
 					"type": "string",
 					"format": "uri",
 					"qt-uri-protocols": [
@@ -217,6 +182,7 @@
 		},
 		"LtcIdentifierSource": {
 			"type": "string",
+					"description": 
 			"enum": [
 				"Catalogue of Life 2017",
 				"GBIF",
@@ -238,8 +204,92 @@
 			],
 			"title": "LtcIdentifierSource"
 		},
-		"LtcHasReference": {
+		"RecordLevelRegistryPersonRole": {
 			"type": "object",
+					"description": "",
+			"additionalProperties": true,
+			"required": [
+				"ltc:role",
+				"ltc:hasPerson",
+				"ltc:endedAtTime",
+				"ltc:startedAtTime"
+			],
+			"properties": {
+				"ltc:role": {
+					"description": 
+					"$ref": "#/$defs/Role"
+				},
+				"ltc:startedAtTime": {
+					"type": "string",
+					"format": "date-time"
+					"description": 
+				},
+				"ltc:endedAtTime": {
+					"type": "string",
+					"format": "date-time"
+					"description": 
+				},
+				"ltc:hasPerson": {
+					"type": "array",
+					"description": 
+					"items": {
+						"description": 
+						"$ref": "#/$defs/RecordLevelRegistryPerson"
+					},
+					"minItem": 1,
+					"uniqueItem": true
+				}
+			},
+			"title": "RecordLevelRegistryPersonRole"
+		},
+		"Role": {
+			"type": "string",
+					"description": 
+			"enum": [
+				"recordCreator",
+				"recordEditor"
+			],
+			"title": "Role"
+		},
+		"RecordLevelRegistryPerson": {
+			"type": "object",
+					"description": 
+			"additionalProperties": true,
+			"required": [
+				"ltc:hasIdentifier",
+				"ltc:fullName"
+			],
+			"properties": {
+					"description": 
+				"ltc:fullName": {
+					"description": 
+					"$ref": "#/$defs/adminFullName"
+				},
+				"ltc:hasIdentifier": {
+					"type": "array",
+					"description": 
+					"items": {
+					"description": 
+						"$ref": "#/$defs/Identifier"
+					}
+					"minItem": 1,
+					"uniqueItem": true
+				}
+			}
+			"title": "RecordLevelRegistryPerson"
+		},
+		"adminFullName": {
+			"type": "string",
+					"description": 
+			"enum": [
+				"WouterAddink",
+				"PatrickSemal"
+			],
+			"title": "adminFullName"
+		},
+		"ReferenceRegistry": {
+			"type": "object",
+					"description": 
 			"additionalProperties": true,
 			"required": [
 				"ltc:referenceText",
@@ -248,14 +298,18 @@
 				"abcd:referenceURI"
 			],
 			"properties": {
+					"description": 
 				"ltc:referenceText": {
 					"type": "string"
+					"description": 
 				},
 				"ltc:referenceDetails": {
 					"type": "string"
+					"description": 
 				},
 				"ltc:referenceType": {
 					"type": "string"
+					"description": 
 				},
 				"abcd:referenceURI": {
 					"type": "string",
@@ -266,9 +320,10 @@
 					"qt-uri-extensions": [
 						".2023900"
 					]
+					"description": 
 				}
 			},
-			"title": "LtcHasReference"
+			"title": "ReferenceRegistry"
 		}	
 	}
 }
