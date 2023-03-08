@@ -1,0 +1,276 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://raw.githubusercontent.com/jbstatgen/dissco_registry/main/LtCProfile_RegistryLevel_20230207.json?token=GHSAT0AAAAAAB6WZYLAAT7QUDYLKKKY74RAY7KJGDA",
+    "title": "DiSSCo Registry Profile",
+    "description": "JSON Schema- and Latimer Core-based profile describing a registry of collection facilities for the DiSSCo RI in a standardized way.",
+	"$ref": "#/definitions/Registry",
+	"definitions": {
+		"Registry": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"RegistryRecords",
+				"RecordLevel",
+				"References"
+			],
+			"properties": {
+				"RegistryRecords": {
+					"type": "array",
+					"items": {
+						"type": "object",
+						"description": "Each item in the array is the record of a DiSSCo collection facility. These records share in common the  DiSSCo record-level schema defined in the linked file.",
+						"$ref": "https://raw.githubusercontent.com/jbstatgen/dissco_registry/main/LtCProfile_RecordLevel_20230207.json?token=GHSAT0AAAAAAB6WZYLAJZOUSQPX6K4MEDT4Y7KO26Q",
+						"properties": {
+						}
+						"title": "A single schema shared by all registry records"
+					},
+					"minItems": 0,
+					"uniqueItems": true,
+					"title": "The list of DiSSCo collection facility records stored within the registry"
+				},
+				"ltc:hasRecordLevel": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RecordLevelRegistry"
+					},
+					"minItems": 1,
+					"maxItems": 1,
+					"uniqueItems": true,
+					"title": "(P)ID, license, & registry admin"
+				},
+				"ltc:hasReference": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LtcHasReference"
+					},
+					"minItems": 1,
+					"uniqueItems": true,
+					"title": "eg registry citation, homepage, logo, IRI"
+				}
+			},
+			"title": "Overall structure at the registry-level"
+		},
+		"RecordLevelRegistry": {
+			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/record-level.json",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"ltc:hasIdentifier",
+				"ltc:license",
+				"ltc:rightsHolder"
+			],
+			"properties": {
+				"ltc:hasIdentifier": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ltc:Identifier"
+					},
+					"minItems": 1,
+					"uniqueItem": true
+				},
+				"ltc:license": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					],
+					"enum": [
+						"https://creativecommons.org/publicdomain/zero/1.0/",
+						"https://creativecommons.org/licenses/by/4.0/",
+						"other",
+						"knownAndWithheld",
+						"unspecified",
+						"unknown",
+						"notApplicable"
+					]
+				},
+				"ltc:hasPersonRole": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RecordLevelRegistryPersonRole"
+					}
+					"minItem": 0,
+					"uniqueItem": true
+				}
+			},
+			"title": "RecordLevelRegistry"
+		},
+		"RecordLevelRegistryPersonRole": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"ltc:role",
+				"ltc:hasPerson",
+				"ltc:endedAtTime",
+				"ltc:startedAtTime"
+			],
+			"properties": {
+				"ltc:role": {
+					"$ref": "#/definitions/Role"
+				},
+				"ltc:startedAtTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"ltc:endedAtTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"ltc:hasPerson": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RecordLevelRegistryPerson"
+					},
+					"minItem": 1,
+					"uniqueItem": true
+				}
+			},
+			"title": "RecordLevelRegistryPersonRole"
+		},
+		"Role": {
+			"type": "string",
+			"enum": [
+				"recordCreator",
+				"recordEditor"
+			],
+			"title": "Role"
+		},
+		"RecordLevelRegistryPerson": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"ltc:hasIdentifier",
+				"ltc:fullName"
+			],
+			"properties": {
+				"ltc:fullName": {
+					"$ref": "#/definitions/adminFullName"
+				},
+				"ltc:hasIdentifier": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Identifier"
+					}
+					"minItem": 1,
+					"uniqueItem": true
+				}
+			}
+			"title": "RecordLevelRegistryPerson"
+		},
+		"adminFullName": {
+			"type": "string",
+			"enum": [
+				"WouterAddink",
+				"PatrickSemal"
+			],
+			"title": "adminFullName"
+		},
+		"ltc:Identifier": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"ltc:identifierValue",
+				"ltc:identifierSource",
+				"ltc:identifierType"
+			],
+			"properties": {
+				"ltc:identifierValue": {
+					"$ref": "#/definitions/LtcIdentifierValue"
+				},
+				"ltc:identifierSource": {
+					"$ref": "#/definitions/LtcIdentifierSource"
+				},
+				"ltc:identifierType": {
+					"type": "string"
+					"enum": [
+						"Internal database identifier",
+						"Collection code",
+						"URI"
+					]
+				}
+			},
+			"title": "Identifier"
+		},
+		"LtcIdentifierValue": {
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "integer"
+				},
+				{
+					"type": "null"
+				},
+				{
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https",
+						"http"
+					],
+					"qt-uri-extensions": [
+						".2023900",
+						".3b"
+					]
+				}
+			],
+			"title": "LtcIdentifierValue"
+		},
+		"LtcIdentifierSource": {
+			"type": "string",
+			"enum": [
+				"Catalogue of Life 2017",
+				"GBIF",
+				"Index Herbariorum",
+				"ISNI",
+				"Join the Dots database",
+				"NHM Data Portal",
+				"ORCID ID",
+				"Paleobiology Database",
+				"PID",
+				"ROR",
+				"URI",
+				"Wikidata",
+				"other",
+				"knownAndWithheld",
+				"unspecified",
+				"unknown",
+				"notApplicable"
+			],
+			"title": "LtcIdentifierSource"
+		},
+		"LtcHasReference": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"ltc:referenceText",
+				"ltc:referenceDetails",
+				"ltc:referenceType",
+				"abcd:referenceURI"
+			],
+			"properties": {
+				"ltc:referenceText": {
+					"type": "string"
+				},
+				"ltc:referenceDetails": {
+					"type": "string"
+				},
+				"ltc:referenceType": {
+					"type": "string"
+				},
+				"abcd:referenceURI": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					],
+					"qt-uri-extensions": [
+						".2023900"
+					]
+				}
+			},
+			"title": "LtcHasReference"
+		}	
+	}
+}
+
+

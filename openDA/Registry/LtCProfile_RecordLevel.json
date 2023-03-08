@@ -1,0 +1,814 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"$id": "https://raw.githubusercontent.com/jbstatgen/dissco_registry/main/LtCProfile_RecordLevel_20230203.json?token=GHSAT0AAAAAAB6K52PCM3SKFHT5G567TRVIY66G55Q",
+	"title": "DiSSCo record-level collection facility schema",
+	"description": "JSON Schema- and Latimer Core-based profile for the record of each collection facility stored within the registry. The record-level schema focusses on uniquely identifying the institution (ROR-identifier) and providing information summarizing a top-level institution-wide collection for the purpose of dashboard visualization.",
+	"$ref": "#/definitions/RegistryRecord",
+	"definitions": {
+		"RegistryRecord": {
+			"type": "object",
+			"title": "Schema for a registry record",
+			"additionalProperties": true,
+			"required": [
+				"ObjectGroups",
+				"Agents",
+				"RecordLevelFullRegistryRecord"
+			],
+			"properties": {
+				"ObjectGroups": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ObjectGroup"
+					},
+					"minItems": 1,
+					"maxItems": 1,
+					"uniqueItems": true,
+					"title": "Institution-wide collection"
+				},
+				"Agents": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OrganisationalUnits"
+					},
+					"allOf": [{
+						"$ref": "#/definitions/ObjectGroup/properties/OrganisationalUnits",
+						"$map": {
+							"OrganisationalUnits": {
+								"$ref": "/OrganisationalUnit",
+								"$each": {
+									"OrganisationalUnit": {"$ref": "0"}
+								}
+							}
+						}
+					}],
+					"minItems": 1,
+					"maxItems": 1,
+					"uniqueItems": true,
+					"title": "Formal organization acting as agent in transactions",
+					"description": "Organization hosting the ObjectGroup, ie. collection"
+				},
+				"RecordLevelFullRegistryRecord": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RecordLevelFullRegistryRecord"
+					},
+					"minItems": 1,
+					"maxItems": 1,
+					"uniqueItems": true,
+					"title": "(P)ID, license of full record (registry provided? or same as OG-level), admins who created and maintain (edit) the record"
+				}
+			}
+		},
+		"ObjectGroup": {
+			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/object-group.json",
+			"title": "Object representing institution-wide collection",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"collectionName",
+				"baseTypeOfCollection",
+				"-collectionManagementSystem",
+				"RecordLevel",
+				"-Reference",
+				"OrganisationalUnits",
+				"-MeasurementOrFacts",
+				"-ObjectClassification"
+			],
+			"properties": {
+				"collectionName": {
+					"type": "string"
+				},
+				"baseTypeOfCollection": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/collectionManagementSystem"
+					},
+					"minItems": 1,
+					"title": "ObjectClassification_level3 (Sample type)"
+				},
+				"description": {
+					"type": "string"
+				},
+				"derivedCollection": {
+					"type": "string",
+					"format": "boolean",
+					"title": "can the collection be counted for inventories?"
+				},
+				"collectionManagementSystem": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/collectionManagementSystem"
+					},
+					"minItems": 1
+				},
+				"hasRecordLevel": {
+					"type": "object",
+					"$ref": "#/definitions/RecordLevelObjectGroup"
+				},
+				"hasReference": {
+					"$ref": "#/definitions/ObjectGroupReference",
+					"title": "Ref for where the record came from vs. Refs for collection, ie. homepage, logo, IRI, API, citation"
+				},
+				"hasOrganisationalUnits": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OrganisationalUnit"
+					},
+					"allOf": [{
+						"$ref": "#/definitions/RegistryRecord/properties/OrganisationalUnits",
+						"$map": {
+							"OrganisationalUnits": {
+								"$ref": "/OrganisationalUnit",
+								"$each": {
+									"OrganisationalUnit": {"$ref": "0"}
+								}
+							}
+						}
+					}],
+					"minItems": 1,
+					"title": "remove mapping here, but then not bidirectional?, ie. then RegistryRecord/ORG is master"
+				},
+				"PersonRoles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OrganisationalUnitPersonRole"
+					},
+					"minItems": 1,
+					"title": "Contact points, director, registrar, etc."
+				},
+				"disciplines": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Discipline"
+					},
+					"minItems": 1,
+					"title": "discipline combinded with MeasurementOrFact (ObjectCount) results in Discipline - add discipline for institution-wide / mixed"
+				},
+				"discipline": {
+					"type": "string",
+					"title": "only property, eg. Anthropology, ie specialist subcollection name/specialization, without object count etc.",
+					"title": "Wouter: ObjectClassification_level1 (Discipline)"
+				},
+				"SPECIMEN_TYPE": {
+					"type": "string",
+					"minItems": 2,
+					"title": "only property, eg. Anthropology, ie specialist subcollection name/specialization, without object count etc.",
+					"title": "Wouter: ObjectClassification_level2 (Specimen type)",
+					"title": "not in LtC",
+					"title": "category, specialization, workArea, collectionType, subdiscipline"
+					"title": "Wouter: Collection type (Ltc:object group)"
+				},
+				"typeOfCollections": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"minItems": 4,
+					"title": "Wouter: ObjectClassification_level5 (MaterialSampleState for Botany, Zoology and Microbiology specimen)"
+					"title": "living, preserved, fossil, ..."
+				},
+				"materialType": {
+					"type": "string",
+					"minItems": 5,
+					"title": "",
+					"title": "Wouter: ObjectClassification_level4 (MaterialSample type if sample type is materialsample)"
+				},
+				"hasMeasurementOrFacts": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ObjectGroupMeasurementOrFact"
+					},
+					"minItems": 1,
+					"title": "ObjectCount_EstimatedConfidenceEtc, Digitized, MIDS-allOfThem"
+				},
+				"hasObjectClassificationScheme": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ObjectClassification"
+					},
+					"minItems": 1,
+					"title": "Likely hasObjectClassification in OG, thus array, thus no need for anything special",
+					"title": "name, level"
+				},
+				"hasResourceRelationships": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ResourceRelationshipElement"
+					},
+					"title": "to other subcollections -> to build hierarchy"
+				},
+				"hasResourceRelationship": {
+					"$ref": "#/definitions/PurpleResourceRelationship"
+					"title": ""
+				}
+			}
+		},
+		"BaseTypeOfCollection": {
+			"type": "string",
+			"enum": [
+				"MaterialEntity", 
+				"InformationArtifact",
+				"AbstractionConcept",
+				"other",
+				"knownAndWithheld",
+				"unspecified",
+				"unknown",
+				"notApplicable"
+			],
+			"minItems": 1,
+			"title": "BaseTypeOfCollection"
+		},
+		"CollectionManagementSystem": {
+			"type": "string",
+			"enum": [
+				"Arctos",
+				"Axiell EMu", 
+				"DINA",
+				"Diversity Workbench/Collection",
+				"Earthcape",
+				"JACQ",
+				"Specify",
+				"other",
+				"knownAndWithheld",
+				"unspecified",
+				"unknown",
+				"notApplicable"
+			],
+			"minItems": 1,
+			"title": "CollectionManagementSystem"
+		},
+		"RecordLevelObjectGroup": {
+			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/record-level.json",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"Identifiers",
+				"license"
+			],
+			"properties": {
+				"Identifiers": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Identifier"
+					},
+					"minItems": 1,
+					"uniqueItems": true
+				},
+				"license": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					],
+					"enum": [
+						"https://creativecommons.org/publicdomain/zero/1.0/",
+						"https://creativecommons.org/licenses/by/4.0/",
+						"other",
+						"knownAndWithheld",
+						"unspecified",
+						"unknown",
+						"notApplicable"
+					]
+				},
+				"PersonRoles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RecordLevelPersonRole"
+					}
+					"minItems": 0,
+					"uniqueItems": true
+				}
+			},
+			"title": "RecordLevel"
+		},
+		"Identifier": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"identifierValue",
+				"identifierSource",
+				"identifierType"
+			],
+			"properties": {
+				"identifierValue": {
+					"type": "string",
+					"qt-uri-protocols": [
+						"http",
+						"https"
+					],
+					"qt-uri-extensions": [
+						".3b"
+					]
+				},
+				"identifierSource": {
+					"type": "string"
+				},
+				"identifierType": {
+					"$ref": "#/definitions/IdentifierType"
+				}
+			},
+			"title": "Identifier"
+		},
+		"IdentifierType": {
+			"type": "string",
+			"enum": [
+				"ROR",
+				"URI",
+				"Institution code",
+				"ORCID ID",
+				"PID",
+				"other",
+				"knownAndWithheld",
+				"unspecified",
+				"unknown",
+				"notApplicable"
+			],
+			"title": "IdentifierType"
+		},
+		"RecordLevelPersonRole": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"role",
+				"People",
+				"endedAtTime",
+				"startedAtTime"
+			],
+			"properties": {
+				"role": {
+					"$ref": "#/definitions/Role"
+				},
+				"startedAtTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"endedAtTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"People": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FullNamePerson"
+					},
+					"minItems": 1,
+					"uniqueItems": true
+				}
+			},
+			"title": "RecordLevelPersonRole"
+		},
+		"Role": {
+			"type": "string",
+			"enum": [
+				"recordCreator",
+				"recordEditor"
+			],
+			"title": "Role"
+		},
+		"FullNamePerson": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"fullName"
+			],
+			"properties": {
+				"givenName": {
+					"type": "string"
+				},
+				"familyName": {
+					"type": "string"
+				},
+				"fullName": {
+					"type": "string"
+				},
+				"Identifiers": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Identifier"
+					}
+					"minItems": 0,
+					"uniqueItems": true
+				},
+				"References": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Reference"
+					},
+					"minItems": 0,
+					"uniqueItems": true
+				}
+			},
+			"title": "FullNamePerson"
+		},
+		"Reference": {
+			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/reference.json",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"referenceText",
+				"referenceType",
+				"resourceURI",
+				"referenceDetails"
+			],
+			"properties": {
+				"referenceType": {
+					"type": "string",
+					"enum": [
+						"synchronizedCopyOfMaster",
+						"importFromOtherRegistry",
+						"manualEntry"
+					]
+				},
+				"resourceURI": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					]
+				},
+				"referenceText": {
+					"type": "string"
+				},
+				"referenceDetails": {
+					"type": "string",
+					"enum": [
+						"ala",
+						"cetafRegistry",
+						"diSSCoRegistry",
+						"elvis",
+						"grscicoll",
+						"iDigBio",
+						"speciesLink",
+						"virtualHerbariumOfBrazil",
+						"other",
+						"knownAndWithheld",
+						"unspecified",
+						"unknown",
+						"notApplicable"
+					]
+				}
+			},
+			"title": "Reference"
+		},
+		"OrganisationalUnits": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/OrganisationalUnit"
+			},
+			"title": "necessary here? Array is also within OG"
+		},
+		"OrganisationalUnit": {
+			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/OrganiaationalUnit.json"
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"organisationalUnitName",
+				"organisationalUnitType",
+				"Identifiers",
+				"Addresses"
+			],
+			"properties": {
+				"organisationalUnitType": {
+					"type": "string",
+					"title": "governance, purpose, institutionRole"
+				},
+				"organisationalUnitName": {
+					"type": "string"
+				},
+				"Identifiers": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Identifier"
+					}
+					"minItems": 1,
+					"uniqueItems": true
+				},
+				"Addresses": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Address"
+					}
+					"minItems": 1,
+					"uniqueItems": true
+				},
+				"PersonRoles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OrganisationalUnitPersonRole"
+					}
+					"minItems": 0,
+					"uniqueItems": true
+				}
+			},
+			"title": "OrganisationalUnit"
+		},
+		"Address": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"addressCountry",
+				"addressType",
+				"postalCode",
+				"streetAddress"
+			],
+			"properties": {
+				"addressType": {
+					"type": "string"
+				},
+				"streetAddress": {
+					"type": "string"
+				},
+				"postalCode": {
+					"type": "string"
+				},
+				"addressCountry": {
+					"type": "string"
+				}
+			},
+			"title": "Address"
+		},
+		"OrganisationalUnitPersonRole": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"People",
+				"role"
+			],
+			"properties": {
+				"role": {
+					"type": "string"
+				},
+				"startedAtTime": {
+					"$ref": "#/definitions/StartedAtTime"
+				},
+				"People": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FullNamePerson"
+					}
+					"minItems": 1,
+					"maxItems": 1,
+					"uniqueItems": true
+				}
+			},
+			"title": "OrganisationalUnitPersonRole"
+		},
+
+
+
+		"ObjectGroupMeasurementOrFact": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"measurementType": {
+					"type": "string"
+				},
+				"measurementValue": {
+					"type": "string",
+					"format": "integer"
+				},
+				"measurementMethod": {
+					"type": "string"
+				},
+				"measurementRemarks": {
+					"type": "string"
+				},
+				"measurementFactText": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"measurementType"
+			],
+			"title": "ObjectGroupMeasurementOrFact"
+		},
+
+
+
+				"PID": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					]
+				},
+
+
+
+		"StartedAtTime": {
+			"anyOf": [
+				{
+					"type": "string",
+					"format": "date"
+				},
+				{
+					"type": "string",
+					"format": "integer"
+				}
+			],
+			"title": "StartedAtTime"
+		},
+		"PurpleResourceRelationship": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"relatedResourceID": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					]
+				},
+				"relationshipOfResource": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"relatedResourceID",
+				"relationshipOfResource"
+			],
+			"title": "PurpleResourceRelationship"
+		},
+		"ResourceRelationshipElement": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"relatedResourceID": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					]
+				},
+				"relationshipOfResource": {
+					"$ref": "#/definitions/RelationshipOfResource"
+				},
+				"relatedResourceName": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"relationshipOfResource"
+			],
+			"title": "ResourceRelationshipElement"
+		},
+		"Discipline": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"discipline": {
+					"type": "string"
+				},
+				"MeasurementOrFacts": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/DisciplineMeasurementOrFact"
+					}
+				}
+			},
+			"required": [
+				"MeasurementOrFacts",
+				"discipline"
+			],
+			"title": "Discipline"
+		},
+		"DisciplineMeasurementOrFact": {
+			"type": "object",
+			"additionalProperties": false,
+			"properties": {
+				"measurementType": {
+					"type": "string"
+				},
+				"measurementValue": {
+					"type": "string",
+					"format": "integer"
+				}
+			},
+			"required": [
+				"measurementType",
+				"measurementValue"
+			],
+			"title": "DisciplineMeasurementOrFact"
+		},
+		"RelationshipOfResource": {
+			"type": "string",
+			"enum": [
+				"contains"
+			],
+			"title": "RelationshipOfResource"
+		},
+
+
+
+
+\\ only adminFullName is different
+
+		"RecordLevelFullRegistryRecord": {
+			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/record-level.json",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"Identifiers",
+				"license"
+			],
+			"properties": {
+				"Identifiers": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Identifier"
+					},
+					"minItems": 1,
+					"uniqueItem": true
+				},
+				"license": {
+					"type": "string",
+					"format": "uri",
+					"qt-uri-protocols": [
+						"https"
+					],
+					"enum": [
+						"https://creativecommons.org/publicdomain/zero/1.0/",
+						"https://creativecommons.org/licenses/by/4.0/",
+						"other",
+						"knownAndWithheld",
+						"unspecified",
+						"unknown",
+						"notApplicable"
+					]
+				},
+				"PersonRoles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RecordLevelFullRegistryRecordPersonRole"
+					}
+					"minItem": 0,
+					"uniqueItem": true
+				}
+			},
+			"title": "RecordLevelFullRegistryRecord"
+		},
+		"RecordLevelFullRegistryRecordPersonRole": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"role",
+				"People",
+				"endedAtTime",
+				"startedAtTime"
+			],
+			"properties": {
+				"role": {
+					"$ref": "#/definitions/Role"
+				},
+				"startedAtTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"endedAtTime": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"People": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/RecordLevelFullRegistryRecordPerson"
+					},
+					"minItem": 1,
+					"maxItem": 1,
+					"uniqueItem": true
+				}
+			},
+			"title": "RecordLevelFullRegistryRecordPersonRole"
+		}
+		"RecordLevelFullRegistryRecordPerson": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"Identifiers",
+				"adminFullName"
+			],
+			"properties": {
+				"adminFullName": {
+					"$ref": "#/definitions/AdminFullName"
+				},
+				"Identifiers": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Identifier"
+					}
+					"minItem": 1,
+					"uniqueItem": true
+				}
+			}
+			"title": "RecordLevelFullRegistryRecordPerson"
+		},
+		"AdminFullName": {
+			"type": "string",
+			"enum": [
+				"WouterAddink",
+				"PatrickSemal"
+			],
+			"title": "AdminFullName"
+		}
+	}
+}
