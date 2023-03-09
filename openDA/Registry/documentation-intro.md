@@ -5,15 +5,15 @@
 
 See also build-in drop-down menu on left-hand end of display header for file on GitHub.
 
-* [Introduction](#introduction)
+* [Introduction](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-intro.md)
   * [Technical implementation as JSON Schema-based profiles](#technical-implementation-as-json-schema-based-profiles)
   * [Some JSON Schema defaults](#some-json-schema-defaults)
-* [Defining the registry-level schema](#defining-the-registry-level-schema)
+* [Defining the registry-level schema](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-registry-level.md)
   * [Top-level registry module](#top-level-registry-module)
   * [hasRegistryRecord array](#hasregistryrecord-array)
   * [ltc:hasRecordLevel module at the registry-level](#ltchasrecordlevel-module-at-the-registry-level)
   * [ltc:hasReference module at the registry-level](#ltchasreference-module-at-the-registry-level)
-* [Defining the record-level schema](#defining-the-record-level-schema)
+* [Defining the record-level schema](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-record-level.md)
   * [The top-level structure of a record](#the-top-level-structure-of-a-record)
   * [ObjectGroup module](#objectgroup-module)
     * [collectionName and baseTypeOfCollection (required)](#collectionname-and-basetypeofcollection-required)

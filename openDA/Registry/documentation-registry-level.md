@@ -1,4 +1,4 @@
-
+# DiSSCo Registry & Record Schemata
 
 
 ## Defining the registry-level schema
