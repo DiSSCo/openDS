@@ -1,6 +1,14 @@
 # DiSSCo Registry & Record Schemata
 
-
+* [Introduction](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-intro.md)
+* [Defining the registry-level schema](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-registry-level.md)
+  * [Top-level registry module](#top-level-registry-module)
+  * [hasRegistryRecord array](#hasregistryrecord-array)
+  * [ltc:hasRecordLevel module at the registry-level](#ltchasrecordlevel-module-at-the-registry-level)
+  * [ltc:hasReference module at the registry-level](#ltchasreference-module-at-the-registry-level)
+* [Defining the record-level schema](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-record-level.md)
+    
+    
 ## Defining the registry-level schema
 
 The DiSSCo Registry can be represented by two interlinked JSON schemata. One schema describes the structure of the registry itself and defines information that needs to be provided for the registry and each set of records transferred from a different registry or source. Within this top-level or registry-level schema a link connects to the record-level schema, which describes the minimal requirements for all records stored within the registry.

@@ -33,10 +33,10 @@
 					"title": "The list of DiSSCo collection facility records stored within the registry"
 				},{
 					"name": "ltc:hasRecordLevel",
-					"description": "This property refers to one or more related instances of the RecordLevel class."
+					"description": "This property refers to one or more related instances of the ltc:RecordLevel class."
 					"type": "array",
 					"items": {
-						"description": "This property refers to an instance of the RecordLevel class at the registry-level",
+						"description": "This property refers to an instance of the ltc:RecordLevel class at the registry-level",
 						"type": "object",
 						"$ref": "#/$defs/RecordLevelRegistry"
 					},
@@ -46,10 +46,10 @@
 					"title": "(P)ID, license, rights holder & registry admin(s)"
 				},{
 					"name": "ltc:hasReference",
-					"description": "This property refers to one or more related instances of the Reference class."
+					"description": "This property refers to one or more related instances of the ltc:Reference class."
 					"type": "array",
 					"items": {
-						"description": "This property refers to an instance of the RecordLevel class at the registry-level",
+						"description": "This property refers to an instance of the ltc:Reference class at the registry-level",
 						"type": "object",
 						"$ref": "#/$defs/ReferenceRegistry"
 					},
@@ -61,29 +61,29 @@
 		},
 		"RecordLevelRegistry": {
 			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/record-level.json",
-			"description": "The machine-actionable information profile for the collection description digital object. Linked to the RDA PID Kernel recommendation (https://www.rd-alliance.org/system/files/RDA%20Recommendation%20on%20PID%20Kernel%20Information_final.pdf)",
+			"description": "Specification of the ltc:RecordLevel class for use at the registry-level",
 			"type": "object",
 			"additionalProperties": true,
 			"required": [
 				"ltc:hasIdentifier",
-				"ltc:license",
+				"licenseRegistry",
 				"ltc:rightsHolder",
 				"ltc:hasPersonRole"
 			],
 			"properties": [{
 					"name": "ltc:hasIdentifier",
-					"description": "This property refers to one or more related instances of the Identifier class.",
+					"description": "This property refers to one or more related instances of the ltc:Identifier class.",
 					"type": "array",
 					"items": {
-						"description": "This property refers to an instance of the Identifier class.",
+						"description": "This property refers to an instance of the Identifier class at the registry-level.",
 						"type": "object",
-						"$ref": "#/$defs/ltc:Identifier"
+						"$ref": "#/$defs/IdentifierRegistry"
 					},
 					"minItems": 1,
 					"uniqueItem": true
 				},{
-					"name": "ltc:license",
-					"description": "A legal document giving official permission to do something with the resource. Allowed entries are predefined in array.",
+					"name": "licenseRegistry",
+					"description": "Specification of ltc:license for use at the registry-level",
 					"type": "string",
 					"default": "https://creativecommons.org/publicdomain/zero/1.0/",
 					"enum": [
@@ -96,34 +96,38 @@
 						"notApplicable"
 					]
 				},{
-					"name": "ltc:licenseOther",
-					"description": "A legal document giving official permission to do something with the resource. Alternative subschema applicable if ltc:license was set to Other. Accepts IRIs to licenses not predefined in ltc:license. For selection see allOf directly following the properties entity.",
+					"name": "licenseOther",
+					"description": "Specification of ltc:license for use at the registry-level. Alternative subschema applicable if licenseRegistry was set to *other*. Accepts IRIs to licenses not predefined in licenseRegistry. For selection see allOf entity directly following the properties entity.",
 					"type": "string",
-					"format": "uri",
+					"format": "iri",
 					"qt-uri-protocols": [
 						"https"
 					]
 				},{
+					"name": "ltc:rightsHolder",
+					"description": "Specification of ltc:rightsHolder for use at the registry-level, with no further specifications necessary.",
+					"type": "string"
+				},{
 					"name": "ltc:hasPersonRole",
-					"description": "This property refers to one or more related instances of the PersonRole class.",
+					"description": "This property refers to one or more related instances of the ltc:PersonRole class.",
 					"type": "array",
 					"items": {
-						"description": "This property refers to an instance of the PersonRole class.",
+						"description": "This property refers to an instance of the ltc:PersonRole class at the registry-level.",
 						"type": "object",
-						"$ref": "#/$defs/RecordLevelRegistryPersonRole"
+						"$ref": "#/$defs/PersonRoleRegistry"
 					},
 					"minItem": 1,
 					"uniqueItem": true
 			}],
 			"allOf": [{
-					"properties": { "ltc:license": { "const": "other" } }
+					"properties": { "licenseRegistry": { "const": "other" } }
 				},{
-					"required": ["ltc:licenseOther"]
+					"required": ["licenseOther"]
 			}],
 			"title": "RecordLevelRegistry"
 		},
-		"ltc:Identifier": {
-			"description": "A numeric, textual value, or reference such as an IRI, that can be used to uniquely identify the object to which it is attached. Use this class to document stable identifiers that describe the collections and associated entities being represented in the collection description. For example, person identifiers, taxon identifiers, institution identifiers, organisational unit identifiers, gazetteer identifiers. Identifiers represented by this class may be globally unique, or unique within a given context.",
+		"IdentifierRegistry": {
+			"description": "Specification of the ltc:Identifier class for use at the registry-level.",
 			"type": "object",
 			"additionalProperties": true,
 			"required": [
@@ -167,7 +171,7 @@
 				{
 					"description": "",
 					"type": "string",
-					"format": "uri",
+					"format": "iri",
 					"qt-uri-protocols": [
 						"https",
 						"http"
@@ -194,7 +198,7 @@
 				"Paleobiology Database",
 				"PID",
 				"ROR",
-				"URI",
+				"URI/IRI",
 				"Wikidata",
 				"other",
 				"knownAndWithheld",
@@ -204,7 +208,7 @@
 			],
 			"title": "LtcIdentifierSource"
 		},
-		"RecordLevelRegistryPersonRole": {
+		"PersonRoleRegistry": {
 			"type": "object",
 					"description": "",
 			"additionalProperties": true,
@@ -217,7 +221,7 @@
 			"properties": {
 				"ltc:role": {
 					"description": 
-					"$ref": "#/$defs/Role"
+					"$ref": "#/$defs/RegistryRole"
 				},
 				"ltc:startedAtTime": {
 					"type": "string",
@@ -234,24 +238,24 @@
 					"description": 
 					"items": {
 						"description": 
-						"$ref": "#/$defs/RecordLevelRegistryPerson"
+						"$ref": "#/$defs/RegistryPerson"
 					},
 					"minItem": 1,
 					"uniqueItem": true
 				}
 			},
-			"title": "RecordLevelRegistryPersonRole"
+			"title": "RegistryPersonRole"
 		},
-		"Role": {
+		"RegistryRole": {
 			"type": "string",
 					"description": 
 			"enum": [
 				"recordCreator",
 				"recordEditor"
 			],
-			"title": "Role"
+			"title": "RegistryRole"
 		},
-		"RecordLevelRegistryPerson": {
+		"RegistryPerson": {
 			"type": "object",
 					"description": 
 			"additionalProperties": true,
@@ -263,7 +267,7 @@
 					"description": 
 				"ltc:fullName": {
 					"description": 
-					"$ref": "#/$defs/adminFullName"
+					"$ref": "#/$defs/FullNameAdmin"
 				},
 				"ltc:hasIdentifier": {
 					"type": "array",
@@ -276,16 +280,16 @@
 					"uniqueItem": true
 				}
 			}
-			"title": "RecordLevelRegistryPerson"
+			"title": "RegistryPerson"
 		},
-		"adminFullName": {
+		"FullNameAdmin": {
 			"type": "string",
 					"description": 
 			"enum": [
 				"WouterAddink",
 				"PatrickSemal"
 			],
-			"title": "adminFullName"
+			"title": "FullNameAdmin"
 		},
 		"ReferenceRegistry": {
 			"type": "object",
@@ -313,7 +317,7 @@
 				},
 				"abcd:referenceURI": {
 					"type": "string",
-					"format": "uri",
+					"format": "iri",
 					"qt-uri-protocols": [
 						"https"
 					],

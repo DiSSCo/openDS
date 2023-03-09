@@ -1,5 +1,14 @@
 # DiSSCo Registry & Record Schemata
 
+* [Introduction](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-intro.md)
+* [Defining the registry-level schema](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-registry-level.md)
+* [Defining the record-level schema](https://github.com/DiSSCo/openDS/blob/jbstatgen_registry/openDA/Registry/documentation-record-level.md)
+  * [The top-level structure of a record](#the-top-level-structure-of-a-record)
+  * [ObjectGroup module](#objectgroup-module)
+    * [collectionName and baseTypeOfCollection (required)](#collectionname-and-basetypeofcollection-required)
+    * [description](#description) 
+    * [collectionManagementSystem](#collectionmanagementsystem-required)
+    * [RecordLevel](#recordlevel-required)
 
 
 ---
