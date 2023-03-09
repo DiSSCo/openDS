@@ -70,7 +70,8 @@
 				"ltc:rightsHolder",
 				"ltc:hasPersonRole"
 			],
-			"properties": [{
+			"properties": [
+				{
 					"name": "ltc:hasIdentifier",
 					"description": "This property refers to one or more related instances of the ltc:Identifier class.",
 					"type": "array",
@@ -118,7 +119,8 @@
 					},
 					"minItem": 1,
 					"uniqueItem": true
-			}],
+				}
+			],
 			"allOf": [{
 					"properties": { "licenseRegistry": { "const": "other" } }
 				},{
@@ -131,45 +133,52 @@
 			"type": "object",
 			"additionalProperties": true,
 			"required": [
-				"ltc:identifierValue",
-				"ltc:identifierSource",
-				"ltc:identifierType"
+				"identifierValueLink",
+				"identifierSourceLink",
+				"identifierTypeRegistry"
 			],
-			"properties": [{
-					"name": "ltc:identifierValue",
-					"description": "An unambiguous reference to the resource within a given context.",
-					"type": "string",
-					"$ref": "#/$defs/LtcIdentifierValue"
+			"properties": [
+				{
+					"name": "identifierValueLink",
+					"description": "Link to specification of ltc:identifierValue for use at the registry-level.",
+					"type": "object",
+					"$ref": "#/$defs/identifierValueRegistry"
 				},{
-					"name": "ltc:identifierSource",
-					"description": "The source or creator of the identifier.",
-					"type": "string",
-					"$ref": "#/$defs/LtcIdentifierSource"
+					"name": "identifierSourceLink",
+					"description": "Link to specification of ltc:identifierValue for use at the registry-level.",
+					"type": "object",
+					"$ref": "#/$defs/identifierSourceRegistry"
 				},{
-					"name": "ltc:identifierType",
-					"description": "The type and format of the value in the identifier field.",
-					"type": "string",
-					"enum": [
-						"Internal database identifier",
-						"Collection code",
-						"IRI"
-					]
+					"name": "identifierTypeRLink",
+					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
+					"type": "object",
+					"$ref": "#/$defs/identifierTypeRegistryChoice"
+				}
+			],
+			"allOf": [{
+					"properties": { "identifierTypeRegistry": { "const": "other" } }
+				},{
+					"required": ["identifierTypeString"]
 			}],
-			"title": "Identifier"
+			"title": "IdentifierRegistry"
 		},
-		"LtcIdentifierValue": {
+		"identifierValueRegistry": {
 			"anyOf": [
 				{
-					"description": "",
+					"description": "Specification of ltc:identifierValue as text for use at the registry-level.",
+					"type": "string"
+				},
+				{
+					"description": "Specification of ltc:identifierValue as number, specifically an integer, for use at the registry-level.",
 					"type": "string",
 					"format": "integer"
 				},
 				{
-					"description": "",
+					"description": "Specification of ltc:identifierValue as null-value for use at the registry-level.",
 					"type": "null"
 				},
 				{
-					"description": "",
+					"description": "Specification of ltc:identifierValue as IRI for use at the registry-level.",
 					"type": "string",
 					"format": "iri",
 					"qt-uri-protocols": [
@@ -182,11 +191,11 @@
 					]
 				}
 			],
-			"title": "LtcIdentifierValue"
+			"title": "identifierValueRegistry"
 		},
-		"LtcIdentifierSource": {
+		"identifierSourceRegistry": {
+			"description": "Specification of ltc:identifierSource for use at the registry-level.",
 			"type": "string",
-					"description": 
 			"enum": [
 				"Catalogue of Life 2017",
 				"GBIF",
@@ -206,8 +215,40 @@
 				"unknown",
 				"notApplicable"
 			],
-			"title": "LtcIdentifierSource"
+			"title": "identifierSourceRegistry"
 		},
+		 "identifierTypeRegistryChoice": {
+			"description": "Schema for choosing a specification of ltc:identifierType for use at the registry-level.",
+			"type": "object",
+			"properties": [
+				{		 	
+					"name": "identifierTypeRegistry"
+					"description": "Specification of ltc:identifierType for use at the registry-level.",
+					"type": "string",
+						"enum": [
+							"Internal database identifier",
+							"Collection code",
+							"IRI",
+							"other",
+							"knownAndWithheld",
+							"unspecified",
+							"unknown",
+							"notApplicable"
+						]
+				},{
+					"name": "identifierTypeString",
+					"description": "Specification of ltc:identifierType as string for general use. Alternative subschema applicable if identifierTypeRegistry was set to *other*. For selection see allOf entity directly following the properties entity.",
+					"type": "string",
+				}
+			],
+			"allOf": [{
+					"properties": { "identifierTypeRegistry": { "const": "other" } }
+				},{
+					"required": ["identifierTypeString"]
+			}],
+		},
+
+
 		"PersonRoleRegistry": {
 			"type": "object",
 					"description": "",
