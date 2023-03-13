@@ -24,17 +24,20 @@ We do make the assumption that we can use the first match we can find, so index 
 #### Bed
 For ABCDEFG we will look at matches on the term(s) in this order:
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/lithostratigraphicAttributions/lithostratigraphicAttribution/0/bed`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 #### Formation
 For ABCDEFG we will look at matches on the term(s) in this order:
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/lithostratigraphicAttributions/lithostratigraphicAttribution/0/formation`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 #### Group
 For ABCDEFG we will look at matches on the term(s) in this order:
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/lithostratigraphicAttributions/lithostratigraphicAttribution/0/group`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 #### Member
-#### Formation
 For ABCDEFG we will look at matches on the term(s) in this order:
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/lithostratigraphicAttributions/lithostratigraphicAttribution/0/member`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).

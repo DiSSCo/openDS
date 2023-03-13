@@ -21,6 +21,7 @@ The three fields we check are:
 - `abcd:specimenUnit/nomenclaturalTypeDesignations/nomenclaturalTypeDesignation/0/typeStatus`
 - `abcd:specimenUnit/nomenclaturalTypeDesignations/nomenclaturalTypeDesignation/0/typifiedName/fullScientificNameString`
 - `abcd:specimenUnit/nomenclaturalTypeDesignations/nomenclaturalTypeDesignation/0/nomenclaturalReference/titleCitation`
+
 If in all three fields a value was found we will publish `value1 | value2 | value3`
 If only in the second and third field values were found we will publish `value1 | value2`
 If in none of the fields a value was encountered we will leave the field empty (`null`)

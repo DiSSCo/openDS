@@ -24,4 +24,5 @@ The three fields we check are:
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/biostratigraphicAttributionsType/biostratigraphicAttribution/0/zonalFossilType`
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/biostratigraphicAttributionsType/biostratigraphicAttribution/0/fossilZoneName`
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/biostratigraphicAttributionsType/biostratigraphicAttribution/0/fossilSubzoneName`
-  If these term(s) are not available or are null we will leave this field empty (`null`).
+  
+If these term(s) are not available or are null we will leave this field empty (`null`).

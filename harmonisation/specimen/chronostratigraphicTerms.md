@@ -38,10 +38,12 @@ We will look for a division that matches one of these fields (ignores case):
 - `Stage`
 For `dwc:earliestAgeOrLowestStage` we will first look at:
 - `SubStage`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 #### Eonothem
 We will look for a division that matches one of these fields (ignores case):
 - `Eonothem`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 #### Series
 We will look for a division that matches one of these fields (ignores case):
@@ -50,12 +52,15 @@ We will look for a division that matches one of these fields (ignores case):
 For `dwc:earliestEpochOrLowestSeries` we will first look at:
 - `SubSeries`
 - `SubSerie`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 #### Erathem
 We will look for a division that matches one of these fields (ignores case):
 - `Erathem`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 #### System
 We will look for a division that matches one of these fields (ignores case):
 - `System`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).

@@ -20,10 +20,11 @@ In the code we will walk through the identifications to see if a `preferredFlag`
 If we encouter the `preferredFlag` we will then search first for the ABCD term and then for the ABCDEFG term.
 - `abcd:identifications/identification/{index}/result/taxonIdentified/scientificName/fullScientificNameString`
 - `abcd-efg:identifications/identification/{index}/result/mineralRockIdentified/classifiedName/fullScientificNameString`
-Important assumption is that we will take the first `prefferedFlag: true` we encouter.
+
+Important assumption is that we will take the first `prefferedFlag: true` we encounter.
 If there are multiple `prefferedFlag: true` are set we will take the one with the lowest index.
 
-When no preffered flag has been set, we assume that the name with the highest index is the correct one.
+When no preffered flag has been set, we assume that the name with the lowest index is the correct one.
 We will again first check the ABCD field and then the ABDEFG field:
 - `abcd:identifications/identification/0/result/taxonIdentified/scientificName/fullScientificNameString`
 - `abcd-efg:identifications/identification/0/result/mineralRockIdentified/classifiedName/fullScientificNameString`

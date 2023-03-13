@@ -11,10 +11,12 @@ In the case of collectingNumber this is improbable however, the functionality is
 ### DWC
 For DWCA we will look at matches on the term(s) in this order:
 - `dwc:recordNumber`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).
 
 ### ABCDEFG
 For ABCDEFG we will look at matches on the term(s) in this order:
 - `abcd:collectorsFieldNumber`
 - `abcd:gathering/code`
+
 If these term(s) are not available or are null we will leave this field empty (`null`).

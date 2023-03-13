@@ -1,7 +1,7 @@
 # PhysicalSpecimenId
 
 ## openDS
-Will be harmonised to `dwc:physicalSpecimenId`
+Will be harmonised to `ods:physicalSpecimenId`
 There is no exact match for physicalSpecimenId in either DWC nor ABCD(EFG)
 
 ## Mapping
@@ -9,12 +9,12 @@ Before searching for typeStatus in the below terms we will first check if a defa
 In the case of physicalSpecimenId this is highly improbable however, the functionality is there.
 
 ### DWC
-For DWCA we will look at matches on the term(s) in this order::
+For DWCA we will look at matches on the term(s) in this order:
 - `dwc:occurrenceID`
 If these term(s) are not available or are null we will leave this field empty (`null`).
 
 ### ABCDEFG
-For ABCDEFG we will look at matches on the term(s) in this order::
+For ABCDEFG we will look at matches on the term(s) in this order:
 - `abcd:unitID`
 
 ## Additional Transformation
