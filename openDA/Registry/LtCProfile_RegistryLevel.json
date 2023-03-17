@@ -17,7 +17,8 @@
 				"ltc:hasRecordLevel",
 				"ltc:hasReference"
 			],
-			"properties": [{
+			"properties": [
+				{
 					"name": "hasRegistryRecord",
 					"description": "This property refers to one or more related instances of DiSSCo collection facility records.",
 					"type": "array",
@@ -122,7 +123,7 @@
 					"type": "object",
 					"$ref": "#/$defs/identifierSourceRegistryChoice"
 				},{
-					"name": "identifierTypeRLink",
+					"name": "identifierTypeLink",
 					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
 					"type": "object",
 					"$ref": "#/$defs/identifierTypeRegistryChoice"
@@ -130,7 +131,7 @@
 					"name": "identifierValueLink",
 					"description": "Link to specification of ltc:identifierValue for use at the registry-level.",
 					"type": "object",
-					"$ref": "#/$defs/identifierValueRegistry"
+					"$ref": "#/$defs/identifierValueRegistryChoice"
 				}
 			],
 			"title": "IdentifierRegistry"
@@ -138,7 +139,7 @@
 		"identifierSourceRegistryChoice": {
 			"description": "Schema for choosing a specification of ltc:identifierSource for use at the registry-level.",
 			"type": "object",
-			"additionalProperties": false,
+			"additionalProperties": true,
 			"required": [
 				"identifierSourceRegistry"
 			],
@@ -147,6 +148,7 @@
 					"name": "identifierSourceRegistry",
 					"description": "Specification of ltc:identifierSource for use at the registry-level.",
 					"type": "string",
+					"default": "PID",
 					"enum": [
 						"Catalogue of Life 2017",
 						"GBIF",
@@ -182,7 +184,7 @@
 		"identifierTypeRegistryChoice": {
 			"description": "Schema for choosing a specification of ltc:identifierType for use at the registry-level.",
 			"type": "object",
-			"additionalProperties": false,
+			"additionalProperties": true,
 			"required": [
 				"identifierTypeRegistry"
 			],
@@ -191,6 +193,7 @@
 					"name": "identifierTypeRegistry"
 					"description": "Specification of ltc:identifierType for use at the registry-level.",
 					"type": "string",
+					"default": "IRI",
 					"enum": [
 						"Internal database identifier",
 						"Collection code",
@@ -214,22 +217,26 @@
 			}],
 			"title": "identifierTypeRegistryChoice"
 		},
-		"identifierValueRegistry": {
+		"identifierValueRegistryChoice": {
 			"anyOf": [
 				{
+					"name": "free text",
 					"description": "Specification of ltc:identifierValue as text for use at the registry-level.",
 					"type": "string"
 				},
 				{
+					"name": "number - integer",
 					"description": "Specification of ltc:identifierValue as number, specifically an integer, for use at the registry-level.",
 					"type": "string",
 					"format": "integer"
 				},
 				{
+					"name": "not applicable - null",
 					"description": "Specification of ltc:identifierValue as null-value for use at the registry-level.",
 					"type": "null"
 				},
 				{
+					"name": "web address - IRI",
 					"description": "Specification of ltc:identifierValue as IRI for use at the registry-level.",
 					"type": "string",
 					"format": "iri",
@@ -248,7 +255,7 @@
 		"licenseRegistryChoice": {
 			"description": "Schema for choosing a specification of ltc:license for use at the registry-level.",
 			"type": "object",
-			"additionalProperties": false,
+			"additionalProperties": true,
 			"required": [
 				"licenseRegistry"
 			],
@@ -289,39 +296,39 @@
 			"type": "object",
 			"additionalProperties": true,
 			"required": [
-				"ltc:role",
 				"ltc:hasPerson",
-				"ltc:endedAtTime",
-				"ltc:startedAtTime"
+				"ltc:hasRole",
+				"ltc:hasTemporalCoverage",
 			],
 			"properties": [
 				{
-				"name": "ltc:role",
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
-					"$ref": "#/$defs/RegistryRole"
-				},
-				"ltc:startedAtTime": {
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
-					"type": "string",
-					"format": "date-time"
-					"description": 
-				},
-				"ltc:endedAtTime": {
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
-					"type": "string",
-					"format": "date-time"
-					"description": 
-				},
-				"ltc:hasPerson": {
+					"name": "ltc:hasPerson",
 					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
 					"type": "array",
-					"description": 
+					"description": "",
 					"items": {
-						"description": 
+						"description": "",
 						"$ref": "#/$defs/RegistryPerson"
 					},
 					"minItem": 1,
 					"uniqueItem": true
+				},{
+					"name": "ltc:hasRole",
+					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
+					"$ref": "#/$defs/RegistryRole"
+				},{
+					"name": "",
+					"ltc:startedAtTime": {
+					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
+					"type": "string",
+					"format": "date-time"
+					"description": "",
+				},{
+					"ltc:endedAtTime": {
+					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
+					"type": "string",
+					"format": "date-time"
+					"description": 
 				}
 			},
 			],
