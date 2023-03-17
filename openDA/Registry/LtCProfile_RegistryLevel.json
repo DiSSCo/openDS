@@ -85,7 +85,7 @@
 					"uniqueItem": true
 				},{
 					"name": "licenseRegistryLink",
-					"description": "Link to specification of ltc:license for use at the registry-level.",
+					"description": "Link to the specification of ltc:license for use at the registry-level.",
 					"type": "object",
 					"$ref": "#/$defs/licenseRegistryChoice"
 				},{
@@ -119,17 +119,17 @@
 			"properties": [
 				{
 					"name": "identifierSourceLink",
-					"description": "Link to specification of ltc:identifierSource for use at the registry-level.",
+					"description": "Link to the specification of ltc:identifierSource for use at the registry-level.",
 					"type": "object",
 					"$ref": "#/$defs/identifierSourceRegistryChoice"
 				},{
 					"name": "identifierTypeLink",
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
+					"description": "Link to the specification of ltc:identifierType for use at the registry-level.",
 					"type": "object",
 					"$ref": "#/$defs/identifierTypeRegistryChoice"
 				},{
 					"name": "identifierValueLink",
-					"description": "Link to specification of ltc:identifierValue for use at the registry-level.",
+					"description": "Link to the specification of ltc:identifierValue for use at the registry-level.",
 					"type": "object",
 					"$ref": "#/$defs/identifierValueRegistryChoice"
 				}
@@ -303,107 +303,226 @@
 			"properties": [
 				{
 					"name": "ltc:hasPerson",
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
+					"description": "This property refers to one or more related instances of the ltc:Person class.",
 					"type": "array",
-					"description": "",
 					"items": {
-						"description": "",
-						"$ref": "#/$defs/RegistryPerson"
+						"description": "This property refers to an instance of the ltc:Person class at the registry-level.",
+						"type": "object",
+						"$ref": "#/$defs/PersonRegistry"
 					},
 					"minItem": 1,
 					"uniqueItem": true
 				},{
 					"name": "ltc:hasRole",
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
-					"$ref": "#/$defs/RegistryRole"
+					"description": "This property refers to one or more related instances of the ltc:Role class.",
+					"type": "array",
+					"items": {
+						"description": "This property refers to an instance of the ltc:Role class at the registry-level.",
+						"type": "object",
+						"$ref": "#/$defs/RoleRegistry"
+					},
+					"minItem": 1,
+					"uniqueItem": true
 				},{
-					"name": "",
-					"ltc:startedAtTime": {
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
-					"type": "string",
-					"format": "date-time"
-					"description": "",
-				},{
-					"ltc:endedAtTime": {
-					"description": "Link to specification of ltc:identifierType for use at the registry-level.",
-					"type": "string",
-					"format": "date-time"
-					"description": 
+					"name": "ltc:hasTemporalCoverage",
+					"description": "This property refers to one or more related instances of the ltc:TemporalCoverage class.",
+					"type": "array",
+					"items": {
+						"description": "This property refers to an instance of the ltc:TemporalCoverage class at the registry-level.",
+						"type": "object",
+						"$ref": "#/$defs/TemporalCoverageRegistry"
+					},
+					"minItem": 1,
+					"uniqueItem": true
 				}
-			},
 			],
 			"title": "PersonRoleRegistry"
 		},
-		"RegistryRole": {
-			"type": "string",
-					"description": 
-			"enum": [
-				"recordCreator",
-				"recordEditor"
-			],
-			"title": "RegistryRole"
-		},
-		"RegistryPerson": {
+		"PersonRegistry": {
 			"type": "object",
-					"description": 
 			"additionalProperties": true,
 			"required": [
 				"ltc:hasIdentifier",
 				"ltc:fullName"
 			],
-			"properties": {
-					"description": 
-				"ltc:fullName": {
-					"description": 
-					"$ref": "#/$defs/FullNameAdmin"
-				},
-				"ltc:hasIdentifier": {
+			"properties": [
+				{
+					"name": "ltc:hasIdentifier",
+					"description": "This property refers to one or more related instances of the ltc:Identifier class.",
 					"type": "array",
-					"description": 
 					"items": {
-					"description": 
-						"$ref": "#/$defs/Identifier"
-					}
-					"minItem": 1,
+						"description": "This property refers to an instance of the Identifier class at the registry-level.",
+						"type": "object",
+						"$ref": "#/$defs/IdentifierRegistry"
+					},
+					"minItems": 1,
 					"uniqueItem": true
+				},{
+					"name": "fullNameLink",
+					"description": "Link to the specification of ltc:fullName for use at the registry-level.",
+					"type": "object",
+					"$ref": "#/$defs/fullNameAdminChoice"
 				}
-			}
-			"title": "RegistryPerson"
+			],
+			"title": "PersonRegistry"
 		},
-		"FullNameAdmin": {
+		"FullNameAdminChoice": {
+			"name": "fullNameAdmin",
+			"description": "Specification of ltc:fullName as text for use at the registry-level.",
 			"type": "string",
-					"description": 
 			"enum": [
 				"WouterAddink",
 				"PatrickSemal"
 			],
-			"title": "FullNameAdmin"
+			"title": "FullNameAdminChoice"
 		},
-		"ReferenceRegistry": {
+		"RoleRegistry": {
+			"description": "Specification of the ltc:Role class for use at the registry-level within RecordLevel.",
 			"type": "object",
-					"description": 
 			"additionalProperties": true,
 			"required": [
-				"ltc:referenceText",
+				"roleTypeLink",
+				"ltc:hasIdentifier"
+			],
+			"properties": [
+				{
+					"name": "roleTypeLink",
+					"description": "Link to the specification of ltc:roleType for use at the registry-level.",
+					"type": "object",
+					"$ref": "#/$defs/roleTypeAdminChoice"
+				},{
+					"name": "ltc:hasIdentifier",
+					"description": "This property refers to one or more related instances of the ltc:Identifier class.",
+					"type": "array",
+					"items": {
+						"description": "This property refers to an instance of the Identifier class at the registry-level.",
+						"type": "object",
+						"$ref": "#/$defs/IdentifierRegistry"
+				},
+			],
+			"title": "RoleRegistry"
+		},
+		"roleTypeAdminChoice": {
+			"description": "Schema for choosing a specification of ltc:roleType for use at the registry-level.",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"roleTypeAdmin"
+			],
+			"properties": [
+				{		 	
+					"name": "roleTypeAdmin",
+					"description": "Specification of ltc:roleType for use at the registry-level.",
+					"type": "string",
+					"default": "recordEditor",
+					"enum": [
+						"recordCreator",
+						"recordEditor",
+						"other",
+						"knownAndWithheld",
+						"unspecified",
+						"unknown",
+						"notApplicable"
+					]
+				},{
+					"name": "roleTypeString",
+					"description": "Specification of ltc:roleType as string for general use. Alternative subschema applicable if roleTypeAdmin was set to *other*. For selection see allOf entity directly following the properties entity.",
+					"type": "string",
+				}
+			],
+			"allOf": [{
+					"properties": { "roleTypeAdmin": { "const": "other" } }
+				},{
+					"required": ["roleTypeString"]
+			}],
+			"title": "roleTypeAdminChoice"
+		},
+		"TemporalCoverageRegistry": {
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"temporalCoverageTypeLink",
+				"ltc:temporalCoverageStartDate",
+				"ltc:temporalCoverageEndDate"
+			],
+			"properties": [
+				{
+					"name": "temporalCoverageTypeLink",
+					"description": "Link to the specification of ltc:temporalCoverageType for use at the registry-level.",
+					"type": "object",
+					"$ref": "#/$defs/temporalCoverageTypeAdminChoice"
+				},{
+					"name": "ltc:temporalCoverageStartDate",
+					"description": "Specification of ltc:temporalCoverageStartDate for use at the registry-level, with no further specifications necessary.",
+					"type": "string",
+					"format": "date-time"
+				},{
+					"name": "ltc:temporalCoverageEndDate",
+					"description": "Specification of ltc:temporalCoverageEndDate for use at the registry-level, with no further specifications necessary.",
+					"type": "string",
+					"format": "date-time"
+				}
+			],
+			"title": "TemporalCoverageRegistry"
+		},
+		"temporalCoverageTypeAdminChoice": {
+			"description": "Schema for choosing a specification of ltc:temporalCoverageType for use at the registry-level.",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"temporalCoverageTypeAdmin"
+			],
+			"properties": [
+				{		 	
+					"name": "temporalCoverageTypeAdmin",
+					"description": "Specification of ltc:temporalCoverageType for use at the registry-level.",
+					"type": "string",
+					"default": "recordEditing",
+					"enum": [
+						"recordCreation",
+						"recordEditing",
+						"other",
+						"knownAndWithheld",
+						"unspecified",
+						"unknown",
+						"notApplicable"
+					]
+				},{
+					"name": "temporalCoverageTypeString",
+					"description": "Specification of ltc:roleType as string for general use. Alternative subschema applicable if roleTypeAdmin was set to *other*. For selection see allOf entity directly following the properties entity.",
+					"type": "string",
+				}
+			],
+			"allOf": [{
+					"properties": { "temporalCoverageTypeAdmin": { "const": "other" } }
+				},{
+					"required": ["temporalCoverageTypeString"]
+			}],
+			"title": "temporalCoverageTypeAdminChoice"
+		},
+		"ReferenceRegistry": {
+			"$ref": "https://raw.githubusercontent.com/tdwg/cd/registry-schema-update/standard/json-schema/xxxxxxx.json",
+			"description": "Specification of the ltc:Reference class for use at the registry-level",
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"ltc:referenceTitle",
 				"ltc:referenceDetails",
 				"ltc:referenceType",
 				"abcd:referenceURI"
 			],
-			"properties": {
-					"description": 
-				"ltc:referenceText": {
-					"type": "string"
-					"description": 
-				},
-				"ltc:referenceDetails": {
-					"type": "string"
-					"description": 
-				},
-				"ltc:referenceType": {
-					"type": "string"
-					"description": 
-				},
-				"abcd:referenceURI": {
+			"properties": [
+				{
+					"name": "ltc:referenceTitle",
+					"description": "Specification of ltc:referenceTitle for use at the registry-level, with no further specifications necessary.",
+					"type": "string",
+				},{
+					"name": "ltc:referenceType",
+					"description": "Specification of ltc:referenceType for use at the registry-level, with no further specifications necessary.",
+					"type": "string"					"description": 
+				},{
+					"name": "abcd:referenceURI",
+					"description": "Specification of abcd:referenceURI for use at the registry-level, with no further specifications necessary.",
 					"type": "string",
 					"format": "iri",
 					"qt-uri-protocols": [
@@ -412,9 +531,13 @@
 					"qt-uri-extensions": [
 						".2023900"
 					]
-					"description": 
+				},{
+					"name": "ltc:referenceDetails",
+					"description": "Specification of ltc:referenceDetails for use at the registry-level, with no further specifications necessary.",
+					"type": "string"
 				}
-			},
+			}
+			],
 			"title": "ReferenceRegistry"
 		}	
 	}
