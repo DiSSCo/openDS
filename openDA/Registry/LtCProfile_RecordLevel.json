@@ -12,7 +12,8 @@
 			"required": [
 				"ObjectGroups",
 				"Agents",
-				"RecordLevelFullRegistryRecord"
+				"RecordLevelFullRegistryRecord",
+				"CollectionDescriptionScheme"
 			],
 			"properties": {
 				"ObjectGroups": {
@@ -56,6 +57,16 @@
 					"maxItems": 1,
 					"uniqueItems": true,
 					"title": "(P)ID, license of full record (registry provided? or same as OG-level), admins who created and maintain (edit) the record"
+				},
+				"CollectionDescriptionScheme": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/CollectionDescriptionScheme"
+					},
+					"minItems": 1,
+					"maxItems": 1,
+					"uniqueItems": true,
+					"title": "Latimer Core scheme listing the LtC classes and properties used to describe the object groups."
 				}
 			}
 		},

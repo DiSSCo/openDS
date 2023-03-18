@@ -4,9 +4,17 @@
 	"title": "DiSSCo Registry Profile",
 	"description": "JSON Schema- and Latimer Core-based profile describing a registry of collection facilities for the DiSSCo RI in a standardized way.",
 	"type": "object",
-	"properties": {
-		"$ref": "#/$defs/Registry"
-	},
+	"properties": [
+		{
+			"description": "."
+			"type": "object",
+			"additionalProperties": true,
+			"required": [
+				"Registry",
+			],
+			"$ref": "#/$defs/Registry"
+		}
+	],
 	"$defs": {
 		"Registry": {
 			"description": "A registry assembling the authorative list of DiSSCo collection facility records."
@@ -536,7 +544,6 @@
 					"description": "Specification of ltc:referenceDetails for use at the registry-level, with no further specifications necessary.",
 					"type": "string"
 				}
-			}
 			],
 			"title": "ReferenceRegistry"
 		}	
