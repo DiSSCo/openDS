@@ -1,7 +1,8 @@
 # Lithostratigraphic terms
 
 This is a set of terms which are combined in this single file.
-This is mainly te reduce the amount of files.
+We combined these terms as we use a similar approach to harmonised them.
+Additionally, it would unnecessarily grow the amount of terms files in this repository.
 
 ## openDS
 Will be harmonised to the DWC terms for lithostratigraphy.

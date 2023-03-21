@@ -2,7 +2,7 @@
 
 ## openDS
 Will be harmonised to `dwc:typeStatus`
-This MIDS elements seems to have an exact match to `dwc:typeStatus`
+This MIDS element seems to have an exact match to `dwc:typeStatus`
 
 ## Mapping
 Before searching for typeStatus in the below terms we will first check if a default value or explicit mapping has been set.

@@ -20,7 +20,7 @@ As we use the DWC fields we will look for an exact match for the coordinate fiel
 If these term(s) are not available or are null we will leave this field empty (`null`).
 
 ### ABCDEFG
-Wihtin ABCDEFG we search for the specific coordinate field.
+Within ABCDEFG we search for the specific coordinate field.
 An important assumption is that we will use the first siteCoordinates that we can find.
 
 #### Latitude

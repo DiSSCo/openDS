@@ -1,7 +1,8 @@
 # Chronostratigraphic terms
 
 This is a set of terms which are combined in this single file.
-This is mainly te reduce the amount of files.
+We combined these terms as we use a similar approach to harmonised them.
+Additionally, it would unnecessarily grow the amount of terms files in this repository.
 
 ## openDS
 Will be harmonised to the DWC terms for chronostratigraphy.
@@ -31,7 +32,7 @@ The first specifies the chronostratigraphic division.
 After we identified the chronostratigraphic division we can put the correct value in the dwc field.
 - `abcd-efg:earthScienceSpecimen/unitStratigraphicDetermination/chronostratigraphicAttributions/chronostratigraphicAttribution/{index}/chronostratigraphicName`
 In general we will put the same value in the earliest and latest DWC division field, unless we are able to determine a sub or super division.
-Then we will put the sub division in the earliest and the division in the latest (or with super the other way around).
+Then we will put the subdivision in the earliest and the division in the latest (or with super the other way around).
 We do make the assumption that we can use the first division match we can find.
 #### Stage
 We will look for a division that matches one of these fields (ignores case):

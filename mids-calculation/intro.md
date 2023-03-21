@@ -1,10 +1,10 @@
 # MIDS Calculation
 
 Within DiSSCo the Digital Specimen Processing Service calculates MIDS values for the Digital Specimen.
-The translator harmonizes all fields into the openDS data specification see [harmonisation](../harmonisation/intro.md)
+The translator harmonises all fields into the openDS data specification see [harmonisation](../harmonisation/intro.md)
 Based on the harmonised data model the MIDS level will be calculated.
 This is often based on checking if certain fields (or a list of fields) do not have a `null` value or an `""` or the field value of `"null"`
-If this is not the case we accept the value for this field and it complies to MIDS.
+If this is not the case we accept the value for this field, and it complies to MIDS.
 The MIDS level are built on top of each other so level 1 requires everything from level 0 and MIDS level 2 requires all requirements from level 0 and 1.
 
 ## MIDS level 0
@@ -24,7 +24,7 @@ For MIDS level 1 all specimen should have some value for the following fields:
 ## MIDS level 2
 From MIDS level 2 onwards MIDS makes a distinction in three different types:
 - Biological 
-- Palaeological
+- Palaeontological
 - Geological
 
 
@@ -46,11 +46,11 @@ For Biological specimen to comply to MIDS level 2 the following fields need to h
   - `dwc:municipality`
   - `dwc:stateProvince`
   - `dwc:waterBody`
-- It needs to have **all** of the following Quantitative Lcoation fields filled:
+- It needs to have **all** the following Quantitative Location fields filled:
   - `dwc:decimalLatitude`
   - `dwc:decimalLongitude`
 
-### Palaeological and Geological
+### Palaeontological and Geological
 For Biological specimen to comply to MIDS level 2 the following fields need to have a valid value:
 - `dwc:typeStatus`
 - It needs to have **one** of the following Stratigraphy fields filled:
@@ -81,6 +81,6 @@ For Biological specimen to comply to MIDS level 2 the following fields need to h
   - `dwc:municipality`
   - `dwc:stateProvince`
   - `dwc:waterBody`
-- It needs to have **all** of the following Quantitative Lcoation fields filled:
+- It needs to have **all** the following Quantitative Location fields filled:
   - `dwc:decimalLatitude`
   - `dwc:decimalLongitude`
