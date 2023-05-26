@@ -15,12 +15,12 @@ If these terms are not available or are null we will leave this field empty.
 
 ### ABCDEFG
 Within ABCDEFG the license can be part of both the unit level and the dataset level.
-We will for look at the unit level as it is the more precise level.
+We will first look at the unit level as it is the more precise level.
 Here we will look at two place for license information:
 - unit/iprstatements/licenses/license/0/uri
 - unit/iprstatements/licenses/license/0/text
 
-If we cannot find a license at the unit level we will look at the dataset level:
+If we cannot find a license at the unit level, we will look at the dataset level:
 - datasets/dataset/metadata/IPRStatements/Licenses/0/URI
 - datasets/dataset/metadata/IPRStatements/Licenses/0/Text 
 

@@ -15,10 +15,10 @@ If these term(s) are not available or are null we will leave this field empty (`
 
 ### ABCDEFG
 Within ABCDEFG the modified can be part of both the unit level and the dataset level.
-We will for look at the unit level as it is the more precise level.
+We will first look at the unit level as it is the more precise level.
 Here we will look at two place for modified information:
 - `abcd:hasDateModified`
 - `abcd:dateLastEdited`
 
-If we cannot find a modified at the unit level we will look at the dataset level:
+If we cannot find a modified at the unit level, we will look at the dataset level:
 - `abcd:metadata/revisionData/dateModified`
