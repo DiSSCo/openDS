@@ -3,7 +3,7 @@
 ## openDS
 Will be harmonised to `dwc:basisOfRecord`
 
-In principle this field cannot be empty, as we use it to determine whether we should process the specimen or not.
+This field can not be empty, as we use it to determine whether we should process the specimen or not.
 Specimen with Basis of Record that are accepted are:
 - Preserved Specimen
 - Fossil Specimen
