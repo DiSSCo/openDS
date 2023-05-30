@@ -9,14 +9,15 @@ Before searching for specimenName in the below terms we will first check if a de
 In the case of specimenName this is improbable however, the functionality is there.
 
 ### DWC
-For DWCA we will look at matches on the term(s) in this order::
+For DWCA we will look at matches on the term(s) in this order:
 - `dwc:scientificName`
+If no scientificName is available in the core file, we check the Identifications extension.
+We follow the logic described for the [taxonomicTerms](./taxonomicTerms.md) to determine which identification to use.  
 If these term(s) are not available or are null we will leave this field empty (`null`).
 
 ### ABCDEFG
-For ABCDEFG there is a difference between ABCD and ABCDEFG on where to find the specimenName.
-Additionally, there could be multiple identification where the accepted one is identified by the `preferredFlag`
-In the code we will walk through the identifications to see if a `preferredFlag` has been set.
+The distinction between ABCD and ABCDEFG is in where to find the specimenName.
+To determine the appropriate identification to use, we rely on the logic outlined in the [taxonomicTerms](taxonomicTerms.md) when multiple identifications are possible.
 If we encounter the `preferredFlag` we will then search first for the ABCD term and then for the ABCDEFG term.
 - `abcd:identifications/identification/{index}/result/taxonIdentified/scientificName/fullScientificNameString`
 - `abcd-efg:identifications/identification/{index}/result/mineralRockIdentified/classifiedName/fullScientificNameString`

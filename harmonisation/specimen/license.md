@@ -14,9 +14,14 @@ For DWCA we will look at matches on two terms:
 If these terms are not available or are null we will leave this field empty.
 
 ### ABCDEFG
-Within ABCDEFG the license is not part of the unit level but is part of the dataset level.
-Within ABCDEFG data we will also look at two possible places:
+Within ABCDEFG the license can be part of both the unit level and the dataset level.
+We will first look at the unit level as it is the more precise level.
+Here we will look at two place for license information:
+- unit/iprstatements/licenses/license/0/uri
+- unit/iprstatements/licenses/license/0/text
+
+If we cannot find a license at the unit level, we will look at the dataset level:
 - datasets/dataset/metadata/IPRStatements/Licenses/0/URI
 - datasets/dataset/metadata/IPRStatements/Licenses/0/Text 
 
-Here we make the assumption that the first license is the correct one.
+If there are multiple licenses defined in the file we will take the first one we encounter.
