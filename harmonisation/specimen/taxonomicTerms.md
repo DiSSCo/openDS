@@ -19,10 +19,10 @@ These terms will be harmonised for taxonomy.
 - `dwc:typeStatus`
 
 ## Mapping
-Before searching for the taxonomy term in the below, terms will first check if a default value or explicit mapping has been set.
+Before searching for the taxonomy terms we will first check if a default value or explicit mapping has been set.
 In the case of taxonomy terms this is improbable however, the functionality is there.
 
-In general for both DWC and ABCD(EFG) we can have multiple taxonomic identification for one specimen.
+In general for both DWC and ABCD(EFG) we can have multiple taxonomic identifications for one specimen.
 This means that before filling in the harmonised field we first have to determine which identification to use.
 This determination is stored in a temporary field and used in the calculation of all taxonomic fields.
 
@@ -40,8 +40,8 @@ This means that we would not give any identification to the specimen.
 
 ### ABCDEFG
 For ABCD(EFG) we use a similar approach as DWC, only there is no core file.
-A specimen in ABCD can have multiple identification, where `preferredFlag` is used to indicate if the identification is accepted.
-To determine which identification to use we go over all the identifications.
+A specimen in ABCD can have multiple identifications, where `preferredFlag` is used to indicate if the identification is accepted.
+To determine which identification to use, we go over all the identifications.
 If no preferredFlag has been set, we will use the first identification we encounter.
 If a preferredFlag has been set, we use the identification where the flag has been set to `true`.
 It is possible that all preferredFlag have been set to `false`, in this case we won't set the taxonomic identification.

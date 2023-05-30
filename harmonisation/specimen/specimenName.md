@@ -16,8 +16,8 @@ We follow the logic described for the [taxonomicTerms](./taxonomicTerms.md) to d
 If these term(s) are not available or are null we will leave this field empty (`null`).
 
 ### ABCDEFG
-For ABCDEFG there is a difference between ABCD and ABCDEFG on where to find the specimenName.
-As there can be multiple identification we use the logic described for the [taxonomicTerms](./taxonomicTerms.md) to determine which identification to use.
+The distinction between ABCD and ABCDEFG is in where to find the specimenName.
+To determine the appropriate identification to use, we rely on the logic outlined in the [taxonomicTerms](taxonomicTerms.md) when multiple identifications are possible.
 If we encounter the `preferredFlag` we will then search first for the ABCD term and then for the ABCDEFG term.
 - `abcd:identifications/identification/{index}/result/taxonIdentified/scientificName/fullScientificNameString`
 - `abcd-efg:identifications/identification/{index}/result/mineralRockIdentified/classifiedName/fullScientificNameString`
