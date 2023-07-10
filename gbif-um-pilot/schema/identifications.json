@@ -1,0 +1,96 @@
+{
+  "$id": "identifications",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "identification_type": {
+      "type": "string"
+    },
+    "taxon_formula": {
+      "type": "string"
+    },
+    "verbatim_identification": {
+      "type": "string"
+    },
+    "type_status": {
+      "type": "string"
+    },
+    "identified_by": {
+      "type": "string"
+    },
+    "identified_by_id": {
+      "type": "string"
+    },
+    "date_identified": {
+      "type": "string"
+    },
+    "identification_references": {
+      "type": "string"
+    },
+    "identification_verification_status": {
+      "type": "boolean"
+    },
+    "identification_remarks": {
+      "type": "string"
+    },
+    "type_designation_type": {
+      "type": "string"
+    },
+    "type_designated_by": {
+      "type": "string"
+    },
+    "taxon_identifications": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scientific_name": {
+            "type": "string"
+          },
+          "scientific_name_authorship": {
+            "type": "string"
+          },
+          "name_according_to": {
+            "type": "string"
+          },
+          "taxon_rank": {
+            "type": "string"
+          },
+          "taxon_source": {
+            "type": "string"
+          },
+          "taxon_remarks": {
+            "type": "string"
+          },
+          "kingdom": {
+            "type": "string"
+          },
+          "phylum": {
+            "type": "string"
+          },
+          "class": {
+            "type": "string"
+          },
+          "order": {
+            "type": "string"
+          },
+          "family": {
+            "type": "string"
+          },
+          "subfamily": {
+            "type": "string"
+          },
+          "genus": {
+            "type": "string"
+          },
+          "subgenus": {
+            "type": "string"
+          },
+          "accepted_scientific_name": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

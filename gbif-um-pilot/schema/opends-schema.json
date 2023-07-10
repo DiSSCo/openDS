@@ -1,0 +1,144 @@
+{
+  "$id": "root",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "organism_id": {
+      "type": "string",
+      "examples": [
+        "10.22/XXX-XXX-XXX"
+      ]
+    },
+    "version": {
+      "type": "integer",
+      "examples": [
+        1
+      ]
+    },
+    "created": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "midsLevel": {
+      "type": "integer"
+    },
+    "physical_specimen_id": {
+      "type": "string"
+    },
+    "physical_specimen_id_type": {
+      "type": "string",
+      "enum": ["GLOBAL, LOCAL"]
+    },
+    "source_system": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "preparations": {
+      "type": "string"
+    },
+    "disposition": {
+      "type": "string"
+    },
+    "institution_code": {
+      "type": "string"
+    },
+    "institution_id": {
+      "type": "string"
+    },
+    "collection_code": {
+      "type": "string"
+    },
+    "collection_id": {
+      "type": "string"
+    },
+    "owner_institution_code": {
+      "type": "string"
+    },
+    "catalog_number": {
+      "type": "string",
+      "$comment": "Is this needed when we have the identifier array?"
+    },
+    "record_number": {
+      "type": "string",
+      "$comment": "Is this needed when we have the identifier array?"
+    },
+    "recorded_by": {
+      "type": "string"
+    },
+    "recorded_by_id": {
+      "type": "string"
+    },
+    "associated_references": {
+      "type": "string",
+      "$comment": "Is this needed if we have citations array?"
+    },
+    "associated_sequences": {
+      "type": "string",
+      "$comment": "Isn't this a digital media, which we can associate through the entity relationship"
+    },
+    "other_catalog_numbers": {
+      "type": "string",
+      "$comment": "Is this needed when we have the identifier array?"
+    },
+    "material_entity": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "material_entity.json"
+      }
+    },
+    "identifications": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "identifications.json"
+      }
+    },
+    "assertions": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "assertions.json"
+      }
+    },
+    "occurrences": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "occurrences.json"
+      }
+    },
+    "entity_relationships": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "entity_relationships.json"
+      }
+    },
+    "citations": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "citations.json"
+      }
+    },
+    "identifiers": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "identifications.json"
+      }
+    },
+    "chronometric_age": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "chronometric_age.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$id": "root",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "identifier_type": {
+      "type": "string"
+    },
+    "identifier_value":{
+      "type": "string"
+    }
+  }
+}

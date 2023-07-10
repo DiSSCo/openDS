@@ -1,0 +1,22 @@
+{
+  "$id": "entity_relationship",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "subject_entity_id": {
+      "type": "string"
+    },
+    "entity_relationship_type": {
+      "type": "string"
+    },
+    "object_entity_iri": {
+      "type": "string"
+    },
+    "entity_relationship_date": {
+      "type": "string"
+    },
+    "entity_relationship_order": {
+      "type": "integer"
+    }
+  }
+}

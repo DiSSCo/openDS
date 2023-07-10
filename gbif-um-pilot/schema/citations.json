@@ -1,0 +1,31 @@
+{
+  "$id": "root",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "citation_type": {
+      "type": "string"
+    },
+    "citation_page_number": {
+      "type": "string"
+    },
+    "citation_remarks": {
+      "type": "string"
+    },
+    "reference_type": {
+      "type": "string"
+    },
+    "bibliographic_citation": {
+      "type": "string"
+    },
+    "reference_year": {
+      "type": "string"
+    },
+    "reference_iri": {
+      "type": "string"
+    },
+    "is_peer_reviewed": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "$id": "occurrence",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "organism_quantity": {
+      "type": "string"
+    },
+    "organism_quantity_type": {
+      "type": "string"
+    },
+    "sex": {
+      "type": "string"
+    },
+    "life_stage": {
+      "type": "string"
+    },
+    "reproductive_condition": {
+      "type": "string"
+    },
+    "behavior": {
+      "type": "string"
+    },
+    "establishment_means": {
+      "type": "string"
+    },
+    "occurrence_status": {
+      "type": "string",
+      "enum": [
+        "PRESENT",
+        "ABSENT"
+      ]
+    },
+    "pathway": {
+      "type": "string"
+    },
+    "degree_of_establishment": {
+      "type": "string"
+    },
+    "georeference_verification_status": {
+      "type": "string"
+    },
+    "occurrence_remarks": {
+      "type": "string"
+    },
+    "information_withheld": {
+      "type": "string"
+    },
+    "data_generalizations": {
+      "type": "string"
+    },
+    "recorded_by": {
+      "type": "string"
+    },
+    "recorded_by_id": {
+      "type": "string"
+    },
+    "event_name": {
+      "type": "string"
+    },
+    "field_number": {
+      "type": "string"
+    },
+    "event_date": {
+      "type": "string"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "month": {
+      "type": "integer"
+    },
+    "day": {
+      "type": "integer"
+    },
+    "habitat": {
+      "type": "string"
+    },
+    "protocol_description": {
+      "type": "string"
+    },
+    "sample_size_value": {
+      "type": "string"
+    },
+    "sample_size_unit": {
+      "type": "string"
+    },
+    "event_effort": {
+      "type": "string"
+    },
+    "field_notes": {
+      "type": "string"
+    },
+    "event_remarks": {
+      "type": "string"
+    },
+    "collector_name": {
+      "type": "string",
+      "$comment": "Not part of the UM?"
+    },
+    "collector_id": {
+      "type": "string",
+      "$comment": "Not part of the UM?"
+    },
+    "location": {
+      "type": "object",
+      "properties": {
+        "continent": {
+          "type": "string"
+        },
+        "water_body": {
+          "type": "string"
+        },
+        "island_group": {
+          "type": "string"
+        },
+        "island": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "country_code": {
+          "type": "string"
+        },
+        "state_province": {
+          "type": "string"
+        },
+        "county": {
+          "type": "string"
+        },
+        "municipality": {
+          "type": "string"
+        },
+        "locality": {
+          "type": "string"
+        },
+        "minimum_elevation_in_meters": {
+          "type": "integer"
+        },
+        "maximum_elevation_in_meters": {
+          "type": "integer"
+        },
+        "minimum_distance_above_surface_in_meters": {
+          "type": "integer"
+        },
+        "maximum_distance_above_surface_in_meters": {
+          "type": "integer"
+        },
+        "minimum_depth_in_meters": {
+          "type": "integer"
+        },
+        "maximum_depth_in_meters": {
+          "type": "string"
+        },
+        "vertical_datum": {
+          "type": "string"
+        },
+        "location_according_to": {
+          "type": "string"
+        },
+        "location_remarks": {
+          "type": "string"
+        },
+        "georeference": {
+          "type": "object",
+          "properties": {
+            "decimal_latitude": {
+              "type": "integer"
+            },
+            "decimal_longitude": {
+              "type": "integer"
+            },
+            "geodetic_datum": {
+              "type": "string"
+            },
+            "coordinate_uncertainty_in_meters": {
+              "type": "integer"
+            },
+            "coordinate_precision": {
+              "type": "integer"
+            },
+            "point_radius_spatial_fit": {
+              "type": "integer"
+            },
+            "footprint_wkt": {
+              "type": "string"
+            },
+            "footprint_srs": {
+              "type": "string"
+            },
+            "footprint_spatial_fit": {
+              "type": "integer"
+            },
+            "georeferenced_by": {
+              "type": "integer"
+            },
+            "georeferenced_date": {
+              "type": "integer"
+            },
+            "georeference_protocol": {
+              "type": "integer"
+            },
+            "georeference_sources": {
+              "type": "string"
+            },
+            "georeference_remarks": {
+              "type": "string"
+            },
+            "preferred_spatial_representation": {
+              "type": "string"
+            }
+          }
+        },
+        "geological_context": {
+          "type": "object",
+          "properties": {
+            "earliest_eon_or_lowest_eonothem": {
+              "type": "string"
+            },
+            "latest_eon_or_highest_eonothem": {
+              "type": "string"
+            },
+            "earliest_era_or_lowest_erathem": {
+              "type": "integer"
+            },
+            "latest_era_or_highest_erathem": {
+              "type": "integer"
+            },
+            "earliest_period_or_lowest_system": {
+              "type": "integer"
+            },
+            "latest_period_or_highest_system": {
+              "type": "integer"
+            },
+            "earliest_epoch_or_lowest_series": {
+              "type": "string"
+            },
+            "latest_epoch_or_highest_series": {
+              "type": "string"
+            },
+            "earliest_age_or_lowest_stage": {
+              "type": "string"
+            },
+            "latest_age_or_highest_stage": {
+              "type": "string"
+            },
+            "lowest_biostratigraphic_zone": {
+              "type": "string"
+            },
+            "highest_biostratigraphic_zone": {
+              "type": "integer"
+            },
+            "lithostratigraphic_terms": {
+              "type": "integer"
+            },
+            "group": {
+              "type": "integer"
+            },
+            "formation": {
+              "type": "integer"
+            },
+            "member": {
+              "type": "string"
+            },
+            "bed": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

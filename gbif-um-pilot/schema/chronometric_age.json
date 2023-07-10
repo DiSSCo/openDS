@@ -1,0 +1,58 @@
+{
+  "$id": "root",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "verbatim_chronometric_age": {
+      "type": "string"
+    },
+    "verbatim_chronometric_age_protocol": {
+      "type": "string"
+    },
+    "uncalibrated_chronometric_age": {
+      "type": "string"
+    },
+    "chronometric_age_conversion_protocol": {
+      "type": "string"
+    },
+    "earliest_chronometric_age": {
+      "type": "string"
+    },
+    "earliest_chronometric_age_reference_system": {
+      "type": "string"
+    },
+    "latest_chronometric_age": {
+      "type": "integer"
+    },
+    "latest_chronometric_age_reference_system": {
+      "type": "string"
+    },
+    "chronometric_age_uncertainty_in_years": {
+      "type": "integer"
+    },
+    "chronometric_age_uncertainty_method": {
+      "type": "string"
+    },
+    "material_dated": {
+      "type": "string"
+    },
+    "material_dated_id": {
+      "type": "string"
+    },
+    "material_dated_relationship": {
+      "type": "string"
+    },
+    "chronometric_age_determined_by": {
+      "type": "string"
+    },
+    "chronometric_age_determined_date": {
+      "type": "string"
+    },
+    "chronometric_age_references": {
+      "type": "string"
+    },
+    "chronometric_age_remarks": {
+      "type": "string"
+    }
+  }
+}

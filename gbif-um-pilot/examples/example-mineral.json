@@ -1,0 +1,60 @@
+// https://geocase.eu/specimen/TUG1608-146
+{
+  "organism_id": "10.22/XXX-XXX-XXX",
+  "type": "GeologyRockSpecimen",
+  "version": 1,
+  "created": "2023-07-10T12:02:00.000Z",
+  "midsLevel": 1,
+  "physical_specimen_id": "https://geocollections.info/specimen/253820",
+  "physical_specimen_type": "GLOBAL",
+  "institution_code": "Tallinn University of Technology",
+  "institution_id": "https://ror.org/0443cwa12",
+  "collection_code": "TUG geological collections",
+  "source_system": "https://hdl.handle.net/20.5000.1025/MN0-5XP-FFD",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "identifications": [
+    {
+      "identification_verification_status": true,
+      "taxon_identifications": {
+        "scientific_name": "Serpentine"
+      }
+    }
+  ],
+  "identifiers": [
+    {
+      "identifier_type": "unitID",
+      "identifier_value": "1608-146"
+    },
+    {
+      "identifier_type": "UnitIDNumeric",
+      "identifier_value": "253820"
+    },
+    {
+      "identifier_type": "unitGUID",
+      "identifier_value": "https://geocollections.info/specimen/253820"
+    }
+  ],
+  "occurrences": [
+    {
+      "organism_quantity": "single specimen",
+      "recorded_by": "Beil, Hw.",
+      "event_date": "juuni 1996",
+      "location": {
+        "country": "Italy",
+        "locality": "Fetovaia, Elba",
+        "georeference": {
+          "decimal_latitude": 42.734499,
+          "decimal_longitude": 10.151274,
+          "geodetic_datum": "WGS84",
+          "coordinate_uncertainty_in_meters": 1000
+        }
+      }
+    }
+  ],
+  "entity_relationship": [
+    {
+      "entity_relationship_type": "HAS_MINDAT_ID",
+      "object_entity_iri": "https://www.mindat.org/min-11135.html"
+    }
+  ]
+}
