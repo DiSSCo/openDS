@@ -54,7 +54,9 @@
   "entity_relationship": [
     {
       "entity_relationship_type": "HAS_MINDAT_ID",
-      "object_entity_iri": "https://www.mindat.org/min-11135.html"
+      "object_entity_iri": "https://www.mindat.org/min-11135.html",
+      "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+      "entity_relationship_order": 0
     }
   ]
 }

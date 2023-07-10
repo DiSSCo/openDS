@@ -61,8 +61,8 @@
         "geological_context": {
           "latest_epoch_or_highest_series": "OLIGOCEEN",
           "earliest_epoch_or_lowest_series": "OLIGOCEEN",
-          "earliest_age_or_lowest_stage": "OLIGOCEEN",
-          "latest_age_or_highest_stage": "OLIGOCEEN",
+          "earliest_age_or_lowest_stage": "CHATTIEN ACHATTIEN A",
+          "latest_age_or_highest_stage": "CHATTIEN ACHATTIEN A",
           "member": "Grafenberger Sande",
           "bed": "vermoedelijk Schicht II van Görges, 1941"
         }
@@ -91,7 +91,9 @@
       "entity_relationship": [
         {
           "entity_relationship_type": "IS_PART_OF",
-          "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX"
+          "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX",
+          "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+          "entity_relationship_order": 0
         }
       ]
     },
@@ -116,7 +118,9 @@
       "entity_relationship": [
         {
           "entity_relationship_type": "IS_PART_OF",
-          "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX"
+          "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX",
+          "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+          "entity_relationship_order": 0
         }
       ]
     }
