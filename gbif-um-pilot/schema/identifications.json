@@ -63,7 +63,6 @@
     "dwc:identification_verification_status": {
       "type": "boolean",
       "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus",
-      ,
       "example": [
         true
       ]

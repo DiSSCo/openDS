@@ -6,61 +6,85 @@
     "material_entity_id": {
       "type": "string"
     },
-    "version": {
-      "type": "integer",
+    "ods:created": {
+      "type": "string",
+      "description": "The timestamp that the object version was created in DiSSCo",
+      "format": "date-time",
       "examples": [
-        1
       ]
     },
-    "created": {
-      "type": "string"
-    },
-    "preparations": {
-      "type": "string"
-    },
-    "disposition": {
-      "type": "string"
-    },
-    "institution_code": {
-      "type": "string"
-    },
-    "institution_id": {
-      "type": "string"
-    },
-    "collection_code": {
-      "type": "string"
-    },
-    "collection_id": {
-      "type": "string"
-    },
-    "owner_institution_code": {
-      "type": "string"
-    },
-    "catalog_number": {
+    "dwc:preparations": {
       "type": "string",
-      "$comment": "Is this needed when we have the identifier array?"
+      "description": "https://rs.tdwg.org/dwc/terms/preparations",
+      "example": [
+        "fossil"
+      ]
     },
-    "record_number": {
+    "dwc:disposition": {
       "type": "string",
-      "$comment": "Is this needed when we have the identifier array?"
+      "description": "https://rs.tdwg.org/dwc/terms/disposition",
+      "examples": [
+        "in collection"
+      ]
     },
-    "recorded_by": {
-      "type": "string"
-    },
-    "recorded_by_id": {
-      "type": "string"
-    },
-    "associated_references": {
+    "dwc:institution_code": {
       "type": "string",
-      "$comment": "Is this needed if we have citations array?"
+      "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
+      "examples": [
+        "MNF"
+      ]
     },
-    "associated_sequences": {
+    "???:institution_id": {
       "type": "string",
-      "$comment": "Isn't this a digital media, which we can associate through the entity relationship"
+      "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "examples": [
+        "https://ror.org/015hz7p22"
+      ]
     },
-    "other_catalog_numbers": {
+    "dwc:institution_name": {
       "type": "string",
-      "$comment": "Is this needed when we have the identifier array?"
+      "description": "Full museum name according to ROR or Wikidata",
+      "examples": [
+        "National Museum of Natural History"
+      ],
+      "$comment": "Not part of DWC or the GBIF UM"
+    },
+    "dwc:collection_code": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
+      "examples": [
+        "EBIRD"
+      ]
+    },
+    "dwc:collection_id": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/collectionID",
+      "examples": [
+        "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
+      ],
+      "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
+    },
+    "dwc:owner_institution_id": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier for the owning institution",
+      "$comment": "DWC only has owner_institution_code, however code is not an (resolvable identifier)",
+      "examples": [
+        "https://ror.org/03wkt5x30"
+      ]
+    },
+    "dwc:recorded_by": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
+      "examples": [
+        "José E. Crespo"
+      ]
+    },
+    "dwc:recorded_by_id": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
+      "examples": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
     },
     "identifications": {
       "type": "object",

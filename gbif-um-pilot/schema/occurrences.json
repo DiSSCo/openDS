@@ -61,7 +61,7 @@
     "dwc:occurrence_status": {
       "type": "string",
       "description": "http://rs.tdwg.org/dwc/terms/occurrenceStatus",
-      "examples":  [
+      "examples": [
         "present"
       ],
       "enum": [
@@ -139,210 +139,467 @@
         "RV Sol 87-03-08"
       ]
     },
-    "event_date": {
-      "type": "string"
+    "dwc:event_date": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "examples": [
+        "1963-03-08T14:07-0600"
+      ]
     },
-    "year": {
-      "type": "integer"
+    "dwc:year": {
+      "type": "integer",
+      "description": "http://rs.tdwg.org/dwc/terms/year",
+      "examples": [
+        2008
+      ]
     },
-    "month": {
-      "type": "integer"
+    "dwc:month": {
+      "type": "integer",
+      "description": "http://rs.tdwg.org/dwc/terms/month",
+      "examples": [
+        12
+      ]
     },
-    "day": {
-      "type": "integer"
+    "dwc:day": {
+      "type": "integer",
+      "description": "http://rs.tdwg.org/dwc/terms/day",
+      "examples": [
+        29
+      ]
     },
-    "habitat": {
-      "type": "string"
+    "dwc:habitat": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/habitat",
+      "examples": [
+        "savanna"
+      ],
+      "$comment": "Is this necessary for specimens"
     },
     "protocol_description": {
       "type": "string"
     },
-    "sample_size_value": {
-      "type": "string"
+    "dwc:sample_size_value": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/sampleSizeValue",
+      "examples": [
+        "5"
+      ]
     },
-    "sample_size_unit": {
-      "type": "string"
+    "dwc:sample_size_unit": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/sampleSizeUnit",
+      "examples": [
+        "meters"
+      ]
     },
     "event_effort": {
       "type": "string"
     },
-    "field_notes": {
-      "type": "string"
+    "dwc:field_notes": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/fieldNotes",
+      "examples": [
+        "Notes available in the Grinnell-Miller Library"
+      ]
     },
-    "event_remarks": {
-      "type": "string"
+    "dwc:event_remarks": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/eventRemarks",
+      "examples": [
+        "After the recent rains the river is nearly at flood stage"
+      ]
     },
     "collector_name": {
       "type": "string",
-      "$comment": "Not part of the UM?"
+      "$comment": "Not part of DWC or the UM?"
     },
     "collector_id": {
       "type": "string",
-      "$comment": "Not part of the UM?"
+      "$comment": "Not part of DWC or the UM?"
     },
     "location": {
       "type": "object",
       "properties": {
-        "continent": {
-          "type": "string"
+        "dwc:continent": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/continent",
+          "examples": [
+            "Africa"
+          ]
         },
-        "water_body": {
-          "type": "string"
+        "dwc:water_body": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/waterBody",
+          "examples": [
+            "Baltic Sea"
+          ]
         },
-        "island_group": {
-          "type": "string"
+        "dwc:island_group": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/islandGroup",
+          "examples": [
+            "Seychelles"
+          ]
         },
-        "island": {
-          "type": "string"
+        "dwc:island": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/island",
+          "examples": [
+            "Vancouver"
+          ]
         },
-        "country": {
-          "type": "string"
+        "dwc:country": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/country",
+          "examples": [
+            "Colombia"
+          ]
         },
-        "country_code": {
-          "type": "string"
+        "dwc:country_code": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/countryCode",
+          "examples": [
+            "SV"
+          ]
         },
-        "state_province": {
-          "type": "string"
+        "dwc:state_province": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/stateProvince",
+          "examples": [
+            "Montana"
+          ]
         },
-        "county": {
-          "type": "string"
+        "dwc:county": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/county",
+          "examples": [
+            "Los Lagos"
+          ]
         },
-        "municipality": {
-          "type": "string"
+        "dwc:municipality": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/municipality",
+          "examples": [
+            "Holzminden"
+          ]
         },
-        "locality": {
-          "type": "string"
+        "dwc:locality": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/locality",
+          "examples": [
+            "Zeeuws-Vlaanderen, Hulst, Braakman"
+          ]
         },
-        "minimum_elevation_in_meters": {
-          "type": "integer"
+        "dwc:minimum_elevation_in_meters": {
+          "type": "integer",
+          "description": "http://rs.tdwg.org/dwc/terms/minimumElevationInMeters",
+          "examples": [
+            -100
+          ]
         },
-        "maximum_elevation_in_meters": {
-          "type": "integer"
+        "dwc:maximum_elevation_in_meters": {
+          "type": "integer",
+          "description": "http://rs.tdwg.org/dwc/terms/maximumElevationInMeters",
+          "examples": [
+            205
+          ]
         },
-        "minimum_distance_above_surface_in_meters": {
-          "type": "integer"
+        "dwc:minimum_distance_above_surface_in_meters": {
+          "type": "integer",
+          "description": "http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters",
+          "examples": [
+            -1,
+            5
+          ]
         },
-        "maximum_distance_above_surface_in_meters": {
-          "type": "integer"
+        "dwc:maximum_distance_above_surface_in_meters": {
+          "type": "integer",
+          "description": "http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters",
+          "examples": [
+            4.2
+          ]
         },
-        "minimum_depth_in_meters": {
-          "type": "integer"
+        "dwc:minimum_depth_in_meters": {
+          "type": "integer",
+          "description": "http://rs.tdwg.org/dwc/terms/minimumDepthInMeters",
+          "examples": [
+            50
+          ]
         },
-        "maximum_depth_in_meters": {
-          "type": "string"
+        "dwc:maximum_depth_in_meters": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/maximumDepthInMeters",
+          "examples": [
+            340
+          ]
         },
-        "vertical_datum": {
-          "type": "string"
+        "dwc:vertical_datum": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/verticalDatum",
+          "examples": [
+            "EGM84"
+          ]
         },
-        "location_according_to": {
-          "type": "string"
+        "dwc:location_according_to": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/locationAccordingTo",
+          "examples": [
+            "GADM"
+          ]
         },
-        "location_remarks": {
-          "type": "string"
+        "dwc:location_remarks": {
+          "type": "string",
+          "description": "http://rs.tdwg.org/dwc/terms/locationRemarks",
+          "examples": [
+            "under water since 2005"
+          ]
         },
         "georeference": {
           "type": "object",
           "properties": {
-            "decimal_latitude": {
-              "type": "integer"
+            "dwc:decimal_latitude": {
+              "type": "integer",
+              "description": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
+              "examples": [
+                -41.0983423
+              ],
+              "minimum": -180,
+              "maximum": 180
             },
-            "decimal_longitude": {
-              "type": "integer"
+            "dwc:decimal_longitude": {
+              "type": "integer",
+              "description": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
+              "examples": [
+                -121.1761111
+              ],
+              "minimum": -180,
+              "maximum": 180
             },
-            "geodetic_datum": {
-              "type": "string"
+            "dwc:geodetic_datum": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/geodeticDatum",
+              "examples": [
+                "WGS84"
+              ]
             },
-            "coordinate_uncertainty_in_meters": {
-              "type": "integer"
+            "dwc:coordinate_uncertainty_in_meters": {
+              "type": "integer",
+              "description": "http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
+              "examples": [
+                100
+              ],
+              "minimum": 0
             },
-            "coordinate_precision": {
-              "type": "integer"
+            "dwc:coordinate_precision": {
+              "type": "integer",
+              "description": "http://rs.tdwg.org/dwc/terms/coordinatePrecision",
+              "examples": [
+                0.01667
+              ]
             },
-            "point_radius_spatial_fit": {
-              "type": "integer"
+            "dwc:point_radius_spatial_fit": {
+              "type": "integer",
+              "description": "http://rs.tdwg.org/dwc/terms/pointRadiusSpatialFit",
+              "examples": [
+                1.5708
+              ]
             },
-            "footprint_wkt": {
-              "type": "string"
+            "dwc:footprint_wkt": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/footprintWKT",
+              "examples": [
+                "POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20))"
+              ]
             },
-            "footprint_srs": {
-              "type": "string"
+            "dwc:footprint_srs": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/footprintSRS",
+              "examples": [
+                "epsg:4326"
+              ]
             },
-            "footprint_spatial_fit": {
-              "type": "integer"
+            "dwc:footprint_spatial_fit": {
+              "type": "integer",
+              "description": "http://rs.tdwg.org/dwc/terms/footprintSpatialFit",
+              "examples": [
+                1.5708
+              ]
             },
-            "georeferenced_by": {
-              "type": "integer"
+            "dwc:georeferenced_by": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/georeferencedBy",
+              "examples": [
+                "Janet Fang"
+              ]
             },
-            "georeferenced_date": {
-              "type": "integer"
+            "dwc:georeferenced_date": {
+              "type": "string",
+              "format": "date-time",
+              "description": "http://rs.tdwg.org/dwc/terms/georeferencedDate",
+              "examples": [
+                "1963-03-08T14:07-0600"
+              ]
             },
-            "georeference_protocol": {
-              "type": "integer"
+            "dwc:georeference_protocol": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/georeferenceProtocol",
+              "examples": [
+                "https://doi.org/10.35035/e09p-h128"
+              ]
             },
-            "georeference_sources": {
-              "type": "string"
+            "dwc:georeference_sources": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/georeferenceSources",
+              "examples": [
+                "https://www.geonames.org/"
+              ]
             },
-            "georeference_remarks": {
-              "type": "string"
+            "dwc:georeference_remarks": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/georeferenceRemarks",
+              "examples": [
+                "Assumed distance by road (Hwy. 101)"
+              ]
             },
             "preferred_spatial_representation": {
-              "type": "string"
+              "type": "string",
+              "$comment": "Not part of DWC"
             }
           }
         },
         "geological_context": {
           "type": "object",
           "properties": {
-            "earliest_eon_or_lowest_eonothem": {
-              "type": "string"
+            "dwc:earliest_eon_or_lowest_eonothem": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem",
+              "examples": [
+                "Phanerozoic"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "latest_eon_or_highest_eonothem": {
-              "type": "string"
+            "dwc:latest_eon_or_highest_eonothem": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem",
+              "examples": [
+                "Proterozoic"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "earliest_era_or_lowest_erathem": {
-              "type": "integer"
+            "dwc:earliest_era_or_lowest_erathem": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem",
+              "examples": [
+                "Cenozoic"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "latest_era_or_highest_erathem": {
-              "type": "integer"
+            "dwc:latest_era_or_highest_erathem": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/latestEraOrHighestErathem",
+              "examples": [
+                "Mesozoic"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "earliest_period_or_lowest_system": {
-              "type": "integer"
+            "dwc:earliest_period_or_lowest_system": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/earliestPeriodOrLowestSystem",
+              "examples": [
+                "Tertiary"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "latest_period_or_highest_system": {
-              "type": "integer"
+            "dwc:latest_period_or_highest_system": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/latestPeriodOrHighestSystem",
+              "examples": [
+                "Quaternary"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "earliest_epoch_or_lowest_series": {
-              "type": "string"
+            "dwc:earliest_epoch_or_lowest_series": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/earliestEpochOrLowestSeries",
+              "examples": [
+                "Holocene"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "latest_epoch_or_highest_series": {
-              "type": "string"
+            "dwc:latest_epoch_or_highest_series": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/latestEpochOrHighestSeries",
+              "examples": [
+                "Pleistocene"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "earliest_age_or_lowest_stage": {
-              "type": "string"
+            "dwc:earliest_age_or_lowest_stage": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/earliestAgeOrLowestStage",
+              "examples": [
+                "Atlantic"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "latest_age_or_highest_stage": {
-              "type": "string"
+            "dwc:latest_age_or_highest_stage": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage",
+              "examples": [
+                "Boreal"
+              ],
+              "$comment": "Strange field, mixes geologic and stratigraphic unit. The earliest/latest is not in line with the rest"
             },
-            "lowest_biostratigraphic_zone": {
-              "type": "string"
+            "dwc:lowest_biostratigraphic_zone": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/lowestBiostratigraphicZone",
+              "examples": [
+                "Maastrichtian"
+              ],
+              "$comment": "Strange field, lowest and highest"
             },
-            "highest_biostratigraphic_zone": {
-              "type": "integer"
+            "dwc:highest_biostratigraphic_zone": {
+              "type": "integer",
+              "description": "http://rs.tdwg.org/dwc/terms/highestBiostratigraphicZone",
+              "examples": [
+                "Blancan"
+              ],
+              "$comment": "Strange field, lowest and highest"
             },
-            "lithostratigraphic_terms": {
-              "type": "integer"
+            "dwc:lithostratigraphic_terms": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/lithostratigraphicTerms",
+              "examples": [
+                "Pleistocene-Weichselien"
+              ]
             },
-            "group": {
-              "type": "integer"
+            "dwc:group": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/group",
+              "examples": [
+                "Bathurst"
+              ]
             },
-            "formation": {
-              "type": "integer"
+            "dwc:formation": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/formation",
+              "examples": [
+                "House Limestone"
+              ]
             },
-            "member": {
-              "type": "string"
+            "dwc:member": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/member",
+              "examples": [
+                "Lava Dam Member"
+              ]
             },
-            "bed": {
-              "type": "string"
+            "dwc:bed": {
+              "type": "string",
+              "description": "http://rs.tdwg.org/dwc/terms/bed",
+              "examples": [
+                "Harlem coal"
+              ]
             }
           }
         }
