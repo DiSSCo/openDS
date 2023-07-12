@@ -3,63 +3,141 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "organism_quantity": {
-      "type": "string"
-    },
-    "organism_quantity_type": {
-      "type": "string"
-    },
-    "sex": {
-      "type": "string"
-    },
-    "life_stage": {
-      "type": "string"
-    },
-    "reproductive_condition": {
-      "type": "string"
-    },
-    "behavior": {
-      "type": "string"
-    },
-    "establishment_means": {
-      "type": "string"
-    },
-    "occurrence_status": {
+    "dwc:organism_quantity": {
       "type": "string",
-      "enum": [
-        "PRESENT",
-        "ABSENT"
+      "description": "http://rs.tdwg.org/dwc/terms/organismQuantity",
+      "examples": [
+        "27"
       ]
     },
-    "pathway": {
-      "type": "string"
+    "dwc:organism_quantity_type": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/organismQuantityType",
+      "examples": [
+        "individuals"
+      ],
+      "$comment": "Could this become a enum?"
     },
-    "degree_of_establishment": {
-      "type": "string"
+    "dwc:sex": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/sex",
+      "examples": [
+        "female"
+      ],
+      "$comment": "Could this become a enum?"
     },
-    "georeference_verification_status": {
-      "type": "string"
+    "dwc:life_stage": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/lifeStage",
+      "examples": [
+        "adult"
+      ],
+      "$comment": "Could this become a enum?"
     },
-    "occurrence_remarks": {
-      "type": "string"
+    "dwc:reproductive_condition": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/reproductiveCondition",
+      "examples": [
+        "pregnant"
+      ],
+      "$comment": "Could this become a enum?"
     },
-    "information_withheld": {
-      "type": "string"
+    "dwc:behavior": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/behavior",
+      "examples": [
+        "running"
+      ],
+      "$comment": "Is this needed for specimen data?"
     },
-    "data_generalizations": {
-      "type": "string"
+    "dwc:establishment_means": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/establishmentMeans",
+      "examples": [
+        "introduced"
+      ],
+      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/em/"
     },
-    "recorded_by": {
-      "type": "string"
+    "dwc:occurrence_status": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/occurrenceStatus",
+      "examples":  [
+        "present"
+      ],
+      "enum": [
+        "present",
+        "absent"
+      ]
     },
-    "recorded_by_id": {
-      "type": "string"
+    "dwc:pathway": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/pathway",
+      "examples": [
+        "releasedForUse"
+      ],
+      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/pw/"
+    },
+    "dwc:degree_of_establishment": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/degreeOfEstablishment",
+      "examples": [
+        "captive"
+      ],
+      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/doe/"
+    },
+    "dwc:georeference_verification_status": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus",
+      "examples": [
+        "verified by data custodian"
+      ],
+      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/em/"
+    },
+    "dwc:occurrence_remarks": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
+      "examples": [
+        "found dead on road"
+      ]
+    },
+    "dwc:information_withheld": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/informationWithheld",
+      "examples": [
+        "location information not given for endangered species"
+      ],
+      "$comment": "Feels like this field should be true or false and another field should contain the explanation"
+    },
+    "dwc:data_generalizations": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/dataGeneralizations",
+      "examples": [
+        "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
+      ]
+    },
+    "dwc:recorded_by": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/recordedBy",
+      "examples": [
+        "José E. Crespo"
+      ]
+    },
+    "dwc:recorded_by_id": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/recordedByID",
+      "examples": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
     },
     "event_name": {
       "type": "string"
     },
-    "field_number": {
-      "type": "string"
+    "dwc:field_number": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/fieldNumber",
+      "examples": [
+        "RV Sol 87-03-08"
+      ]
     },
     "event_date": {
       "type": "string"

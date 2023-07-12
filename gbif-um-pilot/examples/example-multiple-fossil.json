@@ -2,7 +2,7 @@
 // If the second identification was also true.
 // So it assumes the API tries to reflect one stone with two fossils on it
 {
-  "organism_id": "10.22/XXX-XXX-XXX",
+  "id": "10.22/XXX-XXX-XXX",
   "type": "FossilSpecimen",
   "version": 1,
   "created": "2023-07-10T12:02:00.000Z",
@@ -72,9 +72,6 @@
   "material_entity": [
     {
       "material_entity_id": "20.5000.1025/XXX-XXX-XXX",
-      "type": "FossilSpecimen",
-      "version": 1,
-      "created": "2023-07-10T12:02:00.000Z",
       "identifications": [
         {
           "identified_by": "A.W. Janssen",
@@ -93,15 +90,13 @@
           "entity_relationship_type": "IS_PART_OF",
           "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX",
           "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+          "entity_relationship_creator_id": "20.5000.1025/XXX-XXX-XXX (handle CMS)",
           "entity_relationship_order": 0
         }
       ]
     },
     {
       "material_entity_id": "20.5000.1025/XXX-XXX-XXX",
-      "type": "FossilSpecimen",
-      "version": 1,
-      "created": "2023-07-10T12:02:00.000Z",
       "identifications": [
         {
           "identified_by": "A.W. Janssen",
@@ -120,6 +115,7 @@
           "entity_relationship_type": "IS_PART_OF",
           "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX",
           "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+          "entity_relationship_creator_id": "20.5000.1025/XXX-XXX-XXX (handle CMS)",
           "entity_relationship_order": 0
         }
       ]

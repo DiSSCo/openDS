@@ -1,6 +1,6 @@
 // https://geocase.eu/specimen/TUG1608-146
 {
-  "organism_id": "10.22/XXX-XXX-XXX",
+  "id": "10.22/XXX-XXX-XXX",
   "type": "GeologyRockSpecimen",
   "version": 1,
   "created": "2023-07-10T12:02:00.000Z",
@@ -56,6 +56,7 @@
       "entity_relationship_type": "HAS_MINDAT_ID",
       "object_entity_iri": "https://www.mindat.org/min-11135.html",
       "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+      "entity_relationship_creator_id": "20.5000.1025/XXX-XXX-XXX (handle MAS)",
       "entity_relationship_order": 0
     }
   ]

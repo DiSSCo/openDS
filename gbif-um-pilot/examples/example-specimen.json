@@ -1,6 +1,6 @@
 // https://api.gbif.org/v1/occurrence/1825938271/fragment
 {
-  "organism_id": "10.22/XXX-XXX-XXX",
+  "id": "10.22/XXX-XXX-XXX",
   "version": 1,
   "created": "2023-07-10T12:02:00.000Z",
   "preparations": null,

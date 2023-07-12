@@ -1,0 +1,37 @@
+// https://sandbox.dissco.tech/api/v1/digitalmedia/20.5000.1025/DST-NAN-M4B
+// With assertions coming from MAS image metadata
+{
+  "id": "https://doi.org/10.22/XXX-XXX-XXX",
+  "version": 1,
+  "created": "2023-07-10T12:02:00.000Z",
+  "type": "2DImageObject",
+  "access_uri": "http://mediaphoto.mnhn.fr/media/1486470338538UkaII9pQB5m8YVbp",
+  "creator": "Antoine Fraysse",
+  "license": "cc-by-nc-nd",
+  "assertions": [
+    {
+      "assertion_type": "exif:PixelXDimension",
+      "assertion_value": "5168",
+      "assertion_by_agent_id": "20.5000.1025/XXX-XXX-XXX (handle MAS)"
+    },
+    {
+      "assertion_type": "exif:PixelYDimension",
+      "assertion_value": "3591",
+      "assertion_by_agent_id": "20.5000.1025/XXX-XXX-XXX (handle MAS)"
+    },
+    {
+      "assertion_type": "dcterms:extent",
+      "assertion_value": "1.73MB",
+      "assertion_by_agent_id": "20.5000.1025/XXX-XXX-XXX (handle MAS)"
+    }
+  ],
+  "entity_relationship": [
+    {
+      "entity_relationship_type": "IS_IMAGE_OF",
+      "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX",
+      "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+      "entity_relationship_creator_id": "20.5000.1025/XXX-XXX-XXX (handle CMS)",
+      "entity_relationship_order": 0
+    }
+  ]
+}

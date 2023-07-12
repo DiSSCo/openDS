@@ -17,6 +17,14 @@
     },
     "entity_relationship_order": {
       "type": "integer"
+    },
+    "entity_relationship_creator_name": {
+      "type": "string",
+      "$comment": "Not available in GBIF UM"
+    },
+    "entity_relationship_creator_id": {
+      "type": "string",
+      "$comment": "Not available in GBIF UM"
     }
   }
 }

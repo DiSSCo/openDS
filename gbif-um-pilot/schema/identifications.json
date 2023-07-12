@@ -3,91 +3,194 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "identification_type": {
-      "type": "string"
+    "???:identification_type": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
     },
-    "taxon_formula": {
-      "type": "string"
+    "???:taxon_formula": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
     },
-    "verbatim_identification": {
-      "type": "string"
+    "dwc:verbatim_identification": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/verbatimIdentification",
+      "examples": [
+        "Peromyscus sp."
+      ]
     },
-    "type_status": {
-      "type": "string"
+    "dwc:type_status": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/typeStatus",
+      "enum": [
+        "holotype, syntype"
+      ],
+      "example": [
+        "holotype"
+      ],
+      "$comment": "Unclear if we can make this an enumeration, which values?"
     },
-    "identified_by": {
-      "type": "string"
+    "dwc:identified_by": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identifiedBy",
+      "example": [
+        "James L. Patton"
+      ]
     },
-    "identified_by_id": {
-      "type": "string"
+    "dwc:identified_by_id": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identifiedByID",
+      "example": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
     },
-    "date_identified": {
-      "type": "string"
+    "dwc:date_identified": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/dateIdentified",
+      "example": [
+        "2009-02-20T08:40Z"
+      ]
     },
-    "identification_references": {
-      "type": "string"
+    "dwc:identification_references": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationReferences",
+      "example": [
+        "Aves del Noroeste Patagonico. Christie et al. 2004."
+      ],
+      "$comment": "Is this still needed or can we add the citation object here?"
     },
-    "identification_verification_status": {
-      "type": "boolean"
+    "dwc:identification_verification_status": {
+      "type": "boolean",
+      "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus",
+      ,
+      "example": [
+        true
+      ]
     },
-    "identification_remarks": {
-      "type": "string"
+    "dwc:identification_remarks": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationRemarks",
+      "examples": [
+        "Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas."
+      ]
     },
-    "type_designation_type": {
-      "type": "string"
+    "???:type_designation_type": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
     },
-    "type_designated_by": {
-      "type": "string"
+    "???:type_designated_by": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
     },
     "taxon_identifications": {
       "type": "object",
       "items": {
         "type": "object",
         "properties": {
-          "scientific_name": {
-            "type": "string"
+          "dwc:scientific_name": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/scientificName",
+            "examples": [
+              "Roptrocerus typographi (Györfi, 1952)"
+            ]
           },
-          "scientific_name_authorship": {
-            "type": "string"
+          "dwc:scientific_name_authorship": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
+            "examples": [
+              "(Torr.) J.T. Howell"
+            ]
           },
-          "name_according_to": {
-            "type": "string"
+          "dwc:name_according_to": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/nameAccordingTo",
+            "examples": [
+              "Plants of the World Online"
+            ]
           },
-          "taxon_rank": {
-            "type": "string"
+          "dwc:taxon_rank": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/taxonRank",
+            "examples": [
+              "species"
+            ]
           },
-          "taxon_source": {
-            "type": "string"
+          "???:taxon_source": {
+            "type": "string",
+            "description": "Unclear yet",
+            "$comment": "Unknown what this field should be"
           },
-          "taxon_remarks": {
-            "type": "string"
+          "dwc:taxon_remarks": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/taxonRemarks",
+            "examples": [
+              "this name is a misspelling in common use"
+            ]
           },
-          "kingdom": {
-            "type": "string"
+          "dwc:kingdom": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/kingdom",
+            "examples": [
+              "animalia"
+            ],
+            "$comment": "Could be an enum?"
           },
-          "phylum": {
-            "type": "string"
+          "dwc:phylum": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/phylum",
+            "examples": [
+              "Chordata"
+            ]
           },
-          "class": {
-            "type": "string"
+          "dwc:class": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/class",
+            "examples": [
+              "Hepaticopsida"
+            ]
           },
-          "order": {
-            "type": "string"
+          "dwc:order": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/order",
+            "examples": [
+              "Carnivora"
+            ]
           },
-          "family": {
-            "type": "string"
+          "dwc:family": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/family",
+            "examples": [
+              "Felidae"
+            ]
           },
-          "subfamily": {
-            "type": "string"
+          "dwc:subfamily": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/subfamily",
+            "examples": [
+              "Orchidoideae"
+            ]
           },
-          "genus": {
-            "type": "string"
+          "dwc:genus": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/genus",
+            "examples": [
+              "Puma"
+            ]
           },
-          "subgenus": {
-            "type": "string"
+          "dwc:subgenus": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/subgenus",
+            "examples": [
+              "Strobus"
+            ]
           },
           "accepted_scientific_name": {
-            "type": "string"
+            "type": "string",
+            "description": "Unclear yet",
+            "$comment": "Is this field necessary if we indicated accepted on the identification level"
           }
         }
       }

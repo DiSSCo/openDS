@@ -1,13 +1,25 @@
 {
-  "$id": "root",
+  "$id": "identifiers",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "identifier_type": {
-      "type": "string"
+    "???:identifier_type": {
+      "type": "string",
+      "description": "The type of the identifier",
+      "examples": [
+        "catalogueNumber",
+        "dwca:id"
+      ],
+      "$comments": "Should become new term in DWC or borrow from somewhere else?"
     },
-    "identifier_value":{
-      "type": "string"
+    "???:identifier_value":{
+      "type": "string",
+      "description": "The value for the identifier",
+      "examples": [
+        "BMNH(E)1902475",
+        "RGM.800315"
+      ],
+      "$comments": "Should become new term in DWC or borrow from somewhere else?"
     }
   }
 }

@@ -1,0 +1,92 @@
+{
+  "$id": "digital_entity",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "ods:id": {
+      "type": "string",
+      "examples": [
+        "10.22/XXX-XXX-XXX"
+      ]
+    },
+    "ods:version": {
+      "type": "integer",
+      "examples": [
+        1
+      ]
+    },
+    "ods:created": {
+      "type": "string"
+    },
+    "ods:type": {
+      "type": "string"
+    },
+    "access_uri": {
+      "type": "string"
+    },
+    "web_statement": {
+      "type": "string"
+    },
+    "format": {
+      "type": "string"
+    },
+    "license": {
+      "type": "string"
+    },
+    "rights": {
+      "type": "string"
+    },
+    "rights_uri": {
+      "type": "string"
+    },
+    "access_rights": {
+      "type": "string"
+    },
+    "rights_holder": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "source_uri": {
+      "type": "string"
+    },
+    "creator": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string"
+    },
+    "modified": {
+      "type": "string"
+    },
+    "assertions": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "assertions.json"
+      }
+    },
+    "citations": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "citations.json"
+      }
+    },
+    "identifiers": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "identifications.json"
+      }
+    },
+    "entity_relationships": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "$ref": "entity_relationships.json"
+      }
+    }
+  }
+}
