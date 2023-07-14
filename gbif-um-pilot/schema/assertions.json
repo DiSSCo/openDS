@@ -2,6 +2,7 @@
   "$id": "assertion",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
+  "$comment": "Looks like Measurement or Fact but terminology is different, no ontology yet?",
   "properties": {
     "assertion_type": {
       "type": "string"
@@ -36,5 +37,8 @@
     "assertion_remarks": {
       "type": "string"
     }
-  }
+  },
+  "required": [
+    "assertion_type"
+  ]
 }

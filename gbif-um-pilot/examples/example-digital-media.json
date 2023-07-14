@@ -4,24 +4,27 @@
   "id": "https://doi.org/10.22/XXX-XXX-XXX",
   "version": 1,
   "created": "2023-07-10T12:02:00.000Z",
-  "type": "2DImageObject",
-  "access_uri": "http://mediaphoto.mnhn.fr/media/1486470338538UkaII9pQB5m8YVbp",
+  "type": "StillImage",
+  "access_uri": "https://mediaphoto.mnhn.fr/media/1486470338538UkaII9pQB5m8YVbp",
   "creator": "Antoine Fraysse",
   "license": "cc-by-nc-nd",
   "assertions": [
     {
       "assertion_type": "exif:PixelXDimension",
       "assertion_value": "5168",
+      "assertion_unit": "pixel",
       "assertion_by_agent_id": "20.5000.1025/XXX-XXX-XXX (handle MAS)"
     },
     {
       "assertion_type": "exif:PixelYDimension",
       "assertion_value": "3591",
+      "assertion_unit": "pixel",
       "assertion_by_agent_id": "20.5000.1025/XXX-XXX-XXX (handle MAS)"
     },
     {
       "assertion_type": "dcterms:extent",
-      "assertion_value": "1.73MB",
+      "assertion_value": "1.73",
+      "assertion_unit": "MB",
       "assertion_by_agent_id": "20.5000.1025/XXX-XXX-XXX (handle MAS)"
     }
   ],

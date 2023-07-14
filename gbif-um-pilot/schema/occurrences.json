@@ -5,14 +5,14 @@
   "properties": {
     "dwc:organism_quantity": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/organismQuantity",
+      "description": "https://rs.tdwg.org/dwc/terms/organismQuantity",
       "examples": [
         "27"
       ]
     },
     "dwc:organism_quantity_type": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/organismQuantityType",
+      "description": "https://rs.tdwg.org/dwc/terms/organismQuantityType",
       "examples": [
         "individuals"
       ],
@@ -20,7 +20,7 @@
     },
     "dwc:sex": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/sex",
+      "description": "https://rs.tdwg.org/dwc/terms/sex",
       "examples": [
         "female"
       ],
@@ -28,7 +28,7 @@
     },
     "dwc:life_stage": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/lifeStage",
+      "description": "https://rs.tdwg.org/dwc/terms/lifeStage",
       "examples": [
         "adult"
       ],
@@ -36,7 +36,7 @@
     },
     "dwc:reproductive_condition": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/reproductiveCondition",
+      "description": "https://rs.tdwg.org/dwc/terms/reproductiveCondition",
       "examples": [
         "pregnant"
       ],
@@ -44,7 +44,7 @@
     },
     "dwc:behavior": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/behavior",
+      "description": "https://rs.tdwg.org/dwc/terms/behavior",
       "examples": [
         "running"
       ],
@@ -52,15 +52,15 @@
     },
     "dwc:establishment_means": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/establishmentMeans",
+      "description": "https://rs.tdwg.org/dwc/terms/establishmentMeans",
       "examples": [
         "introduced"
       ],
-      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/em/"
+      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/em/"
     },
     "dwc:occurrence_status": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/occurrenceStatus",
+      "description": "https://rs.tdwg.org/dwc/terms/occurrenceStatus",
       "examples": [
         "present"
       ],
@@ -71,38 +71,38 @@
     },
     "dwc:pathway": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/pathway",
+      "description": "https://rs.tdwg.org/dwc/terms/pathway",
       "examples": [
         "releasedForUse"
       ],
-      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/pw/"
+      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/pw/"
     },
     "dwc:degree_of_establishment": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/degreeOfEstablishment",
+      "description": "https://rs.tdwg.org/dwc/terms/degreeOfEstablishment",
       "examples": [
         "captive"
       ],
-      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/doe/"
+      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/doe/"
     },
     "dwc:georeference_verification_status": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus",
+      "description": "https://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus",
       "examples": [
         "verified by data custodian"
       ],
-      "$comment": "Could be an enumeration based on http://rs.tdwg.org/dwc/doc/em/"
+      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/em/"
     },
     "dwc:occurrence_remarks": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/occurrenceRemarks",
+      "description": "https://rs.tdwg.org/dwc/terms/occurrenceRemarks",
       "examples": [
         "found dead on road"
       ]
     },
     "dwc:information_withheld": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/informationWithheld",
+      "description": "https://rs.tdwg.org/dwc/terms/informationWithheld",
       "examples": [
         "location information not given for endangered species"
       ],
@@ -110,110 +110,113 @@
     },
     "dwc:data_generalizations": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/dataGeneralizations",
+      "description": "https://rs.tdwg.org/dwc/terms/dataGeneralizations",
       "examples": [
         "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
       ]
     },
     "dwc:recorded_by": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/recordedBy",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
       "examples": [
         "José E. Crespo"
       ]
     },
     "dwc:recorded_by_id": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/recordedByID",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
       "examples": [
         "https://orcid.org/0000-0002-1825-0097"
       ]
     },
-    "event_name": {
-      "type": "string"
+    "???:event_name": {
+      "type": "string",
+      "comment": "Not sure what this field means"
     },
     "dwc:field_number": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/fieldNumber",
+      "description": "https://rs.tdwg.org/dwc/terms/fieldNumber",
       "examples": [
         "RV Sol 87-03-08"
       ]
     },
     "dwc:event_date": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/eventDate",
+      "description": "https://rs.tdwg.org/dwc/terms/eventDate",
       "examples": [
         "1963-03-08T14:07-0600"
       ]
     },
     "dwc:year": {
       "type": "integer",
-      "description": "http://rs.tdwg.org/dwc/terms/year",
+      "description": "https://rs.tdwg.org/dwc/terms/year",
       "examples": [
         2008
       ]
     },
     "dwc:month": {
       "type": "integer",
-      "description": "http://rs.tdwg.org/dwc/terms/month",
+      "description": "https://rs.tdwg.org/dwc/terms/month",
       "examples": [
         12
       ]
     },
     "dwc:day": {
       "type": "integer",
-      "description": "http://rs.tdwg.org/dwc/terms/day",
+      "description": "https://rs.tdwg.org/dwc/terms/day",
       "examples": [
         29
       ]
     },
     "dwc:habitat": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/habitat",
+      "description": "https://rs.tdwg.org/dwc/terms/habitat",
       "examples": [
         "savanna"
       ],
       "$comment": "Is this necessary for specimens"
     },
-    "protocol_description": {
-      "type": "string"
+    "???:protocol_description": {
+      "type": "string",
+      "comment": "Not sure what this field means"
     },
     "dwc:sample_size_value": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/sampleSizeValue",
+      "description": "https://rs.tdwg.org/dwc/terms/sampleSizeValue",
       "examples": [
         "5"
       ]
     },
     "dwc:sample_size_unit": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/sampleSizeUnit",
+      "description": "https://rs.tdwg.org/dwc/terms/sampleSizeUnit",
       "examples": [
         "meters"
       ]
     },
-    "event_effort": {
-      "type": "string"
+    "???:event_effort": {
+      "type": "string",
+      "comment": "Not sure what this field means"
     },
     "dwc:field_notes": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/fieldNotes",
+      "description": "https://rs.tdwg.org/dwc/terms/fieldNotes",
       "examples": [
         "Notes available in the Grinnell-Miller Library"
       ]
     },
     "dwc:event_remarks": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/eventRemarks",
+      "description": "https://rs.tdwg.org/dwc/terms/eventRemarks",
       "examples": [
         "After the recent rains the river is nearly at flood stage"
       ]
     },
-    "collector_name": {
+    "???:collector_name": {
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
     },
-    "collector_id": {
+    "???:collector_id": {
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
     },
@@ -222,91 +225,91 @@
       "properties": {
         "dwc:continent": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/continent",
+          "description": "https://rs.tdwg.org/dwc/terms/continent",
           "examples": [
             "Africa"
           ]
         },
         "dwc:water_body": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/waterBody",
+          "description": "https://rs.tdwg.org/dwc/terms/waterBody",
           "examples": [
             "Baltic Sea"
           ]
         },
         "dwc:island_group": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/islandGroup",
+          "description": "https://rs.tdwg.org/dwc/terms/islandGroup",
           "examples": [
             "Seychelles"
           ]
         },
         "dwc:island": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/island",
+          "description": "https://rs.tdwg.org/dwc/terms/island",
           "examples": [
             "Vancouver"
           ]
         },
         "dwc:country": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/country",
+          "description": "https://rs.tdwg.org/dwc/terms/country",
           "examples": [
             "Colombia"
           ]
         },
         "dwc:country_code": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/countryCode",
+          "description": "https://rs.tdwg.org/dwc/terms/countryCode",
           "examples": [
             "SV"
           ]
         },
         "dwc:state_province": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/stateProvince",
+          "description": "https://rs.tdwg.org/dwc/terms/stateProvince",
           "examples": [
             "Montana"
           ]
         },
         "dwc:county": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/county",
+          "description": "https://rs.tdwg.org/dwc/terms/county",
           "examples": [
             "Los Lagos"
           ]
         },
         "dwc:municipality": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/municipality",
+          "description": "https://rs.tdwg.org/dwc/terms/municipality",
           "examples": [
             "Holzminden"
           ]
         },
         "dwc:locality": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/locality",
+          "description": "https://rs.tdwg.org/dwc/terms/locality",
           "examples": [
             "Zeeuws-Vlaanderen, Hulst, Braakman"
           ]
         },
         "dwc:minimum_elevation_in_meters": {
           "type": "integer",
-          "description": "http://rs.tdwg.org/dwc/terms/minimumElevationInMeters",
+          "description": "https://rs.tdwg.org/dwc/terms/minimumElevationInMeters",
           "examples": [
             -100
           ]
         },
         "dwc:maximum_elevation_in_meters": {
           "type": "integer",
-          "description": "http://rs.tdwg.org/dwc/terms/maximumElevationInMeters",
+          "description": "https://rs.tdwg.org/dwc/terms/maximumElevationInMeters",
           "examples": [
             205
           ]
         },
         "dwc:minimum_distance_above_surface_in_meters": {
           "type": "integer",
-          "description": "http://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters",
+          "description": "https://rs.tdwg.org/dwc/terms/minimumDistanceAboveSurfaceInMeters",
           "examples": [
             -1,
             5
@@ -314,42 +317,42 @@
         },
         "dwc:maximum_distance_above_surface_in_meters": {
           "type": "integer",
-          "description": "http://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters",
+          "description": "https://rs.tdwg.org/dwc/terms/maximumDistanceAboveSurfaceInMeters",
           "examples": [
             4.2
           ]
         },
         "dwc:minimum_depth_in_meters": {
           "type": "integer",
-          "description": "http://rs.tdwg.org/dwc/terms/minimumDepthInMeters",
+          "description": "https://rs.tdwg.org/dwc/terms/minimumDepthInMeters",
           "examples": [
             50
           ]
         },
         "dwc:maximum_depth_in_meters": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/maximumDepthInMeters",
+          "description": "https://rs.tdwg.org/dwc/terms/maximumDepthInMeters",
           "examples": [
             340
           ]
         },
         "dwc:vertical_datum": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/verticalDatum",
+          "description": "https://rs.tdwg.org/dwc/terms/verticalDatum",
           "examples": [
             "EGM84"
           ]
         },
         "dwc:location_according_to": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/locationAccordingTo",
+          "description": "https://rs.tdwg.org/dwc/terms/locationAccordingTo",
           "examples": [
             "GADM"
           ]
         },
         "dwc:location_remarks": {
           "type": "string",
-          "description": "http://rs.tdwg.org/dwc/terms/locationRemarks",
+          "description": "https://rs.tdwg.org/dwc/terms/locationRemarks",
           "examples": [
             "under water since 2005"
           ]
@@ -359,7 +362,7 @@
           "properties": {
             "dwc:decimal_latitude": {
               "type": "integer",
-              "description": "http://rs.tdwg.org/dwc/terms/decimalLatitude",
+              "description": "https://rs.tdwg.org/dwc/terms/decimalLatitude",
               "examples": [
                 -41.0983423
               ],
@@ -368,7 +371,7 @@
             },
             "dwc:decimal_longitude": {
               "type": "integer",
-              "description": "http://rs.tdwg.org/dwc/terms/decimalLongitude",
+              "description": "https://rs.tdwg.org/dwc/terms/decimalLongitude",
               "examples": [
                 -121.1761111
               ],
@@ -377,14 +380,14 @@
             },
             "dwc:geodetic_datum": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/geodeticDatum",
+              "description": "https://rs.tdwg.org/dwc/terms/geodeticDatum",
               "examples": [
                 "WGS84"
               ]
             },
             "dwc:coordinate_uncertainty_in_meters": {
               "type": "integer",
-              "description": "http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
+              "description": "https://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters",
               "examples": [
                 100
               ],
@@ -392,42 +395,42 @@
             },
             "dwc:coordinate_precision": {
               "type": "integer",
-              "description": "http://rs.tdwg.org/dwc/terms/coordinatePrecision",
+              "description": "https://rs.tdwg.org/dwc/terms/coordinatePrecision",
               "examples": [
                 0.01667
               ]
             },
             "dwc:point_radius_spatial_fit": {
               "type": "integer",
-              "description": "http://rs.tdwg.org/dwc/terms/pointRadiusSpatialFit",
+              "description": "https://rs.tdwg.org/dwc/terms/pointRadiusSpatialFit",
               "examples": [
                 1.5708
               ]
             },
             "dwc:footprint_wkt": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/footprintWKT",
+              "description": "https://rs.tdwg.org/dwc/terms/footprintWKT",
               "examples": [
                 "POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20))"
               ]
             },
             "dwc:footprint_srs": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/footprintSRS",
+              "description": "https://rs.tdwg.org/dwc/terms/footprintSRS",
               "examples": [
                 "epsg:4326"
               ]
             },
             "dwc:footprint_spatial_fit": {
               "type": "integer",
-              "description": "http://rs.tdwg.org/dwc/terms/footprintSpatialFit",
+              "description": "https://rs.tdwg.org/dwc/terms/footprintSpatialFit",
               "examples": [
                 1.5708
               ]
             },
             "dwc:georeferenced_by": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/georeferencedBy",
+              "description": "https://rs.tdwg.org/dwc/terms/georeferencedBy",
               "examples": [
                 "Janet Fang"
               ]
@@ -435,28 +438,28 @@
             "dwc:georeferenced_date": {
               "type": "string",
               "format": "date-time",
-              "description": "http://rs.tdwg.org/dwc/terms/georeferencedDate",
+              "description": "https://rs.tdwg.org/dwc/terms/georeferencedDate",
               "examples": [
                 "1963-03-08T14:07-0600"
               ]
             },
             "dwc:georeference_protocol": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/georeferenceProtocol",
+              "description": "https://rs.tdwg.org/dwc/terms/georeferenceProtocol",
               "examples": [
                 "https://doi.org/10.35035/e09p-h128"
               ]
             },
             "dwc:georeference_sources": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/georeferenceSources",
+              "description": "https://rs.tdwg.org/dwc/terms/georeferenceSources",
               "examples": [
                 "https://www.geonames.org/"
               ]
             },
             "dwc:georeference_remarks": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/georeferenceRemarks",
+              "description": "https://rs.tdwg.org/dwc/terms/georeferenceRemarks",
               "examples": [
                 "Assumed distance by road (Hwy. 101)"
               ]
@@ -472,7 +475,7 @@
           "properties": {
             "dwc:earliest_eon_or_lowest_eonothem": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem",
+              "description": "https://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem",
               "examples": [
                 "Phanerozoic"
               ],
@@ -480,7 +483,7 @@
             },
             "dwc:latest_eon_or_highest_eonothem": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem",
+              "description": "https://rs.tdwg.org/dwc/terms/latestEonOrHighestEonothem",
               "examples": [
                 "Proterozoic"
               ],
@@ -488,7 +491,7 @@
             },
             "dwc:earliest_era_or_lowest_erathem": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem",
+              "description": "https://rs.tdwg.org/dwc/terms/earliestEraOrLowestErathem",
               "examples": [
                 "Cenozoic"
               ],
@@ -496,7 +499,7 @@
             },
             "dwc:latest_era_or_highest_erathem": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/latestEraOrHighestErathem",
+              "description": "https://rs.tdwg.org/dwc/terms/latestEraOrHighestErathem",
               "examples": [
                 "Mesozoic"
               ],
@@ -504,7 +507,7 @@
             },
             "dwc:earliest_period_or_lowest_system": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/earliestPeriodOrLowestSystem",
+              "description": "https://rs.tdwg.org/dwc/terms/earliestPeriodOrLowestSystem",
               "examples": [
                 "Tertiary"
               ],
@@ -512,7 +515,7 @@
             },
             "dwc:latest_period_or_highest_system": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/latestPeriodOrHighestSystem",
+              "description": "https://rs.tdwg.org/dwc/terms/latestPeriodOrHighestSystem",
               "examples": [
                 "Quaternary"
               ],
@@ -520,7 +523,7 @@
             },
             "dwc:earliest_epoch_or_lowest_series": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/earliestEpochOrLowestSeries",
+              "description": "https://rs.tdwg.org/dwc/terms/earliestEpochOrLowestSeries",
               "examples": [
                 "Holocene"
               ],
@@ -528,7 +531,7 @@
             },
             "dwc:latest_epoch_or_highest_series": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/latestEpochOrHighestSeries",
+              "description": "https://rs.tdwg.org/dwc/terms/latestEpochOrHighestSeries",
               "examples": [
                 "Pleistocene"
               ],
@@ -536,7 +539,7 @@
             },
             "dwc:earliest_age_or_lowest_stage": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/earliestAgeOrLowestStage",
+              "description": "https://rs.tdwg.org/dwc/terms/earliestAgeOrLowestStage",
               "examples": [
                 "Atlantic"
               ],
@@ -544,7 +547,7 @@
             },
             "dwc:latest_age_or_highest_stage": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage",
+              "description": "https://rs.tdwg.org/dwc/terms/latestAgeOrHighestStage",
               "examples": [
                 "Boreal"
               ],
@@ -552,7 +555,7 @@
             },
             "dwc:lowest_biostratigraphic_zone": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/lowestBiostratigraphicZone",
+              "description": "https://rs.tdwg.org/dwc/terms/lowestBiostratigraphicZone",
               "examples": [
                 "Maastrichtian"
               ],
@@ -560,7 +563,7 @@
             },
             "dwc:highest_biostratigraphic_zone": {
               "type": "integer",
-              "description": "http://rs.tdwg.org/dwc/terms/highestBiostratigraphicZone",
+              "description": "https://rs.tdwg.org/dwc/terms/highestBiostratigraphicZone",
               "examples": [
                 "Blancan"
               ],
@@ -568,35 +571,35 @@
             },
             "dwc:lithostratigraphic_terms": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/lithostratigraphicTerms",
+              "description": "https://rs.tdwg.org/dwc/terms/lithostratigraphicTerms",
               "examples": [
                 "Pleistocene-Weichselien"
               ]
             },
             "dwc:group": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/group",
+              "description": "https://rs.tdwg.org/dwc/terms/group",
               "examples": [
                 "Bathurst"
               ]
             },
             "dwc:formation": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/formation",
+              "description": "https://rs.tdwg.org/dwc/terms/formation",
               "examples": [
                 "House Limestone"
               ]
             },
             "dwc:member": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/member",
+              "description": "https://rs.tdwg.org/dwc/terms/member",
               "examples": [
                 "Lava Dam Member"
               ]
             },
             "dwc:bed": {
               "type": "string",
-              "description": "http://rs.tdwg.org/dwc/terms/bed",
+              "description": "https://rs.tdwg.org/dwc/terms/bed",
               "examples": [
                 "Harlem coal"
               ]

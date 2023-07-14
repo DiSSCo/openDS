@@ -1,58 +1,124 @@
 {
-  "$id": "root",
+  "$id": "chronometric_age",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "verbatim_chronometric_age": {
-      "type": "string"
+    "chrono:verbatim_chronometric_age": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/verbatimChronometricAge",
+      "examples": [
+        "27 BC to 14 AD"
+      ]
     },
-    "verbatim_chronometric_age_protocol": {
-      "type": "string"
+    "???:verbatim_chronometric_age_protocol": {
+      "type": "string",
+      "$commnet": "Unknown term"
     },
-    "uncalibrated_chronometric_age": {
-      "type": "string"
+    "chrono:uncalibrated_chronometric_age": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/uncalibratedChronometricAge",
+      "examples": [
+        "1510 +/- 25 14C yr BP"
+      ]
     },
-    "chronometric_age_conversion_protocol": {
-      "type": "string"
+    "chrono:chronometric_age_conversion_protocol": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeConversionProtocol",
+      "examples": [
+        "INTCAL13"
+      ]
     },
-    "earliest_chronometric_age": {
-      "type": "string"
+    "chrono:earliest_chronometric_age": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/chrono/terms/earliestChronometricAge",
+      "examples": [
+        100
+      ]
     },
-    "earliest_chronometric_age_reference_system": {
-      "type": "string"
+    "chrono:earliest_chronometric_age_reference_system": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/earliestChronometricAgeReferenceSystem",
+      "examples": [
+        "BP"
+      ]
     },
-    "latest_chronometric_age": {
-      "type": "integer"
+    "chrono:latest_chronometric_age": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/chrono/terms/latestChronometricAge",
+      "examples": [
+        12
+      ]
     },
-    "latest_chronometric_age_reference_system": {
-      "type": "string"
+    "chrono:latest_chronometric_age_reference_system": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/latestChronometricAgeReferenceSystem",
+      "examples": [
+        "BCE"
+      ]
     },
-    "chronometric_age_uncertainty_in_years": {
-      "type": "integer"
+    "chrono:chronometric_age_uncertainty_in_years": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeUncertaintyInYears",
+      "examples": [
+        100
+      ]
     },
-    "chronometric_age_uncertainty_method": {
-      "type": "string"
+    "chrono:chronometric_age_uncertainty_method": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeUncertaintyMethod",
+      "examples": [
+        "Half of 95% confidence interval"
+      ]
     },
-    "material_dated": {
-      "type": "string"
+    "chrono:material_dated": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/materialDated",
+      "examples": [
+        "charred wood"
+      ]
     },
-    "material_dated_id": {
-      "type": "string"
+    "chrono:material_dated_id": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/materialDatedID",
+      "examples": [
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
     },
-    "material_dated_relationship": {
-      "type": "string"
+    "chrono:material_dated_relationship": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/materialDatedRelationship",
+      "examples": [
+        "sameAs"
+      ]
     },
-    "chronometric_age_determined_by": {
-      "type": "string"
+    "chrono:chronometric_age_determined_by": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeDeterminedBy",
+      "examples": [
+        "Michelle LeFebvre"
+      ]
     },
-    "chronometric_age_determined_date": {
-      "type": "string"
+    "chrono:chronometric_age_determined_date": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeDeterminedDate",
+      "examples": [
+        "2018-11-13T20:20:39+00:00"
+      ]
     },
-    "chronometric_age_references": {
-      "type": "string"
+    "chrono:chronometric_age_references": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeReferences",
+      "examples": [
+        "https://doi.org/10.1007/s10814-019-09140-x"
+      ],
+      "$comment": "Or include citation object?"
     },
-    "chronometric_age_remarks": {
-      "type": "string"
+    "chrono:chronometric_age_remarks": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeRemarks",
+      "examples": [
+        "Beta Analytic number: 323913"
+      ]
     }
   }
 }

@@ -3,9 +3,6 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "subject_entity_id": {
-      "type": "string"
-    },
     "entity_relationship_type": {
       "type": "string"
     },
@@ -26,5 +23,11 @@
       "type": "string",
       "$comment": "Not available in GBIF UM"
     }
-  }
+  },
+  "required": [
+    "entity_relationship_type",
+    "object_entity_iri",
+    "entity_relationship_date",
+    "entity_relationship_creator_id"
+  ]
 }

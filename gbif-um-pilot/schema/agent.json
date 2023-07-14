@@ -1,0 +1,14 @@
+{
+  "$id": "assertion",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$comment": "",
+  "properties": {
+    "agent_role": {
+      "type": "string"
+    },
+    "agent_role_began": {
+    }
+  },
+  "required": []
+}

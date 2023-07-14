@@ -14,7 +14,7 @@
     "ods:version": {
       "type": "integer",
       "description": "The version of the object, each change generates a new version",
-      "minimum": 0,
+      "minimum": 1,
       "examples": [
         1
       ]
@@ -47,32 +47,57 @@
       "type": "string",
       "description": "To indicate if the physical identifier is globally unique or locally unique",
       "enum": [
-        "GLOBAL, LOCAL"
-      ]
+        "RESOLVABLE, GLOBAL, LOCAL"
+      ],
+      "$comment": "Do we need to further distinguish the identifier, for example add 'RESOLVABLE'"
     },
     "ods:topicOrigin": {
       "type": "string",
       "description": "The topic origin of the specimen",
-      "enum": ["Natural", "Human-made", "Mixed origin"],
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin"
+      ],
       "example": [
         "Natural"
-      ]
+      ],
+      "$comment": "Do we need to add 'UNKNOWN'?"
     },
     "ods:topicDomain": {
       "type": "string",
       "description": "The topic domain of the specimen",
-      "enum": ["Life", "Environment", "Earth System", "Extraterrestrial", "Cultural Artefacts", "Archive Material"],
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material"
+      ],
       "example": [
         "Life"
-      ]
+      ],
+      "$comment": "Do we need to add 'UNKNOWN'?"
     },
     "ods:topicDiscipline": {
       "type": "string",
       "description": "The topic discipline of the specimen",
-      "enum": ["Anthropology", "Botany", "Astrogeology", "Earth System", "Microbiology", "Palaeontology", "Zoology", "Environment", "Other Bio/Geodiversity"],
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Earth System",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Environment",
+        "Other Bio/Geodiversity"
+      ],
       "example": [
         "Botany"
-      ]
+      ],
+      "$comment": "Do we need to add 'UNKNOWN'?"
     },
     "ods:source_system": {
       "type": "string",
@@ -81,7 +106,7 @@
     },
     "ods:living_or_preserved": {
       "type": "string",
-      "description": "Wether the specimen is living or "
+      "description": "Wether the specimen is living or preserved"
     },
     "dcterms:license": {
       "type": "string",
@@ -110,12 +135,13 @@
         "MNF"
       ]
     },
-    "???:institution_id": {
+    "dwc:institution_id": {
       "type": "string",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
       "examples": [
         "https://ror.org/015hz7p22"
-      ]
+      ],
+      "$comment": "Add format for ROR or Wikidata ID"
     },
     "dwc:institution_name": {
       "type": "string",
@@ -130,11 +156,12 @@
       "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
       "examples": [
         "EBIRD"
-      ]
+      ],
+      "$comment": "Cetaf collection code?"
     },
     "dwc:collection_id": {
       "type": "string",
-      "description": "http://rs.tdwg.org/dwc/terms/collectionID",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionID",
       "examples": [
         "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
       ],
@@ -165,58 +192,62 @@
     "material_entity": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "material_entity.json"
       }
     },
     "dwc:identification": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "identifications.json"
       }
     },
     "assertions": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "assertions.json"
       }
     },
     "occurrences": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "occurrences.json"
       }
     },
     "entity_relationships": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "entity_relationships.json"
       }
     },
     "citations": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "citations.json"
       }
     },
     "identifiers": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "identifications.json"
       }
     },
     "chronometric_age": {
       "type": "object",
       "items": {
-        "type": "object",
         "$ref": "chronometric_age.json"
       }
     }
-  }
+  },
+  "required": [
+    "ods:id",
+    "ods:version",
+    "ods:type",
+    "ods:created",
+    "ods:mids_level",
+    "ods:physical_specimen_id",
+    "ods:physical_specimen_id_type",
+    "ods:source_system",
+    "dcterms:license",
+    "???:institution_id"
+  ]
 }

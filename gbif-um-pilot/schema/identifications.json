@@ -91,7 +91,7 @@
         "properties": {
           "dwc:scientific_name": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/scientificName",
+            "description": "https://rs.tdwg.org/dwc/terms/scientificName",
             "examples": [
               "Roptrocerus typographi (Györfi, 1952)"
             ]
@@ -105,14 +105,14 @@
           },
           "dwc:name_according_to": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/nameAccordingTo",
+            "description": "https://rs.tdwg.org/dwc/terms/nameAccordingTo",
             "examples": [
               "Plants of the World Online"
             ]
           },
           "dwc:taxon_rank": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/taxonRank",
+            "description": "https://rs.tdwg.org/dwc/terms/taxonRank",
             "examples": [
               "species"
             ]
@@ -124,14 +124,14 @@
           },
           "dwc:taxon_remarks": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/taxonRemarks",
+            "description": "https://rs.tdwg.org/dwc/terms/taxonRemarks",
             "examples": [
               "this name is a misspelling in common use"
             ]
           },
           "dwc:kingdom": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/kingdom",
+            "description": "https://rs.tdwg.org/dwc/terms/kingdom",
             "examples": [
               "animalia"
             ],
@@ -139,49 +139,49 @@
           },
           "dwc:phylum": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/phylum",
+            "description": "https://rs.tdwg.org/dwc/terms/phylum",
             "examples": [
               "Chordata"
             ]
           },
           "dwc:class": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/class",
+            "description": "https://rs.tdwg.org/dwc/terms/class",
             "examples": [
               "Hepaticopsida"
             ]
           },
           "dwc:order": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/order",
+            "description": "https://rs.tdwg.org/dwc/terms/order",
             "examples": [
               "Carnivora"
             ]
           },
           "dwc:family": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/family",
+            "description": "https://rs.tdwg.org/dwc/terms/family",
             "examples": [
               "Felidae"
             ]
           },
           "dwc:subfamily": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/subfamily",
+            "description": "https://rs.tdwg.org/dwc/terms/subfamily",
             "examples": [
               "Orchidoideae"
             ]
           },
           "dwc:genus": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/genus",
+            "description": "https://rs.tdwg.org/dwc/terms/genus",
             "examples": [
               "Puma"
             ]
           },
           "dwc:subgenus": {
             "type": "string",
-            "description": "http://rs.tdwg.org/dwc/terms/subgenus",
+            "description": "https://rs.tdwg.org/dwc/terms/subgenus",
             "examples": [
               "Strobus"
             ]
@@ -191,8 +191,14 @@
             "description": "Unclear yet",
             "$comment": "Is this field necessary if we indicated accepted on the identification level"
           }
-        }
+        },
+        "required": [
+          "dwc:scientific_name"
+        ]
       }
     }
-  }
+  },
+  "required": [
+    "dwc:identification_verification_status"
+  ]
 }
