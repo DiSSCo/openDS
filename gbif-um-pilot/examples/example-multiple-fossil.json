@@ -1,0 +1,124 @@
+// https://api.biodiversitydata.nl/v2/specimen/query/?unitID=RGM.800315
+// If the second identification was also true.
+// So it assumes the API tries to reflect one stone with two fossils on it
+{
+  "id": "10.22/XXX-XXX-XXX",
+  "type": "FossilSpecimen",
+  "version": 1,
+  "created": "2023-07-10T12:02:00.000Z",
+  "midsLevel": 1,
+  "physical_specimen_id": "https://data.biodiversitydata.nl/naturalis/specimen/RGM.800315",
+  "physical_specimen_type": "GLOBAL",
+  "institution_code": "Naturalis Biodiversity Center",
+  "institution_id": "https://ror.org/0566bfb96",
+  "owner_institution_code": "Naturalis Biodiversity Center",
+  "owner_institution_id": "https://ror.org/0566bfb96",
+  "collection_code": null,
+  "source_system": "https://hdl.handle.net/20.5000.1025/MN0-5XP-FFD",
+  "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "preparations": "fossilized",
+  "modified": "2017-06-29T14:42:00+0000",
+  "assertions": [
+    {
+      "assertion_type": "from_captivity",
+      "assertion_value": "false"
+    },
+    {
+      "assertion_type": "object_public",
+      "assertion_value": "true"
+    }
+  ],
+  "identifiers": [
+    {
+      "identifier_type": "unitID",
+      "identifier_value": "RGM.800315"
+    },
+    {
+      "identifier_type": "UnitIDNumeric",
+      "identifier_value": "253820"
+    },
+    {
+      "identifier_type": "unitGUID",
+      "identifier_value": "https://data.biodiversitydata.nl/naturalis/specimen/RGM.800315"
+    },
+    {
+      "identifier_type": "sourceSystemId",
+      "identifier_value": "RGM.800315"
+    },
+    {
+      "identifier_type": "id",
+      "identifier_value": "RGM.800315@CRS"
+    }
+  ],
+  "occurrences": [
+    {
+      "recorded_by": "A.W. Janssen",
+      "event_date": "1976-01-01T00:00:00+0000",
+      "location": {
+        "country": "Germany",
+        "state_province": "North Rhine-Westphalia",
+        "locality": "Rumeln bij Duisburg",
+        "geological_context": {
+          "latest_epoch_or_highest_series": "OLIGOCEEN",
+          "earliest_epoch_or_lowest_series": "OLIGOCEEN",
+          "earliest_age_or_lowest_stage": "CHATTIEN ACHATTIEN A",
+          "latest_age_or_highest_stage": "CHATTIEN ACHATTIEN A",
+          "member": "Grafenberger Sande",
+          "bed": "vermoedelijk Schicht II van Görges, 1941"
+        }
+      }
+    }
+  ],
+  "material_entity": [
+    {
+      "material_entity_id": "20.5000.1025/XXX-XXX-XXX",
+      "identifications": [
+        {
+          "identified_by": "A.W. Janssen",
+          "identification_verification_status": true,
+          "date_identified": "1984-01-01T00:00:00+0000",
+          "taxon_identification": {
+            "scientific_name": "Boreotrophon deshayesi (Nyst, 1836)",
+            "genus": "Boreotrophon",
+            "scientific_name_authorship": "(Nyst, 1836)",
+            "taxon_rank": "species"
+          }
+        }
+      ],
+      "entity_relationship": [
+        {
+          "entity_relationship_type": "IS_PART_OF",
+          "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX",
+          "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+          "entity_relationship_creator_id": "20.5000.1025/XXX-XXX-XXX (handle CMS)",
+          "entity_relationship_order": 0
+        }
+      ]
+    },
+    {
+      "material_entity_id": "20.5000.1025/XXX-XXX-XXX",
+      "identifications": [
+        {
+          "identified_by": "A.W. Janssen",
+          "identification_verification_status": true,
+          "date_identified": "1984-01-01T00:00:00+0000",
+          "taxon_identification": {
+            "scientific_name": "Boreotrophon capito Philippi, 1843",
+            "genus": "Boreotrophon",
+            "scientific_name_authorship": "Philippi, 1843",
+            "taxon_rank": "species"
+          }
+        }
+      ],
+      "entity_relationship": [
+        {
+          "entity_relationship_type": "IS_PART_OF",
+          "object_entity_iri": "https://doi.org/10.20/XXX-XXX-XXX",
+          "entity_relationship_date": "2023-07-10T12:02:00.000Z",
+          "entity_relationship_creator_id": "20.5000.1025/XXX-XXX-XXX (handle CMS)",
+          "entity_relationship_order": 0
+        }
+      ]
+    }
+  ]
+}

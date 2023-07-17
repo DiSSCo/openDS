@@ -1,0 +1,40 @@
+{
+  "$id": "identifiers",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "???:identifier_type": {
+      "type": "string",
+      "description": "The type of the identifier",
+      "examples": [
+        "dwc:catalogueNumber",
+        "dwca:id"
+      ],
+      "$comments": "Should become new term in DWC or borrow from somewhere else?"
+    },
+    "???:identifier_value":{
+      "type": "string",
+      "description": "The value for the identifier",
+      "examples": [
+        "BMNH(E)1902475",
+        "RGM.800315"
+      ],
+      "$comments": "Should become new term in DWC or borrow from somewhere else?"
+    },
+    "part_of_label": {
+      "type": "boolean",
+      "description": "Is the identifier part of the physical label"
+    },
+    "barcode_or_nfc": {
+      "type": "string",
+      "description": "Part of barcode or nfc chip"
+    },
+    "is_id_persistent": {
+      "type": "boolean",
+      "description": ""
+    }
+  },
+  "required": [
+    "???:identifier_value"
+  ]
+}

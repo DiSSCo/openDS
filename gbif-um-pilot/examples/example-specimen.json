@@ -1,0 +1,80 @@
+// https://api.gbif.org/v1/occurrence/1825938271/fragment
+{
+  "id": "10.22/XXX-XXX-XXX",
+  "version": 1,
+  "created": "2023-07-10T12:02:00.000Z",
+  "preparations": null,
+  "disposition": null,
+  "institution_code": "NHMUK",
+  "institution_id": null,
+  "collection_code": "BMNH(E)",
+  "collection_id": null,
+  "owner_institution_code": null,
+  "identifications": [
+    {
+      "type_status": null,
+      "identified_by": null,
+      "identified_by_id": null,
+      "date_identified": null,
+      "identification_verification_status": true,
+      "taxon_identifications": {
+        "scientific_name": "Agriopis leucophaearia (Denis & Schiffermüller, 1775)",
+        "scientific_name_authorship": "(Denis & Schiffermüller, 1775)",
+        "specificEpithet": "leucophaearia",
+        "order": "Lepidoptera",
+        "family": "Geometridae",
+        "genus": "Agriopis",
+        "class": "Insecta",
+        "kingdom": null
+      }
+    }
+  ],
+  "identifiers": [
+    {
+      "identifier_type": "dwca:id",
+      "identifier_value": "6909724"
+    },
+    {
+      "identifier_type": "dwc:catalogNumber",
+      "identifier_value": "BMNH(E)1902475"
+    },
+    {
+      "identifier_type": "dwc:occurrenceID",
+      "identifier_value": "52e678a6-86ad-4b17-a412-f4b8ac9a953b"
+    },
+    {
+      "identifier_type": "dwc:otherCatalogNumbers",
+      "identifier_value": "NHMUK:ecatalogue:6909724"
+    },
+    {
+      "identifier_type": "gbifid",
+      "identifier_value": "1825938271"
+    }
+  ],
+  "occurrences": [
+    {
+      "organism_quantity": "1",
+      "occurrence_status": "PRESENT",
+      "recorded_by": "W Fassnidge",
+      "year": 2023,
+      "month": 1,
+      "day": null,
+      "location": {
+        "continent": "Europe",
+        "country": "United Kingdom",
+        "locality": "Hampshire; Township: Southampton",
+        "stateProvince": "England",
+        "georeference": {
+          "decimal_latitude": 50.9097,
+          "decimal_longitude": -1.4044
+        }
+      }
+    }
+  ],
+  "assertions": [
+    {
+      "assertion_type": "preservative",
+      "assertion_value": "Dry - mounted"
+    }
+  ]
+}

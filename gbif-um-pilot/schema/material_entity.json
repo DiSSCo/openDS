@@ -1,0 +1,114 @@
+{
+  "$id": "material_entity",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$comment": "Only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
+  "properties": {
+    "material_entity_id": {
+      "type": "string"
+    },
+    "dwc:preparations": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/preparations",
+      "example": [
+        "fossil"
+      ]
+    },
+    "dwc:disposition": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/disposition",
+      "examples": [
+        "in collection"
+      ]
+    },
+    "dwc:institution_code": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
+      "examples": [
+        "MNF"
+      ]
+    },
+    "???:institution_id": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "examples": [
+        "https://ror.org/015hz7p22"
+      ]
+    },
+    "dwc:institution_name": {
+      "type": "string",
+      "description": "Full museum name according to ROR or Wikidata",
+      "examples": [
+        "National Museum of Natural History"
+      ],
+      "$comment": "Not part of DWC or the GBIF UM"
+    },
+    "dwc:collection_code": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
+      "examples": [
+        "EBIRD"
+      ]
+    },
+    "dwc:collection_id": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionID",
+      "examples": [
+        "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
+      ],
+      "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
+    },
+    "dwc:owner_institution_id": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier for the owning institution",
+      "$comment": "DWC only has owner_institution_code, however code is not an (resolvable identifier)",
+      "examples": [
+        "https://ror.org/03wkt5x30"
+      ]
+    },
+    "dwc:recorded_by": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
+      "examples": [
+        "José E. Crespo"
+      ]
+    },
+    "dwc:recorded_by_id": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
+      "examples": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
+    },
+    "identifications": {
+      "type": "object",
+      "items": {
+        "$ref": "identifications.json"
+      }
+    },
+    "assertions": {
+      "type": "object",
+      "items": {
+        "$ref": "assertions.json"
+      }
+    },
+    "entity_relationships": {
+      "type": "object",
+      "items": {
+        "$ref": "entity_relationships.json"
+      }
+    },
+    "citations": {
+      "type": "object",
+      "items": {
+        "$ref": "citations.json"
+      }
+    },
+    "identifiers": {
+      "type": "object",
+      "items": {
+        "$ref": "identifications.json"
+      }
+    }
+  }
+}

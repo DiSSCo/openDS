@@ -1,0 +1,141 @@
+{
+  "$id": "digital_entity",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "ods:id": {
+      "type": "string",
+      "description": "The unique digital identifier of the object",
+      "pattern": "https:\/\/doi.org\/10.22\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ],
+      "$comment": "Does an image get a DOI or a handle?"
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version",
+      "minimum": 0,
+      "examples": [
+        1
+      ]
+    },
+    "ods:created": {
+      "type": "string",
+      "description": "The timestamp that the object version was created in DiSSCo",
+      "format": "date-time",
+      "examples": [
+      ]
+    },
+    "dcterms:type": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/type, which matches the FDO type of the object",
+      "enum": [
+        "Collection",
+        "Dataset",
+        "Event",
+        "Image",
+        "InteractiveResource",
+        "MovingImage",
+        "PhysicalObject",
+        "Service",
+        "Software",
+        "Sound",
+        "StillImage",
+        "Text"
+      ]
+    },
+    "ac:access_uri": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/ac/terms/accessURI",
+      "examples": [
+      ]
+    },
+    "xmpRights:web_statement": {
+      "type": "string",
+      "description": "https://ns.adobe.com/xap/1.0/rights/WebStatement",
+      "$comment": "What is the difference with dcterms:license?"
+    },
+    "dcterms:format": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/format",
+      "$comment": "Create a enum for this?"
+    },
+    "dcterms:license": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/license",
+      "$comment": "Create a enum for this?"
+    },
+    "dcterms:rights": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/rights",
+      "$comment": "What is the difference with dcterms:license?"
+    },
+    "???:rights_uri": {
+      "type": "string",
+      "$comment": "What is the difference with dcterms:license? or dcterms:rights?. dcterms:rights is already recommended to be a URI"
+    },
+    "dcterms:access_rights": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/accessRights",
+      "$comment": "What is the difference with dcterms:license?"
+    },
+    "dcterms:rights_holder": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/rightsHolder",
+      "examples": [
+      ]
+    },
+    "dcterms:source": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/source"
+    },
+    "???:source_uri": {
+      "type": "string",
+      "$comment": "It is already recommended to use URI in the dcterms:source"
+    },
+    "dcterms:creator": {
+      "type": "string",
+      "description": "https://purl.org/dc/elements/1.1/creator"
+    },
+    "dcterms:created": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/created"
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/modified"
+    },
+    "assertions": {
+      "items": {
+        "type": "object",
+        "$ref": "assertions.json"
+      }
+    },
+    "citations": {
+      "items": {
+        "type": "object",
+        "$ref": "citations.json"
+      }
+    },
+    "identifiers": {
+      "items": {
+        "type": "object",
+        "$ref": "identifications.json"
+      }
+    },
+    "entity_relationships": {
+      "items": {
+        "type": "object",
+        "$ref": "entity_relationships.json"
+      }
+    }
+  },
+  "required": [
+    "ods:id",
+    "ods:version",
+    "ods:created",
+    "ac:access_uri",
+    "dcterms:license"
+  ]
+}

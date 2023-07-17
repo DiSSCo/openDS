@@ -1,0 +1,44 @@
+{
+  "$id": "assertion",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$comment": "Looks like Measurement or Fact but terminology is different, no ontology yet?",
+  "properties": {
+    "assertion_type": {
+      "type": "string"
+    },
+    "assertion_made_date": {
+      "type": "string"
+    },
+    "assertion_effective_date": {
+      "type": "string"
+    },
+    "assertion_value": {
+      "type": "string"
+    },
+    "assertion_value_numeric": {
+      "type": "integer"
+    },
+    "assertion_unit": {
+      "type": "string"
+    },
+    "assertion_by_agent_name": {
+      "type": "string"
+    },
+    "assertion_by_agent_id": {
+      "type": "string"
+    },
+    "assertion_protocol": {
+      "type": "string"
+    },
+    "assertion_protocol_id": {
+      "type": "string"
+    },
+    "assertion_remarks": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "assertion_type"
+  ]
+}
