@@ -4,7 +4,7 @@ DiSSCo investigates how the [GBIF Unified Model](https://github.com/gbif/model-m
 For this adaption we propose several changes want to make several changes to the GBIF UM.
 These changes are proposed [here](https://docs.google.com/document/d/1NIIGwh-FUmoONGrUGY4ARbsi8dBQDHXdfLiGb9B0oUQ/edit?usp=sharing)
 In this document we will provide a quick introduction of the structure.
-The DiSSCo's adaption is written in JSON Schema.
+The DiSSCo's adaption is written in [JSON Schema](https://json-schema.org/).
 Two type of object are covered with the adaption:
 - Digital Specimen
 - Digital Media Object
