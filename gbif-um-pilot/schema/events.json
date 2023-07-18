@@ -1,0 +1,101 @@
+{
+  "$id": "events",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "???:event_name": {
+      "type": "string",
+      "comment": "Not sure what this field means"
+    },
+    "dwc:field_number": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/fieldNumber",
+      "examples": [
+        "RV Sol 87-03-08"
+      ]
+    },
+    "dwc:event_date": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/eventDate",
+      "examples": [
+        "1963-03-08T14:07-0600"
+      ]
+    },
+    "dwc:year": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/year",
+      "examples": [
+        2008
+      ]
+    },
+    "dwc:month": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/month",
+      "examples": [
+        12
+      ]
+    },
+    "dwc:day": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/day",
+      "examples": [
+        29
+      ]
+    },
+    "dwc:habitat": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/habitat",
+      "examples": [
+        "savanna"
+      ],
+      "$comment": "Is this necessary for specimens"
+    },
+    "???:protocol_description": {
+      "type": "string",
+      "comment": "Not sure what this field means"
+    },
+    "dwc:sample_size_value": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/sampleSizeValue",
+      "examples": [
+        "5"
+      ]
+    },
+    "dwc:sample_size_unit": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/sampleSizeUnit",
+      "examples": [
+        "meters"
+      ]
+    },
+    "???:event_effort": {
+      "type": "string",
+      "comment": "Not sure what this field means"
+    },
+    "dwc:field_notes": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/fieldNotes",
+      "examples": [
+        "Notes available in the Grinnell-Miller Library"
+      ]
+    },
+    "dwc:event_remarks": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/eventRemarks",
+      "examples": [
+        "After the recent rains the river is nearly at flood stage"
+      ]
+    },
+    "???:collector_name": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
+    },
+    "???:collector_id": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
+    },
+    "location": {
+      "$ref": "./location.json"
+    }
+  }
+}

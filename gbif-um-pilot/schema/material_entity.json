@@ -109,6 +109,12 @@
       "items": {
         "$ref": "identifications.json"
       }
+    },
+    "events": {
+      "type": "object",
+      "items": {
+        "$ref": "events.json"
+      }
     }
   }
 }
