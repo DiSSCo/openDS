@@ -3,28 +3,29 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "citation_type": {
+    "citationType": {
       "type": "string"
     },
-    "citation_page_number": {
+    "citationPageNumber": {
       "type": "string"
     },
-    "citation_remarks": {
+    "citationRemarks": {
       "type": "string"
     },
-    "reference_type": {
+    "referenceType": {
       "type": "string"
     },
-    "bibliographic_citation": {
+    "bibliographicCitation": {
       "type": "string"
     },
-    "reference_year": {
+    "referenceYear": {
       "type": "string"
     },
-    "reference_iri": {
-      "type": "string"
+    "referenceIri": {
+      "type": "string",
+      "format": "iri"
     },
-    "is_peer_reviewed": {
+    "isPeerReviewed": {
       "type": "boolean"
     }
   }

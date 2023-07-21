@@ -3,18 +3,18 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "???:event_name": {
+    "???:eventName": {
       "type": "string",
       "comment": "Not sure what this field means"
     },
-    "dwc:field_number": {
+    "dwc:fieldNumber": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/fieldNumber",
       "examples": [
         "RV Sol 87-03-08"
       ]
     },
-    "dwc:event_date": {
+    "dwc:eventDate": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/eventDate",
       "examples": [
@@ -50,47 +50,47 @@
       ],
       "$comment": "Is this necessary for specimens"
     },
-    "???:protocol_description": {
+    "???:protocolDescription": {
       "type": "string",
       "comment": "Not sure what this field means"
     },
-    "dwc:sample_size_value": {
+    "dwc:sampleSizeValue": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/sampleSizeValue",
       "examples": [
         "5"
       ]
     },
-    "dwc:sample_size_unit": {
+    "dwc:sampleSizeUnit": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/sampleSizeUnit",
       "examples": [
         "meters"
       ]
     },
-    "???:event_effort": {
+    "???:eventEffort": {
       "type": "string",
       "comment": "Not sure what this field means"
     },
-    "dwc:field_notes": {
+    "dwc:fieldNotes": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/fieldNotes",
       "examples": [
         "Notes available in the Grinnell-Miller Library"
       ]
     },
-    "dwc:event_remarks": {
+    "dwc:eventRemarks": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/eventRemarks",
       "examples": [
         "After the recent rains the river is nearly at flood stage"
       ]
     },
-    "???:collector_name": {
+    "???:collectorName": {
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
     },
-    "???:collector_id": {
+    "???:collectorId": {
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
     },

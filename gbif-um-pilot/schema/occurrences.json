@@ -3,14 +3,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "dwc:organism_quantity": {
+    "dwc:organismQuantity": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/organismQuantity",
       "examples": [
         "27"
       ]
     },
-    "dwc:organism_quantity_type": {
+    "dwc:organismQuantityType": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/organismQuantityType",
       "examples": [
@@ -26,7 +26,7 @@
       ],
       "$comment": "Could this become a enum?"
     },
-    "dwc:life_stage": {
+    "dwc:lifeStage": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/lifeStage",
       "examples": [
@@ -34,7 +34,7 @@
       ],
       "$comment": "Could this become a enum?"
     },
-    "dwc:reproductive_condition": {
+    "dwc:reproductiveCondition": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/reproductiveCondition",
       "examples": [
@@ -50,7 +50,7 @@
       ],
       "$comment": "Is this needed for specimen data?"
     },
-    "dwc:establishment_means": {
+    "dwc:establishmentMeans": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/establishmentMeans",
       "examples": [
@@ -58,7 +58,7 @@
       ],
       "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/em/"
     },
-    "dwc:occurrence_status": {
+    "dwc:occurrenceStatus": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/occurrenceStatus",
       "examples": [
@@ -77,7 +77,7 @@
       ],
       "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/pw/"
     },
-    "dwc:degree_of_establishment": {
+    "dwc:degreeOfEstablishment": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/degreeOfEstablishment",
       "examples": [
@@ -85,7 +85,7 @@
       ],
       "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/doe/"
     },
-    "dwc:georeference_verification_status": {
+    "dwc:georeferenceVerificationStatus": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus",
       "examples": [
@@ -93,14 +93,14 @@
       ],
       "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/em/"
     },
-    "dwc:occurrence_remarks": {
+    "dwc:occurrenceRemarks": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/occurrenceRemarks",
       "examples": [
         "found dead on road"
       ]
     },
-    "dwc:information_withheld": {
+    "dwc:informationWithheld": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/informationWithheld",
       "examples": [
@@ -108,39 +108,39 @@
       ],
       "$comment": "Feels like this field should be true or false and another field should contain the explanation"
     },
-    "dwc:data_generalizations": {
+    "dwc:dataGeneralizations": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/dataGeneralizations",
       "examples": [
         "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
       ]
     },
-    "dwc:recorded_by": {
+    "dwc:recordedBy": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
       "examples": [
         "José E. Crespo"
       ]
     },
-    "dwc:recorded_by_id": {
+    "dwc:recordedById": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
       "examples": [
         "https://orcid.org/0000-0002-1825-0097"
       ]
     },
-    "???:event_name": {
+    "???:eventName": {
       "type": "string",
       "comment": "Not sure what this field means"
     },
-    "dwc:field_number": {
+    "dwc:fieldNumber": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/fieldNumber",
       "examples": [
         "RV Sol 87-03-08"
       ]
     },
-    "dwc:event_date": {
+    "dwc:eventDate": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/eventDate",
       "examples": [
@@ -176,47 +176,47 @@
       ],
       "$comment": "Is this necessary for specimens"
     },
-    "???:protocol_description": {
+    "???:protocolDescription": {
       "type": "string",
       "comment": "Not sure what this field means"
     },
-    "dwc:sample_size_value": {
+    "dwc:sampleSizeValue": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/sampleSizeValue",
       "examples": [
         "5"
       ]
     },
-    "dwc:sample_size_unit": {
+    "dwc:sampleSizeUnit": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/sampleSizeUnit",
       "examples": [
         "meters"
       ]
     },
-    "???:event_effort": {
+    "???:eventEffort": {
       "type": "string",
       "comment": "Not sure what this field means"
     },
-    "dwc:field_notes": {
+    "dwc:fieldNotes": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/fieldNotes",
       "examples": [
         "Notes available in the Grinnell-Miller Library"
       ]
     },
-    "dwc:event_remarks": {
+    "dwc:eventRemarks": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/eventRemarks",
       "examples": [
         "After the recent rains the river is nearly at flood stage"
       ]
     },
-    "???:collector_name": {
+    "???:collectorName": {
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
     },
-    "???:collector_id": {
+    "???:collectorId": {
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
     },

@@ -1,14 +1,50 @@
 {
-  "$id": "assertion",
+  "$id": "agent",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "",
   "properties": {
-    "agent_role": {
-      "type": "string"
+    "agentRole": {
+      "type": "string",
+      "examples": [
+        "collector"
+      ]
     },
-    "agent_role_began": {
+    "agentType": {
+      "type": "string",
+      "examples": [
+        "machine",
+        "human",
+        "organisation"
+      ]
+    },
+    "agentName": {
+      "type": "string",
+      "examples": [
+        "John Smits"
+      ]
+    },
+    "agentRoleBegan": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "agentRoleEnded": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "agentRoleOrder": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "identifications.json"
+      }
     }
   },
-  "required": []
+  "required": [
+    "agentType",
+    "agentName"
+  ]
 }

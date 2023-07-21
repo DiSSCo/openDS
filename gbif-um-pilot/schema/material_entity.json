@@ -1,10 +1,10 @@
 {
-  "$id": "material_entity",
+  "$id": "materialEntity",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "Only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
   "properties": {
-    "material_entity_id": {
+    "materialEntityId": {
       "type": "string"
     },
     "dwc:preparations": {
@@ -21,21 +21,21 @@
         "in collection"
       ]
     },
-    "dwc:institution_code": {
+    "dwc:institutionCode": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
       "examples": [
         "MNF"
       ]
     },
-    "???:institution_id": {
+    "???:institutionId": {
       "type": "string",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
       "examples": [
         "https://ror.org/015hz7p22"
       ]
     },
-    "dwc:institution_name": {
+    "dwc:institutionName": {
       "type": "string",
       "description": "Full museum name according to ROR or Wikidata",
       "examples": [
@@ -43,14 +43,14 @@
       ],
       "$comment": "Not part of DWC or the GBIF UM"
     },
-    "dwc:collection_code": {
+    "dwc:collectionCode": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
       "examples": [
         "EBIRD"
       ]
     },
-    "dwc:collection_id": {
+    "dwc:collectionId": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/collectionID",
       "examples": [
@@ -58,22 +58,22 @@
       ],
       "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
     },
-    "dwc:owner_institution_id": {
+    "dwc:ownerInstitutionId": {
       "type": "string",
       "description": "ROR or Wikidata identifier for the owning institution",
-      "$comment": "DWC only has owner_institution_code, however code is not an (resolvable identifier)",
+      "$comment": "DWC only has ownerInstitutionCode, however code is not an (resolvable identifier)",
       "examples": [
         "https://ror.org/03wkt5x30"
       ]
     },
-    "dwc:recorded_by": {
+    "dwc:recordedBy": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
       "examples": [
         "José E. Crespo"
       ]
     },
-    "dwc:recorded_by_id": {
+    "dwc:recordedById": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
       "examples": [
@@ -81,37 +81,37 @@
       ]
     },
     "identifications": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "identifications.json"
       }
     },
     "assertions": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "assertions.json"
       }
     },
-    "entity_relationships": {
-      "type": "object",
+    "entityRelationships": {
+      "type": "array",
       "items": {
         "$ref": "entity_relationships.json"
       }
     },
     "citations": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "citations.json"
       }
     },
     "identifiers": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "identifications.json"
       }
     },
     "events": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "events.json"
       }
