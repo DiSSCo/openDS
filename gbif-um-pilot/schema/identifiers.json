@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "???:identifier_type": {
+    "???:identifierType": {
       "type": "string",
       "description": "The type of the identifier",
       "examples": [
@@ -12,7 +12,7 @@
       ],
       "$comments": "Should become new term in DWC or borrow from somewhere else?"
     },
-    "???:identifier_value":{
+    "???:identifierValue":{
       "type": "string",
       "description": "The value for the identifier",
       "examples": [
@@ -21,20 +21,20 @@
       ],
       "$comments": "Should become new term in DWC or borrow from somewhere else?"
     },
-    "part_of_label": {
+    "???:partOfLabel": {
       "type": "boolean",
       "description": "Is the identifier part of the physical label"
     },
-    "barcode_or_nfc": {
+    "???:barcodeOrNfc": {
       "type": "string",
       "description": "Part of barcode or nfc chip"
     },
-    "is_id_persistent": {
+    "isIdPersistent": {
       "type": "boolean",
       "description": ""
     }
   },
   "required": [
-    "???:identifier_value"
+    "???:identifierValue"
   ]
 }

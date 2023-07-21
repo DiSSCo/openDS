@@ -33,17 +33,17 @@
       ],
       "$comment": "Unclear what value goes here"
     },
-    "ods:mids_level": {
+    "ods:midsLevel": {
       "type": "integer",
       "description": "The MIDS level of the object, see https://www.tdwg.org/community/cd/mids/",
       "minimum": 0,
       "maximum": 3
     },
-    "ods:physical_specimen_id": {
+    "ods:physicalSpecimenId": {
       "type": "string",
       "description": "The physical specimen identifier of the object. When locally unique this is a combination between source-system-id and the local identifier"
     },
-    "ods:physical_specimen_id_type": {
+    "ods:physicalSpecimenIdType": {
       "type": "string",
       "description": "To indicate if the physical identifier is globally unique or locally unique",
       "enum": [
@@ -99,12 +99,12 @@
       ],
       "$comment": "Do we need to add 'UNKNOWN'?"
     },
-    "ods:source_system": {
+    "ods:sourceSystem": {
       "type": "string",
       "description": "The handle to the source system object which retrieved the data from the CMS",
       "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}"
     },
-    "ods:living_or_preserved": {
+    "ods:livingOrPreserved": {
       "type": "string",
       "description": "Wether the specimen is living or preserved"
     },
@@ -128,14 +128,14 @@
         "in collection"
       ]
     },
-    "dwc:institution_code": {
+    "dwc:institutionCode": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
       "examples": [
         "MNF"
       ]
     },
-    "dwc:institution_id": {
+    "dwc:institutionId": {
       "type": "string",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
       "examples": [
@@ -143,7 +143,7 @@
       ],
       "$comment": "Add format for ROR or Wikidata ID"
     },
-    "dwc:institution_name": {
+    "dwc:institutionName": {
       "type": "string",
       "description": "Full museum name according to ROR or Wikidata",
       "examples": [
@@ -151,7 +151,7 @@
       ],
       "$comment": "Not part of DWC or the GBIF UM"
     },
-    "dwc:collection_code": {
+    "dwc:collectionCode": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
       "examples": [
@@ -159,7 +159,7 @@
       ],
       "$comment": "Cetaf collection code?"
     },
-    "dwc:collection_id": {
+    "dwc:collectionId": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/collectionID",
       "examples": [
@@ -167,72 +167,76 @@
       ],
       "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
     },
-    "dwc:owner_institution_id": {
+    "dwc:ownerInstitutionId": {
       "type": "string",
       "description": "ROR or Wikidata identifier for the owning institution",
-      "$comment": "DWC only has owner_institution_code, however code is not an (resolvable identifier)",
+      "$comment": "DWC only has ownerInstitutionCode, however code is not an (resolvable identifier)",
       "examples": [
         "https://ror.org/03wkt5x30"
       ]
     },
-    "dwc:recorded_by": {
+    "dwc:recordedBy": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
       "examples": [
         "José E. Crespo"
       ]
     },
-    "dwc:recorded_by_id": {
+    "???:recordedByAgent": {
+      "$ref": "agent.json",
+      "$comment": "Is this an option for the agent instead of adding a list?"
+    },
+    "dwc:recordedById": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
       "examples": [
         "https://orcid.org/0000-0002-1825-0097"
       ]
     },
-    "material_entity": {
+    "materialEntity": {
       "type": "object",
       "items": {
         "$ref": "material_entity.json"
       }
     },
     "dwc:identification": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "identifications.json"
       }
     },
     "assertions": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "assertions.json"
       }
     },
     "occurrences": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "occurrences.json"
       }
     },
-    "entity_relationships": {
-      "type": "object",
+    "entityRelationships": {
+      "type": "array",
       "items": {
         "$ref": "entity_relationships.json"
       }
     },
     "citations": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "citations.json"
       }
     },
     "identifiers": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "identifications.json"
       }
     },
-    "chronometric_age": {
-      "type": "object",
+    "chronometricAge": {
+      "type": "array",
       "items": {
         "$ref": "chronometric_age.json"
       }
@@ -243,11 +247,11 @@
     "ods:version",
     "ods:type",
     "ods:created",
-    "ods:mids_level",
-    "ods:physical_specimen_id",
-    "ods:physical_specimen_id_type",
-    "ods:source_system",
+    "ods:midsLevel",
+    "ods:physicalSpecimenId",
+    "ods:physicalSpecimenIdType",
+    "ods:sourceSystem",
     "dcterms:license",
-    "???:institution_id"
+    "???:institutionId"
   ]
 }

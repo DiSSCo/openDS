@@ -3,24 +3,24 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "???:identification_type": {
+    "???:identificationType": {
       "type": "string",
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"
     },
-    "???:taxon_formula": {
+    "???:taxonFormula": {
       "type": "string",
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"
     },
-    "dwc:verbatim_identification": {
+    "dwc:verbatimIdentification": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/verbatimIdentification",
       "examples": [
         "Peromyscus sp."
       ]
     },
-    "dwc:type_status": {
+    "dwc:typeStatus": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/typeStatus",
       "enum": [
@@ -31,28 +31,28 @@
       ],
       "$comment": "Unclear if we can make this an enumeration, which values?"
     },
-    "dwc:identified_by": {
+    "dwc:identifiedBy": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/identifiedBy",
       "example": [
         "James L. Patton"
       ]
     },
-    "dwc:identified_by_id": {
+    "dwc:identifiedById": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/identifiedByID",
       "example": [
         "https://orcid.org/0000-0002-1825-0097"
       ]
     },
-    "dwc:date_identified": {
+    "dwc:dateIdentified": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/dateIdentified",
       "example": [
         "2009-02-20T08:40Z"
       ]
     },
-    "dwc:identification_references": {
+    "dwc:identificationReferences": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/identificationReferences",
       "example": [
@@ -60,69 +60,69 @@
       ],
       "$comment": "Is this still needed or can we add the citation object here?"
     },
-    "dwc:identification_verification_status": {
+    "dwc:identificationVerificationStatus": {
       "type": "boolean",
       "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus",
       "example": [
         true
       ]
     },
-    "dwc:identification_remarks": {
+    "dwc:identificationRemarks": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/identificationRemarks",
       "examples": [
         "Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas."
       ]
     },
-    "???:type_designation_type": {
+    "???:typeDesignationType": {
       "type": "string",
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"
     },
-    "???:type_designated_by": {
+    "???:typeDesignatedBy": {
       "type": "string",
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"
     },
-    "taxon_identifications": {
+    "taxonIdentifications": {
       "type": "object",
       "items": {
         "type": "object",
         "properties": {
-          "dwc:scientific_name": {
+          "dwc:scientificName": {
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/scientificName",
             "examples": [
               "Roptrocerus typographi (Györfi, 1952)"
             ]
           },
-          "dwc:scientific_name_authorship": {
+          "dwc:scientificNameAuthorship": {
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
             "examples": [
               "(Torr.) J.T. Howell"
             ]
           },
-          "dwc:name_according_to": {
+          "dwc:nameAccordingTo": {
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/nameAccordingTo",
             "examples": [
               "Plants of the World Online"
             ]
           },
-          "dwc:taxon_rank": {
+          "dwc:taxonRank": {
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/taxonRank",
             "examples": [
               "species"
             ]
           },
-          "???:taxon_source": {
+          "???:taxonSource": {
             "type": "string",
             "description": "Unclear yet",
             "$comment": "Unknown what this field should be"
           },
-          "dwc:taxon_remarks": {
+          "dwc:taxonRemarks": {
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/taxonRemarks",
             "examples": [
@@ -186,19 +186,19 @@
               "Strobus"
             ]
           },
-          "accepted_scientific_name": {
+          "???:acceptedScientificName": {
             "type": "string",
             "description": "Unclear yet",
             "$comment": "Is this field necessary if we indicated accepted on the identification level"
           }
         },
         "required": [
-          "dwc:scientific_name"
+          "dwc:scientificName"
         ]
       }
     }
   },
   "required": [
-    "dwc:identification_verification_status"
+    "dwc:identificationVerificationStatus"
   ]
 }

@@ -1,33 +1,40 @@
 {
-  "$id": "entity_relationship",
+  "$id": "entityRelationship",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
-    "entity_relationship_type": {
+    "entityRelationshipType": {
       "type": "string"
     },
-    "object_entity_iri": {
-      "type": "string"
-    },
-    "entity_relationship_date": {
-      "type": "string"
-    },
-    "entity_relationship_order": {
-      "type": "integer"
-    },
-    "entity_relationship_creator_name": {
+    "objectEntityIri": {
       "type": "string",
+      "format": "iri",
+      "description": "The link to the referenced resource. This could be an internal object linked through the PID or an external object"
+    },
+    "entityRelationshipDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The data time on which the relationship was established"
+    },
+    "entityRelationshipOrder": {
+      "type": "integer",
+      "description": "When multiple relationships are added an order can be defined"
+    },
+    "entityRelationshipCreatorName": {
+      "type": "string",
+      "description": "The name of the relationship creator",
       "$comment": "Not available in GBIF UM"
     },
-    "entity_relationship_creator_id": {
+    "entityRelationshipCreatorId": {
       "type": "string",
+      "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)",
       "$comment": "Not available in GBIF UM"
     }
   },
   "required": [
-    "entity_relationship_type",
-    "object_entity_iri",
-    "entity_relationship_date",
-    "entity_relationship_creator_id"
+    "entityRelationshipType",
+    "objectEntityIri",
+    "entityRelationshipDate",
+    "entityRelationshipCreatorId"
   ]
 }

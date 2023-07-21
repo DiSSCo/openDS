@@ -1,5 +1,5 @@
 {
-  "$id": "digital_entity",
+  "$id": "digitalEntity",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
@@ -45,13 +45,14 @@
         "Text"
       ]
     },
-    "ac:access_uri": {
+    "ac:accessUri": {
       "type": "string",
+      "format": "uri",
       "description": "https://rs.tdwg.org/ac/terms/accessURI",
       "examples": [
       ]
     },
-    "xmpRights:web_statement": {
+    "xmpRights:webStatement": {
       "type": "string",
       "description": "https://ns.adobe.com/xap/1.0/rights/WebStatement",
       "$comment": "What is the difference with dcterms:license?"
@@ -71,16 +72,17 @@
       "description": "https://purl.org/dc/terms/rights",
       "$comment": "What is the difference with dcterms:license?"
     },
-    "???:rights_uri": {
+    "???:rightsUri": {
       "type": "string",
+      "format": "uri",
       "$comment": "What is the difference with dcterms:license? or dcterms:rights?. dcterms:rights is already recommended to be a URI"
     },
-    "dcterms:access_rights": {
+    "dcterms:accessRights": {
       "type": "string",
       "description": "https://purl.org/dc/terms/accessRights",
       "$comment": "What is the difference with dcterms:license?"
     },
-    "dcterms:rights_holder": {
+    "dcterms:rightsHolder": {
       "type": "string",
       "description": "https://purl.org/dc/terms/rightsHolder",
       "examples": [
@@ -90,8 +92,9 @@
       "type": "string",
       "description": "https://purl.org/dc/terms/source"
     },
-    "???:source_uri": {
+    "???:sourceUri": {
       "type": "string",
+      "format": "uri",
       "$comment": "It is already recommended to use URI in the dcterms:source"
     },
     "dcterms:creator": {
@@ -107,26 +110,26 @@
       "description": "https://purl.org/dc/terms/modified"
     },
     "assertions": {
+      "type": "array",
       "items": {
-        "type": "object",
         "$ref": "assertions.json"
       }
     },
     "citations": {
+      "type": "array",
       "items": {
-        "type": "object",
         "$ref": "citations.json"
       }
     },
     "identifiers": {
+      "type": "array",
       "items": {
-        "type": "object",
         "$ref": "identifications.json"
       }
     },
-    "entity_relationships": {
+    "entityRelationships": {
+      "type": "array",
       "items": {
-        "type": "object",
         "$ref": "entity_relationships.json"
       }
     }
@@ -135,7 +138,7 @@
     "ods:id",
     "ods:version",
     "ods:created",
-    "ac:access_uri",
+    "ac:accessUri",
     "dcterms:license"
   ]
 }
