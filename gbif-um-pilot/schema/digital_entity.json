@@ -47,9 +47,23 @@
     },
     "ac:accessUri": {
       "type": "string",
-      "format": "uri",
       "description": "https://rs.tdwg.org/ac/terms/accessURI",
       "examples": [
+      ]
+    },
+    "dwc:institutionId": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "examples": [
+        "https://ror.org/015hz7p22"
+      ],
+      "$comment": "Add format for ROR or Wikidata ID"
+    },
+    "dwc:institutionName": {
+      "type": "string",
+      "description": "Full museum name according to ROR or Wikidata",
+      "examples": [
+        "National Museum of Natural History"
       ]
     },
     "xmpRights:webStatement": {
@@ -66,6 +80,10 @@
       "type": "string",
       "description": "https://purl.org/dc/terms/license",
       "$comment": "Create a enum for this?"
+    },
+    "dcterms:description": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/description"
     },
     "dcterms:rights": {
       "type": "string",
@@ -124,7 +142,7 @@
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifications.json"
+        "$ref": "identifiers.json"
       }
     },
     "entityRelationships": {

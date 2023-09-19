@@ -29,8 +29,6 @@
     "ods:type": {
       "type": "string",
       "description": "The FDO type of the object",
-      "enum": [
-      ],
       "$comment": "Unclear what value goes here"
     },
     "ods:midsLevel": {
@@ -47,7 +45,9 @@
       "type": "string",
       "description": "To indicate if the physical identifier is globally unique or locally unique",
       "enum": [
-        "RESOLVABLE, GLOBAL, LOCAL"
+        "RESOLVABLE",
+        "GLOBAL",
+        "LOCAL"
       ],
       "$comment": "Do we need to further distinguish the identifier, for example add 'RESOLVABLE'"
     },
@@ -57,7 +57,8 @@
       "enum": [
         "Natural",
         "Human-made",
-        "Mixed origin"
+        "Mixed origin",
+        "Unclassified"
       ],
       "example": [
         "Natural"
@@ -73,7 +74,8 @@
         "Earth System",
         "Extraterrestrial",
         "Cultural Artefacts",
-        "Archive Material"
+        "Archive Material",
+        "Unclassified"
       ],
       "example": [
         "Life"
@@ -92,7 +94,8 @@
         "Palaeontology",
         "Zoology",
         "Environment",
-        "Other Bio/Geodiversity"
+        "Other Bio/Geodiversity",
+        "Unclassified"
       ],
       "example": [
         "Botany"
@@ -106,13 +109,21 @@
     },
     "ods:livingOrPreserved": {
       "type": "string",
-      "description": "Wether the specimen is living or preserved"
+      "description": "Whether the specimen is living or preserved"
     },
     "dcterms:license": {
       "type": "string",
-      "description": "License for the metadata of the physical specimen",
-      "enum": [],
+      "description": "http://purl.org/dc/terms/license",
       "$comment": "Determine available licenses"
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "description": "http://purl.org/dc/terms/modified"
+    },
+    "dwc:basisOfRecord": {
+      "type": "string",
+      "description": "The basis for the record",
+      "$comment": "Switch to enumeration as this is a limited list"
     },
     "dwc:preparations": {
       "type": "string",
@@ -193,8 +204,29 @@
         "https://orcid.org/0000-0002-1825-0097"
       ]
     },
+    "dwc:datasetName": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/datasetName",
+      "examples": [
+        "Hummingbirds"
+      ]
+    },
+    "dcterms:accessRights": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/accessRights",
+      "examples": [
+        "not-for-profit use only"
+      ]
+    },
+    "dcterms:rightsHolder": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/rightsHolder",
+      "examples": [
+        "Museu de História Natural e da Ciência da Universidade do Porto"
+      ]
+    },
     "materialEntity": {
-      "type": "object",
+      "type": "array",
       "items": {
         "$ref": "material_entity.json"
       }
@@ -232,7 +264,7 @@
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifications.json"
+        "$ref": "identifiers.json"
       }
     },
     "chronometricAge": {

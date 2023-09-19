@@ -3,6 +3,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "dwc:identificationID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationID",
+      "examples": [
+        "9992"
+      ]
+    },
     "???:identificationType": {
       "type": "string",
       "description": "Unclear yet",
@@ -23,9 +30,6 @@
     "dwc:typeStatus": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/typeStatus",
-      "enum": [
-        "holotype, syntype"
-      ],
       "example": [
         "holotype"
       ],
@@ -84,11 +88,24 @@
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"
     },
+    "citations": {
+      "type": "array",
+      "items": {
+        "$ref": "citations.json"
+      }
+    },
     "taxonIdentifications": {
-      "type": "object",
+      "type": "array",
       "items": {
         "type": "object",
         "properties": {
+          "dwc:taxonID": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/TaxonID",
+            "examples": [
+              "ARTHROTER|147672"
+            ]
+          },
           "dwc:scientificName": {
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/scientificName",
@@ -108,6 +125,13 @@
             "description": "https://rs.tdwg.org/dwc/terms/nameAccordingTo",
             "examples": [
               "Plants of the World Online"
+            ]
+          },
+          "dwc:namePublishedInYear": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/namePublishedInYear",
+            "examples": [
+              "2023"
             ]
           },
           "dwc:taxonRank": {
@@ -177,6 +201,36 @@
             "description": "https://rs.tdwg.org/dwc/terms/genus",
             "examples": [
               "Puma"
+            ]
+          },
+          "dwc:specificEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/specificEpithet",
+            "examples": [
+              "concolor"
+            ]
+          },
+          "dwc:taxonomicStatus": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/taxonomicStatus",
+            "$comment": "Might become an enum",
+            "examples": [
+              "accepted"
+            ]
+          },
+          "dwc:nomenclaturalCode": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/nomenclaturalCode",
+            "$comment": "Might become an enum",
+            "examples": [
+              "ICBN"
+            ]
+          },
+          "dwc:vernacularName": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/vernacularName",
+            "examples": [
+              "Meerval | Wels | Catfish | Silure glane | Wels | Waller | Siluro | Malle"
             ]
           },
           "dwc:subgenus": {
