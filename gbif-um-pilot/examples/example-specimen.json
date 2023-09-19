@@ -17,16 +17,18 @@
       "identified_by_id": null,
       "date_identified": null,
       "identification_verification_status": true,
-      "taxon_identifications": {
-        "scientific_name": "Agriopis leucophaearia (Denis & Schiffermüller, 1775)",
-        "scientific_name_authorship": "(Denis & Schiffermüller, 1775)",
-        "specificEpithet": "leucophaearia",
-        "order": "Lepidoptera",
-        "family": "Geometridae",
-        "genus": "Agriopis",
-        "class": "Insecta",
-        "kingdom": null
-      }
+      "taxon_identifications": [
+        {
+          "scientific_name": "Agriopis leucophaearia (Denis & Schiffermüller, 1775)",
+          "scientific_name_authorship": "(Denis & Schiffermüller, 1775)",
+          "specificEpithet": "leucophaearia",
+          "order": "Lepidoptera",
+          "family": "Geometridae",
+          "genus": "Agriopis",
+          "class": "Insecta",
+          "kingdom": null
+        }
+      ]
     }
   ],
   "identifiers": [

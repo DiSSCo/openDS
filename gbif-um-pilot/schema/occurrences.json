@@ -194,6 +194,13 @@
         "meters"
       ]
     },
+    "dwc:samplingProtocol": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/samplingProtocol",
+      "examples": [
+        "collected directly from the wild"
+      ]
+    },
     "???:eventEffort": {
       "type": "string",
       "comment": "Not sure what this field means"
@@ -219,6 +226,12 @@
     "???:collectorId": {
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "$ref": "assertions.json"
+      }
     },
     "location": {
       "$ref": "./location.json"
