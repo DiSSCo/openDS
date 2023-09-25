@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-2020-12/schema#",
+  "type": "object",
+  "properties": {
+    "ods:id": { "type": "string" },
+    "ods:type": { "type": "string" },
+    "oa:motivation": {
+      "type": "string",
+      "enum": ["ods:adding", "oa:assessing", "oa:editing", "oa:commenting"]
+    },
+    "oa:motivatedBy": { "type": "string" },
+    "oa:target": {
+      "type": "object",
+      "properties": {
+        "ods:id": { "type": "string" },
+        "ods:selector": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": { "type": "string", "enum": ["ods:FieldValueSelector"] },
+                "ods:field": { "type": "string" }
+              },
+              "required": ["ods:type", "ods:field"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": { "type": "string", "enum": ["ods:ClassValueSelector"] },
+                "ods:field": { "type": "string" }
+              },
+              "required": ["ods:type", "ods:field"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": { "type": "string", "enum": ["oa:FragmentSelector"] },
+                "ac:hasROI": {
+                  "type": "object",
+                  "properties": {
+                    "ac:acxFrac": { "type": "number" },
+                    "ac:acyFrac": { "type": "number" },
+                    "ac:acwidthFrac": { "type": "number" },
+                    "ac:acheightFrac": { "type": "number" }
+                  },
+                  "required": ["ac:acxFrac", "ac:acyFrac", "ac:acwidthFrac", "ac:acheightFrac"]
+                },
+                "dcterms:conformsTo": { "type": "string" }
+              },
+              "required": ["ods:type", "ac:hasROI", "dcterms:conformsTo"]
+            }
+          ]
+        }
+      },
+      "required": ["ods:id"]
+    },
+    "oa:body": {
+      "type": "object",
+      "properties": {
+        "ods:type": { "type": "string" },
+        "ods:value": { "type": "array" },
+        "ods:reference": { "type": "string" },
+        "ods:score": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "required": ["ods:type", "ods:value"]
+    },
+    "dcterms:creator": {
+      "type": "object",
+      "properties": {
+        "ods:type": { "type": "string" },
+        "foaf:name": { "type": "string" },
+        "ods:id": { "type": "string" }
+      },
+      "required": ["ods:type", "foaf:name", "ods:id"]
+    },
+    "dcterms:created": { "type": "string" },
+    "as:generator": {
+      "type": "object",
+      "properties": {
+        "ods:type": { "type": "string" },
+        "foaf:name": { "type": "string" },
+        "ods:id": { "type": "string" }
+      },
+      "required": ["ods:type", "foaf:name", "ods:id"]
+    },
+    "dcterms:issued": { "type": "string" },
+    "ods:aggregateRating": {
+      "type": "schema.org:AggregateRating",
+      "properties": {
+        "ods:type": { "type": "string" },
+        "schema.org:ratingCount": { "type": "number" },
+        "schema.org:ratingValue": { "type": "number" }
+      },
+      "required": ["ods:type", "schema:ratingCount", "schema:ratingValue"]
+    }
+  },
+  "required": [
+    "ods:id",
+    "ods:type",
+    "oa:motivation",
+    "oa:target",
+    "oa:body",
+    "dcterms:creator",
+    "dcterms:created",
+    "as:generator",
+    "dcterms:issued"
+  ]
+}
