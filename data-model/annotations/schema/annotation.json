@@ -1,156 +1,111 @@
 {
-  "$id": "root",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "http://json-schema.org/draft-2020-12/schema#",
   "type": "object",
   "properties": {
-    "ods:id": {
-      "type": "string",
-      "description": "The unique digital identifier of the object",
-      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}",
-      "examples": [
-        "https://doi.org/10.22/XXX-XXX-XXX"
-      ],
-      "$comment": "Not sure if we should use the ods ontology"
-    },
-    "ods:version": {
-      "type": "integer",
-      "description": "The version of the object, each change generates a new version",
-      "minimum": 1,
-      "examples": [
-        1
-      ],
-      "$comment": "Not officially part of W3C Web annotation"
-    },
-    "dcterms:created": {
-      "type": "string",
-      "description": "The timestamp that the object version was created in DiSSCo",
-      "format": "date-time",
-      "$comment": "Or use the oa ontology, which is more in line with W3C?"
-    },
-    "ods:type": {
-      "type": "string",
-      "description": "The FDO type of the object",
-      "constant": "Annotation",
-      "$comment": "Not sure if we should use the ods ontology"
-    },
+    "ods:id": { "type": "string" },
+    "ods:type": { "const": "Annotation" },
+    "version": { "type": "integer" },
     "oa:motivation": {
       "type": "string",
-      "description": "The FDO type of the object",
-      "enum": [
-        "oa:assessing",
-        "oa:bookmarking",
-        "oa:classifying",
-        "oa:commenting",
-        "oa:describing",
-        "oa:editing",
-        "oa:highlighting",
-        "oa:identifying",
-        "oa:linking",
-        "oa:moderating",
-        "oa:questioning",
-        "oa:replying",
-        "oa:tagging"
-      ]
+      "enum": ["ods:adding", "oa:assessing", "oa:editing", "oa:commenting"]
     },
-    "dcterms:creator": {
+    "oa:motivatedBy": { "type": "string" },
+    "oa:target": {
       "type": "object",
       "properties": {
-        "???:id": {
-          "type": "string",
-          "description": "Contains the orcid (person), ror (organisation) or the PID (software agent)"
-        },
-        "???:type": {
-          "type": "string",
-          "enum": [
-            "foaf:Person",
-            "foaf:Organisation",
-            "oa:SoftwareAgent"
+        "ods:id": { "type": "string" },
+        "ods:type": { "type": "string" },
+        "selector": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "type": { "const": "fieldValueSelector" },
+                "ods:field": { "type": "string" }
+              },
+              "required": ["ods:type", "ods:field"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "type": { "const": "classValueSelector" },
+                "oa:class": { "type": "string" }
+              },
+              "required": ["ods:type", "oa:class"]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": { "const": "FragmentSelector" },
+                "ac:hasROI": {
+                  "type": "object",
+                  "properties": {
+                    "ac:xFrac": { "type": "number", "minimum": 0, "maximum": 1 },
+                    "ac:yFrac": { "type": "number", "minimum": 0, "maximum": 1 },
+                    "ac:widthFrac": { "type": "number", "minimum": 0, "maximum": 1 },
+                    "ac:heightFrac": { "type": "number", "minimum": 0, "maximum": 1 }
+                  },
+                  "required": ["ac:xFrac", "ac:yFrac", "ac:widthFrac", "ac:heightFrac"]
+                },
+                "dcterms:conformsTo": { "type": "string" }
+              },
+              "required": ["oa:type", "oa:selector"]
+            }
           ]
-        },
-        "foaf:name": {
-          "type": "string"
         }
       },
-      "required": [
-        "???:id",
-        "???:type"
-      ]
+      "required": ["ods:id", "ods:type"]
     },
-    "dcterms:issued": {
-      "type": "string",
-      "format": "date-time",
-      "description": "The agent responsible for creating the resource."
+    "oa:body": {
+      "type": "object",
+      "properties": {
+        "ods:type": { "type": "string" },
+        "oa:value": { "type": "array" },
+        "dcterms:reference": { "type": "string" },
+        "ods:score": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "required": ["ods:type", "oa:value"]
     },
+    "oa:creator": {
+      "type": "object",
+      "properties": {
+        "ods:type": { "type": "string" },
+        "foaf:name": { "type": "string" },
+        "ods:id": { "type": "string" }
+      },
+      "required": ["ods:id", "ods:type"]
+    },
+    "dcterms:created": { "type": "string", "format": "date" },
+     "ods:deletedOn": { "type": "string", "format": "date" } ,
     "as:generator": {
       "type": "object",
       "properties": {
-        "???:id": {
-          "type": "string",
-          "description": "Contains the orcid (person), ror (organisation) or the PID (software agent)"
-        },
-        "???:type": {
-          "type": "string",
-          "enum": [
-            "foaf:Person",
-            "foaf:Organisation",
-            "oa:SoftwareAgent"
-          ]
-        },
-        "foaf:name": {
-          "type": "string"
-        }
+        "ods:id": { "type": "string" },
+        "foaf:name": { "type": "string" },
+        "ods:type": { "type": "string" }
       },
-      "required": [
-        "???:id",
-        "???:type"
-      ]
+      "required": ["ods:id", "ods:type"]
     },
-    "target": {
+    "aggregateRating": {
       "type": "object",
       "properties": {
-        "id": {
-          "type": "string",
-          "format": "url",
-          "description": "The PID of the object the annotation is linked to"
-        },
-        "type": {
-          "type": "string",
-          "description": "The type of object the annotation is linked to"
-        },
-        "individualProp": {
-          "type": "string",
-          "description": "The individual property within the object the annotation is linked to"
-        }
+        "ods:type": { "type": "string" },
+        "ratingCount": { "type": "number" },
+        "ratingValue": { "type": "number" }
       },
-      "required": [
-        "id",
-        "type"
-      ]
-    },
-    "body": {
-      "type": "object",
-      "$comment": "Needs more refinement",
-      "properties": {
-        "values": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "required": [
-        "values"
-      ]
+      "required": ["ods:type", "ratingCount", "ratingValue"]
     }
   },
   "required": [
     "ods:id",
-    "ods:version",
+    "ods:type",
+    "oa:version",
+    "oa:motivation",
+    "oa:target",
+    "oa:body",
+    "oa:creator",
     "dcterms:created",
-    "dcterms:creator",
-    "as:generator",
-    "dcterms:issued",
-    "target",
-    "body"
+    "as:generator"
   ]
 }
