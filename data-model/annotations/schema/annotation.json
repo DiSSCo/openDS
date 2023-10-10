@@ -63,8 +63,7 @@
         "ods:type": { "type": "string" },
         "oa:value": { "type": "array" },
         "dcterms:reference": { "type": "string" },
-        "ods:score": { "type": "number", "minimum": 0, "maximum": 1 },
-        "ods:deletedOn": { "type": "string", "format": "date" } 
+        "ods:score": { "type": "number", "minimum": 0, "maximum": 1 }
       },
       "required": ["ods:type", "oa:value"]
     },
@@ -78,6 +77,7 @@
       "required": ["ods:id", "ods:type"]
     },
     "dcterms:created": { "type": "string", "format": "date" },
+     "ods:deletedOn": { "type": "string", "format": "date" } ,
     "as:generator": {
       "type": "object",
       "properties": {
