@@ -3,106 +3,72 @@
   "type": "object",
   "properties": {
     "ods:id": { "type": "string" },
-    "ods:type": { "type": "string" },
+    "ods:type": { "const": "Annotation" },
+    "version": { "type": "integer" },
     "oa:motivation": {
-      "type": "string",
+      "ods:type": "string",
       "enum": ["ods:adding", "oa:assessing", "oa:editing", "oa:commenting"]
     },
     "oa:motivatedBy": { "type": "string" },
     "oa:target": {
-      "type": "object",
+      "ods:type": "object",
       "properties": {
         "ods:id": { "type": "string" },
-        "ods:selector": {
-          "oneOf": [
-            {
-              "type": "object",
-              "properties": {
-                "ods:type": { "type": "string", "enum": ["ods:FieldValueSelector"] },
-                "ods:field": { "type": "string" }
-              },
-              "required": ["ods:type", "ods:field"]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "ods:type": { "type": "string", "enum": ["ods:ClassValueSelector"] },
-                "ods:field": { "type": "string" }
-              },
-              "required": ["ods:type", "ods:field"]
-            },
-            {
-              "type": "object",
-              "properties": {
-                "ods:type": { "type": "string", "enum": ["oa:FragmentSelector"] },
-                "ac:hasROI": {
-                  "type": "object",
-                  "properties": {
-                    "ac:acxFrac": { "type": "number" },
-                    "ac:acyFrac": { "type": "number" },
-                    "ac:acwidthFrac": { "type": "number" },
-                    "ac:acheightFrac": { "type": "number" }
-                  },
-                  "required": ["ac:acxFrac", "ac:acyFrac", "ac:acwidthFrac", "ac:acheightFrac"]
-                },
-                "dcterms:conformsTo": { "type": "string" }
-              },
-              "required": ["ods:type", "ac:hasROI", "dcterms:conformsTo"]
-            }
-          ]
-        }
+        "ods:type": { "type": "string" },
       },
-      "required": ["ods:id"]
+      "required": ["id", "type"]
     },
     "oa:body": {
-      "type": "object",
+      "ods:type": "object",
       "properties": {
         "ods:type": { "type": "string" },
-        "ods:value": { "type": "array" },
-        "ods:reference": { "type": "string" },
-        "ods:score": { "type": "number", "minimum": 0, "maximum": 1 }
+        "oa:value": { "type": "array" },
+        "dcterms:reference": { "type": "string" },
+        "ods:score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "ods:deletedOn": { "type": "string", "format": "date" } 
       },
-      "required": ["ods:type", "ods:value"]
+      "required": ["type", "value"]
     },
-    "dcterms:creator": {
-      "type": "object",
+    "oa:creator": {
+      "ods:type": "object",
       "properties": {
         "ods:type": { "type": "string" },
         "foaf:name": { "type": "string" },
         "ods:id": { "type": "string" }
       },
-      "required": ["ods:type", "foaf:name", "ods:id"]
+      "required": ["type", "name", "id"]
     },
-    "dcterms:created": { "type": "string" },
+    "dcterms:created": { "type": "string", "format": "date" },
     "as:generator": {
       "type": "object",
       "properties": {
-        "ods:type": { "type": "string" },
-        "foaf:name": { "type": "string" },
-        "ods:id": { "type": "string" }
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "type": { "type": "string" }
       },
-      "required": ["ods:type", "foaf:name", "ods:id"]
+      "required": ["id", "name", "type"]
     },
-    "dcterms:issued": { "type": "string" },
-    "ods:aggregateRating": {
-      "type": "schema.org:AggregateRating",
+    "generated": { "type": "string" },
+    "aggregateRating": {
+      "type": "object",
       "properties": {
-        "ods:type": { "type": "string" },
-        "schema.org:ratingCount": { "type": "number" },
-        "schema.org:ratingValue": { "type": "number" }
+        "type": { "type": "string" },
+        "ratingCount": { "type": "number" },
+        "ratingValue": { "type": "number" }
       },
-      "required": ["ods:type", "schema:ratingCount", "schema:ratingValue"]
+      "required": ["type", "ratingCount", "ratingValue"]
     }
   },
   "required": [
-    "ods:id",
-    "ods:type",
-    "oa:motivation",
-    "oa:target",
-    "oa:body",
-    "dcterms:creator",
-    "dcterms:created",
-    "as:generator",
-    "dcterms:issued"
+    "id",
+    "type",
+    "version",
+    "motivation",
+    "target",
+    "body",
+    "creator",
+    "created",
+    "generator",
+    "generated"
   ]
 }
