@@ -4,7 +4,7 @@
   "properties": {
     "ods:id": { "type": "string" },
     "ods:type": { "const": "Annotation" },
-    "oa:version": { "type": "integer" },
+    "version": { "type": "integer" },
     "oa:motivation": {
       "type": "string",
       "enum": ["ods:adding", "oa:assessing", "oa:editing", "oa:commenting"]
@@ -48,7 +48,7 @@
                   },
                   "required": ["ac:xFrac", "ac:yFrac", "ac:widthFrac", "ac:heightFrac"]
                 },
-                "oa:conformsTo": { "type": "string" }
+                "dcterms:conformsTo": { "type": "string" }
               },
               "required": ["oa:type", "oa:selector"]
             }
