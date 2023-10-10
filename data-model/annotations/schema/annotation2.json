@@ -83,10 +83,10 @@
             "ac:hasROI": {
               "type": "object",
               "properties": {
-                "ac:xFrac": { "type": "number" },
-                "ac:yFrac": { "type": "number" },
-                "ac:widthFrac": { "type": "number" },
-                "ac:heightFrac": { "type": "number" }
+                "ac:xFrac": { "type": "number" ,"minimum": 0, "maximum": 1},
+                "ac:yFrac": { "type": "number" , "minimum": 0, "maximum": 1},
+                "ac:widthFrac": { "type": "number" "minimum": 0, "maximum": 1},
+                "ac:heightFrac": { "type": "number", "minimum": 0, "maximum": 1}
               },
               "required": ["ac:xFrac", "ac:yFrac", "ac:widthFrac", "ac:heightFrac"]
             },
