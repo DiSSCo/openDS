@@ -76,8 +76,8 @@
       },
       "required": ["ods:id", "ods:type"]
     },
-    "dcterms:created": { "type": "string", "format": "date" },
-     "ods:deletedOn": { "type": "string", "format": "date" } ,
+    "dcterms:created": { "type": "string", "format": "date-time" },
+     "ods:deletedOn": { "type": "string", "format": "date-time" } ,
     "as:generator": {
       "type": "object",
       "properties": {
