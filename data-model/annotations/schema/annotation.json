@@ -6,9 +6,7 @@
       "type": "string"
     },
     "ods:type": {
-      "enum": [
-        "Annotation"
-      ]
+      "const": "Annotation"
     },
     "version": {
       "type": "integer"
@@ -35,54 +33,83 @@
         },
         "oa:selector": {
           "type": "object",
-          "properties": {
-            "ods:type": {
-              "enum": [
-                "FieldValueSelector",
-                "ClassValueSelector",
-                "FragmentSelector"
-              ]
-            },
-            "ods:selectorFieldOrClass": {
-              "type": "string"
-            },
-            "ac:hasROI": {
+          "oneOf": [
+            {
               "type": "object",
               "properties": {
-                "ac:xFrac": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 1
+                "type": {
+                  "const": "FieldValueSelector"
                 },
-                "ac:yFrac": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 1
-                },
-                "ac:widthFrac": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 1
-                },
-                "ac:heightFrac": {
-                  "type": "number",
-                  "minimum": 0,
-                  "maximum": 1
+                "ods:field": {
+                  "type": "string"
                 }
               },
               "required": [
-                "ac:xFrac",
-                "ac:yFrac",
-                "ac:widthFrac",
-                "ac:heightFrac"
+                "ods:type",
+                "ods:field"
               ]
             },
-            "dcterms:conformsTo": {
-              "type": "string"
+            {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "const": "ClassValueSelector"
+                },
+                "oa:class": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ods:type",
+                "oa:class"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": {
+                  "const": "FragmentSelector"
+                },
+                "ac:hasROI": {
+                  "type": "object",
+                  "properties": {
+                    "ac:xFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:yFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:widthFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:heightFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "ac:xFrac",
+                    "ac:yFrac",
+                    "ac:widthFrac",
+                    "ac:heightFrac"
+                  ]
+                },
+                "dcterms:conformsTo": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "oa:type",
+                "ac:hasROI"
+              ]
             }
-          },
-          "required": [
-            "ods:type"
           ]
         }
       },
@@ -90,93 +117,93 @@
         "ods:id",
         "ods:type"
       ]
+    },
+    "oa:body": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string"
+        },
+        "oa:value": {
+          "type": "array"
+        },
+        "dcterms:reference": {
+          "type": "string"
+        },
+        "ods:score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "ods:type",
+        "oa:value"
+      ]
+    },
+    "oa:creator": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string"
+        },
+        "foaf:name": {
+          "type": "string"
+        },
+        "ods:id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ods:id",
+        "ods:type"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ods:deletedOn": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "as:generator": {
+      "type": "object",
+      "properties": {
+        "ods:id": {
+          "type": "string"
+        },
+        "foaf:name": {
+          "type": "string"
+        },
+        "ods:type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ods:id",
+        "ods:type"
+      ]
+    },
+    "aggregateRating": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string"
+        },
+        "ratingCount": {
+          "type": "number"
+        },
+        "ratingValue": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "ods:type",
+        "ratingCount",
+        "ratingValue"
+      ]
     }
-  },
-  "oa:body": {
-    "type": "object",
-    "properties": {
-      "ods:type": {
-        "type": "string"
-      },
-      "oa:value": {
-        "type": "array"
-      },
-      "dcterms:reference": {
-        "type": "string"
-      },
-      "ods:score": {
-        "type": "number",
-        "minimum": 0,
-        "maximum": 1
-      }
-    },
-    "required": [
-      "ods:type",
-      "oa:value"
-    ]
-  },
-  "oa:creator": {
-    "type": "object",
-    "properties": {
-      "ods:type": {
-        "type": "string"
-      },
-      "foaf:name": {
-        "type": "string"
-      },
-      "ods:id": {
-        "type": "string"
-      }
-    },
-    "required": [
-      "ods:id",
-      "ods:type"
-    ]
-  },
-  "dcterms:created": {
-    "type": "string",
-    "format": "date-time"
-  },
-  "ods:deletedOn": {
-    "type": "string",
-    "format": "date-time"
-  },
-  "as:generator": {
-    "type": "object",
-    "properties": {
-      "ods:id": {
-        "type": "string"
-      },
-      "foaf:name": {
-        "type": "string"
-      },
-      "ods:type": {
-        "type": "string"
-      }
-    },
-    "required": [
-      "ods:id",
-      "ods:type"
-    ]
-  },
-  "aggregateRating": {
-    "type": "object",
-    "properties": {
-      "ods:type": {
-        "type": "string"
-      },
-      "ratingCount": {
-        "type": "number"
-      },
-      "ratingValue": {
-        "type": "number"
-      }
-    },
-    "required": [
-      "ods:type",
-      "ratingCount",
-      "ratingValue"
-    ]
   },
   "required": [
     "ods:id",
