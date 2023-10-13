@@ -2,105 +2,213 @@
   "$schema": "http://json-schema.org/draft-2020-12/schema#",
   "type": "object",
   "properties": {
-    "ods:id": { "type": "string" },
-    "ods:type": { "const": "Annotation" },
-    "version": { "type": "integer" },
-    "oa:motivation": {
-      "type": "string",
-      "enum": ["ods:adding", "oa:assessing", "oa:editing", "oa:commenting"]
+    "ods:id": {
+      "type": "string"
     },
-    "oa:motivatedBy": { "type": "string" },
+    "oa:type": {
+      "const": "Annotation"
+    },
+    "ods:version": {
+      "type": "integer"
+    },
+    "oa:motivation": {
+      "enum": [
+        "ods:adding",
+        "oa:assessing",
+        "oa:editing",
+        "oa:commenting"
+      ]
+    },
+    "oa:motivatedBy": {
+      "type": "string"
+    },
     "oa:target": {
       "type": "object",
       "properties": {
-        "ods:id": { "type": "string" },
-        "ods:type": { "type": "string" },
-        "selector": {
+        "ods:id": {
+          "type": "string"
+        },
+        "ods:type": {
+          "type": "string"
+        },
+        "oa:selector": {
           "type": "object",
           "oneOf": [
             {
               "type": "object",
               "properties": {
-                "type": { "const": "fieldValueSelector" },
-                "ods:field": { "type": "string" }
+                "type": {
+                  "const": "FieldValueSelector"
+                },
+                "ods:field": {
+                  "type": "string"
+                }
               },
-              "required": ["ods:type", "ods:field"]
+              "required": [
+                "ods:type",
+                "ods:field"
+              ]
             },
             {
               "type": "object",
               "properties": {
-                "type": { "const": "classValueSelector" },
-                "oa:class": { "type": "string" }
+                "type": {
+                  "const": "ClassValueSelector"
+                },
+                "oa:class": {
+                  "type": "string"
+                }
               },
-              "required": ["ods:type", "oa:class"]
+              "required": [
+                "ods:type",
+                "oa:class"
+              ]
             },
             {
               "type": "object",
               "properties": {
-                "ods:type": { "const": "FragmentSelector" },
+                "ods:type": {
+                  "const": "FragmentSelector"
+                },
                 "ac:hasROI": {
                   "type": "object",
                   "properties": {
-                    "ac:xFrac": { "type": "number", "minimum": 0, "maximum": 1 },
-                    "ac:yFrac": { "type": "number", "minimum": 0, "maximum": 1 },
-                    "ac:widthFrac": { "type": "number", "minimum": 0, "maximum": 1 },
-                    "ac:heightFrac": { "type": "number", "minimum": 0, "maximum": 1 }
+                    "ac:xFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:yFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:widthFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:heightFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
                   },
-                  "required": ["ac:xFrac", "ac:yFrac", "ac:widthFrac", "ac:heightFrac"]
+                  "required": [
+                    "ac:xFrac",
+                    "ac:yFrac",
+                    "ac:widthFrac",
+                    "ac:heightFrac"
+                  ]
                 },
-                "dcterms:conformsTo": { "type": "string" }
+                "dcterms:conformsTo": {
+                  "type": "string"
+                }
               },
-              "required": ["oa:type", "oa:selector"]
+              "required": [
+                "oa:type",
+                "ac:hasROI"
+              ]
             }
           ]
         }
       },
-      "required": ["ods:id", "ods:type"]
+      "required": [
+        "ods:id",
+        "ods:type"
+      ]
     },
     "oa:body": {
       "type": "object",
       "properties": {
-        "ods:type": { "type": "string" },
-        "oa:value": { "type": "array" },
-        "dcterms:reference": { "type": "string" },
-        "ods:score": { "type": "number", "minimum": 0, "maximum": 1 }
+        "ods:type": {
+          "type": "string"
+        },
+        "oa:value": {
+          "type": "array"
+        },
+        "dcterms:reference": {
+          "type": "string"
+        },
+        "ods:score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
       },
-      "required": ["ods:type", "oa:value"]
+      "required": [
+        "ods:type",
+        "oa:value"
+      ]
     },
     "oa:creator": {
       "type": "object",
       "properties": {
-        "ods:type": { "type": "string" },
-        "foaf:name": { "type": "string" },
-        "ods:id": { "type": "string" }
+        "ods:type": {
+          "type": "string"
+        },
+        "foaf:name": {
+          "type": "string"
+        },
+        "ods:id": {
+          "type": "string"
+        }
       },
-      "required": ["ods:id", "ods:type"]
+      "required": [
+        "ods:id",
+        "ods:type"
+      ]
     },
-    "dcterms:created": { "type": "string", "format": "date-time" },
-     "ods:deletedOn": { "type": "string", "format": "date-time" } ,
+    "dcterms:created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ods:deletedOn": {
+      "type": "string",
+      "format": "date-time"
+    },
     "as:generator": {
       "type": "object",
       "properties": {
-        "ods:id": { "type": "string" },
-        "foaf:name": { "type": "string" },
-        "ods:type": { "type": "string" }
+        "ods:id": {
+          "type": "string"
+        },
+        "foaf:name": {
+          "type": "string"
+        },
+        "ods:type": {
+          "type": "string"
+        }
       },
-      "required": ["ods:id", "ods:type"]
+      "required": [
+        "ods:id",
+        "ods:type"
+      ]
     },
     "aggregateRating": {
       "type": "object",
       "properties": {
-        "ods:type": { "type": "string" },
-        "ratingCount": { "type": "number" },
-        "ratingValue": { "type": "number" }
+        "ods:type": {
+          "type": "string"
+        },
+        "ratingCount": {
+          "type": "number"
+        },
+        "ratingValue": {
+          "type": "number"
+        }
       },
-      "required": ["ods:type", "ratingCount", "ratingValue"]
+      "required": [
+        "ods:type",
+        "ratingCount",
+        "ratingValue"
+      ]
     }
   },
   "required": [
     "ods:id",
-    "ods:type",
-    "oa:version",
+    "oa:type",
+    "ods:version",
     "oa:motivation",
     "oa:target",
     "oa:body",
