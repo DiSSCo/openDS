@@ -5,7 +5,7 @@
     "ods:id": {
       "type": "string"
     },
-    "oa:type": {
+    "rdf:type": {
       "const": "Annotation"
     },
     "ods:version": {
@@ -167,6 +167,10 @@
       "type": "string",
       "format": "date-time"
     },
+    "oa:generated": {
+      "type": "string",
+      "format": "date-time"
+    },
     "as:generator": {
       "type": "object",
       "properties": {
@@ -207,13 +211,14 @@
   },
   "required": [
     "ods:id",
-    "oa:type",
+    "rdf:type",
     "ods:version",
     "oa:motivation",
     "oa:target",
     "oa:body",
     "oa:creator",
     "dcterms:created",
-    "as:generator"
+    "as:generator",
+    "oa:generator"
   ]
 }
