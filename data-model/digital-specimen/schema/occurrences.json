@@ -150,6 +150,7 @@
     "dwc:year": {
       "type": "integer",
       "description": "https://rs.tdwg.org/dwc/terms/year",
+      "maximum": 9999,
       "examples": [
         2008
       ]
@@ -157,6 +158,8 @@
     "dwc:month": {
       "type": "integer",
       "description": "https://rs.tdwg.org/dwc/terms/month",
+      "maximum": 12,
+      "minimum": 1,
       "examples": [
         12
       ]
@@ -164,6 +167,8 @@
     "dwc:day": {
       "type": "integer",
       "description": "https://rs.tdwg.org/dwc/terms/day",
+      "maximum": 31,
+      "minimum": 1,
       "examples": [
         29
       ]
@@ -230,7 +235,7 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "assertions.json"
+        "$ref": "../../shared-models/schema/assertions.json"
       }
     },
     "location": {

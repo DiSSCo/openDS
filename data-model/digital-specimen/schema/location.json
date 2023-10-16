@@ -188,7 +188,7 @@
           ]
         },
         "dwc:pointRadiusSpatialFit": {
-          "type": "integer",
+          "type": "number",
           "description": "https://rs.tdwg.org/dwc/terms/pointRadiusSpatialFit",
           "examples": [
             1.5708
@@ -224,7 +224,6 @@
         },
         "dwc:georeferencedDate": {
           "type": "string",
-          "format": "date-time",
           "description": "https://rs.tdwg.org/dwc/terms/georeferencedDate",
           "examples": [
             "1963-03-08T14:07-0600"

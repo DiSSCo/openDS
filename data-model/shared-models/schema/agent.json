@@ -21,7 +21,7 @@
     "agentName": {
       "type": "string",
       "examples": [
-        "John Smits"
+        "John Smith"
       ]
     },
     "agentRoleBegan": {
@@ -39,7 +39,7 @@
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifications.json"
+        "$ref": "identifiers.json"
       }
     }
   },

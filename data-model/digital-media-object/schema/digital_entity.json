@@ -6,9 +6,9 @@
     "ods:id": {
       "type": "string",
       "description": "The unique digital identifier of the object",
-      "pattern": "https:\/\/doi.org\/10.22\/(.){3}-(.){3}-(.){3}",
+      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}",
       "examples": [
-        "https://doi.org/10.22/XXX-XXX-XXX"
+        "https://hdl.handle.net.org/20.5000.1025/XXX-XXX-XXX"
       ],
       "$comment": "Does an image get a DOI or a handle?"
     },
@@ -27,9 +27,14 @@
       "examples": [
       ]
     },
+    "ods:type": {
+      "type": "string",
+      "description": "The FDO type of the object",
+      "$comment": "Unclear what value goes here"
+    },
     "dcterms:type": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/type, which matches the FDO type of the object",
+      "description": "https://purl.org/dc/terms/type",
       "enum": [
         "Collection",
         "Dataset",
@@ -64,7 +69,8 @@
       "description": "Full museum name according to ROR or Wikidata",
       "examples": [
         "National Museum of Natural History"
-      ]
+      ],
+      "$comment": "Not part of DWC or the GBIF UM"
     },
     "xmpRights:webStatement": {
       "type": "string",
@@ -130,25 +136,25 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "assertions.json"
+        "$ref": "../../shared-models/schema/assertions.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "citations.json"
+        "$ref": "../../shared-models/schema/citations.json"
       }
     },
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifiers.json"
+        "$ref": "../../shared-models/schema/identifiers.json"
       }
     },
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "entity_relationships.json"
+        "$ref": "../../shared-models/schema/entity_relationships.json"
       }
     }
   },

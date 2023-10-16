@@ -89,19 +89,19 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "assertions.json"
+        "$ref": "../../shared-models/schema/assertions.json"
       }
     },
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "entity_relationships.json"
+        "$ref": "../../shared-models/schema/entity_relationships.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "citations.json"
+        "$ref": "../../shared-models/schema/citations.json"
       }
     },
     "identifiers": {
