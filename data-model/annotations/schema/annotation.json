@@ -189,23 +189,23 @@
         "ods:type"
       ]
     },
-    "aggregateRating": {
+    "schema.org:aggregateRating": {
       "type": "object",
       "properties": {
         "ods:type": {
           "type": "string"
         },
-        "ratingCount": {
+        "schema.org:ratingCount": {
           "type": "number"
         },
-        "ratingValue": {
+        "schema.org:ratingValue": {
           "type": "number"
         }
       },
       "required": [
         "ods:type",
-        "ratingCount",
-        "ratingValue"
+        "schema.org:ratingCount",
+        "schema.org:ratingValue"
       ]
     }
   },
