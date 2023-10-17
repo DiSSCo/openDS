@@ -288,7 +288,7 @@
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "../shared-models/identifiers.json"
+        "$ref": "../../shared-models/schema/identifiers.json"
       }
     },
     "chronometricAge": {

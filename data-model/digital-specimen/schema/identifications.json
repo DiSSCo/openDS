@@ -121,11 +121,11 @@
               "Plants of the World Online"
             ]
           },
-          "dwc:namePublishedInYear":{
+          "dwc:namePublishedInYear": {
             "type": "string",
-            "description": "",
+            "description": "https://rs.tdwg.org/dwc/terms/namePublishedInYear",
             "examples": [
-              ""
+              "2022"
             ]
           },
           "dwc:taxonRank": {
