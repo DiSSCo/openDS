@@ -115,20 +115,6 @@
         "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
       ]
     },
-    "dwc:recordedBy": {
-      "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
-      "examples": [
-        "José E. Crespo"
-      ]
-    },
-    "dwc:recordedById": {
-      "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
-      "examples": [
-        "https://orcid.org/0000-0002-1825-0097"
-      ]
-    },
     "???:eventName": {
       "type": "string",
       "comment": "Not sure what this field means"
@@ -224,14 +210,6 @@
         "After the recent rains the river is nearly at flood stage"
       ]
     },
-    "???:collectorName": {
-      "type": "string",
-      "$comment": "Not part of DWC or the UM?"
-    },
-    "???:collectorId": {
-      "type": "string",
-      "$comment": "Not part of DWC or the UM?"
-    },
     "assertions": {
       "type": "array",
       "items": {
@@ -240,6 +218,12 @@
     },
     "location": {
       "$ref": "./location.json"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "../../shared-models/schema/agent.json"
+      }
     }
   }
 }

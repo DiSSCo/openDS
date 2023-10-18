@@ -22,12 +22,6 @@
     "???:assertionUnit": {
       "type": "string"
     },
-    "???:assertionByAgentName": {
-      "type": "string"
-    },
-    "???:assertionByAgentId": {
-      "type": "string"
-    },
     "???:assertionProtocol": {
       "type": "string"
     },
@@ -36,6 +30,12 @@
     },
     "???:assertionRemarks": {
       "type": "string"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "agent.json"
+      }
     }
   },
   "required": [

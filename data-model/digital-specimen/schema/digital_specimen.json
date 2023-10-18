@@ -24,6 +24,7 @@
       "description": "The timestamp that the object version was created in DiSSCo",
       "format": "date-time",
       "examples": [
+        "2023-10-02T12:31:34.806Z"
       ]
     },
     "ods:type": {
@@ -210,24 +211,6 @@
         "https://ror.org/03wkt5x30"
       ]
     },
-    "dwc:recordedBy": {
-      "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
-      "examples": [
-        "José E. Crespo"
-      ]
-    },
-    "???:recordedByAgent": {
-      "$ref": "agent.json",
-      "$comment": "Is this an option for the agent instead of adding a list?"
-    },
-    "dwc:recordedById": {
-      "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
-      "examples": [
-        "https://orcid.org/0000-0002-1825-0097"
-      ]
-    },
     "dwc:datasetName": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/datasetName",
@@ -295,6 +278,12 @@
       "type": "array",
       "items": {
         "$ref": "chronometric_age.json"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "../../shared-models/schema/agent.json"
       }
     }
   },

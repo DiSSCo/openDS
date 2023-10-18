@@ -15,10 +15,6 @@
       "type": "string",
       "description": "https://purl.org/dc/terms/title"
     },
-    "dcterms:creator": {
-      "type": "string",
-      "description": "https://purl.org/dc/elements/1.1/creator"
-    },
     "???:citationPageNumber": {
       "type": "string",
       "description": "Unclear yet",
@@ -56,6 +52,12 @@
       "type": "boolean",
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "agent.json"
+      }
     }
   }
 }

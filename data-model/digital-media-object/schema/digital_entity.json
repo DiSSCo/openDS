@@ -121,10 +121,6 @@
       "format": "uri",
       "$comment": "It is already recommended to use URI in the dcterms:source"
     },
-    "dcterms:creator": {
-      "type": "string",
-      "description": "https://purl.org/dc/elements/1.1/creator"
-    },
     "dcterms:created": {
       "type": "string",
       "description": "https://purl.org/dc/terms/created"
@@ -155,6 +151,12 @@
       "type": "array",
       "items": {
         "$ref": "../../shared-models/schema/entity_relationships.json"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "../../shared-models/schema/agent.json"
       }
     }
   },
