@@ -5,10 +5,7 @@
   "properties": {
     "dwc:identificationID": {
       "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/identificationID",
-      "examples": [
-        "9992"
-      ]
+      "description": "Check DWC terms"
     },
     "???:identificationType": {
       "type": "string",
@@ -91,7 +88,7 @@
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "citations.json"
+        "$ref": "../../shared-models/schema/citations.json"
       }
     },
     "taxonIdentifications": {
@@ -101,10 +98,7 @@
         "properties": {
           "dwc:taxonID": {
             "type": "string",
-            "description": "https://rs.tdwg.org/dwc/terms/TaxonID",
-            "examples": [
-              "ARTHROTER|147672"
-            ]
+            "description": "See DWC Terms"
           },
           "dwc:scientificName": {
             "type": "string",
@@ -131,7 +125,7 @@
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/namePublishedInYear",
             "examples": [
-              "2023"
+              "2022"
             ]
           },
           "dwc:taxonRank": {

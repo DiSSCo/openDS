@@ -37,17 +37,21 @@
       "minimum": 0,
       "maximum": 3
     },
-    "ods:physicalSpecimenId": {
+    "ods:normalisedPhysicalSpecimenId": {
       "type": "string",
       "description": "The physical specimen identifier of the object. When locally unique this is a combination between source-system-id and the local identifier"
+    },
+    "ods:physicalSpecimenId": {
+      "type": "string",
+      "description": "The physical specimen identifier of the object. Taken over as-is"
     },
     "ods:physicalSpecimenIdType": {
       "type": "string",
       "description": "To indicate if the physical identifier is globally unique or locally unique",
       "enum": [
-        "RESOLVABLE",
-        "GLOBAL",
-        "LOCAL"
+        "Resolvable",
+        "Global",
+        "Local"
       ],
       "$comment": "Do we need to further distinguish the identifier, for example add 'RESOLVABLE'"
     },
@@ -89,18 +93,34 @@
         "Anthropology",
         "Botany",
         "Astrogeology",
-        "Earth System",
+        "Geology",
         "Microbiology",
         "Palaeontology",
         "Zoology",
-        "Environment",
-        "Other Bio/Geodiversity",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
         "Unclassified"
       ],
       "example": [
         "Botany"
       ],
       "$comment": "Do we need to add 'UNKNOWN'?"
+    },
+    "ods:markedAsType": {
+      "type": "boolean",
+      "description": "The specimen is marked as a type specimen"
+    },
+    "ods:hasMedia": {
+      "type": "boolean",
+      "description": "Indicates if there are any media objects attached to this specimen"
+    },
+    "ods:specimenName": {
+      "type": "string",
+      "description": "The accepted specimen name of the digital specimen",
+      "example": [
+        "Roptrocerus typographi (Györfi, 1952)"
+      ]
     },
     "ods:sourceSystem": {
       "type": "string",
@@ -109,16 +129,20 @@
     },
     "ods:livingOrPreserved": {
       "type": "string",
-      "description": "Whether the specimen is living or preserved"
+      "description": "Whether the specimen is living or preserved",
+      "enum": [
+        "Living",
+        "Preserved"
+      ]
     },
     "dcterms:license": {
       "type": "string",
-      "description": "http://purl.org/dc/terms/license",
+      "description": "License for the metadata of the physical specimen",
       "$comment": "Determine available licenses"
     },
     "dcterms:modified": {
       "type": "string",
-      "description": "http://purl.org/dc/terms/modified"
+      "description": "Modification date for specimen information"
     },
     "dwc:basisOfRecord": {
       "type": "string",
@@ -240,7 +264,7 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "assertions.json"
+        "$ref": "../../shared-models/schema/assertions.json"
       }
     },
     "occurrences": {
@@ -252,19 +276,19 @@
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "entity_relationships.json"
+        "$ref": "../../shared-models/schema/entity_relationships.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "citations.json"
+        "$ref": "../../shared-models/schema/citations.json"
       }
     },
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifiers.json"
+        "$ref": "../../shared-models/schema/identifiers.json"
       }
     },
     "chronometricAge": {

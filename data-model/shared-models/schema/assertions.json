@@ -4,37 +4,37 @@
   "type": "object",
   "$comment": "Looks like Measurement or Fact but terminology is different, no ontology yet?",
   "properties": {
-    "assertionType": {
+    "???:assertionType": {
       "type": "string"
     },
-    "assertionMadeDate": {
+    "???:assertionMadeDate": {
       "type": "string"
     },
-    "assertionEffectiveDate": {
+    "???:assertionEffectiveDate": {
       "type": "string"
     },
-    "assertionValue": {
+    "???:assertionValue": {
       "type": "string"
     },
-    "assertionValueNumeric": {
+    "???:assertionValueNumeric": {
       "type": "integer"
     },
-    "assertionUnit": {
+    "???:assertionUnit": {
       "type": "string"
     },
-    "assertionByAgentName": {
+    "???:assertionByAgentName": {
       "type": "string"
     },
-    "assertionByAgentId": {
+    "???:assertionByAgentId": {
       "type": "string"
     },
-    "assertionProtocol": {
+    "???:assertionProtocol": {
       "type": "string"
     },
-    "assertionProtocolId": {
+    "???:assertionProtocolId": {
       "type": "string"
     },
-    "assertionRemarks": {
+    "???:assertionRemarks": {
       "type": "string"
     }
   },
