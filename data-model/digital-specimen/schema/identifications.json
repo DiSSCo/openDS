@@ -75,6 +75,13 @@
         "Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas."
       ]
     },
+    "dwc:identificationQualifier": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationQualifier",
+      "examples": [
+        "cf. var. oxyadenia"
+      ]
+    },
     "???:typeDesignationType": {
       "type": "string",
       "description": "Unclear yet",
@@ -98,7 +105,10 @@
         "properties": {
           "dwc:taxonID": {
             "type": "string",
-            "description": "See DWC Terms"
+            "description": "https://rs.tdwg.org/dwc/terms/taxonID",
+            "examples": [
+              "https://www.gbif.org/species/212"
+            ]
           },
           "dwc:scientificName": {
             "type": "string",
@@ -234,10 +244,82 @@
               "Strobus"
             ]
           },
-          "???:acceptedScientificName": {
+          "dwc:acceptedNameUsage": {
             "type": "string",
-            "description": "Unclear yet",
-            "$comment": "Is this field necessary if we indicated accepted on the identification level"
+            "description": "https://rs.tdwg.org/dwc/terms/acceptedNameUsage",
+            "examples": [
+              "Tamias minimus"
+            ]
+          },
+          "dwc:acceptedNameUsageID": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/acceptedNameUsageID",
+            "examples": [
+              "6W3C4"
+            ]
+          },
+          "dwc:cultivarEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/cultivarEpithet",
+            "examples": [
+              "King Edward"
+            ]
+          },
+          "dwc:genericName": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/genericName",
+            "examples": [
+              "Felis"
+            ]
+          },
+          "dwc:infragenericEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/infragenericEpithet",
+            "examples": [
+              "Abacetillus"
+            ]
+          },
+          "dwc:infraspecificEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/infraspecificEpithet",
+            "examples": [
+              "oxyadenia"
+            ]
+          },
+          "dwc:nomenclaturalStatus": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/nomenclaturalStatus",
+            "examples": [
+              "nom. illeg."
+            ]
+          },
+          "dwc:originalNameUsage": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/originalNameUsage",
+            "examples": [
+              "Pinus abies"
+            ]
+          },
+          "dwc:subtribe": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/subtribe",
+            "examples": [
+              "Plotinini"
+            ]
+          },
+          "dwc:superfamily": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/superfamily",
+            "examples": [
+              "Cerithioidea"
+            ]
+          },
+          "dwc:tribe": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/tribe",
+            "examples": [
+              "Arethuseae"
+            ]
           }
         },
         "required": [
