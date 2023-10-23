@@ -202,6 +202,21 @@
       ],
       "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
     },
+    "dwc:informationWithheld": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/informationWithheld",
+      "examples": [
+        "location information not given for endangered species"
+      ],
+      "$comment": "Feels like this field should be true or false and another field should contain the explanation"
+    },
+    "dwc:dataGeneralizations": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/dataGeneralizations",
+      "examples": [
+        "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
+      ]
+    },
     "dwc:ownerInstitutionId": {
       "type": "string",
       "description": "ROR or Wikidata identifier for the owning institution",

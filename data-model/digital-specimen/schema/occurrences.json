@@ -50,6 +50,23 @@
       ],
       "$comment": "Is this needed for specimen data?"
     },
+    "dwc:caste": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/caste",
+      "examples": [
+        "queen",
+        "ergatoid"
+      ]
+    },
+    "dwc:vitality": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/vitality",
+      "examples": [
+        "alive",
+        "dead"
+      ],
+      "$comment": "Is this needed for specimen data?"
+    },
     "dwc:establishmentMeans": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/establishmentMeans",
@@ -100,21 +117,6 @@
         "found dead on road"
       ]
     },
-    "dwc:informationWithheld": {
-      "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/informationWithheld",
-      "examples": [
-        "location information not given for endangered species"
-      ],
-      "$comment": "Feels like this field should be true or false and another field should contain the explanation"
-    },
-    "dwc:dataGeneralizations": {
-      "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/dataGeneralizations",
-      "examples": [
-        "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
-      ]
-    },
     "dwc:recordedBy": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
@@ -123,8 +125,8 @@
       ]
     },
     "dwc:recordedById": {
-      "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
+      "type": "string",
       "examples": [
         "https://orcid.org/0000-0002-1825-0097"
       ]
