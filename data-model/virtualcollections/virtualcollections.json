@@ -1,1 +1,88 @@
-
+{
+  "type": "object",
+  "properties": {
+    "collection_type": {
+      "type": "string",
+      "enum": ["Dynamic Virtual Collection", "Static Virtual Collection"]
+    },
+    "id": {
+      "description": "A unique identifier for the collection. It can be a Handle for DVC or a DOI for SVC.",
+      "anyOf": [
+        {
+          "if": {
+            "properties": { "collection_type": { "const": "Dynamic Virtual Collection" } }
+          },
+          "then": {
+            "type": "string"
+          }
+        },
+        {
+          "if": {
+            "properties": { "collection_type": { "const": "Static Virtual Collection" } }
+          },
+          "then": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "filters": {
+      "type": "array",
+      "description": "Filters selected for the collection (applicable to DVC)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filter_name": {
+            "type": "string",
+            "description": "Name or identifier/UUID for the filter"
+          },
+          "filter_value": {
+            "type": "string",
+            "description": "Value or configuration of the filter"
+          }
+        }
+      }
+    },
+    "digital_specimens": {
+      "type": "array",
+      "description": "Specimens included in the collection (applicable to SVC)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "PID of the digital specimen"
+          },
+          "version": {
+            "type": "string",
+            "description": "Version of the digital specimen included in the collection"
+          }
+        }
+      }
+    },
+    "is_private": {
+      "type": "boolean",
+      "description": "Indicates whether the collection is private or public"
+    }
+  },
+  "required": ["collection_type", "id", "is_private"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": { "collection_type": { "const": "Dynamic Virtual Collection" } }
+      },
+      "then": {
+        "required": ["filters"]
+      }
+    },
+    {
+      "if": {
+        "properties": { "collection_type": { "const": "Static Virtual Collection" } }
+      },
+      "then": {
+        "required": ["digital_specimens"]
+      }
+    }
+  ]
+}
