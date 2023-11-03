@@ -1,1 +1,99 @@
-
+{
+  "$schema": "http://json-schema.org/draft-2020-12/schema#",
+  "type": "object",
+  "properties": {
+    "ods:id": {
+      "type": "string",
+      "pattern": "^https:\\/\\/hdl\\.handle\\.net\\/20\\.5000\\.1025\\/.{3}-.{3}-.{3}$",
+      "examples": ["https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"]
+    },
+    "ods:type": {
+      "type": "string",
+      "description": "The FDO type of the object"
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object."
+    },
+    "dcterms:creator": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string"
+        },
+        "foaf:name": {
+          "type": "string"
+        }
+      },
+      "description": "The creator of the collection."
+    },
+    "hasAccessRestrictions": {
+      "type": "boolean",
+      "description": "Indicates whether the collection has access restrictions."
+    },
+    "ods:collection_name": {
+      "type": "string",
+      "description": "The name of the collection."
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of the collection."
+    },
+    "ods:collection_type": {
+      "type": "string",
+      "enum": ["Virtual Collection"]
+    },
+    "filters": {
+      "type": "array",
+      "description": "Filters selected for the collection (applicable to DVC)",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filter_name": {
+            "type": "string",
+            "description": "Name or identifier/UUID for the filter"
+          },
+          "filter_value": {
+            "type": "string",
+            "description": "Value or configuration of the filter"
+          }
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "properties": {
+        "isOrdered": {
+          "type": "boolean",
+          "description": "Indicates whether the collection is ordered."
+        },
+        "appendsToEnd": {
+          "type": "boolean",
+          "description": "Indicates whether new items are appended to the end of the collection."
+        },
+        "supportsRoles": {
+          "type": "boolean",
+          "description": "Indicates whether the collection supports roles."
+        },
+        "membershipIsMutable": {
+          "type": "boolean",
+          "description": "Indicates whether membership in the collection is mutable."
+        },
+        "propertiesAreMutable": {
+          "type": "boolean",
+          "description": "Indicates whether properties of the collection are mutable."
+        },
+        "restrictedToType": {
+          "type": "string",
+          "description": "Indicates the type to which the collection is restricted."
+        },
+        "maxLength": {
+          "type": "integer",
+          "description": "Determines the maximal length of the collection. (Type: integer, 0 means an empty collection, -1 means arbitrary length, Context: collection.)"
+        }
+      }
+    }
+  },
+  "required": ["ods:id","ods:version", "collection_type"],
+  "additionalProperties": false
+}
