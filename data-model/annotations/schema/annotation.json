@@ -29,7 +29,11 @@
           "type": "string"
         },
         "ods:type": {
-          "type": "string"
+          "enum": [
+            "DigitalSpecimen",
+            "Annotation",
+            "MediaObject"
+          ]
         },
         "oa:selector": {
           "type": "object",
