@@ -70,7 +70,7 @@
                 "ods:type": {
                   "const": "FragmentSelector"
                 },
-                "ac:hasROI": {
+                "ac:hasRoi": {
                   "type": "object",
                   "properties": {
                     "ac:xFrac": {
