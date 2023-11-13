@@ -38,7 +38,7 @@
               "type": "object",
               "properties": {
                 "ods:type": {
-                  "const": "FieldValueSelector"
+                  "const": "FieldSelector"
                 },
                 "ods:field": {
                   "type": "string"
@@ -53,7 +53,7 @@
               "type": "object",
               "properties": {
                 "ods:type": {
-                  "const": "ClassValueSelector"
+                  "const": "ClassSelector"
                 },
                 "oa:class": {
                   "type": "string"
