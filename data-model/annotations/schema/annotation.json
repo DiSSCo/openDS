@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json-schema.org/draft-2020-12/schema#",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
     "ods:id": {
@@ -106,8 +106,8 @@
                 }
               },
               "required": [
-                "oa:type",
-                "ac:hasROI"
+                "ods:type",
+                "ac:hasRoi"
               ]
             }
           ]
