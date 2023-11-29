@@ -3,45 +3,77 @@
   "type": "object",
   "properties": {
     "ods:id": {
-      "type": "string"
+      "type": "string",
+      "description": "The handle of the annotation. It is a unique identifier for the annotation. It is composed of the handle of the document followed by a slash and a unique identifier for the annotation.",
+      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}"
     },
     "rdf:type": {
-      "const": "Annotation"
+      "type": "string",
+      "const": "Annotation",
+      "description": "The type of the annotation. It is always Annotation. https://www.w3.org/TR/rdf12-schema/#ch_type"
     },
     "ods:version": {
-      "type": "integer"
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version",
+      "minimum": 1,
+      "examples": [
+        1
+      ]
     },
     "oa:motivation": {
+      "type": "string",
       "enum": [
         "ods:adding",
         "oa:assessing",
         "oa:editing",
         "oa:commenting"
-      ]
+      ],
+      "description": "The motivation for the annotation. Based on a selection of https://www.w3.org/TR/annotation-model/#motivation-and-purpose. The motivation ods:adding is added for DiSSCo's purposes."
     },
     "oa:motivatedBy": {
-      "type": "string"
+      "type": "string",
+      "description": "Describes the reason for the annotation. https://www.w3.org/TR/annotation-vocab/#motivatedby",
+      "examples": [
+        "The country is incorrect"
+      ]
     },
     "oa:target": {
       "type": "object",
       "properties": {
         "ods:id": {
-          "type": "string"
+          "type": "string",
+          "description": "This is the handle of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
+          "examples": [
+            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+            "https://doi.org/10.22/XXX-XXX-XXX"
+          ]
         },
         "ods:type": {
-          "type": "string"
+          "type": "string",
+          "description": "This is the handle to the type of the target object.",
+          "examples": [
+            "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+            "https://doi.org/21.T11148/894b1e6cad57e921764e"
+          ]
         },
         "oa:selector": {
           "type": "object",
+          "description": "Optional field to indicate the part of the target object that is being annotated. It can be a field, a class or a region of interest.",
           "oneOf": [
             {
               "type": "object",
               "properties": {
                 "ods:type": {
-                  "const": "FieldSelector"
+                  "type": "string",
+                  "const": "FieldSelector",
+                  "description": "A selector for an individual field."
                 },
                 "ods:field": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "The full jsonPath of the field being annotated.",
+                  "examples": [
+                    "$.occurrences[0].location.dwc:country"
+                  ]
                 }
               },
               "required": [
@@ -53,10 +85,16 @@
               "type": "object",
               "properties": {
                 "ods:type": {
-                  "const": "ClassSelector"
+                  "type": "string",
+                  "const": "ClassSelector",
+                  "description": "A selector for an individual class."
                 },
                 "oa:class": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "The full jsonPath of the class being annotated.",
+                  "examples": [
+                    "$.occurrences[0].location.georeference"
+                  ]
                 }
               },
               "required": [
@@ -68,28 +106,35 @@
               "type": "object",
               "properties": {
                 "ods:type": {
-                  "const": "FragmentSelector"
+                  "type": "string",
+                  "const": "FragmentSelector",
+                  "description": "A selector for an specific Region of Interest (Roi). Only applicable on media objects."
                 },
                 "ac:hasRoi": {
                   "type": "object",
+                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_hasROI",
                   "properties": {
                     "ac:xFrac": {
                       "type": "number",
+                      "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_xFrac",
                       "minimum": 0,
                       "maximum": 1
                     },
                     "ac:yFrac": {
                       "type": "number",
+                      "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_yFrac",
                       "minimum": 0,
                       "maximum": 1
                     },
                     "ac:widthFrac": {
                       "type": "number",
+                      "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_widthFrac",
                       "minimum": 0,
                       "maximum": 1
                     },
                     "ac:heightFrac": {
                       "type": "number",
+                      "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_heightFrac",
                       "minimum": 0,
                       "maximum": 1
                     }
@@ -102,12 +147,15 @@
                   ]
                 },
                 "dcterms:conformsTo": {
-                  "type": "string"
+                  "type": "string",
+                  "constant": "https://ac.tdwg.org/termlist/#711-region-of-interest-vocabulary",
+                  "description": "http://purl.org/dc/terms/conformsTo"
                 }
               },
               "required": [
                 "ods:type",
-                "ac:hasRoi"
+                "ac:hasRoi",
+                "dcterms:conformsTo"
               ]
             }
           ]
@@ -122,16 +170,32 @@
       "type": "object",
       "properties": {
         "ods:type": {
-          "type": "string"
+          "type": "string",
+          "constant": "oa:TextualBody",
+          "description": "https://www.w3.org/TR/annotation-vocab/#textualbody"
         },
         "oa:value": {
-          "type": "array"
+          "type": "array",
+          "items": {
+            "type": "string",
+            "description": "The textual content of the body. This could be a simple string value for commenting or editing of a single field. It could also be the string representation of the json for a class",
+            "examples": [
+              "This is a comment",
+              "Venezuala",
+              "{'entityRelationship': {'entityRelationshipType': 'hasGbifID', 'objectEntityIri': 'https://www.gbif.org/occurrence/144870459', 'entityRelationshipDate': '2023-11-29T07:18:20.588Z', 'entityRelationshipCreatorName': 'GBIF occurrence linker', 'entityRelationshipCreatorId': 'https://hdl.handle.net/enrichment-service-pid'}}"
+            ]
+          }
         },
-        "dcterms:reference": {
-          "type": "string"
+        "dcterms:references": {
+          "type": "string",
+          "description": "Indicates how the value came to be. http://purl.org/dc/terms/references",
+          "examples": [
+            "https://api.gbif.org/v1/occurrence/search?occurrenceID=https://herbarium.bgbm.org/object/BW00965020&catalogNumber=B -W 00965 -02 0&basisOfRecord=PreservedSpecimen"
+          ]
         },
         "ods:score": {
           "type": "number",
+          "description": "A score between 0 and 1 indicating the confidence in the value. 1 is the highest confidence and 0 is the lowest.",
           "minimum": 0,
           "maximum": 1
         }
@@ -143,15 +207,32 @@
     },
     "oa:creator": {
       "type": "object",
+      "description": "Object containing information on who created the object",
       "properties": {
         "ods:type": {
-          "type": "string"
+          "type": "string",
+          "description": "The type of the creator.",
+          "enum": [
+            "foaf:Person",
+            "foaf:Organisation",
+            "oa:SoftwareAgent"
+          ]
         },
         "foaf:name": {
-          "type": "string"
+          "type": "string",
+          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
+          "examples": [
+            "Gbif linker service"
+          ]
         },
         "ods:id": {
-          "type": "string"
+          "type": "string",
+          "description": "The PID if the type is SoftwareAgent, the Orcid if the type is Person and the ROR if the type is Organisation.",
+          "examples": [
+            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+            "https://ror.org/0566bfb96",
+            "https://orcid.org/0000-0002-5669-2769"
+          ]
         }
       },
       "required": [
@@ -161,27 +242,48 @@
     },
     "dcterms:created": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "The date and time when the annotation was created. http://purl.org/dc/terms/created"
     },
     "ods:deletedOn": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "Filled if the annotation was archived. The date and time when the annotation was archived"
     },
     "oa:generated": {
       "type": "string",
-      "format": "date-time"
+      "format": "date-time",
+      "description": "The date and time when the annotation was generated. http://purl.org/dc/terms/issued",
+      "$comment": "Be aware this is not a valid oa field. This is called generated within W3C annotation model but actually maps to dcterms:issued. We kept it generated to keep in line with W3C annotation standard."
     },
     "as:generator": {
       "type": "object",
+      "description": "Object containing information on who generated the object. Generated is here seen as who stored/indexed the object. In most case this will be the annotation-processing-service",
       "properties": {
-        "ods:id": {
-          "type": "string"
+        "ods:type": {
+          "type": "string",
+          "description": "The type of the creator.",
+          "enum": [
+            "foaf:Person",
+            "foaf:Organisation",
+            "oa:SoftwareAgent"
+          ]
         },
         "foaf:name": {
-          "type": "string"
+          "type": "string",
+          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
+          "examples": [
+            "Gbif linker service"
+          ]
         },
-        "ods:type": {
-          "type": "string"
+        "ods:id": {
+          "type": "string",
+          "description": "The PID if the type is SoftwareAgent, the Orcid if the type is Person and the ROR if the type is Organisation.",
+          "examples": [
+            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+            "https://ror.org/0566bfb96",
+            "https://orcid.org/0000-0002-5669-2769"
+          ]
         }
       },
       "required": [
@@ -193,13 +295,24 @@
       "type": "object",
       "properties": {
         "ods:type": {
-          "type": "string"
+          "type": "string",
+          "const": "schema.org:AggregateRating",
+          "description": "Indicates which type of aggregateRating we are using."
         },
         "schema.org:ratingCount": {
-          "type": "number"
+          "type": "integer",
+          "description": "The count of total number of ratings. https://schema.org/ratingCount",
+          "minimum": 0,
+          "examples": [
+            3
+          ]
         },
         "schema.org:ratingValue": {
-          "type": "number"
+          "type": "number",
+          "description": "The rating for the content. https://schema.org/ratingValue",
+          "examples": [
+            4.5
+          ]
         }
       },
       "required": [
