@@ -1,6 +1,10 @@
 {
+  "$id": "https://schema.dissco.tech/0.0.1/annotation",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Annotation",
+  "description": "Information about the annotation data model. This model has been based on the W3C Web Annotation model",
   "type": "object",
+  "additionalProperties": false,
   "properties": {
     "ods:id": {
       "type": "string",
