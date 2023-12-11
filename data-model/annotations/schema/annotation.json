@@ -46,7 +46,7 @@
       "properties": {
         "ods:id": {
           "type": "string",
-          "description": "This is the handle of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
+          "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
           "examples": [
             "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
             "https://doi.org/10.22/XXX-XXX-XXX"
@@ -74,7 +74,7 @@
                 },
                 "ods:field": {
                   "type": "string",
-                  "description": "The full jsonPath of the field being annotated.",
+                  "description": "The full jsonPath of the field being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
                   "examples": [
                     "$.occurrences[0].location.dwc:country"
                   ]
@@ -95,7 +95,7 @@
                 },
                 "oa:class": {
                   "type": "string",
-                  "description": "The full jsonPath of the class being annotated.",
+                  "description": "The full jsonPath of the class being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
                   "examples": [
                     "$.occurrences[0].location.georeference"
                   ]
@@ -153,7 +153,7 @@
                 "dcterms:conformsTo": {
                   "type": "string",
                   "constant": "https://ac.tdwg.org/termlist/#711-region-of-interest-vocabulary",
-                  "description": "http://purl.org/dc/terms/conformsTo"
+                  "description": "https://purl.org/dc/terms/conformsTo"
                 }
               },
               "required": [
@@ -185,14 +185,14 @@
             "description": "The textual content of the body. This could be a simple string value for commenting or editing of a single field. It could also be the string representation of the json for a class",
             "examples": [
               "This is a comment",
-              "Venezuala",
+              "Venezuela",
               "{'entityRelationship': {'entityRelationshipType': 'hasGbifID', 'objectEntityIri': 'https://www.gbif.org/occurrence/144870459', 'entityRelationshipDate': '2023-11-29T07:18:20.588Z', 'entityRelationshipCreatorName': 'GBIF occurrence linker', 'entityRelationshipCreatorId': 'https://hdl.handle.net/enrichment-service-pid'}}"
             ]
           }
         },
         "dcterms:references": {
           "type": "string",
-          "description": "Indicates how the value came to be. http://purl.org/dc/terms/references",
+          "description": "Indicates how the value came to be. https://purl.org/dc/terms/references",
           "examples": [
             "https://api.gbif.org/v1/occurrence/search?occurrenceID=https://herbarium.bgbm.org/object/BW00965020&catalogNumber=B -W 00965 -02 0&basisOfRecord=PreservedSpecimen"
           ]
@@ -224,19 +224,20 @@
         },
         "foaf:name": {
           "type": "string",
-          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
+          "description": "The name of the creator. https://xmlns.com/foaf/0.1/#term_name",
           "examples": [
             "Gbif linker service"
           ]
         },
         "ods:id": {
           "type": "string",
-          "description": "The PID if the type is SoftwareAgent, the Orcid if the type is Person and the ROR if the type is Organisation.",
+          "description": "The PID if the type is SoftwareAgent, the ORCID if the type is Person and the ROR if the type is Organisation.",
           "examples": [
             "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
             "https://ror.org/0566bfb96",
             "https://orcid.org/0000-0002-5669-2769"
-          ]
+          ],
+          "format": "^(https://doi.org/10.\d{4,}/[-.;()/:a-zA-Z0-9]+|https://hdl.handle.net/[-.;()/:a-zA-Z0-9]+|https://ror.org/[-._;()/:a-zA-Z0-9]+|https://orcid.org/\d{4}-\d{4}-\d{4}-\d{3}[\dX]+)$"
         }
       },
       "required": [
@@ -247,7 +248,7 @@
     "dcterms:created": {
       "type": "string",
       "format": "date-time",
-      "description": "The date and time when the annotation was created. http://purl.org/dc/terms/created"
+      "description": "The date and time when the annotation was created. https://purl.org/dc/terms/created"
     },
     "ods:deletedOn": {
       "type": "string",
@@ -257,7 +258,7 @@
     "oa:generated": {
       "type": "string",
       "format": "date-time",
-      "description": "The date and time when the annotation was generated. http://purl.org/dc/terms/issued",
+      "description": "The date and time when the annotation was generated. https://purl.org/dc/terms/issued",
       "$comment": "Be aware this is not a valid oa field. This is called generated within W3C annotation model but actually maps to dcterms:issued. We kept it generated to keep in line with W3C annotation standard."
     },
     "as:generator": {
@@ -275,7 +276,7 @@
         },
         "foaf:name": {
           "type": "string",
-          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
+          "description": "The name of the creator. https://xmlns.com/foaf/0.1/#term_name",
           "examples": [
             "Gbif linker service"
           ]
@@ -336,6 +337,6 @@
     "oa:creator",
     "dcterms:created",
     "as:generator",
-    "oa:generator"
+    "oa:generated"
   ]
 }
