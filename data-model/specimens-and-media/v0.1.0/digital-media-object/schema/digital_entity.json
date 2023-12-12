@@ -136,25 +136,25 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/assertions.json"
+        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/assertions.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/citations.json"
+        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/citations.json"
       }
     },
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/identifiers.json"
+        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/identifiers.json"
       }
     },
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/entity_relationships.json"
+        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/entity_relationships.json"
       }
     }
   },

@@ -4,7 +4,7 @@
   "$comment": "Kernel from which all DiSSCo DOI FDO profiles are derived",
   "allof": [
     {
-      "$ref": "../../handle-kernel/schema/handle-request.json"
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"
     }
   ],
   "properties": {

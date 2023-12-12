@@ -3,7 +3,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Kernel from which all DiSSCo DOI FDO profiles are derived",
   "allof": [{
-    "$ref": "../../handle-kernel/schema/handle-kernel.json"
+    "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
   }],
   "properties": {
     "referentType": {

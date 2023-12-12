@@ -237,7 +237,7 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/assertions.json"
+        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/assertions.json"
       }
     },
     "location": {

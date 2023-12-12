@@ -279,7 +279,7 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/assertions.json"
+        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/assertions.json"
       }
     },
     "occurrences": {
@@ -291,19 +291,19 @@
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/entity_relationships.json"
+        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/entity_relationships.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/citations.json"
+        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/citations.json"
       }
     },
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/identifiers.json"
+        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/identifiers.json"
       }
     },
     "chronometricAge": {
