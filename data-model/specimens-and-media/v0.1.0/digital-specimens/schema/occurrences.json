@@ -241,7 +241,7 @@
       }
     },
     "location": {
-      "$ref": "./location.json"
+      "$ref": "location.json"
     }
   }
 }

@@ -95,7 +95,7 @@
       "$comment": "Not part of DWC or the UM?"
     },
     "location": {
-      "$ref": "./location.json"
+      "$ref": "location.json"
     }
   }
 }
