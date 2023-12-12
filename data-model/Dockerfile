@@ -8,7 +8,7 @@ COPY ./fdo-profiles/0.1.0/digital-specimen/schema/ schema-root/schemas/fdo-profi
 COPY ./fdo-profiles/0.1.0/doi-kernel/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 COPY ./fdo-profiles/0.1.0/handle-kernel/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 
-COPY ./specimens-and-media/0.1.0/digital-specimens/schema schema-root/schemas/digital-specimens/v.0.1.0/
-COPY ./specimens-and-media/0.1.0/shared-models/schema schema-root/schemas/shared-models/v.0.1.0/
-COPY ./specimens-and-media/0.1.0/digital-media-object/schema schema-root/schemas/digital-media-object/v.0.1.0/
+COPY ./specimens-and-media/0.1.0/digital-specimens/schema schema-root/schemas/digital-specimens/0.1.0/
+COPY ./specimens-and-media/0.1.0/shared-models/schema schema-root/schemas/shared-models/0.1.0/
+COPY ./specimens-and-media/0.1.0/digital-media-object/schema schema-root/schemas/digital-media-object/0.1.0/
 

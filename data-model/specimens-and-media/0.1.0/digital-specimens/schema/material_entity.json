@@ -89,19 +89,19 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/assertions.json"
+        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/assertions.json"
       }
     },
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/entity_relationships.json"
+        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/entity_relationships.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.techschemas/shared-models/v.0.1.0/citations.json"
+        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/citations.json"
       }
     },
     "identifiers": {

@@ -1,0 +1,101 @@
+{
+  "$id": "handle-kernel",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Kernel from which all DiSSCo DOI FDO profiles are derived",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
+    },
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/doi-kernel.json"
+    }
+  ],
+  "properties": {
+    "specimenHost": {
+      "type": "string",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation hosting the specimen. Same as: Latimer Core identifierSource.",
+      "example": "https://ror.org/0566bfb96",
+      "$comment": "idx = 200"
+    },
+    "specimenHostName": {
+      "type": "string",
+      "description": "Name for the administrative organisation as derived from ROR or Wikidata at the point of creating the FDO record.",
+      "example": "Naturalis Biodiversity Center",
+      "$comment": "idx = 201"
+    },
+    "primarySpecimenObjectId": {
+      "type": "string",
+      "description": "Primary local identifier used to identify the physical specimen, which is a preserved material entity. This identifier is usually physically attached to the specimen, e.g. as barcode. It is recommended to use a global and resolvable identifier if available. The host of the physical specimen should be able to find the physical specimen with only this ID plus, if that is not globally unique, the primarySpecimenObjectIdName",
+      "example": "RMNH.1.2b",
+      "$comment": "idx = 202"
+    },
+    "primarySpecimenObjectIdType": {
+      "enum": [
+        "Global",
+        "Resolvable",
+        "Local"
+      ],
+      "description": "Nature of institutional identifier",
+      "$comment": "idx = 203"
+    }
+  },
+  "primarySpecimenObjectIdName": {
+    "type": "string",
+    "description": "Locally used name for the identifier, to distinguish it from other locally used identifiers, max 30 characters.",
+    "example": "Registration number",
+    "$comment": "idx = 204"
+  },
+  "normalisedSpecimenObjectId": {
+    "type": "string",
+    "description": "For internal processing purposes only to make a local identifier globally unique. This is the primarySpecimenObjectId if it is globally unique or a combination of ROR ID string, source system ID string, primarySpecimenObjectId if it is a proprietary identifier.",
+    "example": "0566bfb96:20.5000.1025/GEE-W3J-HL2:RMNH.1.2b",
+    "$comment": "idx = 205"
+  },
+  "specimenObjectIdAbsenceReason": {
+    "type": "string",
+    "description": "*Not currently supported.* Either this attribute or primarySpecimenObjectId needs to be filled, if both are filled the FDO record is invalid. Max 255 chars. Note that absence of the ID poses a challenge on avoiding duplicate digital specimen IDs.",
+    "example": "Not yet accessioned",
+    "$comment": "idx = 206"
+  },
+  "otherSpecimenIds": {
+    "type": "array",
+    "$comment": "idx = 207",
+    "items": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "idType": {
+          "type": "string"
+        },
+        "idName": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "topicOrigin": {
+    "enum": ["Natural", "Human-made", "Mixed origin"],
+    "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected.",
+    "$comment": "idx = 208"
+  },
+  "topicDomain": {
+    "enum": [],
+    "description": "",
+    "$comment": "idx = 209"
+  },
+
+  "": {
+    "type": "string",
+    "description": "",
+    "example": "",
+    "$comment": "idx = "
+  },
+  "additionalProperties": false,
+  "required": [
+    "specimenHost",
+    "specimenHostName"
+
+  ]
+}
