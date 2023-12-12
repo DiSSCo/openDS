@@ -13,6 +13,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+      - name: set lower case repo name
+        run: | 
+          echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
+        env:
+          REPO: '${{ github.event.repository.name }}'
       - name: Login to Public ECR
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
@@ -22,18 +27,18 @@ jobs:
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Build image
         run: |
-          docker build -t ${{ github.event.repository.name }} data-model/
+          docker build -t open-ds data-model/
       - name: Trivy - List all vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: '${{ github.event.repository.name }}'
+          image-ref: '$REPO_LC'
           format: 'table'
           ignore-unfixed: true
           vuln-type: 'os,library'
       - name: Trivy - Stop on Severe Vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: '${{ github.event.repository.name }}'
+          image-ref: '$REPO_LC'
           format: 'table'
           ignore-unfixed: true
           trivyignores: .github/workflows/.trivyignore
@@ -44,7 +49,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: public.ecr.aws/dissco/${{ github.event.repository.name }}
+          images: public.ecr.aws/dissco/$REPO_LC
           tags: |
             type=sha
             type=raw,value=latest
