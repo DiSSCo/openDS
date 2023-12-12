@@ -15,9 +15,12 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - name: set lower case repo name
         run: |
-          echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
+          echo "REPO_LC=${REPO,,}" >> ${GITHUB_ENV}
         env:
           REPO: '${{ github.event.repository.name }}'
+      - name: validate repo name
+        run : | 
+          echo $REPO_LC
       - name: Login to Public ECR
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
@@ -27,7 +30,7 @@ jobs:
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Build image
         run: |
-          docker build -t "$REPO_LC" data-model/
+          docker build -t $REPO_LC data-model/
       - name: Trivy - List all vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
@@ -49,7 +52,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: public.ecr.aws/dissco/"$REPO_LC"
+          images: public.ecr.aws/dissco/$REPO_LC
           tags: |
             type=sha
             type=raw,value=latest
