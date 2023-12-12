@@ -27,7 +27,7 @@ jobs:
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Build image
         run: |
-          docker build -t open-ds data-model/
+          docker build -t $REPO_LC data-model/
       - name: Trivy - List all vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
