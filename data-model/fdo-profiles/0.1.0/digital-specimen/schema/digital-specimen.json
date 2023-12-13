@@ -1,5 +1,5 @@
 {
-  "$id": "handle-kernel",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/digital-specimen.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Kernel from which all DiSSCo DOI FDO profiles are derived",
   "allof": [
@@ -76,26 +76,164 @@
     }
   },
   "topicOrigin": {
-    "enum": ["Natural", "Human-made", "Mixed origin"],
+    "enum": [
+      "Natural",
+      "Human-made",
+      "Mixed origin"
+    ],
     "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected.",
     "$comment": "idx = 208"
   },
   "topicDomain": {
-    "enum": [],
-    "description": "",
+    "enum": [
+      "Life",
+      "Environment",
+      "Earth System",
+      "Extraterrestrial",
+      "Cultural Artefacts",
+      "Archive Material"
+    ],
+    "description": "High-level terms providing general domain information with which the objects are associated.",
     "$comment": "idx = 209"
   },
-
-  "": {
+  "topicDiscipline": {
+    "enum": [
+      "Anthropology",
+      "Botany",
+      "Astrogeology",
+      "Geology",
+      "Microbiology",
+      "Palaeontology",
+      "Zoology",
+      "Ecology",
+      "Other Biodiversity",
+      "Other Geodiversity"
+    ],
+    "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related.",
+    "$comment": "idx = 210"
+  },
+  "topicCategory": {
+    "enum": [
+      "Human remains",
+      "Hominid remains",
+      "Mycology",
+      "Algae",
+      "Bryophytes",
+      "Pteridophytes",
+      "Seed plants",
+      "Other Botany Objects",
+      "Insects",
+      "Arachnids",
+      "Crustaceans & Myriapods",
+      "Porifera",
+      "Mollusca",
+      "Cnidaria",
+      "Echinodermata",
+      "Fishes",
+      "Amphibians",
+      "Reptiles",
+      "Birds",
+      "Mammals",
+      "AnimalGeneticResources",
+      "Other Zoology Objects",
+      "Phages",
+      "Bacteria & Archaea",
+      "Plasmids",
+      "Protozoa",
+      "Eukaryotic microorganisms",
+      "Viruses",
+      "Mircofungi",
+      "Other Microbiology Objects",
+      "Botany Fossils",
+      "Invertebrate Fossils",
+      "Vertebrate Fossils",
+      "Other Palaeontology Objects",
+      "Minerals and Gems",
+      "Loose Sediment Sample",
+      "Mixed Solid Mater Sample",
+      "Water-Ice Sample",
+      "Liquid or Gaseous Matter Sample",
+      "Mixed Geology Objects",
+      "Terrestrial Finds/Falls",
+      "Terrestrial Impacta",
+      "Sample Returns"
+    ],
+    "description": "Countable things (objects) served as a more detailed classification of each of the disciplines.",
+    "$comment": "idx = 211"
+  },
+  "livingOrPreserved": {
+    "enum": [
+      "Living",
+      "Preserved"
+    ],
+    "description": "State of specimen",
+    "$comment": "idx = 212"
+  },
+  "baseTypeOfSpecimen": {
+    "enum": [
+      "DCMI:Image",
+      "DCMI:MovingImage",
+      "DCMI:PhysicalObject",
+      "DCMI:Sound",
+      "DCMI:3DResourceType"
+    ],
+    "description": "Describes origin of specimen",
+    "$comment": "idx = 213"
+  },
+  "informationArtefactType": {
+    "enum": [
+      "Material entity",
+      "Information artefact"
+    ],
+    "description": "May be left blank if baseTypeOfSpecimen is not an informationArtefact",
+    "$comment": "idx = 214"
+  },
+  "materialSampleType": {
+    "enum": [
+      "Whole organism specimen",
+      "Organism part",
+      "Organism product",
+      "Biome aggregation",
+      "Bundle biome aggregation",
+      "Fossil",
+      "Any biological specimen",
+      "Aggregation",
+      "Slurry biome aggregation",
+      "Other solid object",
+      "Fluid in container",
+      "Anthropogenic aggregation",
+      "Artefact",
+      "Any aggregation specimen"
+    ],
+    "description": "https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html",
+    "$comment": "idx = 215"
+  },
+  "materialOrDigitalEntity": {
+    "enum": [
+      "Material entity",
+      "Digital entity"
+    ],
+    "$comment": "idx = 216"
+  },
+  "markedAsType": {
+    "type": "boolean",
+    "description": "TRUE if the specimen is marked as type with a stamp or label.\n",
+    "$comment": "idx = 217"
+  },
+  "derivedFromEntity": {
     "type": "string",
-    "description": "",
-    "example": "",
-    "$comment": "idx = "
+    "description": "Other material or digital entity where the specimen was derived from, specified by its ID or PID.",
+    "example": "RMNH.1.2",
+    "$comment": "idx = 218"
+  },
+  "catalogIdentifier": {
+    "type": "string",
+    "description": "Identifier of source system catalog",
+    "$comment": "idx = 219"
   },
   "additionalProperties": false,
   "required": [
     "specimenHost",
     "specimenHostName"
-
   ]
 }
