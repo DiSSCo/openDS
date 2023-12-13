@@ -4,7 +4,6 @@ COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY ./annotations/0.1.0/schema/annotation.json schema-root/schemas/annotations/0.1.0/annotation.json
 
-COPY ./fdo-profiles/0.1.0/digital-specimen/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 COPY ./fdo-profiles/0.1.0/doi-kernel/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 COPY ./fdo-profiles/0.1.0/handle-kernel/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 
