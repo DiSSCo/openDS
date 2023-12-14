@@ -1,5 +1,5 @@
 {
-  "$id": "location",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/location.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {

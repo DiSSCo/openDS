@@ -1,5 +1,5 @@
 {
-  "$id": "assertion",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/assertions.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "Looks like Measurement or Fact but terminology is different, no ontology yet?",

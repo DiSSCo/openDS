@@ -1,5 +1,5 @@
 {
-  "$id": "root",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/digital-specimen.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
@@ -233,7 +233,7 @@
       ]
     },
     "???:recordedByAgent": {
-      "$ref": "agent.json",
+      "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json",
       "$comment": "Is this an option for the agent instead of adding a list?"
     },
     "dwc:recordedById": {
@@ -267,49 +267,49 @@
     "materialEntity": {
       "type": "array",
       "items": {
-        "$ref": "material_entity.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/material-entity.json"
       }
     },
     "dwc:identification": {
       "type": "array",
       "items": {
-        "$ref": "identifications.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/identifications.json"
       }
     },
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/assertions.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/assertions.json"
       }
     },
     "occurrences": {
       "type": "array",
       "items": {
-        "$ref": "occurrences.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/occurrences.json"
       }
     },
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/entity_relationships.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/entity-relationships.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/citations.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
       }
     },
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/identifiers.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/identifiers.json"
       }
     },
     "chronometricAge": {
       "type": "array",
       "items": {
-        "$ref": "chronometric_age.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/chronometric-age.json"
       }
     }
   },

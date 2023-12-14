@@ -1,5 +1,5 @@
 {
-  "$id": "handle-kernel",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "Kernel from which all DiSSCo FAIR Digital Object profiles are derived",
