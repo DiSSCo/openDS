@@ -1,0 +1,19 @@
+{
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/mapping-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "FDO Profile for mapping from source data standard to DiSSCo data model",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"
+    }
+  ],
+  "sourceDataStandard": {
+    "type": "string",
+    "description": "Indicates standard source data adheres to",
+    "$comment": "idx = 30"
+  },
+  "additionalProperties": false,
+  "required": [
+    "sourceDataStandard"
+  ]
+}

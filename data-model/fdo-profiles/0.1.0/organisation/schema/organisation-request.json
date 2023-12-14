@@ -1,0 +1,22 @@
+{
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/organisation-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Schema for requests made to DiSSCo PID API for organisations",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"
+    }
+  ],
+  "organisationIdentifier": {
+    "type": "string",
+    "$comment": "idx = 800"
+  },
+  "organisationIdentifierType": {
+    "type": "string",
+    "$comment": "idx = 801"
+  },
+  "additionalProperties": false,
+  "required": [
+    "organisationIdentifier"
+  ]
+}

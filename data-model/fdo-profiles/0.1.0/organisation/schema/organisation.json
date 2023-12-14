@@ -1,0 +1,28 @@
+{
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/organisation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "FDO Profile for Organisations",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
+    }
+  ],
+  "organisationIdentifier": {
+    "type": "string",
+    "$comment": "idx = 800"
+  },
+  "organisationIdentifierType": {
+    "type": "string",
+    "$comment": "idx = 801"
+  },
+  "organisationName": {
+    "type": "string",
+    "$comment": "idx = 802"
+  },
+  "additionalProperties": false,
+  "required": [
+    "organisationIdentifier",
+    "organisationIdentifierType",
+    "organisationName"
+  ]
+}

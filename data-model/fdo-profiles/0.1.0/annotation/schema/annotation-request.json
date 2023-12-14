@@ -1,6 +1,6 @@
 {
-  "$id": "",
-  "$schema": "https://json-schema.org/draft/2020-12/schemas/0.1.0/annotation-request.json",
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/annotation-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Schema for creating new PID records for Annotations using the DiSSCO PID API. API maps requests to annotation.json profile",
   "allof": [
     {

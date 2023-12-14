@@ -1,0 +1,31 @@
+{
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/annotation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "FDO Profile for Tombstoned PIDs",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
+    }
+  ],
+  "pidStatus": {
+    "const": "ARCHIVED",
+    "$comment": "idx = 13"
+  },
+  "tombstoneText": {
+    "type": "string",
+    "description": "Free text describing why the object was archived",
+    "$comment": "idx = 30"
+  },
+  "tombstonePids": {
+    "type": "array",
+    "items": {
+      "type": "string"
+    },
+    "description": "Array of relevant PIDs",
+    "$comment": "idx = 31"
+  },
+  "additionalProperties": false,
+  "required": [
+    "tombstoneText"
+  ]
+}

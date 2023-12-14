@@ -78,6 +78,11 @@
       "enum": ["DRAFT", "ACTIVE", "RETIRED", "OBSOLETE", "FAILED", "MERGED", "SPLIT", "TEST"],
       "description": "A PID is considered to have a lifecycle, PID status indicates the status in the life cycle, e.g. draft, active, retired. PID statuses are described further in the PID infrastructure design.",
       "$comment": "idx = 13"
+    },
+    "HS_ADMIN": {
+      "type": "string",
+      "description": "Administrative information for PID profile",
+      "$comment": "idx = 100"
     }
   },
   "required": [
