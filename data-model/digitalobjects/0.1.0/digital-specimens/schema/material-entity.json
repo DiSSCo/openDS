@@ -1,5 +1,5 @@
 {
-  "$id": "materialEntity",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/material-entity.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "Only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
@@ -83,37 +83,37 @@
     "identifications": {
       "type": "array",
       "items": {
-        "$ref": "identifications.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/identifications.json"
       }
     },
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/assertions.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/assertions.json"
       }
     },
     "entityRelationships": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/entity_relationships.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/entity-relationships.json"
       }
     },
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/citations.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
       }
     },
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifications.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/identifications.json"
       }
     },
     "events": {
       "type": "array",
       "items": {
-        "$ref": "events.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/events.json"
       }
     }
   }

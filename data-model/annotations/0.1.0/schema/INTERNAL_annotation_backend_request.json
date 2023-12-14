@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "course": {
+      "allOf": [
+        {
+          "$ref": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotations.json"
+        },
+        {
+          "properties": {
+            "text": {
+              "pattern": "[a-z][0-9]"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

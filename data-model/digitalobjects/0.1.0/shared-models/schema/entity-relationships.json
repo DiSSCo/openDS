@@ -1,5 +1,5 @@
 {
-  "$id": "entityRelationship",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/entity-relationships.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {

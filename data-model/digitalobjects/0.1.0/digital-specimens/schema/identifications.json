@@ -1,5 +1,5 @@
 {
-  "$id": "identifications",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/identifications.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
@@ -95,7 +95,7 @@
     "citations": {
       "type": "array",
       "items": {
-        "$ref": "../../shared-models/schema/citations.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
       }
     },
     "taxonIdentifications": {

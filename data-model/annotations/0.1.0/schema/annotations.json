@@ -1,5 +1,5 @@
 {
-  "$id": "https://schema.dissco.tech/0.0.1/annotation",
+  "$id": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotations.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Annotation",
   "description": "Information about the annotation data model. This model has been based on the W3C Web Annotation model",
