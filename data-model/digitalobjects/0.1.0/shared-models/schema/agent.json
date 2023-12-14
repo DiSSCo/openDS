@@ -1,5 +1,5 @@
 {
-  "$id": "agent",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "",
@@ -39,7 +39,7 @@
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "identifiers.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/identifiers.json"
       }
     }
   },

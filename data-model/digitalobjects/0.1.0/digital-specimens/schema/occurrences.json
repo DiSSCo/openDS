@@ -1,5 +1,5 @@
 {
-  "$id": "occurrence",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/occurrences.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
@@ -237,11 +237,11 @@
     "assertions": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/shared-models/0.1.0/assertions.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/assertions.json"
       }
     },
     "location": {
-      "$ref": "location.json"
+      "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimen/location.json"
     }
   }
 }
