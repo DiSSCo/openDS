@@ -241,7 +241,7 @@
       }
     },
     "location": {
-      "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimen/location.json"
+      "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/location.json"
     }
   }
 }
