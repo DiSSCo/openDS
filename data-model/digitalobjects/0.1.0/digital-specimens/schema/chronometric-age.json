@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/chronimetric-age.json",
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/chronometric-age.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
