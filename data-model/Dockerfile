@@ -1,7 +1,5 @@
 FROM nginxinc/nginx-unprivileged:alpine3.18-slim
 
-RUN
-
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY ./annotations/0.1.0/schema/annotations.json schema-root/schemas/annotations/0.1.0/annotation.json
