@@ -83,7 +83,7 @@
     "identifications": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/identifications.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/identifications.json"
       }
     },
     "assertions": {
@@ -107,7 +107,7 @@
     "identifiers": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/identifications.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/identifiers.json"
       }
     },
     "events": {
