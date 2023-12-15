@@ -1,4 +1,6 @@
-FROM nginxinc/nginx-unprivileged:stable-bullseye-perl
+FROM nginxinc/nginx-unprivileged:alpine3.18-slim
+
+RUN
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
