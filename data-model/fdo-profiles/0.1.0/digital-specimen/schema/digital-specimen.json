@@ -1,7 +1,8 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/digital-specimen.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Kernel from which all DiSSCo DOI FDO profiles are derived",
+  "description": "Kernel from which all DiSSCo DOI FDO profiles are derived",
+  "$comment":"FDO Profile Version 0.1.0",
   "allof": [
     {
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"

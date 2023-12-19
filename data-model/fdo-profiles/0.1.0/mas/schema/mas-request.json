@@ -1,7 +1,8 @@
 {
   "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/mas-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "FDO Profile requests to PID API for Machine Annotation Services",
+  "description": "FDO Profile requests to PID API for Machine Annotation Services",
+  "$comment":"FDO Profile Version 0.1.0",
   "allof": [
     {
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"

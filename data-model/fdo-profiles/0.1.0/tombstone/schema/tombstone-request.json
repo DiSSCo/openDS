@@ -1,7 +1,8 @@
 {
   "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/tombstone-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Schema for tombstoning requests to DiSSCo PID API",
+  "description": "Schema for tombstoning requests to DiSSCo PID API",
+  "$comment":"FDO Profile Version 0.1.0",
   "tombstoneText": {
     "type": "string",
     "description": "Free text describing why the object was archived",

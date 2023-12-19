@@ -1,6 +1,7 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/material-entity.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment":"DigitalObject Version 0.1.0",
   "type": "object",
   "$comment": "Only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
   "properties": {

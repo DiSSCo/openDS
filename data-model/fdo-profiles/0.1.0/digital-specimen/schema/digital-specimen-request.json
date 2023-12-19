@@ -1,7 +1,8 @@
 {
   "$id": "ttps://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/digital-specimen-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "FDO Profile for Digital Specimens",
+  "description": "FDO Profile for Digital Specimens",
+  "$comment":"FDO Profile Version 0.1.0",
   "allof": [
     {
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"
