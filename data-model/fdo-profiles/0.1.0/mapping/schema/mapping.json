@@ -10,7 +10,7 @@
   ],
   "sourceDataStandard": {
     "type": "string",
-    "description": "Indicates standard source data adheres to",
+    "description": "Indicates standard source data adheres to, such as \"dwc\" or \"abcd\"",
     "$comment": "idx = 30"
   },
   "additionalProperties": false,

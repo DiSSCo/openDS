@@ -54,7 +54,7 @@
     },
     "primaryMediaObjectIdType": {
       "enum": ["Global", "Local", "Resolvable"],
-      "description": "Vocabulary derived from DOI schema creationIdentifier.: PROPRIETARY IDENTIFIER if the identifier is custom made by the organisation or collection management system.",
+      "description": "Nature of institutional identifier. A globally unique identifier (e.g. a UUID) must be marked as \"Global\", while a resolvable identifier (e.g. a URL or a DOI including the proxy) must be marked at \"Resolvable\". If the identifier is unique only within the institution or collection system, it must be marked as \"Local\"",
       "$comment": "idx = 408"
     },
     "primaryMediaObjectIdName": {
