@@ -22,7 +22,7 @@
     "items": {
       "type": "string"
     },
-    "description": "Array of relevant PIDs",
+    "description": "Array of relevant PIDs of other digital resources (e.g. a referent that obsoletes this one).",
     "$comment": "idx = 31"
   },
   "additionalProperties": false,
