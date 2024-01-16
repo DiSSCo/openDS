@@ -11,6 +11,11 @@
       "description": "The handle of the annotation. It is a unique identifier for the annotation. It is composed of the handle of the document followed by a slash and a unique identifier for the annotation.",
       "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}"
     },
+    "ods:jobId": {
+      "type": "string",
+      "description": "Handle of the job record, if the annotation was produced by a Machine Annotation Service",
+      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}"
+    },
     "rdf:type": {
       "type": "string",
       "const": "Annotation",
