@@ -1,0 +1,20 @@
+{
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/mas.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "FDO Profile for Machine Annotation Services",
+  "$comment":"FDO Profile Version 0.1.0",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
+    }
+  ],
+  "masName": {
+    "type": "string",
+    "description": "Name of Machine Annotation Service",
+    "$comment": "idx = 604"
+  },
+  "additionalProperties": false,
+  "required": [
+    "masName"
+  ]
+}

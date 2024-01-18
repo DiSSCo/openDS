@@ -2,7 +2,8 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "$comment": "Kernel from which all DiSSCo FAIR Digital Object profiles are derived",
+  "description": "Kernel from which all DiSSCo FAIR Digital Object profiles are derived",
+  "$comment":"FDO Profile Version 0.1.0",
   "properties": {
     "fdoProfile" : {
       "type": "string",
@@ -78,6 +79,11 @@
       "enum": ["DRAFT", "ACTIVE", "RETIRED", "OBSOLETE", "FAILED", "MERGED", "SPLIT", "TEST"],
       "description": "A PID is considered to have a lifecycle, PID status indicates the status in the life cycle, e.g. draft, active, retired. PID statuses are described further in the PID infrastructure design.",
       "$comment": "idx = 13"
+    },
+    "HS_ADMIN": {
+      "type": "string",
+      "description": "Administrative information for PID profile",
+      "$comment": "idx = 100"
     }
   },
   "required": [
