@@ -3,6 +3,7 @@ FROM nginxinc/nginx-unprivileged:alpine3.18-slim
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY ./annotations/0.1.0/schema/annotations.json schema-root/schemas/annotations/0.1.0/annotation.json
+COPY ./annotations/0.1.0/schema/annotations_for_mas.json schema-root/schemas/annotations/0.1.0/annotation_for_mas.json
 
 COPY ./fdo-profiles/0.1.0/annotation/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 COPY ./fdo-profiles/0.1.0/digital-specimen/schema/ schema-root/schemas/fdo-profiles/0.1.0/
