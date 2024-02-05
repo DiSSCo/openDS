@@ -7,11 +7,6 @@
     "ods:id": {
       "type": "string"
     },
-    "ods:jobId": {
-      "type": "string",
-      "description": "Handle of the job record, if the annotation was produced by a Machine Annotation Service",
-      "pattern": "https:\/\/hdl.handle.net\/[^\/]+\/(.){3}-(.){3}-(.){3}"
-    },
     "rdf:type": {
       "const": "Annotation"
     },
