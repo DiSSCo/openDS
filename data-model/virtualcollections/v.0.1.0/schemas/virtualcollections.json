@@ -1,1 +1,115 @@
-
+{
+  "$schema": "http://json-schema.org/draft-2020-12/schema#",
+  "type": "object",
+  "properties": {
+    "ods:id": {
+      "type": "string",
+      "pattern": "^https:\\/\\/hdl\\.handle\\.net\\/20\\.5000\\.1025\\/.{3}-.{3}-.{3}$",
+      "examples": ["https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"],
+      "description": "Unique identifier for the object."
+    },
+    "ods:type": {
+      "type": "string",
+      "examples": ["https://doi.org/21.T11148/2037de437c80264ccbce"],
+      "description": "This is the handle of the type of the object."
+    },
+    "ods:version": {
+      "type": "integer",
+      "examples": [1],
+      "description": "The version of the object."
+    },
+    "dcterms:creator": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string",
+          "examples": ["foaf:Person"],
+          "description": "Object containing information on who created the object.",
+          "enum": [
+            "foaf:Person",
+            "foaf:Organisation",
+            "oa:SoftwareAgent"
+          ]
+        },
+        "foaf:name": {
+          "type": "string",
+          "examples": ["My Name"],
+          "description": "Name of the creator."
+        }
+      },
+      "description": "The creator of the collection."
+    },
+    "ltc:ObjectGroup": {
+      "type": "object",
+      "properties": {
+        "ltc:conditionsOfAccess": {
+          "type": "boolean",
+          "examples": ["Open to the public"],
+          "description": "Information about who can access the collection being described or an indication of its security status."
+        },
+        "ltc:collectionName": {
+          "type": "string",
+          "examples": ["Arctiacaja1991Netherlands"],
+          "description": "A short title that summarizes the collection objects contained within the ObjectGroup."
+        },
+        "ltc:description": {
+          "type": "string",
+          "examples": ["A virtual collection representing all butterfly specimens in South Holland"],
+          "description": "A free text description or narrative about the collection."
+        },
+        "ltc:isKnownToContainTypes": {
+          "type": "array",
+          "description": "Flag property to indicate that the collection is known to include type specimens. `true` - this collection contains types; `false` - this collections does not contain types.",
+          "items": {
+            "type": "boolean",
+            "examples": ["true"],
+            "description": "Type known to be contained."
+          }
+        }
+      },
+      "description": "An intentionally grouped set of objects with one or more common characteristics."
+    },
+    "ltc:MeasurementOrFact": {
+      "type": "object",
+      "properties": {
+        "dwc:measurementType": {
+          "type": "string",
+          "examples": ["Object Count"],
+          "description": "The nature of the measurement, fact, characteristic, or assertion."
+        },
+        "dwc:measurementValue": {
+          "type": "number",
+          "examples": [100],
+          "description": "The numerical value of the measurement."
+        }
+      },
+      "description": "A measurement of or fact about a class within the standard, or a relationship between the ObjectGroup and an associated class."
+    },
+    "ods:search_filters": {
+      "type": "array",
+      "description": "Search filters selected for the virtual collection.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "filter_name": {
+            "type": "string",
+            "examples": ["c4df6c19a91c2daaeccd9628e3d3f196"],
+            "description": "Name or identifier/UUID for the filter."
+          },
+          "filter_value": {
+            "type": "array",
+            "examples": ["topicDiscipline=Zoology&midsLevel=1&country=Indonesia&hasMedia=1"],
+            "description": "Value or configuration of the filter."
+          }
+        }
+      }
+    },
+    "ltc:basisOfScheme": {
+      "type": "string",
+      "examples": ["dataset for workshop"],
+      "description": "A summary of the basis or purpose for the LatimerCoreScheme. This property is intended to summarize the reason for grouping a number of ObjectGroups within the LatimerCoreScheme, and the purpose for which the data is intended to be used."
+    }
+  },
+  "required": ["ods:id", "ods:version","ltc:ObjectGroup"],
+  "additionalProperties": false
+}
