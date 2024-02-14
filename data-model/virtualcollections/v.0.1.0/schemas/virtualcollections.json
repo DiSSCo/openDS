@@ -6,12 +6,12 @@
       "type": "string",
       "pattern": "^https:\\/\\/hdl\\.handle\\.net\\/20\\.5000\\.1025\\/.{3}-.{3}-.{3}$",
       "examples": ["https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"],
-      "description": "Unique identifier for the object."
+      "description": "PID of the object."
     },
-    "ods:type": {
+   "rdf:type": {
       "type": "string",
-      "examples": ["https://doi.org/21.T11148/2037de437c80264ccbce"],
-      "description": "This is the handle of the type of the object."
+      "const": "VirtualCollections",
+      "description": "The type is always Annotation. https://www.w3.org/TR/rdf12-schema/#ch_type"
     },
     "ods:version": {
       "type": "integer",
@@ -24,7 +24,7 @@
         "ods:type": {
           "type": "string",
           "examples": ["foaf:Person"],
-          "description": "Object containing information on who created the object.",
+          "description": "The type of the creator.",
           "enum": [
             "foaf:Person",
             "foaf:Organisation",
@@ -34,7 +34,7 @@
         "foaf:name": {
           "type": "string",
           "examples": ["My Name"],
-          "description": "Name of the creator."
+          "description": "The name of the creator. https://xmlns.com/foaf/0.1/#term_name."
         }
       },
       "description": "The creator of the collection."
@@ -43,23 +43,23 @@
       "type": "object",
       "properties": {
         "ltc:conditionsOfAccess": {
-          "type": "boolean",
+          "type": "string",
           "examples": ["Open to the public"],
-          "description": "Information about who can access the collection being described or an indication of its security status."
+          "description": " https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_conditionsOfAccess Information about who can access the collection being described or an indication of its security status."
         },
         "ltc:collectionName": {
           "type": "string",
           "examples": ["Arctiacaja1991Netherlands"],
-          "description": "A short title that summarizes the collection objects contained within the ObjectGroup."
+          "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_collectionName A short title that summarizes the collection objects contained within the ObjectGroup."
         },
         "ltc:description": {
           "type": "string",
           "examples": ["A virtual collection representing all butterfly specimens in South Holland"],
-          "description": "A free text description or narrative about the collection."
+          "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_description A free text description or narrative about the collection."
         },
         "ltc:isKnownToContainTypes": {
           "type": "array",
-          "description": "Flag property to indicate that the collection is known to include type specimens. `true` - this collection contains types; `false` - this collections does not contain types.",
+          "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_isKnownToContainTypes Flag property to indicate that the collection is known to include type specimens. `true` - this collection contains types; `false` - this collections does not contain types.",
           "items": {
             "type": "boolean",
             "examples": ["true"],
@@ -75,28 +75,23 @@
         "dwc:measurementType": {
           "type": "string",
           "examples": ["Object Count"],
-          "description": "The nature of the measurement, fact, characteristic, or assertion."
+          "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementType The nature of the measurement, fact, characteristic, or assertion."
         },
         "dwc:measurementValue": {
           "type": "number",
           "examples": [100],
-          "description": "The numerical value of the measurement."
+          "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementValue The numerical value of the measurement."
         }
       },
-      "description": "A measurement of or fact about a class within the standard, or a relationship between the ObjectGroup and an associated class."
+      "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_MeasurementOrFact A measurement of or fact about a class within the standard, or a relationship between the ObjectGroup and an associated class."
     },
-    "ods:search_filters": {
+    "ods:searchFilters": {
       "type": "array",
       "description": "Search filters selected for the virtual collection.",
       "items": {
         "type": "object",
         "properties": {
-          "filter_name": {
-            "type": "string",
-            "examples": ["c4df6c19a91c2daaeccd9628e3d3f196"],
-            "description": "Name or identifier/UUID for the filter."
-          },
-          "filter_value": {
+           "filterValue": {
             "type": "array",
             "examples": ["topicDiscipline=Zoology&midsLevel=1&country=Indonesia&hasMedia=1"],
             "description": "Value or configuration of the filter."
@@ -110,6 +105,6 @@
       "description": "A summary of the basis or purpose for the LatimerCoreScheme. This property is intended to summarize the reason for grouping a number of ObjectGroups within the LatimerCoreScheme, and the purpose for which the data is intended to be used."
     }
   },
-  "required": ["ods:id", "ods:version","ltc:ObjectGroup"],
+  "required": ["ods:id", "ods:version","ltc:ObjectGroup, ltc:collectionName"],
   "additionalProperties": false
 }
