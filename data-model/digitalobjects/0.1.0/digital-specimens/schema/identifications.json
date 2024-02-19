@@ -118,6 +118,13 @@
               "Roptrocerus typographi (Györfi, 1952)"
             ]
           },
+          "ods:scientificNameHtmlLabel": {
+            "type": "string",
+            "description": "A Hyper Text Markup Language (HTML) representation of the scientific name. Includes correct formatting of the name.",
+            "examples": [
+              "<i>Absidia ginsan</i> Komin. et al., 1952"
+            ]
+          },
           "dwc:scientificNameAuthorship": {
             "type": "string",
             "description": "https://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
