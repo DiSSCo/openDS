@@ -9,20 +9,20 @@
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
     }
   ],
-  "ltc:collectionName": {
+  "collectionName": {
     "type": "string",
     "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_collectionName A short title that summarizes the collection objects contained within the ObjectGroup",
-    "$comment": "idx = 800"
+    "$comment": "idx = 900"
   },
-  "ltc:conditionsOfAccess": {
+  "conditionsOfAccess": {
     "type": "string",
     "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_conditionsOfAccess Information about who can access the collection being described or an indication of its security status",
-    "$comment": "idx = 801"
+    "$comment": "idx = 901"
   },
-  "ltc:description" : {
+  "description" : {
   "type": "string",                               
    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_description A free text description or narrative about the collection.",
-   "$comment": "idx = 802"
+   "$comment": "idx = 902"
                 },
   "additionalProperties": false,
   "required": [
