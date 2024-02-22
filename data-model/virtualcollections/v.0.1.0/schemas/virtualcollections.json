@@ -6,33 +6,34 @@
     "properties": {
         "ods:id": {
             "type": "string",
+            "description": "PID of the object.",
             "pattern": "^https:\/\/hdl\\.handle\\.net\/20\\.5000\\.1025\/.{3}-.{3}-.{3}$",
             "examples": [
                 "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-            ],
-            "description": "PID of the object."
+            ]
         },
         "rdf:type": {
             "type": "string",
-            "const": "VirtualCollections",
-            "description": "The type is always VirtualCollections. https://www.w3.org/TR/rdf12-schema/#ch_type"
+            "description": "The type is always VirtualCollections. https://www.w3.org/TR/rdf12-schema/#ch_type",
+            "const": "VirtualCollections"
         },
         "ods:version": {
             "type": "integer",
+            "description": "The version of the object.",
             "examples": [
                 1
-            ],
-            "description": "The version of the object."
+            ]
         },
         "dcterms:creator": {
             "type": "object",
+            "description": "The creator of the collection.",
             "properties": {
                 "ods:type": {
                     "type": "string",
+                    "description": "The type of creator of the collection.",
                     "examples": [
                         "foaf:Person"
                     ],
-                    "description": "The type of the creator.",
                     "enum": [
                         "foaf:Person",
                         "foaf:Organisation",
@@ -41,74 +42,66 @@
                 },
                 "foaf:name": {
                     "type": "string",
+                    "description": "The name of the creator. https://xmlns.com/foaf/0.1/#term_name.",
                     "examples": [
                         "My Name"
-                    ],
-                    "description": "The name of the creator. https://xmlns.com/foaf/0.1/#term_name."
+                    ]
                 }
-            },
-            "description": "The creator of the collection."
+            }
         },
         "ltc:ObjectGroup": {
             "type": "object",
+            "description": "https://tdwg.github.io/ltc/quick-reference/#ObjectGroup An intentionally grouped set of objects with one or more common characteristics.",
             "properties": {
                 "ltc:conditionsOfAccess": {
                     "type": "string",
+                    "description": " https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_conditionsOfAccess Information about who can access the collection being described or an indication of its security status.",
                     "examples": [
                         "Open to the public"
-                    ],
-                    "description": " https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_conditionsOfAccess Information about who can access the collection being described or an indication of its security status."
+                    ]
                 },
                 "ltc:collectionName": {
                     "type": "string",
+                    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_collectionName A short title that summarizes the collection objects contained within the ObjectGroup.",
                     "examples": [
                         "Arctiacaja1991Netherlands"
-                    ],
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_collectionName A short title that summarizes the collection objects contained within the ObjectGroup."
+                    ]
                 },
                 "ltc:description": {
                     "type": "string",
+                    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_description A free text description or narrative about the collection.",
                     "examples": [
                         "A virtual collection representing all butterfly specimens in South Holland"
-                    ],
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_description A free text description or narrative about the collection."
-                },
-              "ltc:isKnownToContainTypes": {
-    "type": "boolean",
-    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_isKnownToContainTypes Flag property to indicate that the collection is known to include type specimens. `true` - this collection contains types; `false` - this collections does not contain types.",
-    "examples": [
-        true
-    ]
-              }
-            },
-            "description": "An intentionally grouped set of objects with one or more common characteristics."
+                    ]
+                }
+            }
         },
         "ltc:MeasurementOrFact": {
             "type": "object",
+            "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_MeasurementOrFact A measurement of or fact about a class within the standard, or a relationship between the ObjectGroup and an associated class.",
             "properties": {
                 "dwc:measurementType": {
                     "type": "string",
+                    "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementType The nature of the measurement, fact, characteristic, or assertion.",
                     "examples": [
                         "Object Count"
-                    ],
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementType The nature of the measurement, fact, characteristic, or assertion."
+                    ]
                 },
                 "dwc:measurementValue": {
                     "type": "number",
+                    "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementValue The numerical value of the measurement.",
                     "examples": [
                         100
-                    ],
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementValue The numerical value of the measurement."
+                    ]
                 },
                 "dwc:measurementUnit": {
                     "type": "string",
+                    "description": "https://tdwg.github.io/ltc/terms/#MeasurementOrFact_measurementUnit The units associated with the measurementValue.",
                     "examples": [
                         "mm, C, km, count, percentage, category"
-                    ],
-                    "description": "https://tdwg.github.io/ltc/terms/#MeasurementOrFact_measurementUnit"
+                    ]
                 }
-            },
-            "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_MeasurementOrFact A measurement of or fact about a class within the standard, or a relationship between the ObjectGroup and an associated class."
+            }
         },
         "ods:searchFilters": {
             "type": "array",
@@ -128,11 +121,11 @@
         },
         "ltc:basisOfScheme": {
             "type": "string",
-            "examples": [
-                "dataset for workshop"
-            ],
             "description": "A summary of the basis or purpose for the LatimerCoreScheme. This property is intended to summarize the reason for grouping a number of ObjectGroups within the LatimerCoreScheme, and the purpose for which the data is intended to be used."
-        }
+        },
+        "examples": [
+            "dataset for workshop"
+        ]
     },
     "required": [
         "rdf:type",
@@ -141,38 +134,5 @@
         "ltc:ObjectGroup",
         "ltc:collectionName"
     ],
-    "additionalProperties": false,
-    "examples": [ 
-{
-  "ods:id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
-  "rdf:type": "VirtualCollections",
-  "ods:version": 1,
-  "dcterms:creator": {
-    "ods:type": "foaf:Person",
-    "foaf:name": "Mary Shelly"
-  },
-  "ltc:ObjectGroup": {
-    "ltc:conditionsOfAccess": "Open",
-    "collectionName": "ZoologyIndonesia",
-    "ltc:description": "A virtual collection representing Zoology specimens from Indonesia.",
-    "ltc:isKnownToContainTypes": [true]
-  },
-  "ltc:MeasurementOrFact": {
-    "dwc:measurementType": "Object Count",
-    "dwc:measurementValue": 384,
-    "dwc:measurementUnit": "count"
-  },
-  "ods:searchFilters": [
-    {
-      "filterValue": [
-        "topicDiscipline=Zoology",
-        "country=Indonesia",
-        "midsLevel=1",
-        "typeStatus=holotype",
-        "organisationName=Naturalis Biodiversity Center"
-      ]
-    }
-  ]
-}
-]
+    "additionalProperties": false
 }
