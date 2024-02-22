@@ -1,0 +1,31 @@
+
+{
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/mas.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "FDO Profile for Virtual Collections",
+  "$comment": "FDO Profile Version 0.1.0",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
+    }
+  ],
+  "ltc:collectionName": {
+    "type": "string",
+    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_collectionName A short title that summarizes the collection objects contained within the ObjectGroup",
+    "$comment": "idx = 800"
+  },
+  "ltc:conditionsOfAccess": {
+    "type": "string",
+    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_conditionsOfAccess Information about who can access the collection being described or an indication of its security status",
+    "$comment": "idx = 801"
+  },
+  "ltc:description" : {
+  "type": "string",                               
+   "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_description A free text description or narrative about the collection.",
+   "$comment": "idx = 802"
+                },
+  "additionalProperties": false,
+  "required": [
+    "ltc:collectionName"
+  ]
+}
