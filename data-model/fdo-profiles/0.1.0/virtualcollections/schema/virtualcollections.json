@@ -26,6 +26,6 @@
                 },
   "additionalProperties": false,
   "required": [
-    "ltc:collectionName"
+    "collectionName"
   ]
 }
