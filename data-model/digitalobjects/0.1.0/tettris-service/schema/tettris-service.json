@@ -109,8 +109,9 @@
     },
     "sourceUrl": {
       "type": "string",
+      "$comment": "points to PID for the virtual collection",
       "examples": [
-        "https://info.taxonomy.com"
+        "https://hdl.handle.net/10.22/111-AAA"
       ]
     },
     "paidService": {
@@ -172,11 +173,15 @@
     },
     "facilityLocation": {
       "type": "string",
-      "examples": ["Barcelona"]
+      "examples": [
+        "Barcelona"
+      ]
     },
-    "taxonomicScope" :{
+    "taxonomicScope": {
       "type": "string",
-      "examples": ["Bombus"]
+      "examples": [
+        "Bombus"
+      ]
     },
     "media": {
       "type": "array",
@@ -188,7 +193,6 @@
           "https://media-repository.com/123"
         ]
       ]
-    }
     }
   },
   "required": [

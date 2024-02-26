@@ -8,8 +8,6 @@
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
     }
   ],
-  :
-  "",
   "resourceType": {
     "enum": [
       "Digital",
