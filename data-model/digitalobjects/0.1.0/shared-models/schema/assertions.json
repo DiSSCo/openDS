@@ -22,6 +22,12 @@
     "???:assertionUnit": {
       "type": "string"
     },
+    "???:assertionByAgentName": {
+      "type": "string"
+    },
+    "???:assertionByAgentId": {
+      "type": "string"
+    },
     "???:assertionProtocol": {
       "type": "string"
     },

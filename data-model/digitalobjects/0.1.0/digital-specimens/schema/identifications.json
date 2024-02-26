@@ -33,6 +33,20 @@
       ],
       "$comment": "Unclear if we can make this an enumeration, which values?"
     },
+    "dwc:identifiedBy": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identifiedBy",
+      "example": [
+        "James L. Patton"
+      ]
+    },
+    "dwc:identifiedById": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identifiedByID",
+      "example": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
+    },
     "dwc:dateIdentified": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/dateIdentified",
@@ -70,6 +84,10 @@
       ]
     },
     "???:typeDesignationType": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },    "???:typeDesignatedBy": {
       "type": "string",
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"

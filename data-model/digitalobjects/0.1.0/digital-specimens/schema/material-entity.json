@@ -67,6 +67,20 @@
         "https://ror.org/03wkt5x30"
       ]
     },
+    "dwc:recordedBy": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
+      "examples": [
+        "José E. Crespo"
+      ]
+    },
+    "dwc:recordedById": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
+      "examples": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
+    },
     "identifications": {
       "type": "array",
       "items": {

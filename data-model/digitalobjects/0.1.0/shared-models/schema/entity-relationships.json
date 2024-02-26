@@ -20,6 +20,16 @@
       "type": "integer",
       "description": "When multiple relationships are added an order can be defined"
     },
+    "entityRelationshipCreatorName": {
+      "type": "string",
+      "description": "The name of the relationship creator",
+      "$comment": "Not available in GBIF UM"
+    },
+    "entityRelationshipCreatorId": {
+      "type": "string",
+      "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)",
+      "$comment": "Not available in GBIF UM"
+    },
     "agents": {
       "type": "array",
       "items": {

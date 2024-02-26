@@ -227,6 +227,14 @@
         "After the recent rains the river is nearly at flood stage"
       ]
     },
+    "???:collectorName": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
+    },
+    "???:collectorId": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
+    },
     "assertions": {
       "type": "array",
       "items": {

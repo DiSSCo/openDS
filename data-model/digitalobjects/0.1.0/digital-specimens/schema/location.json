@@ -216,6 +216,13 @@
             1.5708
           ]
         },
+        "dwc:georeferencedBy": {
+          "type": "string",
+          "description": "https://rs.tdwg.org/dwc/terms/georeferencedBy",
+          "examples": [
+            "Janet Fang"
+          ]
+        },
         "dwc:georeferencedDate": {
           "type": "string",
           "description": "https://rs.tdwg.org/dwc/terms/georeferencedDate",

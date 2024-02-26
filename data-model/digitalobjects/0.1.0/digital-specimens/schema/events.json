@@ -1,7 +1,7 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/events.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment":"DigitalObject Version 0.1.0",
+  "$comment": "DigitalObject Version 0.1.0",
   "type": "object",
   "properties": {
     "???:eventName": {
@@ -86,6 +86,14 @@
       "examples": [
         "After the recent rains the river is nearly at flood stage"
       ]
+    },
+    "???:collectorName": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
+    },
+    "???:collectorId": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
     },
     "location": {
       "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/location.json"

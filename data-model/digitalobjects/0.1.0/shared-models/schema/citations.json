@@ -15,6 +15,10 @@
       "type": "string",
       "description": "https://purl.org/dc/terms/title"
     },
+    "dcterms:creator": {
+      "type": "string",
+      "description": "https://purl.org/dc/elements/1.1/creator"
+    },
     "???:citationPageNumber": {
       "type": "string",
       "description": "Unclear yet",
