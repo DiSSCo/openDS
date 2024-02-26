@@ -1,6 +1,6 @@
 
 {
-  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/mas.json",
+  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/virtualcollections.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for Virtual Collections",
   "$comment": "FDO Profile Version 0.1.0",
