@@ -2,16 +2,18 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/mapping.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for mapping from source data standard to DiSSCo data model",
-  "$comment":"FDO Profile Version 0.1.0",
+  "$comment": "FDO Profile Version 0.1.0",
   "allof": [
     {
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
     }
   ],
-  "sourceDataStandard": {
-    "type": "string",
-    "description": "Indicates standard source data adheres to, such as \"dwc\" or \"abcd\"",
-    "$comment": "idx = 30"
+  "properties": {
+    "sourceDataStandard": {
+      "type": "string",
+      "description": "Indicates standard source data adheres to, such as \"dwc\" or \"abcd\"",
+      "$comment": "idx = 30"
+    }
   },
   "additionalProperties": false,
   "required": [

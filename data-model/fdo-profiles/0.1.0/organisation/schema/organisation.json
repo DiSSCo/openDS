@@ -8,17 +8,19 @@
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
     }
   ],
-  "organisationIdentifier": {
-    "type": "string",
-    "$comment": "idx = 800"
-  },
-  "organisationIdentifierType": {
-    "type": "string",
-    "$comment": "idx = 801"
-  },
-  "organisationName": {
-    "type": "string",
-    "$comment": "idx = 802"
+  "properties": {
+    "organisationIdentifier": {
+      "type": "string",
+      "$comment": "idx = 800"
+    },
+    "organisationIdentifierType": {
+      "type": "string",
+      "$comment": "idx = 801"
+    },
+    "organisationName": {
+      "type": "string",
+      "$comment": "idx = 802"
+    }
   },
   "additionalProperties": false,
   "required": [
