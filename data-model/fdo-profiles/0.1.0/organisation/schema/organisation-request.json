@@ -8,13 +8,15 @@
       "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"
     }
   ],
-  "organisationIdentifier": {
-    "type": "string",
-    "$comment": "idx = 800"
-  },
-  "organisationIdentifierType": {
-    "type": "string",
-    "$comment": "idx = 801"
+  "properties": {
+    "organisationIdentifier": {
+      "type": "string",
+      "$comment": "idx = 800"
+    },
+    "organisationIdentifierType": {
+      "type": "string",
+      "$comment": "idx = 801"
+    }
   },
   "additionalProperties": false,
   "required": [
