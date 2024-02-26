@@ -1,0 +1,39 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/tettris-service-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "FDO Profile for PID Request for TETTRIs Service",
+  "$comment": "FDO Profile Version 0.1.0",
+  "allof": [
+    {
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"
+    }
+  ],
+  "resourceType": {
+    "enum": [
+      "Digital",
+      "Physical",
+      "Expertise"
+    ],
+    "$comment": "idx = 350"
+  },
+  "serviceCategory": {
+    "enum": [
+      "reference collections",
+      "training datasets",
+      "R-packages",
+      "Identification tools",
+      "MAS",
+      "lab tools",
+      "crowd sourcing tools for digitisation",
+      "training platforms (DEST)"
+    ],
+    "$comment": "idx = 351"
+  },
+  "taxonomicTopic": {
+    "type": "string",
+    "$comment": "idx = 352",
+    "$comment": "Vocabulary yet to be defined"
+  },
+  "additionalProperties": false,
+  "required": []
+}
