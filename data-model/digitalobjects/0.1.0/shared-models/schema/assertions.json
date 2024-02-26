@@ -36,6 +36,12 @@
     },
     "???:assertionRemarks": {
       "type": "string"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+      }
     }
   },
   "required": [

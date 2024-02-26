@@ -25,6 +25,7 @@
       "description": "The timestamp that the object version was created in DiSSCo",
       "format": "date-time",
       "examples": [
+        "2023-10-02T12:31:34.806Z"
       ]
     },
     "ods:type": {
@@ -234,7 +235,7 @@
       ]
     },
     "???:recordedByAgent": {
-      "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json",
+      "$ref": "agent.json",
       "$comment": "Is this an option for the agent instead of adding a list?"
     },
     "dwc:recordedById": {
@@ -311,6 +312,12 @@
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/chronometric-age.json"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
       }
     }
   },

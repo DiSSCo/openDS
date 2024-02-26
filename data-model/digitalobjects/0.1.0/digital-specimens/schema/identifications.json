@@ -1,7 +1,7 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/identifications.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment":"DigitalObject Version 0.1.0",
+  "$comment": "DigitalObject Version 0.1.0",
   "type": "object",
   "properties": {
     "dwc:identificationID": {
@@ -97,6 +97,12 @@
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
       }
     },
     "taxonIdentifications": {
