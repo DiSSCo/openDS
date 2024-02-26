@@ -1,0 +1,42 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/doi-kernel.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Kernel from which all DiSSCo DOI FDO profiles are derived",
+  "$comment":"FDO Profile Version 0.1.0",
+  "allof": [{
+    "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
+  }],
+  "properties": {
+    "referentType": {
+      "type": "string",
+      "description": "A generic name for the type of object that the DOI refers to. This is different from digitalObjectType that points to a specific type, e.g. there can be different types of digital specimens that each have a slightly different metadata schema because they describe a different kind of specimen, like a botanical versus a geological specimen.",
+      "example": "digital specimen",
+      "$comment": "idx = 40"
+    },
+    "referentDoiName": {
+      "type": "string",
+      "description": "The bare DOI Name string for the PID, e.g. without the resolver.",
+      "example": "10.22/GEE-W3J-HL2",
+      "$comment": "idx = 41"
+    },
+    "referentName": {
+      "type": "string",
+      "description": "In the case of a digital specimen this is the name for the object in the collection, which can be anything from a taxon name to a collection number.",
+      "example": "Mus musculus type 1",
+      "$comment": "idx = 42"
+    },
+    "primaryReferentType": {
+      "type": "string",
+      "description": "The primary type of the referent in the DOI Kernel XML Schema (e.g. creation, party, event). This is an open list. For digital specimens and media it will always be creation.",
+      "example": "creation",
+      "$comment": "idx = 43"
+    }
+  },
+  "additionalProperties": true,
+  "required": [
+    "referentType",
+    "referentDoiName",
+    "referentName",
+    "primaryReferentType"
+  ]
+}

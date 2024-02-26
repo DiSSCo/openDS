@@ -1,0 +1,196 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotations-for-mas.json",
+  "type": "object",
+  "description": "Schema specific to Machine Annotation Services providing information to DiSSCo.",
+  "properties": {
+    "ods:id": {
+      "type": "string"
+    },
+    "rdf:type": {
+      "const": "Annotation"
+    },
+    "oa:motivation": {
+      "enum": [
+        "ods:adding",
+        "oa:assessing",
+        "oa:editing",
+        "oa:commenting"
+      ]
+    },
+    "oa:motivatedBy": {
+      "type": "string"
+    },
+    "oa:creator": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string"
+        },
+        "foaf:name": {
+          "type": "string"
+        },
+        "ods:id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "ods:id",
+        "ods:type"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "oa:target": {
+      "type": "object",
+      "properties": {
+        "ods:id": {
+          "type": "string"
+        },
+        "ods:type": {
+          "type": "string"
+        },
+        "oa:selector": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": {
+                  "const": "FieldSelector"
+                },
+                "ods:field": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ods:type",
+                "ods:field"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": {
+                  "const": "ClassSelector"
+                },
+                "oa:class": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ods:type",
+                "oa:class"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "ods:type": {
+                  "const": "FragmentSelector"
+                },
+                "ac:hasRoi": {
+                  "type": "object",
+                  "properties": {
+                    "ac:xFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:yFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:widthFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    },
+                    "ac:heightFrac": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1
+                    }
+                  },
+                  "required": [
+                    "ac:xFrac",
+                    "ac:yFrac",
+                    "ac:widthFrac",
+                    "ac:heightFrac"
+                  ]
+                },
+                "dcterms:conformsTo": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "ods:type",
+                "ac:hasRoi"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "ods:id",
+        "ods:type"
+      ]
+    },
+    "oa:body": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string"
+        },
+        "oa:value": {
+          "type": "array"
+        },
+        "dcterms:reference": {
+          "type": "string"
+        },
+        "ods:score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "ods:type",
+        "oa:value"
+      ]
+    },
+    "schema.org:aggregateRating": {
+      "type": "object",
+      "properties": {
+        "ods:type": {
+          "type": "string"
+        },
+        "schema.org:ratingCount": {
+          "type": "number"
+        },
+        "schema.org:ratingValue": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "ods:type",
+        "schema.org:ratingCount",
+        "schema.org:ratingValue"
+      ]
+    },
+    "placeInBatch": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "rdf:type",
+    "oa:motivation",
+    "oa:target",
+    "oa:body",
+    "oa:creator"
+  ],
+  "additionalProperties": false
+}

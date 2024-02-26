@@ -1,0 +1,113 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/material-entity.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment":"DigitalObject Version 0.1.0",
+  "type": "object",
+  "$comment": "Only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
+  "properties": {
+    "materialEntityId": {
+      "type": "string"
+    },
+    "dwc:preparations": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/preparations",
+      "example": [
+        "fossil"
+      ]
+    },
+    "dwc:disposition": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/disposition",
+      "examples": [
+        "in collection"
+      ]
+    },
+    "dwc:institutionCode": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
+      "examples": [
+        "MNF"
+      ]
+    },
+    "???:institutionId": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "examples": [
+        "https://ror.org/015hz7p22"
+      ]
+    },
+    "dwc:institutionName": {
+      "type": "string",
+      "description": "Full museum name according to ROR or Wikidata",
+      "examples": [
+        "National Museum of Natural History"
+      ],
+      "$comment": "Not part of DWC or the GBIF UM"
+    },
+    "dwc:collectionCode": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
+      "examples": [
+        "EBIRD"
+      ]
+    },
+    "dwc:collectionId": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionID",
+      "examples": [
+        "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
+      ],
+      "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
+    },
+    "dwc:ownerInstitutionId": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier for the owning institution",
+      "$comment": "DWC only has ownerInstitutionCode, however code is not an (resolvable identifier)",
+      "examples": [
+        "https://ror.org/03wkt5x30"
+      ]
+    },
+    "identifications": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/identifications.json"
+      }
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/assertions.json"
+      }
+    },
+    "entityRelationships": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/entity-relationships.json"
+      }
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
+      }
+    },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/identifiers.json"
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/digital-specimens/events.json"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+      }
+    }
+  }
+}
