@@ -1,5 +1,5 @@
 {
-  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/mas.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/mas.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for Machine Annotation Services",
   "$comment":"FDO Profile Version 0.1.0",

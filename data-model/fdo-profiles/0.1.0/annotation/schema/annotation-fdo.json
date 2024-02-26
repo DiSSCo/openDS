@@ -1,11 +1,11 @@
 {
-  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/annotation-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/annotation-fdo.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Schema for creating new PID records for Annotations using the DiSSCO PID API. API maps requests to annotation.json profile",
+  "description": "FDO Profile for DiSSCo Annotations",
   "$comment":"FDO Profile Version 0.1.0",
   "allof": [
     {
-      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-request.json"
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/handle-kernel.json"
     }
   ],
   "properties": {

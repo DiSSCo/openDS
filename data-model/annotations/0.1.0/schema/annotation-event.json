@@ -6,11 +6,12 @@
     "annotations": {
       "type": "array",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotations-for-mas.json"
+        "$ref": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation-for-mas.json"
       }
     },
     "jobId": {
-      "type": "string"
+      "type": "string",
+      "pattern": "\\w+\/(.){3}-(.){3}-(.){3}"
     },
     "batchMetadata": {
       "type": "array",
@@ -18,7 +19,7 @@
         "type": "object",
         "properties": {
           "placeInBatch": {
-            "type": "number"
+            "type": "integer"
           },
           "inputField": {
             "type": "string"

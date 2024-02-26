@@ -1,5 +1,5 @@
 {
-  "$id": "https://json-schema.org/draft/2020-12/schemas/fdo-profiles/0.1.0/organisation-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/organisation-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Schema for requests made to DiSSCo PID API for organisations",
   "$comment":"FDO Profile Version 0.1.0",
