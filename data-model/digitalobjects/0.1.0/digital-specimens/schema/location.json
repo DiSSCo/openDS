@@ -254,6 +254,12 @@
         "???:preferredSpatialRepresentation": {
           "type": "string",
           "$comment": "Not part of DWC"
+        },
+        "agents": {
+          "type": "array",
+          "items": {
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+          }
         }
       }
     },

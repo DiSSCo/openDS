@@ -29,6 +29,12 @@
       "type": "string",
       "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)",
       "$comment": "Not available in GBIF UM"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+      }
     }
   },
   "required": [
