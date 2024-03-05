@@ -19,7 +19,7 @@
   "serviceCategory": {
     "enum": [
       "Reference collections",
-      "Rraining datasets",
+      "Training datasets",
       "R-packages",
       "Identification tools",
       "MAS",
