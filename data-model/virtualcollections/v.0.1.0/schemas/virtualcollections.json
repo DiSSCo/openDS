@@ -38,6 +38,10 @@
                         "foaf:Person",
                         "foaf:Organisation",
                         "oa:SoftwareAgent"
+                    ],
+                    "required": [
+                        "ods:id",
+                        "ods:type"
                     ]
                 },
                 "foaf:name": {
@@ -101,7 +105,12 @@
                         "mm, C, km, count, percentage, category"
                     ]
                 }
-            }
+            },
+            "required": [
+                "dwc:measurementType",
+                "dwc:measurementValue",
+                "dwc:measurementUnit"
+            ]
         },
         "ods:searchFilters": {
             "type": "array",
@@ -109,28 +118,52 @@
             "items": {
                 "type": "object",
                 "properties": {
+                    "filterKey": {
+                        "type": "string",
+                        "description": "Key of the filter.",
+                        "examples": [
+                            "country",
+                            "midsLevel"
+                        ]
+                    },
                     "filterValue": {
                         "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Value or configuration of the filter.",
                         "examples": [
-                            "topicDiscipline=Zoology&midsLevel=1&country=Indonesia&hasMedia=1"
-                        ],
-                        "description": "Value or configuration of the filter."
+                            ["Netherlands", "Belgium"],
+                            ["1"]
+                        ]
                     }
-                }
-            }
+                },
+                "required": ["filterKey", "filterValue"]
+            },
+            "examples": [
+                [
+                    {
+                        "filterKey": "country",
+                        "filterValue": ["Netherlands", "Belgium"]
+                    },
+                    {
+                        "filterKey": "midsLevel",
+                        "filterValue": ["1"]
+                    }
+                ]
+            ]
         },
         "ltc:basisOfScheme": {
             "type": "string",
             "description": "A summary of the basis or purpose for the LatimerCoreScheme. This property is intended to summarize the reason for grouping a number of ObjectGroups within the LatimerCoreScheme, and the purpose for which the data is intended to be used."
-        },
-        "examples": [
-            "dataset for workshop"
-        ]
+        }
     },
     "required": [
         "rdf:type",
         "ods:id",
         "ods:version",
+        "ods:searchFilters",
+        "dcterms:creator",
         "ltc:ObjectGroup",
         "ltc:collectionName"
     ],
