@@ -164,8 +164,7 @@
         "ods:version",
         "ods:searchFilters",
         "dcterms:creator",
-        "ltc:ObjectGroup",
-        "ltc:collectionName"
+        "ltc:ObjectGroup"
     ],
     "additionalProperties": false
 }
