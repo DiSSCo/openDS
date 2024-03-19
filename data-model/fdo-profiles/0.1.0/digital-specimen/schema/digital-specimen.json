@@ -64,13 +64,10 @@
     "items": {
       "type": "object",
       "properties": {
-        "id": {
+        "identifierValue": {
           "type": "string"
         },
-        "idType": {
-          "type": "string"
-        },
-        "idName": {
+        "identifierType": {
           "type": "string"
         }
       }
