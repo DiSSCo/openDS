@@ -1,0 +1,23 @@
+{
+  "10320/loc": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>",
+  "fdoProfile": "https://hdl.handle.net/21.T11148/413c00cbd83ae33d1ac0",
+  "fdoRecordLicense": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "digitalObjectType": "https://hdl.handle.net/21.T11148/413c00cbd83ae33d1ac0",
+  "digitalObjectName": "Organisation",
+  "pid": "https://hdl.handle.net/TEST/FFR-RTL-B8K",
+  "pidIssuer": "https://ror.org/04wxnsj81",
+  "pidIssuerName": "DataCite",
+  "issuedForAgent": "https://ror.org/0566bfb96",
+  "issuedForAgentName": "Naturalis Biodiversity Center",
+  "pidRecordIssueDate": "2023-11-17T11:57:02.933Z",
+  "pidRecordIssueNumber": 1,
+  "structuralType": "digital",
+  "pidStatus": "ACTIVE",
+  "primaryReferentType": "creation",
+  "referentName": "Naturalis Biodiversity Center",
+  "referentType": "Organisation",
+  "referentDoiName": "TEST/FFR-RTL-B8K",
+  "organisationIdentifier": "https://ror.org/0566bfb96",
+  "organisationIdentifierType": "ROR",
+  "organisationName": "Naturalis Biodiversity Center"
+}

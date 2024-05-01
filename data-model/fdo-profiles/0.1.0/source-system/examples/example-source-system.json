@@ -1,0 +1,17 @@
+{
+  "10320/loc": "<locations><location href=\"https://dev-orchestration.dissco.tech/api/v1/source-system/TEST/6JE-97W-RDY\" id=\"0\" weight=\"1\"/></locations>",
+  "fdoProfile": "https://hdl.handle.net/21.T11148/417a4f472f60f7974c12",
+  "fdoRecordLicense": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "digitalObjectType": "https://hdl.handle.net/21.T11148/417a4f472f60f7974c12",
+  "digitalObjectName": "FDO-test-basic-type",
+  "pid": "https://hdl.handle.net/TEST/6JE-97W-RDY",
+  "pidIssuer": "https://ror.org/04wxnsj81",
+  "pidIssuerName": "DataCite",
+  "issuedForAgent": "https://ror.org/0566bfb96",
+  "issuedForAgentName": "Naturalis Biodiversity Center",
+  "pidRecordIssueDate": "2023-09-05T08:06:38.914Z",
+  "pidRecordIssueNumber": 1,
+  "structuralType": "digital",
+  "pidStatus": "TEST",
+  "sourceSystemName": "TalTech geological collections endpoint"
+}

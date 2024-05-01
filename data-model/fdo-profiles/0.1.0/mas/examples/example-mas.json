@@ -1,0 +1,17 @@
+{
+  "10320/loc": "<locations/>",
+  "fdoProfile": "https://hdl.handle.net/21.T11148/22e71a0015cbcfba8ffa",
+  "fdoRecordLicense": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "digitalObjectType": "https://hdl.handle.net/21.T11148/22e71a0015cbcfba8ffa",
+  "digitalObjectName": "KernelInformationProfile",
+  "pid": "https://hdl.handle.net/TEST/KDK-AT2-C9S",
+  "pidIssuer": "https://ror.org/04wxnsj81",
+  "pidIssuerName": "DataCite",
+  "issuedForAgent": "https://ror.org/0566bfb96",
+  "issuedForAgentName": "Naturalis Biodiversity Center",
+  "pidRecordIssueDate": "2024-01-26T13:42:59.305Z",
+  "pidRecordIssueNumber": 1,
+  "structuralType": "digital",
+  "pidStatus": "TEST",
+  "masName": "Georeferencing tool"
+}

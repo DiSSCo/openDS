@@ -1,0 +1,19 @@
+{
+  "data": {
+    "type": "https://hdl.handle.net/21.T11148/894b1e6cad57e921764e",
+    "attributes": {
+      "pidIssuer": "https://ror.org/04wxnsj81",
+      "issuedForAgent": "https://ror.org/0566bfb96",
+      "structuralType": "physical",
+      "locations": [
+        "https://coldb.mnhn.fr/catalognumber/mnhn/ec/ec23946"
+      ],
+      "referentType": "Zoological Specimen",
+      "primaryReferentType": "creation",
+      "specimenHost": "https://ror.org/04wxnsj81",
+      "primarySpecimenObjectId": "0566bfb96",
+      "primarySpecimenObjectIdType": "Local",
+      "normalisedPrimarySpecimenObjectId": "0566bfb96:20.5000.1025/GEE-W3J-HL2:RMNH.1.2b"
+    }
+  }
+}
