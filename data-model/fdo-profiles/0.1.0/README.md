@@ -19,3 +19,6 @@ While some common metadata exists across profiles, distinct FDOs offer several a
 - Granularity: Tailored profiles cater to specific data object types, ensuring the most relevant metadata is captured.
 - Extensibility: Profiles can be extended or inherit from others, promoting reusability and avoiding redundancy.
 - Governance: Separate profiles facilitate the governance and maintenance of digital object types.
+
+### Request vs FDO Schemas
+Schemas marked with `-request` are intended to validate incoming requests to the [DiSSCo Handle Manager API](https://github.com/DiSSCo/handle-manager). The request structure adheres to the JSON:API standard.
