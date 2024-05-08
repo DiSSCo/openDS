@@ -2,15 +2,15 @@
   "data": {
     "type": "https://hdl.handle.net/21.T11148/bbad8c4e101e8af01115",
     "attributes": {
-      "pidIssuer":"https://ror.org/04wxnsj81",
-      "issuedForAgent":"https://ror.org/0566bfb96",
-      "structuralType":"digital",
+      "pidIssuer": "https://ror.org/04wxnsj81",
+      "issuedForAgent": "https://ror.org/0566bfb96",
+      "structuralType": "digital",
       "mediaHost": "https://ror.org/04wxnsj81",
       "isDerivedFromSpecimen": true,
       "linkedDigitalObjectPid": "https://hdl.handle.net/20.5000.1025/3X0-WA3-J8Q",
       "linkedDigitalObjectType": "digital specimen",
       "primaryMediaId": "ae00-a4gg-123b4",
-      "dcterms:format":"image",
+      "dcterms:format": "image",
       "dcterms:type": "image"
     }
   }

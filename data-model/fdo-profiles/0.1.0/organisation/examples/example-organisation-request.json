@@ -2,13 +2,15 @@
   "data": {
     "type": "https://hdl.handle.net/21.T11148/413c00cbd83ae33d1ac0",
     "attributes": {
-      "pidIssuer":"https://ror.org/04wxnsj81",
-      "issuedForAgent":"https://ror.org/0566bfb96",
-      "structuralType":"physical",
-      "locations":["https://naturalis.nl"],
+      "pidIssuer": "https://ror.org/04wxnsj81",
+      "issuedForAgent": "https://ror.org/0566bfb96",
+      "structuralType": "physical",
+      "locations": [
+        "https://naturalis.nl"
+      ],
       "referentType": "organisation",
       "primaryReferentType": "creation",
-      "organisationIdentifier":"https://ror.org/0566bfb96"
+      "organisationIdentifier": "https://ror.org/0566bfb96"
     }
   }
 }
