@@ -1,0 +1,105 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/machine-annotation-service/mas.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "PID of the Machine Annotation Service"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created": {
+      "type": "string",
+      "description": "Timestamp of MAS creation. Internally generated"
+    },
+    "machineAnnotationService": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the MAS"
+        },
+        "containerImage": {
+          "type": "string",
+          "description": "Image of the containerized application"
+        },
+        "containerTag": {
+          "type": "string",
+          "description": "Tag of the image"
+        },
+        "targetDigitalObjectFilters": {
+          "type": "object",
+          "description": "Filters describing the criteria that must be met in order to apply the MAS. No filters implies the MAS may run on *any* digital object",
+          "$comment": "Needs to be defined"
+        },
+        "serviceDescription": {
+          "type": "string"
+        },
+        "serviceState": {
+          "type": "string"
+        },
+        "sourceCodeRepository": {
+          "type": "string"
+        },
+        "serviceAvailability": {
+          "type": "string"
+        },
+        "codeMaintainer": {
+          "type": "string"
+        },
+        "codeLicense": {
+          "type": "string",
+          "$comment": "May be enum"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": "string"
+        },
+        "supportContact": {
+          "type": "string"
+        },
+        "slaDocumentation": {
+          "type": "string"
+        },
+        "topicName": {
+          "type": "string",
+          "description": "Kafka topic through which the MAS recieves messages. Defaults to PID of MAS"
+        },
+        "batchingPermitted": {
+          "type": "boolean",
+          "description": "Whether or not this MAS can create Batch Annotations. MAS outputs must then comply with batchMetadata, see https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation-event.json"
+        },
+        "timeToLive": {
+          "type": "integer",
+          "minimum": 3600,
+          "description": "Time in milliseconds the MAS message may remain in the Kafka Queue before being marked as timed out. Min 1 hour."
+        }
+      },
+      "required": [
+        "name",
+        "containerImage",
+        "containerTag",
+        "batchingPermitted",
+        "timeToLive"
+      ]
+    },
+    "administrator": {
+      "type": "string",
+      "description": "User id of the client registering the MAS"
+    },
+    "deleted": {
+      "type": "string",
+      "description": "timestamp MAS was deleted, if applicable"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "created",
+    "machineAnnotationService",
+    "administrator"
+  ]
+}

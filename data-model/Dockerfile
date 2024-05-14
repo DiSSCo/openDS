@@ -19,7 +19,12 @@ COPY ./fdo-profiles/0.1.0/tettris-service/schema/ schema-root/schemas/fdo-profil
 COPY ./fdo-profiles/0.1.0/tombstone/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 COPY ./fdo-profiles/0.1.0/virtual-collections/schema/ schema-root/schemas/fdo-profiles/0.1.0/
 
-COPY digitalobjects/0.1.0/digital-specimens/schema schema-root/schemas/digitalobjects/0.1.0/digital-specimens
-COPY digitalobjects/0.1.0/shared-models/schema schema-root/schemas/digitalobjects/0.1.0/shared-models
-COPY digitalobjects/0.1.0/digital-media-objects/schema schema-root/schemas/digitalobjects/0.1.0/digital-media-objects
+COPY fdo-types/0.1.0/digital-specimens/schema schema-root/schemas/fdo-types/0.1.0/digital-specimens
+COPY fdo-types/0.1.0/shared-models/schema schema-root/schemas/fdo-types/0.1.0/shared-models
+COPY fdo-types/0.1.0/digital-media-objects/schema schema-root/schemas/fdo-types/0.1.0/digital-media-objects
+COPY fdo-types/0.1.0/machine-annotation-services/schema schema-root/schemas/fdo-types/0.1.0/machine-annotation-services
+COPY fdo-types/0.1.0/mappings/schema schema-root/schemas/fdo-types/0.1.0/mappings
+COPY fdo-types/0.1.0/virtual-collections/schema schema-root/schemas/fdo-types/0.1.0/vitual-collections
+
+
 
