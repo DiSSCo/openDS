@@ -1,0 +1,122 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/events.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "DigitalObject Version 0.2.0",
+  "type": "object",
+  "properties": {
+    "???:eventName": {
+      "type": "string",
+      "comment": "Not sure what this field means"
+    },
+    "dwc:fieldNumber": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/fieldNumber",
+      "examples": [
+        "RV Sol 87-03-08"
+      ]
+    },
+    "dwc:recordNumber": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordNumber",
+      "examples": [
+        "OPP 7101"
+      ]
+    },
+    "dwc:eventDate": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/eventDate",
+      "examples": [
+        "1963-03-08T14:07-0600"
+      ]
+    },
+    "dwc:verbatimEventDate": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/verbatimEventDate",
+      "examples": [
+        "Marzo 2002"
+      ]
+    },
+    "dwc:year": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/year",
+      "examples": [
+        2008
+      ]
+    },
+    "dwc:month": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/month",
+      "examples": [
+        12
+      ]
+    },
+    "dwc:day": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/day",
+      "examples": [
+        29
+      ]
+    },
+    "dwc:habitat": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/habitat",
+      "examples": [
+        "savanna"
+      ],
+      "$comment": "Is this necessary for specimens"
+    },
+    "???:protocolDescription": {
+      "type": "string",
+      "comment": "Not sure what this field means"
+    },
+    "dwc:sampleSizeValue": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/sampleSizeValue",
+      "examples": [
+        "5"
+      ]
+    },
+    "dwc:sampleSizeUnit": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/sampleSizeUnit",
+      "examples": [
+        "meters"
+      ]
+    },
+    "???:eventEffort": {
+      "type": "string",
+      "comment": "Not sure what this field means"
+    },
+    "dwc:fieldNotes": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/fieldNotes",
+      "examples": [
+        "Notes available in the Grinnell-Miller Library"
+      ]
+    },
+    "dwc:eventRemarks": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/eventRemarks",
+      "examples": [
+        "After the recent rains the river is nearly at flood stage"
+      ]
+    },
+    "???:collectorName": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
+    },
+    "???:collectorId": {
+      "type": "string",
+      "$comment": "Not part of DWC or the UM?"
+    },
+    "location": {
+      "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/location.json"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+      }
+    }
+  }
+}
