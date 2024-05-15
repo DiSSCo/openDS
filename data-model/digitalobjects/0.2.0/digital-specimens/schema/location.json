@@ -173,7 +173,7 @@
         "under water since 2005"
       ]
     },
-    "georeference": {
+    "???:GeoReference": {
       "type": "object",
       "properties": {
         "dwc:verbatimCoordinates": {
@@ -326,7 +326,7 @@
         }
       }
     },
-    "geologicalContext": {
+    "dwc:GeologicalContext": {
       "type": "object",
       "properties": {
         "dwc:earliestEonOrLowestEonothem": {

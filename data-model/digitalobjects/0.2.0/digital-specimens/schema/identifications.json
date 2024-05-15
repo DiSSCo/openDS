@@ -96,13 +96,13 @@
       "description": "Unclear yet",
       "$comment": "Unknown what this field should be"
     },
-    "citations": {
+    "???:Citation": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
       }
     },
-    "agents": {
+    "???:Agent": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"

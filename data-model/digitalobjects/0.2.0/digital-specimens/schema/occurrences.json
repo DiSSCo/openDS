@@ -118,20 +118,6 @@
         "found dead on road"
       ]
     },
-    "dwc:recordedBy": {
-      "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
-      "examples": [
-        "José E. Crespo"
-      ]
-    },
-    "dwc:recordedById": {
-      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
-      "type": "string",
-      "examples": [
-        "https://orcid.org/0000-0002-1825-0097"
-      ]
-    },
     "???:eventName": {
       "type": "string",
       "comment": "Not sure what this field means"
@@ -198,9 +184,12 @@
       ],
       "$comment": "Is this necessary for specimens"
     },
-    "???:protocolDescription": {
+    "eco:protocolDescriptions": {
       "type": "string",
-      "comment": "Not sure what this field means"
+      "description": "https://rs.tdwg.org/eco/terms/protocolDescriptions",
+      "examples": [
+        "Three conventional harp traps (3.2m ht x 2.2m w) were established in flight path zones for a period of 4 hrs at dawn and dusk for a total of 10 trap nights. Traps were visited on an hourly basis during each deployment period and the trap catch recorded for species, size, weight, sex, age and maternal status."
+      ]
     },
     "dwc:sampleSizeValue": {
       "type": "string",
@@ -249,13 +238,13 @@
       "type": "string",
       "$comment": "Not part of DWC or the UM?"
     },
-    "assertions": {
+    "???:Assertion": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/assertions.json"
       }
     },
-    "location": {
+    "dcterms:Location": {
       "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/location.json"
     }
   }

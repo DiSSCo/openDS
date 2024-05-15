@@ -13,3 +13,8 @@ For example, to fill the `dwc:locality` field we will first check the `dwc:local
 ## ID fields
 MIDS 3 requires several ID fields to be present.
 These were not all included in the 0.1.0 version.
+
+## Updated class names
+Updated class names to reuse Darwin Core classes as much as possible.
+Where it is not possible to reuse Darwin Core we prefixed them with `???:`.
+Made them singular and camelCase.

@@ -88,43 +88,43 @@
         "ILL: Union Co. Wolf Lake by Powder Plant Bridge. 1 March 1975 Coll. S. Ketzler, S. Herbert\n\nMonotoma longicollis 4 ♂ Det TC McElrath 2018\n\nINHS Insect Collection 456782"
       ]
     },
-    "identifications": {
+    "dwc:Identification": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/identifications.json"
       }
     },
-    "assertions": {
+    "???:Assertion": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/assertions.json"
       }
     },
-    "entityRelationships": {
+    "???:EntityRelationship": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/entity-relationships.json"
       }
     },
-    "citations": {
+    "???:Citation": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
       }
     },
-    "identifiers": {
+    "???:Identifier": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/identifiers.json"
       }
     },
-    "events": {
+    "dwc:Event": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/events.json"
       }
     },
-    "agents": {
+    "???:Agent": {
       "type": "array",
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
