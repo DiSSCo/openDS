@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:alpine3.18-slim
+FROM nginxinc/nginx-unprivileged:1.26-alpine
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
@@ -22,3 +22,4 @@ COPY digitalobjects/0.1.0/digital-specimens/schema schema-root/schemas/digitalob
 COPY digitalobjects/0.1.0/shared-models/schema schema-root/schemas/digitalobjects/0.1.0/shared-models
 COPY digitalobjects/0.1.0/digital-media-objects/schema schema-root/schemas/digitalobjects/0.1.0/digital-media-objects
 
+COPY digitalobjects/0.2.0/digital-specimens/schema schema-root/schemas/digitalobjects/0.2.0/digital-specimens
