@@ -28,6 +28,4 @@ COPY ./fdo-types/0.1.0/mappings/schema schema-root/schemas/fdo-types/0.1.0/mappi
 COPY ./fdo-types/0.1.0/source-systems/schema schema-root/schemas/fdo-types/0.1.0/source-systems
 COPY ./fdo-types/0.1.0/virtual-collections/schema schema-root/schemas/fdo-types/0.1.0/vitual-collections
 
-
-
-COPY digitalobjects/0.2.0/digital-specimens/schema schema-root/schemas/digitalobjects/0.2.0/digital-specimens
+COPY ./fdo-types/0.2.0/digital-specimens/schema schema-root/schemas/digitalobjects/0.2.0/digital-specimens
