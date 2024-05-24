@@ -3,12 +3,11 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "Kernel from which all DiSSCo FAIR Digital Object profiles are derived",
-  "$comment":"FDO Profile Version 0.1.0",
+  "$comment": "FDO Profile Version 0.1.0",
   "properties": {
-    "fdoProfile" : {
-      "type": "string",
+    "fdoProfile": {
       "description": "PID to a machine readable description of the attributes in the FDO record",
-      "example": "https://hdl.handle.net/21.T11148/d8de0819e144e4096645",
+      "const": "https://hdl.handle.net/21.T11148/532ce6796e2828dd2be6",
       "$comment": "idx = 1"
     },
     "fdoRecordLicense": {
@@ -17,14 +16,13 @@
       "$comment": "idx = 2"
     },
     "digitalObjectType": {
-      "type": "string",
       "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
-      "example": "https://hdl.handle.net/21.T11148/894b1e6cad57e921764e",
+      "const": "https://hdl.handle.net/21.T11148/532ce6796e2828dd2be6",
       "$comment": "idx = 3"
     },
     "digitalObjectName": {
       "type": "string",
-      "description": "Name of the object type for humans\n",
+      "description": "Name of the object type for humans",
       "example": "digital specimen type 1",
       "$comment": "idx = 4"
     },
@@ -71,12 +69,27 @@
       "$comment": "idx = 11"
     },
     "structuralType": {
-      "enum": ["digital", "physical", "performance", "abstraction"],
+      "enum": [
+        "digital",
+        "physical",
+        "performance",
+        "abstraction"
+      ],
       "description": "Nature of the digital object, compatible with DOI schema requirements. The nature of a digital specimen object is always \"digital\". Other digital objects (outside DiSSCo) could be of physical, performance or abstraction nature.",
       "$comment": "idx = 12"
     },
     "pidStatus": {
-      "enum": ["DRAFT", "ACTIVE", "RETIRED", "OBSOLETE", "FAILED", "MERGED", "SPLIT", "TEST"],
+      "enum": [
+        "ARCHIVED",
+        "DRAFT",
+        "ACTIVE",
+        "RETIRED",
+        "OBSOLETE",
+        "FAILED",
+        "MERGED",
+        "SPLIT",
+        "TEST"
+      ],
       "description": "A PID is considered to have a lifecycle, PID status indicates the status in the life cycle, e.g. draft, active, retired. PID statuses are described further in the PID infrastructure design.",
       "$comment": "idx = 13"
     },
@@ -84,8 +97,15 @@
       "type": "string",
       "description": "Administrative information for PID profile",
       "$comment": "idx = 100"
+    },
+    "10320/loc": {
+      "type": "string",
+      "description": "XML document describing location(s) of the resource",
+      "$comment": "idx = 101",
+      "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
     }
   },
+  "additionalProperties": false,
   "required": [
     "fdoProfile",
     "fdoRecordLicense",
@@ -97,6 +117,7 @@
     "issuedForAgent",
     "pidRecordIssueDate",
     "pidRecordIssueNumber",
+    "10320/loc",
     "structuralType",
     "pidStatus"
   ]

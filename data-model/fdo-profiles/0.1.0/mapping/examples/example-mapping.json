@@ -1,0 +1,17 @@
+{
+  "10320/loc": "<locations><location href=\"https://dev-orchestration.dissco.tech/api/v1/mapping/TEST/QDD-Y07-QK6\" id=\"0\" weight=\"1\"/></locations>",
+  "fdoProfile": "https://hdl.handle.net/21.T11148/ce794a6f4df42eb7e77e",
+  "fdoRecordLicense": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "digitalObjectType": "https://hdl.handle.net/21.T11148/ce794a6f4df42eb7e77e",
+  "digitalObjectName": "RDA-Collection-API",
+  "pid": "https://hdl.handle.net/TEST/QDD-Y07-QK6",
+  "pidIssuer": "https://ror.org/04wxnsj81",
+  "pidIssuerName": "DataCite",
+  "issuedForAgent": "https://ror.org/0566bfb96",
+  "issuedForAgentName": "Naturalis Biodiversity Center",
+  "pidRecordIssueDate": "2023-09-01T13:05:08.375Z",
+  "pidRecordIssueNumber": 1,
+  "structuralType": "digital",
+  "pidStatus": "TEST",
+  "sourceDataStandard": "dwc"
+}

@@ -1,0 +1,15 @@
+{
+  "data": {
+    "type": "https://hdl.handle.net/21.T11148/527856fd709ec8c5bc8c",
+    "attributes": {
+      "pidIssuer": "https://ror.org/04wxnsj81",
+      "issuedForAgent": "https://ror.org/0566bfb96",
+      "structuralType": "physical",
+      "locations": [
+        "https://coldb.mnhn.fr/catalognumber/mnhn/ec/ec23946"
+      ],
+      "referentType": "Zoological Specimen",
+      "primaryReferentType": "creation"
+    }
+  }
+}

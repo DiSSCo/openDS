@@ -2,13 +2,12 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-profiles/0.1.0/source-system.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "description": "Kernel from which all DiSSCo FAIR Digital Object profiles are derived",
+  "description": "FDO Profile for Source Systems",
   "$comment":"FDO Profile Version 0.1.0",
   "properties": {
     "fdoProfile" : {
-      "type": "string",
+      "const": "https://hdl.handle.net/21.T11148/417a4f472f60f7974c12",
       "description": "PID to a machine readable description of the attributes in the FDO record",
-      "example": "https://hdl.handle.net/21.T11148/d8de0819e144e4096645",
       "$comment": "idx = 1"
     },
     "fdoRecordLicense": {
@@ -17,14 +16,13 @@
       "$comment": "idx = 2"
     },
     "digitalObjectType": {
-      "type": "string",
+      "const": "https://hdl.handle.net/21.T11148/417a4f472f60f7974c12",
       "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
-      "example": "https://hdl.handle.net/21.T11148/894b1e6cad57e921764e",
       "$comment": "idx = 3"
     },
     "digitalObjectName": {
       "type": "string",
-      "description": "Name of the object type for humans\n",
+      "description": "Name of the object type for humans",
       "example": "digital specimen type 1",
       "$comment": "idx = 4"
     },
@@ -85,6 +83,12 @@
       "description": "Administrative information for PID profile",
       "$comment": "idx = 100"
     },
+    "10320/loc": {
+      "type": "string",
+      "description": "XML document describing location(s) of the resource",
+      "$comment": "idx = 101",
+      "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
+    },
     "sourceSystemName": {
       "type": "string",
       "description": "Name of source system",
@@ -103,6 +107,7 @@
     "pidRecordIssueDate",
     "pidRecordIssueNumber",
     "structuralType",
+    "10320/loc",
     "pidStatus",
     "sourceSystemName"
   ]
