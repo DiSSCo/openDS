@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:alpine3.18-slim
+FROM nginxinc/nginx-unprivileged:1.26-alpine
 
 COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
 
@@ -30,3 +30,4 @@ COPY ./fdo-types/0.1.0/virtual-collections/schema schema-root/schemas/fdo-types/
 
 
 
+COPY digitalobjects/0.2.0/digital-specimens/schema schema-root/schemas/digitalobjects/0.2.0/digital-specimens
