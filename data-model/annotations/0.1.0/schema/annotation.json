@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/annotation.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Annotation Version 0.1.0",
   "title": "Annotation",
