@@ -2,6 +2,7 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/machine-annotation-service/mas.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
+  "description": "Automated annotation services that enhance biodiversity data",
   "properties": {
     "id": {
       "type": "string",
@@ -24,45 +25,82 @@
         },
         "containerImage": {
           "type": "string",
-          "description": "Image of the containerized application"
+          "description": "URI of the image of the containerized application",
+          "example": [
+            "public.ecr.aws/dissco/mindat-georeferencing"
+          ]
         },
         "containerTag": {
           "type": "string",
-          "description": "Tag of the image"
+          "description": "Tag of the image",
+          "example": [
+            "sha-cb76994"
+          ]
         },
         "targetDigitalObjectFilters": {
           "type": "object",
-          "description": "Filters describing the criteria that must be met in order to apply the MAS. No filters implies the MAS may run on *any* digital object",
-          "$comment": "Needs to be defined"
+          "description": "Filters describing the criteria that must be met in order to apply the MAS. No filters implies the MAS may run on *any* digital object. Field names are given in JSON paths, and accepted values for that field are provided as an arrays",
+          "example": [
+            {
+              "$.ods:type": [
+                "https://doi.org/21.T11148/894b1e6cad57e921764e"
+              ],
+              "$.ods:topicDiscipline": [
+                "Astrogeology",
+                "Geology",
+                "Palaeontology",
+                "Other Geodiversity",
+                "Unclassified"
+              ],
+              "$.occurrences[*].location.dwc:locality": [
+                "*"
+              ]
+            }
+          ]
         },
         "serviceDescription": {
-          "type": "string"
+          "type": "string",
+          "description": "Human-readable description of the MAS"
         },
         "serviceState": {
-          "type": "string"
+          "type": "string",
+          "description": "The current status of the service",
+          "example": [
+            "Alpha",
+            "Production"
+          ]
         },
         "sourceCodeRepository": {
-          "type": "string"
+          "type": "string",
+          "description": "Link to code base of MAS"
         },
         "serviceAvailability": {
-          "type": "string"
+          "type": "string",
+          "description": "Availability commitment of the service provider as described in the SLA"
         },
         "codeMaintainer": {
-          "type": "string"
+          "type": "string",
+          "description": "Party maintaining the code"
         },
         "codeLicense": {
           "type": "string",
-          "$comment": "May be enum"
+          "$comment": "May be enum",
+          "description": "License of the service",
+          "example": "https://opensource.org/licenses/Apache-2.0"
         },
         "dependencies": {
           "type": "array",
-          "items": "string"
+          "items": "string",
+          "description": "Other MAS that this MAS depends on",
+          "$comment": "Not yet enforced"
         },
         "supportContact": {
-          "type": "string"
+          "type": "string",
+          "description": "Human-readable contact information for MAS support"
         },
         "slaDocumentation": {
-          "type": "string"
+          "type": "string",
+          "description": "Link to SLA documentation"
         },
         "topicName": {
           "type": "string",
