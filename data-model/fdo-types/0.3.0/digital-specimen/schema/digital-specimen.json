@@ -1,0 +1,372 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/digital-specimen.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "DigitalObject Version 0.3.0",
+  "type": "object",
+  "properties": {
+    "ods:id": {
+      "type": "string",
+      "description": "The unique digital identifier of the object",
+      "pattern": "https:\/\/doi.org\/10.22\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version",
+      "minimum": 1,
+      "examples": [
+        1
+      ]
+    },
+    "ods:created": {
+      "type": "string",
+      "description": "The timestamp that the object version was created in DiSSCo",
+      "format": "date-time",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "ods:type": {
+      "type": "string",
+      "description": "The FDO type of the object",
+      "$comment": "Unclear what value goes here"
+    },
+    "ods:midsLevel": {
+      "type": "integer",
+      "description": "The MIDS level of the object, see https://www.tdwg.org/community/cd/mids/",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "ods:normalisedPhysicalSpecimenId": {
+      "type": "string",
+      "description": "The physical specimen identifier of the object. When locally unique this is a combination between source-system-id and the local identifier"
+    },
+    "ods:physicalSpecimenId": {
+      "type": "string",
+      "description": "The physical specimen identifier of the object. Taken over as-is"
+    },
+    "ods:physicalSpecimenIdType": {
+      "type": "string",
+      "description": "To indicate if the physical identifier is globally unique or locally unique",
+      "enum": [
+        "Resolvable",
+        "Global",
+        "Local"
+      ],
+      "$comment": "Do we need to further distinguish the identifier, for example add 'RESOLVABLE'"
+    },
+    "ods:topicOrigin": {
+      "type": "string",
+      "description": "The topic origin of the specimen",
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin",
+        "Unclassified"
+      ],
+      "example": [
+        "Natural"
+      ]
+    },
+    "ods:topicDomain": {
+      "type": "string",
+      "description": "The topic domain of the specimen",
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material",
+        "Unclassified"
+      ],
+      "example": [
+        "Life"
+      ]
+    },
+    "ods:topicDiscipline": {
+      "type": "string",
+      "description": "The topic discipline of the specimen",
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Geology",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
+        "Unclassified"
+      ],
+      "example": [
+        "Botany"
+      ]
+    },
+    "ods:markedAsType": {
+      "type": "boolean",
+      "description": "The specimen is marked as a type specimen"
+    },
+    "ods:hasMedia": {
+      "type": "boolean",
+      "description": "Indicates if there are any media objects attached to this specimen"
+    },
+    "ods:specimenName": {
+      "type": "string",
+      "description": "The accepted specimen name of the digital specimen",
+      "example": [
+        "Roptrocerus typographi (Györfi, 1952)"
+      ]
+    },
+    "ods:sourceSystem": {
+      "type": "string",
+      "description": "The handle to the source system object which retrieved the data from the CMS",
+      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}"
+    },
+    "ods:livingOrPreserved": {
+      "type": "string",
+      "description": "Whether the specimen is living or preserved",
+      "enum": [
+        "Living",
+        "Preserved"
+      ]
+    },
+    "dcterms:license": {
+      "type": "string",
+      "description": "License for the metadata of the physical specimen",
+      "$comment": "Determine available licenses"
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "description": "Modification date for specimen information"
+    },
+    "dwc:basisOfRecord": {
+      "type": "string",
+      "description": "The basis for the record",
+      "$comment": "Switch to enumeration as this is a limited list"
+    },
+    "dwc:preparations": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/preparations",
+      "example": [
+        "fossil"
+      ]
+    },
+    "dwc:disposition": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/disposition",
+      "examples": [
+        "in collection"
+      ]
+    },
+    "dwc:institutionCode": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
+      "examples": [
+        "MNF"
+      ]
+    },
+    "dwc:institutionId": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "examples": [
+        "https://ror.org/015hz7p22"
+      ],
+      "$comment": "Add format for ROR or Wikidata ID"
+    },
+    "ods:institutionName": {
+      "type": "string",
+      "description": "Full museum name according to ROR or Wikidata",
+      "examples": [
+        "National Museum of Natural History"
+      ],
+      "$comment": "Not part of DWC or the GBIF UM"
+    },
+    "dwc:collectionCode": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
+      "examples": [
+        "EBIRD"
+      ],
+      "$comment": "Cetaf collection code?"
+    },
+    "dwc:collectionId": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionID",
+      "examples": [
+        "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
+      ],
+      "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
+    },
+    "dwc:informationWithheld": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/informationWithheld",
+      "examples": [
+        "location information not given for endangered species"
+      ],
+      "$comment": "Feels like this field should be true or false and another field should contain the explanation"
+    },
+    "dwc:dataGeneralizations": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/dataGeneralizations",
+      "examples": [
+        "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
+      ]
+    },
+    "dwc:ownerInstitutionId": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier for the owning institution",
+      "$comment": "DWC only has ownerInstitutionCode, however code is not an (resolvable identifier)",
+      "examples": [
+        "https://ror.org/03wkt5x30"
+      ]
+    },
+    "dwc:recordedBy": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
+      "examples": [
+        "José E. Crespo"
+      ]
+    },
+    "dwc:recordedById": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
+      "examples": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
+    },
+    "dwc:datasetName": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/datasetName",
+      "examples": [
+        "Hummingbirds"
+      ]
+    },
+    "dcterms:accessRights": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/accessRights",
+      "examples": [
+        "not-for-profit use only"
+      ]
+    },
+    "dcterms:rightsHolder": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/rightsHolder",
+      "examples": [
+        "Museu de História Natural e da Ciência da Universidade do Porto"
+      ]
+    },
+    "dwc:verbatimLabel": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/verbatimLabel",
+      "examples": [
+        "ILL: Union Co. Wolf Lake by Powder Plant Bridge. 1 March 1975 Coll. S. Ketzler, S. Herbert\n\nMonotoma longicollis 4 ♂ Det TC McElrath 2018\n\nINHS Insect Collection 456782"
+      ]
+    },
+    "ods:MaterialEntities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "dwc:MaterialEntity": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json"
+        }
+      }
+    },
+    "ods:Identifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "dwc:Identification": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
+        }
+      }
+    },
+    "ods:Assertions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "ods:Assertion": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+        }
+      }
+    },
+    "ods:Occurrences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "dwc:Occurrence": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/occurrences.json"
+        }
+      }
+    },
+    "ods:EntityRelationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "ods:EntityRelationship": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
+        }
+      }
+    },
+    "ods:Citations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "ods:Citation": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
+        }
+      }
+    },
+    "ods:Identifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "ods:Identifier": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+        }
+      }
+    },
+    "ods:ChronometricAges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "ods:ChronometricAge": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/chronometric-age.json"
+        }
+      }
+    },
+    "ods:Agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "ods:Agent": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+        }
+      }
+    }
+  },
+  "required": [
+    "ods:id",
+    "ods:version",
+    "ods:type",
+    "ods:created",
+    "ods:midsLevel",
+    "ods:physicalSpecimenId",
+    "ods:physicalSpecimenIdType",
+    "ods:sourceSystem",
+    "dcterms:license",
+    "dwc:institutionId"
+  ]
+}

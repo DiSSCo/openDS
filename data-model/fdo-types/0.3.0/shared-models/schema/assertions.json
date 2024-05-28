@@ -1,0 +1,44 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/assertions.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$comment": "Annotation Version 0.3.0",
+  "properties": {
+    "ods:assertionType": {
+      "type": "string"
+    },
+    "ods:assertionMadeDate": {
+      "type": "string"
+    },
+    "ods:assertionEffectiveDate": {
+      "type": "string"
+    },
+    "ods:assertionValue": {
+      "type": "string"
+    },
+    "ods:assertionValueNumeric": {
+      "type": "integer"
+    },
+    "ods:assertionUnit": {
+      "type": "string"
+    },
+    "ods:assertionByAgentName": {
+      "type": "string"
+    },
+    "ods:assertionByAgentId": {
+      "type": "string"
+    },
+    "ods:assertionProtocol": {
+      "type": "string"
+    },
+    "ods:assertionProtocolId": {
+      "type": "string"
+    },
+    "ods:assertionRemarks": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "ods:assertionType"
+  ]
+}

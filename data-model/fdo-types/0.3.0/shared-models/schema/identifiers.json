@@ -1,0 +1,37 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/identifiers.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "ods:identifierType": {
+      "type": "string",
+      "description": "The type of the identifier",
+      "examples": [
+        "dwc:catalogueNumber",
+        "dwca:id"
+      ]
+    },
+    "ods:identifierValue":{
+      "type": "string",
+      "description": "The value for the identifier",
+      "examples": [
+        "BMNH(E)1902475",
+        "RGM.800315"
+      ]
+    },
+    "ods:partOfLabel": {
+      "type": "boolean",
+      "description": "Is the identifier part of the physical label"
+    },
+    "ods:barcodeOrNfc": {
+      "type": "string",
+      "description": "Part of barcode or nfc chip"
+    },
+    "ods:isIdPersistent": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "ods:identifierValue"
+  ]
+}

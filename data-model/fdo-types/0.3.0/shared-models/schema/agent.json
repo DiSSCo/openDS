@@ -1,0 +1,78 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/agent.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "ods:agentRole": {
+      "type": "string",
+      "description": "Indicates the role of the agent",
+      "examples": [
+        "collector",
+        "preparer",
+        "identifier",
+        "recorder"
+      ]
+    },
+    "ods:agentType": {
+      "type": "string",
+      "description": "Indicates the type of agent",
+      "examples": [
+        "machine",
+        "human",
+        "organisation"
+      ]
+    },
+    "ods:agentId":{
+      "type": "string",
+      "description": "Primary identifier of the agent, additional identifiers can go in the identifiers array",
+      "examples": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
+    },
+    "ods:agentName": {
+      "type": "string",
+      "description": "Full name of the agent",
+      "examples": [
+        "John Smith"
+      ]
+    },
+    "ods:agentRoleBegan": {
+      "type": "string",
+      "description": "Date the agent began the role",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "ods:agentRoleEnded": {
+      "type": "string",
+      "description": "Date the agent ended the role",
+      "examples": [
+        "2023-09-02T12:31:34.806Z"
+      ]
+    },
+    "ods:agentRoleOrder": {
+      "type": "integer",
+      "description": "Order of the agent in the role. Can be used to indicate the order of importance",
+      "minimum": 1,
+      "examples": [
+        1,
+        2
+      ]
+    },
+    "ods:Identifiers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "ods:Identifier": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+        }
+      }
+    }
+  },
+  "required": [
+    "ods:agentRole",
+    "ods:agentType",
+    "ods:agentName"
+  ]
+}
