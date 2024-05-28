@@ -1,0 +1,36 @@
+{
+  "data": {
+    "type": "annotation",
+    "attributes": {
+      "annotations": [
+        {
+          "oa:motivation": "oa:commenting",
+          "oa:target": {
+            "ods:id": "https://hdl.handle.net/20.500.125/1111111",
+            "ods:type": "https://doi.org/21.T11148/894b1e6cad57e921764e",
+            "oa:selector": {
+              "ods:type": "ClassSelector",
+              "oa:class": "specimenName"
+            }
+          },
+          "oa:body": {
+            "ods:type": "body",
+            "oa:value": [],
+            "dcterms:reference": "reference",
+            "ods:score": 0.9
+          }
+        }
+      ],
+      "batchMetadata": [
+        {
+          "searchParams": [
+            {
+              "inputField": "field",
+              "inputValue": "value"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
