@@ -12,11 +12,17 @@
         "properties": {
           "inputField": {
             "type": "string",
-            "description": "JsonPath (mixed notation) of field used to base annotation reasoning on"
+            "description": "JsonPath (mixed notation) of field used to base annotation reasoning on. Indexes must be wildcards",
+            "examples": [
+              "digitalSpecimenWrapper.occurrences[*].location.dwc:country"
+            ]
           },
           "inputValue": {
             "type": "string",
-            "description": "Value stored at the field indicated in inputField "
+            "description": "Value stored at the field indicated in inputField",
+            "examples": [
+              "Netherlands"
+            ]
           }
         },
         "required": [
