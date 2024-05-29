@@ -16,40 +16,35 @@
       "description": "https://rs.tdwg.org/dwc/terms/organismQuantityType",
       "examples": [
         "individuals"
-      ],
-      "$comment": "Could this become a enum?"
+      ]
     },
     "dwc:sex": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/sex",
       "examples": [
         "female"
-      ],
-      "$comment": "Could this become a enum?"
+      ]
     },
     "dwc:lifeStage": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/lifeStage",
       "examples": [
         "adult"
-      ],
-      "$comment": "Could this become a enum?"
+      ]
     },
     "dwc:reproductiveCondition": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/reproductiveCondition",
       "examples": [
         "pregnant"
-      ],
-      "$comment": "Could this become a enum?"
+      ]
     },
     "dwc:behavior": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/behavior",
       "examples": [
         "running"
-      ],
-      "$comment": "Is this needed for specimen data?"
+      ]
     },
     "dwc:caste": {
       "type": "string",
@@ -65,16 +60,14 @@
       "examples": [
         "alive",
         "dead"
-      ],
-      "$comment": "Is this needed for specimen data?"
+      ]
     },
     "dwc:establishmentMeans": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/establishmentMeans",
       "examples": [
         "introduced"
-      ],
-      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/em/"
+      ]
     },
     "dwc:occurrenceStatus": {
       "type": "string",
@@ -108,8 +101,7 @@
       "description": "https://rs.tdwg.org/dwc/terms/georeferenceVerificationStatus",
       "examples": [
         "verified by data custodian"
-      ],
-      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/em/"
+      ]
     },
     "dwc:occurrenceRemarks": {
       "type": "string",
@@ -136,11 +128,43 @@
         "OPP 7101"
       ]
     },
+    "dwc:eventType": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/eventType",
+      "examples": [
+        "Observation"
+      ]
+    },
     "dwc:eventDate": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/eventDate",
       "examples": [
         "1963-03-08T14:07-0600"
+      ]
+    },
+    "dwc:eventTime": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/eventTime",
+      "examples": [
+        "14:07-0600"
+      ]
+    },
+    "dwc:endDayOfYear": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/endDayOfYear",
+      "maximum": 366,
+      "minimum": 1,
+      "examples": [
+        68
+      ]
+    },
+    "dwc:startDayOfYear": {
+      "type": "integer",
+      "description": "https://rs.tdwg.org/dwc/terms/startDayOfYear",
+      "maximum": 366,
+      "minimum": 1,
+      "examples": [
+        68
       ]
     },
     "dwc:verbatimEventDate": {
@@ -181,8 +205,7 @@
       "description": "https://rs.tdwg.org/dwc/terms/habitat",
       "examples": [
         "savanna"
-      ],
-      "$comment": "Is this necessary for specimens"
+      ]
     },
     "eco:protocolDescriptions": {
       "type": "string",
@@ -212,9 +235,16 @@
         "collected directly from the wild"
       ]
     },
+    "dwc:samplingEffort": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/samplingEffort",
+      "examples": [
+        "2 hours"
+      ]
+    },
     "ods:eventEffort": {
       "type": "string",
-      "comment": "Not sure what this field means"
+      "$comment": "Not sure what this field means"
     },
     "dwc:fieldNotes": {
       "type": "string",
@@ -231,20 +261,20 @@
       ]
     },
     "ods:collectorName": {
-      "type": "string",
-      "$comment": "Not part of DWC or the UM?"
+      "type": "string"
     },
-    "ods:collectorId": {
-      "type": "string",
-      "$comment": "Not part of DWC or the UM?"
+    "ods:collectorID": {
+      "type": "string"
     },
     "ods:Assertions": {
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Assertion": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+        "properties": {
+          "ods:Assertion": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+          }
         }
       }
     },

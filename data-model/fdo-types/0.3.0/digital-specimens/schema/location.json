@@ -95,6 +95,13 @@
         -100
       ]
     },
+    "dwc:higherGeographyID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/higherGeographyID",
+      "examples": [
+        "http://vocab.getty.edu/tgn/1002002 "
+      ]
+    },
     "dwc:higherGeography": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/higherGeography",
@@ -251,14 +258,14 @@
             1.5708
           ]
         },
-        "dwc:footprintWkt": {
+        "dwc:footprintWKT": {
           "type": "string",
           "description": "https://rs.tdwg.org/dwc/terms/footprintWKT",
           "examples": [
             "POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20))"
           ]
         },
-        "dwc:footprintSrs": {
+        "dwc:footprintSRS": {
           "type": "string",
           "description": "https://rs.tdwg.org/dwc/terms/footprintSRS",
           "examples": [
@@ -315,8 +322,7 @@
           ]
         },
         "ods:preferredSpatialRepresentation": {
-          "type": "string",
-          "$comment": "Not part of DWC"
+          "type": "string"
         }
       }
     },

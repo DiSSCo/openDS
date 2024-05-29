@@ -4,10 +4,10 @@
   "$comment": "DigitalObject Version 0.3.0",
   "type": "object",
   "properties": {
-    "ods:id": {
+    "ods:ID": {
       "type": "string",
       "description": "The unique digital identifier of the object",
-      "pattern": "https:\/\/doi.org\/10.22\/(.){3}-(.){3}-(.){3}",
+      "pattern": "https:\\/\\/doi\\.org\\/10\\.22\\/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://doi.org/10.22/XXX-XXX-XXX"
       ]
@@ -30,8 +30,11 @@
     },
     "ods:type": {
       "type": "string",
-      "description": "The FDO type of the object",
-      "$comment": "Unclear what value goes here"
+      "description": "The DOI or handle to the FDO type of the object",
+      "pattern": "https:\\/\\/doi\\.org\\/10\\.\\d+\\/[-\\w]+",
+      "examples": [
+        "https://doi.org/10.15468/1a2b3c"
+      ]
     },
     "ods:midsLevel": {
       "type": "integer",
@@ -39,23 +42,22 @@
       "minimum": 0,
       "maximum": 3
     },
-    "ods:normalisedPhysicalSpecimenId": {
+    "ods:normalisedPhysicalSpecimenID": {
       "type": "string",
       "description": "The physical specimen identifier of the object. When locally unique this is a combination between source-system-id and the local identifier"
     },
-    "ods:physicalSpecimenId": {
+    "ods:physicalSpecimenID": {
       "type": "string",
       "description": "The physical specimen identifier of the object. Taken over as-is"
     },
-    "ods:physicalSpecimenIdType": {
+    "ods:physicalSpecimenIDType": {
       "type": "string",
       "description": "To indicate if the physical identifier is globally unique or locally unique",
       "enum": [
         "Resolvable",
         "Global",
         "Local"
-      ],
-      "$comment": "Do we need to further distinguish the identifier, for example add 'RESOLVABLE'"
+      ]
     },
     "ods:topicOrigin": {
       "type": "string",
@@ -121,10 +123,10 @@
         "Roptrocerus typographi (Györfi, 1952)"
       ]
     },
-    "ods:sourceSystem": {
+    "ods:sourceSystemID": {
       "type": "string",
       "description": "The handle to the source system object which retrieved the data from the CMS",
-      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}"
+      "pattern": "https:\\/\\/hdl\\.handle.net\\/20\\.5000\\.1025\\/(.){3}-(.){3}-(.){3}"
     },
     "ods:livingOrPreserved": {
       "type": "string",
@@ -136,8 +138,7 @@
     },
     "dcterms:license": {
       "type": "string",
-      "description": "License for the metadata of the physical specimen",
-      "$comment": "Determine available licenses"
+      "description": "License for the metadata of the physical specimen"
     },
     "dcterms:modified": {
       "type": "string",
@@ -145,8 +146,7 @@
     },
     "dwc:basisOfRecord": {
       "type": "string",
-      "description": "The basis for the record",
-      "$comment": "Switch to enumeration as this is a limited list"
+      "description": "The basis for the record"
     },
     "dwc:preparations": {
       "type": "string",
@@ -169,45 +169,41 @@
         "MNF"
       ]
     },
-    "dwc:institutionId": {
+    "dwc:institutionID": {
       "type": "string",
+      "format": "(https:\/\/ror\\.org\/0[\\w]{6}[0-9]{2})|(http:\/\/www\\.wikidata.org\/entity\/\\w+)",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
       "examples": [
         "https://ror.org/015hz7p22"
-      ],
-      "$comment": "Add format for ROR or Wikidata ID"
+      ]
     },
     "ods:institutionName": {
       "type": "string",
       "description": "Full museum name according to ROR or Wikidata",
       "examples": [
         "National Museum of Natural History"
-      ],
-      "$comment": "Not part of DWC or the GBIF UM"
+      ]
     },
     "dwc:collectionCode": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
       "examples": [
         "EBIRD"
-      ],
-      "$comment": "Cetaf collection code?"
+      ]
     },
-    "dwc:collectionId": {
+    "dwc:collectionID": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/collectionID",
       "examples": [
         "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
-      ],
-      "$comment": "Are we going to use GRSciColl or Cetaf collection identifiers?"
+      ]
     },
     "dwc:informationWithheld": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/informationWithheld",
       "examples": [
         "location information not given for endangered species"
-      ],
-      "$comment": "Feels like this field should be true or false and another field should contain the explanation"
+      ]
     },
     "dwc:dataGeneralizations": {
       "type": "string",
@@ -216,10 +212,9 @@
         "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
       ]
     },
-    "dwc:ownerInstitutionId": {
+    "dwc:ownerInstitutionID": {
       "type": "string",
       "description": "ROR or Wikidata identifier for the owning institution",
-      "$comment": "DWC only has ownerInstitutionCode, however code is not an (resolvable identifier)",
       "examples": [
         "https://ror.org/03wkt5x30"
       ]
@@ -231,7 +226,7 @@
         "José E. Crespo"
       ]
     },
-    "dwc:recordedById": {
+    "dwc:recordedByID": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
       "examples": [
@@ -266,13 +261,60 @@
         "ILL: Union Co. Wolf Lake by Powder Plant Bridge. 1 March 1975 Coll. S. Ketzler, S. Herbert\n\nMonotoma longicollis 4 ♂ Det TC McElrath 2018\n\nINHS Insect Collection 456782"
       ]
     },
+    "dwc:organismID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/organismID",
+      "examples": [
+        "http://arctos.database.museum/guid/WNMU:Mamm:1249"
+      ]
+    },
+    "dwc:organismName": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/organismName",
+      "examples": [
+        "Boab Prison Tree"
+      ]
+    },
+    "dwc:organismScope": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/organismScope",
+      "examples": [
+        "colony"
+      ]
+    },
+    "dwc:associatedOrganisms": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/associatedOrganisms",
+      "examples": [
+        "sibling of http://arctos.database.museum/guid/DMNS:Mamm:14171"
+      ]
+    },
+    "dwc:organismRemarks": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/organismRemarks",
+      "examples": [
+        "One of a litter of six"
+      ]
+    },
+    "dwc:dynamicProperties": {
+      "type": "object",
+      "description": "https://rs.tdwg.org/dwc/terms/dynamicProperties",
+      "examples": [
+        {
+          "relativeHumidity": 28,
+          "airTemperatureInCelsius": 22
+        }
+      ]
+    },
     "ods:MaterialEntities": {
       "type": "array",
       "items": {
         "type": "object",
-        "dwc:MaterialEntity": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json"
+        "properties": {
+          "dwc:MaterialEntity": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json"
+          }
         }
       }
     },
@@ -280,9 +322,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "dwc:Identification": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
+        "properties": {
+          "dwc:Identification": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
+          }
         }
       }
     },
@@ -290,9 +334,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Assertion": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+        "properties": {
+          "ods:Assertion": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+          }
         }
       }
     },
@@ -300,9 +346,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "dwc:Occurrence": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/occurrences.json"
+        "properties": {
+          "dwc:Occurrence": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/occurrences.json"
+          }
         }
       }
     },
@@ -310,9 +358,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:EntityRelationship": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
+        "properties": {
+          "ods:EntityRelationship": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
+          }
         }
       }
     },
@@ -320,9 +370,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Citation": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
+        "properties": {
+          "ods:Citation": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
+          }
         }
       }
     },
@@ -330,9 +382,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Identifier": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+        "properties": {
+          "ods:Identifier": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+          }
         }
       }
     },
@@ -340,9 +394,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:ChronometricAge": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/chronometric-age.json"
+        "properties": {
+          "ods:ChronometricAge": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/chronometric-age.json"
+          }
         }
       }
     },
@@ -350,9 +406,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Agent": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+        "properties": {
+          "ods:Agent": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+          }
         }
       }
     }

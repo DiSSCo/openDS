@@ -4,6 +4,13 @@
   "$comment": "DigitalObject Version 0.3.0",
   "type": "object",
   "properties": {
+    "chrono:chronometricAgeID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeID",
+      "examples": [
+        "https://www.canadianarchaeology.ca/samples/70673"
+      ]
+    },
     "chrono:verbatimChronometricAge": {
       "type": "string",
       "description": "https://rs.tdwg.org/chrono/terms/verbatimChronometricAge",
@@ -13,7 +20,7 @@
     },
     "ods:verbatimChronometricAgeProtocol": {
       "type": "string",
-      "$comment": "Unknown term"
+      "description": "The verbatim name of the protocol used to determine the chronometric age."
     },
     "chrono:uncalibratedChronometricAge": {
       "type": "string",
@@ -78,7 +85,7 @@
         "charred wood"
       ]
     },
-    "chrono:materialDatedId": {
+    "chrono:materialDatedID": {
       "type": "string",
       "description": "https://rs.tdwg.org/chrono/terms/materialDatedID",
       "examples": [
@@ -111,8 +118,7 @@
       "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeReferences",
       "examples": [
         "https://doi.org/10.1007/s10814-019-09140-x"
-      ],
-      "$comment": "Or include citation object?"
+      ]
     },
     "chrono:chronometricAgeRemarks": {
       "type": "string",

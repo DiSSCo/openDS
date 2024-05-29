@@ -22,7 +22,7 @@
         "organisation"
       ]
     },
-    "ods:agentId":{
+    "ods:agentID":{
       "type": "string",
       "description": "Primary identifier of the agent, additional identifiers can go in the identifiers array",
       "examples": [
@@ -63,9 +63,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Identifier": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+        "properties": {
+          "ods:Identifier": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+          }
         }
       }
     }

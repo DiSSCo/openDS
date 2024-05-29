@@ -6,7 +6,7 @@
     "ods:entityRelationshipType": {
       "type": "string"
     },
-    "ods:objectEntityIri": {
+    "ods:objectEntityIRI": {
       "type": "string",
       "format": "iri",
       "description": "The link to the referenced resource. This could be an internal object linked through the PID or an external object"
@@ -22,19 +22,17 @@
     },
     "ods:entityRelationshipCreatorName": {
       "type": "string",
-      "description": "The name of the relationship creator",
-      "$comment": "Not available in GBIF UM"
+      "description": "The name of the relationship creator"
     },
-    "ods:entityRelationshipCreatorId": {
+    "ods:entityRelationshipCreatorID": {
       "type": "string",
-      "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)",
-      "$comment": "Not available in GBIF UM"
+      "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)"
     }
   },
   "required": [
     "ods:entityRelationshipType",
-    "ods:objectEntityIri",
+    "ods:objectEntityIRI",
     "ods:entityRelationshipDate",
-    "ods:entityRelationshipCreatorId"
+    "ods:entityRelationshipCreatorID"
   ]
 }

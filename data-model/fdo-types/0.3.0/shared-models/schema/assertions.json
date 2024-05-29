@@ -4,6 +4,9 @@
   "type": "object",
   "$comment": "Annotation Version 0.3.0",
   "properties": {
+    "ods:assertionID": {
+      "type": "string"
+    },
     "ods:assertionType": {
       "type": "string"
     },
@@ -25,13 +28,13 @@
     "ods:assertionByAgentName": {
       "type": "string"
     },
-    "ods:assertionByAgentId": {
+    "ods:assertionByAgentID": {
       "type": "string"
     },
     "ods:assertionProtocol": {
       "type": "string"
     },
-    "ods:assertionProtocolId": {
+    "ods:assertionProtocolID": {
       "type": "string"
     },
     "ods:assertionRemarks": {

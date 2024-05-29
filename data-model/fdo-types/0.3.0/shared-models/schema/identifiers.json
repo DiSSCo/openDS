@@ -23,12 +23,13 @@
       "type": "boolean",
       "description": "Is the identifier part of the physical label"
     },
-    "ods:barcodeOrNfc": {
-      "type": "string",
+    "ods:barcodeOrNFC": {
+      "type": "boolean",
       "description": "Part of barcode or nfc chip"
     },
     "ods:isIdPersistent": {
-      "type": "boolean"
+      "type": "boolean",
+      "description": "Is the identifier persistent"
     }
   },
   "required": [

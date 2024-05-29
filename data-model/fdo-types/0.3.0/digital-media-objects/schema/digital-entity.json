@@ -4,14 +4,13 @@
   "$comment": "DigitalObject Version 0.3.0",
   "type": "object",
   "properties": {
-    "ods:id": {
+    "ods:ID": {
       "type": "string",
       "description": "The unique digital identifier of the object",
-      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}",
+      "pattern": "https:\\/\\/doi\\.org\\/10\\.\\d+\\/[-\\w]+",
       "examples": [
         "https://hdl.handle.net.org/20.5000.1025/XXX-XXX-XXX"
-      ],
-      "$comment": "Does an image get a DOI or a handle?"
+      ]
     },
     "ods:version": {
       "type": "integer",
@@ -30,8 +29,11 @@
     },
     "ods:type": {
       "type": "string",
-      "description": "The FDO type of the object",
-      "$comment": "Unclear what value goes here"
+      "description": "The DOI or handle to the FDO type of the object",
+      "pattern": "https:\\/\\/doi\\.org\\/10\\.\\d+\\/[-\\w]+",
+      "examples": [
+        "https://doi.org/10.15468/1a2b3c"
+      ]
     },
     "dcterms:type": {
       "type": "string",
@@ -51,32 +53,26 @@
         "Text"
       ]
     },
-    "ac:accessUri": {
+    "ac:accessURI": {
       "type": "string",
       "description": "https://rs.tdwg.org/ac/terms/accessURI",
       "examples": [
       ]
     },
-    "dwc:institutionId": {
+    "dwc:institutionID": {
       "type": "string",
+      "format": "(https:\/\/ror\.org\/0[\w]{6}[0-9]{2})|(http:\/\/www\.wikidata.org\/entity\/\w+)",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
       "examples": [
         "https://ror.org/015hz7p22"
-      ],
-      "$comment": "Add format for ROR or Wikidata ID"
+      ]
     },
     "ods:institutionName": {
       "type": "string",
       "description": "Full museum name according to ROR or Wikidata",
       "examples": [
         "National Museum of Natural History"
-      ],
-      "$comment": "Not part of DWC or the GBIF UM"
-    },
-    "xmpRights:webStatement": {
-      "type": "string",
-      "description": "https://ns.adobe.com/xap/1.0/rights/WebStatement",
-      "$comment": "What is the difference with dcterms:license?"
+      ]
     },
     "dcterms:format": {
       "type": "string",
@@ -85,8 +81,7 @@
     },
     "dcterms:license": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/license",
-      "$comment": "Create a enum for this?"
+      "description": "https://purl.org/dc/terms/license"
     },
     "dcterms:description": {
       "type": "string",
@@ -97,7 +92,7 @@
       "description": "https://purl.org/dc/terms/rights",
       "$comment": "What is the difference with dcterms:license?"
     },
-    "ods:rightsUri": {
+    "ods:rightsURI": {
       "type": "string",
       "format": "uri",
       "$comment": "What is the difference with dcterms:license? or dcterms:rights?. dcterms:rights is already recommended to be a URI"
@@ -110,14 +105,12 @@
     "dcterms:rightsHolder": {
       "type": "string",
       "description": "https://purl.org/dc/terms/rightsHolder",
-      "examples": [
-      ]
     },
     "dcterms:source": {
       "type": "string",
       "description": "https://purl.org/dc/terms/source"
     },
-    "ods:sourceUri": {
+    "ods:sourceURI": {
       "type": "string",
       "format": "uri",
       "$comment": "It is already recommended to use URI in the dcterms:source"
@@ -138,9 +131,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Assertion": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+        "properties": {
+          "ods:Assertion": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+          }
         }
       }
     },
@@ -148,9 +143,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Citation": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
+        "properties": {
+          "ods:Citation": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
+          }
         }
       }
     },
@@ -158,9 +155,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Identifier": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+        "properties": {
+          "ods:Identifier": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+          }
         }
       }
     },
@@ -168,9 +167,11 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:EntityRelationship": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
+        "properties": {
+          "ods:EntityRelationship": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
+          }
         }
       }
     },
@@ -178,18 +179,20 @@
       "type": "array",
       "items": {
         "type": "object",
-        "ods:Agent": {
-          "type": "object",
-          "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+        "properties": {
+          "ods:Agent": {
+            "type": "object",
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+          }
         }
       }
     }
   },
   "required": [
-    "ods:id",
+    "ods:ID",
     "ods:version",
     "ods:created",
-    "ac:accessUri",
+    "ac:accessURI",
     "dcterms:license"
   ]
 }

@@ -3,6 +3,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/identifier"
+    },
     "dcterms:type": {
       "type": "string",
       "description": "https://purl.org/dc/terms/type"
@@ -21,18 +25,15 @@
     },
     "ods:citationPageNumber": {
       "type": "string",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
+      "description": "Page number of the citation"
     },
     "ods:citationRemarks": {
       "type": "string",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
+      "description": "Any further remarks about the citation"
     },
     "ods:referenceType": {
       "type": "string",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
+      "description": "The type of reference"
     },
     "dcterms:bibliographicCitation": {
       "type": "string",
@@ -42,20 +43,20 @@
       ]
     },
     "ods:referenceYear": {
-      "type": "string",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
+      "type": "integer",
+      "description": "The year the reference was published",
+      "example": [
+        2021
+      ]
     },
-    "ods:referenceIri": {
+    "ods:referenceIRI": {
       "type": "string",
       "format": "iri",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
+      "description": "Reference to the web source of this citation"
     },
     "ods:isPeerReviewed": {
       "type": "boolean",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
+      "description": "Is the citation peer reviewed?"
     }
   }
 }
