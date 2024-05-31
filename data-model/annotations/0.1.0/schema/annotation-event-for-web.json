@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation-event-for-web.json",
+  "description": "Web batch annotation. For DiSSCo internal use only.",
+  "$comment": "Fewer fields are required in this schema because these requests are sent to the backend for processing.",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "annotation"
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "annotations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ods:id": {
+                    "type": "string"
+                  },
+                  "rdf:type": {
+                    "const": "Annotation"
+                  },
+                  "oa:motivation": {
+                    "enum": [
+                      "ods:adding",
+                      "oa:assessing",
+                      "oa:editing",
+                      "oa:commenting"
+                    ]
+                  },
+                  "oa:motivatedBy": {
+                    "type": "string"
+                  },
+                  "oa:target": {
+                    "type": "object",
+                    "properties": {
+                      "ods:id": {
+                        "type": "string"
+                      },
+                      "ods:type": {
+                        "type": "string"
+                      },
+                      "oa:selector": {
+                        "type": "object",
+                        "oneOf": [
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ods:type": {
+                                "const": "FieldSelector"
+                              },
+                              "ods:field": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ods:type",
+                              "ods:field"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ods:type": {
+                                "const": "ClassSelector"
+                              },
+                              "oa:class": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ods:type",
+                              "oa:class"
+                            ]
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "ods:type": {
+                                "const": "FragmentSelector"
+                              },
+                              "ac:hasRoi": {
+                                "type": "object",
+                                "properties": {
+                                  "ac:xFrac": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "ac:yFrac": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "ac:widthFrac": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  },
+                                  "ac:heightFrac": {
+                                    "type": "number",
+                                    "minimum": 0,
+                                    "maximum": 1
+                                  }
+                                },
+                                "required": [
+                                  "ac:xFrac",
+                                  "ac:yFrac",
+                                  "ac:widthFrac",
+                                  "ac:heightFrac"
+                                ]
+                              },
+                              "dcterms:conformsTo": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "ods:type",
+                              "ac:hasRoi"
+                            ]
+                          }
+                        ]
+                      }
+                    },
+                    "required": [
+                      "ods:id",
+                      "ods:type"
+                    ]
+                  },
+                  "oa:body": {
+                    "type": "object",
+                    "properties": {
+                      "ods:type": {
+                        "type": "string"
+                      },
+                      "oa:value": {
+                        "type": "array"
+                      },
+                      "dcterms:reference": {
+                        "type": "string"
+                      },
+                      "ods:score": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      }
+                    },
+                    "required": [
+                      "ods:type",
+                      "oa:value"
+                    ]
+                  }
+                },
+                "required": [
+                  "oa:motivation",
+                  "oa:target",
+                  "oa:body"
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 1
+            },
+            "batchMetadata": {
+              "type": "array",
+              "items": {
+                "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/annotation-batch-metadata.json"
+              },
+              "minItems": 1,
+              "maxItems": 1
+            }
+          },
+          "required": [
+            "annotations",
+            "batchMetadata"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ]
+    }
+  }
+
+}

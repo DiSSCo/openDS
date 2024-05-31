@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/annotation-batch-metadata.json",
+  "properties": {
+    "placeInBatch": {
+      "type": "integer"
+    },
+    "searchParams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "inputField": {
+            "type": "string",
+            "description": "JsonPath (mixed notation) of field used to base annotation reasoning on. Indexes must be wildcards",
+            "examples": [
+              "digitalSpecimenWrapper.occurrences[*].location.dwc:country"
+            ]
+          },
+          "inputValue": {
+            "type": "string",
+            "description": "Value stored at the field indicated in inputField",
+            "examples": [
+              "Netherlands"
+            ]
+          }
+        },
+        "required": [
+          "inputField",
+          "inputValue"
+        ]
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "placeInBatch",
+    "searchParams"
+  ],
+  "additionalProperties": false
+}

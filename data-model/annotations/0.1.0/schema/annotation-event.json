@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation-event.json",
-  "description": "Object sent to annotation processing service",
+  "description": "Object sent to annotation processing service from core backend. Internal use only.",
   "properties": {
     "annotations": {
       "type": "array",
@@ -16,19 +16,9 @@
     "batchMetadata": {
       "type": "array",
       "items": {
-        "type": "object",
-        "properties": {
-          "placeInBatch": {
-            "type": "integer"
-          },
-          "inputField": {
-            "type": "string"
-          },
-          "inputValue": {
-            "type": "string"
-          }
-        }
-      }
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/annotation-batch-metadata.json"
+      },
+      "minItems": 1
     },
     "required": [
       "annotations",
