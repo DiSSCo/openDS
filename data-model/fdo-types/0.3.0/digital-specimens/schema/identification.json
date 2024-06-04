@@ -38,42 +38,42 @@
     "dwc:typeStatus": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/typeStatus",
-      "example": [
+      "examples": [
         "holotype"
       ]
     },
     "dwc:identifiedBy": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/identifiedBy",
-      "example": [
+      "examples": [
         "James L. Patton"
       ]
     },
     "dwc:identifiedByID": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/identifiedByID",
-      "example": [
+      "examples": [
         "https://orcid.org/0000-0002-1825-0097"
       ]
     },
     "dwc:dateIdentified": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/dateIdentified",
-      "example": [
+      "examples": [
         "2009-02-20T08:40Z"
       ]
     },
     "dwc:identificationReferences": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/identificationReferences",
-      "example": [
+      "examples": [
         "Aves del Noroeste Patagonico. Christie et al. 2004."
       ]
     },
     "ods:isVerifiedIdentification": {
       "type": "boolean",
       "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus",
-      "example": [
+      "examples": [
         true
       ]
     },

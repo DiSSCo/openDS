@@ -73,7 +73,7 @@
         "Mixed origin",
         "Unclassified"
       ],
-      "example": [
+      "examples": [
         "Natural"
       ]
     },
@@ -89,7 +89,7 @@
         "Archive Material",
         "Unclassified"
       ],
-      "example": [
+      "examples": [
         "Life"
       ]
     },
@@ -109,7 +109,7 @@
         "Other Geodiversity",
         "Unclassified"
       ],
-      "example": [
+      "examples": [
         "Botany"
       ]
     },
@@ -124,7 +124,7 @@
     "ods:specimenName": {
       "type": "string",
       "description": "The accepted specimen name of the digital specimen",
-      "example": [
+      "examples": [
         "Roptrocerus typographi (Györfi, 1952)"
       ]
     },
@@ -156,7 +156,7 @@
     "dwc:preparations": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/preparations",
-      "example": [
+      "examples": [
         "fossil"
       ]
     },
@@ -176,8 +176,8 @@
     },
     "dwc:institutionID": {
       "type": "string",
-      "format": "(https:\/\/ror\\.org\/0[\\w]{6}[0-9]{2})|(http:\/\/www\\.wikidata.org\/entity\/\\w+)",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "pattern": "^(https:\\/\\/ror.org\\/\\w{9})|(https:\\/\\/www.wikidata.org/wiki/Q\\w{6})",
       "examples": [
         "https://ror.org/015hz7p22"
       ]

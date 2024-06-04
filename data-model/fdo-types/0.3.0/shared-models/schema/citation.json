@@ -47,14 +47,14 @@
     "dcterms:bibliographicCitation": {
       "type": "string",
       "description": "https://dublincore.org/usage/terms/history/#bibliographicCitation-002",
-      "example": [
+      "examples": [
         "https://www.gbif.org/species/2439608 Source: GBIF Taxonomic Backbone"
       ]
     },
     "ods:referenceYear": {
       "type": "integer",
       "description": "The year the reference was published",
-      "example": [
+      "examples": [
         2021
       ]
     },

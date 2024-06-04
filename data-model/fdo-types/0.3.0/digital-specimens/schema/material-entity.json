@@ -30,7 +30,7 @@
     "dwc:preparations": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/preparations",
-      "example": [
+      "examples": [
         "fossil"
       ]
     },
