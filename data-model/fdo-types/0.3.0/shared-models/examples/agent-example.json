@@ -1,0 +1,11 @@
+{
+  "@id": "https://example.org/agents/12345",
+  "@type": "ods:Agent",
+  "ods:agentRole": "collector",
+  "ods:agentType": "human",
+  "ods:agentID": "https://orcid.org/0000-0002-1825-0097",
+  "ods:agentName": "John Smith",
+  "ods:agentRoleBegan": "2023-10-02T12:31:34.806Z",
+  "ods:agentRoleEnded": "2023-12-02T12:31:34.806Z",
+  "ods:agentRoleOrder": 1
+}

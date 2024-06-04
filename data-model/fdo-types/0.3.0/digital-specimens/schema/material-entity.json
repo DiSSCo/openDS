@@ -4,6 +4,15 @@
   "type": "object",
   "$comment": "DigitalObject Version 0.3.0, only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the digital object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:MaterialEntity",
+      "description": "The type of the digital object, in this case a ods:MaterialEntity"
+    },
     "dwc:materialEntityID": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/materialEntityID",
@@ -41,7 +50,7 @@
     },
     "dwc:institutionID": {
       "type": "string",
-      "format": "(https:\/\/ror\.org\/0[\w]{6}[0-9]{2})|(http:\/\/www\.wikidata.org\/entity\/\w+)",
+      "format": "(https:\/\/ror\\.org\/0[\\w]{6}[0-9]{2})|(http:\/\/www\\.wikidata.org\/entity\/\\w+)",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
       "examples": [
         "https://ror.org/015hz7p22"
@@ -96,89 +105,58 @@
         "ILL: Union Co. Wolf Lake by Powder Plant Bridge. 1 March 1975 Coll. S. Ketzler, S. Herbert\n\nMonotoma longicollis 4 ♂ Det TC McElrath 2018\n\nINHS Insect Collection 456782"
       ]
     },
-    "ods:Identifications": {
+    "ods:hasIdentification": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "dwc:Identification": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
       }
     },
-    "ods:Assertions": {
+    "ods:hasAssertion": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Assertion": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/assertions.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/assertions.json"
       }
     },
-    "ods:EntityRelationships": {
+    "ods:hasEntityRelationship": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:EntityRelationship": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
       }
     },
-    "ods:Citations": {
+    "ods:hasCitation": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Citation": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
       }
     },
-    "ods:Identifiers": {
+    "ods:hasIdentifier": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Identifier": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
       }
     },
-    "ods:Events": {
+    "ods:hasEvent": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "dwc:Event": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/events.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/events.json"
       }
     },
-    "ods:Agents": {
+    "ods:hasAgent": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Agent": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/agent.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/agent.json"
       }
     }
-  }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
 }

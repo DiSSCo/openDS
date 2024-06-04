@@ -4,13 +4,18 @@
   "$comment": "DigitalObject Version 0.3.0",
   "type": "object",
   "properties": {
-    "ods:ID": {
+    "@id": {
       "type": "string",
-      "description": "The unique digital identifier of the object",
+      "description": "The unique identifier of the object",
       "pattern": "https:\\/\\/doi\\.org\\/10\\.22\\/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://doi.org/10.22/XXX-XXX-XXX"
       ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object",
+      "const": "ods:DigitalSpecimen"
     },
     "ods:version": {
       "type": "integer",
@@ -31,7 +36,7 @@
     "ods:type": {
       "type": "string",
       "description": "The DOI or handle to the FDO type of the object",
-      "pattern": "https:\\/\\/doi\\.org\\/10\\.\\d+\\/[-\\w]+",
+      "pattern": "https:\\/\\/doi\\.org\\/\\w{2}.\\w+\\/\\w*",
       "examples": [
         "https://doi.org/10.15468/1a2b3c"
       ]
@@ -108,11 +113,11 @@
         "Botany"
       ]
     },
-    "ods:markedAsType": {
+    "ods:isMarkedAsType": {
       "type": "boolean",
       "description": "The specimen is marked as a type specimen"
     },
-    "ods:hasMedia": {
+    "ods:isKnownToContainMedia": {
       "type": "boolean",
       "description": "Indicates if there are any media objects attached to this specimen"
     },
@@ -306,125 +311,84 @@
         }
       ]
     },
-    "ods:MaterialEntities": {
+    "ods:hasMaterialEntity": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "dwc:MaterialEntity": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json"
       }
     },
-    "ods:Identifications": {
+    "ods:hasIdentification": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "dwc:Identification": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
-          }
-        }
+        "description": "https://rs.tdwg.org/dwc/terms/Identification",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
       }
     },
-    "ods:Assertions": {
+    "ods:hasAssertion": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Assertion": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
       }
     },
-    "ods:Occurrences": {
+    "ods:hasEvent": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "dwc:Occurrence": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/occurrences.json"
-          }
-        }
+        "description": "https://rs.tdwg.org/dwc/terms/Event",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/occurrences.json"
       }
     },
-    "ods:EntityRelationships": {
+    "ods:hasEntityRelationship": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:EntityRelationship": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
       }
     },
-    "ods:Citations": {
+    "ods:hasCitation": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Citation": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
       }
     },
-    "ods:Identifiers": {
+    "ods:hasIdentifier": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Identifier": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
       }
     },
-    "ods:ChronometricAges": {
+    "ods:hasChronometricAge": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:ChronometricAge": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.2.0/digital-specimens/chronometric-age.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/chronometric-age.json"
       }
     },
-    "ods:Agents": {
+    "ods:hasAgent": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Agent": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/agent.json"
       }
     }
   },
   "required": [
-    "ods:id",
+    "@id",
+    "@type",
     "ods:version",
     "ods:type",
     "ods:created",
     "ods:midsLevel",
-    "ods:physicalSpecimenId",
-    "ods:physicalSpecimenIdType",
-    "ods:sourceSystem",
+    "ods:physicalSpecimenID",
+    "ods:physicalSpecimenIDType",
+    "ods:sourceSystemID",
     "dcterms:license",
-    "dwc:institutionId"
-  ]
+    "dwc:institutionID"
+  ],
+  "additionalProperties": false
 }

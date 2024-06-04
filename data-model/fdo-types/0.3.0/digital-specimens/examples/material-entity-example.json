@@ -1,0 +1,7 @@
+{
+  "@id": "06809dc5-f143-459a-be1a-6f03e63fc083",
+  "@type": "ods:MaterialEntity",
+  "dwc:materialEntityID": "06809dc5-f143-459a-be1a-6f03e63fc083",
+  "ods:materialEntityType": "organism",
+  "dwc:preparations": "dried sheet"
+}

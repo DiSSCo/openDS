@@ -1,9 +1,18 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/location.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment":"DigitalObject Version 0.3.0",
+  "$comment": "DigitalObject Version 0.3.0",
   "type": "object",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the digital object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "dcterms:Location",
+      "description": "https://purl.org/dc/terms/Location"
+    },
     "dwc:locationID": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/locationID",
@@ -183,6 +192,14 @@
     "ods:GeoReference": {
       "type": "object",
       "properties": {
+        "@id": {
+          "type": "string",
+          "description": "The identifier for the digital object."
+        },
+        "@type": {
+          "type": "string",
+          "const": "ods:GeoReference"
+        },
         "dwc:verbatimCoordinates": {
           "type": "string",
           "description": "https://rs.tdwg.org/dwc/terms/verbatimCoordinates",
@@ -324,11 +341,24 @@
         "ods:preferredSpatialRepresentation": {
           "type": "string"
         }
-      }
+      },
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false
     },
     "dwc:GeologicalContext": {
       "type": "object",
       "properties": {
+        "@id": {
+          "type": "string",
+          "description": "The identifier for the digital object."
+        },
+        "@type": {
+          "type": "string",
+          "const": "dwc:GeologicalContext",
+          "description": "https://rs.tdwg.org/dwc/terms/GeologicalContext"
+        },
         "dwc:earliestEonOrLowestEonothem": {
           "type": "string",
           "description": "https://rs.tdwg.org/dwc/terms/earliestEonOrLowestEonothem",
@@ -448,7 +478,15 @@
             "Harlem coal"
           ]
         }
-      }
+      },
+      "required": [
+        "@type"
+      ],
+      "additionalProperties": false
     }
-  }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
 }

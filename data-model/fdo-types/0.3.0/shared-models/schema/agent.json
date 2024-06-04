@@ -3,6 +3,15 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the digital object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Agent",
+      "description": "The type of the digital object, in this case a ods:Agent"
+    },
     "ods:agentRole": {
       "type": "string",
       "description": "Indicates the role of the agent",
@@ -22,7 +31,7 @@
         "organisation"
       ]
     },
-    "ods:agentID":{
+    "ods:agentID": {
       "type": "string",
       "description": "Primary identifier of the agent, additional identifiers can go in the identifiers array",
       "examples": [
@@ -59,22 +68,19 @@
         2
       ]
     },
-    "ods:Identifiers": {
+    "ods:hasIdentifier": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Identifier": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
       }
     }
   },
   "required": [
+    "@type",
     "ods:agentRole",
     "ods:agentType",
     "ods:agentName"
-  ]
+  ],
+  "additionalProperties": false
 }

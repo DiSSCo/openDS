@@ -4,6 +4,15 @@
   "$comment": "DigitalObject Version 0.3.0",
   "type": "object",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the digital object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:ChronometricAge",
+      "description": "The type of the digital object."
+    },
     "chrono:chronometricAgeID": {
       "type": "string",
       "description": "https://rs.tdwg.org/chrono/terms/chronometricAgeID",
@@ -127,5 +136,9 @@
         "Beta Analytic number: 323913"
       ]
     }
-  }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
 }

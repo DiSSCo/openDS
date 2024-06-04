@@ -1,8 +1,17 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/citations.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/citation.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Based on https://rs.gbif.org/extension/gbif/1.0/references.xml but includes ods specific terms",
   "type": "object",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the digital object."
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the digital object, in this case a ods:Citation"
+    },
     "dcterms:identifier": {
       "type": "string",
       "description": "https://purl.org/dc/terms/identifier"
@@ -58,5 +67,9 @@
       "type": "boolean",
       "description": "Is the citation peer reviewed?"
     }
-  }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
 }

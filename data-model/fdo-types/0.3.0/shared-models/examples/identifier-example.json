@@ -1,0 +1,11 @@
+{
+  "@id": "https://example.org/identifiers/12345",
+  "@type": "ods:Identifier",
+  "dcterms:title": "dwc:catalogueNumber",
+  "dcterms:identifier": "BMNH(E)1902475",
+  "dcterms:format": "application/rdf+xml",
+  "dcterms:subject": "Specimen",
+  "ods:isPartOfLabel": true,
+  "ods:isBarcodeOrNFC": false,
+  "ods:isIdPersistent": true
+}

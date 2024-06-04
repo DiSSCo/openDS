@@ -1,0 +1,62 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/identifier.json",
+  "description": "Based on https://rs.gbif.org/extension/gbif/1.0/identifier.xml but includes ods specific terms",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the digital object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Identifier",
+      "description": "The type of the digital object, in this case a ods:Identifier"
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "The type of the identifier",
+      "examples": [
+        "dwc:catalogueNumber",
+        "dwca:id"
+      ]
+    },
+    "dcterms:identifier":{
+      "type": "string",
+      "description": "The value for the identifier",
+      "examples": [
+        "BMNH(E)1902475",
+        "RGM.800315"
+      ]
+    },
+    "dcterms:format": {
+      "type": "string",
+      "description": "Mime type of content returned by identifier in case the identifier is resolvable. https://purl.org/dc/terms/format",
+      "examples": [
+        "application/rdf+xml"
+      ]
+    },
+    "dcterms:subject": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/subject"
+    },
+    "ods:isPartOfLabel": {
+      "type": "boolean",
+      "description": "Is the identifier part of the physical label"
+    },
+    "ods:isBarcodeOrNFC": {
+      "type": "boolean",
+      "description": "Part of barcode or nfc chip"
+    },
+    "ods:isIdPersistent": {
+      "type": "boolean",
+      "description": "Is the identifier persistent"
+    }
+  },
+  "required": [
+    "@type",
+    "dcterms:title",
+    "dcterms:identifier"
+  ],
+  "additionalProperties": false
+}

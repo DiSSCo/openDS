@@ -1,0 +1,16 @@
+{
+  "@id": "https://example.org/citations/12345",
+  "@type": "ods:Citation",
+  "dcterms:identifier": "doi:10.1234/example",
+  "dcterms:type": "Journal Article",
+  "dcterms:date": "2021-08-15",
+  "dcterms:title": "An Example of a Citation",
+  "dcterms:creator": "Jane Doe",
+  "ods:citationPageNumber": "15-20",
+  "ods:citationRemarks": "This is a key reference for the study.",
+  "ods:referenceType": "primary",
+  "dcterms:bibliographicCitation": "Doe, J. (2021). An Example of a Citation. Example Journal, 15-20. doi:10.1234/example",
+  "ods:referenceYear": 2021,
+  "ods:referenceIRI": "https://examplejournal.org/article/12345",
+  "ods:isPeerReviewed": true
+}

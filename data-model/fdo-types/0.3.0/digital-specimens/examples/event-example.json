@@ -1,0 +1,14 @@
+{
+  "@type": "dwc:Event",
+  "dwc:organismQuantity": "2",
+  "dwc:organismQuantityType": "individuals",
+  "dwc:sex": "male",
+  "dwc:lifeStage": "young",
+  "dwc:vitality": "dead",
+  "ods:eventName": "A nice name for an Event",
+  "dwc:recordNumber": "Important for MIDS",
+  "dwc:eventDate": "1963-03-08T14:07-0600",
+  "dwc:year": 1963,
+  "dwc:month": 3,
+  "dwc:day": 8
+}

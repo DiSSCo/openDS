@@ -1,0 +1,12 @@
+{
+  "@id": "7cd7b542-5053-4d9c-a698-ff4f9f6e6fd0",
+  "@type": "ods:ChronometricAge",
+  "chrono:chronometricAgeID": "7cd7b542-5053-4d9c-a698-ff4f9f6e6fd0",
+  "chrono:uncalibratedChronometricAge": "150 BP",
+  "chrono:earliestChronometricAge": 2500,
+  "chrono:earliestChronometricAgeReferenceSystem": "BP",
+  "chrono:latestChronometricAge": 3000,
+  "chrono:latestChronometricAgeReferenceSystem": "BP",
+  "chrono:chronometricAgeUncertaintyInYears": 500,
+  "chrono:materialDated": "Potery"
+}
