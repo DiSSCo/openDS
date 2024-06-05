@@ -10,6 +10,7 @@
     },
     "@type": {
       "type": "string",
+      "const": "ods:Citation",,
       "description": "The type of the digital object, in this case a ods:Citation"
     },
     "dcterms:identifier": {

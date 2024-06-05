@@ -29,6 +29,21 @@ Each class now contains a required `@type` property to indicate the type of the 
 Optionally (except for the `ods:DigitalSpecimen` class) a `@id` property which can be used for the identifier.
 This is an additional property, it does not replace the id terms, such as `dwc:taxonID`.
 
+## EntityRelationship contains Darwin Core terms
+Instead of using new ODS terms we will reuse Darwin Core terms for indicating relationships.
+Most new terms come from the Darwin Core ResourceRelationship class.    
+
+## Assertion contains Darwin Core terms
+Instead of minting new Assertion terms in the ODS namespace we decided to reuse Darwin Core terms.
+Most of these terms come from the MeasurementOrFact class.
+
+## Identifier more based on gbif:AlternativeIdentifier DWCA extension
+Includes more dcterms instead of ods terms.
+We did not copy the class as our Identifier class is broader and includes additional ods terms.
+
+## Changed dwc:InstitutionName to ods:InstitutionName
+Institution name is not part of the Darwin Core standard, so we changed it to ods:InstitutionName.
+
 ## Other
 Small changes in description for some terms.
 dwc:institutionName is not a Darwin Core term, converted to ods:institutionName. 
