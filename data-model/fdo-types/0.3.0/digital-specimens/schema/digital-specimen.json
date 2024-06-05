@@ -17,6 +17,14 @@
       "description": "The type of the object",
       "const": "ods:DigitalSpecimen"
     },
+    "ods:ID": {
+      "type": "string",
+      "description": "The unique identifier of the object",
+      "pattern": "https:\\/\\/doi\\.org\\/10\\.22\\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
     "ods:version": {
       "type": "integer",
       "description": "The version of the object, each change generates a new version",
@@ -380,6 +388,7 @@
   "required": [
     "@id",
     "@type",
+    "ods:ID",
     "ods:version",
     "ods:type",
     "ods:created",

@@ -1,0 +1,23 @@
+{
+  "@id": "https://doi.org/10.22/ABC-DEF-GHI",
+  "@type": "ods:DigitalSpecimen",
+  "ods:ID": "https://doi.org/10.22/ABC-DEF-GHI",
+  "ods:version": 1,
+  "ods:created": "2024-06-05T12:34:56Z",
+  "ods:type": "https://doi.org/10.15468/1a2b3c",
+  "dcterms:type": "Image",
+  "ac:accessURI": "https://example.org/digital-object/12345",
+  "dwc:institutionID": "https://ror.org/015hz7p22",
+  "ods:institutionName": "National Museum of Natural History",
+  "dcterms:format": "image/jpeg",
+  "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+  "dcterms:description": "A high-resolution image of a rare specimen.",
+  "dcterms:rights": "Public domain",
+  "ods:rightsURI": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "dcterms:accessRights": "Open access",
+  "dcterms:rightsHolder": "National Museum of Natural History",
+  "dcterms:source": "Museum archives",
+  "dcterms:creator": "Dr. John Doe",
+  "dcterms:created": "2024-06-05",
+  "dcterms:modified": "2024-06-05"
+}

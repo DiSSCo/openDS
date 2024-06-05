@@ -4,6 +4,19 @@
   "$comment": "DigitalObject Version 0.3.0",
   "type": "object",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier of the object",
+      "pattern": "https:\\/\\/doi\\.org\\/10\\.\\d+\\/[-\\w]+",
+      "examples": [
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object",
+      "const": "ods:DigitalEntity"
+    },
     "ods:ID": {
       "type": "string",
       "description": "The unique digital identifier of the object",
@@ -61,8 +74,8 @@
     },
     "dwc:institutionID": {
       "type": "string",
-      "format": "(https:\/\/ror\.org\/0[\w]{6}[0-9]{2})|(http:\/\/www\.wikidata.org\/entity\/\w+)",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "pattern": "^(https:\\/\\/ror.org\\/\\w{9})|(https:\\/\\/www.wikidata.org/wiki/Q\\w{6})",
       "examples": [
         "https://ror.org/015hz7p22"
       ]
@@ -104,16 +117,11 @@
     },
     "dcterms:rightsHolder": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/rightsHolder",
+      "description": "https://purl.org/dc/terms/rightsHolder"
     },
     "dcterms:source": {
       "type": "string",
       "description": "https://purl.org/dc/terms/source"
-    },
-    "ods:sourceURI": {
-      "type": "string",
-      "format": "uri",
-      "$comment": "It is already recommended to use URI in the dcterms:source"
     },
     "dcterms:creator": {
       "type": "string",
@@ -127,72 +135,48 @@
       "type": "string",
       "description": "https://purl.org/dc/terms/modified"
     },
-    "ods:Assertions": {
+    "ods:hasAssertion": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Assertion": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertion.json"
       }
     },
     "ods:Citations": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Citation": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citation.json"
       }
     },
     "ods:Identifiers": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Identifier": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifier.json"
       }
     },
     "ods:EntityRelationships": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:EntityRelationship": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
-          }
-        }
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationship.json"
       }
     },
     "ods:Agents": {
       "type": "array",
       "items": {
         "type": "object",
-        "properties": {
-          "ods:Agent": {
-            "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/agent.json"
+            "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/agent.json"
           }
-        }
-      }
     }
   },
   "required": [
+    "@id",
+    "@type",
     "ods:ID",
     "ods:version",
     "ods:created",
-    "ac:accessURI",
-    "dcterms:license"
+    "ac:accessURI"
   ]
 }
