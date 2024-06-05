@@ -142,28 +142,28 @@
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertion.json"
       }
     },
-    "ods:Citations": {
+    "ods:hasCitation": {
       "type": "array",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citation.json"
       }
     },
-    "ods:Identifiers": {
+    "ods:hasIdentifier": {
       "type": "array",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifier.json"
       }
     },
-    "ods:EntityRelationships": {
+    "ods:hasEntityRelationship": {
       "type": "array",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationship.json"
       }
     },
-    "ods:Agents": {
+    "ods:hasAgent": {
       "type": "array",
       "items": {
         "type": "object",
