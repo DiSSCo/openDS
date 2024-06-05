@@ -105,7 +105,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citations.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citation.json"
       }
     },
     "ods:hasTaxonIdentification": {

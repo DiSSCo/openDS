@@ -323,14 +323,14 @@
       "items": {
         "type": "object",
         "description": "https://rs.tdwg.org/dwc/terms/Identification",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identifications.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identification.json"
       }
     },
     "ods:hasAssertion": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertions.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertion.json"
       }
     },
     "ods:hasEvent": {
@@ -338,28 +338,28 @@
       "items": {
         "type": "object",
         "description": "https://rs.tdwg.org/dwc/terms/Event",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/occurrences.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/event.json"
       }
     },
     "ods:hasEntityRelationship": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationships.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationship.json"
       }
     },
     "ods:hasCitation": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citations.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citation.json"
       }
     },
     "ods:hasIdentifier": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifiers.json"
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifier.json"
       }
     },
     "ods:hasChronometricAge": {
@@ -387,7 +387,6 @@
     "ods:physicalSpecimenID",
     "ods:physicalSpecimenIDType",
     "ods:sourceSystemID",
-    "dcterms:license",
     "dwc:institutionID"
   ],
   "additionalProperties": false
