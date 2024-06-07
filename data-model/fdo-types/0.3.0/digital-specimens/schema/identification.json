@@ -92,7 +92,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/shared-models/citation.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/citation.json"
       }
     },
     "ods:hasTaxonIdentification": {

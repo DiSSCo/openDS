@@ -355,7 +355,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/assertion.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/assertion.json"
       }
     },
     "ods:hasEvent": {
