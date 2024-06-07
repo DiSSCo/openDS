@@ -1,26 +1,26 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/digital-specimen.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "DigitalObject Version 0.3.0",
+  "$comment": "Digital Specimen Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The unique identifier of the object",
-      "pattern": "https:\\/\\/doi\\.org\\/10\\.22\\/(.){3}-(.){3}-(.){3}",
+      "description": "The unique identifier of the Digital Specimen object",
+      "pattern": "^https://doi\\.org/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
         "https://doi.org/10.22/XXX-XXX-XXX"
       ]
     },
     "@type": {
       "type": "string",
-      "description": "The type of the object",
+      "description": "The type of the object, in this case ods:DigitalSpecimen",
       "const": "ods:DigitalSpecimen"
     },
     "ods:ID": {
       "type": "string",
       "description": "The unique identifier of the object",
-      "pattern": "https:\\/\\/doi\\.org\\/10\\.22\\/(.){3}-(.){3}-(.){3}",
+      "pattern": "^https://doi\\.org/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
         "https://doi.org/10.22/XXX-XXX-XXX"
       ]
@@ -43,8 +43,8 @@
     },
     "ods:type": {
       "type": "string",
-      "description": "The DOI or handle to the FDO type of the object",
-      "pattern": "https:\\/\\/doi\\.org\\/\\w{2}.\\w+\\/\\w*",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https://doi\\.org/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
         "https://doi.org/10.15468/1a2b3c"
       ]
@@ -64,7 +64,6 @@
       "description": "The physical specimen identifier of the object. Taken over as-is"
     },
     "ods:physicalSpecimenIDType": {
-      "type": "string",
       "description": "To indicate if the physical identifier is globally unique or locally unique",
       "enum": [
         "Resolvable",
@@ -73,7 +72,6 @@
       ]
     },
     "ods:topicOrigin": {
-      "type": "string",
       "description": "The topic origin of the specimen",
       "enum": [
         "Natural",
@@ -86,7 +84,6 @@
       ]
     },
     "ods:topicDomain": {
-      "type": "string",
       "description": "The topic domain of the specimen",
       "enum": [
         "Life",
@@ -102,7 +99,6 @@
       ]
     },
     "ods:topicDiscipline": {
-      "type": "string",
       "description": "The topic discipline of the specimen",
       "enum": [
         "Anthropology",
@@ -139,27 +135,49 @@
     "ods:sourceSystemID": {
       "type": "string",
       "description": "The handle to the source system object which retrieved the data from the CMS",
-      "pattern": "https:\\/\\/hdl\\.handle.net\\/20\\.5000\\.1025\\/(.){3}-(.){3}-(.){3}"
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}"
     },
     "ods:livingOrPreserved": {
-      "type": "string",
       "description": "Whether the specimen is living or preserved",
       "enum": [
         "Living",
         "Preserved"
       ]
     },
+    "ods:language": {
+      "type": "array",
+      "description": "The language of the Digital Specimen metadata. Only indicate, not enforced. Recommended to use ISO 639-1 codes",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        [
+          "en",
+          "fr",
+          "de"
+        ]
+      ]
+    },
     "dcterms:license": {
       "type": "string",
-      "description": "License for the metadata of the physical specimen"
+      "description": "https://purl.org/dc/terms/license",
+      "examples": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ]
     },
     "dcterms:modified": {
       "type": "string",
-      "description": "Modification date for specimen information"
+      "description": "https://purl.org/dc/terms/modified",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
     },
     "dwc:basisOfRecord": {
       "type": "string",
-      "description": "The basis for the record"
+      "description": "https://rs.tdwg.org/dwc/terms/basisOfRecord",
+      "examples": [
+        "PreservedSpecimen"
+      ]
     },
     "dwc:preparations": {
       "type": "string",
@@ -185,7 +203,7 @@
     "dwc:institutionID": {
       "type": "string",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
-      "pattern": "^(https:\\/\\/ror.org\\/\\w{9})|(https:\\/\\/www.wikidata.org/wiki/Q\\w{6})",
+      "pattern": "^(https?:\/\/ror\\.org\/0\\w{6}[0-9]{2})|^(https?:\/\/www\\.wikidata\\.org\/wiki\/Q\\w+)",
       "examples": [
         "https://ror.org/015hz7p22"
       ]
@@ -225,11 +243,11 @@
         "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
       ]
     },
-    "dwc:ownerInstitutionID": {
+    "dwc:ownerInstitutionCode": {
       "type": "string",
-      "description": "ROR or Wikidata identifier for the owning institution",
+      "description": "https://rs.tdwg.org/dwc/terms/ownerInstitutionCode",
       "examples": [
-        "https://ror.org/03wkt5x30"
+        "InBio"
       ]
     },
     "dwc:recordedBy": {

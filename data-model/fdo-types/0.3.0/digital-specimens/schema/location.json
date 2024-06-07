@@ -1,17 +1,17 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/location.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "DigitalObject Version 0.3.0",
+  "$comment": "Location Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the digital object."
+      "description": "The identifier for the Location object."
     },
     "@type": {
       "type": "string",
-      "const": "dcterms:Location",
-      "description": "https://purl.org/dc/terms/Location"
+      "const": "ods:Location",
+      "description": "The type of the digital object, in this case a ods:Location"
     },
     "dwc:locationID": {
       "type": "string",
@@ -194,11 +194,12 @@
       "properties": {
         "@id": {
           "type": "string",
-          "description": "The identifier for the digital object."
+          "description": "The identifier for the Geo Reference object."
         },
         "@type": {
           "type": "string",
-          "const": "ods:GeoReference"
+          "const": "ods:GeoReference",
+          "description": "The type of the object, in this case ods:GeoReference"
         },
         "dwc:verbatimCoordinates": {
           "type": "string",
@@ -347,17 +348,17 @@
       ],
       "additionalProperties": false
     },
-    "dwc:GeologicalContext": {
+    "ods:GeologicalContext": {
       "type": "object",
       "properties": {
         "@id": {
           "type": "string",
-          "description": "The identifier for the digital object."
+          "description": "The identifier for the Geological Context object."
         },
         "@type": {
           "type": "string",
-          "const": "dwc:GeologicalContext",
-          "description": "https://rs.tdwg.org/dwc/terms/GeologicalContext"
+          "const": "ods:GeologicalContext",
+          "description": "The type of the object, in this case ods:GeologicalContext"
         },
         "dwc:earliestEonOrLowestEonothem": {
           "type": "string",

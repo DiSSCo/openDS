@@ -1,17 +1,17 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/chronometric-age.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "DigitalObject Version 0.3.0",
+  "$comment": "Chronometric Age Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the digital object."
+      "description": "The identifier for the Chronometric Age object."
     },
     "@type": {
       "type": "string",
       "const": "ods:ChronometricAge",
-      "description": "The type of the digital object."
+      "description": "The type of the digital object, in this case ods:ChronometricAge"
     },
     "chrono:chronometricAgeID": {
       "type": "string",

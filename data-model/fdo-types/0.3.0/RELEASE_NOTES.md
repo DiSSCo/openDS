@@ -17,11 +17,15 @@ We could use this to group all specimen from a single organism together.
 ## Updated classes to be in line with best practices
 All class are now capitalised.
 When there will a property contains an array of classes it will start with `has`.
-So the term `ods:hasIdentifications` will contain an array of `ods:Identification` classes.
+So the term `ods:hasIdentification` will contain an array of `ods:Identification` classes.
 If the property contains a single class it will just be the capitalised class name.
 
+## Updated ODS boolean field to use the format isXYZ
+As the terms which contain an array of object are called hasXYZ we needed a new format for boolean fields.
+We followed LTC and use the format isXYZ for boolean fields.
+
 ## Classes are singular
-All classes are now singular, for example `ods:Identification` instead of `ods:Identifications`.
+All classes are now singular, for example `ods:Identification` instead of `ods:Identification`.
 This also changed the file names to singular `citations.json` became `citation.json`
 
 ## Added jsonld properties
@@ -46,5 +50,4 @@ Institution name is not part of the Darwin Core standard, so we changed it to od
 
 ## Other
 Small changes in description for some terms.
-dwc:institutionName is not a Darwin Core term, converted to ods:institutionName. 
 Fixed the regex for some of the terms.

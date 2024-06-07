@@ -1,17 +1,17 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identification.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "DigitalObject Version 0.3.0",
+  "$comment": "Identification object Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the digital object."
+      "description": "The identifier for the Identification object."
     },
     "@type": {
       "type": "string",
-      "const": "dwc:Identification",
-      "description": "The type of the digital object, in this case a dwc:Identification"
+      "const": "ods:Identification",
+      "description": "The type of the digital object, in this case a ods:Identification"
     },
     "dwc:identificationID": {
       "type": "string",
@@ -73,9 +73,6 @@
     "ods:isVerifiedIdentification": {
       "type": "boolean",
       "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus",
-      "examples": [
-        true
-      ]
     },
     "dwc:identificationRemarks": {
       "type": "string",
@@ -91,16 +88,6 @@
         "cf. var. oxyadenia"
       ]
     },
-    "ods:typeDesignationType": {
-      "type": "string",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
-    },
-    "ods:typeDesignatedBy": {
-      "type": "string",
-      "description": "Unclear yet",
-      "$comment": "Unknown what this field should be"
-    },
     "ods:hasCitation": {
       "type": "array",
       "items": {
@@ -115,7 +102,7 @@
         "properties": {
           "@id": {
             "type": "string",
-            "description": "The identifier for the digital object."
+            "description": "The identifier for the Taxon Identification object."
           },
           "@type": {
             "type": "string",
@@ -369,7 +356,7 @@
   },
   "required": [
     "@type",
-    "dwc:identificationVerificationStatus"
+    "ods:isVerifiedIdentification"
   ],
   "additionalProperties": false
 }

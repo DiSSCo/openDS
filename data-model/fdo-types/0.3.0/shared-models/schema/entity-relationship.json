@@ -2,11 +2,12 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/emtity-relationship.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Based on https://rs.gbif.org/extension/resource_relationship_2024-02-19.xml but with ods specific terms",
+  "$comment": "Entity Relationship object Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the digital object."
+      "description": "The identifier for Entity Relationship digital object."
     },
     "@type": {
       "type": "string",

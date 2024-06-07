@@ -1,12 +1,12 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/assertions.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/assertion.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "Annotation Version 0.3.0",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the digital object."
+      "description": "The identifier for the Annotation object."
     },
     "@type": {
       "type": "string",
@@ -38,7 +38,7 @@
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/iri/measurementType",
       "examples": [
-        "https://vocab.nerc.ac.uk/collection/P01/current/ODRYBM01/\""
+        "https://vocab.nerc.ac.uk/collection/P01/current/ODRYBM01/"
       ]
     },
     "dwc:measurementDeterminedDate": {
@@ -86,19 +86,24 @@
       ]
     },
     "ods:assertionByAgentName": {
-      "type": "string"
+      "type": "string",
+      "description": "Name of the agent who made the assertion"
     },
     "ods:assertionByAgentID": {
-      "type": "string"
+      "type": "string",
+      "description": "ID of the agent who made the assertion, recommended to be a ORCID or Wikidata identifier"
     },
     "ods:assertionProtocol": {
-      "type": "string"
+      "type": "string",
+      "description": "The protocol used to make the assertion"
     },
     "ods:assertionProtocolID": {
-      "type": "string"
+      "type": "string",
+      "description": "The ID of the protocol used to make the assertion"
     },
     "ods:assertionRemarks": {
-      "type": "string"
+      "type": "string",
+      "description": "Remarks about the assertion"
     }
   },
   "required": [

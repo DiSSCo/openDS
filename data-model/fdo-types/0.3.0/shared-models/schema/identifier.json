@@ -2,11 +2,12 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/identifier.json",
   "description": "Based on https://rs.gbif.org/extension/gbif/1.0/identifier.xml but includes ods specific terms",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Identifier object Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the digital object."
+      "description": "The identifier for the Identifier object."
     },
     "@type": {
       "type": "string",
@@ -15,15 +16,22 @@
     },
     "dcterms:title": {
       "type": "string",
-      "description": "The type of the identifier",
+      "description": "The type of the identifier, https://purl.org/dc/elements/1.1/title",
       "examples": [
         "dwc:catalogueNumber",
         "dwca:id"
       ]
     },
+    "ods:localTitle": {
+      "type": "string",
+      "description": "The local title of the identifier",
+      "examples": [
+        "Registratie nummer"
+      ]
+    },
     "dcterms:identifier":{
       "type": "string",
-      "description": "The value for the identifier",
+      "description": "The value for the identifier, https://purl.org/dc/terms/identifier",
       "examples": [
         "BMNH(E)1902475",
         "RGM.800315"

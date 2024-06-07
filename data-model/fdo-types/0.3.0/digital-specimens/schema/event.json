@@ -1,17 +1,17 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/event.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "DigitalObject Version 0.3.0",
+  "$comment": "Event Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the digital object."
+      "description": "The identifier for the Event object."
     },
     "@type": {
       "type": "string",
-      "const": "dwc:Event",
-      "description": "The type of the digital object."
+      "const": "ods:Event",
+      "description": "The type of the digital object, in this case ods:Event"
     },
     "dwc:organismQuantity": {
       "type": "string",
@@ -79,11 +79,7 @@
       ]
     },
     "dwc:occurrenceStatus": {
-      "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/occurrenceStatus",
-      "examples": [
-        "present"
-      ],
       "enum": [
         "present",
         "absent"
@@ -224,10 +220,11 @@
       ]
     },
     "dwc:sampleSizeValue": {
-      "type": "string",
+      "type": "number",
       "description": "https://rs.tdwg.org/dwc/terms/sampleSizeValue",
       "examples": [
-        "5"
+        5,
+        4.23
       ]
     },
     "dwc:sampleSizeUnit": {
@@ -251,10 +248,6 @@
         "2 hours"
       ]
     },
-    "ods:eventEffort": {
-      "type": "string",
-      "$comment": "Not sure what this field means"
-    },
     "dwc:fieldNotes": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/fieldNotes",
@@ -270,10 +263,12 @@
       ]
     },
     "ods:collectorName": {
-      "type": "string"
+      "type": "string",
+      "description": "The full name of the collector"
     },
     "ods:collectorID": {
-      "type": "string"
+      "type": "string",
+      "description": "The identifier of the collector, recommended would be a ORCID or Wikidata ID"
     },
     "ods:hasAssertion": {
       "type": "array",
@@ -282,7 +277,7 @@
         "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertion.json"
       }
     },
-    "dcterms:Location": {
+    "ods:Location": {
       "type": "object",
       "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/location.json"
     }
