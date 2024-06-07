@@ -1,7 +1,7 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-media-objects/digital-entity.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "DigitalObject Version 0.3.0",
+  "$comment": "Digital Entity Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
@@ -14,7 +14,7 @@
     },
     "@type": {
       "type": "string",
-      "description": "The type of the object",
+      "description": "The type of the object, in this cas ods:DigitalEntity",
       "const": "ods:DigitalEntity"
     },
     "ods:ID": {
@@ -88,8 +88,7 @@
     },
     "dcterms:format": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/format",
-      "$comment": "Create a enum for this?"
+      "description": "https://purl.org/dc/terms/format"
     },
     "dcterms:license": {
       "type": "string",
@@ -101,13 +100,11 @@
     },
     "dcterms:rights": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/rights",
-      "$comment": "What is the difference with dcterms:license?"
+      "description": "https://purl.org/dc/terms/rights"
     },
     "dcterms:accessRights": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/accessRights",
-      "$comment": "What is the difference with dcterms:license?"
+      "description": "https://purl.org/dc/terms/accessRights"
     },
     "dcterms:rightsHolder": {
       "type": "string",

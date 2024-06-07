@@ -174,8 +174,7 @@
           },
           "ods:taxonSource": {
             "type": "string",
-            "description": "Unclear yet",
-            "$comment": "Unknown what this field should be"
+            "description": "The source of the taxonomic concept"
           },
           "dwc:taxonRemarks": {
             "type": "string",

@@ -90,16 +90,14 @@
       "description": "https://rs.tdwg.org/dwc/terms/pathway",
       "examples": [
         "releasedForUse"
-      ],
-      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/pw/"
+      ]
     },
     "dwc:degreeOfEstablishment": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/degreeOfEstablishment",
       "examples": [
         "captive"
-      ],
-      "$comment": "Could be an enumeration based on https://rs.tdwg.org/dwc/doc/doe/"
+      ]
     },
     "dwc:georeferenceVerificationStatus": {
       "type": "string",
