@@ -77,11 +77,11 @@
         "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
       ]
     },
-    "dwc:ownerInstitutionId": {
+    "dwc:ownerInstitutionCode": {
       "type": "string",
-      "description": "Preferably the ROR or Wikidata identifier for the owning institution, other strings are allowed",
+      "description": "https://rs.tdwg.org/dwc/terms/ownerInstitutionCode",
       "examples": [
-        "https://ror.org/03wkt5x30"
+        "InBio"
       ]
     },
     "dwc:recordedBy": {
