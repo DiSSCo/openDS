@@ -73,7 +73,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifier.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/identifier.json"
       }
     }
   },
