@@ -341,65 +341,63 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/material-entity.json"
       }
     },
     "ods:hasIdentification": {
       "type": "array",
       "items": {
         "type": "object",
-        "description": "https://rs.tdwg.org/dwc/terms/Identification",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identification.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/identification.json"
       }
     },
     "ods:hasAssertion": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertion.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/assertion.json"
       }
     },
     "ods:hasEvent": {
       "type": "array",
       "items": {
         "type": "object",
-        "description": "https://rs.tdwg.org/dwc/terms/Event",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/event.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/event.json"
       }
     },
     "ods:hasEntityRelationship": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationship.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/entity-relationship.json"
       }
     },
     "ods:hasCitation": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citation.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/citation.json"
       }
     },
     "ods:hasIdentifier": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifier.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/identifier.json"
       }
     },
     "ods:hasChronometricAge": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/chronometric-age.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/chronometric-age.json"
       }
     },
     "ods:hasAgent": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/agent.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/agent.json"
       }
     }
   },

@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/event.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/event.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Event Version 0.3.0",
   "type": "object",
@@ -272,12 +272,12 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/assertion.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/assertion.json"
       }
     },
     "ods:Location": {
       "type": "object",
-      "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/location.json"
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/location.json"
     }
   },
   "required": [

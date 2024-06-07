@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/material-entity.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "$comment": "Material Entity Version 0.3.0, only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
@@ -109,49 +109,49 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identification.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/identification.json"
       }
     },
     "ods:hasAssertion": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/assertion.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/assertion.json"
       }
     },
     "ods:hasEntityRelationship": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationship.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/entity-relationship.json"
       }
     },
     "ods:hasCitation": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citation.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/citation.json"
       }
     },
     "ods:hasIdentifier": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifier.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/identifier.json"
       }
     },
     "ods:hasEvent": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/event.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/event.json"
       }
     },
     "ods:hasAgent": {
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/agent.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/agent.json"
       }
     }
   },

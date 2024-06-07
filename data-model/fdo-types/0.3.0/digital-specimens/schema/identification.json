@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identification.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/digital-specimens/identification.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Identification object Version 0.3.0",
   "type": "object",
@@ -72,7 +72,7 @@
     },
     "ods:isVerifiedIdentification": {
       "type": "boolean",
-      "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus",
+      "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus"
     },
     "dwc:identificationRemarks": {
       "type": "string",
@@ -92,7 +92,7 @@
       "type": "array",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.1.0/shared-models/citation.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/shared-models/citation.json"
       }
     },
     "ods:hasTaxonIdentification": {
