@@ -1,0 +1,77 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.3.0/shared-models/citation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Based on https://rs.gbif.org/extension/gbif/1.0/references.xml but includes ods specific terms",
+  "$comment": "Citation object Version 0.3.0",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Citation object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Citation",
+      "description": "The type of the digital object, in this case a ods:Citation"
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/identifier"
+    },
+    "dcterms:type": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/type"
+    },
+    "dcterms:date": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/date"
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/title"
+    },
+    "dcterms:creator": {
+      "type": "string",
+      "description": "https://purl.org/dc/elements/1.1/creator"
+    },
+    "ods:citationPageNumber": {
+      "type": "string",
+      "description": "Page number of the citation"
+    },
+    "ods:citationRemarks": {
+      "type": "string",
+      "description": "Any further remarks about the citation"
+    },
+    "ods:referenceType": {
+      "type": "string",
+      "description": "The type of reference"
+    },
+    "dcterms:bibliographicCitation": {
+      "type": "string",
+      "description": "https://dublincore.org/usage/terms/history/#bibliographicCitation-002",
+      "examples": [
+        "https://www.gbif.org/species/2439608 Source: GBIF Taxonomic Backbone"
+      ]
+    },
+    "ods:referenceYear": {
+      "type": "integer",
+      "description": "The year the reference was published",
+      "examples": [
+        2021
+      ]
+    },
+    "ods:referenceIRI": {
+      "type": "string",
+      "format": "iri",
+      "description": "Reference to the web source of this citation"
+    },
+    "ods:isPeerReviewed": {
+      "type": "boolean",
+      "description": "Is the citation peer reviewed?"
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

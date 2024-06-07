@@ -1,0 +1,127 @@
+{
+  "@id": "https://doi.org/SANDBOX/XY7-ZMP-5J4",
+  "@type": "ods:DigitalSpecimen",
+  "ods:version": 1,
+  "ods:created": "2024-05-29T07:10:56.269509Z",
+  "ods:type": "https://doi.org/21.T11148/894b1e6cad57e921764e",
+  "ods:midsLevel": 1,
+  "ods:normalisedPhysicalSpecimenID": "https://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.121559",
+  "ods:physicalSpecimenID": "https://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.121559",
+  "ods:physicalSpecimenIDType": "Resolvable",
+  "ods:topicOrigin": "Natural",
+  "ods:topicDomain": "Life",
+  "ods:topicDiscipline": "Zoology",
+  "ods:isKnownToContainMedia": true,
+  "ods:specimenName": "Pitta versicolor Swainson, 1825",
+  "ods:sourceSystemID": "https://hdl.handle.net/SANDBOX/CS1-ZKQ-NZ7",
+  "ods:livingOrPreserved": "Preserved",
+  "dcterms:license": "CC0 1.0",
+  "dcterms:modified": "2023/01/24",
+  "dwc:basisOfRecord": "PreservedSpecimen",
+  "dwc:preparations": "skin (air dried)",
+  "dwc:institutionID": "https://ror.org/0566bfb96",
+  "dwc:institutionName": "Naturalis Biodiversity Center",
+  "dwc:recordedBy": "van Lansberge",
+  "dwc:datasetName": "Naturalis Biodiversity Center (NL) - Aves",
+  "dcterms:rightsHolder": "Naturalis Biodiversity Center",
+  "ods:hasMaterialEntity": [],
+  "ods:hasIdentification": [
+    {
+      "@type": "dwc:Identification",
+      "dwc:verbatimIdentification": "Pitta versicolor concinna Gould, 1857",
+      "dwc:identifiedBy": "Tan D.",
+      "dwc:dateIdentified": "2021/12/01",
+      "dwc:identificationVerificationStatus": true,
+      "ods:hasTaxonIdentification": [
+        {
+          "@type": "ods:TaxonIdentification",
+          "dwc:taxonID": "6VM3W",
+          "dwc:scientificName": "Pitta versicolor Swainson, 1825",
+          "ods:scientificNameHtmlLabel": "<i>Pitta versicolor</i> Swainson, 1825",
+          "dwc:scientificNameAuthorship": "Swainson, 1825",
+          "dwc:namePublishedInYear": "1825",
+          "dwc:taxonRank": "SPECIES",
+          "dwc:kingdom": "Animalia",
+          "dwc:phylum": "Chordata",
+          "dwc:class": "Aves",
+          "dwc:order": "Passeriformes",
+          "dwc:family": "Pittidae",
+          "dwc:genus": "Pitta Vieillot, 1816",
+          "dwc:specificEpithet": "versicolor",
+          "dwc:taxonomicStatus": "ACCEPTED",
+          "dwc:nomenclaturalCode": "ICZN",
+          "dwc:genericName": "Pitta"
+        }
+      ]
+    }
+  ],
+  "ods:hasAssertion": [],
+  "ods:hasEvents": [
+    {
+      "@type": "ods:Event",
+      "dwc:organismQuantity": "1",
+      "dwc:organismQuantityType": "individuals",
+      "dwc:lifeStage": "adult",
+      "dwc:eventDate": "1880-09-01/1880-09-30",
+      "ods:Assertions": [],
+      "dcterms:Location": {
+        "dwc:stateProvince": "Alor",
+        "ods:GeoReference": {
+          "dwc:geodeticDatum": "WGS84"
+        },
+        "ods:GeologicalContext": {}
+      }
+    }
+  ],
+  "ods:hasEntityRelationship": [
+    {
+      "@type": "ods:EntityRelationship",
+      "ods:entityRelationshipType": "hasOrganisationId",
+      "ods:objectEntityIri": "https://ror.org/0566bfb96"
+    },
+    {
+      "@type": "ods:EntityRelationship",
+      "ods:entityRelationshipType": "hasSourceSystemId",
+      "ods:objectEntityIri": "https://hdl.handle.net/SANDBOX/CS1-ZKQ-NZ7"
+    },
+    {
+      "@type": "ods:EntityRelationship",
+      "ods:entityRelationshipType": "hasFdoType",
+      "ods:objectEntityIri": "https://doi.org/21.T11148/894b1e6cad57e921764e"
+    },
+    {
+      "@type": "ods:EntityRelationship",
+      "ods:entityRelationshipType": "hasPhysicalIdentifier",
+      "ods:objectEntityIri": "https://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.121559"
+    },
+    {
+      "@type": "ods:EntityRelationship",
+      "ods:entityRelationshipType": "hasColId",
+      "ods:objectEntityIri": "https://www.catalogueoflife.org/data/taxon/6VM3W",
+      "ods:entityRelationshipDate": 1716966655568,
+      "ods:entityRelationshipCreatorName": "dissco-nusearch-service",
+      "ods:entityRelationshipCreatorId": "https://hdl.handle.net/TEST/123-123-123"
+    }
+  ],
+  "ods:hasCitation": [
+    {}
+  ],
+  "ods:hasIdentifier": [
+    {
+      "@type": "ods:Identifier",
+      "ods:identifierType": "dwc:occurrenceID",
+      "ods:identifierValue": "https://data.biodiversitydata.nl/naturalis/specimen/RMNH.AVES.121559"
+    },
+    {
+      "@type": "ods:Identifier",
+      "ods:identifierType": "dwca:ID",
+      "ods:identifierValue": "RMNH.AVES.121559@CRS"
+    },
+    {
+      "@type": "ods:Identifier",
+      "ods:identifierType": "dwc:catalogNumber",
+      "ods:identifierValue": "RMNH.AVES.121559"
+    }
+  ],
+  "ods:hasChronometricAge": []
+}

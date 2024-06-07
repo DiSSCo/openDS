@@ -1,0 +1,13 @@
+{
+  "@id": "https://example.org/relationships/12345",
+  "@type": "ods:EntityRelationship",
+  "dwc:relationshipOfResource": "hasGBIFID",
+  "dwc:relationshipOfResourceID": "https://purl.obolibrary.org/obo/RO_0002456",
+  "dwc:relatedResourceID": "3024470157",
+  "ods:relatedResourceURI": "https://www.gbif.org/occurrence/3024470157",
+  "dwc:relationshipEstablishedDate": "2024-05-30T09:46:20.120Z",
+  "ods:entityRelationshipOrder": 1,
+  "dwc:relationshipAccordingTo": "Sam Leeflang",
+  "ods:relationshipAccordingToID": "https://orcid.org/0000-0002-5669-2769",
+  "dwc:relationshipRemarks": "Mother and offspring collected from the same nest"
+}

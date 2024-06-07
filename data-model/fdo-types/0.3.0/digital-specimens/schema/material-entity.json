@@ -1,0 +1,162 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/material-entity.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$comment": "Material Entity Version 0.3.0, only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Material Entity object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:MaterialEntity",
+      "description": "The type of the digital object, in this case a ods:MaterialEntity"
+    },
+    "dwc:materialEntityID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/materialEntityID",
+      "examples": [
+        "06809dc5-f143-459a-be1a-6f03e63fc083"
+      ]
+    },
+    "ods:materialEntityType": {
+      "type": "string",
+      "description": "Type of material entity",
+      "examples": [
+        "organism"
+      ]
+    },
+    "dwc:preparations": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/preparations",
+      "examples": [
+        "fossil"
+      ]
+    },
+    "dwc:disposition": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/disposition",
+      "examples": [
+        "in collection"
+      ]
+    },
+    "dwc:institutionCode": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
+      "examples": [
+        "MNF"
+      ]
+    },
+    "dwc:institutionID": {
+      "type": "string",
+      "pattern": "^(https?:\/\/ror\\.org\/0\\w{6}[0-9]{2})|^(https?:\/\/www\\.wikidata\\.org\/wiki\/Q\\w+)",
+      "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "examples": [
+        "https://ror.org/015hz7p22"
+      ]
+    },
+    "ods:institutionName": {
+      "type": "string",
+      "description": "Full museum name according to ROR or Wikidata",
+      "examples": [
+        "National Museum of Natural History"
+      ]
+    },
+    "dwc:collectionCode": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionCode",
+      "examples": [
+        "EBIRD"
+      ]
+    },
+    "dwc:collectionID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/collectionID",
+      "examples": [
+        "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
+      ]
+    },
+    "dwc:ownerInstitutionCode": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/ownerInstitutionCode",
+      "examples": [
+        "InBio"
+      ]
+    },
+    "dwc:recordedBy": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedBy",
+      "examples": [
+        "José E. Crespo"
+      ]
+    },
+    "dwc:recordedByID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/recordedByID",
+      "examples": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
+    },
+    "dwc:verbatimLabel": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/verbatimLabel",
+      "examples": [
+        "ILL: Union Co. Wolf Lake by Powder Plant Bridge. 1 March 1975 Coll. S. Ketzler, S. Herbert\n\nMonotoma longicollis 4 ♂ Det TC McElrath 2018\n\nINHS Insect Collection 456782"
+      ]
+    },
+    "ods:hasIdentification": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/identification.json"
+      }
+    },
+    "ods:hasAssertion": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/assertion.json"
+      }
+    },
+    "ods:hasEntityRelationship": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/entity-relationship.json"
+      }
+    },
+    "ods:hasCitation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/citation.json"
+      }
+    },
+    "ods:hasIdentifier": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/identifier.json"
+      }
+    },
+    "ods:hasEvent": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/digital-specimens/event.json"
+      }
+    },
+    "ods:hasAgent": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/digitalobjects/0.3.0/shared-models/agent.json"
+      }
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

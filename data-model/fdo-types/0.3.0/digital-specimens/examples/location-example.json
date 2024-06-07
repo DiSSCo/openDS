@@ -1,0 +1,19 @@
+{
+  "@type": "dcterms:Location",
+  "dwc:continent": "Europe",
+  "dwc:country": "Netherlands",
+  "dwc:countryCode": "NL",
+  "dwc:stateProvince": "Drenthe",
+  "dwc:municipality": "Annen",
+  "ods:GeoReference": {
+    "@type": "ods:GeoReference",
+    "dwc:decimalLatitude": 53.056073,
+    "dwc:decimalLongitude": 6.722291,
+    "dwc:geodeticDatum": "WGS84"
+  },
+  "dwc:GeologicalContext": {
+    "@type": "dwc:GeologicalContext",
+    "dwc:group": "Bathurst",
+    "dwc:formation": "Summerville"
+  }
+}
