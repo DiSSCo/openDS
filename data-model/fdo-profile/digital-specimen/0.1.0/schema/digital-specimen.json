@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/digital-specimen.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-specimen/0.1.0/digital-specimen.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Kernel from which all DiSSCo DOI FDO profiles are derived",
   "$comment": "FDO Profile Version 0.1.0",

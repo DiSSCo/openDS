@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/source-system-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/source-system/0.1.0/source-system-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
   "description": "Schema for requests made to DiSSCo PID API for Source Systems",

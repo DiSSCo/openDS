@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/mapping-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/mapping/0.1.0/mapping-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for mapping from source data standard to DiSSCo data model",
   "$comment": "FDO Profile Version 0.1.0",

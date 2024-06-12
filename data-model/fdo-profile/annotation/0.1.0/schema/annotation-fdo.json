@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/annotation/annotation-fdo.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/annotation/0.1.0/annotation-fdo.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for DiSSCo Annotations",
   "$comment":"FDO Profile Version 0.1.0",

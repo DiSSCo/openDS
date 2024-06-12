@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/tettris-service.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/tettris-service/0.1.0/tettris-service.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for TETTRIs Service",
   "$comment": "FDO Profile Version 0.1.0",

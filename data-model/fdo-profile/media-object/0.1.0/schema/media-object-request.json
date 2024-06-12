@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/media-object-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/media-object/0.1.0/media-object-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Schema for creating new PID records for media objects using the DiSSCO PID API. API maps requests to media-object.json profile",
   "$comment": "FDO Profile Version 0.1.0",

@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/media-object.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/media-object/0.1.0/media-object.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for digital media object",
   "$comment": "FDO Profile Version 0.1.0",

@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/annotation.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/tombstone/0.1.0/tombstone.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "FDO Profile for Tombstoned PIDs",
   "$comment":"FDO Profile Version 0.1.0",
