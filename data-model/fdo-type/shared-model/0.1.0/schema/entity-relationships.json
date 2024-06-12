@@ -1,0 +1,46 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/entity-relationships.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "entityRelationshipType": {
+      "type": "string"
+    },
+    "objectEntityIri": {
+      "type": "string",
+      "format": "iri",
+      "description": "The link to the referenced resource. This could be an internal object linked through the PID or an external object"
+    },
+    "entityRelationshipDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The data time on which the relationship was established"
+    },
+    "entityRelationshipOrder": {
+      "type": "integer",
+      "description": "When multiple relationships are added an order can be defined"
+    },
+    "entityRelationshipCreatorName": {
+      "type": "string",
+      "description": "The name of the relationship creator",
+      "$comment": "Not available in GBIF UM"
+    },
+    "entityRelationshipCreatorId": {
+      "type": "string",
+      "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)",
+      "$comment": "Not available in GBIF UM"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/agent.json"
+      }
+    }
+  },
+  "required": [
+    "entityRelationshipType",
+    "objectEntityIri",
+    "entityRelationshipDate",
+    "entityRelationshipCreatorId"
+  ]
+}

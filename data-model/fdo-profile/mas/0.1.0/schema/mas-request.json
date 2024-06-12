@@ -1,0 +1,70 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/mas-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "FDO Profile requests to PID API for Machine Annotation Services",
+  "$comment": "FDO Profile Version 0.1.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "https://hdl.handle.net/21.T11148/22e71a0015cbcfba8ffa",
+          "description": "PID of the Digital Object Type"
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "pidIssuer": {
+              "type": "string",
+              "description": "In case of a DOI this is a PID for the DOI Registration Agency",
+              "example": "https://hdl.handle.net/10.17183",
+              "$comment": "idx = 6"
+            },
+            "issuedForAgent": {
+              "type": "string",
+              "description": "In the case of a digital specimen, this is a PID for DiSSCo as the agent responsible for serving the digital specimen object",
+              "example": "https://hdl.handle.net/10.22",
+              "$comment": "idx = 8"
+            },
+            "structuralType": {
+              "enum": [
+                "digital",
+                "physical",
+                "performance",
+                "abstraction"
+              ],
+              "description": "Nature of the digital object, compatible with DOI schema requirements. The nature of a digital specimen object is always \"digital\". Other digital objects (outside DiSSCo) could be of physical, performance or abstraction nature.",
+              "$comment": "idx = 12"
+            },
+            "locations": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Additional URLs to be appended to the 10320/loc field"
+            },
+            "masName": {
+              "type": "string",
+              "description": "Name of Machine Annotation Service",
+              "$comment": "idx = 604"
+            }
+          },
+          "required": [
+            "issuedForAgent",
+            "masName"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "additionalProperties": false
+}

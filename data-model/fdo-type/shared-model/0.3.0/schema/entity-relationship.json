@@ -1,0 +1,89 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/emtity-relationship.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Based on https://rs.gbif.org/extension/resource_relationship_2024-02-19.xml but with ods specific terms",
+  "$comment": "Entity Relationship object Version 0.3.0",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for Entity Relationship digital object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:EntityRelationship",
+      "description": "The type of the record, in this case a ods:EntityRelationship"
+    },
+    "dwc:relationshipOfResource": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/relationshipOfResource",
+      "examples": [
+        "hasGBIFID"
+      ]
+    },
+    "dwc:relationshipOfResourceID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/relationshipOfResourceID",
+      "examples": [
+        "https://purl.obolibrary.org/obo/RO_0002456"
+      ]
+    },
+    "dwc:relatedResourceID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/relatedResourceID",
+      "examples": [
+        "3024470157"
+      ]
+    },
+    "ods:relatedResourceURI": {
+      "type": "string",
+      "format": "uri",
+      "description": "The URI of the related resource",
+      "examples": [
+        "https://www.gbif.org/occurrence/3024470157"
+      ]
+    },
+    "dwc:relationshipEstablishedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "https://rs.tdwg.org/dwc/terms/relationshipEstablishedDate",
+      "examples": [
+        "2024-05-30T09:46:20.120Z"
+      ]
+    },
+    "ods:entityRelationshipOrder": {
+      "type": "integer",
+      "description": "When multiple relationships are added an order can be defined",
+      "examples": [
+        1
+      ]
+    },
+    "dwc:relationshipAccordingTo": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/relationshipAccordingTo",
+      "examples": [
+        "Sam Leeflang"
+      ]
+    },
+    "ods:relationshipAccordingToID": {
+      "type": "string",
+      "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)",
+      "examples": [
+        "https://orcid.org/0000-0002-5669-2769"
+      ]
+    },
+    "dwc:relationshipRemarks": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/relationshipRemarks",
+      "examples": [
+        "Mother and offspring collected from the same nest"
+      ]
+    }
+  },
+  "required": [
+    "@type",
+    "dwc:relationshipOfResource",
+    "dwc:relatedResourceID"
+  ],
+  "additionalProperties": false
+}

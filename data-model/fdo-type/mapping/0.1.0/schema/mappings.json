@@ -1,0 +1,58 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.1.0/mappings.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "PID of the mapping"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated"
+    },
+    "deleted": {
+      "type": "string",
+      "description": "timestamp MAS was deleted, if applicable"
+    },
+    "creator": {
+      "type": "string",
+      "description": "User id of the client registering the MAS"
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "fieldMapping": {
+          "type": "object"
+        },
+        "sourceDataStandard": {
+          "enum": [
+            "dwc",
+            "abcd",
+            "abcdefg"
+          ]
+        }
+      },
+      "required": [
+        "sourceDataStandard"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "created",
+    "creator",
+    "mapping"
+  ]
+}

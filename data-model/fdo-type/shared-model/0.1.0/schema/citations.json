@@ -1,0 +1,67 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/citations.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "dcterms:type": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/type"
+    },
+    "dcterms:date": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/date"
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/title"
+    },
+    "dcterms:creator": {
+      "type": "string",
+      "description": "https://purl.org/dc/elements/1.1/creator"
+    },
+    "???:citationPageNumber": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "???:citationRemarks": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "???:referenceType": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "dcterms:bibliographicCitation": {
+      "type": "string",
+      "description": "https://dublincore.org/usage/terms/history/#bibliographicCitation-002",
+      "example": [
+        "https://www.gbif.org/species/2439608 Source: GBIF Taxonomic Backbone"
+      ]
+    },
+    "???:referenceYear": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "???:referenceIri": {
+      "type": "string",
+      "format": "iri",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "???:isPeerReviewed": {
+      "type": "boolean",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/agent.json"
+      }
+    }
+  }
+}

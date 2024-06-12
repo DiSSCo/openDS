@@ -1,0 +1,55 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
+  "@type": "ods:CreateUpdateTombstoneEvent",
+  "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
+  "ods:type": "https://doi.org/10.15468/1a2b3c",
+  "prov:Activity": {
+    "@id": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507",
+    "@type": "ods:Create",
+    "prov:wasAssociatedWith": "https://orcid.org/0000-0002-1825-0097",
+    "prov:endedAtTime": "2024-06-11T09:14:00Z",
+    "prov:used": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
+    "rdfs:comment": "This activity was created by the user"
+  },
+  "prov:Entity": {
+    "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
+    "@type": "ods:Mapping",
+    "prov:value": {
+      "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+      "@type": "ods:Mapping",
+      "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+      "ods:type": "https://doi.org/10.15468/1a2b3c",
+      "schema:version": 1,
+      "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
+      "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
+      "schema:dateCreated": "2021-06-01T12:00:00Z",
+      "ods:creator": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+      "ods:Mapping": {
+        "ods:DefaultMapping": [
+          {
+            "ods:physicalSpecimenIdType": "cetaf"
+          },
+          {
+            "ods:type": "ZoologyVertebrateSpecimen"
+          },
+          {
+            "ods:organisationId": "https://ror.org/05xg72x27"
+          }
+        ],
+        "ods:FieldMapping": [
+          {
+            "ods:physicalSpecimenId": "dwc:catalogNumber"
+          }
+        ]
+      },
+      "ods:mappingDataStandard": "dwc"
+    },
+    "prov:wasGeneratedBy": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507",
+    "prov:wasAttributedTo": "https://orcid.org/0000-0002-1825-0097"
+  },
+  "prov:Agent": {
+    "@id": "https://orcid.org/0000-0002-1825-0097",
+    "@type": "prov:Person",
+    "foaf:name": "John Doe"
+  }
+}

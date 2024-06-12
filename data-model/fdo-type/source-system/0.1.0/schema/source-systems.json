@@ -1,0 +1,64 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/source-system/0.1.0/source-systems.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "PID of the Source System"
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "created": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated"
+    },
+    "deleted": {
+      "type": "string",
+      "description": "timestamp MAS was deleted, if applicable"
+    },
+    "creator": {
+      "type": "string",
+      "description": "User id of the client registering the MAS"
+    },
+    "sourceSystem": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "endpoint": {
+          "type": "string",
+          "description": "Endpoint from which data may be retrieved"
+        },
+        "translatorType": {
+          "enum": [
+            "dwca",
+            "biocase"
+          ]
+        },
+        "mappingId": {
+          "type": "string",
+          "description": "PID of the mapping required by this source system."
+        }
+      },
+      "required": [
+        "endpoint",
+        "translatorType",
+        "mapping"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "created",
+    "creator",
+    "mapping"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/0.1.0/tombstone-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema for tombstoning requests to DiSSCo PID API",
+  "$comment":"FDO Profile Version 0.1.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "identifier of the object to be tombstoned",
+          "example": "20.5000.1025/LLN-YPG-4PX"
+        },
+        "attributes": {
+          "type": "object",
+          "properties":{
+            "tombstoneText": {
+              "type": "string",
+              "description": "Free text describing why the object was tombstoned",
+              "$comment": "idx = 30"
+            },
+            "tombstonePids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Array of relevant PIDs",
+              "$comment": "idx = 31"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "tombstoneText"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "attributes"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/mas.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Automated annotation services that enhance biodiversity data",
+  "$comment": "Machine Annotation Service Version 0.3.0",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Machine Annotation Service object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:MachineAnnotationService",
+      "const": "ods:MachineAnnotationService"
+    },
+    "ods:ID": {
+      "type": "string",
+      "description": "Handle of the Machine Annotation Service",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:type": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/10.15468/1a2b3c"
+      ]
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version of the Machine Annotation Service, https://schema.org/version"
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Machine Annotation Service as provided by the user, https://schema.org/name",
+      "examples": [
+        "GBIF Linker Service"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Machine Annotation Service as provided by the user, https://schema.org/description",
+      "examples": [
+        "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship"
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "ods:dateTombstoned": {
+      "type": "string",
+      "description": "Timestamp Machine Annotation Service was tombstoned and no longer active. Generated on request of the user",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "ods:creator": {
+      "type": "string",
+      "description": "The internal user ID of the creator of the Machine Annotation Service",
+      "examples": [
+        "e2befba6-9324-4bb4-9f41-d7dfae4a44b0"
+      ]
+    },
+    "ods:containerImage": {
+      "type": "string",
+      "description": "URI of the image of the containerized application",
+      "example": [
+        "public.ecr.aws/dissco/mindat-georeferencing"
+      ]
+    },
+    "ods:containerTag": {
+      "type": "string",
+      "description": "Tag of the image",
+      "example": [
+        "sha-cb76994"
+      ]
+    },
+    "ods:TargetDigitalObjectFilter": {
+      "type": "object",
+      "description": "Filters describing the criteria that must be met in order to apply the MAS. No filters implies the MAS may run on *any* digital object. Field names are given in JSON paths, and accepted values for that field are provided as an arrays",
+      "example": [
+        {
+          "$.ods:type": [
+            "https://doi.org/21.T11148/894b1e6cad57e921764e"
+          ],
+          "$.ods:topicDiscipline": [
+            "Astrogeology",
+            "Geology",
+            "Palaeontology",
+            "Other Geodiversity",
+            "Unclassified"
+          ],
+          "$.occurrences[*].location.dwc:locality": [
+            "*"
+          ]
+        }
+      ]
+    },
+    "schema:creativeWorkStatus": {
+      "type": "string",
+      "description": "The current status of the service, https://schema.org/creativeWorkStatus",
+      "example": [
+        "Alpha",
+        "Production"
+      ]
+    },
+    "schema:codeRepository": {
+      "type": "string",
+      "format": "url",
+      "description": "Link to code base of MAS, https://schema.org/codeRepository"
+    },
+    "schema:programmingLanguage": {
+      "type": "string",
+      "description": "The programming language of the MAS, https://schema.org/programmingLanguage",
+      "example": [
+        "Python"
+      ]
+    },
+    "ods:serviceAvailability": {
+      "type": "string",
+      "description": "Availability commitment of the service provider as described in the SLA"
+    },
+    "schema:maintainer": {
+      "type": "object",
+      "description": "Party maintaining the code",
+      "properties": {
+        "@type": {
+          "description": "Type of the maintainer, https://schema.org/type",
+          "enum": [
+            "Person",
+            "Organization"
+          ]
+        },
+        "schema:identifier": {
+          "type": "string",
+          "description": "Identifier of the maintainer, https://schema.org/identifier. Recommendation to use ROR or ORCID"
+        },
+        "schema:name": {
+          "type": "string",
+          "description": "Name of the maintainer, https://schema.org/name"
+        },
+        "schema:email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email of the maintainer, https://schema.org/email"
+        },
+        "schema:url": {
+          "type": "string",
+          "format": "url",
+          "description": "URL of the maintainer, https://schema.org/url"
+        }
+      }
+    },
+    "schema:license": {
+      "type": "string",
+      "format": "url",
+      "description": "License of the service, https://schema.org/license",
+      "example": "https://opensource.org/licenses/Apache-2.0"
+    },
+    "ods:dependency": {
+      "type": "array",
+      "description": "Handles from other MAS that this MAS depends on",
+      "items": {
+        "type": "string",
+        "description": "Handle of the Machine Annotation Service that this MAS depends on",
+        "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}"
+      },
+      "examples": [
+        [
+          "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+        ]
+      ]
+    },
+    "schema:ContactPoint": {
+      "type": "object",
+      "description": "The contact point for support and information for the MAS, https://schema.org/ContactPoint",
+      "properties": {
+        "schema:description": {
+          "type": "string",
+          "description": "Description of the contact point, https://schema.org/description"
+        },
+        "schema:email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email of the contact point, https://schema.org/email"
+        },
+        "schema:url": {
+          "type": "string",
+          "format": "url",
+          "description": "Email of the contact point, https://schema.org/email"
+        },
+        "schema:telephone": {
+          "type": "string",
+          "description": "Telephone number of the contact point, https://schema.org/telephone"
+        }
+      }
+    },
+    "ods:slaDocumentation": {
+      "type": "string",
+      "description": "Link to SLA documentation"
+    },
+    "ods:topicName": {
+      "type": "string",
+      "description": "Kafka topic through which the MAS receives messages. Defaults to PID of MAS"
+    },
+    "ods:batchingPermitted": {
+      "type": "boolean",
+      "description": "Whether or not this MAS can create Batch Annotations. MAS outputs must then comply with batchMetadata, see https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation-event.json"
+    },
+    "ods:timeToLive": {
+      "type": "integer",
+      "minimum": 3600,
+      "description": "Time in milliseconds the MAS message may remain in the Kafka Queue before being marked as timed out. Min 1 hour."
+    }
+  },
+  "required": [
+    "@type",
+    "ods:ID",
+    "ods:type",
+    "schema:name",
+    "ods:containerImage",
+    "ods:containerTag",
+    "ods:batchingPermitted",
+    "ods:timeToLive"
+  ],
+  "additionalProperties": false
+}
