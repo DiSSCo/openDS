@@ -1,0 +1,348 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.1.0/identifications.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "DigitalObject Version 0.1.0",
+  "type": "object",
+  "properties": {
+    "dwc:identificationID": {
+      "type": "string",
+      "description": "Check DWC terms"
+    },
+    "???:identificationType": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "???:taxonFormula": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "dwc:verbatimIdentification": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/verbatimIdentification",
+      "examples": [
+        "Peromyscus sp."
+      ]
+    },
+    "dwc:typeStatus": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/typeStatus",
+      "example": [
+        "holotype"
+      ],
+      "$comment": "Unclear if we can make this an enumeration, which values?"
+    },
+    "dwc:identifiedBy": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identifiedBy",
+      "example": [
+        "James L. Patton"
+      ]
+    },
+    "dwc:identifiedById": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identifiedByID",
+      "example": [
+        "https://orcid.org/0000-0002-1825-0097"
+      ]
+    },
+    "dwc:dateIdentified": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/dateIdentified",
+      "example": [
+        "2009-02-20T08:40Z"
+      ]
+    },
+    "dwc:identificationReferences": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationReferences",
+      "example": [
+        "Aves del Noroeste Patagonico. Christie et al. 2004."
+      ],
+      "$comment": "Is this still needed or can we add the citation object here?"
+    },
+    "dwc:identificationVerificationStatus": {
+      "type": "boolean",
+      "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus",
+      "example": [
+        true
+      ]
+    },
+    "dwc:identificationRemarks": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationRemarks",
+      "examples": [
+        "Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas."
+      ]
+    },
+    "dwc:identificationQualifier": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationQualifier",
+      "examples": [
+        "cf. var. oxyadenia"
+      ]
+    },
+    "???:typeDesignationType": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "???:typeDesignatedBy": {
+      "type": "string",
+      "description": "Unclear yet",
+      "$comment": "Unknown what this field should be"
+    },
+    "citations": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/citations.json"
+      }
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/agent.json"
+      }
+    },
+    "taxonIdentifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dwc:taxonID": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/taxonID",
+            "examples": [
+              "https://www.gbif.org/species/212"
+            ]
+          },
+          "dwc:scientificName": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/scientificName",
+            "examples": [
+              "Roptrocerus typographi (Györfi, 1952)"
+            ]
+          },
+          "ods:scientificNameHtmlLabel": {
+            "type": "string",
+            "description": "A Hyper Text Markup Language (HTML) representation of the scientific name. Includes correct formatting of the name.",
+            "examples": [
+              "<i>Absidia ginsan</i> Komin. et al., 1952"
+            ]
+          },
+          "dwc:scientificNameAuthorship": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/scientificNameAuthorship",
+            "examples": [
+              "(Torr.) J.T. Howell"
+            ]
+          },
+          "dwc:nameAccordingTo": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/nameAccordingTo",
+            "examples": [
+              "Plants of the World Online"
+            ]
+          },
+          "dwc:namePublishedInYear": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/namePublishedInYear",
+            "examples": [
+              "2022"
+            ]
+          },
+          "dwc:taxonRank": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/taxonRank",
+            "examples": [
+              "species"
+            ]
+          },
+          "???:taxonSource": {
+            "type": "string",
+            "description": "Unclear yet",
+            "$comment": "Unknown what this field should be"
+          },
+          "dwc:taxonRemarks": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/taxonRemarks",
+            "examples": [
+              "this name is a misspelling in common use"
+            ]
+          },
+          "dwc:kingdom": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/kingdom",
+            "examples": [
+              "animalia"
+            ],
+            "$comment": "Could be an enum?"
+          },
+          "dwc:phylum": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/phylum",
+            "examples": [
+              "Chordata"
+            ]
+          },
+          "dwc:class": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/class",
+            "examples": [
+              "Hepaticopsida"
+            ]
+          },
+          "dwc:order": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/order",
+            "examples": [
+              "Carnivora"
+            ]
+          },
+          "dwc:family": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/family",
+            "examples": [
+              "Felidae"
+            ]
+          },
+          "dwc:subfamily": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/subfamily",
+            "examples": [
+              "Orchidoideae"
+            ]
+          },
+          "dwc:genus": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/genus",
+            "examples": [
+              "Puma"
+            ]
+          },
+          "dwc:specificEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/specificEpithet",
+            "examples": [
+              "concolor"
+            ]
+          },
+          "dwc:taxonomicStatus": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/taxonomicStatus",
+            "$comment": "Might become an enum",
+            "examples": [
+              "accepted"
+            ]
+          },
+          "dwc:nomenclaturalCode": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/nomenclaturalCode",
+            "$comment": "Might become an enum",
+            "examples": [
+              "ICBN"
+            ]
+          },
+          "dwc:vernacularName": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/vernacularName",
+            "examples": [
+              "Meerval | Wels | Catfish | Silure glane | Wels | Waller | Siluro | Malle"
+            ]
+          },
+          "dwc:subgenus": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/subgenus",
+            "examples": [
+              "Strobus"
+            ]
+          },
+          "dwc:acceptedNameUsage": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/acceptedNameUsage",
+            "examples": [
+              "Tamias minimus"
+            ]
+          },
+          "dwc:acceptedNameUsageID": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/acceptedNameUsageID",
+            "examples": [
+              "6W3C4"
+            ]
+          },
+          "dwc:cultivarEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/cultivarEpithet",
+            "examples": [
+              "King Edward"
+            ]
+          },
+          "dwc:genericName": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/genericName",
+            "examples": [
+              "Felis"
+            ]
+          },
+          "dwc:infragenericEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/infragenericEpithet",
+            "examples": [
+              "Abacetillus"
+            ]
+          },
+          "dwc:infraspecificEpithet": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/infraspecificEpithet",
+            "examples": [
+              "oxyadenia"
+            ]
+          },
+          "dwc:nomenclaturalStatus": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/nomenclaturalStatus",
+            "examples": [
+              "nom. illeg."
+            ]
+          },
+          "dwc:originalNameUsage": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/originalNameUsage",
+            "examples": [
+              "Pinus abies"
+            ]
+          },
+          "dwc:subtribe": {
+            "type": "string",
+            "description": "http://rs.tdwg.org/dwc/terms/subtribe",
+            "examples": [
+              "Plotinini"
+            ]
+          },
+          "dwc:superfamily": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/superfamily",
+            "examples": [
+              "Cerithioidea"
+            ]
+          },
+          "dwc:tribe": {
+            "type": "string",
+            "description": "https://rs.tdwg.org/dwc/terms/tribe",
+            "examples": [
+              "Arethuseae"
+            ]
+          }
+        },
+        "required": [
+          "dwc:scientificName"
+        ]
+      }
+    }
+  },
+  "required": [
+    "dwc:identificationVerificationStatus"
+  ]
+}

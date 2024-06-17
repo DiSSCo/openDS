@@ -1,0 +1,113 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$comment": "Annotation Version 0.3.0",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Annotation object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Assertion",
+      "description": "The type of the digital object, in this case a ods:Assertion"
+    },
+    "dwc:measurementID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/measurementID",
+      "examples": [
+        "9c752d22-b09a-11e8-96f8-529269fb1459"
+      ]
+    },
+    "dwc:parentMeasurementID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/parentMeasurementID",
+      "examples": [
+        "E1_E1_O1_M1"
+      ]
+    },
+    "dwc:measurementType": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/measurementType",
+      "examples": [
+        "length"
+      ]
+    },
+    "dwciri:measurementType": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/iri/measurementType",
+      "examples": [
+        "https://vocab.nerc.ac.uk/collection/P01/current/ODRYBM01/"
+      ]
+    },
+    "dwc:measurementDeterminedDate": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/measurementDeterminedDate",
+      "examples": [
+        "2024-05-30T15:16:00.000Z"
+      ]
+    },
+    "dwc:measurementValue": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/measurementValue",
+      "examples": [
+        "10.0"
+      ]
+    },
+    "dwciri:measurementValue": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/measurementValue",
+      "examples": [
+        "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0960/"
+      ]
+    },
+    "dwc:measurementAccuracy": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/measurementAccuracy",
+      "examples": [
+        "0.1",
+        "normal distribution with variation of 2 m"
+      ]
+    },
+    "dwc:measurementUnit": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/measurementUnit",
+      "examples": [
+        "m",
+        "cm"
+      ]
+    },
+    "dwciri:measurementUnit": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/iri/measurementUnit",
+      "examples": [
+        "http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/"
+      ]
+    },
+    "ods:assertionByAgentName": {
+      "type": "string",
+      "description": "Name of the agent who made the assertion"
+    },
+    "ods:assertionByAgentID": {
+      "type": "string",
+      "description": "ID of the agent who made the assertion, recommended to be a ORCID or Wikidata identifier"
+    },
+    "ods:assertionProtocol": {
+      "type": "string",
+      "description": "The protocol used to make the assertion"
+    },
+    "ods:assertionProtocolID": {
+      "type": "string",
+      "description": "The ID of the protocol used to make the assertion"
+    },
+    "ods:assertionRemarks": {
+      "type": "string",
+      "description": "Remarks about the assertion"
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

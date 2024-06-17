@@ -1,0 +1,30 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "ods:Mapping",
+  "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "ods:type": "https://doi.org/10.15468/1a2b3c",
+  "schema:version": 1,
+  "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
+  "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
+  "schema:dateCreated": "2021-06-01T12:00:00Z",
+  "ods:creator": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+  "ods:Mapping": {
+    "ods:DefaultMapping": [
+      {
+        "ods:physicalSpecimenIdType": "cetaf"
+      },
+      {
+        "ods:type": "ZoologyVertebrateSpecimen"
+      },
+      {
+        "ods:organisationId": "https://ror.org/05xg72x27"
+      }
+    ],
+    "ods:FieldMapping": [
+      {
+        "ods:physicalSpecimenId": "dwc:catalogNumber"
+      }
+    ]
+  },
+  "ods:mappingDataStandard": "dwc"
+}

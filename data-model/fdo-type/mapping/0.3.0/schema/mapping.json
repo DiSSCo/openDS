@@ -1,0 +1,131 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/mapping.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Mapping Version 0.3.0",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Mapping object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:Mapping",
+      "const": "ods:Mapping"
+    },
+    "ods:ID": {
+      "type": "string",
+      "description": "Handle of the Mapping",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:type": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/10.15468/1a2b3c"
+      ]
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version of the Mapping, https://schema.org/version"
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Mapping as provided by the user, https://schema.org/name",
+      "examples": [
+        "Default Mapping for Herbarium of University of Coimbra (COI)"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Mapping as provided by the user, https://schema.org/description",
+      "examples": [
+        "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard."
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "ods:dateTombstoned": {
+      "type": "string",
+      "description": "Timestamp Mapping was tombstoned and no longer active. Generated on request of the user",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "ods:creator": {
+      "type": "string",
+      "description": "The internal user ID of the creator of the Mapping",
+      "examples": [
+        "e2befba6-9324-4bb4-9f41-d7dfae4a44b0"
+      ]
+    },
+    "ods:Mapping": {
+      "type": "object",
+      "description": "The Mapping Class containing two types of mapping objects (Default and Field)",
+      "properties": {
+        "ods:DefaultMapping": {
+          "type": "array",
+          "description": "A mapping object setting default values for ods terms. These default mappings will be set for each record in the dataset. Key is the ods term, value the default value to use",
+          "examples": [
+            [
+              {
+                "ods:physicalSpecimenIdType": "cetaf"
+              },
+              {
+                "ods:type": "ZoologyVertebrateSpecimen"
+              },
+              {
+                "ods:organisationId": "https://ror.org/05xg72x27"
+              }
+            ]
+          ]
+        },
+        "ods:FieldMapping": {
+          "type": "array",
+          "description": "Setting an explicit mapping for an ods term to a term from the incoming dataset. Key is the ods term, value the incoming data standard term",
+          "examples": [
+            [
+              {
+                "ods:physicalSpecimenId": "dwc:catalogNumber"
+              }
+            ]
+          ]
+        }
+      }
+    },
+    "ods:mappingDataStandard": {
+      "description": "Type of data standard we are mapping to",
+      "enum": [
+        "dwc",
+        "abcd",
+        "abcdefg"
+      ]
+    }
+  },
+  "required": [
+    "@type",
+    "ods:ID",
+    "ods:type",
+    "schema:version",
+    "schema:dateCreated",
+    "ods:creator",
+    "ods:mappingDataStandard"
+  ],
+  "additionalProperties": false
+}

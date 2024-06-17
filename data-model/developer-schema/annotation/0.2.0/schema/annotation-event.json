@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.2.0/annotation-event.json",
+  "description": "Object sent to annotation processing service",
+  "properties": {
+    "@type": {
+      "@type": {
+        "type": "string",
+        "description": "The type of the object, in this case ods:BatchMetaData",
+        "const": "ods:AnnotationEvent"
+      }
+    },
+    "ods:hasAnnotation": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/developer-schemas/annotations/0.2.0/annotation-for-mas.json"
+      }
+    },
+    "ods:jobID": {
+      "type": "string",
+      "description": "Handle of the job record, if the annotation was produced by a Machine Annotation Service",
+      "pattern": "https:\/\/hdl\\.handle\\.net\/\\w+\/(.){3}-(.){3}-(.){3}"
+    },
+    "ods:hasBatchMetadata": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "@type": {
+            "type": "string",
+            "description": "The type of the object, in this case ods:BatchMetaData",
+            "const": "ods:BatchMetaData"
+          },
+          "ods:placeInBatch": {
+            "type": "integer",
+            "description": "The place in the batch",
+            "minimum": 0
+          },
+          "ods:inputField": {
+            "type": "string"
+          },
+          "ods:inputValue": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "required": [
+      "@type",
+      "ods:hasAnnotation",
+      "ods:jobID"
+    ],
+    "additionalProperties": false
+  }
+}

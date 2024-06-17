@@ -1,0 +1,56 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/9FS-W6R-L1L/2",
+  "@type": "ods:CreateUpdateTombstoneEvent",
+  "ods:ID": "https://hdl.handle.net/20.5000.1025/9FS-W6R-L1L/2",
+  "ods:type": "https://doi.org/10.15468/1a2b3c",
+  "prov:Activity": {
+    "@id": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507",
+    "@type": "ods:Update",
+    "prov:wasAssociatedWith": "https://hdl.handle.net/20.5000.1025/ASC-WQW-AAU/2",
+    "prov:endedAtTime": "2024-06-11T09:14:00Z",
+    "prov:used": "https://hdl.handle.net/20.5000.1025/9FS-W6R-L1L/2",
+    "rdfs:comment": "Object has been updated",
+    "ods:changeValue": [
+      {
+        "op": "replace",
+        "path": "/description",
+        "value": "This is the mapping for the Antropoda Varia Collection in München"
+      }
+    ]
+  },
+  "prov:Entity": {
+    "@id": "https://hdl.handle.net/20.5000.1025/9FS-W6R-L1L/2",
+    "@type": "ods:Mapping",
+    "prov:value": {
+      "id": "TEST/9FS-W6R-L1L",
+      "version": 2,
+      "created": 1718097249.00684,
+      "deleted": null,
+      "creator": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+      "mapping": {
+        "fieldMapping": {
+          "mapping": [],
+          "defaults": [
+            {
+              "ods:physicalSpecimenIdType": "global"
+            },
+            {
+              "ods:organisationId": "https://ror.org/05th1v540"
+            }
+          ]
+        },
+        "name": "The Arthropoda Varia Collection at the Zoologische Staatssammlung München",
+        "description": "This is the mapping for the Antropoda Varia Collection in München",
+        "sourceDataStandard": "abcd"
+      }
+    },
+    "prov:wasGeneratedBy": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507",
+    "prov:wasRevisionOf": "https://hdl.handle.net/20.5000.1025/9FS-W6R-L1L/1",
+    "prov:wasAttributedTo": "https://hdl.handle.net/20.5000.1025/ASC-WQW-AAU/2"
+  },
+  "prov:Agent": {
+    "@id": "https://hdl.handle.net/20.5000.1025/ASC-WQW-AAU/2",
+    "@type": "prov:SoftwareAgent",
+    "foaf:name": "orchestration-backend"
+  }
+}
