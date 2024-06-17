@@ -16,8 +16,8 @@
     },
     "@type": {
       "type": "string",
-      "description": "The type of the object, in this case oa:Annotation",
-      "const": "oa:Annotation"
+      "description": "The type of the object, in this case ods:Annotation",
+      "const": "ods:Annotation"
     },
     "ods:ID": {
       "type": "string",
@@ -37,8 +37,8 @@
     },
     "rdf:type": {
       "type": "string",
-      "description": "The type of the annotation. It is always oa:Annotation. https://www.w3.org/TR/rdf12-schema/#ch_type",
-      "const": "oa:Annotation"
+      "description": "The type of the annotation. It is always ods:Annotation. https://www.w3.org/TR/rdf12-schema/#ch_type",
+      "const": "ods:Annotation"
     },
     "ods:version": {
       "type": "integer",
