@@ -271,6 +271,13 @@
         "Hummingbirds"
       ]
     },
+    "dwc:datasetID": {
+      "type": "string",
+      "description": "http://rs.tdwg.org/dwc/terms/datasetID",
+      "examples": [
+        "b15d4952-7d20-46f1-8a3e-556a512b04c5"
+      ]
+    },
     "dcterms:accessRights": {
       "type": "string",
       "description": "https://purl.org/dc/terms/accessRights",
