@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.2.0/annotation-for-mas.json",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.2.0/annotation-event.json",
   "description": "Object sent to annotation processing service",
   "properties": {
     "@type": {
@@ -43,7 +43,8 @@
             "type": "string"
           }
         }
-      }
+      },
+      "additionalProperties": false
     },
     "required": [
       "@type",

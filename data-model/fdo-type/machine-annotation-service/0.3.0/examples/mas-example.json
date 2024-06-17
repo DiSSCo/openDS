@@ -22,7 +22,7 @@
       "Other Geodiversity",
       "Unclassified"
     ],
-    "$.occurrences[*].location.dwc:locality": [
+    "$.hasEvent[*].location.dwc:locality": [
       "*"
     ]
   },

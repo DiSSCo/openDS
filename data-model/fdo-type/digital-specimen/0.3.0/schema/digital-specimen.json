@@ -409,6 +409,7 @@
     "ods:type",
     "ods:created",
     "ods:midsLevel",
+    "ods:normalisedPhysicalSpecimenID",
     "ods:physicalSpecimenID",
     "ods:physicalSpecimenIDType",
     "ods:sourceSystemID",

@@ -29,7 +29,7 @@
         "Registratie nummer"
       ]
     },
-    "dcterms:identifier":{
+    "dcterms:identifier": {
       "type": "string",
       "description": "The value for the identifier, https://purl.org/dc/terms/identifier",
       "examples": [
@@ -41,24 +41,27 @@
       "type": "string",
       "description": "Mime type of content returned by identifier in case the identifier is resolvable. https://purl.org/dc/terms/format",
       "examples": [
-        "application/rdf+xml"
+        "application/json"
       ]
     },
     "dcterms:subject": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/subject"
+      "description": "Keywords qualifying the identifier https://purl.org/dc/terms/subject",
+      "examples": [
+        "erecolnat"
+      ]
     },
     "ods:isPartOfLabel": {
       "type": "boolean",
-      "description": "Is the identifier part of the physical label"
+      "description": "Indicates whether the identifier is part of the physical label"
     },
     "ods:isBarcodeOrNFC": {
       "type": "boolean",
-      "description": "Part of barcode or nfc chip"
+      "description": "Indicates whether the identifier is part of the barcode or nfc chip"
     },
-    "ods:isIdPersistent": {
+    "ods:isIDPersistent": {
       "type": "boolean",
-      "description": "Is the identifier persistent"
+      "description": "Indicates whether the identifier is a persistent identifier"
     }
   },
   "required": [

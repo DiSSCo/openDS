@@ -117,7 +117,7 @@
                   "type": "string",
                   "description": "The full jsonPath of the field being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
                   "examples": [
-                    "$.occurrences[0].location.dwc:country"
+                    "$.hasEvent[0].location.dwc:country"
                   ]
                 }
               },
@@ -139,7 +139,7 @@
                   "type": "string",
                   "description": "The full jsonPath of the class being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
                   "examples": [
-                    "$.occurrences[0].location.georeference"
+                    "$.hasEvent[0].location.georeference"
                   ]
                 }
               },

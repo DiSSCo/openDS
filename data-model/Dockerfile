@@ -42,7 +42,7 @@ COPY fdo-type/source-system/0.3.0/schema schema-root/schemas/fdo-type/source-sys
 COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/0.1.0
 COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/vitual-collection/0.1.0
 
-# Versioned FDO Type schemas
+# Latest FDO Type schemas
 COPY fdo-type/annotation/0.3.0/schema schema-root/schemas/fdo-type/annotation/latest
 COPY fdo-type/create-update-tombstone-event/0.3.0/schema schema-root/schemas/fdo-type/create-update-tombstone-event/latest
 COPY fdo-type/digital-entity/0.3.0/schema schema-root/schemas/fdo-type/digital-entity/latest
