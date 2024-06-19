@@ -191,6 +191,7 @@
     },
     "ods:GeoReference": {
       "type": "object",
+      "description": "An object which describes the geographical reference of the location of the specimen.",
       "properties": {
         "@id": {
           "type": "string",
@@ -338,9 +339,6 @@
           "examples": [
             "Assumed distance by road (Hwy. 101)"
           ]
-        },
-        "ods:preferredSpatialRepresentation": {
-          "type": "string"
         }
       },
       "required": [
@@ -350,6 +348,7 @@
     },
     "ods:GeologicalContext": {
       "type": "object",
+      "description": "An object which describes the geological context of th location of the specimen.",
       "properties": {
         "@id": {
           "type": "string",

@@ -270,6 +270,7 @@
     },
     "ods:hasAssertion": {
       "type": "array",
+      "description": "Contains zero or more ods:Assertion objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/assertion.json"
@@ -277,6 +278,7 @@
     },
     "ods:Location": {
       "type": "object",
+      "description": "Contains an object of type ods:Location",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/location.json"
     }
   },

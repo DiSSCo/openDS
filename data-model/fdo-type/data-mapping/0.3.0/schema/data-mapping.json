@@ -1,7 +1,7 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/mapping.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/data-mapping.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Mapping Version 0.3.0",
+  "$comment": "Data Mapping Version 0.3.0",
   "type": "object",
   "properties": {
     "@id": {
@@ -14,8 +14,8 @@
     },
     "@type": {
       "type": "string",
-      "description": "The type of the object, in this case ods:Mapping",
-      "const": "ods:Mapping"
+      "description": "The type of the object, in this case ods:DataMapping",
+      "const": "ods:DataMapping"
     },
     "ods:ID": {
       "type": "string",
@@ -75,39 +75,33 @@
         "e2befba6-9324-4bb4-9f41-d7dfae4a44b0"
       ]
     },
-    "ods:Mapping": {
-      "type": "object",
-      "description": "The Mapping Class containing two types of mapping objects (Default and Field)",
-      "properties": {
-        "ods:DefaultMapping": {
-          "type": "array",
-          "description": "A mapping object setting default values for ods terms. These default mappings will be set for each record in the dataset. Key is the ods term, value the default value to use",
-          "examples": [
-            [
-              {
-                "ods:physicalSpecimenIdType": "cetaf"
-              },
-              {
-                "ods:type": "ZoologyVertebrateSpecimen"
-              },
-              {
-                "ods:organisationId": "https://ror.org/05xg72x27"
-              }
-            ]
-          ]
-        },
-        "ods:FieldMapping": {
-          "type": "array",
-          "description": "Setting an explicit mapping for an ods term to a term from the incoming dataset. Key is the ods term, value the incoming data standard term",
-          "examples": [
-            [
-              {
-                "ods:physicalSpecimenId": "dwc:catalogNumber"
-              }
-            ]
-          ]
-        }
-      }
+    "ods:DefaultMapping": {
+      "type": "array",
+      "description": "A mapping object setting default values for ods terms. These default mappings will be set for each record in the dataset. Key is the ods term, value the default value to use",
+      "examples": [
+        [
+          {
+            "ods:physicalSpecimenIdType": "cetaf"
+          },
+          {
+            "ods:type": "ZoologyVertebrateSpecimen"
+          },
+          {
+            "ods:organisationId": "https://ror.org/05xg72x27"
+          }
+        ]
+      ]
+    },
+    "ods:FieldMapping": {
+      "type": "array",
+      "description": "Setting an explicit mapping for an ods term to a term from the incoming dataset. Key is the ods term, value the incoming data standard term",
+      "examples": [
+        [
+          {
+            "ods:physicalSpecimenId": "dwc:catalogNumber"
+          }
+        ]
+      ]
     },
     "ods:mappingDataStandard": {
       "description": "Type of data standard we are mapping to",

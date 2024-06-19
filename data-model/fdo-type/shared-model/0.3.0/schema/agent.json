@@ -71,6 +71,7 @@
     },
     "ods:hasIdentifier": {
       "type": "array",
+      "description": "Contains zero or more ods:Identifier objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/identifier.json"

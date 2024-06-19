@@ -66,10 +66,11 @@
     },
     "oa:hasTarget": {
       "type": "object",
+      "description": "Indicates the particular object and part of the object on which the annotation has been made.",
       "properties": {
         "@id": {
           "type": "string",
-          "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation. ",
+          "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
           "examples": [
             "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
             "https://doi.org/10.22/XXX-XXX-XXX"
@@ -220,6 +221,7 @@
     },
     "oa:hasBody": {
       "type": "object",
+      "description": "The body of the annotation contains the specific value of the annotation",
       "properties": {
         "@type": {
           "type": "string",
@@ -228,6 +230,7 @@
         },
         "oa:value": {
           "type": "array",
+          "description": "An array of multiple values in string representation specific for the particular selector",
           "items": {
             "type": "string",
             "description": "The textual content of the body. This could be a simple string value for commenting or editing of a single field. It could also be the string representation of the json for a class",
@@ -354,6 +357,7 @@
     },
     "schema:AggregateRating": {
       "type": "object",
+      "description": "The average rating based on multiple ratings or reviews",
       "properties": {
         "@type": {
           "type": "string",
