@@ -97,7 +97,7 @@
         "biocase"
       ]
     },
-    "ods:mappingID": {
+    "ods:dataMappingID": {
       "type": "string",
       "description": "The Handle of the Mapping Object needed for this Source System",
       "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
