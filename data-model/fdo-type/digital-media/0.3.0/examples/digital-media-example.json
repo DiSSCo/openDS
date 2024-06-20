@@ -1,6 +1,6 @@
 {
   "@id": "https://doi.org/10.22/ABC-DEF-GHI",
-  "@type": "ods:DigitalEntity",
+  "@type": "ods:DigitalMedia",
   "ods:ID": "https://doi.org/10.22/ABC-DEF-GHI",
   "ods:version": 1,
   "ods:created": "2024-06-05T12:34:56Z",

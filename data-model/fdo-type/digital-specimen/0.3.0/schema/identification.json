@@ -90,6 +90,7 @@
     },
     "ods:hasCitation": {
       "type": "array",
+      "description": "Can contain zero to more ods:Citation objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/citation.json"
@@ -97,6 +98,7 @@
     },
     "ods:hasTaxonIdentification": {
       "type": "array",
+      "description": "Can contain zero to more ods:TaxonIdentification objects",
       "items": {
         "type": "object",
         "properties": {

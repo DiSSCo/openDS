@@ -1,34 +1,22 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-entity/0.3.0/digital-entity.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-media/0.1.0/digital-media.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Digital Entity Version 0.3.0",
+  "$comment":"DigitalObject Version 0.1.0",
   "type": "object",
   "properties": {
-    "@id": {
-      "type": "string",
-      "description": "The unique identifier of the object",
-      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+\/(\\w){3}-(\\w){3}-(\\w){3}",
-      "examples": [
-        "https://doi.org/10.22/XXX-XXX-XXX"
-      ]
-    },
-    "@type": {
-      "type": "string",
-      "description": "The type of the object, in this cas ods:DigitalEntity",
-      "const": "ods:DigitalEntity"
-    },
-    "ods:ID": {
+    "ods:id": {
       "type": "string",
       "description": "The unique digital identifier of the object",
-      "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "pattern": "https:\/\/hdl.handle.net\/20.5000.1025\/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://hdl.handle.net.org/20.5000.1025/XXX-XXX-XXX"
-      ]
+      ],
+      "$comment": "Does an image get a DOI or a handle?"
     },
     "ods:version": {
       "type": "integer",
       "description": "The version of the object, each change generates a new version",
-      "minimum": 1,
+      "minimum": 0,
       "examples": [
         1
       ]
@@ -42,13 +30,11 @@
     },
     "ods:type": {
       "type": "string",
-      "description": "The DOI to the FDO type of the object",
-      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
-      "examples": [
-        "https://doi.org/10.15468/1a2b3c"
-      ]
+      "description": "The FDO type of the object",
+      "$comment": "Unclear what value goes here"
     },
     "dcterms:type": {
+      "type": "string",
       "description": "https://purl.org/dc/terms/type",
       "enum": [
         "Collection",
@@ -65,34 +51,42 @@
         "Text"
       ]
     },
-    "ac:accessURI": {
+    "ac:accessUri": {
       "type": "string",
       "description": "https://rs.tdwg.org/ac/terms/accessURI",
       "examples": [
       ]
     },
-    "dwc:institutionID": {
+    "dwc:institutionId": {
       "type": "string",
       "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
-      "pattern": "^(https?:\/\/ror\\.org\/0\\w{6}[0-9]{2})|^(https?:\/\/www\\.wikidata\\.org\/wiki\/Q\\w+)",
       "examples": [
         "https://ror.org/015hz7p22"
-      ]
+      ],
+      "$comment": "Add format for ROR or Wikidata ID"
     },
-    "ods:institutionName": {
+    "dwc:institutionName": {
       "type": "string",
       "description": "Full museum name according to ROR or Wikidata",
       "examples": [
         "National Museum of Natural History"
-      ]
+      ],
+      "$comment": "Not part of DWC or the GBIF UM"
+    },
+    "xmpRights:webStatement": {
+      "type": "string",
+      "description": "https://ns.adobe.com/xap/1.0/rights/WebStatement",
+      "$comment": "What is the difference with dcterms:license?"
     },
     "dcterms:format": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/format"
+      "description": "https://purl.org/dc/terms/format",
+      "$comment": "Create a enum for this?"
     },
     "dcterms:license": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/license"
+      "description": "https://purl.org/dc/terms/license",
+      "$comment": "Create a enum for this?"
     },
     "dcterms:description": {
       "type": "string",
@@ -100,19 +94,33 @@
     },
     "dcterms:rights": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/rights"
+      "description": "https://purl.org/dc/terms/rights",
+      "$comment": "What is the difference with dcterms:license?"
+    },
+    "???:rightsUri": {
+      "type": "string",
+      "format": "uri",
+      "$comment": "What is the difference with dcterms:license? or dcterms:rights?. dcterms:rights is already recommended to be a URI"
     },
     "dcterms:accessRights": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/accessRights"
+      "description": "https://purl.org/dc/terms/accessRights",
+      "$comment": "What is the difference with dcterms:license?"
     },
     "dcterms:rightsHolder": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/rightsHolder"
+      "description": "https://purl.org/dc/terms/rightsHolder",
+      "examples": [
+      ]
     },
     "dcterms:source": {
       "type": "string",
       "description": "https://purl.org/dc/terms/source"
+    },
+    "???:sourceUri": {
+      "type": "string",
+      "format": "uri",
+      "$comment": "It is already recommended to use URI in the dcterms:source"
     },
     "dcterms:creator": {
       "type": "string",
@@ -126,48 +134,42 @@
       "type": "string",
       "description": "https://purl.org/dc/terms/modified"
     },
-    "ods:hasAssertion": {
+    "assertions": {
       "type": "array",
       "items": {
-        "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/assertions.json"
       }
     },
-    "ods:hasCitation": {
+    "citations": {
       "type": "array",
       "items": {
-        "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/citation.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/citations.json"
       }
     },
-    "ods:hasIdentifier": {
+    "identifiers": {
       "type": "array",
       "items": {
-        "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/identifier.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/identifiers.json"
       }
     },
-    "ods:hasEntityRelationship": {
+    "entityRelationships": {
       "type": "array",
       "items": {
-        "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/entity-relationship.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/entity-relationships.json"
       }
     },
-    "ods:hasAgent": {
+    "agents": {
       "type": "array",
       "items": {
-        "type": "object",
-            "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
-          }
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.1.0/agent.json"
+      }
     }
   },
   "required": [
-    "@id",
-    "@type",
-    "ods:ID",
+    "ods:id",
     "ods:version",
     "ods:created",
-    "ac:accessURI"
+    "ac:accessUri",
+    "dcterms:license"
   ]
 }

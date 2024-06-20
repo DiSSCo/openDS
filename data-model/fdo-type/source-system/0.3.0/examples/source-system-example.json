@@ -11,5 +11,5 @@
   "schema:url": "http://ipt.gbif.pt/ipt/archive.do?r=coi",
   "ltc:collectionManagementSystem": "Specify 7",
   "ods:translatorType": "dwca",
-  "ods:mappingID": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ"
+  "ods:dataMappingID": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ"
 }

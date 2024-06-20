@@ -346,6 +346,7 @@
     },
     "ods:hasMaterialEntity": {
       "type": "array",
+      "description": "Contains zero or more ods:MaterialEntity objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/material-entity.json"
@@ -353,6 +354,7 @@
     },
     "ods:hasIdentification": {
       "type": "array",
+      "description": "Contains zero or more ods:Identification objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/identification.json"
@@ -360,6 +362,7 @@
     },
     "ods:hasAssertion": {
       "type": "array",
+      "description": "Contains zero or more ods:Assertion objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json"
@@ -367,6 +370,7 @@
     },
     "ods:hasEvent": {
       "type": "array",
+      "description": "Contains zero or more ods:Event objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/event.json"
@@ -374,6 +378,7 @@
     },
     "ods:hasEntityRelationship": {
       "type": "array",
+      "description": "Contains zero or more ods:EntityRelationship objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/entity-relationship.json"
@@ -381,6 +386,7 @@
     },
     "ods:hasCitation": {
       "type": "array",
+      "description": "Contains zero or more ods:Citation objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/citation.json"
@@ -388,6 +394,7 @@
     },
     "ods:hasIdentifier": {
       "type": "array",
+      "description": "Contains zero or more ods:Identifier objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/identifier.json"
@@ -395,6 +402,7 @@
     },
     "ods:hasChronometricAge": {
       "type": "array",
+      "description": "Contains zero or more ods:ChronometricAge objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/chronometric-age.json"
@@ -402,6 +410,7 @@
     },
     "ods:hasAgent": {
       "type": "array",
+      "description": "Contains zero or more ods:Agent objects",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"

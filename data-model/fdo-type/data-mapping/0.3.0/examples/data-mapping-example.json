@@ -1,6 +1,6 @@
 {
   "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
-  "@type": "ods:Mapping",
+  "@type": "ods:DataMapping",
   "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
   "schema:version": 1,
