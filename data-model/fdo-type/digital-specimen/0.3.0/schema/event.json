@@ -273,7 +273,7 @@
       "description": "Contains zero or more ods:Assertion objects",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/assertion.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json"
       }
     },
     "ods:Location": {
