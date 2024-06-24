@@ -335,13 +335,9 @@
       ]
     },
     "dwc:dynamicProperties": {
-      "type": "object",
+      "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/dynamicProperties",
-      "examples": [
-        {
-          "relativeHumidity": 28,
-          "airTemperatureInCelsius": 22
-        }
+      "examples": ["{\"relativeHumidity\": 28,\"airTemperatureInCelsius\": 22}"
       ]
     },
     "ods:hasMaterialEntity": {
