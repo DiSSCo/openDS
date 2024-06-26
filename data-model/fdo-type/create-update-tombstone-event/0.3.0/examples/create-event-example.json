@@ -1,19 +1,33 @@
 {
-  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
+  "@id": "https://doi.org/TEST/PGD-QGK-S0R/1",
   "@type": "ods:CreateUpdateTombstoneEvent",
-  "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
+  "ods:ID": "https://doi.org/TEST/PGD-QGK-S0R/1",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
   "prov:Activity": {
     "@id": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507",
     "@type": "ods:Create",
-    "prov:wasAssociatedWith": "https://orcid.org/0000-0002-1825-0097",
+    "prov:wasAssociatedWith": [
+      {
+        "@id": "https://orcid.org/0000-0002-1825-0097",
+        "prov:hadRole": "ods:Approver"
+      },
+      {
+        "@id": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "prov:hadRole": "ods:Requestor"
+      },
+      {
+        "@id": "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX",
+        "prov:hadRole": "ods:Generator"
+      }
+    ],
     "prov:endedAtTime": "2024-06-11T09:14:00Z",
-    "prov:used": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
-    "rdfs:comment": "This activity was created by the user"
+    "prov:used": "https://doi.org/10.15468/1a2b3c/3",
+    "rdfs:comment": "This activity was created by the user",
+    "ods:changeValue": []
   },
   "prov:Entity": {
-    "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/1",
-    "@type": "ods:Mapping",
+    "@id": "https://doi.org/TEST/PGD-QGK-S0R/1",
+    "@type": "ods:DigitalSpecimen",
     "prov:value": {
       "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
       "@type": "ods:Mapping",
@@ -44,12 +58,23 @@
       },
       "ods:mappingDataStandard": "dwc"
     },
-    "prov:wasGeneratedBy": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507",
-    "prov:wasAttributedTo": "https://orcid.org/0000-0002-1825-0097"
+    "prov:wasGeneratedBy": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507"
   },
-  "prov:Agent": {
-    "@id": "https://orcid.org/0000-0002-1825-0097",
-    "@type": "prov:Person",
-    "foaf:name": "John Doe"
-  }
+  "ods:hasProvAgent": [
+    {
+      "@id": "https://orcid.org/0000-0002-1825-0097",
+      "@type": "prov:Person",
+      "foaf:name": "John Doe"
+    },
+    {
+      "@id": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+      "@type": "prov:SoftwareAgent",
+      "foaf:name": "GBIF Linker Service"
+    },
+    {
+      "@id": "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX",
+      "@type": "prov:SoftwareAgent",
+      "foaf:name": "Digital Specimen Processor"
+    }
+  ]
 }
