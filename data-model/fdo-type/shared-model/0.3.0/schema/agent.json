@@ -2,6 +2,7 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Agent object Version 0.3.0",
+  "title": "Agent",
   "type": "object",
   "properties": {
     "@id": {

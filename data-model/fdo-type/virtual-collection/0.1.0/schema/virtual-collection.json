@@ -1,7 +1,8 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtualcollection/0.1.0/virtualcollection.json",
+    "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtualcollection/0.1.0/virtualcollection.json",
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$comment": "DigitalObject Version 0.1.0",
+    "title": "VirtualCollection",
     "type": "object",
     "properties": {
         "ods:id": {
@@ -133,22 +134,35 @@
                         },
                         "description": "Value or configuration of the filter.",
                         "examples": [
-                            ["Netherlands", "Belgium"],
-                            ["1"]
+                            [
+                                "Netherlands",
+                                "Belgium"
+                            ],
+                            [
+                                "1"
+                            ]
                         ]
                     }
                 },
-                "required": ["filterKey", "filterValue"]
+                "required": [
+                    "filterKey",
+                    "filterValue"
+                ]
             },
             "examples": [
                 [
                     {
                         "filterKey": "country",
-                        "filterValue": ["Netherlands", "Belgium"]
+                        "filterValue": [
+                            "Netherlands",
+                            "Belgium"
+                        ]
                     },
                     {
                         "filterKey": "midsLevel",
-                        "filterValue": ["1"]
+                        "filterValue": [
+                            "1"
+                        ]
                     }
                 ]
             ]

@@ -1,9 +1,10 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/mas.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Machine Annotation Service Version 0.3.0",
+  "title": "MachineAnnotationService",
   "type": "object",
   "description": "Automated annotation services that enhance biodiversity data",
-  "$comment": "Machine Annotation Service Version 0.3.0",
   "properties": {
     "@id": {
       "type": "string",

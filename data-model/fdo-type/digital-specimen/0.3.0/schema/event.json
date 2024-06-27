@@ -2,6 +2,7 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/event.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Event Version 0.3.0",
+  "title": "Event",
   "type": "object",
   "properties": {
     "@id": {
