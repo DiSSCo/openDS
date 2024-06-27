@@ -1,9 +1,10 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/identifier.json",
-  "description": "Based on https://rs.gbif.org/extension/gbif/1.0/identifier.xml but includes ods specific terms",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Identifier object Version 0.3.0",
+  "title": "Identifier",
   "type": "object",
+  "description": "Based on https://rs.gbif.org/extension/gbif/1.0/identifier.xml but includes ods specific terms",
   "properties": {
     "@id": {
       "type": "string",

@@ -1,12 +1,13 @@
 {
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Assertion Version 0.3.0",
+  "title": "Assertion",
   "type": "object",
-  "$comment": "Annotation Version 0.3.0",
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the Annotation object."
+      "description": "The identifier for the Assertion object."
     },
     "@type": {
       "type": "string",

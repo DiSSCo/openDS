@@ -2,6 +2,7 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/create-update-delete-tombstone-event/0.3.0/create-update-delete-tombstone-event.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Create Update Tombstone Event Version 0.3.0",
+  "title": "CreateUpdateTombstoneEvent",
   "type": "object",
   "properties": {
     "@id": {

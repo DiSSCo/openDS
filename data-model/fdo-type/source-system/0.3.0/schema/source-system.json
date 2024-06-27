@@ -2,6 +2,7 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/source-system/0.3.0/source-system.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Source System Version 0.3.0",
+  "title": "SourceSystem",
   "type": "object",
   "properties": {
     "@id": {
