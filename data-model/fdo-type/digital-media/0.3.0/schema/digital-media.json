@@ -2,6 +2,7 @@
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-media/0.3.0/digital-media.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Digital Media Version 0.3.0",
+  "title": "DigitalMedia",
   "type": "object",
   "properties": {
     "@id": {
