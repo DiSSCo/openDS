@@ -45,8 +45,25 @@ Most of these terms come from the MeasurementOrFact class.
 Includes more dcterms instead of ods terms.
 We did not copy the class as our Identifier class is broader and includes additional ods terms.
 
-## Changed dwc:InstitutionName to ods:InstitutionName
+## Changed dwc:InstitutionName to ods:OrganisationName
 Institution name is not part of the Darwin Core standard, so we changed it to ods:InstitutionName.
+
+## Change InstitutionXXX terms to OrganisationXXX
+Institution was determined to narrow for the usage. 
+Organisation fits the purpose better. 
+
+## Added ODS status to all Digital Objects
+An object can be in draft, active or tombstone state.
+
+## Added optional object TombstoneMetadata to all Digital Objects
+This object contains information about the tombstone state of the object.
+It will be present when the ODS status of the object is tombstone.
+
+## Reworked the ods:Agent object to be in line with international standards
+Make use of schema.org terms for the Agent object.
+This makes it more generic and it is now used in all Digital Objects (not just DigitalSpecimen and DigitalMedia0)
+It is a bit more generic then it used to be but that also makes it more flexible.
+It reduces redundancy between the different Digital Objects
 
 ## Other
 Small changes in description for some terms.

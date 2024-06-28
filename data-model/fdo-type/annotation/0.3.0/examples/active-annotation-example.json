@@ -3,6 +3,7 @@
   "@type": "ods:Annotation",
   "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
   "rdf:type": "ods:Annotation",
+  "ods:status": "ods:Active",
   "ods:version": 1,
   "oa:motivation": "oa:commenting",
   "oa:hasTarget": {
@@ -23,15 +24,14 @@
   },
   "dcterms:creator": {
     "@id": "https://orcid.org/0000-0002-5669-2769",
-    "@type": "foaf:Person",
-    "foaf:name": "John Doe"
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
   },
   "dcterms:created": "2024-06-27T12:00:00Z",
   "as:generator": {
     "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
     "@type": "as:Application",
-    "foaf:name": "Annotation Generator Service"
+    "schema:name": "Annotation Generator Service"
   },
-  "dcterms:issued": "2024-06-27T12:00:00Z",
-  "ods:annotationStatus": "ods:Active"
+  "dcterms:issued": "2024-06-27T12:00:00Z"
 }

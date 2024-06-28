@@ -34,17 +34,17 @@
     {
       "@id": "https://orcid.org/0000-0002-1825-0097",
       "@type": "prov:Person",
-      "foaf:name": "John Doe"
+      "schema:name": "John Doe"
     },
     {
       "@id": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
       "@type": "prov:SoftwareAgent",
-      "foaf:name": "GBIF Linker Service"
+      "schema:name": "GBIF Linker Service"
     },
     {
       "@id": "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX",
       "@type": "prov:SoftwareAgent",
-      "foaf:name": "Digital Specimen Processor"
+      "schema:name": "Digital Specimen Processor"
     }
   ]
 }

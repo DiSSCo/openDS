@@ -2,7 +2,7 @@
   "@id": "https://doi.org/SANDBOX/XY7-ZMP-5J4",
   "@type": "ods:DigitalSpecimen",
   "ods:version": 1,
-  "ods:status": "ods:Active",
+  "ods:status": "ods:Tombstone",
   "ods:created": "2024-05-29T07:10:56.269509Z",
   "ods:type": "https://doi.org/21.T11148/894b1e6cad57e921764e",
   "ods:midsLevel": 1,
@@ -124,5 +124,21 @@
       "ods:identifierValue": "RMNH.AVES.121559"
     }
   ],
-  "ods:hasChronometricAge": []
+  "ods:hasChronometricAge": [],
+  "ods:TombstoneMetadata": {
+    "@type": "ods:Tombstone",
+    "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+    "ods:tombstonedReason": "This digital media was removed as it showed the wrong specimen",
+    "ods:TombstonedByAgent": {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:name": "John Doe"
+    },
+    "ods:hasRelatedPID": [
+      {
+        "ods:ID": "https://doi.org/10.1234/abcd",
+        "ods:relationshipType": "ods:isDuplicateOf"
+      }
+    ]
+  }
 }

@@ -33,7 +33,8 @@
     },
     "dcterms:creator": {
       "type": "string",
-      "description": "https://purl.org/dc/elements/1.1/creator"
+      "description": "The creator of the citation",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:citationPageNumber": {
       "type": "string",

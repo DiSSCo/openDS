@@ -34,6 +34,14 @@
         "https://doi.org/10.15468/1a2b3c"
       ]
     },
+    "ods:status": {
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object"
+    },
     "schema:version": {
       "type": "integer",
       "minimum": 1,
@@ -61,20 +69,10 @@
         "2021-06-01T12:00:000Z"
       ]
     },
-    "ods:dateTombstoned": {
+    "schema:creator": {
       "type": "string",
-      "description": "Timestamp SourceSystem was tombstoned and no longer active. Generated on request of the user",
-      "format": "date-time",
-      "examples": [
-        "2021-06-01T12:00:000Z"
-      ]
-    },
-    "ods:creator": {
-      "type": "string",
-      "description": "The internal user ID of the creator of the Source System",
-      "examples": [
-        "e2befba6-9324-4bb4-9f41-d7dfae4a44b0"
-      ]
+      "description": "The creator of the Source System",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "schema:url": {
       "type": "string",
@@ -105,6 +103,11 @@
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
+    },
+    "ods:TombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone.json"
     }
   },
   "required": [
@@ -113,7 +116,7 @@
     "ods:type",
     "schema:version",
     "schema:dateCreated",
-    "ods:creator",
+    "schema:creator",
     "schema:uri",
     "ods:translatorType",
     "ods:mappingID"

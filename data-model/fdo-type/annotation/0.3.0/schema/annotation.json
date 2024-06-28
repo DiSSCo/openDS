@@ -27,6 +27,14 @@
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
     },
+    "ods:status": {
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object."
+    },
     "ods:jobID": {
       "type": "string",
       "description": "Handle of the job record, if the annotation was produced by a Machine Annotation Service, only filled when annotation was created by a MAS",
@@ -263,53 +271,12 @@
     "dcterms:creator": {
       "type": "object",
       "description": "Object containing information on who created the object",
-      "properties": {
-        "@id": {
-          "type": "string",
-          "description": "The PID if the type is SoftwareAgent, the ORCID if the type is Person and the ROR if the type is Organisation.",
-          "examples": [
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-            "https://doi.org/10.123/XXX-XXX-XXX",
-            "https://ror.org/0566bfb96",
-            "https://orcid.org/0000-0002-5669-2769"
-          ],
-          "pattern": "https://(doi\\.org/10\\.\\d+/[-a-zA-Z0-9]+$|hdl\\.handle\\.net/[a-zA-Z0-9.]+/[-a-zA-Z0-9]+$|ror\\.org/0[a-z|0-9]{6}[0-9]{2}$|orcid\\.org/\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]+)$"
-        },
-        "@type": {
-          "type": "string",
-          "description": "The type of the creator.",
-          "enum": [
-            "foaf:Person",
-            "foaf:Organisation",
-            "as:Application"
-          ]
-        },
-        "foaf:name": {
-          "type": "string",
-          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
-          "examples": [
-            "Gbif linker service"
-          ]
-        }
-      },
-      "required": [
-        "@id",
-        "@type"
-      ],
-      "additionalProperties": false
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "dcterms:created": {
       "type": "string",
       "format": "date-time",
       "description": "The date and time when the annotation was created. https://purl.org/dc/terms/created"
-    },
-    "ods:dateTombstoned": {
-      "type": "string",
-      "description": "Timestamp Annotation was tombstoned and no longer active. Generated on request of the user. Empty as long as Annotation is active",
-      "format": "date-time",
-      "examples": [
-        "2021-06-01T12:00:000Z"
-      ]
     },
     "dcterms:issued": {
       "type": "string",
@@ -319,40 +286,7 @@
     "as:generator": {
       "type": "object",
       "description": "Object containing information on who generated the object. Generated is here seen as who stored/indexed the object. In most case this will be the annotation-processing-service",
-      "properties": {
-        "@id": {
-          "type": "string",
-          "description": "The PID if the type is SoftwareAgent, the ORCID if the type is Person and the ROR if the type is Organisation.",
-          "examples": [
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-            "https://doi.org/10.123/XXX-XXX-XXX",
-            "https://ror.org/0566bfb96",
-            "https://orcid.org/0000-0002-5669-2769"
-          ],
-          "pattern": "https://(doi\\.org/10\\.\\d+/[-a-zA-Z0-9]+$|hdl\\.handle\\.net/[a-zA-Z0-9.]+/[-a-zA-Z0-9]+$|ror\\.org/0[a-z|0-9]{6}[0-9]{2}$|orcid\\.org/\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]+)$"
-        },
-        "@type": {
-          "type": "string",
-          "description": "The type of the creator.",
-          "enum": [
-            "foaf:Person",
-            "foaf:Organisation",
-            "as:Application"
-          ]
-        },
-        "foaf:name": {
-          "type": "string",
-          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
-          "examples": [
-            "Gbif linker service"
-          ]
-        }
-      },
-      "required": [
-        "@id",
-        "@type"
-      ],
-      "additionalProperties": false
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "schema:AggregateRating": {
       "type": "object",
@@ -402,43 +336,15 @@
       "format": "date-time",
       "description": "The date and time when the annotation was merging state was changed."
     },
-    "ods:mergingStateChangedBy": {
+    "ods:MergingStateChangedBy": {
       "type": "object",
       "description": "Object containing information on who changed the merging state of the annotation.",
-      "properties": {
-        "@id": {
-          "type": "string",
-          "description": "The PID if the type is SoftwareAgent, the ORCID if the type is Person and the ROR if the type is Organisation.",
-          "examples": [
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-            "https://doi.org/10.123/XXX-XXX-XXX",
-            "https://ror.org/0566bfb96",
-            "https://orcid.org/0000-0002-5669-2769"
-          ],
-          "pattern": "https://(doi\\.org/10\\.\\d+/[-a-zA-Z0-9]+$|hdl\\.handle\\.net/[a-zA-Z0-9.]+/[-a-zA-Z0-9]+$|ror\\.org/0[a-z|0-9]{6}[0-9]{2}$|orcid\\.org/\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]+)$"
-        },
-        "@type": {
-          "type": "string",
-          "description": "The type of the agent who changed the merging state.",
-          "enum": [
-            "foaf:Person",
-            "foaf:Organisation",
-            "as:Application"
-          ]
-        },
-        "foaf:name": {
-          "type": "string",
-          "description": "The name of the agent who changed the merging state. http://xmlns.com/foaf/0.1/#term_name",
-          "examples": [
-            "Gbif linker service"
-          ]
-        }
-      },
-      "required": [
-        "@id",
-        "@type"
-      ],
-      "additionalProperties": false
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
+    },
+    "ods:TombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json"
     }
   },
   "required": [
