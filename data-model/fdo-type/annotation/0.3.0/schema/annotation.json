@@ -326,24 +326,25 @@
     },
     "ods:mergingStatus": {
       "enum": [
+        "ods:DecisionPendingForMerging",
         "ods:RejectedForMerging",
         "ods:ApprovedForMerging"
       ],
-      "description": "The merging status of the annotation."
+      "description": "The merging status of the annotation. Only present when motivation is ods:adding or oa:editing"
     },
     "ods:mergingStateChangeDate": {
       "type": "string",
       "format": "date-time",
-      "description": "The date and time when the annotation was merging state was changed."
+      "description": "The date and time when the annotation was merging state was changed. Only present when motivation is ods:adding or oa:editing"
     },
     "ods:MergingStateChangedBy": {
       "type": "object",
-      "description": "Object containing information on who changed the merging state of the annotation.",
+      "description": "Object containing information on who changed the merging state of the annotation. Only present when motivation is ods:adding or oa:editing",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:TombstoneMetadata": {
       "type": "object",
-      "description": "Object containing the tombstone metadata of the object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json"
     }
   },

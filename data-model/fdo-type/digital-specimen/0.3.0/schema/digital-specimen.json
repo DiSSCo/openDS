@@ -423,7 +423,7 @@
     },
     "ods:TombstoneMetadata": {
       "type": "object",
-      "description": "Object containing the tombstone metadata of the object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone.json"
     }
   },
