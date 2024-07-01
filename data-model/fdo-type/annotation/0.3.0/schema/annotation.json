@@ -60,6 +60,7 @@
       "description": "The motivation for the annotation. Based on a selection of https://www.w3.org/TR/annotation-model/#motivation-and-purpose. The motivation ods:adding is added for DiSSCo's purposes.",
       "enum": [
         "ods:adding",
+        "ods:deleting",
         "oa:assessing",
         "oa:editing",
         "oa:commenting"
@@ -356,7 +357,6 @@
     "ods:version",
     "oa:motivation",
     "oa:hasTarget",
-    "oa:hasBody",
     "dcterms:creator",
     "dcterms:created",
     "as:generator",
