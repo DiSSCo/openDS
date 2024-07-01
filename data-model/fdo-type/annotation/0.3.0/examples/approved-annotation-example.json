@@ -5,7 +5,7 @@
   "ods:status": "ods:Active",
   "rdf:type": "ods:Annotation",
   "ods:version": 1,
-  "oa:motivation": "oa:commenting",
+  "oa:motivation": "oa:editing",
   "oa:hasTarget": {
     "@id": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
     "@type": "ods:DigitalSpecimen",
@@ -24,8 +24,8 @@
   },
   "dcterms:creator": {
     "@id": "https://orcid.org/0000-0002-5669-2769",
-    "@type": "foaf:Person",
-    "foaf:name": "John Doe"
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
   },
   "dcterms:created": "2024-06-27T12:00:00Z",
   "as:generator": {
@@ -35,7 +35,7 @@
   },
   "dcterms:issued": "2024-06-27T12:00:00Z",
   "ods:batchID": "batch-1234",
-  "ods:annotationStatus": "ods:Approved",
+  "ods:mergingDecisionStatus": "ods:Approved",
   "ods:mergingStateChangeDate": "2024-06-28T12:00:00Z",
   "ods:MergingStateChangedBy": {
     "@id": "https://orcid.org/0000-0002-5669-2769",
