@@ -4,7 +4,7 @@
   "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
   "ods:status": "ods:Tombstone",
   "rdf:type": "ods:Annotation",
-  "ods:version": 1,
+  "ods:version": 4,
   "oa:motivation": "oa:editing",
   "oa:hasTarget": {
     "@id": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
@@ -18,9 +18,7 @@
   },
   "oa:hasBody": {
     "@type": "oa:TextualBody",
-    "oa:value": [
-      "Venezuela"
-    ],
+    "oa:value": ["Venezuela"],
     "dcterms:references": "https://api.gbif.org/v1/occurrence/search?occurrenceID=https://herbarium.bgbm.org/object/BW00965020&catalogNumber=B -W 00965 -02 0&basisOfRecord=PreservedSpecimen",
     "ods:score": 0.9
   },
@@ -36,8 +34,7 @@
     "schema:name": "Annotation Generator Service"
   },
   "dcterms:issued": "2024-06-27T12:00:00Z",
-  "ods:batchID": "batch-1234",
-  "ods:mergingDecisionStatus": "ods:Approved",
+  "ods:mergingDecisionStatus": "ods:Rejected",
   "ods:mergingStateChangeDate": "2024-06-28T12:00:00Z",
   "ods:MergingStateChangedBy": {
     "@id": "https://orcid.org/0000-0002-5669-2769",
@@ -47,17 +44,11 @@
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
     "ods:tombstonedDate": "2023-06-15T14:30:00Z",
-    "ods:tombstonedText": "This object was made by mistake",
+    "ods:tombstonedText": "This annotation was rejected and has been tombstoned",
     "ods:TombstonedByAgent": {
       "@id": "https://orcid.org/0000-0002-5669-2769",
       "@type": "schema:Person",
       "schema:name": "John Doe"
-    },
-    "ods:hasRelatedPID": [
-      {
-        "ods:ID": "https://doi.org/10.1234/abcd",
-        "ods:relationshipType": "ods:hasBeenMergedInto"
-      }
-    ]
+    }
   }
 }
