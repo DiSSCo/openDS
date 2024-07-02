@@ -34,6 +34,14 @@
         1
       ]
     },
+    "ods:status": {
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object"
+    },
     "ods:created": {
       "type": "string",
       "description": "The timestamp that the object version was created in DiSSCo",
@@ -194,22 +202,22 @@
         "in collection"
       ]
     },
-    "dwc:institutionCode": {
+    "ods:organisationCode": {
       "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/institutionCode",
+      "description": "Code used by the organisation",
       "examples": [
         "MNF"
       ]
     },
-    "dwc:institutionID": {
+    "ods:organisationID": {
       "type": "string",
-      "description": "ROR or Wikidata identifier, based on https://rs.tdwg.org/dwc/terms/institutionID",
+      "description": "ROR or Wikidata identifier of the organisation",
       "pattern": "^(https?:\/\/ror\\.org\/0\\w{6}[0-9]{2})|^(https?:\/\/www\\.wikidata\\.org\/wiki\/Q\\w+)",
       "examples": [
         "https://ror.org/015hz7p22"
       ]
     },
-    "ods:institutionName": {
+    "ods:organisationName": {
       "type": "string",
       "description": "Full museum name according to ROR or Wikidata",
       "examples": [
@@ -244,9 +252,9 @@
         "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
       ]
     },
-    "dwc:ownerInstitutionCode": {
+    "ods:ownerOrganisationCode": {
       "type": "string",
-      "description": "https://rs.tdwg.org/dwc/terms/ownerInstitutionCode",
+      "description": "The name used by the organisation having ownership of the object",
       "examples": [
         "InBio"
       ]
@@ -412,6 +420,11 @@
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
       }
+    },
+    "ods:TombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone.json"
     }
   },
   "required": [
@@ -426,7 +439,7 @@
     "ods:physicalSpecimenID",
     "ods:physicalSpecimenIDType",
     "ods:sourceSystemID",
-    "dwc:institutionID"
+    "ods:organisationID"
   ],
   "additionalProperties": false
 }

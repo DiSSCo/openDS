@@ -86,13 +86,10 @@
         "http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/"
       ]
     },
-    "ods:assertionByAgentName": {
-      "type": "string",
-      "description": "Name of the agent who made the assertion"
-    },
-    "ods:assertionByAgentID": {
-      "type": "string",
-      "description": "ID of the agent who made the assertion, recommended to be a ORCID or Wikidata identifier"
+    "ods:AssertionByAgent": {
+      "type": "object",
+      "description": "The agent who made the assertion",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:assertionProtocol": {
       "type": "string",

@@ -27,6 +27,14 @@
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
     },
+    "ods:status": {
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object."
+    },
     "ods:jobID": {
       "type": "string",
       "description": "Handle of the job record, if the annotation was produced by a Machine Annotation Service, only filled when annotation was created by a MAS",
@@ -52,6 +60,7 @@
       "description": "The motivation for the annotation. Based on a selection of https://www.w3.org/TR/annotation-model/#motivation-and-purpose. The motivation ods:adding is added for DiSSCo's purposes.",
       "enum": [
         "ods:adding",
+        "ods:deleting",
         "oa:assessing",
         "oa:editing",
         "oa:commenting"
@@ -78,11 +87,10 @@
         },
         "@type": {
           "type": "string",
-          "description": "This is the handle to the type of the target object.",
-          "pattern": "https://hdl\\.handle\\.net/\\w+/(.){3}-(.){3}-(.){3}",
+          "description": "The type of the target object",
           "examples": [
-            "https://doi.org/21.T11148/bbad8c4e101e8af01115",
-            "https://doi.org/21.T11148/894b1e6cad57e921764e"
+            "ods:DigitalSpecimen",
+            "ods:MachineAnnotationService"
           ]
         },
         "ods:ID": {
@@ -96,7 +104,7 @@
         "ods:type": {
           "type": "string",
           "description": "This is the handle to the type of the target object.",
-          "pattern": "https://hdl\\.handle\\.net/\\w+/(.){3}-(.){3}-(.){3}",
+          "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
           "examples": [
             "https://doi.org/21.T11148/bbad8c4e101e8af01115",
             "https://doi.org/21.T11148/894b1e6cad57e921764e"
@@ -215,7 +223,7 @@
         "@id",
         "@type",
         "ods:ID",
-        "type"
+        "ods:type"
       ],
       "additionalProperties": false
     },
@@ -264,53 +272,12 @@
     "dcterms:creator": {
       "type": "object",
       "description": "Object containing information on who created the object",
-      "properties": {
-        "@id": {
-          "type": "string",
-          "description": "The PID if the type is SoftwareAgent, the ORCID if the type is Person and the ROR if the type is Organisation.",
-          "examples": [
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-            "https://doi.org/10.123/XXX-XXX-XXX",
-            "https://ror.org/0566bfb96",
-            "https://orcid.org/0000-0002-5669-2769"
-          ],
-          "pattern": "https://(doi\\.org/10\\.\\d+/[-a-zA-Z0-9]+$|hdl\\.handle\\.net/[a-zA-Z0-9.]+/[-a-zA-Z0-9]+$|ror\\.org/0[a-z|0-9]{6}[0-9]{2}$|orcid\\.org/\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]+)$"
-        },
-        "@type": {
-          "type": "string",
-          "description": "The type of the creator.",
-          "enum": [
-            "foaf:Person",
-            "foaf:Organisation",
-            "as:Application"
-          ]
-        },
-        "foaf:name": {
-          "type": "string",
-          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
-          "examples": [
-            "Gbif linker service"
-          ]
-        }
-      },
-      "required": [
-        "@id",
-        "@type"
-      ],
-      "additionalProperties": false
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "dcterms:created": {
       "type": "string",
       "format": "date-time",
       "description": "The date and time when the annotation was created. https://purl.org/dc/terms/created"
-    },
-    "ods:dateTombstoned": {
-      "type": "string",
-      "description": "Timestamp Annotation was tombstoned and no longer active. Generated on request of the user. Empty as long as Annotation is active",
-      "format": "date-time",
-      "examples": [
-        "2021-06-01T12:00:000Z"
-      ]
     },
     "dcterms:issued": {
       "type": "string",
@@ -320,40 +287,7 @@
     "as:generator": {
       "type": "object",
       "description": "Object containing information on who generated the object. Generated is here seen as who stored/indexed the object. In most case this will be the annotation-processing-service",
-      "properties": {
-        "@id": {
-          "type": "string",
-          "description": "The PID if the type is SoftwareAgent, the ORCID if the type is Person and the ROR if the type is Organisation.",
-          "examples": [
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-            "https://doi.org/10.123/XXX-XXX-XXX",
-            "https://ror.org/0566bfb96",
-            "https://orcid.org/0000-0002-5669-2769"
-          ],
-          "pattern": "https://(doi\\.org/10\\.\\d+/[-a-zA-Z0-9]+$|hdl\\.handle\\.net/[a-zA-Z0-9.]+/[-a-zA-Z0-9]+$|ror\\.org/0[a-z|0-9]{6}[0-9]{2}$|orcid\\.org/\\d{4}-\\d{4}-\\d{4}-\\d{3}[\\dX]+)$"
-        },
-        "@type": {
-          "type": "string",
-          "description": "The type of the creator.",
-          "enum": [
-            "foaf:Person",
-            "foaf:Organisation",
-            "as:Application"
-          ]
-        },
-        "foaf:name": {
-          "type": "string",
-          "description": "The name of the creator. http://xmlns.com/foaf/0.1/#term_name",
-          "examples": [
-            "Gbif linker service"
-          ]
-        }
-      },
-      "required": [
-        "@id",
-        "@type"
-      ],
-      "additionalProperties": false
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "schema:AggregateRating": {
       "type": "object",
@@ -390,6 +324,29 @@
     "ods:batchID": {
       "type": "string",
       "description": "Internally generated PID to identify the batch the annotation was generated by"
+    },
+    "ods:mergingDecisionStatus": {
+      "enum": [
+        "ods:Pending",
+        "ods:Rejected",
+        "ods:Approved"
+      ],
+      "description": "The merging status of the annotation. Only present when motivation is ods:adding or oa:editing"
+    },
+    "ods:mergingStateChangeDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time when the annotation was merging state was changed. Only present when motivation is ods:adding or oa:editing"
+    },
+    "ods:MergingStateChangedBy": {
+      "type": "object",
+      "description": "Object containing information on who changed the merging state of the annotation. Only present when motivation is ods:adding or oa:editing",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
+    },
+    "ods:TombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json"
     }
   },
   "required": [
@@ -400,11 +357,10 @@
     "ods:version",
     "oa:motivation",
     "oa:hasTarget",
-    "oa:hasBody",
     "dcterms:creator",
     "dcterms:created",
     "as:generator",
-    "oa:generated"
+    "dcterms:issued"
   ],
   "additionalProperties": false
 }

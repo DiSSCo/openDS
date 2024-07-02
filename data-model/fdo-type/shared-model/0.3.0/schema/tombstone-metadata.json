@@ -1,0 +1,67 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Tombstone Metadata object Version 0.3.0",
+  "title": "Tombstone Metadata",
+  "type": "object",
+  "description": "Metadata contains information on why, when and by whom a digital object was tombstoned",
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "ods:Tombstone",
+      "description": "The type of the record, in this case a ods:Tombstone"
+    },
+    "ods:tombstonedDate": {
+      "type": "string",
+      "description": "Timestamp the Digital Object was tombstoned and no longer active.",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "ods:tombstonedText": {
+      "type": "string",
+      "description": "A reason why the Digital Object was tombstoned",
+      "examples": [
+        "This is a duplicate of XXX",
+        "This object was made by mistake"
+      ]
+    },
+    "ods:TombstonedByAgent": {
+      "type": "object",
+      "description": "The agent who tombstoned the object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
+    },
+    "ods:hasRelatedPID": {
+      "type": "array",
+      "description": "The PIDs of the object the tombstoned object is related to",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ods:ID": {
+            "type": "string",
+            "description": "The PID of the related object",
+            "examples": [
+              "https://doi.org/10.1234/abcd"
+            ]
+          },
+          "ods:relationshipType": {
+            "type": "string",
+            "description": "The type of relationship between the tombstoned object and the related object",
+            "examples": [
+              "ods:relatedTo",
+              "ods:isDuplicateOf"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "@type",
+    "ods:tombstonedDate",
+    "ods:tombstonedText",
+    "ods:TombstonedByAgent"
+  ],
+  "additionalProperties": false
+}

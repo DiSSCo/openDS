@@ -59,18 +59,16 @@
         1
       ]
     },
+    "ods:RelationshipAccordingToAgent": {
+      "type": "object",
+      "description": "The agent who created the entity relationship",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
+    },
     "dwc:relationshipAccordingTo": {
       "type": "string",
       "description": "https://rs.tdwg.org/dwc/terms/relationshipAccordingTo",
       "examples": [
         "Sam Leeflang"
-      ]
-    },
-    "ods:relationshipAccordingToID": {
-      "type": "string",
-      "description": "The PID of the creator, this could be a Orcid(user), PID(machine) or ROR(organisation)",
-      "examples": [
-        "https://orcid.org/0000-0002-5669-2769"
       ]
     },
     "dwc:relationshipRemarks": {

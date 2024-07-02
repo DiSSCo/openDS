@@ -3,7 +3,7 @@
   "@type": "ods:DigitalMedia",
   "ods:ID": "https://doi.org/10.22/ABC-DEF-GHI",
   "ods:version": 1,
-  "ods:status": "ods:Active",
+  "ods:status": "ods:Tombstone",
   "ods:created": "2024-06-05T12:34:56Z",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
   "dcterms:type": "Image",
@@ -20,5 +20,15 @@
   "dcterms:source": "Museum archives",
   "dcterms:creator": "Dr. John Doe",
   "dcterms:created": "2024-06-05",
-  "dcterms:modified": "2024-06-05"
+  "dcterms:modified": "2024-06-05",
+  "ods:TombstoneMetadata": {
+    "@type": "ods:Tombstone",
+    "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+    "ods:tombstonedText": "This digital media was removed as it showed the wrong specimen",
+    "ods:TombstonedByAgent": {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:name": "John Doe"
+    }
+  }
 }

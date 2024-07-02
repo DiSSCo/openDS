@@ -35,6 +35,14 @@
         "https://doi.org/10.15468/1a2b3c"
       ]
     },
+    "ods:status": {
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object"
+    },
     "schema:version": {
       "type": "integer",
       "minimum": 1,
@@ -62,20 +70,10 @@
         "2021-06-01T12:00:000Z"
       ]
     },
-    "ods:dateTombstoned": {
+    "schema:creator": {
       "type": "string",
-      "description": "Timestamp Machine Annotation Service was tombstoned and no longer active. Generated on request of the user",
-      "format": "date-time",
-      "examples": [
-        "2021-06-01T12:00:000Z"
-      ]
-    },
-    "ods:creator": {
-      "type": "string",
-      "description": "The internal user ID of the creator of the Machine Annotation Service",
-      "examples": [
-        "e2befba6-9324-4bb4-9f41-d7dfae4a44b0"
-      ]
+      "description": "The agent responsible for creating the Machine Annotation Service",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:containerImage": {
       "type": "string",
@@ -138,34 +136,8 @@
     },
     "schema:maintainer": {
       "type": "object",
-      "description": "Party maintaining the code",
-      "properties": {
-        "@type": {
-          "description": "Type of the maintainer, https://schema.org/type",
-          "enum": [
-            "Person",
-            "Organization"
-          ]
-        },
-        "schema:identifier": {
-          "type": "string",
-          "description": "Identifier of the maintainer, https://schema.org/identifier. Recommendation to use ROR or ORCID"
-        },
-        "schema:name": {
-          "type": "string",
-          "description": "Name of the maintainer, https://schema.org/name"
-        },
-        "schema:email": {
-          "type": "string",
-          "format": "email",
-          "description": "Email of the maintainer, https://schema.org/email"
-        },
-        "schema:url": {
-          "type": "string",
-          "format": "url",
-          "description": "URL of the maintainer, https://schema.org/url"
-        }
-      }
+      "description": "Party maintaining the code, could be an schema:Organisation or a schema:Person",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "schema:license": {
       "type": "string",
@@ -227,6 +199,11 @@
       "type": "integer",
       "minimum": 3600,
       "description": "Time in milliseconds the MAS message may remain in the Kafka Queue before being marked as timed out. Min 1 hour."
+    },
+    "ods:TombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone.json"
     }
   },
   "required": [
