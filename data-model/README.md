@@ -1,5 +1,5 @@
 
-This section includes the data model for differnet FAIR Digital Objects. 
+This section includes the data model for different FAIR Digital Objects. 
 
 ## Directory Structure
 
@@ -24,6 +24,6 @@ This section includes the data model for differnet FAIR Digital Objects.
 Our approach to data modeling involves:
 
 1. **Reviewing Existing Standards**: We review existing terms and standards such as Darwin Core and ABCD to identify relevant concepts and definitions.
-2. **Harmonisation**: We harmonise these existing terms to create a pecification that meets the specific needs of digital specimens lifecycle in the DiSSCo infrastructure.
+2. **Harmonisation**: We harmonise these existing terms to create a specification that meets the needs of digital specimens lifecycle in the DiSSCo infrastructure.
 3. **Specification Development**: Based on the harmonised terms, we develop detailed specifications and schemas that define the structure and content of digital specimen and related data.
 
