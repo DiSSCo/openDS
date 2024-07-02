@@ -29,7 +29,7 @@
     },
     "ods:TombstonedByAgent": {
       "type": "object",
-      "description": "The agent who tombstoned the object",
+      "description": "The agent who tombstoned the object, contains an ods:Agent object",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:hasRelatedPID": {

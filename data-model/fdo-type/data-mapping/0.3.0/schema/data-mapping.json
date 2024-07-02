@@ -70,8 +70,8 @@
       ]
     },
     "schema:creator": {
-      "type": "string",
-      "description": "The internal user ID of the creator of the Mapping",
+      "type": "object",
+      "description": "Contains an ods:Agent object",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:DefaultMapping": {
