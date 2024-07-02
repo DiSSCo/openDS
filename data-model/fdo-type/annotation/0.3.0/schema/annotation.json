@@ -271,7 +271,7 @@
     },
     "dcterms:creator": {
       "type": "object",
-      "description": "Object containing information on who created the object",
+      "description": "Contains an ods:Agent object",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "dcterms:created": {
@@ -286,7 +286,7 @@
     },
     "as:generator": {
       "type": "object",
-      "description": "Object containing information on who generated the object. Generated is here seen as who stored/indexed the object. In most case this will be the annotation-processing-service",
+      "description": "Object containing information on who generated the object. Generated is here seen as who stored/indexed the object. In most case this will be the annotation-processing-service. Contains an ods:Agent object.",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "schema:AggregateRating": {
@@ -340,7 +340,7 @@
     },
     "ods:MergingStateChangedBy": {
       "type": "object",
-      "description": "Object containing information on who changed the merging state of the annotation. Only present when motivation is ods:adding or oa:editing",
+      "description": "Object containing information on who changed the merging state of the annotation. Only present when motivation is ods:adding or oa:editing. Contains an ods:Agent object.",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:TombstoneMetadata": {
