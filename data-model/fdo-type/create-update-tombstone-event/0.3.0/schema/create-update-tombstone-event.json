@@ -74,7 +74,7 @@
                   "ods:Requestor",
                   "ods:Generator"
                 ],
-                "description": "The role of the agent in the activity",
+                "description": "The role of the agent in the activity"
               }
             },
             "required": [
