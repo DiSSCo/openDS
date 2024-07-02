@@ -64,6 +64,12 @@ Make use of schema.org terms for the Agent object.
 This makes it more generic and it is now used in all Digital Objects (not just DigitalSpecimen and DigitalMedia0)
 It is a bit more generic then it used to be but that also makes it more flexible.
 It reduces redundancy between the different Digital Objects
+We replaced all instances of agents with a generic Agent object.
+This agent object can have the form of a `schema:Person`, `schema:Organization` or `as:Application`.
+This should be a generic implementation which should be accepted by most terms as terms such as `dcterms:creator` does not enforce a specific type of value.
+The exception to this rule is the CreateUpdateTombstoneEvent which is based on prov-o.
+Prov-o enforce their own types for the agent (`prov:Person`, `prov:Organization` and `prov:SoftwareAgent`)
+
 
 ## Other
 Small changes in description for some terms.

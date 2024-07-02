@@ -3,7 +3,7 @@
   "@type": "ods:DigitalMedia",
   "ods:ID": "https://doi.org/10.22/ABC-DEF-GHI",
   "ods:version": 1,
-  "ods:status": "ods:Tombstoned",
+  "ods:status": "ods:Tombstone",
   "ods:created": "2024-06-05T12:34:56Z",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
   "dcterms:type": "Image",
