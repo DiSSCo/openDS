@@ -7,9 +7,9 @@ COPY fdo-profile/annotation/0.1.0/schema schema-root/schemas/fdo-profile/annotat
 COPY fdo-profile/digital-specimen/0.1.0/schema/ schema-root/schemas/fdo-profile/digital-specimen/0.1.0
 COPY fdo-profile/doi-kernel/0.1.0/schema schema-root/schemas/fdo-profile/doi-kernel/0.1.0
 COPY fdo-profile/handle-kernel/0.1.0/schema schema-root/schemas/fdo-profile/handle-kernel/0.1.0
-COPY fdo-profile/mapping/0.1.0/schema schema-root/schemas/fdo-profile/mapping/0.1.0
+COPY fdo-profile/data-mapping/0.1.0/schema schema-root/schemas/fdo-profile/data-mapping/0.1.0
 COPY fdo-profile/mas/0.1.0/schema schema-root/schemas/fdo-profile/mas/0.1.0
-COPY fdo-profile/media-object/0.1.0/schema schema-root/schemas/fdo-profile/media-object/0.1.0
+COPY fdo-profile/digital-media/0.1.0/schema schema-root/schemas/fdo-profile/digital-media/0.1.0
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/0.1.0
 COPY fdo-profile/source-system/0.1.0/schema schema-root/schemas/fdo-profile/source-system/0.1.0
 COPY fdo-profile/tettris-service/0.1.0/schema schema-root/schemas/fdo-profile/tettris-service/0.1.0
@@ -21,9 +21,9 @@ COPY fdo-profile/annotation/0.1.0/schema schema-root/schemas/fdo-profile/annotat
 COPY fdo-profile/digital-specimen/0.1.0/schema/ schema-root/schemas/fdo-profile/digital-specimen/latest
 COPY fdo-profile/doi-kernel/0.1.0/schema schema-root/schemas/fdo-profile/doi-kernel/latest
 COPY fdo-profile/handle-kernel/0.1.0/schema schema-root/schemas/fdo-profile/handle-kernel/latest
-COPY fdo-profile/mapping/0.1.0/schema schema-root/schemas/fdo-profile/mapping/latest
+COPY fdo-profile/data-mapping/0.1.0/schema schema-root/schemas/fdo-profile/data-mapping/latest
 COPY fdo-profile/mas/0.1.0/schema schema-root/schemas/fdo-profile/mas/latest
-COPY fdo-profile/media-object/0.1.0/schema schema-root/schemas/fdo-profile/media-object/latest
+COPY fdo-profile/digital-media/0.1.0/schema schema-root/schemas/fdo-profile/digital-media/latest
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/latest
 COPY fdo-profile/source-system/0.1.0/schema schema-root/schemas/fdo-profile/source-system/latest
 COPY fdo-profile/tettris-service/0.1.0/schema schema-root/schemas/fdo-profile/tettris-service/latest
