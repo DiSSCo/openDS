@@ -222,7 +222,7 @@
       "items": {
         "type": "object",
         "description": "Based on the prov-ontology Agent Class, https://www.w3.org/ns/prov#Agent",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/agent/0.3.0/agent.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
       }
     }
   }
