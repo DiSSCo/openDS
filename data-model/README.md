@@ -3,7 +3,6 @@ This section includes the data model for different FAIR Digital Objects.
 
 ## Directory Structure
 
-- **annotations/**: Contains schemas and definitions related to annotation data model.
 - **developer-schema/**: Includes schemas intended for developers working with the data model.
 - **fdo-profile/**: This directory contains FDO profiles, defining the metadata and structural requirements for various FDO types.
 - **fdo-type/**: Contains specific schemas for different types of FDOs, including digital specimens.
@@ -25,5 +24,5 @@ Our approach to data modeling involves:
 
 1. **Reviewing Existing Standards**: We review existing terms and standards such as Darwin Core and ABCD to identify relevant concepts and definitions.
 2. **Harmonisation**: We harmonise these existing terms to create a specification that meets the needs of digital specimens lifecycle in the DiSSCo infrastructure.
-3. **Specification Development**: Based on the harmonised terms, we develop detailed specifications and schemas that define the structure and content of digital specimen and related data.
+3. **Specification Development**: Based on the harmonised terms, we develop detailed specifications and schemas that define the structure and content of digital specimen and related data. Our schemas are versioned and maintained in this repo and published in the [schema repository](https://schemas.dissco.tech/). 
 
