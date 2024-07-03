@@ -24,5 +24,5 @@ Our approach to data modeling involves:
 
 1. **Reviewing Existing Standards**: We review existing terms and standards such as Darwin Core and ABCD to identify relevant concepts and definitions.
 2. **Harmonisation**: We harmonise these existing terms to create a specification that meets the needs of digital specimens lifecycle in the DiSSCo infrastructure.
-3. **Specification Development**: Based on the harmonised terms, we develop detailed specifications and schemas that define the structure and content of digital specimen and related data. Our schemas are versioned and maintained in this repo and published in the [schema repository](https://schemas.dissco.tech/). 
+3. **Specification Development**: Based on the harmonised terms, we develop detailed specifications and schemas that define the structure and content of digital specimens and related data. Our schemas are versioned (each object schema is individually versioned) and maintained in this repository, and published in the [schema repository](https://schemas.dissco.tech/).
 
