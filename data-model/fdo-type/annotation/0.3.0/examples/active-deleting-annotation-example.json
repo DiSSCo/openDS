@@ -1,0 +1,33 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "ods:Annotation",
+  "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "rdf:type": "ods:Annotation",
+  "ods:status": "ods:Active",
+  "ods:version": 1,
+  "oa:motivation": "oa:deleting",
+  "oa:motivatedBy": "This specimen does not have a location",
+  "oa:hasTarget": {
+    "@id": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
+    "@type": "ods:DigitalSpecimen",
+    "ods:ID": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
+    "ods:type": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+    "oa:hasSelector": {
+      "@type": "ods:ClassSelector",
+      "ods:field": "$.hasEvent[0].location"
+    }
+  },
+  "dcterms:creator": {
+    "@id": "https://orcid.org/0000-0002-5669-2769",
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
+  },
+  "dcterms:created": "2024-06-27T12:00:00Z",
+  "as:generator": {
+    "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+    "@type": "as:Application",
+    "schema:name": "Annotation Generator Service"
+  },
+  "dcterms:issued": "2024-06-27T12:00:00Z",
+  "ods:mergingDecisionStatus": "ods:Pending"
+}

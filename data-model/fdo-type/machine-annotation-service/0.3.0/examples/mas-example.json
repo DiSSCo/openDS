@@ -3,12 +3,16 @@
   "@type": "ods:MachineAnnotationService",
   "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
+  "ods:status": "ods:Active",
   "schema:version": 1,
   "schema:name": "GBIF Linker Service",
   "schema:description": "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship",
   "schema:dateCreated": "2021-06-01T12:00:01Z",
-  "ods:dateTombstoned": "2023-01-01T12:00:01Z",
-  "ods:creator": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+  "schema:creator": {
+    "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
+  },
   "ods:containerImage": "public.ecr.aws/dissco/mindat-georeferencing",
   "ods:containerTag": "sha-cb76994",
   "ods:TargetDigitalObjectFilter": {
@@ -31,8 +35,8 @@
   "schema:programmingLanguage": "Python",
   "ods:serviceAvailability": "99.9%",
   "schema:maintainer": {
-    "@type": "Organization",
-    "schema:identifier": "https://ror.org/04wxnsj81",
+    "@id": "https://ror.org/04wxnsj81",
+    "@type": "schema:Organization",
     "schema:name": "DiSSCo",
     "schema:email": "contact@dissco.eu",
     "schema:url": "https://www.dissco.eu"

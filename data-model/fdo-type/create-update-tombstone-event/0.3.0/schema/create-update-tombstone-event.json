@@ -55,12 +55,33 @@
           ]
         },
         "prov:wasAssociatedWith": {
-          "type": "string",
-          "description": "The unique identifier of the prov:Agent that was associated with the Activity (as indicated at @id in the Activity Class), http://www.w3.org/ns/prov#wasAssociatedWith",
-          "examples": [
-            "https://orcid.org/0000-0002-1825-0097",
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-          ]
+          "type": "array",
+          "description": "Contains zero a reference to one or more prov:Agent objects that were associated with the Activity",
+          "items": {
+            "type": "object",
+            "properties": {
+              "@id": {
+                "type": "string",
+                "description": "The unique identifier of the prov:Agent that was associated with the Activity (as indicated at @id in the Activity Class), http://www.w3.org/ns/prov#wasAssociatedWith",
+                "examples": [
+                  "https://orcid.org/0000-0002-1825-0097",
+                  "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+                ]
+              },
+              "prov:hadRole": {
+                "enum": [
+                  "ods:Approver",
+                  "ods:Requestor",
+                  "ods:Generator"
+                ],
+                "description": "The role of the agent in the activity"
+              }
+            },
+            "required": [
+              "@id"
+            ],
+            "additionalProperties": false
+          }
         },
         "prov:endedAtTime": {
           "type": "string",
@@ -186,58 +207,23 @@
             "7ba628d4-2e28-4ce4-ad1e-e99c97c20507",
             "807f145c-11a1-41f0-af34-b2d7c580bcc1"
           ]
-        },
-        "prov:wasAttributedTo": {
-          "type": "string",
-          "description": "The unique identifier of the prov:Agent that was attributed to the Entity (as indicated at @id in the Agent Class), http://www.w3.org/ns/prov#wasAttributedTo",
-          "examples": [
-            "https://orcid.org/0000-0002-1825-0097",
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-          ]
         }
       },
       "required": [
         "@id",
         "@type",
-        "prov:wasGeneratedBy",
-        "prov:wasAttributedTo"
+        "prov:wasGeneratedBy"
       ],
       "additionalProperties": false
     },
-    "prov:Agent": {
-      "type": "object",
-      "description": "Based on the prov-ontology Agent Class, https://www.w3.org/ns/prov#Agent",
-      "properties": {
-        "@id": {
-          "type": "string",
-          "description": "The unique identifier of the Agent, possible values are an ORCID or a handle",
-          "examples": [
-            "https://orcid.org/0000-0002-1825-0097",
-            "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-          ]
-        },
-        "@type": {
-          "description": "The type of agent",
-          "enum": [
-            "prov:Person",
-            "prov:SoftwareAgent"
-          ]
-        },
-        "foaf:name": {
-          "type": "string",
-          "description": "The name of the agent",
-          "examples": [
-            "John Doe",
-            "GBIF Linker Service"
-          ]
-        }
-      },
-      "required": [
-        "@id",
-        "@type",
-        "foaf:name"
-      ],
-      "additionalProperties": false
+    "ods:hasProvAgent": {
+      "type": "array",
+      "description": "Contains zero or more prov:Agent objects",
+      "items": {
+        "type": "object",
+        "description": "Based on the prov-ontology Agent Class, https://www.w3.org/ns/prov#Agent",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
+      }
     }
   }
 }

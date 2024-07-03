@@ -3,7 +3,7 @@
   "@type": "ods:DataMapping",
   "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
-  "ods:status": "ods:Active",
+  "ods:status": "ods:Tombstone",
   "schema:version": 1,
   "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
   "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
@@ -31,5 +31,15 @@
       }
     ]
   },
-  "ods:mappingDataStandard": "dwc"
+  "ods:mappingDataStandard": "dwc",
+  "ods:TombstoneMetadata": {
+    "@type": "ods:Tombstone",
+    "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+    "ods:tombstonedText": "This object was made by mistake",
+    "ods:TombstonedByAgent": {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:name": "John Doe"
+    }
+  }
 }

@@ -7,16 +7,33 @@
   "properties": {
     "@id": {
       "type": "string",
-      "description": "The identifier for the Agent object."
+      "description": "The identifier for the Agent object",
+      "examples": [
+        "http://www.wikidata.org/entity/Q66581882",
+        "https://orcid.org/0000-0002-1825-0097",
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
     },
     "@type": {
-      "type": "string",
-      "const": "ods:Agent",
-      "description": "The type of the digital object, in this case a ods:Agent"
+      "enum": [
+        "schema:Person",
+        "schema:Organisation",
+        "as:Application",
+        "prov:Person",
+        "prov:SoftwareAgent"
+      ],
+      "description": "The type of the agent, the prov ontology is only used in the prov-o createUpdateTombstoneEvent"
     },
-    "ods:agentRole": {
+    "schema:name": {
       "type": "string",
-      "description": "Indicates the role of the agent",
+      "description": "Full name of the agent",
+      "examples": [
+        "John Smith"
+      ]
+    },
+    "schema:roleName": {
+      "type": "string",
+      "description": "Indicates the role of the agent, https://schema.org/roleName",
       "examples": [
         "collector",
         "preparer",
@@ -24,44 +41,21 @@
         "recorder"
       ]
     },
-    "ods:agentType": {
-      "type": "string",
-      "description": "Indicates the type of agent",
-      "examples": [
-        "machine",
-        "human",
-        "organisation"
-      ]
-    },
-    "ods:agentID": {
-      "type": "string",
-      "description": "Primary identifier of the agent, additional identifiers can go in the identifiers array",
-      "examples": [
-        "https://orcid.org/0000-0002-1825-0097"
-      ]
-    },
-    "ods:agentName": {
-      "type": "string",
-      "description": "Full name of the agent",
-      "examples": [
-        "John Smith"
-      ]
-    },
-    "ods:agentRoleBegan": {
+    "schema:startDate": {
       "type": "string",
       "description": "Date the agent began the role",
       "examples": [
         "2023-10-02T12:31:34.806Z"
       ]
     },
-    "ods:agentRoleEnded": {
+    "schema:endDate": {
       "type": "string",
       "description": "Date the agent ended the role",
       "examples": [
         "2023-09-02T12:31:34.806Z"
       ]
     },
-    "ods:agentRoleOrder": {
+    "ods:roleOrder": {
       "type": "integer",
       "description": "Order of the agent in the role. Can be used to indicate the order of importance",
       "minimum": 1,
@@ -69,6 +63,16 @@
         1,
         2
       ]
+    },
+    "schema:email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email of the agent, can be present in case the agent is a maintainer of a MAS"
+    },
+    "schema:url": {
+      "type": "string",
+      "format": "url",
+      "description": "URL of the agent, can be present in case the agent is a maintainer of a MAS"
     },
     "ods:hasIdentifier": {
       "type": "array",
@@ -81,9 +85,7 @@
   },
   "required": [
     "@type",
-    "ods:agentRole",
-    "ods:agentType",
-    "ods:agentName"
+    "schema:name"
   ],
   "additionalProperties": false
 }

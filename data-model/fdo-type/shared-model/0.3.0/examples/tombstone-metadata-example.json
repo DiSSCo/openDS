@@ -1,0 +1,21 @@
+{
+  "@type": "ods:Tombstone",
+  "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+  "ods:tombstonedText": "This object was made by mistake",
+  "ods:TombstonedByAgent": {
+    "@id": "https://example.org/agents/agent123",
+    "@type": "schema:Person",
+    "schema:name": "John Doe",
+    "schema:email": "john.doe@example.org"
+  },
+  "ods:hasRelatedPID": [
+    {
+      "ods:ID": "https://doi.org/10.1234/abcd",
+      "ods:relationshipType": "ods:isDuplicateOf"
+    },
+    {
+      "ods:ID": "https://doi.org/10.5678/efgh",
+      "ods:relationshipType": "ods:relatedTo"
+    }
+  ]
+}

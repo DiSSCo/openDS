@@ -32,8 +32,9 @@
       "description": "https://purl.org/dc/terms/title"
     },
     "dcterms:creator": {
-      "type": "string",
-      "description": "https://purl.org/dc/elements/1.1/creator"
+      "type": "object",
+      "description": "Contains an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:citationPageNumber": {
       "type": "string",
