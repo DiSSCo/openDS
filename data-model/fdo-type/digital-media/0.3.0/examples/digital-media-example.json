@@ -8,6 +8,7 @@
   "ods:type": "https://doi.org/10.15468/1a2b3c",
   "dcterms:type": "Image",
   "ac:accessURI": "https://example.org/digital-object/12345",
+  "ods:sourceSystemID": "https://hdl.handle.net/SANDBOX/CS1-ZKQ-NZ7",
   "ods:organisationID": "https://ror.org/015hz7p22",
   "ods:organisationName": "National Museum of Natural History",
   "dcterms:format": "image/jpeg",
