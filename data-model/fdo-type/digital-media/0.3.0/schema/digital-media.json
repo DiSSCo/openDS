@@ -80,6 +80,11 @@
       "examples": [
       ]
     },
+    "ods:sourceSystemID": {
+      "type": "string",
+      "description": "The handle to the source system object which retrieved the data from the CMS",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}"
+    },
     "ods:organisationID": {
       "type": "string",
       "description": "ROR or Wikidata identifie of the organisation",
@@ -187,6 +192,7 @@
     "ods:ID",
     "ods:version",
     "ods:created",
-    "ac:accessURI"
+    "ac:accessURI",
+    "ods:sourceSystemID"
   ]
 }
