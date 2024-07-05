@@ -70,6 +70,14 @@ This should be a generic implementation which should be accepted by most terms a
 The exception to this rule is the CreateUpdateTombstoneEvent which is based on prov-o.
 Prov-o enforce their own types for the agent (`prov:Person`, `prov:Organization` and `prov:SoftwareAgent`)
 
+## Added modified timestamp to all (modifiable) Digital Objects
+For the DigitalSpecimen and DigitalMedia objects we added a `dcterms:modified` property.
+This will be taken over from the source system on first ingestion or, if not present, it will be equal to the `dcterms:created` (which has been renamed from `ods:created`) property.
+Each time the object is updated, the `dcterms:modified` property should be updated to the current time (`dcterms:created` will remain the time of first creation).
+Because we could take over the first value from the source system, `dcterms:modified` is a string, and we won't enforce a date-time format.
+For the other Digital Objects, we will use `schema:dateModified`, which is more in line with the other terms.
+It will be equal to `schema:dateCreated` when the object is first created.
+On updates the `schema:dateModified` should be updated to the current time, the `schema:dateCreated` should remain the time of first creation.
 
 ## Other
 Small changes in description for some terms.

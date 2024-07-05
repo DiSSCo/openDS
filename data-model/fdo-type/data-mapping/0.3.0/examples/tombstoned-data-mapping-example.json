@@ -4,10 +4,11 @@
   "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
   "ods:status": "ods:Tombstone",
-  "schema:version": 1,
+  "schema:version": 3,
   "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
   "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
-  "schema:dateCreated": "2021-06-01T12:00:00Z",
+  "schema:dateCreated": "2021-06-01T12:00:00.122Z",
+  "schema:dateModified": "2021-06-06T13:22:00.123Z",
   "ods:creator": {
     "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
     "@type": "schema:Person",
@@ -34,7 +35,7 @@
   "ods:mappingDataStandard": "dwc",
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
-    "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+    "ods:tombstonedDate": "2021-06-06T13:22:00.123Z",
     "ods:tombstonedText": "This object was made by mistake",
     "ods:TombstonedByAgent": {
       "@id": "https://orcid.org/0000-0002-5669-2769",

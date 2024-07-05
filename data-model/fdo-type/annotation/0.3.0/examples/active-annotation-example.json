@@ -27,11 +27,12 @@
     "@type": "schema:Person",
     "schema:name": "John Doe"
   },
-  "dcterms:created": "2024-06-27T12:00:00Z",
+  "dcterms:created": "2024-06-27T12:00:00.120Z",
+  "dcterms:modified": "2024-06-27T12:00:00.123Z",
   "as:generator": {
     "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
     "@type": "as:Application",
     "schema:name": "Annotation Generator Service"
   },
-  "dcterms:issued": "2024-06-27T12:00:00Z"
+  "dcterms:issued": "2024-06-27T12:00:00.123Z"
 }

@@ -279,6 +279,11 @@
       "format": "date-time",
       "description": "The date and time when the annotation was created. https://purl.org/dc/terms/created"
     },
+    "dcterms:modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time when the annotation was last modified, generating a new version. https://purl.org/dc/terms/modified"
+    },
     "dcterms:issued": {
       "type": "string",
       "format": "date-time",
@@ -359,6 +364,7 @@
     "oa:hasTarget",
     "dcterms:creator",
     "dcterms:created",
+    "dcterms:modified",
     "as:generator",
     "dcterms:issued"
   ],

@@ -66,7 +66,15 @@
       "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
       "format": "date-time",
       "examples": [
-        "2021-06-01T12:00:000Z"
+        "2021-06-01T12:00:00.445Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, https://schema.org/dateModified",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
       ]
     },
     "schema:creator": {
@@ -122,6 +130,7 @@
     "ods:type",
     "schema:version",
     "schema:dateCreated",
+    "schema:dateModified",
     "schema:creator",
     "ods:mappingDataStandard"
   ],

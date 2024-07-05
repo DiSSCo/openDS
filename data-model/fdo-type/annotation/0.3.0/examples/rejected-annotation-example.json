@@ -27,7 +27,8 @@
     "@type": "schema:Person",
     "schema:name": "John Doe"
   },
-  "dcterms:created": "2024-06-27T12:00:00Z",
+  "dcterms:created": "2024-06-27T12:00:00.000Z",
+  "dcterms:modified": "2024-07-27T15:23:30.000Z",
   "as:generator": {
     "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
     "@type": "as:Application",
@@ -35,7 +36,7 @@
   },
   "dcterms:issued": "2024-06-27T12:00:00Z",
   "ods:mergingDecisionStatus": "ods:Rejected",
-  "ods:mergingStateChangeDate": "2024-06-28T12:00:00Z",
+  "ods:mergingStateChangeDate": "2024-06-28T12:00:01.000Z",
   "ods:MergingStateChangedBy": {
     "@id": "https://orcid.org/0000-0002-5669-2769",
     "@type": "schema:Person",
@@ -43,7 +44,7 @@
   },
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
-    "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+    "ods:tombstonedDate": "2024-07-27T15:23:30.000Z",
     "ods:tombstonedText": "This annotation was rejected and has been tombstoned",
     "ods:TombstonedByAgent": {
       "@id": "https://orcid.org/0000-0002-5669-2769",

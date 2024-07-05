@@ -20,7 +20,7 @@
         "prov:hadRole": "ods:Generator"
       }
     ],
-    "prov:endedAtTime": "2024-06-11T09:14:00Z",
+    "prov:endedAtTime": "2024-06-11T09:14:00.567Z",
     "prov:used": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/3",
     "rdfs:comment": "This activity was created by the user"
   },

@@ -88,7 +88,7 @@
           "format": "date-time",
           "description": "The date and time when the activity ended, in ISO 8601 format, http://www.w3.org/ns/prov#endedAtTime",
           "examples": [
-            "2024-06-11T09:14:001Z"
+            "2024-06-11T09:14:00.233Z"
           ]
         },
         "prov:used": {
@@ -169,7 +169,7 @@
               "schema:version": 1,
               "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
               "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
-              "schema:dateCreated": "2021-06-01T12:00:00Z",
+              "schema:dateCreated": "2021-06-01T12:00:00.111Z",
               "ods:creator": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
               "ods:Mapping": {
                 "ods:DefaultMapping": [

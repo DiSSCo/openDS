@@ -7,7 +7,8 @@
   "schema:version": 1,
   "schema:name": "GBIF Linker Service",
   "schema:description": "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship",
-  "schema:dateCreated": "2021-06-01T12:00:01Z",
+  "schema:dateCreated": "2021-06-01T12:00:01.345Z",
+  "schema:dateModified": "2021-06-01T12:00:01.345Z",
   "schema:creator": {
     "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
     "@type": "schema:Person",

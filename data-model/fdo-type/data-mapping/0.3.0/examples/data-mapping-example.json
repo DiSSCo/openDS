@@ -7,7 +7,8 @@
   "schema:version": 1,
   "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
   "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
-  "schema:dateCreated": "2021-06-01T12:00:00Z",
+  "schema:dateCreated": "2021-06-01T12:00:00.122Z",
+  "schema:dateModified": "2021-06-01T12:00:00.122Z",
   "ods:creator": {
     "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
     "@type": "schema:Person",
