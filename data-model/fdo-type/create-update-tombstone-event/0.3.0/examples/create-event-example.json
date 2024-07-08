@@ -20,7 +20,7 @@
         "prov:hadRole": "ods:Generator"
       }
     ],
-    "prov:endedAtTime": "2024-06-11T09:14:00Z",
+    "prov:endedAtTime": "2024-06-11T09:14:00.348Z",
     "prov:used": "https://doi.org/10.15468/1a2b3c/3",
     "rdfs:comment": "This activity was created by the user",
     "ods:changeValue": []
@@ -36,7 +36,7 @@
       "schema:version": 1,
       "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
       "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
-      "schema:dateCreated": "2021-06-01T12:00:00Z",
+      "schema:dateCreated": "2021-06-01T12:00:00.676Z",
       "ods:creator": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
       "ods:Mapping": {
         "ods:DefaultMapping": [

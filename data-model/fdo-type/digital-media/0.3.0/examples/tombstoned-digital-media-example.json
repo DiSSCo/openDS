@@ -4,7 +4,8 @@
   "ods:ID": "https://doi.org/10.22/ABC-DEF-GHI",
   "ods:version": 1,
   "ods:status": "ods:Tombstone",
-  "ods:created": "2024-06-05T12:34:56Z",
+  "dcterms:created": "2024-06-05T12:34:56Z",
+  "dcterms:modified": "2024-06-08T17:00:56Z",
   "ods:type": "https://doi.org/10.15468/1a2b3c",
   "dcterms:type": "Image",
   "ac:accessURI": "https://example.org/digital-object/12345",
@@ -20,8 +21,6 @@
   "dcterms:rightsHolder": "National Museum of Natural History",
   "dcterms:source": "Museum archives",
   "dcterms:creator": "Dr. John Doe",
-  "dcterms:created": "2024-06-05",
-  "dcterms:modified": "2024-06-05",
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
     "ods:tombstonedDate": "2023-06-15T14:30:00Z",

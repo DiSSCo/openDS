@@ -7,7 +7,8 @@
   "schema:version": 1,
   "schema:name": "Herbarium of University of Coimbra (COI)",
   "schema:description": "The herbarium collection of the University of Coimbra is one of the oldest in Portugal, with specimens dating back to the 18th century.",
-  "schema:dateCreated": "2021-06-01T12:00:00Z",
+  "schema:dateCreated": "2021-06-01T12:00:00.347Z",
+  "schema:dateModified": "2021-06-01T12:00:00.347Z",
   "schema:creator": {
     "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
     "@type": "schema:Person",

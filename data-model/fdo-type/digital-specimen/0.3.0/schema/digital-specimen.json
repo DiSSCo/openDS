@@ -42,9 +42,16 @@
       ],
       "description": "The status of the Digital Object"
     },
-    "ods:created": {
+    "dcterms:modified": {
       "type": "string",
-      "description": "The timestamp that the object version was created in DiSSCo",
+      "description": "The timestamp that the object was last changed, which resulted in a new version of the object",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "description": "The timestamp that the object was created in DiSSCo",
       "format": "date-time",
       "examples": [
         "2023-10-02T12:31:34.806Z"
@@ -172,13 +179,6 @@
       "description": "https://purl.org/dc/terms/license",
       "examples": [
         "https://creativecommons.org/licenses/by/4.0/"
-      ]
-    },
-    "dcterms:modified": {
-      "type": "string",
-      "description": "https://purl.org/dc/terms/modified",
-      "examples": [
-        "2023-10-02T12:31:34.806Z"
       ]
     },
     "dwc:basisOfRecord": {
@@ -433,7 +433,8 @@
     "ods:ID",
     "ods:version",
     "ods:type",
-    "ods:created",
+    "dcterms:created",
+    "dcterms:modified",
     "ods:midsLevel",
     "ods:normalisedPhysicalSpecimenID",
     "ods:physicalSpecimenID",

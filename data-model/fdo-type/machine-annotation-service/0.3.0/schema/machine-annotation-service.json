@@ -70,6 +70,14 @@
         "2021-06-01T12:00:000Z"
       ]
     },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, https://schema.org/dateModified",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
     "schema:creator": {
       "type": "object",
       "description": "Contains an ods:Agent object",
@@ -211,6 +219,8 @@
     "ods:ID",
     "ods:type",
     "schema:name",
+    "schema:dateCreated",
+    "schema:dateModified",
     "ods:containerImage",
     "ods:containerTag",
     "ods:batchingPermitted",
