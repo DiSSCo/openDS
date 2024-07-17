@@ -12,7 +12,7 @@
   "pidRecordIssueDate": "2023-10-16T11:35:51.927Z",
   "pidRecordIssueNumber": 1,
   "structuralType": "digital",
-  "pidStatus": "ACTIVE",
+  "pidStatus": "TOMBSTONED",
   "referentType": "digitalSpecimen",
   "referentDoiName": "TEST/3MD-Q3C-T6M",
   "referentName": "Cyclocephala pugnax Arrow, 1914",
@@ -23,5 +23,7 @@
   "primarySpecimenObjectIdType": "Resolvable",
   "normalisedPrimarySpecimenObjectId": "http://coldb.mnhn.fr/catalognumber/mnhn/ec/ec23797",
   "topicDiscipline": "Botany",
-  "livingOrPreserved": "Preserved"
+  "livingOrPreserved": "Preserved",
+  "ods:tombstonedText": "Resource deleted by admin",
+  "tombstonedDate": "2024-11-17T11:57:02.933Z"
 }

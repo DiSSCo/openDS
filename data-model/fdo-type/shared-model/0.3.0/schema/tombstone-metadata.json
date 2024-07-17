@@ -53,7 +53,8 @@
               "ods:isDuplicateOf"
             ]
           }
-        }
+        },
+        "additionalProperties": false
       }
     }
   },

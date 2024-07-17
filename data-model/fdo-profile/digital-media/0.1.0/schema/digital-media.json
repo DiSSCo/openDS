@@ -81,12 +81,8 @@
       "enum": [
         "DRAFT",
         "ACTIVE",
-        "RETIRED",
-        "OBSOLETE",
         "FAILED",
-        "MERGED",
-        "SPLIT",
-        "TEST"
+        "TOMBSTONED"
       ],
       "description": "A PID is considered to have a lifecycle, PID status indicates the status in the life cycle, e.g. draft, active, retired. PID statuses are described further in the PID infrastructure design.",
       "$comment": "idx = 13"
@@ -101,6 +97,53 @@
       "description": "XML document describing location(s) of the resource",
       "$comment": "idx = 101",
       "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
+    },
+    "ods:tombstonedText": {
+      "type": "string",
+      "description": "A reason why the Digital Object was tombstoned",
+      "examples": [
+        "This is a duplicate of XXX",
+        "This object was made by mistake"
+      ],
+      "$comment": "idx = 30"
+    },
+    "ods:hasRelatedPID": {
+      "type": "array",
+      "description": "The PIDs of the object the tombstoned object is related to",
+      "items": {
+        "type": "object",
+        "items": {
+          "type": "object",
+          "properties": {
+            "ods:ID": {
+              "type": "string",
+              "description": "The PID of the related object",
+              "examples": [
+                "https://doi.org/10.1234/abcd"
+              ]
+            },
+            "ods:relationshipType": {
+              "type": "string",
+              "description": "The type of relationship between the tombstoned object and the related object",
+              "examples": [
+                "ods:relatedTo",
+                "ods:isDuplicateOf"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "$comment": "idx = 31"
+      }
+    },
+    "tombstonedDate": {
+      "type": "string",
+      "description": "Timestamp the Digital Object was tombstoned and no longer active.",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ],
+      "$comment": "idx = 32"
     },
     "referentType": {
       "type": "string",
