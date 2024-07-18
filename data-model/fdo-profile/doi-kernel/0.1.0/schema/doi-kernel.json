@@ -82,7 +82,7 @@
         "DRAFT",
         "ACTIVE",
         "FAILED",
-        "TOMBSTONED"
+        "TOMBSTONE"
       ],
       "description": "A PID is considered to have a lifecycle, PID status indicates the status in the life cycle, e.g. draft, active, retired. PID statuses are described further in the PID infrastructure design.",
       "$comment": "idx = 13"
@@ -92,7 +92,7 @@
       "description": "Administrative information for PID profile",
       "$comment": "idx = 100"
     },
-    "ods:tombstonedText": {
+    "ods:tombstoneText": {
       "type": "string",
       "description": "A reason why the Digital Object was tombstoned",
       "examples": [

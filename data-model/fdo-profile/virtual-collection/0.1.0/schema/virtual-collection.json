@@ -79,7 +79,7 @@
     },
     "pidStatus": {
       "enum": [
-        "TOMBSTONED",
+        "TOMBSTONE",
         "DRAFT",
         "ACTIVE",
         "FAILED"
@@ -92,7 +92,7 @@
       "description": "Administrative information for PID profile",
       "$comment": "idx = 100"
     },
-    "ods:tombstonedText": {
+    "ods:tombstoneText": {
       "type": "string",
       "description": "A reason why the Digital Object was tombstoned",
       "examples": [

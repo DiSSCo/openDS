@@ -15,7 +15,7 @@
         "attributes": {
           "type": "object",
           "properties": {
-            "ods:tombstonedText": {
+            "ods:tombstoneText": {
               "type": "string",
               "description": "Free text describing why the object was tombstoned",
               "$comment": "idx = 30"
@@ -48,14 +48,14 @@
                 },
                 "additionalProperties": false,
                 "required": [
-                  "tombstonedText"
+                  "tombstoneText"
                 ]
               }
             }
           },
           "additionalProperties": false,
           "required": [
-            "tombstonedText"
+            "tombstoneText"
           ]
         }
       },

@@ -12,12 +12,12 @@
   "pidRecordIssueDate": "2023-11-17T11:57:02.933Z",
   "pidRecordIssueNumber": 1,
   "structuralType": "digital",
-  "pidStatus": "TOMBSTONED",
+  "pidStatus": "TOMBSTONE",
   "targetPid": "https://hdl.handle.net/20.500.125/1111111",
   "targetType": "DigitalSpecimen",
   "motivation": "oa:commenting",
   "annotationHash": "faab142f-40a5-fc15-7085-49c23301c608",
-  "ods:tombstonedText": "Annotation deleted by user",
+  "ods:tombstoneText": "Annotation deleted by user",
   "ods:hasRelatedPID": [
     {
       "ods:ID": "https://hdl.handle.net/20.500.125/1111111",

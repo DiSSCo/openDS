@@ -45,7 +45,7 @@
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
     "ods:tombstonedDate": "2024-07-27T15:23:30.000Z",
-    "ods:tombstonedText": "This annotation was rejected and has been tombstoned",
+    "ods:tombstoneText": "This annotation was rejected and has been tombstoned",
     "ods:TombstonedByAgent": {
       "@id": "https://orcid.org/0000-0002-5669-2769",
       "@type": "schema:Person",

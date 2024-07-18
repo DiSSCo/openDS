@@ -12,8 +12,8 @@
   "pidRecordIssueDate": "2023-09-01T13:05:08.375Z",
   "pidRecordIssueNumber": 1,
   "structuralType": "digital",
-  "pidStatus": "TOMBSTONED",
+  "pidStatus": "TOMBSTONE",
   "sourceDataStandard": "dwc",
-  "ods:tombstonedText": "Resource deleted by admin",
+  "ods:tombstoneText": "Resource deleted by admin",
   "tombstonedDate": "2024-11-17T11:57:02.933Z"
 }

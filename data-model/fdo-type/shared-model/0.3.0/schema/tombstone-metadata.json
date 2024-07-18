@@ -19,7 +19,7 @@
         "2021-06-01T12:00:000Z"
       ]
     },
-    "ods:tombstonedText": {
+    "ods:tombstoneText": {
       "type": "string",
       "description": "A reason why the Digital Object was tombstoned",
       "examples": [
@@ -61,7 +61,7 @@
   "required": [
     "@type",
     "ods:tombstonedDate",
-    "ods:tombstonedText",
+    "ods:tombstoneText",
     "ods:TombstonedByAgent"
   ],
   "additionalProperties": false

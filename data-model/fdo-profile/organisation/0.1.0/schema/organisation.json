@@ -79,7 +79,7 @@
     },
     "pidStatus": {
       "enum": [
-        "TOMBSTONED",
+        "TOMBSTONE",
         "DRAFT",
         "ACTIVE",
         "FAILED"
@@ -98,7 +98,7 @@
       "$comment": "idx = 101",
       "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
     },
-    "ods:tombstonedText": {
+    "ods:tombstoneText": {
       "type": "string",
       "description": "A reason why the Digital Object was tombstoned",
       "examples": [
