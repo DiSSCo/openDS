@@ -11,7 +11,7 @@
       "const": "ods:Tombstone",
       "description": "The type of the record, in this case a ods:Tombstone"
     },
-    "ods:tombstonedDate": {
+    "ods:tombstoneDate": {
       "type": "string",
       "description": "Timestamp the Digital Object was tombstoned and no longer active.",
       "format": "date-time",
@@ -53,14 +53,13 @@
               "ods:isDuplicateOf"
             ]
           }
-        },
-        "additionalProperties": false
+        }
       }
     }
   },
   "required": [
     "@type",
-    "ods:tombstonedDate",
+    "ods:tombstoneDate",
     "ods:tombstoneText",
     "ods:TombstonedByAgent"
   ],

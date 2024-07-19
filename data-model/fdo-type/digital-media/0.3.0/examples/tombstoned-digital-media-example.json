@@ -23,7 +23,7 @@
   "dcterms:creator": "Dr. John Doe",
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
-    "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+    "ods:tombstoneDate": "2023-06-15T14:30:00Z",
     "ods:tombstoneText": "This digital media was removed as it showed the wrong specimen",
     "ods:TombstonedByAgent": {
       "@id": "https://orcid.org/0000-0002-5669-2769",

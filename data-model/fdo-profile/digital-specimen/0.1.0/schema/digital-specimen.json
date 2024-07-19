@@ -94,7 +94,7 @@
       "description": "Administrative information for PID profile",
       "$comment": "idx = 100"
     },
-    "ods:tombstoneText": {
+    "tombstoneText": {
       "type": "string",
       "description": "A reason why the Digital Object was tombstoned",
       "examples": [
@@ -132,7 +132,7 @@
         "$comment": "idx = 31"
       }
     },
-    "tombstonedDate": {
+    "tombstoneDate": {
       "type": "string",
       "description": "Timestamp the Digital Object was tombstoned and no longer active.",
       "format": "date-time",

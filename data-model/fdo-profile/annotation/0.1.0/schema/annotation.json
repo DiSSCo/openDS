@@ -100,7 +100,7 @@
       "$comment": "idx = 101",
       "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
     },
-    "ods:tombstoneText": {
+    "tombstoneText": {
       "type": "string",
       "description": "A reason why the Digital Object was tombstoned",
       "examples": [
@@ -109,7 +109,7 @@
       ],
       "$comment": "idx = 30"
     },
-    "ods:hasRelatedPID": {
+    "hasRelatedPID": {
       "type": "array",
       "description": "The PIDs of the object the tombstoned object is related to",
       "items": {
@@ -124,7 +124,7 @@
                 "https://doi.org/10.1234/abcd"
               ]
             },
-            "ods:relationshipType": {
+            "relationshipType": {
               "type": "string",
               "description": "The type of relationship between the tombstoned object and the related object",
               "examples": [
@@ -138,7 +138,7 @@
         "$comment": "idx = 31"
       }
     },
-    "tombstonedDate": {
+    "tombstoneDate": {
       "type": "string",
       "description": "Timestamp the Digital Object was tombstoned and no longer active.",
       "format": "date-time",

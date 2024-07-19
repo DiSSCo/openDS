@@ -15,7 +15,7 @@
         "attributes": {
           "type": "object",
           "properties": {
-            "ods:tombstoneText": {
+            "tombstoneText": {
               "type": "string",
               "description": "Free text describing why the object was tombstoned",
               "$comment": "idx = 30"

@@ -47,7 +47,7 @@
   },
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
-    "ods:tombstonedDate": "2024-07-27T15:23:30.000Z",
+    "ods:tombstoneDate": "2024-07-27T15:23:30.000Z",
     "ods:tombstoneText": "This object was made by mistake",
     "ods:TombstonedByAgent": {
       "@id": "https://orcid.org/0000-0002-5669-2769",

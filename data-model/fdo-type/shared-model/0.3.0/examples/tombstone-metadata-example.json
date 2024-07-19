@@ -1,6 +1,6 @@
 {
   "@type": "ods:Tombstone",
-  "ods:tombstonedDate": "2023-06-15T14:30:00Z",
+  "ods:tombstoneDate": "2023-06-15T14:30:00Z",
   "ods:tombstoneText": "This object was made by mistake",
   "ods:TombstonedByAgent": {
     "@id": "https://example.org/agents/agent123",
