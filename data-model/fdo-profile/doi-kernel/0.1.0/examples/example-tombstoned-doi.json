@@ -12,9 +12,11 @@
   "pidRecordIssueDate": "2023-11-17T11:57:02.933Z",
   "pidRecordIssueNumber": 1,
   "structuralType": "digital",
-  "pidStatus": "ACTVE",
+  "pidStatus": "TOMBSTONE",
   "primaryReferentType": "creation",
   "referentName": "Some digital object",
   "referentType": "Research output",
-  "referentDoiName": "TEST/FFR-RTL-B8K"
+  "referentDoiName": "TEST/FFR-RTL-B8K",
+  "tombstoneText": "Resource deleted by admin",
+  "tombstoneDate": "2024-11-17T11:57:02.933Z"
 }

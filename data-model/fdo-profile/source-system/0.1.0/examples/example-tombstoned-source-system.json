@@ -12,6 +12,8 @@
   "pidRecordIssueDate": "2023-09-05T08:06:38.914Z",
   "pidRecordIssueNumber": 1,
   "structuralType": "digital",
-  "pidStatus": "ACTIVE",
-  "sourceSystemName": "TalTech geological collections endpoint"
+  "pidStatus": "TOMBSTONE",
+  "sourceSystemName": "TalTech geological collections endpoint",
+  "tombstoneText": "Resource deleted by admin",
+  "tombstoneDate": "2024-11-17T11:57:02.933Z"
 }

@@ -12,6 +12,8 @@
   "pidRecordIssueDate": "2024-01-26T13:42:59.305Z",
   "pidRecordIssueNumber": 1,
   "structuralType": "digital",
-  "pidStatus": "ACTIVE",
-  "masName": "Georeferencing tool"
+  "pidStatus": "TOMBSTONE",
+  "masName": "Georeferencing tool",
+  "tombstoneText": "Resource deleted by admin",
+  "tombstoneDate": "2024-11-17T11:57:02.933Z"
 }

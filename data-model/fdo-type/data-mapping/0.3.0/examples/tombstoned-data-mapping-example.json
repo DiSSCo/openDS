@@ -35,8 +35,8 @@
   "ods:mappingDataStandard": "dwc",
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
-    "ods:tombstonedDate": "2021-06-06T13:22:00.123Z",
-    "ods:tombstonedText": "This object was made by mistake",
+    "ods:tombstoneDate": "2021-06-06T13:22:00.123Z",
+    "ods:tombstoneText": "This object was made by mistake",
     "ods:TombstonedByAgent": {
       "@id": "https://orcid.org/0000-0002-5669-2769",
       "@type": "schema:Person",

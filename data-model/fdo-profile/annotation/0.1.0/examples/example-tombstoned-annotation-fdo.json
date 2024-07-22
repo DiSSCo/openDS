@@ -1,0 +1,28 @@
+{
+  "10320/loc": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>",
+  "fdoProfile": "https://hdl.handle.net/21.T11148/cf458ca9ee1d44a5608f",
+  "fdoRecordLicense": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "digitalObjectType": "https://hdl.handle.net/21.T11148/cf458ca9ee1d44a5608f",
+  "digitalObjectName": "Annotation",
+  "pid": "https://hdl.handle.net/TEST/FFR-RTL-B8K",
+  "pidIssuer": "https://ror.org/04wxnsj81",
+  "pidIssuerName": "DataCite",
+  "issuedForAgent": "https://ror.org/0566bfb96",
+  "issuedForAgentName": "Naturalis Biodiversity Center",
+  "pidRecordIssueDate": "2023-11-17T11:57:02.933Z",
+  "pidRecordIssueNumber": 1,
+  "structuralType": "digital",
+  "pidStatus": "TOMBSTONE",
+  "targetPid": "https://hdl.handle.net/20.500.125/1111111",
+  "targetType": "DigitalSpecimen",
+  "motivation": "oa:commenting",
+  "annotationHash": "faab142f-40a5-fc15-7085-49c23301c608",
+  "tombstoneText": "Annotation deleted by user",
+  "hasRelatedPID": [
+    {
+      "ods:ID": "https://hdl.handle.net/20.500.125/1111111",
+      "relationshipType": "Annotation Target"
+    }
+  ],
+  "tombstoneDate": "2024-11-17T11:57:02.933Z"
+}
