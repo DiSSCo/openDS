@@ -78,6 +78,12 @@
       "description": "Nature of institutional identifier",
       "$comment": "idx = 203"
     },
+    "primarySpecimenObjectIdName": {
+      "type": "string",
+      "description": "Locally used name for the identifier, to distinguish it from other locally used identifiers, max 30 characters.",
+      "example": "Registration number",
+      "$comment": "idx = 204"
+    },
     "normalisedPrimarySpecimenObjectId": {
       "type": "string",
       "description": "For internal processing purposes only to make a local identifier globally unique. This is the primarySpecimenObjectId if it is globally unique or a combination of ROR ID string, source system ID string, primarySpecimenObjectId if it is a proprietary identifier.",
