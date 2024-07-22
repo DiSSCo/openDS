@@ -7,7 +7,7 @@
       "structuralType": "digital",
       "targetPid": "https://hdl.handle.net/20.5000.10235/aaa-bbb-ccc",
       "targetType": "https://doi.org/21.T11148/894b1e6cad57e921764e",
-      "motivation": "adding",
+      "motivation": "ods:adding",
       "annotationHash": "b3dada2d-396b-cab2-665e-125659fc7ae6"
     }
   }
