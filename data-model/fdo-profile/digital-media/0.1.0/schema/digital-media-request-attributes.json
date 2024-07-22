@@ -1,0 +1,206 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-media/0.1.0/digital-media-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for Digital Media",
+  "$comment": "FDO Profile Version 0.1.0",
+  "properties": {
+    "pidIssuer": {
+      "type": "string",
+      "description": "In case of a DOI this is a PID for the DOI Registration Agency",
+      "example": "https://hdl.handle.net/10.17183",
+      "$comment": "idx = 6"
+    },
+    "issuedForAgent": {
+      "type": "string",
+      "description": "In the case of a digital specimen, this is a PID for DiSSCo as the agent responsible for serving the digital specimen object",
+      "example": "https://hdl.handle.net/10.22",
+      "$comment": "idx = 8"
+    },
+    "structuralType": {
+      "enum": [
+        "digital",
+        "physical",
+        "performance",
+        "abstraction"
+      ],
+      "description": "Nature of the digital object, compatible with DOI schema requirements. The nature of a digital specimen object is always \"digital\". Other digital objects (outside DiSSCo) could be of physical, performance or abstraction nature.",
+      "$comment": "idx = 12"
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "referentType": {
+      "type": "string",
+      "description": "A generic name for the type of object that the DOI refers to. This is different from digitalObjectType that points to a specific type, e.g. there can be different types of digital specimens that each have a slightly different metadata schema because they describe a different kind of specimen, like a botanical versus a geological specimen.",
+      "example": "digital specimen",
+      "$comment": "idx = 40"
+    },
+    "referentName": {
+      "type": "string",
+      "description": "In the case of a digital specimen this is the name for the object in the collection, which can be anything from a taxon name to a collection number.",
+      "example": "Mus musculus type 1",
+      "$comment": "idx = 42"
+    },
+    "primaryReferentType": {
+      "type": "string",
+      "description": "The primary type of the referent in the DOI Kernel XML Schema (e.g. creation, party, event). This is an open list. For digital specimens and media it will always be creation.",
+      "example": "creation",
+      "$comment": "idx = 43"
+    },
+    "mediaHost": {
+      "type": "string",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also (use DiSSCo QID in that case). Notehe organisation may use an external repository like morphobank to host the object.",
+      "example": "https://ror.org/0566bfb96",
+      "$comment": "idx = 400"
+    },
+    "mediaHostName": {
+      "type": "string",
+      "description": "Name for the administrative organisation hosting the digital media (name derived from ROR or Wikidata at the point of creating the FDO record).",
+      "example": "Naturalis Biodiversity Center",
+      "$comment": "idx = 401"
+    },
+    "dcterms:format": {
+      "enum": [
+        "audio",
+        "model",
+        "video",
+        "text",
+        "application",
+        "image"
+      ],
+      "description": "Slated for removal",
+      "$comment": "idx = 402"
+    },
+    "isDerivedFromSpecimen": {
+      "type": "boolean",
+      "description": "Whether or not the media is a record/depiction of a specimen",
+      "$comment": "idx = 403"
+    },
+    "linkedDigitalObjectPid": {
+      "type": "string",
+      "description": "Handle or DOI, the DO to which the media should be linked.",
+      "example": "https://hdl.handle.net/20.5000.1025/3X0-WA3-J8Q",
+      "$comment": "idx = 404"
+    },
+    "linkedDigitalObjectType": {
+      "enum": [
+        "digital specimen",
+        "agent",
+        "facility",
+        "text",
+        "supplementary material"
+      ],
+      "description": "The DO type to which the media is linked, one of: digital specimen, agent, facility, supplementary material",
+      "$comment": "idx = 405"
+    },
+    "linkedAttribute": {
+      "type": "string",
+      "description": "A specific attribute within the linked DO to which the media should be linked, such as an identification or event or logo",
+      "example": "dwc:IdentificationID",
+      "$comment": "idx = 406"
+    },
+    "primaryMediaId": {
+      "type": "string",
+      "description": "Primary ID supplied by the original provider for the media (compatible with ac:providerManagedID). the mediaUrl may be the ID itself, for example: https://data.nhm.ac.uk/media/93012a86-a00f-435a-a985-8e3c0ab6e51b",
+      "example": "ae00-a4gg-123b4",
+      "$comment": "idx = 407"
+    },
+    "primaryMediaObjectIdType": {
+      "enum": [
+        "Global",
+        "Local",
+        "Resolvable"
+      ],
+      "description": "Vocabulary derived from DOI schema creationIdentifier.: PROPRIETARY IDENTIFIER if the identifier is custom made by the organisation or collection management system.",
+      "$comment": "idx = 408"
+    },
+    "primaryMediaObjectIdName": {
+      "type": "string",
+      "example": "DAM nr",
+      "$comment": "idx = 409"
+    },
+    "dcterms:type": {
+      "enum": [
+        "text",
+        "image",
+        "sound",
+        "dataset",
+        "software",
+        "interactive",
+        "event",
+        "Physical object + Audiovisual Core",
+        "3D object type"
+      ],
+      "description": "Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type",
+      "$comment": "idx = 410"
+    },
+    "dcterms:subject": {
+      "type": "string",
+      "description": "(Previously mediaMimeType) https://ac.tdwg.org/termlist/#Iptc4xmpExt_CVterm ",
+      "$comment": "idx = 411"
+    },
+    "mediaMimeType": {
+      "type": "string",
+      "description": "https://www.iana.org/assignments/media-types/media-types.xhtml. Only mimetypes for audio, image, model, video, Text, application are allowed, excluded are mimetypes for font, example, message, multipart.",
+      "example": "image/jpeg",
+      "$comment": "idx = 412"
+    },
+    "derivedFromEntity": {
+      "type": "string",
+      "description": "Other digital entity where the media was derived from, specified by its ID or PID.\n e.g. a label image extracted from an herbarium sheet image, a video with the first minute frameset of another video, a thumbnail from a larger file.",
+      "example": "https://hdl.handlenet/20.5000.1025/QR2-P99-2WA",
+      "$comment": "idx = 4"
+    },
+    "licenseName": {
+      "type": "string",
+      "description": "creative commons or other licence for the media object (file) that permits some usage rights. DiSSCo cannot accept images with full copyright, e.g. for which there is no licence that gives DiSSCo some usage rights.",
+      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "$comment": "idx = 414"
+    },
+    "licenseUrl": {
+      "type": "string",
+      "description": "Machine-actionable licensing information. Uses SPDX Identifiers",
+      "example": "https://spdx.org/licenses/CC-BY-4.0",
+      "$comment": "idx = 415"
+    },
+    "rightsholderName": {
+      "type": "string",
+      "description": "usually the creator of the object, holds the copyright for the object. Defaults to the supplier of the media object. if no other rightsholder is specified.",
+      "example": "Naturalis Biodiversity Center",
+      "$comment": "idx = 416"
+    },
+    "rightsholderPid": {
+      "type": "string",
+      "description": "Identifier for rights holder.",
+      "example": "https://ror.org/0x123",
+      "$comment": "idx = 417"
+    },
+    "rightsholderPidType": {
+      "enum": [
+        "Global",
+        "Local",
+        "Resolvable"
+      ],
+      "$comment": "idx = 418"
+    },
+    "dcterms:conformsTo": {
+      "type": "string",
+      "description": "To indicate the media object conforms to a certain standard, e.g. IIIF",
+      "example": "https://iiif.io/api/image ",
+      "$comment": "idx = 418"
+    }
+  },
+  "required": [
+    "issuedForAgent",
+    "mediaHost",
+    "isDerivedFromSpecimen",
+    "linkedDigitalObjectPid",
+    "linkedDigitalObjectType",
+    "primaryMediaId"
+  ],
+  "additionalProperties": false
+}
