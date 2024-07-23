@@ -1,0 +1,12 @@
+name: General suggestions openDS
+description: Provide general feedback on any of the Digital Object structures.
+labels: ["open-review", "suggestion"]
+body:
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggestion
+      description: Feel free to provide any generic suggestion about openDS.
+      placeholder: "I have a general comment on the schema structure."
+    validations:
+      required: true
