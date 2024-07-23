@@ -1,7 +1,7 @@
 name: Term Feedback
 description: Provide feedback on a specific term (class or field) in the schema. This could be to rename the field or change any of its properties.
 title: "[Term]: "
-labels: ["open-review", "feedback", "term"]
+labels: ["open-review", "feedback", "openDS term"]
 body:
   - type: input
     id: term-name
