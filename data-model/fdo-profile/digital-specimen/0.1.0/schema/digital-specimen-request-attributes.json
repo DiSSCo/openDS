@@ -115,7 +115,8 @@
       "enum": [
         "Natural",
         "Human-made",
-        "Mixed origin"
+        "Mixed origin",
+        "Unclassified"
       ],
       "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected.",
       "$comment": "idx = 208"
@@ -127,7 +128,8 @@
         "Earth System",
         "Extraterrestrial",
         "Cultural Artefacts",
-        "Archive Material"
+        "Archive Material",
+        "Unclassified"
       ],
       "description": "High-level terms providing general domain information with which the objects are associated.",
       "$comment": "idx = 209"
@@ -143,7 +145,8 @@
         "Zoology",
         "Ecology",
         "Other Biodiversity",
-        "Other Geodiversity"
+        "Other Geodiversity",
+        "Unclassified"
       ],
       "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related.",
       "$comment": "idx = 210"
@@ -192,7 +195,8 @@
         "Mixed Geology Objects",
         "Terrestrial Finds/Falls",
         "Terrestrial Impacta",
-        "Sample Returns"
+        "Sample Returns",
+        "Unclassified"
       ],
       "description": "Countable things (objects) served as a more detailed classification of each of the disciplines.",
       "$comment": "idx = 211"
