@@ -1,0 +1,47 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/mas/0.1.0/mas-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a MAS",
+  "$comment": "FDO Profile Version 0.1.0",
+  "properties": {
+    "pidIssuer": {
+      "type": "string",
+      "description": "In case of a DOI this is a PID for the DOI Registration Agency",
+      "example": "https://hdl.handle.net/10.17183",
+      "$comment": "idx = 6"
+    },
+    "issuedForAgent": {
+      "type": "string",
+      "description": "In the case of a digital specimen, this is a PID for DiSSCo as the agent responsible for serving the digital specimen object",
+      "example": "https://hdl.handle.net/10.22",
+      "$comment": "idx = 8"
+    },
+    "structuralType": {
+      "enum": [
+        "digital",
+        "physical",
+        "performance",
+        "abstraction"
+      ],
+      "description": "Nature of the digital object, compatible with DOI schema requirements. The nature of a digital specimen object is always \"digital\". Other digital objects (outside DiSSCo) could be of physical, performance or abstraction nature.",
+      "$comment": "idx = 12"
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "masName": {
+      "type": "string",
+      "description": "Name of Machine Annotation Service",
+      "$comment": "idx = 604"
+    }
+  },
+  "required": [
+    "issuedForAgent",
+    "masName"
+  ],
+  "additionalProperties": false
+}
