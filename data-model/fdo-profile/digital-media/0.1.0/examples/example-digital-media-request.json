@@ -11,7 +11,7 @@
       "linkedDigitalObjectType": "digital specimen",
       "primaryMediaId": "ae00-a4gg-123b4",
       "dcterms:format": "image",
-      "dcterms:type": "image"
+      "dcterms:type": "Image"
     }
   }
 }

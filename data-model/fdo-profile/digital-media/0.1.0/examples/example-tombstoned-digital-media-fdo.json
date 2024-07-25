@@ -24,7 +24,7 @@
   "linkedDigitalObjectPid": "TEST/VNG-KCR-A4C",
   "linkedDigitalObjectType": "digital specimen",
   "primaryMediaId": "https://mediaphoto.mnhn.fr/media/1620403020391dDLZHWzqVzfk5Az3",
-  "dcterms:type": "image",
+  "dcterms:type": "Image",
   "primaryMediaObjectIdName": "ac:accessUri",
   "primaryMediaObjectIdType": "Resolvable",
   "licenseUrl": "cc-by-nc-nd",
