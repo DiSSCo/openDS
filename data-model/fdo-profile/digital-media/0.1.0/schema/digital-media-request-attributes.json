@@ -125,15 +125,18 @@
     },
     "dcterms:type": {
       "enum": [
-        "text",
-        "image",
-        "sound",
-        "dataset",
-        "software",
-        "interactive",
-        "event",
-        "Physical object + Audiovisual Core",
-        "3D object type"
+        "Collection",
+        "Dataset",
+        "Event",
+        "Image",
+        "InteractiveResource",
+        "MovingImage",
+        "PhysicalObject",
+        "Service",
+        "Software",
+        "Sound",
+        "StillImage",
+        "Text"
       ],
       "description": "Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type",
       "$comment": "idx = 410"
