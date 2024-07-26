@@ -1,332 +1,380 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/tettris-service/0.1.0/tettris-service.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Taxonomic Service Version 0.1.0",
-  "title": "TaxonomicService",
-  "type": "object",
-  "description": "Generic concept of a Service or Tool",
-  "properties": {
-      "@id": {
-          "type": "string",
-          "description": "The unique identifier of the Taxonomic Service object",
-          "pattern": "20.500.14547\/(.){20}",
-          "examples": [
-              "20.500.14547/47bcc386b52ecbae623a"
-          ]
-      },
-      "@type": {
-          "type": "string",
-          "description": "The type of the object, in this case taxonomicService",
-          "const": "taxonomicService"
-      },
-      "cetaf:created": {
-          "type": "string",
-          "description": "The timestamp that the object version was created",
-          "format": "date-time",
-          "examples": [
-              "2023-07-10T12:02:00.000Z"
-          ]
-      },
-      "dcterms:modified": {
-          "type": "string",
-          "description": "Modification date for Taxonomic Service information",
-          "examples": [
-              "2023-07-10T12:02:00.000Z"
-          ]
-      },
-      "cetaf:state": {
-          "type": "string",
-          "description": "The current state of the object",
-          "examples": [
-              "draft",
-              "published"
-          ]
-      },
-      "cetaf:taxonomicServiceType": {
-          "type": "string",
-          "description": "A type that defines the kind of taxonomic service",
-          "enum": [
-              "AITrainingDataset",
-              "communityGroup",
-              "crowdSourcing",
-              "dataTool",
-              "e-LearningService",
-              "factsheet",
-              "identification",
-              "inventory",
-              "referenceCollection",
-              "specimenDatasetNotInGBIF",
-              "website"
-          ]
-      },
-      "dcterms:licence": {
-          "type": "string",
-          "description": "http://purl.org/dc/terms/licence",
-          "$comment": "Determine available licences",
-          "examples": [
-              "CC0"
-          ]
-      },
-      "erp:name": {
-          "type": "string",
-          "description": "Brief and descriptive name of the Resource as assigned by the Provider",
-          "examples": [
-              "Bombus reference collection"
-          ]
-      },
-      "erp:description": {
-          "type": "string",
-          "description": "A high-level description in fairly non-technical terms of a) what the Resource does, functionality it provides and Resources it enables to access, b) the benefit to a user/customer delivered by a Resource; benefits are usually related to alleviating pains (e.g., eliminate undesired outcomes, obstacles or risks) or producing gains (e.g. increased performance, social gains, positive emotions or cost saving), c) list of customers, communities, users, etc. using the Resource.",
-          "examples": [
-              "A Bombus reference collection that contains a bunch of different specimen related to the Bombus species"
-          ]
-      },
-      "erp:tagLine": {
-          "type": "string",
-          "description": "Short catchphrase for marketing and advertising purposes. It will be usually displayed close to the Resource name and should refer to the main value or purpose of the Resource.",
-          "examples": [
-              "A Bombus reference collection"
-          ]
-      },
-      "erp:languageAvailabilities": {
-          "type": "array",
-          "description": "Indicators for the language the service is written in, using ISO alpha-3/ISO 639-2 ",
-          "items": {
-              "type": "string"
-          }
-      },
-      "erp:logo": {
-          "type": "string",
-          "description": "Link to the logo/visual identity of the Resource. The logo will be visible at the Portal. If there is no specific logo for the Resource the logo of the Provider may be used.",
-          "examples": [
-              "https://eosc.eu/wp-content/uploads/2022/09/New-guidelines-for-EOSC-family-branding.jpg"
-          ]
-      },
-      "erp:category": {
-          "type": "string",
-          "description": "A named group of Resources that offer access to the same type of Resources.",
-          "examples": [
-              "Software Repository",
-              "Software Package",
-              "Platform"
-          ]
-      },
-      "erp:EOSC_serviceId": {
-          "type": "string",
-          "description": "A persistent identifier, a unique reference to the (Multi-Provider Regional or Thematic) Catalogue in the context of the EOSC Portal."
-      },
-      "erp:version": {
-          "type": "string",
-          "description": "Version of the Resource that is in force in EOSC.",
-          "examples": [
-              "1",
-              "1.1",
-              "2.0.1"
-          ]
-      },
-      "erp:lastUpdate": {
-          "type": "string",
-          "description": "Date of the latest update of the Resource in EOSC.",
-          "examples": [
-              "2023-07-10T12:02:00.000Z"
-          ]
-      },
-      "cetaf:taxonomicScope": {
-          "type": "array",
-          "description": "The taxonomic scope on which the service acts upon, e.g. the taxonomic level (genus, species, etc.)",
-          "items": {
-              "type": "string"
-          }
-      },
-      "cetaf:qualityScore": {
-          "type": "number",
-          "description": "A quality indicator for the purpose of the service",
-          "examples": [
-              0,
-              50,
-              100
-          ]
-      },
-      "cetaf:reviewComment": {
-          "type": "string",
-          "description": "Comments that describes the admin review and why a certain state is given",
-          "examples": [
-              "This service is accepted, because...",
-              "This service is rejected, because..."
-          ]
-      },
-      "erp:helpdeskEmail": {
-          "type": "string",
-          "description": "Email to contact your helpdesk, where users with incidents and requests will be directed.",
-          "examples": [
-              "info@cetaf.org"
-          ]
-      },
-      "erp:helpdeskPage": {
-          "type": "string",
-          "description": "Link to the helpdesk where users with incidents and requests will be directed. It should allow private communication with providers (not a public forum). Create a dedicated URL for your Resources and provide the shortest possible alias.",
-          "examples": [
-              "cetaf.org"
-          ]
-      },
-      "cetaf:hasAgent": {
-          "type": "array",
-          "description": "Contains zero or more cetaf:Agent objects",
-          "items": {
-              "type": "object",
-              "title": "Agent",
-              "properties": {
-                  "cetaf:agentId": {
-                      "type": "string",
-                      "description": "A unique identifier to identify the agent; ORCID or Wikidata identifiers are valid",
-                      "examples": [
-                          "https://orcid.org/0000-0000-0000-0000"
-                      ]
-                  },
-                  "cetaf:fullName": {
-                      "type": "string",
-                      "description": "Full name of the agent",
-                      "examples": [
-                          "John Doe"
-                      ]
-                  },
-                  "cetaf:role": {
-                      "type": "string",
-                      "description": "The role assigned to the agent",
-                      "examples": [
-                          "Publisher",
-                          "Maintainer"
-                      ]
-                  }
-              },
-              "required": [
-                  "cetaf:agentId"
-              ]
-          }
-      },
-      "erp:webpage": {
-          "type": "string",
-          "description": "Webpage with information about the Resource usually hosted and maintained by the Provider.",
-          "examples": [
-              "cetaf.org"
-          ]
-      },
-      "cetaf:documentationUrl": {
-          "type": "string",
-          "description": "Link to the documentation of the service",
-          "examples": [
-              "cetaf.org"
-          ]
-      },
-      "erp:paymentModel": {
-          "type": "string",
-          "description": "Webpage with the supported payment models and restrictions that apply to the Resource.",
-          "examples": [
-              "http://service-name.service-provider.eu/Maintenance"
-          ]
-      },
-      "erp:termsOfUse": {
-          "type": "string",
-          "description": "Link describing the rules, resource conditions and usage policy which one must agree to abide by in order to use the Resource. Create a dedicated URL for your Resources and provide the shortest possible alias.",
-          "examples": [
-              "http://service-name.service-provid-er.eu/TermsOfUse"
-          ]
-      },
-      "erp:fundingProgram": {
-          "type": "string",
-          "description": "Name of the funding program that supported the development and/or operation of the Resource.",
-          "examples": [
-              "Horizon 2020"
-          ]
-      },
-      "cetaf:Software": {
-          "type": "object",
-          "description": "Object representing the service's software",
-          "properties": {
-              "cetaf:sourceUrl": {
-                  "type": "string",
-                  "description": "Link pointing to the source URL of the software, e.g. the GitHub repository",
-                  "examples": [
-                      "https://github.com/DiSSCo/tettris-marketplace"
-                  ]
-              },
-              "erp:requiredResources": {
-                  "type": "array",
-                  "description": "List any other EOSC Resources that your Resource requires in order to operate.",
-                  "items": {
-                      "type": "string"
-                  }
-              },
-              "cetaf:deprecated": {
-                  "type": "boolean",
-                  "description": "Boolean indicating if the software has been deprecated"
-              },
-              "erp:changeLog": {
-                  "type": "string",
-                  "description": "Summary of the Resource features updated from the previous version.",
-                  "examples": [
-                      "Upgrade of user interface. Correction of minor bugs."
-                  ]
-              },
-              "cetaf:programmingLanguages": {
-                  "type": "array",
-                  "description": "List of programming lanugages used in the software",
-                  "items": {
-                      "type": "string"
-                  },
-                  "examples": [
-                      [
-                          "Java",
-                          "Python",
-                          "R"
-                      ]
-                  ]
-              }
-          },
-          "required": [
-              "cetaf:sourceUrl"
-          ]
-      },
-      "cetaf:hasMultimedia": {
-          "type": "array",
-          "description": "Array of multimedia objects, pointing to their respective sources",
-          "items": {
-              "type": "object",
-              "properties": {
-                  "erp:multimediaUrl": {
-                      "type": "string",
-                      "description": "Link to video, screenshots or slides showing details of the Resource."
-                  },
-                  "dcterms:licence": {
-                      "type": "string",
-                      "description": "http://purl.org/dc/terms/licence",
-                      "$comment": "Determine available licences",
-                      "examples": [
-                          "CC0"
-                      ]
-                  }
-              },
-              "required": [
-                  "erp:multimediaUrl"
-              ]
-          }
-      }
-  },
-  "required": [
-      "@id",
-      "@type",
-      "erp:created",
-      "dcterms:modified",
-      "cetaf:state",
-      "cetaf:taxonomicServiceType",
-      "dcterms:licence",
-      "erp:name",
-      "erp:description",
-      "erp:languageAvailabilities",
-      "erp:category",
-      "cetaf:qualityScore",
-      "cetaf:hasAgent",
-      "erp:paymentModel"
-  ],
-  "additionalProperties": false
+    "$id": "https://schemas.dissco.tech/schemas/fdo-type/tettris-service/0.1.0/tettris-service.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$comment": "Taxonomic Service Version 0.1.0",
+    "title": "Taxonomic Service",
+    "type": "object",
+    "description": "Generic concept of a Service or Tool",
+    "context": {
+        "schema": "http://schema.org",
+        "ods": ""
+    },
+    "properties": {
+        "@id": {
+            "type": "string",
+            "description": "The unique identifier of the Taxonomic Service object",
+            "pattern": "20.500.14547\/(.){20}",
+            "examples": [
+                "20.500.14547/47bcc386b52ecbae623a"
+            ]
+        },
+        "@type": {
+            "type": "string",
+            "description": "The type of the object, in this case TaxonomicService",
+            "const": "TaxonomicService"
+        },
+        "schema:dateCreated": {
+            "type": "string",
+            "description": "The date on which the Taxonomic Service was created or the item was added to a DataFeed.",
+            "format": "date-time",
+            "examples": [
+                "2023-07-10T12:02:00.000Z"
+            ]
+        },
+        "schema:dateModified": {
+            "type": "string",
+            "description": "The date on which the Taxonomic Service was most recently modified or when the item's entry was modified within a DataFeed.",
+            "format": "date-time",
+            "examples": [
+                "2023-07-10T12:02:00.000Z"
+            ]
+        },
+        "schema:status": {
+            "type": "string",
+            "description": "The status of the record",
+            "enum": [
+                "draft",
+                "published"
+            ]
+        },
+        "schema:license": {
+            "type": "string",
+            "description": "A license document that applies to this content, typically indicated by URL",
+            "examples": [
+                "https://creativecommons.org/public-domain/cc0/"
+            ]
+        },
+        "schema:availableLanguage": {
+            "type": "array",
+            "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "schema:version": {
+            "type": "string",
+            "description": "The version of the Service embodied by a specified resource.",
+            "examples": [
+                "1",
+                "1.1",
+                "2.0.1"
+            ]
+        },
+        "ods:topicDiscipline": {
+            "description": "The topic discipline relevant to the taxonomic range of the service",
+            "enum": [
+                "Anthropology",
+                "Botany",
+                "Astrogeology",
+                "Geology",
+                "Microbiology",
+                "Palaeontology",
+                "Zoology",
+                "Ecology",
+                "Other Biodiversity",
+                "Other Geodiversity",
+                "Unclassified"
+            ],
+            "examples": [
+                "Botany"
+            ]
+        },
+        "schema:taxonomicRange": {
+            "type": "array",
+            "description": "The taxonomic grouping of the organism.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "schema:documentation": {
+            "type": "string",
+            "description": "URL to further documentation describing the service in more detail.",
+            "examples": [
+                "cetaf.org"
+            ]
+        },
+        "schema:ratingValue": {
+            "type": "number",
+            "description": "The rating for the content",
+            "examples": [
+                0,
+                50,
+                100
+            ]
+        },
+        "schema:ratingExplanation": {
+            "type": "string",
+            "description": "A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating.",
+            "examples": [
+                "This service is accepted, because...",
+                "This service is rejected, because..."
+            ]
+        },
+        "schema:Service": {
+            "type": "object",
+            "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
+            "properties": {
+                "schema:serviceType": {
+                    "type": "string",
+                    "description": "A type that defines the kind of taxonomic service",
+                    "enum": [
+                        "AITrainingDataset",
+                        "communityGroup",
+                        "crowdSourcing",
+                        "dataTool",
+                        "e-LearningService",
+                        "factsheet",
+                        "identification",
+                        "inventory",
+                        "referenceCollection",
+                        "specimenDatasetNotInGBIF",
+                        "website"
+                    ]
+                },
+                "schema:name": {
+                    "type": "string",
+                    "description": "The name of the Servie",
+                    "examples": [
+                        "Bombus reference collection"
+                    ]
+                },
+                "schema:description": {
+                    "type": "string",
+                    "description": "A description of the Service",
+                    "examples": [
+                        "A Bombus reference collection that contains a bunch of different specimen related to the Bombus species"
+                    ]
+                },
+                "schema:slogan": {
+                    "type": "string",
+                    "description": "A slogan or motto associated with the Service.",
+                    "examples": [
+                        "A Bombus reference collection"
+                    ]
+                },
+                "schema:logo": {
+                    "type": "string",
+                    "description": "An associated logo URL.",
+                    "examples": [
+                        "https://eosc.eu/wp-content/uploads/2022/09/New-guidelines-for-EOSC-family-branding.jpg"
+                    ]
+                },
+                "schema:dateModified": {
+                    "type": "string",
+                    "description": "The date on which the Service was most recently modified or when the item's entry was modified within a DataFeed.",
+                    "format": "date-time",
+                    "examples": [
+                        "2023-07-10T12:02:00.000Z"
+                    ]
+                },
+                "schema:termsOfService": {
+                    "type": "string",
+                    "description": "Human-readable terms of service documentation.",
+                    "examples": [
+                        "http://service-name.service-provid-er.eu/TermsOfUse"
+                    ]
+                }
+            },
+            "required": [
+                "schema:serviceType",
+                "schema:name",
+                "schema:description"
+            ],
+            "additionalProperties": false
+        },
+        "schema:ContactPoint": {
+            "type": "object",
+            "description": "A contact point—for example, a Customer Complaints department.",
+            "properties": {
+                "schema:email": {
+                    "type": "string",
+                    "description": "Email address of the contact point.",
+                    "examples": [
+                        "info@cetaf.org"
+                    ]
+                },
+                "schema:url": {
+                    "type": "string",
+                    "description": "URL of the item that leads to the point of contact",
+                    "examples": [
+                        "cetaf.org"
+                    ]
+                },
+                "schema:sameAs": {
+                    "type": "string",
+                    "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "examples": [
+                        "cetaf.org"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "schema:Maintainer": {
+            "type": "array",
+            "description": "A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "schema:identifier": {
+                        "type": "string",
+                        "description": "A unique identifier to identify the maintainer; ORCID or Wikidata identifiers are valid",
+                        "examples": [
+                            "https://orcid.org/0000-0000-0000-0000"
+                        ]
+                    },
+                    "schema:name": {
+                        "type": "string",
+                        "description": "Full name of the maintainer",
+                        "examples": [
+                            "John Doe"
+                        ]
+                    },
+                    "schema:Organization": {
+                        "type": "object",
+                        "description": "The organisation the maintainer is affiliated with",
+                        "properties": {
+                            "schema:identifier": {
+                                "type": "string",
+                                "description": "The ROR identifier of the organisation"
+                            },
+                            "schema:legalName": {
+                                "type": "string",
+                                "description": "The official name of the organization, e.g. the registered company name."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "schema:FundingScheme": {
+            "type": "object",
+            "description": "A FundingScheme combines organizational, project and policy aspects of grant-based funding that sets guidelines, principles and mechanisms to support other kinds of projects and activities.",
+            "properties": {
+                "schema:url": {
+                    "type": "string",
+                    "description": "Webpage with the supported payment models and restrictions that apply to the Resource."
+                },
+                "schema:Funder": {
+                    "type": "object",
+                    "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+                    "properties": {
+                        "schema:name": {
+                            "type": "string",
+                            "description": "The name of the funder (funding program)",
+                            "examples": [
+                                "Horizon 2020"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "schema:SoftwareSourceCode": {
+            "type": "object",
+            "description": "Object representing the service's software source code",
+            "properties": {
+                "schema:codeRepository": {
+                    "type": "string",
+                    "description": "Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex). ",
+                    "examples": [
+                        "https://github.com/DiSSCo/tettris-marketplace"
+                    ]
+                },
+                "schema:about": {
+                    "type": "string",
+                    "description": "The subject matter of the content including a summary of the Resource features updated from the previous version.",
+                    "examples": [
+                        "A piece of software. Latest changes: upgrade of user interface, correction of minor bugs."
+                    ]
+                },
+                "schema:runtimePlatform": {
+                    "type": "string",
+                    "description": "Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).",
+                    "examples": [
+                        "Java v1",
+                        "Python 2.3"
+                    ]
+                },
+                "schema:creativeWorkStatus": {
+                    "type": "string",
+                    "description": "The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
+                    "examples": [
+                        "In production",
+                        "Deprecated"
+                    ]
+                },
+                "schema:programmingLanguage": {
+                    "type": "string",
+                    "description": "The computer programming language.",
+                    "examples": [
+                        "Java",
+                        "Python",
+                        "R"
+                    ]
+                },
+                "schema:license": {
+                    "type": "string",
+                    "description": "A license document that applies to this content, typically indicated by URL",
+                    "examples": [
+                        "https://creativecommons.org/public-domain/cc0/"
+                    ]
+                }
+            },
+            "required": [
+                "schema:codeRepository"
+            ],
+            "additionalProperties": false
+        },
+        "schema:AssociatedMedia": {
+            "type": "array",
+            "description": "Array of media objects that encodes this Service. This property is a synonym for encoding.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "schema:contentUrl": {
+                        "type": "string",
+                        "description": "Actual bytes of the media object, for example the image file or video file."
+                    },
+                    "schema:license": {
+                        "type": "string",
+                        "description": "A license document that applies to this content, typically indicated by URL",
+                        "examples": [
+                            "https://creativecommons.org/public-domain/cc0/"
+                        ]
+                    }
+                },
+                "required": [
+                    "schema:contentUrl"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "@id",
+        "@type",
+        "schema:dateCreated",
+        "schema:dateModified",
+        "schema:status",
+        "schema:license",
+        "schema:availableLanguage",
+        "schema:ratingValue",
+        "schema:Service"
+    ],
+    "additionalProperties": false
 }
