@@ -55,10 +55,10 @@ COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-
 COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/vitual-collection/latest
 
 # Versioned Developer schemas
-COPY developer-schema/annotation/0.2.0/schema schema-root/schemas/developer-schema/annotation/0.2.0
+COPY developer-schema/annotation/0.3.0/schema schema-root/schemas/developer-schema/annotation/0.3.0
 
 # Latest Developer schemas
-COPY developer-schema/annotation/0.2.0/schema schema-root/schemas/developer-schema/annotation/latest
+COPY developer-schema/annotation/0.3.0/schema schema-root/schemas/developer-schema/annotation/latest
 
 # Versioned internal schemas
 COPY internal-schema/annotation/0.1.0/schema schema-root/schemas/internal-schema/annotation/0.1.0

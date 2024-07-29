@@ -41,7 +41,7 @@
       "ods:Mapping": {
         "ods:DefaultMapping": [
           {
-            "ods:physicalSpecimenIdType": "cetaf"
+            "ods:physicalSpecimenIDType": "Global"
           },
           {
             "ods:type": "ZoologyVertebrateSpecimen"
