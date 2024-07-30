@@ -373,7 +373,6 @@
         "schema:dateCreated",
         "schema:dateModified",
         "schema:status",
-        "schema:license",
         "schema:availableLanguage",
         "schema:ratingValue",
         "schema:Service"
