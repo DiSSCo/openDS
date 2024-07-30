@@ -20,7 +20,7 @@ For ABCDEFG we will look at matches on the term(s) in this order:
 ## Additional Transformation
 In the rest of the system we need to a globally unique physicalSpecimenId.
 Based on the physicalSpecimenIdType we determine if we need additional transformation to make it globally unique.
-If the identifier is globally unique (`cetaf`) we can copy it as-is.
-If it is not globally unique (`combined`) we need to combine it with the ror.
+If the identifier is globally unique (`Global`) we can copy it as-is.
+If it is not globally unique (`Local`) we need to combine it with the ror.
 For the ror we only use the unique id part of the ror.
 This will be following the format of `id:ror`

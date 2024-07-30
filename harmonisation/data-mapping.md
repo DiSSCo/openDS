@@ -48,7 +48,7 @@ The format is `{harmonised key} : {unharmonised key}`
   ],
   "defaults": [
     {
-      "ods:physicalSpecimenIdType": "combined"
+      "ods:physicalSpecimenIDType": "combined"
     },
     {
       "ods:type": "ZoologyInvertebrateSpecimen"
