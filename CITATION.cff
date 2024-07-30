@@ -1,0 +1,17 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: open Digital Specimen specification
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - name: Distributed Infrastructure for Scientific Collections
+    website: 'https://www.dissco.eu/'
+identifiers:
+  - type: url
+    value: 'https://github.com/DiSSCo/openDS'
+repository-code: 'https://github.com/DiSSCo/openDS'
+license: Apache-2.0
