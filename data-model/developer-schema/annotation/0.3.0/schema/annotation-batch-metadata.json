@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/annotation-batch-metadata.json",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.3.0/annotation-batch-metadata.json",
   "properties": {
     "placeInBatch": {
       "type": "integer"

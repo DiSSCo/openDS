@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.3.0/annotation-for-mas.json",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.3.0/mas-annotation-event.json",
   "type": "object",
   "description": "Schema specific to Machine Annotation Services providing information to DiSSCo.",
   "properties": {
@@ -12,14 +12,14 @@
       "type": "array",
       "description": "List of annotations produced by the MAS",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.3.0/annotation-processing-request.json"
+        "$ref": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.3.0/mas-annotation-request.json"
       }
     },
     "batchMetadata": {
       "type": "array",
       "description": "Object containing batch information, if result is a batch",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-types/0.1.0/annotation-batch-metadata.json"
+        "$ref": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.3.0/annotation-batch-metadata.json"
       }
     },
     "batchId": {

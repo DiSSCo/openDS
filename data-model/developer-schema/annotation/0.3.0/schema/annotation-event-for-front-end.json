@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.3.0/annotation-for-front-end.json",
   "$comment": "Annotation Version 0.3.0",
-  "description": "Annotation sent to the processing service by DiSSCover",
+  "description": "Annotation sent to the back end by DiSSCover",
   "type": "object",
   "properties": {
     "ods:id": {
