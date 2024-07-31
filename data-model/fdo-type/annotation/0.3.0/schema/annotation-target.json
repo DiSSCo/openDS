@@ -1,0 +1,158 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.3.0/annotation-target.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Annotation Version 0.3.0",
+  "title": "Annotation Target",
+  "description": "Target of an annotation",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the target object",
+      "examples": [
+        "ods:DigitalSpecimen",
+        "ods:MachineAnnotationService"
+      ]
+    },
+    "ods:ID": {
+      "type": "string",
+      "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "ods:type": {
+      "type": "string",
+      "description": "This is the handle to the type of the target object.",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+        "https://doi.org/21.T11148/894b1e6cad57e921764e"
+      ]
+    },
+    "oa:hasSelector": {
+      "type": "object",
+      "description": "Optional field to indicate the part of the target object that is being annotated. It can be a field, a class or a region of interest.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "ods:FieldSelector",
+              "description": "A selector for an individual field."
+            },
+            "ods:field": {
+              "type": "string",
+              "description": "The full jsonPath of the field being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
+              "examples": [
+                "$.hasEvent[0].location.dwc:country"
+              ]
+            }
+          },
+          "required": [
+            "@type",
+            "ods:field"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "ods:ClassSelector",
+              "description": "A selector for an individual class."
+            },
+            "ods:class": {
+              "type": "string",
+              "description": "The full jsonPath of the class being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
+              "examples": [
+                "$.hasEvent[0].location.georeference"
+              ]
+            }
+          },
+          "required": [
+            "@type",
+            "ods:class"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "oa:FragmentSelector",
+              "description": "A selector for an specific Region of Interest (Roi). Only applicable on media objects."
+            },
+            "ac:hasROI": {
+              "type": "object",
+              "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_hasROI",
+              "properties": {
+                "ac:xFrac": {
+                  "type": "number",
+                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_xFrac",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ac:yFrac": {
+                  "type": "number",
+                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_yFrac",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ac:widthFrac": {
+                  "type": "number",
+                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_widthFrac",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ac:heightFrac": {
+                  "type": "number",
+                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_heightFrac",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "ac:xFrac",
+                "ac:yFrac",
+                "ac:widthFrac",
+                "ac:heightFrac"
+              ],
+              "additionalProperties": false
+            },
+            "dcterms:conformsTo": {
+              "type": "string",
+              "constant": "https://ac.tdwg.org/termlist/#711-region-of-interest-vocabulary",
+              "description": "https://purl.org/dc/terms/conformsTo"
+            }
+          },
+          "required": [
+            "@type",
+            "ac:hasROI",
+            "dcterms:conformsTo"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "ods:ID",
+    "ods:type"
+  ],
+  "additionalProperties": false
+}
