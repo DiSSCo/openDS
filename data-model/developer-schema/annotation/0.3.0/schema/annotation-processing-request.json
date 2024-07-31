@@ -6,6 +6,27 @@
   "description": "Annotation sent to the processing service from DiSSCover or a MAS",
   "type": "object",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Annotation object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:Annotation",
+      "const": "ods:Annotation"
+    },
+    "ods:ID": {
+      "type": "string",
+      "description": "The handle of the annotation. It is a unique identifier for the annotation. It is composed of the handle of the document followed by a slash and a unique identifier for the annotation.",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
     "oa:motivation": {
       "description": "The motivation for the annotation. Based on a selection of https://www.w3.org/TR/annotation-model/#motivation-and-purpose. The motivation ods:adding is added for DiSSCo's purposes.",
       "enum": [
