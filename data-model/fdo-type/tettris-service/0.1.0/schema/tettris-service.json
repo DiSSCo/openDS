@@ -13,7 +13,7 @@
         "@id": {
             "type": "string",
             "description": "The unique identifier of the Taxonomic Service object",
-            "pattern": "^https:\/\/hdl\\.handle\\.net\/20\\.500\\.14547\/.{20}",
+            "pattern": "20.500.14547\/(.){20}",
             "examples": [
                 "20.500.14547/47bcc386b52ecbae623a"
             ]
@@ -43,8 +43,9 @@
             "type": "string",
             "description": "The status of the record",
             "enum": [
-                "draft",
-                "published"
+                "proposed",
+                "accepted",
+                "rejected"
             ]
         },
         "schema:license": {
@@ -112,9 +113,7 @@
         },
         "schema:ratingValue": {
             "type": "number",
-            "description": "The rating for the content",
-            "minumum": 0,
-            "maximum": 100,
+            "description": "The rating for the content on a scale from 0 to 100",
             "examples": [
                 0,
                 50,
@@ -152,21 +151,21 @@
                 },
                 "schema:name": {
                     "type": "string",
-                    "description": "The name of the Servie",
+                    "description": "The preferred name of the service (can be in any language)",
                     "examples": [
                         "Bombus reference collection"
                     ]
                 },
                 "schema:description": {
                     "type": "string",
-                    "description": "A description of the Service",
+                    "description": "A description of the service (english)",
                     "examples": [
                         "A Bombus reference collection that contains a bunch of different specimen related to the Bombus species"
                     ]
                 },
                 "schema:slogan": {
                     "type": "string",
-                    "description": "A slogan or motto associated with the Service.",
+                    "description": "A slogan or motto associated with the Service (english).",
                     "examples": [
                         "A Bombus reference collection"
                     ]
@@ -231,7 +230,7 @@
         },
         "schema:Maintainer": {
             "type": "array",
-            "description": "A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact.",
+            "description": "An array of maintainers of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artefact.",
             "items": {
                 "type": "object",
                 "properties": {
@@ -255,7 +254,7 @@
                         "properties": {
                             "schema:identifier": {
                                 "type": "string",
-                                "description": "The ROR identifier of the organisation"
+                                "description": "The ROR identifier of the organisation."
                             },
                             "schema:legalName": {
                                 "type": "string",
@@ -274,7 +273,7 @@
             "properties": {
                 "schema:url": {
                     "type": "string",
-                    "description": "Webpage with the supported payment models and restrictions that apply to the Resource."
+                    "description": "URL to webpage with the supported payment models and restrictions that apply to the Resource."
                 },
                 "schema:Funder": {
                     "type": "object",
@@ -338,7 +337,7 @@
                 },
                 "schema:license": {
                     "type": "string",
-                    "description": "A license document that applies to this content, typically indicated by URL",
+                    "description": "A license document that applies to this content, typically indicated by URL.",
                     "examples": [
                         "https://creativecommons.org/public-domain/cc0/"
                     ]
