@@ -96,6 +96,13 @@
                 "type": "string"
             }
         },
+        "schema:geographicArea": {
+            "type": "string",
+            "description": "The geographic area associated with the service.",
+            "examples": [
+                "Annen"
+            ]
+        },
         "schema:documentation": {
             "type": "string",
             "description": "URL to further documentation describing the service in more detail.",
