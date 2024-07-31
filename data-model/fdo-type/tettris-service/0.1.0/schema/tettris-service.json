@@ -1,211 +1,388 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/tettris-service/0.1.0/tettris-service.json",
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "https://docs.google.com/document/d/1jbeVkUgoKXEmXKGlaHfJVxNRBk_aNBMSNdgPzLSqjGc/edit?usp=sharing",
-  "title": "TaxonomicService",
-  "type": "object",
-  "properties": {
-    "title": {
-      "type": "string",
-      "examples": [
-        "Bombus identification service"
-      ]
+    "$id": "https://schemas.dissco.tech/schemas/fdo-type/tettris-service/0.1.0/tettris-service.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$comment": "Taxonomic Service Version 0.1.0",
+    "title": "Taxonomic Service",
+    "type": "object",
+    "description": "Generic concept of a Service or Tool",
+    "context": {
+        "schema": "http://schema.org",
+        "ods": ""
     },
-    "description": {
-      "type": "string",
-      "examples": [
-        "An identification service that can help identify Bombus"
-      ]
-    },
-    "logo": {
-      "type": "string",
-      "examples": [
-        "logo.uri"
-      ]
-    },
-    "state": {
-      "enum": [
-        "Proposed",
-        "Accepted",
-        "Rejected"
-      ],
-      "$comment": "Internal field"
-    },
-    "eoscServiceId": {
-      "type": "string",
-      "$comment": "Unique identifier, ECP.BAI.0"
-    },
-    "quality": {
-      "type": "string",
-      "examples": [
-        "Quickly identifies Bombus"
-      ],
-      "$comment": "How does this differ from description?"
-    },
-    "published": {
-      "type": "string",
-      "format": "date",
-      "examples": [
-        "2023-10-26"
-      ]
-    },
-    "author": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "examples": [
-            "John Doe"
-          ]
-        },
-        "orcid": {
-          "type": "string",
-          "examples": [
-            "0000-0000-0000-0001"
-          ]
-        }
-      },
-      "required": [
-        "name"
-      ]
-    },
-    "maintainer": {
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "examples": [
-            "John Doe"
-          ]
-        },
-        "orcid": {
-          "type": "string",
-          "examples": [
-            "0000-0000-0000-0001"
-          ]
-        }
-      },
-      "required": [
-        "name"
-      ]
-    },
-    "contactEmail": {
-      "type": "string",
-      "format": "email",
-      "examples": [
-        "info@information.com"
-      ]
-    },
-    "license": {
-      "type": "string",
-      "examples": [
-        "CC-0"
-      ]
-    },
-    "websiteUrl": {
-      "type": "string",
-      "examples": [
-        "https://info.taxonomy.com"
-      ]
-    },
-    "sourceUrl": {
-      "type": "string",
-      "$comment": "points to PID for the virtual collection",
-      "examples": [
-        "https://hdl.handle.net/10.22/111-AAA"
-      ]
-    },
-    "paidService": {
-      "type": "boolean"
-    },
-    "usageConditions": {
-      "type": "string",
-      "examples": [
-        "Credit author"
-      ]
-    },
-    "documentationUrl": {
-      "type": "string",
-      "examples": [
-        "https://info.taxonomy.com"
-      ]
-    },
-    "software": {
-      "type": "object",
-      "properties": {
-        "sourceUrl": {
-          "type": "string",
-          "examples": [
-            "https://info.taxonomy.com"
-          ]
-        },
-        "dependencies": {
-          "type": "array",
-          "$comment": "should these be source/github URLs?",
-          "items": {
-            "type": "string"
-          },
-          "examples": [
-            [
-              "https://info.taxonomy.com"
+    "properties": {
+        "@id": {
+            "type": "string",
+            "description": "The unique identifier of the Taxonomic Service object",
+            "pattern": "^https:\/\/hdl\\.handle\\.net\/20\\.500\\.14547\/.{20}",
+            "examples": [
+                "20.500.14547/47bcc386b52ecbae623a"
             ]
-          ]
         },
-        "depreciated": {
-          "type": "boolean"
+        "@type": {
+            "type": "string",
+            "description": "The type of the object, in this case TaxonomicService",
+            "const": "TaxonomicService"
         },
-        "bugReport": {
-          "type": "array",
-          "$comment": "should these be source/github URLs?",
-          "items": {
-            "type": "string"
-          },
-          "examples": [
-            [
-              "Bug report"
+        "schema:dateCreated": {
+            "type": "string",
+            "description": "The date on which the Taxonomic Service was created or the item was added to a DataFeed.",
+            "format": "date-time",
+            "examples": [
+                "2023-07-10T12:02:00.000Z"
             ]
-          ]
+        },
+        "schema:dateModified": {
+            "type": "string",
+            "description": "The date on which the Taxonomic Service was most recently modified or when the item's entry was modified within a DataFeed.",
+            "format": "date-time",
+            "examples": [
+                "2023-07-10T12:02:00.000Z"
+            ]
+        },
+        "schema:status": {
+            "type": "string",
+            "description": "The status of the record",
+            "enum": [
+                "draft",
+                "published"
+            ]
+        },
+        "schema:license": {
+            "type": "string",
+            "description": "A license document that applies to this content, typically indicated by URL",
+            "examples": [
+                "https://creativecommons.org/public-domain/cc0/"
+            ]
+        },
+        "schema:availableLanguage": {
+            "type": "array",
+            "description": "A language someone may use with or at the item, service or place. Please use one of the language codes from the IETF BCP 47 standard.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "schema:version": {
+            "type": "string",
+            "description": "The version of the Service embodied by a specified resource.",
+            "examples": [
+                "1",
+                "1.1",
+                "2.0.1"
+            ]
+        },
+        "ods:topicDiscipline": {
+            "description": "The topic discipline relevant to the taxonomic range of the service",
+            "enum": [
+                "Anthropology",
+                "Botany",
+                "Astrogeology",
+                "Geology",
+                "Microbiology",
+                "Palaeontology",
+                "Zoology",
+                "Ecology",
+                "Other Biodiversity",
+                "Other Geodiversity",
+                "Unclassified"
+            ],
+            "examples": [
+                "Botany"
+            ]
+        },
+        "schema:taxonomicRange": {
+            "type": "array",
+            "description": "The taxonomic grouping of the organism.",
+            "items": {
+                "type": "string"
+            }
+        },
+        "schema:geographicArea": {
+            "type": "string",
+            "description": "The geographic area associated with the service.",
+            "examples": [
+                "Annen"
+            ]
+        },
+        "schema:documentation": {
+            "type": "string",
+            "description": "URL to further documentation describing the service in more detail.",
+            "examples": [
+                "cetaf.org"
+            ]
+        },
+        "schema:ratingValue": {
+            "type": "number",
+            "description": "The rating for the content",
+            "minumum": 0,
+            "maximum": 100,
+            "examples": [
+                0,
+                50,
+                100
+            ]
+        },
+        "schema:ratingExplanation": {
+            "type": "string",
+            "description": "A short explanation (e.g. one to two sentences) providing background context and other information that led to the conclusion expressed in the rating.",
+            "examples": [
+                "This service is accepted, because...",
+                "This service is rejected, because..."
+            ]
+        },
+        "schema:Service": {
+            "type": "object",
+            "description": "A service provided by an organization, e.g. delivery service, print services, etc.",
+            "properties": {
+                "schema:serviceType": {
+                    "type": "string",
+                    "description": "A type that defines the kind of taxonomic service",
+                    "enum": [
+                        "AITrainingDataset",
+                        "communityGroup",
+                        "crowdSourcing",
+                        "dataTool",
+                        "e-LearningService",
+                        "factsheet",
+                        "identification",
+                        "inventory",
+                        "referenceCollection",
+                        "specimenDatasetNotInGBIF",
+                        "website"
+                    ]
+                },
+                "schema:name": {
+                    "type": "string",
+                    "description": "The name of the Servie",
+                    "examples": [
+                        "Bombus reference collection"
+                    ]
+                },
+                "schema:description": {
+                    "type": "string",
+                    "description": "A description of the Service",
+                    "examples": [
+                        "A Bombus reference collection that contains a bunch of different specimen related to the Bombus species"
+                    ]
+                },
+                "schema:slogan": {
+                    "type": "string",
+                    "description": "A slogan or motto associated with the Service.",
+                    "examples": [
+                        "A Bombus reference collection"
+                    ]
+                },
+                "schema:logo": {
+                    "type": "string",
+                    "description": "An associated logo URL.",
+                    "examples": [
+                        "https://eosc.eu/wp-content/uploads/2022/09/New-guidelines-for-EOSC-family-branding.jpg"
+                    ]
+                },
+                "schema:dateModified": {
+                    "type": "string",
+                    "description": "The date on which the Service was most recently modified or when the item's entry was modified within a DataFeed.",
+                    "format": "date-time",
+                    "examples": [
+                        "2023-07-10T12:02:00.000Z"
+                    ]
+                },
+                "schema:termsOfService": {
+                    "type": "string",
+                    "description": "Human-readable terms of service documentation.",
+                    "examples": [
+                        "http://service-name.service-provid-er.eu/TermsOfUse"
+                    ]
+                }
+            },
+            "required": [
+                "schema:serviceType",
+                "schema:name",
+                "schema:description"
+            ],
+            "additionalProperties": false
+        },
+        "schema:ContactPoint": {
+            "type": "object",
+            "description": "A contact point—for example, a Customer Complaints department.",
+            "properties": {
+                "schema:email": {
+                    "type": "string",
+                    "description": "Email address of the contact point.",
+                    "examples": [
+                        "info@cetaf.org"
+                    ]
+                },
+                "schema:url": {
+                    "type": "string",
+                    "description": "URL of the item that leads to the point of contact",
+                    "examples": [
+                        "cetaf.org"
+                    ]
+                },
+                "schema:sameAs": {
+                    "type": "string",
+                    "description": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+                    "examples": [
+                        "cetaf.org"
+                    ]
+                }
+            },
+            "additionalProperties": false
+        },
+        "schema:Maintainer": {
+            "type": "array",
+            "description": "A maintainer of a Dataset, software package (SoftwareApplication), or other Project. A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "schema:identifier": {
+                        "type": "string",
+                        "description": "A unique identifier to identify the maintainer; ORCID or Wikidata identifiers are valid",
+                        "examples": [
+                            "https://orcid.org/0000-0000-0000-0000"
+                        ]
+                    },
+                    "schema:name": {
+                        "type": "string",
+                        "description": "Full name of the maintainer",
+                        "examples": [
+                            "John Doe"
+                        ]
+                    },
+                    "schema:Organization": {
+                        "type": "object",
+                        "description": "The organisation the maintainer is affiliated with",
+                        "properties": {
+                            "schema:identifier": {
+                                "type": "string",
+                                "description": "The ROR identifier of the organisation"
+                            },
+                            "schema:legalName": {
+                                "type": "string",
+                                "description": "The official name of the organization, e.g. the registered company name."
+                            }
+                        },
+                        "additionalProperties": false
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        "schema:FundingScheme": {
+            "type": "object",
+            "description": "A FundingScheme combines organizational, project and policy aspects of grant-based funding that sets guidelines, principles and mechanisms to support other kinds of projects and activities.",
+            "properties": {
+                "schema:url": {
+                    "type": "string",
+                    "description": "Webpage with the supported payment models and restrictions that apply to the Resource."
+                },
+                "schema:Funder": {
+                    "type": "object",
+                    "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+                    "properties": {
+                        "schema:name": {
+                            "type": "string",
+                            "description": "The name of the funder (funding program)",
+                            "examples": [
+                                "Horizon 2020"
+                            ]
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "schema:SoftwareSourceCode": {
+            "type": "object",
+            "description": "Object representing the service's software source code",
+            "properties": {
+                "schema:codeRepository": {
+                    "type": "string",
+                    "description": "Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex). ",
+                    "examples": [
+                        "https://github.com/DiSSCo/tettris-marketplace"
+                    ]
+                },
+                "schema:about": {
+                    "type": "string",
+                    "description": "The subject matter of the content including a summary of the Resource features updated from the previous version.",
+                    "examples": [
+                        "A piece of software. Latest changes: upgrade of user interface, correction of minor bugs."
+                    ]
+                },
+                "schema:runtimePlatform": {
+                    "type": "string",
+                    "description": "Runtime platform or script interpreter dependencies (example: Java v1, Python 2.3, .NET Framework 3.0).",
+                    "examples": [
+                        "Java v1",
+                        "Python 2.3"
+                    ]
+                },
+                "schema:creativeWorkStatus": {
+                    "type": "string",
+                    "description": "The status of a creative work in terms of its stage in a lifecycle. Example terms include Incomplete, Draft, Published, Obsolete. Some organizations define a set of terms for the stages of their publication lifecycle.",
+                    "examples": [
+                        "In production",
+                        "Deprecated"
+                    ]
+                },
+                "schema:programmingLanguage": {
+                    "type": "string",
+                    "description": "The computer programming language.",
+                    "examples": [
+                        "Java",
+                        "Python",
+                        "R"
+                    ]
+                },
+                "schema:license": {
+                    "type": "string",
+                    "description": "A license document that applies to this content, typically indicated by URL",
+                    "examples": [
+                        "https://creativecommons.org/public-domain/cc0/"
+                    ]
+                }
+            },
+            "required": [
+                "schema:codeRepository"
+            ],
+            "additionalProperties": false
+        },
+        "schema:AssociatedMedia": {
+            "type": "array",
+            "description": "Array of media objects that encodes this Service. This property is a synonym for encoding.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "schema:contentUrl": {
+                        "type": "string",
+                        "description": "Actual bytes of the media object, for example the image file or video file."
+                    },
+                    "schema:license": {
+                        "type": "string",
+                        "description": "A license document that applies to this content, typically indicated by URL",
+                        "examples": [
+                            "https://creativecommons.org/public-domain/cc0/"
+                        ]
+                    }
+                },
+                "required": [
+                    "schema:contentUrl"
+                ],
+                "additionalProperties": false
+            }
         }
-      }
     },
-    "funding": {
-      "type": "string",
-      "example": "Funded by XYZ"
-    },
-    "facilityLocation": {
-      "type": "string",
-      "examples": [
-        "Barcelona"
-      ]
-    },
-    "taxonomicScope": {
-      "type": "string",
-      "examples": [
-        "Bombus"
-      ]
-    },
-    "media": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "examples": [
-        [
-          "https://media-repository.com/123"
-        ]
-      ]
-    }
-  },
-  "required": [
-    "title",
-    "state",
-    "published",
-    "author",
-    "maintainer",
-    "contactEmail",
-    "license",
-    "sourceUrl",
-    "paidService",
-    "taxonomicScope"
-  ]
+    "required": [
+        "@id",
+        "@type",
+        "schema:dateCreated",
+        "schema:dateModified",
+        "schema:status",
+        "schema:availableLanguage",
+        "schema:ratingValue",
+        "schema:Service"
+    ],
+    "additionalProperties": false
 }
