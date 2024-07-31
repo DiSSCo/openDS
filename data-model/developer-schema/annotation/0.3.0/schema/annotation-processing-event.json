@@ -4,6 +4,31 @@
   "type": "object",
   "description": "Schema specific to Services (MAS or DiSSCover) providing information to DiSSCo's annotation processing service.",
   "properties": {
+    "@id": {
+      "type": "string",
+      "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
+      "$comment": "Internally generated. For updates, it is good practice to provide this.",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the target object",
+      "examples": [
+        "ods:DigitalSpecimen",
+        "ods:MachineAnnotationService"
+      ]
+    },
+    "ods:ID": {
+      "type": "string",
+      "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
     "jobId": {
       "type": "string",
       "description": "Handle of the job record, if the annotation was produced by a Machine Annotation Service"
