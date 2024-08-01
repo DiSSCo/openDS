@@ -6,7 +6,7 @@ title: open Digital Specimen specification
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
-type: software
+type: standard
 authors:
   - name: Distributed Infrastructure for Scientific Collections
     website: 'https://www.dissco.eu/'
