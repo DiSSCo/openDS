@@ -147,7 +147,7 @@
     },
     "ods:placeInBatch": {
       "type": "integer",
-      "description": "The place of the annotation in the batch"
+      "description": "For batching only. Links annotation to batchMetadata provided in a batch event. If present, must correspond to an ods:placeInBatch in the batch metadata"
     },
     "ods:mergingDecisionStatus": {
       "enum": [

@@ -37,7 +37,7 @@
       "type": "string",
       "description": "A Handle or DOI of the object that is being annotated",
       "example": "https://hdl.handle.net/20.5000.1025/ABC-123-XYZ",
-      "pattern": "https://(doi\\.org/10\\.\\d+/[-a-zA-Z0-9]+$|hdl\\.handle\\.net/[a-zA-Z0-9.-]+/[a-zA-Z0-9.-]+$)",
+      "pattern": "https://(doi\\.org/10\\.[-a-zA-Z0-9]+/[-a-zA-Z0-9]+$|hdl\\.handle\\.net/[a-zA-Z0-9.-]+/[a-zA-Z0-9.-]+$)",
       "$comment": "idx = 500"
     },
     "targetType": {
