@@ -35,7 +35,7 @@
     }
   },
   "required": [
-    "placeInBatch",
+    "ods:placeInBatch",
     "searchParams"
   ],
   "additionalProperties": false
