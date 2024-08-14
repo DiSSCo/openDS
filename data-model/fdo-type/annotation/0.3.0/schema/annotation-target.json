@@ -33,7 +33,6 @@
     "ods:type": {
       "type": "string",
       "description": "This is the handle to the type of the target object.",
-      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
       "examples": [
         "https://doi.org/21.T11148/bbad8c4e101e8af01115",
         "https://doi.org/21.T11148/894b1e6cad57e921764e"
