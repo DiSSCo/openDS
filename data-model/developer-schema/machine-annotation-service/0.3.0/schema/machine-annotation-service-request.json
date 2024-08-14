@@ -1,53 +1,11 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Machine Annotation Service Version 0.3.0",
-  "title": "MachineAnnotationService",
+  "$comment": "Machine Annotation Service RequestVersion 0.3.0",
+  "title": "MachineAnnotationServiceRequest",
   "type": "object",
   "description": "Automated annotation services that enhance biodiversity data",
   "properties": {
-    "@id": {
-      "type": "string",
-      "description": "The unique identifier (handle) of the Machine Annotation Service object",
-      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
-      "examples": [
-        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-      ]
-    },
-    "@type": {
-      "type": "string",
-      "description": "The type of the object, in this case ods:MachineAnnotationService",
-      "const": "ods:MachineAnnotationService"
-    },
-    "ods:ID": {
-      "type": "string",
-      "description": "Handle of the Machine Annotation Service",
-      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
-      "examples": [
-        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-      ]
-    },
-    "ods:type": {
-      "type": "string",
-      "description": "The DOI to the FDO type of the object",
-      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
-      "examples": [
-        "https://doi.org/10.15468/1a2b3c"
-      ]
-    },
-    "ods:status": {
-      "enum": [
-        "ods:Draft",
-        "ods:Active",
-        "ods:Tombstone"
-      ],
-      "description": "The status of the Digital Object"
-    },
-    "schema:version": {
-      "type": "integer",
-      "minimum": 1,
-      "description": "Version of the Machine Annotation Service, https://schema.org/version"
-    },
     "schema:name": {
       "type": "string",
       "description": "Name of the Machine Annotation Service as provided by the user, https://schema.org/name",
@@ -61,27 +19,6 @@
       "examples": [
         "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship"
       ]
-    },
-    "schema:dateCreated": {
-      "type": "string",
-      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
-      "format": "date-time",
-      "examples": [
-        "2021-06-01T12:00:000Z"
-      ]
-    },
-    "schema:dateModified": {
-      "type": "string",
-      "description": "Timestamp of last modification. Internally generated, https://schema.org/dateModified",
-      "format": "date-time",
-      "examples": [
-        "2021-06-06T13:22:00.445Z"
-      ]
-    },
-    "schema:creator": {
-      "type": "object",
-      "description": "Contains an ods:Agent object",
-      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
     },
     "ods:containerImage": {
       "type": "string",
@@ -219,16 +156,10 @@
     }
   },
   "required": [
-    "@type",
-    "ods:ID",
-    "ods:type",
     "schema:name",
-    "schema:dateCreated",
-    "schema:dateModified",
     "ods:containerImage",
     "ods:containerTag",
-    "ods:batchingPermitted",
-    "ods:timeToLive"
+    "ods:batchingPermitted"
   ],
   "additionalProperties": false
 }

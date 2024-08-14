@@ -97,7 +97,10 @@
             "ods:organisationId": "https://ror.org/05xg72x27"
           }
         ]
-      ]
+      ],
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/default-mapping.json"
+      }
     },
     "ods:FieldMapping": {
       "type": "array",
@@ -108,7 +111,10 @@
             "ods:physicalSpecimenId": "dwc:catalogNumber"
           }
         ]
-      ]
+      ],
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/field-mapping.json"
+      }
     },
     "ods:mappingDataStandard": {
       "description": "Type of data standard we are mapping to",
