@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/field-mapping.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.3.0/field-mapping.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Field Mapping Version 0.3.0",
   "title": "Field Mapping",

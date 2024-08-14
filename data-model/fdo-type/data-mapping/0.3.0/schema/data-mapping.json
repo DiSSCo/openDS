@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/data-mapping.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.3.0/data-mapping.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Data Mapping Version 0.3.0",
   "title": "DataMapping",
@@ -99,7 +99,7 @@
         ]
       ],
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/default-mapping.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.3.0/default-mapping.json"
       }
     },
     "ods:FieldMapping": {
@@ -113,7 +113,7 @@
         ]
       ],
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/mapping/0.3.0/field-mapping.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.3.0/field-mapping.json"
       }
     },
     "ods:mappingDataStandard": {
