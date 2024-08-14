@@ -1,0 +1,60 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/source-system/0.3.0/source-system-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Source System Request Version 0.3.0",
+  "title": "SourceSystemRequest",
+  "type": "object",
+  "properties": {
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Source System as provided by the user, https://schema.org/name",
+      "examples": [
+        "Herbarium of University of Coimbra (COI)"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Source System as provided by the user, https://schema.org/description",
+      "examples": [
+        "The herbarium collection of the University of Coimbra is one of the oldest in Portugal, with specimens dating back to the 18th century."
+      ]
+    },
+    "schema:url": {
+      "type": "string",
+      "description": "Endpoint from which data may be retrieved",
+      "format": "uri",
+      "examples": [
+        "http://ipt.gbif.pt/ipt/archive.do?r=coi"
+      ]
+    },
+    "ltc:collectionManagementSystem": {
+      "type": "string",
+      "description": "The collection management system that the source system is using, https://rs.tdwg.org/ltc/terms/collectionManagementSystem",
+      "examples": [
+        "Specify 7"
+      ]
+    },
+    "ods:translatorType": {
+      "description": "The serialisation of the data the endpoint provides indicating what type of Translator is required",
+      "enum": [
+        "dwca",
+        "biocase"
+      ]
+    },
+    "ods:dataMappingID": {
+      "type": "string",
+      "description": "The Handle of the Mapping Object needed for this Source System",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    }
+  },
+  "required": [
+    "schema:name",
+    "schema:uri",
+    "ods:translatorType",
+    "ods:mappingID"
+  ],
+  "additionalProperties": false
+}
