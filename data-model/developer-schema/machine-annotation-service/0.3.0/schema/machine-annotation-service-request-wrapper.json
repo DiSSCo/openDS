@@ -24,7 +24,6 @@
           "value": {
             "type": [
               "string",
-              "number",
               "integer",
               "boolean",
               "null"
