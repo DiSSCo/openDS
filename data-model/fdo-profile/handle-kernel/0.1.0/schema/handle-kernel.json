@@ -7,7 +7,7 @@
   "properties": {
     "fdoProfile": {
       "description": "PID to a machine readable description of the attributes in the FDO record",
-      "const": "https://hdl.handle.net/21.T11148/532ce6796e2828dd2be6",
+      "const": "https://doi.org/21.T11148/532ce6796e2828dd2be6",
       "$comment": "idx = 1"
     },
     "fdoRecordLicense": {
@@ -17,7 +17,7 @@
     },
     "digitalObjectType": {
       "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
-      "const": "https://hdl.handle.net/21.T11148/532ce6796e2828dd2be6",
+      "const": "https://doi.org/21.T11148/532ce6796e2828dd2be6",
       "$comment": "idx = 3"
     },
     "digitalObjectName": {
