@@ -8,7 +8,7 @@
       "type": "object",
       "properties": {
         "type": {
-          "const": "https://hdl.handle.net/21.T11148/894b1e6cad57e921764e",
+          "const": "https://doi.org/21.T11148/894b1e6cad57e921764e",
           "description": "PID of the Digital Object Type"
         },
         "attributes": {

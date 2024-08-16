@@ -5,7 +5,7 @@
   "$comment": "FDO Profile Version 0.1.0",
   "properties": {
     "fdoProfile": {
-      "const": "https://hdl.handle.net/21.T11148/527856fd709ec8c5bc8c",
+      "const": "https://doi.org/21.T11148/527856fd709ec8c5bc8c",
       "description": "PID to a machine readable description of the attributes in the FDO record",
       "$comment": "idx = 1"
     },
@@ -15,7 +15,7 @@
       "$comment": "idx = 2"
     },
     "digitalObjectType": {
-      "const": "https://hdl.handle.net/21.T11148/527856fd709ec8c5bc8c",
+      "const": "https://doi.org/21.T11148/527856fd709ec8c5bc8c",
       "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
       "$comment": "idx = 3"
     },
