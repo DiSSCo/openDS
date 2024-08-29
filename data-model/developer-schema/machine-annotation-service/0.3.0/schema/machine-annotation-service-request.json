@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/machine-annotation-service/0.3.0/machine-annotation-service-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Machine Annotation Service RequestVersion 0.3.0",
   "title": "MachineAnnotationServiceRequest",
