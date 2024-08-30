@@ -93,6 +93,13 @@
       "description": "The handle to the source system object which retrieved the data from the CMS",
       "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}"
     },
+    "ods:sourceSystemName": {
+      "type": "string",
+      "description": "The name of the source system as provided to DiSSCo",
+      "examples": [
+        "Naturalis Biodiversity Center (NL) - Vermes"
+      ]
+    },
     "ods:organisationID": {
       "type": "string",
       "description": "ROR or Wikidata identifie of the organisation",
