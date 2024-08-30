@@ -8,7 +8,7 @@
     "@id": {
       "type": "string",
       "description": "The unique identifier (handle) of the Source System object",
-      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
@@ -21,7 +21,7 @@
     "ods:ID": {
       "type": "string",
       "description": "Handle of the Source System",
-      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
@@ -29,7 +29,7 @@
     "ods:type": {
       "type": "string",
       "description": "The DOI to the FDO type of the object",
-      "pattern": "^https://doi\\.org/[\\w\\.]+/[\\w\\.]+",
+      "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/[\\w\\.]+",
       "examples": [
         "https://doi.org/10.15468/1a2b3c"
       ]
@@ -107,7 +107,7 @@
     "ods:dataMappingID": {
       "type": "string",
       "description": "The Handle of the Mapping Object needed for this Source System",
-      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
