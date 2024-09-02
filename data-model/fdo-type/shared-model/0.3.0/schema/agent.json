@@ -84,8 +84,7 @@
     }
   },
   "required": [
-    "@type",
-    "schema:name"
+    "@type"
   ],
   "additionalProperties": false
 }
