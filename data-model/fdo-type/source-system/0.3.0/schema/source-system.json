@@ -29,7 +29,7 @@
     "ods:type": {
       "type": "string",
       "description": "The DOI to the FDO type of the object",
-      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/[\\w\\.]+",
       "examples": [
         "https://doi.org/10.15468/1a2b3c"
       ]
@@ -126,9 +126,9 @@
     "schema:dateCreated",
     "schema:dateModified",
     "schema:creator",
-    "schema:uri",
+    "schema:url",
     "ods:translatorType",
-    "ods:mappingID"
+    "ods:dataMappingID"
   ],
   "additionalProperties": false
 }

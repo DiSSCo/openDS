@@ -10,6 +10,7 @@
   "dcterms:type": "Image",
   "ac:accessURI": "https://example.org/digital-object/12345",
   "ods:sourceSystemID": "https://hdl.handle.net/SANDBOX/CS1-ZKQ-NZ7",
+  "ods:sourceSystemName": "Naturalis Biodiversity Center (NL) - Aves",
   "ods:organisationID": "https://ror.org/015hz7p22",
   "ods:organisationName": "National Museum of Natural History",
   "dcterms:format": "image/jpeg",

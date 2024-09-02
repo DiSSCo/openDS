@@ -16,6 +16,7 @@
   "ods:isKnownToContainMedia": true,
   "ods:specimenName": "Pitta versicolor Swainson, 1825",
   "ods:sourceSystemID": "https://hdl.handle.net/SANDBOX/CS1-ZKQ-NZ7",
+  "ods:sourceSystemName": "Naturalis Biodiversity Center (NL) - Aves",
   "ods:livingOrPreserved": "Preserved",
   "dcterms:license": "CC0 1.0",
   "dwc:basisOfRecord": "PreservedSpecimen",
