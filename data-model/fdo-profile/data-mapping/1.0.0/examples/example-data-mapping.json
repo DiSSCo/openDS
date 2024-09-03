@@ -1,0 +1,13 @@
+{
+  "10320/loc": "<locations><location href=\"https://dev-orchestration.dissco.tech/api/v1/mapping/TEST/QDD-Y07-QK6\" id=\"0\" weight=\"1\"/></locations>",
+  "fdoProfile": "https://doi.org/21.T11148/ce794a6f4df42eb7e77e",
+  "fdoRecordLicenseId": "https://spdx.org/licenses/CC0-1.0.json",
+  "fdoRecordLicenseName": "CC0 1.0 Universal",
+  "digitalObjectType": "https://doi.org/21.T11148/ce794a6f4df42eb7e77e",
+  "digitalObjectName": "Mapping",
+  "pid": "https://hdl.handle.net/TEST/QDD-Y07-QK6",
+  "pidRecordIssueDate": "2023-09-01T13:05:08.375Z",
+  "pidRecordIssueNumber": 1,
+  "pidStatus": "ACTIVE",
+  "sourceDataStandard": "dwc"
+}

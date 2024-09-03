@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/mas/0.1.0/mas-request-attributes.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/machine-annotation-service/0.1.0/mas-request-attributes.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a MAS",
   "$comment": "FDO Profile Version 0.1.0",

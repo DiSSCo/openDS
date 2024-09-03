@@ -1,0 +1,31 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/annotation/1.0.0/annotation-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Schema for making annotation-creation requests to the DiSSCo Handle Manager",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "https://doi.org/21.T11148/cf458ca9ee1d44a5608f",
+          "description": "PID of the Digital Object Type"
+        },
+        "attributes": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/fdo-profile/annotation/1.0.0/anotation-request-attributes.json"
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "https:/doi.org/21.T11148/532ce6796e2828dd2be6",
+    "attributes": {
+      "locations": [
+        "https://coldb.mnhn.fr/catalognumber/mnhn/ec/ec23946"
+      ],
+      "targetPid": "https://hdl.handle.net/20.5000.10235/aaa-bbb-ccc",
+      "targetType": "https://doi.org/21.T11148/894b1e6cad57e921764e",
+      "annotationHash": "b3dada2d-396b-cab2-665e-125659fc7ae6"
+    }
+  }
+}

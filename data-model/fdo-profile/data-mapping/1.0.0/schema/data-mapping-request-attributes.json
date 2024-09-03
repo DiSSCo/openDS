@@ -1,0 +1,31 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/data-mapping/1.0.0/data-mapping-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a generic Handle",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "pidIssuer": {
+      "type": "string",
+      "description": "In case of a DOI this is a PID for the DOI Registration Agency",
+      "examples": [
+        "https://hdl.handle.net/10.17183"
+      ]
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "sourceDataStandard": {
+      "type": "string",
+      "description": "Indicates standard source data adheres to, such as \"dwc\" or \"abcd\"",
+      "$comment": "idx = 700"
+    }
+  },
+  "required": [
+    "pidIssuer"
+  ],
+  "additionalProperties": false
+}
