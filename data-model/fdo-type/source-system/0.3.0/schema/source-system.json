@@ -107,7 +107,7 @@
     "ods:maximumRecords": {
       "type": "integer",
       "minimum": 1,
-      "description": "An optional parameter to limit the number of records to be ingested from this sourceSystem, it will pick the first X number of records it encounters. If left empty or absent t will process all records."
+      "description": "An optional parameter to limit the number of records to be ingested from this sourceSystem, it will pick the first X number of records it encounters. If left empty or absent it will process all records."
     },
     "ods:dataMappingID": {
       "type": "string",
