@@ -1,0 +1,36 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/machine-annotation-service/0.3.0/machine-annotation-service-environment.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Machine Annotation Service Environment Version 0.3.0",
+  "title": "MachineAnnotationServiceEnvironment",
+  "type": "object",
+  "description": "Environmental variables to supply to the MAS, non-sensitive",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of a non-sensitive property or environmental variable",
+      "examples": [
+        "server.port",
+        "spring.profiles.active"
+      ]
+    },
+    "value": {
+      "type": [
+        "string",
+        "integer",
+        "boolean",
+        "null"
+      ],
+      "description": "Value to be stored in the \"name\" field. NOT for sensitive information.",
+      "examples": [
+        8080,
+        "web-profile"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "name",
+    "value"
+  ]
+}
