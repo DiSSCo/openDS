@@ -1,0 +1,73 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/tombstone/1.0.0/tombstone-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema for requests to tombstone resources to DiSSCo PID API",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "identifier of the object to be tombstoned",
+          "example": "20.5000.1025/LLN-YPG-4PX"
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "tombstoneText": {
+              "type": "string",
+              "description": "Free text describing why the object was tombstoned",
+              "$comment": "idx = 30"
+            },
+            "hasRelatedPid": {
+              "type": "array",
+              "description": "The PIDs of the object the tombstoned object is related to",
+              "items": {
+                "type": "object",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "pid": {
+                      "type": "string",
+                      "description": "The PID of the related object",
+                      "examples": [
+                        "https://doi.org/10.1234/abcd"
+                      ]
+                    },
+                    "relationshipType": {
+                      "type": "string",
+                      "description": "The type of relationship between the tombstoned object and the related object",
+                      "examples": [
+                        "ods:relatedTo",
+                        "ods:isDuplicateOf"
+                      ]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "additionalProperties": false,
+                "required": [
+                  "tombstoneText"
+                ]
+              }
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "tombstoneText"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "attributes"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "data"
+  ]
+}
