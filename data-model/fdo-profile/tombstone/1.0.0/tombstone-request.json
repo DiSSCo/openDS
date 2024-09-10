@@ -45,11 +45,7 @@
                     }
                   },
                   "additionalProperties": false
-                },
-                "additionalProperties": false,
-                "required": [
-                  "tombstoneText"
-                ]
+                }
               }
             }
           },
