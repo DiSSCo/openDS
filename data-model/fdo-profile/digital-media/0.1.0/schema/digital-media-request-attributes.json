@@ -64,15 +64,8 @@
       "$comment": "idx = 401"
     },
     "dcterms:format": {
-      "enum": [
-        "audio",
-        "model",
-        "video",
-        "text",
-        "application",
-        "image"
-      ],
-      "description": "Slated for removal",
+      "type": "string",
+      "description": "(Previously primaryMediaObjectType) Dublin Core: Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type",
       "$comment": "idx = 402"
     },
     "isDerivedFromSpecimen": {
@@ -124,20 +117,7 @@
       "$comment": "idx = 409"
     },
     "dcterms:type": {
-      "enum": [
-        "Collection",
-        "Dataset",
-        "Event",
-        "Image",
-        "InteractiveResource",
-        "MovingImage",
-        "PhysicalObject",
-        "Service",
-        "Software",
-        "Sound",
-        "StillImage",
-        "Text"
-      ],
+      "type": "string",
       "description": "Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type",
       "$comment": "idx = 410"
     },
