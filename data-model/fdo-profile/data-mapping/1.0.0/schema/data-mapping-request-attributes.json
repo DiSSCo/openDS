@@ -4,13 +4,6 @@
   "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a generic Handle",
   "$comment": "FDO Profile Version 1.0.0",
   "properties": {
-    "pidIssuer": {
-      "type": "string",
-      "description": "In case of a DOI this is a PID for the DOI Registration Agency",
-      "examples": [
-        "https://hdl.handle.net/10.17183"
-      ]
-    },
     "locations": {
       "type": "array",
       "items": {
@@ -25,7 +18,7 @@
     }
   },
   "required": [
-    "pidIssuer"
+    "sourceDataStandard"
   ],
   "additionalProperties": false
 }

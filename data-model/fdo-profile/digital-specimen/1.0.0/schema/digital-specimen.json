@@ -1,11 +1,11 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/doi-kernel/1.0.0/doi-kernel.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-specimen/1.0.0/digital-specimen.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "description": "Kernel from which all DiSSCo DOI FDO profiles are derived",
   "$comment": "FDO Profile Version 1.0.0",
   "properties": {
     "fdoProfile": {
-      "const": "https://doi.org/21.T11148/527856fd709ec8c5bc8c",
+      "const": "https://doi.org/21.T11148/d8de0819e144e4096645",
       "description": "PID to a machine readable description of the attributes in the FDO record",
       "$comment": "idx = 1"
     },
@@ -20,7 +20,7 @@
       "$comment": "idx = 3"
     },
     "digitalObjectType": {
-      "const": "https://doi.org/21.T11148/527856fd709ec8c5bc8c",
+      "const": "https://doi.org/21.T11148/d8de0819e144e4096645",
       "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
       "$comment": "idx = 4"
     },
@@ -144,13 +144,175 @@
       "description": "In the case of a digital specimen this is the name for the object in the collection, which can be anything from a taxon name to a collection number. In the case of a media object, it is the media url without https://.",
       "example": "Mus musculus type 1",
       "$comment": "idx = 42"
+    },
+    "specimenHost": {
+      "type": "string",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation hosting the specimen. Same as: Latimer Core identifierSource.",
+      "example": "https://ror.org/0566bfb96",
+      "$comment": "idx = 200"
+    },
+    "specimenHostName": {
+      "type": "string",
+      "description": "Name for the administrative organisation as derived from ROR or Wikidata at the point of creating the FDO record.",
+      "example": "Naturalis Biodiversity Center",
+      "$comment": "idx = 201"
+    },
+    "normalisedPrimarySpecimenObjectId": {
+      "type": "string",
+      "description": "For internal processing purposes only to make a local identifier globally unique. This is the primarySpecimenObjectId if it is globally unique or a combination of ROR ID string, source system ID string, primarySpecimenObjectId if it is a proprietary identifier.",
+      "example": "0566bfb96:20.5000.1025/GEE-W3J-HL2:RMNH.1.2b",
+      "$comment": "idx = 203"
+    },
+    "otherSpecimenIds": {
+      "type": "array",
+      "$comment": "idx = 207",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifierValue": {
+            "type": "string"
+          },
+          "identifierType": {
+            "type": "string"
+          },
+          "resolvable": {
+            "type": "boolean",
+            "description": "whether or not the identifier is resolvable"
+          }
+        },
+        "required": [
+          "identifierValue",
+          "identifierType"
+        ],
+        "additionalProperties": false
+      },
+      "$comment": "idx = 204"
+    },
+    "topicOrigin": {
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin",
+        "Unclassified"
+      ],
+      "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected.",
+      "$comment": "idx = 205"
+    },
+    "topicDomain": {
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material",
+        "Unclassified"
+      ],
+      "description": "High-level terms providing general domain information with which the objects are associated.",
+      "$comment": "idx = 206"
+    },
+    "topicDiscipline": {
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Geology",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
+        "Unclassified"
+      ],
+      "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related.",
+      "$comment": "idx = 207"
+    },
+    "topicCategory": {
+      "enum": [
+        "Human remains",
+        "Hominid remains",
+        "Mycology",
+        "Algae",
+        "Bryophytes",
+        "Pteridophytes",
+        "Seed plants",
+        "Other Botany Objects",
+        "Insects",
+        "Arachnids",
+        "Crustaceans & Myriapods",
+        "Porifera",
+        "Mollusca",
+        "Cnidaria",
+        "Echinodermata",
+        "Fishes",
+        "Amphibians",
+        "Reptiles",
+        "Birds",
+        "Mammals",
+        "AnimalGeneticResources",
+        "Other Zoology Objects",
+        "Phages",
+        "Bacteria & Archaea",
+        "Plasmids",
+        "Protozoa",
+        "Eukaryotic microorganisms",
+        "Viruses",
+        "Mircofungi",
+        "Other Microbiology Objects",
+        "Botany Fossils",
+        "Invertebrate Fossils",
+        "Vertebrate Fossils",
+        "Other Palaeontology Objects",
+        "Minerals and Gems",
+        "Loose Sediment Sample",
+        "Mixed Solid Mater Sample",
+        "Water-Ice Sample",
+        "Liquid or Gaseous Matter Sample",
+        "Mixed Geology Objects",
+        "Terrestrial Finds/Falls",
+        "Terrestrial Impacta",
+        "Sample Returns",
+        "Unclassified"
+      ],
+      "description": "Countable things (objects) served as a more detailed classification of each of the disciplines.",
+      "$comment": "idx = 208"
+    },
+    "livingOrPreserved": {
+      "enum": [
+        "Living",
+        "Preserved"
+      ],
+      "description": "State of specimen",
+      "$comment": "idx = 209"
+    },
+    "materialSampleType": {
+      "enum": [
+        "Any biological specimen",
+        "Biological material sample",
+        "Fluid in container",
+        "Fluid in container",
+        "Non biologic solid object",
+        "Research product"
+      ],
+      "description": "https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html",
+      "$comment": "idx = 211"
+    },
+    "markedAsType": {
+      "type": "boolean",
+      "description": "TRUE if the specimen is marked as type with a stamp or label.\n",
+      "$comment": "idx = 212"
+    },
+    "catalogNumber": {
+      "type": "string",
+      "description": "Identifier of source system catalog",
+      "$comment": "idx = 213"
     }
   },
   "additionalProperties": false,
   "required": [
     "fdoProfile",
     "fdoRecordLicenseId",
-    "fdoRecordLicenseName",
     "digitalObjectType",
     "digitalObjectName",
     "pid",
@@ -161,6 +323,9 @@
     "pidRecordIssueNumber",
     "pidStatus",
     "10320/loc",
-    "referentName"
+    "referentName",
+    "specimenHost",
+    "specimenHostName",
+    "normalisedPrimarySpecimenObjectId"
   ]
 }

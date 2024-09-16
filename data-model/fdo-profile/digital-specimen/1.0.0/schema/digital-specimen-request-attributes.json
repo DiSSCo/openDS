@@ -1,0 +1,183 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-specimen/0.1.0/digital-specimen-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a digital specimen",
+  "$comment": "FDO Profile Version 0.1.0",
+  "properties": {
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "referentName": {
+      "type": "string",
+      "description": "In the case of a digital specimen this is the name for the object in the collection, which can be anything from a taxon name to a collection number."
+    },
+    "specimenHost": {
+      "type": "string",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation hosting the specimen. Same as: Latimer Core identifierSource.",
+      "example": "https://ror.org/0566bfb96"
+    },
+    "specimenHostName": {
+      "type": "string",
+      "description": "Name for the administrative organisation as derived from ROR or Wikidata at the point of creating the FDO record.",
+      "example": "Naturalis Biodiversity Center"
+    },
+    "normalisedPrimarySpecimenObjectId": {
+      "type": "string",
+      "description": "For internal processing purposes only to make a local identifier globally unique. This is the primarySpecimenObjectId if it is globally unique or a combination of ROR ID string, source system ID string, primarySpecimenObjectId if it is a proprietary identifier.",
+      "example": "0566bfb96:20.5000.1025/GEE-W3J-HL2:RMNH.1.2b"
+    },
+    "otherSpecimenIds": {
+      "type": "array",
+      "$comment": "idx = 207",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifierValue": {
+            "type": "string"
+          },
+          "identifierType": {
+            "type": "string"
+          },
+          "resolvable": {
+            "type": "boolean",
+            "description": "whether or not the identifier is resolvable"
+          }
+        },
+        "required": [
+          "identifierValue",
+          "identifierType"
+        ]
+      }
+    },
+    "topicOrigin": {
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin",
+        "Unclassified"
+      ],
+      "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected."
+    },
+    "topicDomain": {
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material",
+        "Unclassified"
+      ],
+      "description": "High-level terms providing general domain information with which the objects are associated."
+    },
+    "topicDiscipline": {
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Geology",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
+        "Unclassified"
+      ],
+      "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related."
+    },
+    "topicCategory": {
+      "enum": [
+        "Human remains",
+        "Hominid remains",
+        "Mycology",
+        "Algae",
+        "Bryophytes",
+        "Pteridophytes",
+        "Seed plants",
+        "Other Botany Objects",
+        "Insects",
+        "Arachnids",
+        "Crustaceans & Myriapods",
+        "Porifera",
+        "Mollusca",
+        "Cnidaria",
+        "Echinodermata",
+        "Fishes",
+        "Amphibians",
+        "Reptiles",
+        "Birds",
+        "Mammals",
+        "AnimalGeneticResources",
+        "Other Zoology Objects",
+        "Phages",
+        "Bacteria & Archaea",
+        "Plasmids",
+        "Protozoa",
+        "Eukaryotic microorganisms",
+        "Viruses",
+        "Mircofungi",
+        "Other Microbiology Objects",
+        "Botany Fossils",
+        "Invertebrate Fossils",
+        "Vertebrate Fossils",
+        "Other Palaeontology Objects",
+        "Minerals and Gems",
+        "Loose Sediment Sample",
+        "Mixed Solid Mater Sample",
+        "Water-Ice Sample",
+        "Liquid or Gaseous Matter Sample",
+        "Mixed Geology Objects",
+        "Terrestrial Finds/Falls",
+        "Terrestrial Impacta",
+        "Sample Returns",
+        "Unclassified"
+      ],
+      "description": "Countable things (objects) served as a more detailed classification of each of the disciplines."
+    },
+    "livingOrPreserved": {
+      "enum": [
+        "Living",
+        "Preserved"
+      ],
+      "description": "State of specimen"
+    },
+    "materialSampleType": {
+      "enum": [
+        "Whole organism specimen",
+        "Organism part",
+        "Organism product",
+        "Biome aggregation",
+        "Bundle biome aggregation",
+        "Fossil",
+        "Any biological specimen",
+        "Aggregation",
+        "Slurry biome aggregation",
+        "Other solid object",
+        "Fluid in container",
+        "Anthropogenic aggregation",
+        "Artefact",
+        "Any aggregation specimen"
+      ],
+      "description": "https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html"
+    },
+    "markedAsType": {
+      "type": "boolean",
+      "description": "TRUE if the specimen is marked as type with a stamp or label."
+    },
+    "catalogIdentifier": {
+      "type": "string",
+      "description": "Identifier of source system catalog"
+    }
+  },
+  "required": [
+    "issuedForAgent",
+    "specimenHost",
+    "normalisedPrimarySpecimenObjectId"
+  ],
+  "additionalProperties": false
+}

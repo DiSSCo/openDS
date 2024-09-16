@@ -1,11 +1,11 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/doi-kernel/1.0.0/doi-kernel.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-media/1.0.0/digital-media.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Kernel from which all DiSSCo DOI FDO profiles are derived",
+  "description": "FDO Profile for digital media object",
   "$comment": "FDO Profile Version 1.0.0",
   "properties": {
     "fdoProfile": {
-      "const": "https://doi.org/21.T11148/527856fd709ec8c5bc8c",
+      "const": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
       "description": "PID to a machine readable description of the attributes in the FDO record",
       "$comment": "idx = 1"
     },
@@ -20,7 +20,7 @@
       "$comment": "idx = 3"
     },
     "digitalObjectType": {
-      "const": "https://doi.org/21.T11148/527856fd709ec8c5bc8c",
+      "const": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
       "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
       "$comment": "idx = 4"
     },
@@ -144,6 +144,72 @@
       "description": "In the case of a digital specimen this is the name for the object in the collection, which can be anything from a taxon name to a collection number. In the case of a media object, it is the media url without https://.",
       "example": "Mus musculus type 1",
       "$comment": "idx = 42"
+    },
+    "mediaHost": {
+      "type": "string",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also (use DiSSCo QID in that case). Notehe organisation may use an external repository like morphobank to host the object.",
+      "example": "https://ror.org/0566bfb96",
+      "$comment": "idx = 400"
+    },
+    "mediaHostName": {
+      "type": "string",
+      "description": "Name for the administrative organisation hosting the digital media (name derived from ROR or Wikidata  at the point of creating the FDO record).",
+      "example": "Naturalis Biodiversity Center",
+      "$comment": "idx = 401"
+    },
+    "linkedDigitalObjectPid": {
+      "type": "string",
+      "description": "Handle or DOI, the DO to which the media should be linked.",
+      "example": "https://hdl.handle.net/20.5000.1025/3X0-WA3-J8Q",
+      "$comment": "idx = 402"
+    },
+    "linkedDigitalObjectType": {
+      "type": "string",
+      "description": "FDO type type to which the media is linked.",
+      "$comment": "idx = 403"
+    },
+    "primaryMediaId": {
+      "type": "string",
+      "description": "Primary ID supplied by the original provider for the media (compatible with ac:providerManagedID). the mediaUrl may be the ID itself, for example: https://data.nhm.ac.uk/media/93012a86-a00f-435a-a985-8e3c0ab6e51b",
+      "example": "ae00-a4gg-123b4",
+      "$comment": "idx = 404"
+    },
+    "primaryMediaIdType": {
+      "enum": [
+        "Global",
+        "Local",
+        "Resolvable"
+      ],
+      "description": "Nature of institutional identifier. A globally unique identifier (e.g. a UUID) must be marked as \"Global\", while a resolvable identifier (e.g. a URL or a DOI including the proxy) must be marked at \"Resolvable\". If the identifier is unique only within the institution or collection system, it must be marked as \"Local\"",
+      "$comment": "idx = 405"
+    },
+    "primaryMediaIdName": {
+      "type": "string",
+      "example": "ac:accessUr",
+      "$comment": "idx = 406"
+    },
+    "dcterms:type": {
+      "type": "string",
+      "description": "http://purl.org/dc/elements/1.1/type",
+      "$comment": "idx = 407"
+    },
+    "dcterms:format": {
+      "type": "string",
+      "description": "http://purl.org/dc/terms/format",
+      "example": "image/jpeg",
+      "$comment": "idx = 408"
+    },
+    "dcterms:license": {
+      "type": "string",
+      "description": "http://purl.org/dc/terms/license.",
+      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "$comment": "idx = 409"
+    },
+    "dcterms:rightsHolder": {
+      "type": "string",
+      "description": "https://purl.org/dc/terms/rightsHolder",
+      "example": "https://ror.org/0566bfb96",
+      "$comment": "idx = 410"
     }
   },
   "additionalProperties": false,
@@ -161,6 +227,13 @@
     "pidRecordIssueNumber",
     "pidStatus",
     "10320/loc",
-    "referentName"
+    "referentName",
+    "mediaHost",
+    "mediaHostName",
+    "linkedDigitalObjectPid",
+    "linkedDigitalObjectType",
+    "primaryMediaId",
+    "dcterms:license",
+    "dcterms:rightsHolder"
   ]
 }

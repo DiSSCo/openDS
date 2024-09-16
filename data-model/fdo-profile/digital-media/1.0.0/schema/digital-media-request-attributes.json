@@ -1,0 +1,86 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-media/1.0.0/digital-media-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for Digital Media",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "referentName": {
+      "type": "string",
+      "description": "A generic name for the type of object that the DOI refers to. This is different from digitalObjectType that points to a specific type, e.g. there can be different types of digital specimens that each have a slightly different metadata schema because they describe a different kind of specimen, like a botanical versus a geological specimen.",
+      "example": "digital specimen"
+    },
+    "mediaHost": {
+      "type": "string",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also (use DiSSCo QID in that case). Notehe organisation may use an external repository like morphobank to host the object.",
+      "example": "https://ror.org/0566bfb96"
+    },
+    "mediaHostName": {
+      "type": "string",
+      "description": "Name for the administrative organisation hosting the digital media (name derived from ROR or Wikidata at the point of creating the FDO record).",
+      "example": "Naturalis Biodiversity Center",
+      "$comment": "idx = 401"
+    },
+    "linkedDigitalObjectPid": {
+      "type": "string",
+      "description": "Handle or DOI, the DO to which the media should be linked.",
+      "example": "https://hdl.handle.net/20.5000.1025/3X0-WA3-J8Q"
+    },
+    "linkedDigitalObjectType": {
+      "type": "string",
+      "description": "The DO type to which the media is linked, one of: digital specimen, agent, facility, supplementary material"
+    },
+    "primaryMediaId": {
+      "type": "string",
+      "description": "Primary ID supplied by the original provider for the media (compatible with ac:providerManagedID). the mediaUrl may be the ID itself, for example: https://data.nhm.ac.uk/media/93012a86-a00f-435a-a985-8e3c0ab6e51b",
+      "example": "ae00-a4gg-123b4"
+    },
+    "primaryMediaIdType": {
+      "enum": [
+        "Global",
+        "Local",
+        "Resolvable"
+      ],
+      "description": "Vocabulary derived from DOI schema creationIdentifier.: PROPRIETARY IDENTIFIER if the identifier is custom made by the organisation or collection management system."
+    },
+    "primaryMediaIdName": {
+      "type": "string",
+      "example": "DAM nr"
+    },
+    "dcterms:type": {
+      "type": "string",
+      "description": "Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type"
+    },
+    "dcterms:format": {
+      "type": "string",
+      "description": "(Previously primaryMediaObjectType) Dublin Core: Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type"
+    },
+    "dcterms:license": {
+      "type": "string",
+      "description": "http://purl.org/dc/terms/license.",
+      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"
+    },
+    "dcterms:rightsHolder": {
+      "type": "string",
+      "description": "If not present, defaults to mediaHost, https://purl.org/dc/terms/rightsHolder",
+      "example": "https://ror.org/0566bfb96"
+    }
+  },
+  "required": [
+    "referentName",
+    "mediaHost",
+    "mediaHostName",
+    "linkedDigitalObjectPid",
+    "linkedDigitalObjectType",
+    "primaryMediaId",
+    "dcterms:license",
+    "dcterms:rightsHolder"
+  ],
+  "additionalProperties": false
+}

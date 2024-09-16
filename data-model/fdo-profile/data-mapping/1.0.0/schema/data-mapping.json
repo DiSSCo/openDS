@@ -142,11 +142,10 @@
     "digitalObjectType",
     "digitalObjectName",
     "pid",
-    "pidIssuer",
-    "pidIssuerName",
     "pidRecordIssueDate",
     "pidRecordIssueNumber",
     "10320/loc",
-    "pidStatus"
+    "pidStatus",
+    "sourceDataStandard"
   ]
 }

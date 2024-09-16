@@ -10,14 +10,7 @@
         "type": "string"
       },
       "description": "Additional URLs to be appended to the 10320/loc field"
-    },
-    "machineAnnotationServiceName": {
-      "type": "string",
-      "description": "Name of Machine Annotation Service"
     }
   },
-  "required": [
-    "machineAnnotationServiceName"
-  ],
   "additionalProperties": false
 }

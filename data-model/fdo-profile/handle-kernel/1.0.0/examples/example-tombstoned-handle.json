@@ -12,5 +12,11 @@
   "pidRecordIssueNumber": 1,
   "pidStatus": "TOMBSTONE",
   "tombstoneText": "Resource deleted by admin",
+  "hasRelatedPid": [
+    {
+      "pid": "https://doi.org/10.21/XU9-54T-22A",
+      "relationshipType": "superseded By"
+    }
+  ],
   "tombstoneDate": "2024-11-17T11:57:02.933Z"
 }

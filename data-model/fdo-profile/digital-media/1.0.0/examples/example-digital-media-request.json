@@ -1,0 +1,15 @@
+{
+  "data": {
+    "type": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+    "attributes": {
+      "referentName": "mediaphoto.mnhn.fr/media/1620403020391dDLZHWzqVzfk5Az3",
+      "mediaHost": "https://ror.org/0566bfb96",
+      "mediaHostName": "Naturalis Biodiversity Center",
+      "linkedDigitalObjectPid": "https://doi.org/10.22/GR0-WWV-3RT",
+      "linkedDigitalObjectType": "https://doi.org/21.T11148/d8de0819e144e4096645",
+      "primaryMediaId": "https://mediaphoto.mnhn.fr/media/1620403020391dDLZHWzqVzfk5Az3",
+      "dcterms:license": "https://spdx.org/licenses/CC0-1.0.json",
+      "dcterms:rightsHolder": "https://ror.org/0566bfb96"
+    }
+  }
+}
