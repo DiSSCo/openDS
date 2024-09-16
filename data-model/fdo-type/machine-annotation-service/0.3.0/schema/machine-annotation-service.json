@@ -216,6 +216,19 @@
       "type": "object",
       "description": "Object containing the tombstone metadata of the object",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json"
+    },
+    "ods:hasEnvironment": {
+      "type": "array",
+      "description": "Environmental variables to supply to the MAS, non-sensitive",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service-environment.json"
+      }
+    },
+    "ods:hasSecret": {
+      "type": "array",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service-secret.json"
+      }
     }
   },
   "required": [
