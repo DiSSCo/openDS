@@ -33,7 +33,7 @@ COPY fdo-profile/data-mapping/1.0.0/schema schema-root/schemas/fdo-profile/data-
 COPY fdo-profile/machine-annotation-service/1.0.0/schema schema-root/schemas/fdo-profile/mas/latest
 COPY fdo-profile/source-system/1.0.0/schema schema-root/schemas/fdo-profile/source-system/latest
 COPY fdo-profile/digital-media/1.0.0/schema schema-root/schemas/fdo-profile/digital-media/latest
-COPY fdo-profile/digital-specimen/1.0.0/schema/ schema-root/schemas/fdo-profile/digital-specimen/latest
+COPY fdo-profile/digital-specimen/1.0.0/schema schema-root/schemas/fdo-profile/digital-specimen/latest
 
 COPY fdo-profile/tettris-service/0.1.0/schema schema-root/schemas/fdo-profile/tettris-service/latest
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/latest
