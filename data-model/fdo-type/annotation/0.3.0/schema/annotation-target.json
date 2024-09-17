@@ -52,9 +52,9 @@
             },
             "ods:field": {
               "type": "string",
-              "description": "The full jsonPath of the field being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
+              "description": "The full jsonPath in block notation of the field being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
               "examples": [
-                "$.hasEvent[0].location.dwc:country"
+                "$['ods:hasEvent'][0]['Location']['dwc:country']"
               ]
             }
           },
@@ -74,9 +74,9 @@
             },
             "ods:class": {
               "type": "string",
-              "description": "The full jsonPath of the class being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
+              "description": "The full jsonPath in block notation of the class being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
               "examples": [
-                "$.hasEvent[0].location.georeference"
+                "$['ods:hasEvent'][0]['Location']['ods:GeoReference']"
               ]
             }
           },
