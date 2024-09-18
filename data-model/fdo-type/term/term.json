@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/term/latest/term.json",
+  "title": "DiSSCo openDS Terms Schema",
+  "description": "A schema for defining standard terms in openDS.",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the term object",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:Term",
+      "const": "ods:Term",
+      "examples": [
+        "ods:Term"
+      ]
+    },
+    "rdf:type": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": "string",
+          "enum": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2002/07/owl#Class",
+            "http://www.w3.org/2004/02/skos/core#Concept"
+          ]
+        }
+      }
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "Handle of the Term",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:type": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https://doi\\.org/[\\w.]+/[\\w.]+",
+      "examples": [
+        "https://doi.org/10.15468/1a2b3c"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object",
+      "examples": [
+        "ods:Active"
+      ]
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Version of the Schema, https://schema.org/version",
+      "examples": [
+        1
+      ]
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Term, https://schema.org/name",
+      "examples": [
+        "ods:DigitalSpecimen"
+      ]
+    },
+    "skos:prefLabel": {
+      "type": "string",
+      "description": "The preferred lexical label for the term",
+      "examples": [
+        "Digital Specimen"
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, https://schema.org/dateModified",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
+    "schema:creator": {
+      "type": "object",
+      "description": "Contains an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json",
+      "examples": [
+        {
+          "@id": "https://orcid.org/0000-0002-1825-0097",
+          "@type": "schema:Person",
+          "schema:name": "John Doe",
+          "schema:email": "john.doe@example.com"
+        }
+      ]
+    },
+     "schema:contributor": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of contributors",
+      "examples": [
+        ["Jane Smith", "Bob Johnson"]
+      ]
+    },
+    "skos:definition": {
+      "type": "string",
+      "description": "A definition of what the term represents.",
+      "examples": [
+        "A digital representation of a physical specimen"
+      ]
+    },
+   
+    "dcterms:licence": {
+      "type": "string",
+      "format": "uri",
+      "description": "License URI",
+      "enum": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "https://creativecommons.org/licenses/by-sa/4.0/",
+        "https://creativecommons.org/licenses/by-nc/4.0/",
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      ],
+      "examples": [
+        "https://creativecommons.org/licenses/by/4.0/"
+      ]
+    },
+    "ods:belongsToClass": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of the class this term belongs to",
+      "examples": [
+        "https://schema.org/Thing"
+      ]
+    },
+    "ods:repeatable": {
+      "type": "boolean",
+      "description": "Indicates whether the term is repeatable",
+      "examples": [
+        true
+      ]
+    },
+    "ods:isRequired": {
+      "type": "boolean",
+      "description": "Indicates whether the term is required",
+      "examples": [
+        false
+      ]
+    },
+    "skos:broadMatch": {
+      "type": "string",
+      "format": "uri",
+      "description": "URI of a broader matching concept",
+      "examples": [
+        "http://rs.tdwg.org/dwc/terms/Occurrence"
+      ]
+    },
+    "owl:deprecated": {
+      "type": "boolean",
+      "description": "Indicates whether the term is deprecated",
+      "examples": [
+        false
+      ]
+    }
+  },
+  "required": [
+    "@type",
+    "ods:type",
+    "dcterms:identifier",
+    "schema:name",
+    "schema:dateCreated",
+    "schema:dateModified"
+  ]
+}
