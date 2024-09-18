@@ -88,13 +88,13 @@
       "examples": [
         [
           {
-            "$['ods:physicalSpecimenIDType']": "Global"
+            "ods:physicalSpecimenIDType": "Global"
           },
           {
-            "$['ods:type']": "ZoologyVertebrateSpecimen"
+            "ods:type": "ZoologyVertebrateSpecimen"
           },
           {
-            "$['ods:organisationId']": "https://ror.org/05xg72x27"
+            "ods:organisationID": "https://ror.org/05xg72x27"
           }
         ]
       ],
@@ -108,7 +108,7 @@
       "examples": [
         [
           {
-            "$['ods:physicalSpecimenId']": "dwc:catalogNumber"
+            "ods:physicalSpecimenId": "dwc:catalogNumber"
           }
         ]
       ],

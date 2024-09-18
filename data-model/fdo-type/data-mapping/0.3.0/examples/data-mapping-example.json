@@ -16,18 +16,18 @@
   },
   "ods:DefaultMapping": [
     {
-      "$['ods:physicalSpecimenIDType']": "Global"
+      "ods:physicalSpecimenIDType'": "Global"
     },
     {
-      "$['ods:type']": "ZoologyVertebrateSpecimen"
+      "ods:type": "ZoologyVertebrateSpecimen"
     },
     {
-      "$['ods:organisationID']": "https://ror.org/05xg72x27"
+      "ods:organisationID": "https://ror.org/05xg72x27"
     }
   ],
   "ods:FieldMapping": [
     {
-      "$['ods:physicalSpecimenID']": "dwc:catalogNumber"
+      "ods:physicalSpecimenID": "dwc:catalogNumber"
     }
   ],
   "ods:mappingDataStandard": "dwc"
