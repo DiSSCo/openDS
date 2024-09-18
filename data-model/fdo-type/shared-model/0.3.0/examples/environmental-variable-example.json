@@ -1,0 +1,4 @@
+{
+  "schema:name": "server.port",
+  "schema:value": 8080
+}

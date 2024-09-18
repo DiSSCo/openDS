@@ -1,12 +1,12 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service-environment.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.3.0/environment-variable.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Machine Annotation Service Environment Version 0.3.0",
-  "title": "MachineAnnotationServiceEnvironment",
+  "$comment": "Environmental variables Version 0.3.0",
+  "title": "EnvironmentalVariable",
   "type": "object",
-  "description": "Environmental variables to supply to the MAS, non-sensitive",
+  "description": "Environmental variables to supply to the a Digital Object, non-sensitive",
   "properties": {
-    "name": {
+    "schema:name": {
       "type": "string",
       "description": "The name of a non-sensitive property or environmental variable",
       "examples": [
@@ -14,12 +14,11 @@
         "spring.profiles.active"
       ]
     },
-    "value": {
+    "schema:value": {
       "type": [
         "string",
         "integer",
-        "boolean",
-        "null"
+        "boolean"
       ],
       "description": "Value to be stored in the \"name\" field. NOT for sensitive information.",
       "examples": [
@@ -30,7 +29,7 @@
   },
   "additionalProperties": false,
   "required": [
-    "name",
-    "value"
+    "schema:name",
+    "schema:value"
   ]
 }
