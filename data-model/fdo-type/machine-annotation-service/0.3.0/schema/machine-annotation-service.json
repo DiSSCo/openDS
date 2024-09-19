@@ -221,14 +221,14 @@
       "type": "array",
       "description": "Environmental variables to supply to the MAS, non-sensitive",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.3.0/environmental-variable.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/environmental-variable.json"
       }
     },
     "ods:hasSecretVariable": {
       "type": "array",
       "description": "Secret variables to supply to the MAS",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.3.0/secret-variable.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/secret-variable.json"
       }
     }
   },
