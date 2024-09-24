@@ -1,0 +1,14 @@
+{
+  "data": {
+    "id": "https://hdl.handle.net/21.T11148/532ce6796e2828dd2be6",
+    "attributes": {
+      "tombstoneText": "This object was deleted",
+      "hasRelatedPid": [
+        {
+          "pid": "https://hdl.handle.net/20.5000.1025/G32-PMM-2ER",
+          "relationshipType": "supersededBy"
+        }
+      ]
+    }
+  }
+}
