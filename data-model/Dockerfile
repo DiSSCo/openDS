@@ -24,6 +24,7 @@ COPY fdo-profile/doi-kernel/1.0.0/schema schema-root/schemas/fdo-profile/doi-ker
 COPY fdo-profile/source-system/1.0.0/schema schema-root/schemas/fdo-profile/source-system/1.0.0
 COPY fdo-profile/digital-media/1.0.0/schema schema-root/schemas/fdo-profile/digital-media/1.0.0
 COPY fdo-profile/digital-specimen/1.0.0/schema/ schema-root/schemas/fdo-profile/digital-specimen/1.0.0
+COPY fdo-profile/tombstone/1.0.0/schema schema-root/schemas/fdo-profile/tombstone/1.0.0
 
 # Latest FDO Profile schemas
 COPY fdo-profile/annotation/1.0.0/schema schema-root/schemas/fdo-profile/annotation/latest
@@ -34,10 +35,10 @@ COPY fdo-profile/machine-annotation-service/1.0.0/schema schema-root/schemas/fdo
 COPY fdo-profile/source-system/1.0.0/schema schema-root/schemas/fdo-profile/source-system/latest
 COPY fdo-profile/digital-media/1.0.0/schema schema-root/schemas/fdo-profile/digital-media/latest
 COPY fdo-profile/digital-specimen/1.0.0/schema schema-root/schemas/fdo-profile/digital-specimen/latest
+COPY fdo-profile/tombstone/1.0.0/schema schema-root/schemas/fdo-profile/tombstone/latest
 
 COPY fdo-profile/tettris-service/0.1.0/schema schema-root/schemas/fdo-profile/tettris-service/latest
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/latest
-COPY fdo-profile/tombstone/0.1.0/schema schema-root/schemas/fdo-profile/tombstone/latest
 COPY fdo-profile/virtual-collection/0.1.0/schema schema-root/schemas/fdo-profile/virtual-collection/latest
 
 # Versioned FDO Type schemas
