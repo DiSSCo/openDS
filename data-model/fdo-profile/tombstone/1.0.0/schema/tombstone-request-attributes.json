@@ -1,0 +1,46 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/tombstone/1.0.0/tombstone-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema for request attributes to tombstone resources to DiSSCo PID API",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "tombstoneText": {
+      "type": "string",
+      "description": "Free text describing why the object was tombstoned",
+      "$comment": "idx = 30"
+    },
+    "hasRelatedPid": {
+      "type": "array",
+      "description": "The PIDs of the object the tombstoned object is related to",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pid": {
+            "type": "string",
+            "description": "The PID of the related object",
+            "examples": [
+              "https://doi.org/10.1234/abcd"
+            ]
+          },
+          "relationshipType": {
+            "type": "string",
+            "description": "The type of relationship between the tombstoned object and the related object",
+            "examples": [
+              "ods:relatedTo",
+              "ods:isDuplicateOf"
+            ]
+          }
+        },
+        "required": [
+          "pid",
+          "relationshipType"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "tombstoneText"
+  ]
+}
