@@ -94,7 +94,7 @@
             "ods:type": "ZoologyVertebrateSpecimen"
           },
           {
-            "ods:organisationId": "https://ror.org/05xg72x27"
+            "ods:organisationID": "https://ror.org/05xg72x27"
           }
         ]
       ],

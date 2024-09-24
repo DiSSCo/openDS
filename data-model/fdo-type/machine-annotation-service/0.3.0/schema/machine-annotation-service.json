@@ -102,17 +102,17 @@
       "description": "Filters describing the criteria that must be met in order to apply the MAS. No filters implies the MAS may run on *any* digital object. Field names are given in JSON paths, and accepted values for that field are provided as an arrays",
       "example": [
         {
-          "$.ods:type": [
+          "$['ods:type']": [
             "https://doi.org/21.T11148/894b1e6cad57e921764e"
           ],
-          "$.ods:topicDiscipline": [
+          "$['ods:topicDiscipline']": [
             "Astrogeology",
             "Geology",
             "Palaeontology",
             "Other Geodiversity",
             "Unclassified"
           ],
-          "$.hasEvent[*].location.dwc:locality": [
+          "$['ods:hasEvent'][*]['ods:Location']['dwc:locality']": [
             "*"
           ]
         }
@@ -217,17 +217,18 @@
       "description": "Object containing the tombstone metadata of the object",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json"
     },
-    "ods:hasEnvironment": {
+    "ods:hasEnvironmentalVariable": {
       "type": "array",
       "description": "Environmental variables to supply to the MAS, non-sensitive",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service-environment.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/environmental-variable.json"
       }
     },
-    "ods:hasSecret": {
+    "ods:hasSecretVariable": {
       "type": "array",
+      "description": "Secret variables to supply to the MAS",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.3.0/machine-annotation-service-secret.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/secret-variable.json"
       }
     }
   },

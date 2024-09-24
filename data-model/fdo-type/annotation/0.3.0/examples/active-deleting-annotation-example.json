@@ -14,7 +14,7 @@
     "ods:type": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
     "oa:hasSelector": {
       "@type": "ods:ClassSelector",
-      "ods:field": "$.hasEvent[0].location"
+      "ods:field": "$['ods:hasEvent'][0]['ods:Location']"
     }
   },
   "dcterms:creator": {

@@ -9,29 +9,27 @@
   "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
   "schema:dateCreated": "2021-06-01T12:00:00.122Z",
   "schema:dateModified": "2021-06-06T13:22:00.123Z",
-  "ods:creator": {
+  "schema:creator": {
     "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
     "@type": "schema:Person",
     "schema:name": "John Doe"
   },
-  "ods:Mapping": {
-    "ods:DefaultMapping": [
-      {
-        "ods:physicalSpecimenIDType": "Global"
-      },
-      {
-        "ods:type": "ZoologyVertebrateSpecimen"
-      },
-      {
-        "ods:organisationId": "https://ror.org/05xg72x27"
-      }
-    ],
-    "ods:FieldMapping": [
-      {
-        "ods:physicalSpecimenId": "dwc:catalogNumber"
-      }
-    ]
-  },
+  "ods:DefaultMapping": [
+    {
+      "ods:physicalSpecimenIDType": "Global"
+    },
+    {
+      "ods:type": "ZoologyVertebrateSpecimen"
+    },
+    {
+      "ods:organisationID": "https://ror.org/05xg72x27"
+    }
+  ],
+  "ods:FieldMapping": [
+    {
+      "ods:physicalSpecimenID": "dwc:catalogNumber"
+    }
+  ],
   "ods:mappingDataStandard": "dwc",
   "ods:TombstoneMetadata": {
     "@type": "ods:Tombstone",
