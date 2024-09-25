@@ -98,7 +98,7 @@
       "type": "string",
       "description": "XML document describing location(s) of the resource",
       "$comment": "idx = 101",
-      "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
+      "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"JSON\" weight=\"1\"/></locations>"
     },
     "tombstoneText": {
       "type": "string",

@@ -53,22 +53,27 @@
       "type": "string",
       "example": "DAM nr"
     },
-    "dcterms:type": {
+    "mediaType": {
       "type": "string",
       "description": "Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type"
     },
-    "dcterms:format": {
+    "mimeType": {
       "type": "string",
-      "description": "(Previously primaryMediaObjectType) Dublin Core: Type, describing the (primary) nature of the image. For example an image of a label will have primaryDcType text, an image of a specimen will have primaryDcType physical object. One of: text, image, sound, dataset, software, interactive, event, physical object + Audiovisual Core: 3D object type"
+      "description": "Only mimetypes for audio, image, model, video, text should be provided. https://www.iana.org/assignments/media-types/media-types.xhtml"
     },
-    "dcterms:license": {
+    "licenseName": {
       "type": "string",
       "description": "http://purl.org/dc/terms/license.",
       "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"
     },
-    "dcterms:rightsHolder": {
+    "rightsHolder": {
       "type": "string",
       "description": "If not present, defaults to mediaHost, https://purl.org/dc/terms/rightsHolder",
+      "example": "https://ror.org/0566bfb96"
+    },
+    "rightsHolderPid": {
+      "type": "string",
+      "description": "Resolvable identifier of the rights holder",
       "example": "https://ror.org/0566bfb96"
     }
   },
@@ -79,8 +84,8 @@
     "linkedDigitalObjectPid",
     "linkedDigitalObjectType",
     "primaryMediaId",
-    "dcterms:license",
-    "dcterms:rightsHolder"
+    "licenseName",
+    "rightsHolder"
   ],
   "additionalProperties": false
 }

@@ -147,7 +147,7 @@
     },
     "mediaHost": {
       "type": "string",
-      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also (use DiSSCo QID in that case). Notehe organisation may use an external repository like morphobank to host the object.",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also (use DiSSCo QID in that case). The organisation may use an external repository like morphobank to host the object.",
       "example": "https://ror.org/0566bfb96",
       "$comment": "idx = 400"
     },
@@ -184,32 +184,55 @@
       "$comment": "idx = 405"
     },
     "primaryMediaIdName": {
-      "type": "string",
       "example": "ac:accessUr",
       "$comment": "idx = 406"
     },
-    "dcterms:type": {
+    "mediaType": {
       "type": "string",
-      "description": "http://purl.org/dc/elements/1.1/type",
+      "description": "Describes the primary nature of the digital media",
+      "enum": [
+        "Collection",
+        "Dataset",
+        "Event",
+        "Image",
+        "InteractiveResource",
+        "MovingImage",
+        "PhysicalObject",
+        "Service",
+        "Software",
+        "Sound",
+        "Text"
+      ],
       "$comment": "idx = 407"
     },
-    "dcterms:format": {
+    "mimeType": {
       "type": "string",
-      "description": "http://purl.org/dc/terms/format",
+      "description": "Only mimetypes for audio, image, model, video, text should be provided. https://www.iana.org/assignments/media-types/media-types.xhtml",
       "example": "image/jpeg",
       "$comment": "idx = 408"
     },
-    "dcterms:license": {
+    "licenseName": {
       "type": "string",
       "description": "http://purl.org/dc/terms/license.",
       "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
       "$comment": "idx = 409"
     },
-    "dcterms:rightsHolder": {
+    "licenseUrl": {
       "type": "string",
-      "description": "https://purl.org/dc/terms/rightsHolder",
-      "example": "https://ror.org/0566bfb96",
+      "description": "Machine-actionable licensing information. Uses SPDX Identifiers.",
+      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
       "$comment": "idx = 410"
+    },
+    "rightsHolder": {
+      "type": "string",
+      "description": "Usually the creator of the object, holds the copyright for the object. Defaults to the supplier of the media object. if no other rights holder is specified",
+      "example": "https://ror.org/0566bfb96",
+      "$comment": "idx = 411"
+    },
+    "rightsHolderPid": {
+      "type": "string",
+      "description": "Identifier of the rights holder",
+      "$comment": "idx = 412"
     }
   },
   "additionalProperties": false,
@@ -233,7 +256,7 @@
     "linkedDigitalObjectPid",
     "linkedDigitalObjectType",
     "primaryMediaId",
-    "dcterms:license",
-    "dcterms:rightsHolder"
+    "licenseName",
+    "rightsHolder"
   ]
 }

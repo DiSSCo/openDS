@@ -20,6 +20,10 @@
       "type": "string",
       "description": "Map to ods:type in annotation model"
     },
+    "targetTypeName": {
+      "type": "string",
+      "description": "Human-readable name of the above target type."
+    },
     "annotationHash": {
       "type": "string",
       "format": "uuid",
