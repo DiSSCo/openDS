@@ -1,0 +1,35 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/environment-variable.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Environmental variables Version 0.4.0",
+  "title": "EnvironmentalVariable",
+  "type": "object",
+  "description": "Environmental variables to supply to the a Digital Object, non-sensitive",
+  "properties": {
+    "schema:name": {
+      "type": "string",
+      "description": "The name of a non-sensitive property or environmental variable",
+      "examples": [
+        "server.port",
+        "spring.profiles.active"
+      ]
+    },
+    "schema:value": {
+      "type": [
+        "string",
+        "integer",
+        "boolean"
+      ],
+      "description": "Value to be stored in the \"name\" field. NOT for sensitive information.",
+      "examples": [
+        8080,
+        "web-profile"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "schema:name",
+    "schema:value"
+  ]
+}

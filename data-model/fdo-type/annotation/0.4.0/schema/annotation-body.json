@@ -1,0 +1,46 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation-body.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Annotation Version 0.4.0",
+  "title": "Annotation Body",
+  "description": "Body of an annotation, contains the annotation as an array of text values in `oa:value`",
+  "type": "object",
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "oa:TextualBody",
+      "description": "https://www.w3.org/TR/annotation-vocab/#textualbody"
+    },
+    "oa:value": {
+      "type": "array",
+      "description": "An array of multiple values in string representation specific for the particular selector. This value could contain a string representation of a json value.",
+      "items": {
+        "type": "string",
+        "description": "The textual content of the body. This could be a simple string value for commenting or editing of a single field. It could also be the string representation of the json for a class",
+        "examples": [
+          "This is a comment",
+          "Venezuela",
+          "{'entityRelationship': {'entityRelationshipType': 'hasGbifID', 'objectEntityIri': 'https://www.gbif.org/occurrence/144870459', 'entityRelationshipDate': '2023-11-29T07:18:20.588Z', 'entityRelationshipCreatorName': 'GBIF occurrence linker', 'entityRelationshipCreatorId': 'https://hdl.handle.net/enrichment-service-pid'}}"
+        ]
+      }
+    },
+    "dcterms:references": {
+      "type": "string",
+      "description": "Provides information on how the value was derived. This could be a link to a service that provided the value or a link to the source of the value.",
+      "examples": [
+        "https://api.gbif.org/v1/occurrence/search?occurrenceID=https://herbarium.bgbm.org/object/BW00965020&catalogNumber=B -W 00965 -02 0&basisOfRecord=PreservedSpecimen"
+      ]
+    },
+    "ods:score": {
+      "type": "number",
+      "description": "A score between 0 and 1 indicating the confidence in the value. 1 is the highest confidence and 0 is the lowest.",
+      "minimum": 0,
+      "maximum": 1
+    }
+  },
+  "required": [
+    "@type",
+    "oa:value"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,37 @@
+{
+  "@id": "https://example.org/assertions/12345",
+  "@type": "ods:Assertion",
+  "dwc:measurementID": "9c752d22-b09a-11e8-96f8-529269fb1459",
+  "dwc:parentMeasurementID": "E1_E1_O1_M1",
+  "dwc:measurementType": "length",
+  "dwc:measurementDeterminedDate": "2024-05-30T15:16:00.000Z",
+  "dwc:measurementValue": "10.0",
+  "dwc:measurementAccuracy": "0.1",
+  "dwc:measurementUnit": "m",
+  "ods:hasAgents": [
+    {
+      "@id": "https://example.org/agents/12345",
+      "@type": "ods:Agent",
+      "schema:identifier": "https://orchid.org/0000-0002-1825-0097",
+      "schema:name": "John Smith",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "measurer",
+          "schema:startDate": "2023-10-02T12:31:34.806Z",
+          "schema:endDate": "2023-12-02T12:31:34.806Z"
+        }
+      ],
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://orchid.org/0000-0002-1825-0097",
+          "@type": "ods:Identifier",
+          "dcterms:type": "orcid",
+          "dcterms:identifier": "https://orchid.org/0000-0002-1825-0097",
+          "ods:isIDResolvable": true,
+          "ods:isIDPersistent": true
+        }
+      ]
+    }
+  ]
+}

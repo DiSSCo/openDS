@@ -1,0 +1,56 @@
+{
+  "@id": "http://doi.org/10.3897/zookeys.107.1608",
+  "@type": "ods:Citation",
+  "dcterms:identifier": "http://doi.org/10.3897/zookeys.107.1608",
+  "dcterms:type": "Journal Article",
+  "dcterms:date": "2020-08-15",
+  "dcterms:title": "Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae)",
+  "ods:pageNumber": "369-373.",
+  "dcterms:description": "New species ",
+  "dcterms:bibliographicCitation": "Platia G. & Van Meer C., 2020 - Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae). L'Entomologiste, 76 (6) : 369-373.",
+  "ods:isPeerReviewed": true,
+  "ods:hasAgents": [
+    {
+      "@id": "https://orcid.org/0009-0004-8647-4502",
+      "@type": "ods:Agent",
+      "schema:identifier": "https://orcid.org/0009-0004-8647-4502",
+      "schema:name": "Platia G.",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "author",
+          "schema:position": 1
+        }
+      ],
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://orcid.org/0009-0004-8647-4502",
+          "@type": "ods:Identifier",
+          "dcterms:type": "orcid",
+          "dcterms:identifier": "https://orcid.org/0009-0004-8647-4502",
+          "ods:isIDResolvable": true,
+          "ods:isIDPersistent": true
+        },
+        {
+          "@id": "https://m.wikidata.org/wiki/Q18818845",
+          "@type": "ods:Identifier",
+          "dcterms:type": "wikidata",
+          "dcterms:identifier": "https://m.wikidata.org/wiki/Q18818845",
+          "ods:isIDResolvable": true,
+          "ods:isIDPersistent": true
+        }
+      ]
+    },
+    {
+      "@type": "ods:Agent",
+      "schema:name": "Van Meer C",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "author",
+          "schema:position": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "ods:SourceSystem",
+  "schema:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
+  "ods:status": "ods:Active",
+  "schema:version": 1,
+  "schema:name": "Herbarium of University of Coimbra (COI)",
+  "schema:description": "The herbarium collection of the University of Coimbra is one of the oldest in Portugal, with specimens dating back to the 18th century.",
+  "schema:dateCreated": "2021-06-01T12:00:00.347Z",
+  "schema:dateModified": "2021-06-01T12:00:00.347Z",
+  "schema:creator": {
+    "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
+  },
+  "schema:url": "http://ipt.gbif.pt/ipt/archive.do?r=coi",
+  "ltc:collectionManagementSystem": "Specify 7",
+  "ods:translatorType": "dwca",
+  "ods:dataMappingID": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ"
+}

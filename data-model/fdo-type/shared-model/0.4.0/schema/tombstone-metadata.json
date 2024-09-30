@@ -1,0 +1,88 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Tombstone Metadata object Version 0.4.0",
+  "title": "Tombstone Metadata",
+  "type": "object",
+  "description": "Metadata contains information on why, when and by whom a digital object was tombstoned",
+  "properties": {
+    "@type": {
+      "type": "string",
+      "const": "ods:Tombstone",
+      "description": "The type of the record, in this case a ods:Tombstone"
+    },
+    "ods:tombstoneDate": {
+      "type": "string",
+      "description": "Timestamp the Digital Object was tombstoned and no longer active. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "ods:tombstoneText": {
+      "type": "string",
+      "description": "A reason why the Digital Object was tombstoned",
+      "examples": [
+        "This is a duplicate of XXX",
+        "This object was made by mistake"
+      ]
+    },
+    "ods:hasAgents": {
+      "type": "object",
+      "description": "The agent(s) who tombstoned the Digital Object, contains an ods:Agent object",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    },
+    "ods:hasRelatedPIDs": {
+      "type": "array",
+      "description": "The PIDs of the object the tombstoned object is related to",
+      "items": {
+        "type": "object",
+        "properties": {
+          "@type": {
+            "type": "string",
+            "const": "ods:RelatedPID",
+            "description": "The type of the object, in this case a ods:RelatedPID"
+          },
+          "dcterms:identifier": {
+            "type": "string",
+            "description": "The PID of the related object, used in cases of `ods:Annotation`, `ods:DigitalMedia` and `ods:DigitalSpecimen`",
+            "examples": [
+              "https://doi.org/10.22/XXX-XXX-XXX"
+            ]
+          },
+          "schema:identifier": {
+            "type": "string",
+            "description": "The PID of the related object, used in cases of `ods:DataMapping`, `ods:SourceSystem` and `ods:MachineAnnotationService`",
+            "examples": [
+              "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+            ]
+          },
+          "ods:relationshipType": {
+            "type": "string",
+            "description": "The type of relationship between the tombstoned object and the related object",
+            "examples": [
+              "ods:relatedTo",
+              "ods:isDuplicateOf"
+            ]
+          },
+          "additionalProperties": false,
+          "required": [
+            "@type",
+            "ods:relationshipType"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "@type",
+    "ods:tombstoneDate",
+    "ods:tombstoneText",
+    "ods:hasAgents"
+  ],
+  "additionalProperties": false
+}

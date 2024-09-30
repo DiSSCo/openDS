@@ -1,0 +1,59 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "ods:MachineAnnotationService",
+  "schema:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
+  "ods:status": "ods:Active",
+  "schema:version": 1,
+  "schema:name": "GBIF Linker Service",
+  "schema:description": "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship",
+  "schema:dateCreated": "2021-06-01T12:00:01.345Z",
+  "schema:dateModified": "2021-06-01T12:00:01.345Z",
+  "schema:creator": {
+    "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
+  },
+  "ods:containerImage": "public.ecr.aws/dissco/mindat-georeferencing",
+  "ods:containerTag": "sha-cb76994",
+  "ods:hasTargetDigitalObjectFilter": {
+    "$.ods:type": [
+      "https://doi.org/21.T11148/894b1e6cad57e921764e"
+    ],
+    "$.ods:topicDiscipline": [
+      "Astrogeology",
+      "Geology",
+      "Palaeontology",
+      "Other Geodiversity",
+      "Unclassified"
+    ],
+    "$.hasEvent[*].location.dwc:locality": [
+      "*"
+    ]
+  },
+  "schema:creativeWorkStatus": "Alpha",
+  "schema:codeRepository": "https://github.com/example/repo",
+  "schema:programmingLanguage": "Python",
+  "ods:serviceAvailability": "99.9%",
+  "schema:maintainer": {
+    "@id": "https://ror.org/04wxnsj81",
+    "@type": "schema:Organization",
+    "schema:name": "DiSSCo",
+    "schema:email": "contact@dissco.eu",
+    "schema:url": "https://www.dissco.eu"
+  },
+  "schema:license": "https://opensource.org/licenses/Apache-2.0",
+  "ods:dependency": [
+    "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ"
+  ],
+  "schema:ContactPoint": {
+    "schema:description": "Support and information contact",
+    "schema:email": "support@dissco.eu",
+    "schema:url": "https://www.dissco.eu/contact",
+    "schema:telephone": "+123456789"
+  },
+  "ods:slaDocumentation": "https://www.dissco.eu/sla",
+  "ods:topicName": "PID-ABC-DEF-GHI",
+  "ods:batchingPermitted": true,
+  "ods:timeToLive": 7200
+}

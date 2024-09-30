@@ -1,0 +1,50 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "ods:Annotation",
+  "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+  "ods:status": "ods:Tombstone",
+  "ods:version": 1,
+  "oa:motivation": "oa:commenting",
+  "oa:hasTarget": {
+    "@id": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
+    "@type": "ods:DigitalSpecimen",
+    "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
+    "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+    "oa:hasSelector": {
+      "@type": "ods:FieldSelector",
+      "ods:field": "$['ods:hasEvent'][0]['ods:Location']['dwc:country']"
+    }
+  },
+  "oa:hasBody": {
+    "@type": "oa:TextualBody",
+    "oa:value": [
+      "Venezuela"
+    ],
+    "dcterms:references": "https://api.gbif.org/v1/occurrence/search?occurrenceID=https://herbarium.bgbm.org/object/BW00965020&catalogNumber=B -W 00965 -02 0&basisOfRecord=PreservedSpecimen",
+    "ods:score": 0.9
+  },
+  "dcterms:creator": {
+    "@id": "https://orcid.org/0000-0002-5669-2769",
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
+  },
+  "dcterms:created": "2024-06-27T12:00:00.00.121Z",
+  "dcterms:modified": "2024-07-27T15:23:30.000Z",
+  "as:generator": {
+    "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+    "@type": "schema:SoftwareApplication",
+    "schema:name": "Annotation Generator Service"
+  },
+  "dcterms:issued": "2024-06-27T12:00:00.121Z",
+  "ods:TombstoneMetadata": {
+    "@type": "ods:Tombstone",
+    "ods:tombstoneDate": "2024-07-27T15:23:30.000Z",
+    "ods:tombstoneText": "This object was made by mistake",
+    "ods:TombstonedByAgent": {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:name": "John Doe"
+    }
+  }
+}

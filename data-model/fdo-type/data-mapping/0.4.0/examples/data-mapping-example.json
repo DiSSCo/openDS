@@ -1,0 +1,34 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "ods:DataMapping",
+  "schema:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
+  "ods:status": "ods:Active",
+  "schema:version": 1,
+  "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
+  "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
+  "schema:dateCreated": "2021-06-01T12:00:00.122Z",
+  "schema:dateModified": "2021-06-01T12:00:00.122Z",
+  "schema:creator": {
+    "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+    "@type": "schema:Person",
+    "schema:name": "John Doe"
+  },
+  "ods:DefaultMapping": [
+    {
+      "ods:physicalSpecimenIDType'": "Global"
+    },
+    {
+      "ods:type": "ZoologyVertebrateSpecimen"
+    },
+    {
+      "ods:organisationID": "https://ror.org/05xg72x27"
+    }
+  ],
+  "ods:FieldMapping": [
+    {
+      "ods:physicalSpecimenID": "dwc:catalogNumber"
+    }
+  ],
+  "ods:mappingDataStandard": "dwc"
+}

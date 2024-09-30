@@ -1,0 +1,84 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/emtity-relationship.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Entity Relationship object Version 0.4.0",
+  "title": "EntityRelationship",
+  "type": "object",
+  "description": "Based on https://rs.gbif.org/extension/resource_relationship_2024-02-19.xml but with ods specific terms",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for Entity Relationship digital object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:EntityRelationship",
+      "description": "The type of the record, in this case a ods:EntityRelationship"
+    },
+    "dwc:relationshipOfResource": {
+      "type": "string",
+      "description": "The relationship of the subject (identified by dwc:resourceID) to the object (identified by dwc:relatedResourceID)",
+      "examples": [
+        "hasGBIFID",
+        "hasCOLID",
+        "hasCollectorID"
+      ]
+    },
+    "dwc:relationshipOfResourceID": {
+      "type": "string",
+      "description": "An identifier for the relationship type (predicate) that connects the subject identified by dwc:resourceID to its object identified by dwc:relatedResourceID",
+      "examples": [
+        "https://purl.obolibrary.org/obo/RO_0002456"
+      ]
+    },
+    "dwc:relatedResourceID": {
+      "type": "string",
+      "description": "An identifier for a related resource (the object, rather than the subject of the relationship)",
+      "examples": [
+        "3024470157",
+        "5TXLM",
+        "00bv4cx53"
+      ]
+    },
+    "ods:relatedResourceURI": {
+      "type": "string",
+      "format": "uri",
+      "description": "The full resolvable URI to the related resource",
+      "examples": [
+        "https://www.gbif.org/occurrence/3024470157",
+        "https://ror.org/00bv4cx53",
+        "https://www.catalogueoflife.org/data/taxon/5TXLM"
+      ]
+    },
+    "dwc:relationshipEstablishedDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date-time on which the relationship between the two resources was established, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2024-05-30T09:46:20.120Z",
+        "2024-10-10T12:12:21.310Z"
+      ]
+    },
+    "dwc:relationshipRemarks": {
+      "type": "string",
+      "description": "Comments or notes about the relationship between the two resources",
+      "examples": [
+        "Mother and offspring collected from the same nest"
+      ]
+    },
+    "ods:hasAgents": {
+      "type": "object",
+      "description": "The agent(s) who created the entityRelationship, contains an ods:Agent object",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    }
+  },
+  "required": [
+    "@type",
+    "dwc:relationshipOfResource",
+    "dwc:relatedResourceID"
+  ],
+  "additionalProperties": false
+}

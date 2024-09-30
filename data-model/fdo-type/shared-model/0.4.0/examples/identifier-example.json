@@ -1,0 +1,10 @@
+{
+  "@id": "BMNH(E)1902475",
+  "@type": "ods:Identifier",
+  "dcterms:type": "dwc:catalogueNumber",
+  "dcterms:identifier": "BMNH(E)1902475",
+  "dcterms:subject": ["Registratie nummer"],
+  "ods:isPartOfLabel": true,
+  "ods:isIDPersistent": true,
+  "ods:isIDResolvable": false
+}

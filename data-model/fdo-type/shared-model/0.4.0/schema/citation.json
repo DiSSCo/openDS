@@ -1,0 +1,96 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/citation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Citation object Version 0.4.0",
+  "title": "Citation",
+  "type": "object",
+  "description": "Based on https://rs.gbif.org/extension/gbif/1.0/references.xml but includes ods specific terms",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The main identifier of the citation, preferably a DOI, ISBN, URI, etc referring to the reference",
+      "examples": [
+        "https://doi.org/10.3897/zookeys.107.1608",
+        "http://www.nature.com/ng/journal/v41/n6/pdf/ng0609-637.pdf"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Citation",
+      "description": "The type of the digital object, in this case a ods:Citation"
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "The main identifier of the citation, preferably a DOI, ISBN, URI, etc referring to the reference",
+      "examples": [
+        "https://doi.org/10.3897/zookeys.107.1608",
+        "http://www.nature.com/ng/journal/v41/n6/pdf/ng0609-637.pdf"
+      ]
+    },
+    "dcterms:type": {
+      "type": "string",
+      "description": "The category that best matches the nature of a reference",
+      "examples": [
+        "book",
+        "journal article",
+        "field notes"
+      ]
+    },
+    "dcterms:date": {
+      "type": "string",
+      "description": "Date of publication",
+      "examples": [
+        "2010-01-01",
+        "1963-03-08T14:07-0600"
+      ]
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "Title of publication",
+      "examples": [
+        "Field Guide to Moths of Eastern North America",
+        "The Origin of Species"
+      ]
+    },
+    "ods:pageNumber": {
+      "type": "string",
+      "description": "Page number of the citation",
+      "examples": [
+        "123",
+        "23-25"
+      ]
+    },
+    "dcterms:description": {
+      "type": "string",
+      "description": "Abstracts, remarks, notes",
+      "examples": [
+        "Describes the treatments of a new species of the genus"
+      ]
+    },
+    "dcterms:bibliographicCitation": {
+      "type": "string",
+      "description": "A bibliographic reference for the resource",
+      "examples": [
+        "https://www.gbif.org/species/2439608 Source: GBIF Taxonomic Backbone",
+        "Hartge, P., Genetics of reproductive lifespan. Nature Genetics 41, 637 - 638 (2009)"
+      ]
+    },
+    "ods:isPeerReviewed": {
+      "type": "boolean",
+      "description": "Is the citation peer reviewed?"
+    },
+    "ods:hasAgents": {
+      "type": "object",
+      "description": "The agent(s) who made the publication, contains an ods:Agent object",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    }
+  },
+  "required": [
+    "@type",
+    "dcterms:bibliographicCitation"
+  ],
+  "additionalProperties": false
+}

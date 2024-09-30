@@ -1,0 +1,147 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/source-system/0.4.0/source-system.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Source System Version 0.4.0",
+  "title": "SourceSystem",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Source System object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:SourceSystem",
+      "const": "ods:SourceSystem"
+    },
+    "schema:identifier": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Source System object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/10.15468/1a2b3c"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object"
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "examples": [
+        1,
+        2,
+        3
+      ]
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Source System as provided by the user",
+      "examples": [
+        "Herbarium of University of Coimbra (COI)",
+        "Naturalis Biodiversity Center (NL) - Vermes"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Source System as provided by the user",
+      "examples": [
+        "The herbarium collection of the University of Coimbra is one of the oldest in Portugal, with specimens dating back to the 18th century."
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:00.323Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, follows the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
+    "schema:creator": {
+      "type": "object",
+      "description": "Contains an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "schema:url": {
+      "type": "string",
+      "description": "Endpoint from which data may be retrieved",
+      "format": "uri",
+      "examples": [
+        "http://ipt.gbif.pt/ipt/archive.do?r=coi"
+      ]
+    },
+    "ltc:collectionManagementSystem": {
+      "type": "string",
+      "description": "The collection management system that the source system is using",
+      "examples": [
+        "Specify 7"
+      ]
+    },
+    "ods:translatorType": {
+      "type": "string",
+      "description": "The serialisation of the data the endpoint provides indicating what type of Translator is required",
+      "enum": [
+        "dwca",
+        "biocase"
+      ]
+    },
+    "ods:maximumRecords": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "An optional parameter to limit the number of records to be ingested from this sourceSystem, it will pick the first X number of records it encounters. If left empty or absent it will process all records."
+    },
+    "ods:dataMappingID": {
+      "type": "string",
+      "description": "The Handle of the Mapping Object needed for this Source System",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "@type",
+    "schema:identifier",
+    "ods:fdoType",
+    "schema:version",
+    "schema:dateCreated",
+    "schema:dateModified",
+    "schema:creator",
+    "schema:url",
+    "ods:translatorType",
+    "ods:dataMappingID"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,9 @@
+{
+  "@id": "https://orcid.org/0000-0002-5669-2769",
+  "@type": "ods:Identifier",
+  "dcterms:type": "orcid",
+  "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+  "dc:format": ["text/html"],
+  "ods:isIDResolvable": true,
+  "ods:isIDPersistent": true
+}

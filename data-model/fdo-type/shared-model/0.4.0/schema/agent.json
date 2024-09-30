@@ -1,0 +1,136 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Agent object Version 0.4.0",
+  "title": "Agent",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Agent object",
+      "examples": [
+        "http://www.wikidata.org/entity/Q66581882",
+        "https://orcid.org/0000-0002-1825-0097",
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "enum": [
+        "schema:Person",
+        "schema:Organization",
+        "schema:SoftwareApplication",
+        "prov:Person",
+        "prov:SoftwareAgent"
+      ],
+      "description": "The type of the agent, the prov ontology is only used in the prov-o ods:CreateUpdateTombstoneEvent"
+    },
+    "schema:identifier": {
+      "type": "string",
+      "description": "The primary unique identifier of the Agent object. All identifiers will also be added to the ods:hasIdentifiers array",
+      "examples": [
+        "http://www.wikidata.org/entity/Q66581882",
+        "https://orcid.org/0000-0002-1825-0097",
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Full name of the agent",
+      "examples": [
+        "John Smith",
+        "Sam Leeflang"
+      ]
+    },
+    "ods:hasRoles": {
+      "type": "array",
+      "description": "Contains all roles associated with the agent in the context of the Digital Object. Should always contain at least one role",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "properties": {
+          "@id": {
+            "type": "string",
+            "description": "The identifier for the agent role, preferably a URL to a controlled vocabulary",
+            "examples": [
+              "http://purl.obolibrary.org/obo/CRO_0000101",
+              "http://purl.obolibrary.org/obo/CRO_0000102"
+            ]
+          },
+          "@type": {
+            "type": "string",
+            "const": "schema:Role",
+            "description": "The type of the object, in this case schema:Role"
+          },
+          "schema:roleName": {
+            "type": "string",
+            "description": "The category that best matches the nature of a role of an Agent",
+            "examples": [
+              "collector",
+              "preparer",
+              "identifier",
+              "recorder"
+            ]
+          },
+          "schema:startDate": {
+            "type": "string",
+            "description": "Date the agent began the role",
+            "examples": [
+              "2023-10-02T12:31:34.806Z"
+            ]
+          },
+          "schema:endDate": {
+            "type": "string",
+            "description": "Date the agent ended the role",
+            "examples": [
+              "2023-09-02T12:31:34.806Z"
+            ]
+          },
+          "schema:position": {
+            "type": "integer",
+            "description": "Can be used to indicate the order of importance when there are multiple agents with the same role. Lower order means higher importance.",
+            "minimum": 1,
+            "examples": [
+              1,
+              2,
+              3
+            ]
+          }
+        },
+        "required": [
+          "@type",
+          "schema:roleName"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "schema:email": {
+      "type": "string",
+      "format": "email",
+      "description": "Email of the agent",
+      "examples": [
+        "dissco@dissco.eu"
+      ]
+    },
+    "schema:url": {
+      "type": "string",
+      "format": "url",
+      "description": "URL to a website of the agent",
+      "examples": [
+        "https://dissco.eu"
+      ]
+    },
+    "ods:hasIdentifiers": {
+      "type": "array",
+      "description": "Contains all identifiers associated with the agent",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json"
+      }
+    }
+  },
+  "required": [
+    "@type",
+    "ods:hasRoles"
+  ],
+  "additionalProperties": false
+}
