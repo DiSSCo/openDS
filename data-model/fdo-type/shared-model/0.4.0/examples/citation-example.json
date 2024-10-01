@@ -12,7 +12,7 @@
   "ods:hasAgents": [
     {
       "@id": "https://orcid.org/0009-0004-8647-4502",
-      "@type": "ods:Agent",
+      "@type": "schema:Person",
       "schema:identifier": "https://orcid.org/0009-0004-8647-4502",
       "schema:name": "Platia G.",
       "ods:hasRoles": [
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "@type": "ods:Agent",
+      "@type": "schema:Person",
       "schema:name": "Van Meer C",
       "ods:hasRoles": [
         {

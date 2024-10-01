@@ -11,7 +11,7 @@
       "ods:hasRoles": [
         {
           "@type": "schema:Role",
-          "schema:roleName": "currator",
+          "schema:roleName": "curator",
           "schema:startDate": "2023-10-02T12:31:34.806Z"
         }
       ],
