@@ -147,7 +147,7 @@
     },
     "mediaHost": {
       "type": "string",
-      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also (use DiSSCo QID in that case). The organisation may use an external repository like morphobank to host the object.",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also. The organisation may use an external repository like morphobank to host the object.",
       "example": "https://ror.org/0566bfb96",
       "$comment": "idx = 400"
     },
@@ -220,7 +220,7 @@
     "licenseUrl": {
       "type": "string",
       "description": "Machine-actionable licensing information. Uses SPDX Identifiers.",
-      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "example": "https://spdx.org/licenses/CC0-1.0",
       "$comment": "idx = 410"
     },
     "rightsHolder": {

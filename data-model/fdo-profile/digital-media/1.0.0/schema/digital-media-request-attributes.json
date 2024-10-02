@@ -18,7 +18,7 @@
     },
     "mediaHost": {
       "type": "string",
-      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also (use DiSSCo QID in that case). Notehe organisation may use an external repository like morphobank to host the object.",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation responsible for hosting the digital media object. Note that this can be DiSSCo also. Note the organisation may use an external repository like morphobank to host the object.",
       "example": "https://ror.org/0566bfb96"
     },
     "mediaHostName": {
@@ -61,10 +61,23 @@
       "type": "string",
       "description": "Only mimetypes for audio, image, model, video, text should be provided. https://www.iana.org/assignments/media-types/media-types.xhtml"
     },
+    "license": {
+      "type": "string",
+      "description": "Maps to dcterms:license, unenforced value that may or may not be machine actionable. http://purl.org/dc/terms/license.",
+      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "$comment": "idx = 409"
+    },
     "licenseName": {
       "type": "string",
-      "description": "http://purl.org/dc/terms/license.",
-      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication"
+      "description": "Human-readable name of the license",
+      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "$comment": "idx = 409"
+    },
+    "licenseUrl": {
+      "type": "string",
+      "description": "Machine-actionable licensing information. Uses SPDX Identifiers.",
+      "example": "https://spdx.org/licenses/CC0-1.0",
+      "$comment": "idx = 410"
     },
     "rightsHolder": {
       "type": "string",
@@ -84,7 +97,7 @@
     "linkedDigitalObjectPid",
     "linkedDigitalObjectType",
     "primaryMediaId",
-    "licenseName",
+    "license",
     "rightsHolder"
   ],
   "additionalProperties": false

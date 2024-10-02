@@ -1,5 +1,5 @@
 {
-  "10320/loc": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"JSON\" weight=\"1\"/></locations>",
+  "10320/loc": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" view=\"JSON\" weight=\"1\"/></locations>",
   "fdoProfile": "https://doi.org/21.T11148/527856fd709ec8c5bc8c",
   "fdoRecordLicense": "https://spdx.org/licenses/CC0-1.0.json",
   "fdoRecordLicenseName": "CC0 1.0 Universal",
