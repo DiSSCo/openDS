@@ -1,0 +1,219 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/location.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Location Version 0.4.0",
+  "title": "Location",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Location object. Contains the same information as the dwc:locationID",
+      "examples": [
+        "https://opencontext.org/subjects/768A875F-E205-4D0B-DE55-BAB7598D0FD1",
+        "https://geopick.gbif.org/?locationid=geopick-v2.1.0-2024-10-02T10-08-15.257Z-506"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Location",
+      "description": "The type of the digital object, in this case a ods:Location"
+    },
+    "dwc:locationID": {
+      "type": "string",
+      "description": "An identifier for the set of ods:Location information. May be a global unique identifier or an identifier specific to the data set",
+      "examples": [
+        "https://opencontext.org/subjects/768A875F-E205-4D0B-DE55-BAB7598D0FD1",
+        "https://geopick.gbif.org/?locationid=geopick-v2.1.0-2024-10-02T10-08-15.257Z-506"
+      ]
+    },
+    "dwc:continent": {
+      "type": "string",
+      "description": "The name of the continent in which the ods:Location occurs",
+      "examples": [
+        "Africa"
+      ]
+    },
+    "dwc:waterBody": {
+      "type": "string",
+      "description": "The name of the water body in which the ods:Location occurs",
+      "examples": [
+        "Baltic Sea"
+      ]
+    },
+    "dwc:islandGroup": {
+      "type": "string",
+      "description": "The name of the island group in which the ods:Location occurs",
+      "examples": [
+        "Seychelles"
+      ]
+    },
+    "dwc:island": {
+      "type": "string",
+      "description": "The name of the island on or near which the ods:Location occurs",
+      "examples": [
+        "Vancouver"
+      ]
+    },
+    "dwc:country": {
+      "type": "string",
+      "description": "The name of the country or major administrative unit in which the ods:Location occurs",
+      "examples": [
+        "Colombia"
+      ]
+    },
+    "dwc:countryCode": {
+      "type": "string",
+      "description": "The standard code for the country in which the ods:Location occurs",
+      "examples": [
+        "SV"
+      ]
+    },
+    "dwc:stateProvince": {
+      "type": "string",
+      "description": "The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the ods:Location occurs",
+      "examples": [
+        "Montana"
+      ]
+    },
+    "dwc:county": {
+      "type": "string",
+      "description": "The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the ods:Location occurs",
+      "examples": [
+        "Los Lagos"
+      ]
+    },
+    "dwc:municipality": {
+      "type": "string",
+      "description": "The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the ods:Location occurs. Do not use this term for a nearby named place that does not contain the actual ods:Location",
+      "examples": [
+        "Holzminden"
+      ]
+    },
+    "dwc:locality": {
+      "type": "string",
+      "description": "The specific description of the place",
+      "examples": [
+        "Zeeuws-Vlaanderen, Hulst, Braakman"
+      ]
+    },
+    "dwc:verbatimLocality": {
+      "type": "string",
+      "description": "The original textual description of the place",
+      "examples": [
+        "25 km NNE Bariloche por R. Nac. 237"
+      ]
+    },
+    "dwc:minimumElevationInMeters": {
+      "type": "number",
+      "description": "The lower limit of the range of elevation (altitude, usually above sea level), in meters",
+      "examples": [
+        -100
+      ]
+    },
+    "dwc:higherGeographyID": {
+      "type": "string",
+      "description": "An identifier for the geographic region within which the ods:Location occurred",
+      "examples": [
+        "http://vocab.getty.edu/tgn/1002002 "
+      ]
+    },
+    "dwc:higherGeography": {
+      "type": "string",
+      "description": "A list (concatenated and separated) of geographic names less specific than the information captured in the dwc:locality term",
+      "examples": [
+        "Britain and Ireland"
+      ]
+    },
+    "dwc:maximumElevationInMeters": {
+      "type": "number",
+      "description": "The upper limit of the range of elevation (altitude, usually above sea level), in meters",
+      "examples": [
+        205
+      ]
+    },
+    "dwc:verbatimElevation": {
+      "type": "string",
+      "description": "The original description of the elevation (altitude, usually above sea level) of the ods:Location",
+      "examples": [
+        "100 - 200 m"
+      ]
+    },
+    "dwc:minimumDistanceAboveSurfaceInMeters": {
+      "type": "number",
+      "description": "The lesser distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation",
+      "examples": [
+        -1,
+        5
+      ]
+    },
+    "dwc:maximumDistanceAboveSurfaceInMeters": {
+      "type": "number",
+      "description": "The greater distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation",
+      "examples": [
+        4.2,
+        -1.5
+      ]
+    },
+    "dwc:minimumDepthInMeters": {
+      "type": "number",
+      "description": "The lesser depth of a range of depth below the local surface, in meters",
+      "examples": [
+        0,
+        50
+      ]
+    },
+    "dwc:maximumDepthInMeters": {
+      "type": "number",
+      "description": "The greater depth of a range of depth below the local surface, in meters",
+      "examples": [
+        100,
+        340
+      ]
+    },
+    "dwc:verbatimDepth": {
+      "type": "string",
+      "description": "The original description of the depth below the local surface",
+      "examples": [
+        "100-200 m",
+        "3500 m"
+      ]
+    },
+    "dwc:verticalDatum": {
+      "type": "string",
+      "description": "The vertical datum used as the reference upon which the values in the elevation terms are based",
+      "examples": [
+        "EGM84"
+      ]
+    },
+    "dwc:locationAccordingTo": {
+      "type": "string",
+      "description": "Information about the source of this ods:Location information. Could be a publication (gazetteer), institution, or team of individuals",
+      "examples": [
+        "GADM",
+        "epsg:7030"
+      ]
+    },
+    "dwc:locationRemarks": {
+      "type": "string",
+      "description": "Comments or notes about the ods:Location",
+      "examples": [
+        "under water since 2005",
+        "in the shade of a tree"
+      ]
+    },
+    "ods:hasGeoreference": {
+      "type": "object",
+      "description": "An object which describes the geographical reference of the location of the specimen",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/georeference.json"
+    },
+    "ods:hasGeologicalContext": {
+      "type": "object",
+      "description": "An object which describes the geological context of th location of the specimen.",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/geological-context.json"
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

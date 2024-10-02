@@ -7,7 +7,7 @@
   "ods:hasAgents": [
     {
       "@id": "https://orcid.org/0000-0002-5669-2769",
-      "@type": "ods:Agent",
+      "@type": "schema:SoftwareAgent",
       "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
       "schema:name": "Sam Leeflang",
       "ods:hasRoles": [

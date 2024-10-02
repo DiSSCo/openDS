@@ -1,0 +1,103 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/identification.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Identification object Version 0.4.0",
+  "title": "Identification",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Identification object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Identification",
+      "description": "The type of the digital object, in this case a ods:Identification"
+    },
+    "dwc:identificationID": {
+      "type": "string",
+      "description": "https://rs.tdwg.org/dwc/terms/identificationID",
+      "examples": [
+        "9992"
+      ]
+    },
+    "ods:identificationType": {
+      "type": "string",
+      "description": "Indicates the type of identification. At the moment only ods:TaxonIdentification is supports. Expected to be extend with identification types for Geological or Mineral Identifications",
+      "enum":[
+        "ods:TaxonIdentification"
+      ]
+    },
+    "dwc:verbatimIdentification": {
+      "type": "string",
+      "description": "A string representing the identification as it appeared in the original record",
+      "examples": [
+        "Peromyscus sp.",
+        "Anser anser × Branta canadensis",
+        "Rock sediment"
+      ]
+    },
+    "dwc:typeStatus": {
+      "type": "string",
+      "description": "A list (concatenated and separated) of nomenclatural types (type status, typified scientific name, publication) applied to the subject",
+      "examples": [
+        "holotype",
+        "paratype"
+      ]
+    },
+    "dwc:dateIdentified": {
+      "type": "string",
+      "description": "The date on which the subject was determined",
+      "examples": [
+        "2009-02-20T08:40Z"
+      ]
+    },
+    "ods:isVerifiedIdentification": {
+      "type": "boolean",
+      "description": "If this is the accepted identification, based on https://rs.tdwg.org/dwc/terms/identificationVerificationStatus"
+    },
+    "dwc:identificationRemarks": {
+      "type": "string",
+      "description": "Comments or notes about the ods:Identification",
+      "examples": [
+        "Distinguished between Anthus correndera and Anthus hellmayri based on the comparative lengths of the uñas."
+      ]
+    },
+    "dwc:identificationQualifier": {
+      "type": "string",
+      "description": "A brief phrase or a standard term (\"cf.\", \"aff.\") to express the determiner's doubts about the dwc:Identification",
+      "examples": [
+        "cf. var. oxyadenia"
+      ]
+    },
+    "ods:hasAgents": {
+      "type": "array",
+      "description": "The agent(s) involved in the identification, uses `ods:Agent`",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    },
+    "ods:hasCitations": {
+      "type": "array",
+      "description": "Any citations associated with the identification",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/citation.json"
+      }
+    },
+    "ods:hasTaxonIdentifications": {
+      "type": "array",
+      "description": "Contains the Taxonomic Identifications of the object",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/taxon-identification.json"
+      }
+    }
+  },
+  "required": [
+    "@type",
+    "ods:isVerifiedIdentification"
+  ],
+  "additionalProperties": false
+}

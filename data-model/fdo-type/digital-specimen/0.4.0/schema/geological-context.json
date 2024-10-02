@@ -1,0 +1,141 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/geological-context.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Geological Context Version 0.4.0",
+  "title": "GeologicalContext",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Geological Context object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:GeologicalContext",
+      "description": "The type of the object, in this case ods:GeologicalContext"
+    },
+    "dwc:earliestEonOrLowestEonothem": {
+      "type": "string",
+      "description": "The full name of the earliest possible geochronologic eon or lowest chrono-stratigraphic eonothem or the informal name (\"Precambrian\") attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Phanerozoic"
+      ]
+    },
+    "dwc:latestEonOrHighestEonothem": {
+      "type": "string",
+      "description": "The full name of the latest possible geochronologic eon or highest chrono-stratigraphic eonothem or the informal name (\"Precambrian\") attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Proterozoic"
+      ]
+    },
+    "dwc:earliestEraOrLowestErathem": {
+      "type": "string",
+      "description": "The full name of the earliest possible geochronologic era or lowest chronostratigraphic erathem attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Cenozoic"
+      ]
+    },
+    "dwc:latestEraOrHighestErathem": {
+      "type": "string",
+      "description": "The full name of the latest possible geochronologic era or highest chronostratigraphic erathem attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Mesozoic"
+      ]
+    },
+    "dwc:earliestPeriodOrLowestSystem": {
+      "type": "string",
+      "description": "The full name of the earliest possible geochronologic period or lowest chronostratigraphic system attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Tertiary"
+      ]
+    },
+    "dwc:latestPeriodOrHighestSystem": {
+      "type": "string",
+      "description": "The full name of the latest possible geochronologic period or highest chronostratigraphic system attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Quaternary"
+      ]
+    },
+    "dwc:earliestEpochOrLowestSeries": {
+      "type": "string",
+      "description": "The full name of the earliest possible geochronologic epoch or lowest chronostratigraphic series attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Holocene"
+      ]
+    },
+    "dwc:latestEpochOrHighestSeries": {
+      "type": "string",
+      "description": "The full name of the latest possible geochronologic epoch or highest chronostratigraphic series attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Pleistocene"
+      ]
+    },
+    "dwc:earliestAgeOrLowestStage": {
+      "type": "string",
+      "description": "The full name of the earliest possible geochronologic age or lowest chronostratigraphic stage attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Atlantic"
+      ]
+    },
+    "dwc:latestAgeOrHighestStage": {
+      "type": "string",
+      "description": "The full name of the latest possible geochronologic age or highest chronostratigraphic stage attributable to the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Boreal"
+      ]
+    },
+    "dwc:lowestBiostratigraphicZone": {
+      "type": "string",
+      "description": "The full name of the lowest possible geological biostratigraphic zone of the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Maastrichtian"
+      ]
+    },
+    "dwc:highestBiostratigraphicZone": {
+      "type": "string",
+      "description": "The full name of the highest possible geological biostratigraphic zone of the stratigraphic horizon from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Blancan"
+      ]
+    },
+    "dwc:lithostratigraphicTerms": {
+      "type": "string",
+      "description": "The combination of all litho-stratigraphic names for the rock from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Pleistocene-Weichselien"
+      ]
+    },
+    "dwc:group": {
+      "type": "string",
+      "description": "The full name of the lithostratigraphic group from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Bathurst"
+      ]
+    },
+    "dwc:formation": {
+      "type": "string",
+      "description": "The full name of the lithostratigraphic formation from which the ods:MaterialEntity was collected",
+      "examples": [
+        "House Limestone"
+      ]
+    },
+    "dwc:member": {
+      "type": "string",
+      "description": "The full name of the lithostratigraphic member from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Lava Dam Member"
+      ]
+    },
+    "dwc:bed": {
+      "type": "string",
+      "description": "The full name of the lithostratigraphic bed from which the ods:MaterialEntity was collected",
+      "examples": [
+        "Harlem coal"
+      ]
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

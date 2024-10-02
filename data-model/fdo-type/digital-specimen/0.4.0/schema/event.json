@@ -1,0 +1,249 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/event.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Event Version 0.4.0",
+  "title": "Event",
+  "description": "Contains all information about a particular Event, which is an activity at a moment in time, at a specific location made by an agent",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Event object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Event",
+      "description": "The type of the digital object, in this case ods:Event"
+    },
+    "dwc:behavior": {
+      "type": "string",
+      "description": "The behavior shown by the subject at the time the event was recorded",
+      "examples": [
+        "running"
+      ]
+    },
+    "dwc:sex": {
+      "type": "string",
+      "description": "The sex of the biological individual(s) represented in the dwc:Event",
+      "examples": [
+        "female",
+        "male"
+      ]
+    },
+    "dwc:lifeStage": {
+      "type": "string",
+      "description": "The age class or life stage of the ods:MaterialEntity at the time the ods:Event was recorded",
+      "examples": [
+        "adult",
+        "juvenile"
+      ]
+    },
+    "dwc:reproductiveCondition": {
+      "type": "string",
+      "description": "The reproductive condition of the biological individual(s) represented in the ods:Event.",
+      "examples": [
+        "pregnant",
+        "in bloom"
+      ]
+    },
+    "dwc:caste": {
+      "type": "string",
+      "description": "Categorisation of individuals for eusocial species (including some mammals and arthropods)",
+      "examples": [
+        "queen",
+        "ergatoid"
+      ]
+    },
+    "dwc:vitality": {
+      "type": "string",
+      "description": "An indication of whether a ods:MaterialEntity was alive or dead at the time of collection or observation",
+      "examples": [
+        "alive",
+        "dead"
+      ]
+    },
+    "dwc:establishmentMeans": {
+      "type": "string",
+      "description": "Statement about whether a organism has been introduced to a given place and time through the direct or indirect activity of modern humans",
+      "examples": [
+        "introduced"
+      ]
+    },
+    "dwc:pathway": {
+      "type": "string",
+      "description": "The process by which an organism came to be in a given place at a given time",
+      "examples": [
+        "releasedForUse"
+      ]
+    },
+    "dwc:degreeOfEstablishment": {
+      "type": "string",
+      "description": "The degree to which an organism survives, reproduces, and expands its range at the given place and time",
+      "examples": [
+        "captive"
+      ]
+    },
+    "dwc:georeferenceVerificationStatus": {
+      "type": "string",
+      "description": "A categorical description of the extent to which the georeference has been verified to represent the best possible spatial description for the ods:Location of the ods:Event",
+      "examples": [
+        "verified by data custodian"
+      ]
+    },
+    "dwc:fieldNumber": {
+      "type": "string",
+      "description": "An identifier given to the ods:Event in the field. Often serves as a link between field notes and the ods:Event",
+      "examples": [
+        "RV Sol 87-03-08"
+      ]
+    },
+    "dwc:eventType": {
+      "type": "string",
+      "description": "The nature of the ods:Event",
+      "examples": [
+        "Collecting",
+        "Observation"
+      ]
+    },
+    "dwc:eventDate": {
+      "type": "string",
+      "description": "The date-time or interval during which a ods:Event occurred. For occurrences, this is the date-time when the ods:Event was recorded. Not suitable for a time in a geological context",
+      "examples": [
+        "1963-03-08T14:07-0600"
+      ]
+    },
+    "dwc:eventTime": {
+      "type": "string",
+      "description": "The time or interval during which a ods:Event occurred",
+      "examples": [
+        "14:07-0600"
+      ]
+    },
+    "dwc:endDayOfYear": {
+      "type": "integer",
+      "description": "The latest integer day of the year on which the ods:Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366)",
+      "maximum": 366,
+      "minimum": 1,
+      "examples": [
+        68
+      ]
+    },
+    "dwc:startDayOfYear": {
+      "type": "integer",
+      "description": "The earliest integer day of the year on which the ods:Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366)",
+      "maximum": 366,
+      "minimum": 1,
+      "examples": [
+        68
+      ]
+    },
+    "dwc:verbatimEventDate": {
+      "type": "string",
+      "description": "The verbatim original representation of the date and time information for a ods:Event",
+      "examples": [
+        "Marzo 2002"
+      ]
+    },
+    "dwc:year": {
+      "type": "integer",
+      "description": "The four-digit year in which the ods:Event occurred, according to the Common Era Calendar",
+      "maximum": 9999,
+      "examples": [
+        2008
+      ]
+    },
+    "dwc:month": {
+      "type": "integer",
+      "description": "The integer month in which the ods:Event occurred",
+      "maximum": 12,
+      "minimum": 1,
+      "examples": [
+        12
+      ]
+    },
+    "dwc:day": {
+      "type": "integer",
+      "description": "The integer day of the month on which the ods:Event occurred",
+      "maximum": 31,
+      "minimum": 1,
+      "examples": [
+        29
+      ]
+    },
+    "dwc:habitat": {
+      "type": "string",
+      "description": "A category or description of the habitat in which the ods:Event occurred",
+      "examples": [
+        "savanna"
+      ]
+    },
+    "eco:protocolDescriptions": {
+      "type": "string",
+      "description": "A detailed description of the methods used during the ods:Event",
+      "examples": [
+        "Three conventional harp traps (3.2m ht x 2.2m w) were established in flight path zones for a period of 4 hrs at dawn and dusk for a total of 10 trap nights. Traps were visited on an hourly basis during each deployment period and the trap catch recorded for species, size, weight, sex, age and maternal status."
+      ]
+    },
+    "dwc:sampleSizeValue": {
+      "type": "number",
+      "description": "A numeric value for a measurement of the size (time duration, length, area, or volume) of a sample in a sampling ods:Event",
+      "examples": [
+        5,
+        4.23
+      ]
+    },
+    "dwc:sampleSizeUnit": {
+      "type": "string",
+      "description": "The unit of measurement of the size (time duration, length, area, or volume) of a sample in a sampling ods:Event",
+      "examples": [
+        "meters"
+      ]
+    },
+    "dwc:samplingProtocol": {
+      "type": "string",
+      "description": "The names of, references to, or descriptions of the methods or protocols used during a ods:Event",
+      "examples": [
+        "bottom trawl",
+        "collected directly from the wild"
+      ]
+    },
+    "dwc:samplingEffort": {
+      "type": "string",
+      "description": "The amount of effort expended during a ods:Event",
+      "examples": [
+        "2 hours"
+      ]
+    },
+    "dwc:fieldNotes": {
+      "type": "string",
+      "description": "One of a) an indicator of the existence of, b) a reference to (publication, URI), or c) the text of notes taken in the field about the ods:Event",
+      "examples": [
+        "Notes available in the Grinnell-Miller Library"
+      ]
+    },
+    "dwc:eventRemarks": {
+      "type": "string",
+      "description": "Comments or notes about the ods:Event",
+      "examples": [
+        "After the recent rains the river is nearly at flood stage"
+      ]
+    },
+    "ods:hasAssertions": {
+      "type": "array",
+      "description": "Contains additional information about the ods:Event in the form of assertions",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json"
+      }
+    },
+    "ods:hasLocation": {
+      "type": "object",
+      "description": "Contains the spatial region or named place of where the ods:Event took place",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.3.0/location.json"
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,208 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/specimen-part.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Specimen Part Version 0.4.0, only if the part did not get a separate catalogue number, otherwise it will be a separate digital specimen itself",
+  "title": "Specimen Part",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Specimen Part object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:SpecimenPart",
+      "description": "The type of the digital object, in this case a ods:SpecimenPart"
+    },
+    "dwc:materialEntityID": {
+      "type": "string",
+      "description": "An identifier for a particular instance of a ods:SpecimenPart. Note that if this is a registration number the suggested approach is to create a separate Digital Specimen for the entity",
+      "examples": [
+        "06809dc5-f143-459a-be1a-6f03e63fc083"
+      ]
+    },
+    "dwc:recordNumber": {
+      "type": "string",
+      "description": "An identifier given to a ods:SpecimenPart at the time it was recorded. Often serves as a link between field notes and a ods:MaterialEntity record, such as a specimen collector's number",
+      "examples": [
+        "OPP 7101"
+      ]
+    },
+    "dwc:preparations": {
+      "type": "string",
+      "description": "A list (concatenated and separated) of preparations and preservation methods for a ods:SpecimenPart",
+      "examples": [
+        "fossil",
+        "herbrarium sheet"
+      ]
+    },
+    "ods:isMarkedAsType": {
+      "type": "boolean",
+      "description": "The material entity is marked as a type specimen"
+    },
+    "ods:topicOrigin": {
+      "type": "string",
+      "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected",
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin",
+        "Unclassified"
+      ],
+      "examples": [
+        "Natural"
+      ]
+    },
+    "ods:topicDomain": {
+      "type": "string",
+      "description": "High-level terms providing general domain information with which the objects are associated",
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material",
+        "Unclassified"
+      ],
+      "examples": [
+        "Life"
+      ]
+    },
+    "ods:topicDiscipline": {
+      "type": "string",
+      "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related",
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Geology",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
+        "Unclassified"
+      ],
+      "examples": [
+        "Botany"
+      ]
+    },
+    "ods:topicCategory": {
+      "type": "string",
+      "description": "Countable things (objects) served as a more detailed classification of each of the disciplines",
+      "examples": [
+        "Protozoa",
+        "Bryophytes",
+        "Water-ice sample"
+      ]
+    },
+    "ods:specimenName": {
+      "type": "string",
+      "description": "The accepted specimen name of the digital specimen",
+      "examples": [
+        "Roptrocerus typographi (Györfi, 1952)"
+      ]
+    },
+    "dwc:organismID": {
+      "type": "string",
+      "description": "An identifier for the organism instance. May be a globally unique identifier or an identifier specific to the data set",
+      "examples": [
+        "http://arctos.database.museum/guid/WNMU:Mamm:1249"
+      ]
+    },
+    "dwc:organismName": {
+      "type": "string",
+      "description": "A textual name or label assigned to an organism instance",
+      "examples": [
+        "Boab Prison Tree",
+        "J pod"
+      ]
+    },
+    "dwc:organismScope": {
+      "type": "string",
+      "description": "A description of the kind of organism instance. Can be used to indicate whether the organism instance represents a discrete organism or if it represents a particular type of aggregation",
+      "examples": [
+        "colony",
+        "pack"
+      ]
+    },
+    "dwc:organismRemarks": {
+      "type": "string",
+      "description": "Comments or notes about the organism",
+      "examples": [
+        "One of a litter of six",
+        "Organism has been split up into multiple specimen, some of which are in different institutions"
+      ]
+    },
+    "dwc:organismQuantity": {
+      "type": "string",
+      "description": "A number or enumeration value for the quantity of organisms",
+      "examples": [
+        "27",
+        "12.5"
+      ]
+    },
+    "dwc:organismQuantityType": {
+      "type": "string",
+      "description": "A dwc:organismQuantityType must have a corresponding dwc:organismQuantity",
+      "examples": [
+        "individuals",
+        "% biomass"
+      ]
+    },
+    "ods:hasIdentifications": {
+      "type": "array",
+      "description": "Contains the identifications made for the specimen part",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/identification.json"
+      }
+    },
+    "ods:hasAssertions": {
+      "type": "array",
+      "description": "Contains assertions that are specific to the specimen part, such as measurements",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/assertion.json"
+      }
+    },
+    "ods:hasIdentifiers": {
+      "type": "array",
+      "description": "Contains identifiers that are specific to the specimen part",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json"
+      }
+    },
+    "ods:hasEvents": {
+      "type": "array",
+      "description": "Contains information about any events that occurred specifically on the specimen part, for example a sampling event",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/event.json"
+      }
+    },
+    "ods:hasAgents": {
+      "type": "array",
+      "description": "Contains agents that are specifically connect to the specimen part",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    },
+    "ods:hasChronometricAges": {
+      "type": "array",
+      "description": "Contains information about the chronometric age of the specimen part",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/chronometric-age.json"
+      }
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

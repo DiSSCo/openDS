@@ -1,7 +1,7 @@
 {
-  "@id": "https://example.org/agents/12345",
-  "@type": "ods:Agent",
-  "schema:identifier": "https://orchid.org/0000-0002-1825-0097",
+  "@id": "https://orcid.org/0000-0002-1825-0097",
+  "@type": "schema:Person",
+  "schema:identifier": "https://orcid.org/0000-0002-1825-0097",
   "schema:name": "John Smith",
   "ods:hasRoles": [
     {
@@ -14,10 +14,10 @@
   ],
   "ods:hasIdentifiers": [
     {
-      "@id": "https://orchid.org/0000-0002-1825-0097",
+      "@id": "https://orcid.org/0000-0002-1825-0097",
       "@type": "ods:Identifier",
       "dcterms:type": "orcid",
-      "dcterms:identifier": "https://orchid.org/0000-0002-1825-0097",
+      "dcterms:identifier": "https://orcid.org/0000-0002-1825-0097",
       "ods:isIDResolvable": true,
       "ods:isIDPersistent": true
     },
