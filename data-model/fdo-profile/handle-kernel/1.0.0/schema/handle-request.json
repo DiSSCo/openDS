@@ -1,0 +1,31 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/handle-kernel/1.0.0/handle-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Schema for making handle-creation requests to the DiSSCo Handle Manager",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "https://doi.org/21.T11148/532ce6796e2828dd2be6",
+          "description": "PID of the Digital Object Type"
+        },
+        "attributes": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/fdo-profile/handle-kernel/0.1.0/handle-request-attributes.json"
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "additionalProperties": false
+}

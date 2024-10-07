@@ -1,0 +1,336 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-specimen/1.0.0/digital-specimen.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Kernel from which all DiSSCo DOI FDO profiles are derived",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "fdoProfile": {
+      "const": "https://doi.org/21.T11148/d8de0819e144e4096645",
+      "description": "PID to a machine readable description of the attributes in the FDO record",
+      "$comment": "idx = 1"
+    },
+    "fdoRecordLicenseId": {
+      "const": "https://spdx.org/licenses/CC0-1.0.json",
+      "description": "The licence for the FDO record, required to be always public domain",
+      "$comment": "idx = 2"
+    },
+    "fdoRecordLicenseName": {
+      "const": "CC0 1.0 Universal",
+      "description": "Human readable version of the FDO Record license",
+      "$comment": "idx = 3"
+    },
+    "digitalObjectType": {
+      "const": "https://doi.org/21.T11148/d8de0819e144e4096645",
+      "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
+      "$comment": "idx = 4"
+    },
+    "digitalObjectName": {
+      "type": "string",
+      "description": "Name of the object type for humans",
+      "example": "digital specimen type 1",
+      "$comment": "idx = 5"
+    },
+    "pid": {
+      "type": "string",
+      "description": "The PID of which the FDO record is part, in DiSSCo this is a Handle or DOI. It is recommended to store this pid also in the local collection management system for the specimen.",
+      "example": "https://doi.org/10.22/GEE-W3J-HL2",
+      "$comment": "idx = 6"
+    },
+    "pidIssuer": {
+      "type": "string",
+      "description": "In case of a DOI this is a PID for the DOI Registration Agency",
+      "example": "https://hdl.handle.net/10.17183",
+      "$comment": "idx = 7"
+    },
+    "pidIssuerName": {
+      "type": "string",
+      "description": "Human-readable name of the PID issuer",
+      "example": "DataCite",
+      "$comment": "idx = 8"
+    },
+    "pidRecordIssueDate": {
+      "type": "string",
+      "description": "Date the PID record was created",
+      "example": "2023-10-16T12:08:37.494Z",
+      "$comment": "idx = 9"
+    },
+    "pidRecordIssueNumber": {
+      "type": "integer",
+      "description": "Starts with 1 and is incrementally increased by 1 every time the pid record is updated. Compatible with DOI schema requirements.",
+      "example": "2",
+      "$comment": "idx = 10"
+    },
+    "pidStatus": {
+      "enum": [
+        "DRAFT",
+        "ACTIVE",
+        "TOMBSTONE"
+      ],
+      "description": "A PID is considered to have a lifecycle, PID status indicates the status in the life cycle, e.g. draft, active, retired. PID statuses are described further in the PID infrastructure design.",
+      "$comment": "idx = 11"
+    },
+    "HS_ADMIN": {
+      "type": "string",
+      "description": "Administrative information for PID profile",
+      "$comment": "idx = 100"
+    },
+    "tombstoneText": {
+      "type": "string",
+      "description": "A reason why the Digital Object was tombstoned",
+      "examples": [
+        "This is a duplicate of XXX",
+        "This object was made by mistake"
+      ],
+      "$comment": "idx = 30"
+    },
+    "hasRelatedPid": {
+      "type": "array",
+      "description": "The PIDs of the object the tombstoned object is related to",
+      "items": {
+        "type": "object",
+        "items": {
+          "type": "object",
+          "properties": {
+            "pid": {
+              "type": "string",
+              "description": "The PID of the related object",
+              "examples": [
+                "https://doi.org/10.1234/abcd"
+              ]
+            },
+            "relationshipType": {
+              "type": "string",
+              "description": "The type of relationship between the tombstoned object and the related object",
+              "examples": [
+                "ods:relatedTo",
+                "ods:isDuplicateOf"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "$comment": "idx = 31"
+      }
+    },
+    "tombstoneDate": {
+      "type": "string",
+      "description": "Timestamp the Digital Object was tombstoned and no longer active.",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ],
+      "$comment": "idx = 32"
+    },
+    "10320/loc": {
+      "type": "string",
+      "description": "XML document describing location(s) of the resource",
+      "$comment": "idx = 101",
+      "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
+    },
+    "issuedForAgent": {
+      "type": "string",
+      "description": "In the case of a digital specimen, this is a PID for DiSSCo as the agent responsible for serving the digital specimen object",
+      "example": "https://hdl.handle.net/10.22",
+      "$comment": "idx = 40"
+    },
+    "issuedForAgentName": {
+      "type": "string",
+      "description": "Human-readable agent name",
+      "example": "DiSSCo",
+      "$comment": "idx = 41"
+    },
+    "referentName": {
+      "type": "string",
+      "description": "In the case of a digital specimen this is the name for the object in the collection, which can be anything from a taxon name to a collection number. In the case of a media object, it is the media url without https://.",
+      "example": "Mus musculus type 1",
+      "$comment": "idx = 42"
+    },
+    "specimenHost": {
+      "type": "string",
+      "description": "ROR or, in absence of a ROR, Wikidata Qnumber for the administrative organisation hosting the specimen. Same as: Latimer Core identifierSource.",
+      "example": "https://ror.org/0566bfb96",
+      "$comment": "idx = 200"
+    },
+    "specimenHostName": {
+      "type": "string",
+      "description": "Name for the administrative organisation as derived from ROR or Wikidata at the point of creating the FDO record.",
+      "example": "Naturalis Biodiversity Center",
+      "$comment": "idx = 201"
+    },
+    "normalisedPrimarySpecimenObjectId": {
+      "type": "string",
+      "description": "For internal processing purposes only to make a local identifier globally unique. This is the primarySpecimenObjectId if it is globally unique or a combination of ROR ID string, source system ID string, primarySpecimenObjectId if it is a proprietary identifier.",
+      "example": "0566bfb96:20.5000.1025/GEE-W3J-HL2:RMNH.1.2b",
+      "$comment": "idx = 203"
+    },
+    "otherSpecimenIds": {
+      "type": "array",
+      "$comment": "idx = 207",
+      "items": {
+        "type": "object",
+        "properties": {
+          "identifierValue": {
+            "type": "string"
+          },
+          "identifierType": {
+            "type": "string"
+          },
+          "resolvable": {
+            "type": "boolean",
+            "description": "whether or not the identifier is resolvable"
+          }
+        },
+        "required": [
+          "identifierValue",
+          "identifierType"
+        ],
+        "additionalProperties": false
+      },
+      "$comment": "idx = 204"
+    },
+    "topicOrigin": {
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin",
+        "Unclassified"
+      ],
+      "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected.",
+      "$comment": "idx = 205"
+    },
+    "topicDomain": {
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material",
+        "Unclassified"
+      ],
+      "description": "High-level terms providing general domain information with which the objects are associated.",
+      "$comment": "idx = 206"
+    },
+    "topicDiscipline": {
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Geology",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
+        "Unclassified"
+      ],
+      "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related.",
+      "$comment": "idx = 207"
+    },
+    "topicCategory": {
+      "enum": [
+        "Human remains",
+        "Hominid remains",
+        "Macrofungi, Lichens & Myxomycetes",
+        "Algae",
+        "Bryophytes",
+        "Pteridophytes",
+        "Seed plants",
+        "Other Botany Objects",
+        "Insects",
+        "Arachnids",
+        "Crustaceans & Myriapods",
+        "Porifera",
+        "Mollusca",
+        "Cnidaria",
+        "Echinodermata",
+        "Fishes",
+        "Amphibians",
+        "Reptiles",
+        "Birds",
+        "Mammals",
+        "AnimalGeneticResources",
+        "Other Zoology Objects",
+        "Phages",
+        "Bacteria & Archaea",
+        "Plasmids",
+        "Protozoa",
+        "Eukaryotic microorganisms",
+        "Viruses",
+        "Microfungi",
+        "Other Microbiology Objects",
+        "Botany Fossils",
+        "Invertebrate Fossils",
+        "Vertebrate Fossils",
+        "Other Palaeontology Objects",
+        "Minerals and Gems",
+        "Loose Sediment Sample",
+        "Mixed Solid Matter Sample",
+        "Water-Ice Sample",
+        "Liquid or Gaseous Matter Sample",
+        "Mixed Geology Objects",
+        "Terrestrial Finds/Falls",
+        "Terrestrial Impacta",
+        "Sample Returns",
+        "Sedimentary Rock",
+        "Metamorphic or Igneous Rock",
+        "Plant Genetic Resource",
+        "Floral and Faunal remains",
+        "Other Anthropology Objects",
+        "Unclassified"
+      ],
+      "description": "Countable things (objects) served as a more detailed classification of each of the disciplines.",
+      "$comment": "idx = 208"
+    },
+    "livingOrPreserved": {
+      "enum": [
+        "Living",
+        "Preserved"
+      ],
+      "description": "State of specimen",
+      "$comment": "idx = 209"
+    },
+    "materialSampleType": {
+      "enum": [
+        "Any biological specimen",
+        "Biological material sample",
+        "Fluid in container",
+        "Fluid in container",
+        "Non biologic solid object",
+        "Research product"
+      ],
+      "description": "https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html",
+      "$comment": "idx = 211"
+    },
+    "markedAsType": {
+      "type": "boolean",
+      "description": "TRUE if the specimen is marked as type with a stamp or label.\n",
+      "$comment": "idx = 212"
+    },
+    "catalogNumber": {
+      "type": "string",
+      "description": "Identifier of source system catalog",
+      "$comment": "idx = 213"
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "fdoProfile",
+    "fdoRecordLicenseId",
+    "digitalObjectType",
+    "digitalObjectName",
+    "pid",
+    "pidIssuer",
+    "pidIssuerName",
+    "issuedForAgent",
+    "pidRecordIssueDate",
+    "pidRecordIssueNumber",
+    "pidStatus",
+    "10320/loc",
+    "referentName",
+    "specimenHost",
+    "specimenHostName",
+    "normalisedPrimarySpecimenObjectId"
+  ]
+}

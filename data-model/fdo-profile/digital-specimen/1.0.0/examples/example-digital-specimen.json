@@ -1,0 +1,28 @@
+{
+  "10320/loc": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" view=\"JSON\" weight=\"1\"/></locations>",
+  "fdoProfile": "https://doi.org/21.T11148/d8de0819e144e4096645",
+  "fdoRecordLicenseId": "https://spdx.org/licenses/CC0-1.0.json",
+  "fdoRecordLicenseName": "CC0 1.0 Universal",
+  "digitalObjectType": "https://doi.org/21.T11148/d8de0819e144e4096645",
+  "digitalObjectName": "Digital Specimen",
+  "pid": "https://hdl.handle.net/TEST/FFR-RTL-B8K",
+  "pidIssuer": "https://ror.org/04wxnsj81",
+  "pidIssuerName": "DataCite",
+  "issuedForAgent": "https://ror.org/0566bfb96",
+  "issuedForAgentName": "Naturalis Biodiversity Center",
+  "pidRecordIssueDate": "2023-11-17T11:57:02.933Z",
+  "pidRecordIssueNumber": 1,
+  "pidStatus": "ACTIVE",
+  "referentName": "Some digital object",
+  "specimenHost": "https://ror.org/0566bfb96",
+  "specimenHostName": "Naturalis Biodiversity Center",
+  "normalisedPrimarySpecimenObjectId": "http://coldb.mnhn.fr/catalognumber/mnhn/ec/ec23797",
+  "livingOrPreserved": "Living",
+  "otherSpecimenIds": [
+    {
+      "identifierValue": "AVES.123",
+      "identifierType": "catalogId",
+      "resolvable": false
+    }
+  ]
+}

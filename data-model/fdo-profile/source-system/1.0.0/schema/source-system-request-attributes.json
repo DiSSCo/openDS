@@ -1,0 +1,23 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/source-system/1.0.0/source-system-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a source system",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "sourceSystemName": {
+      "type": "string",
+      "description" : "Name of Source System"
+    }
+  },
+  "required": [
+    "sourceSystemName"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,30 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/digital-media/0.1.0/digital-media-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Schema for creating new PID records for digital media using the DiSSCO PID API. API maps requests to digital-media.json profile",
+  "$comment": "FDO Profile Version 0.1.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+          "description": "PID of the Digital Object Type"
+        },
+        "attributes": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/fdo-profile/digital-media/1.0.0/digital-media-request-attributes.json"
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "additionalProperties": false
+}

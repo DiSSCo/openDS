@@ -1,0 +1,21 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/doi-kernel/1.0.0/doi-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a generic DOI",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "referentName": {
+      "type": "string",
+      "description": "In the case of a digital specimen this is the name for the object in the collection, which can be anything from a taxon name to a collection number.",
+      "example": "Mus musculus type 1"
+    }
+  },
+  "additionalProperties": false
+}

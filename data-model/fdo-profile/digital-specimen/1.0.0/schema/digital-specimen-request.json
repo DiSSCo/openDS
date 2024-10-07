@@ -1,0 +1,30 @@
+{
+  "$id": "ttps://schemas.dissco.tech/schemas/fdo-profile/digital-specimen/1.0.0/digital-specimen-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "FDO Profile for Digital Specimens",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "const": "https://doi.org/21.T11148/d8de0819e144e4096645",
+          "description": "PID of the Digital Object Type"
+        },
+        "attributes": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/fdo-profile/digital-specimen/1.0.0/digital-specimen-request-attributes.json"
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,18 @@
+{
+  "data": {
+    "type": "https://doi.org/21.T11148/d8de0819e144e4096645",
+    "attributes": {
+      "referentName": "Mus musculus type 1",
+      "specimenHost": "https://ror.org/0566bfb96",
+      "normalisedPrimarySpecimenObjectId": "http://coldb.mnhn.fr/catalognumber/mnhn/ec/ec23797",
+      "livingOrPreserved": "Living",
+      "otherSpecimenIds": [
+        {
+          "identifierValue": "AVES.123",
+          "identifierType": "catalogId",
+          "resolvable": false
+        }
+      ]
+    }
+  }
+}

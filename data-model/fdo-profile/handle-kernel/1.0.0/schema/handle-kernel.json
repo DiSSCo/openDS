@@ -1,93 +1,74 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/data-mapping/0.1.0/data-mapping.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/handle-kernel/1.0.0/handle-kernel-fdo-profile.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "FDO Profile for data mapping from source data standard to DiSSCo data model",
-  "$comment": "FDO Profile Version 0.1.0",
+  "type": "object",
+  "description": "Kernel from which all DiSSCo FAIR Digital Object profiles are derived",
+  "$comment": "FDO Profile Version 1.0.0",
   "properties": {
     "fdoProfile": {
-      "type": "string",
       "description": "PID to a machine readable description of the attributes in the FDO record",
-      "example": "https://hdl.handle.net/21.T11148/ce794a6f4df42eb7e77e",
+      "const": "https://doi.org/21.T11148/532ce6796e2828dd2be6",
       "$comment": "idx = 1"
     },
-    "fdoRecordLicense": {
-      "const": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "fdoRecordLicenseId": {
+      "const": "https://spdx.org/licenses/CC0-1.0.json",
       "description": "The licence for the FDO record, required to be always public domain",
       "$comment": "idx = 2"
     },
-    "digitalObjectType": {
-      "type": "string",
-      "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
-      "example": "https://hdl.handle.net/21.T11148/ce794a6f4df42eb7e77e",
+    "fdoRecordLicenseName": {
+      "const": "CC0 1.0 Universal",
+      "description": "CC0 1.0 Universal",
       "$comment": "idx = 3"
+    },
+    "digitalObjectType": {
+      "description": "PID to a description of the Type of digital object that defines the metadata, bit sequences (if any) and operations for the object",
+      "const": "https://doi.org/21.T11148/532ce6796e2828dd2be6",
+      "$comment": "idx = 4"
     },
     "digitalObjectName": {
       "type": "string",
       "description": "Name of the object type for humans",
       "example": "digital specimen type 1",
-      "$comment": "idx = 4"
+      "$comment": "idx = 5"
     },
     "pid": {
       "type": "string",
       "description": "The PID of which the FDO record is part, in DiSSCo this is a Handle or DOI. It is recommended to store this pid also in the local collection management system for the specimen.",
       "example": "https://doi.org/10.22/GEE-W3J-HL2",
-      "$comment": "idx = 5"
+      "$comment": "idx = 6"
     },
     "pidIssuer": {
       "type": "string",
-      "description": "In case of a DOI this is a PID for the DOI Registration Agency",
+      "description": "In case of a DOI, this is a PID for the DOI Registration Agency",
       "example": "https://hdl.handle.net/10.17183",
-      "$comment": "idx = 6"
+      "$comment": "idx = 7"
     },
     "pidIssuerName": {
       "type": "string",
       "description": "Human-readable name of the PID issuer",
       "example": "DataCite",
-      "$comment": "idx = 7"
-    },
-    "issuedForAgent": {
-      "type": "string",
-      "description": "In the case of a digital specimen, this is a PID for DiSSCo as the agent responsible for serving the digital specimen object",
-      "example": "https://hdl.handle.net/10.22",
       "$comment": "idx = 8"
-    },
-    "issuedForAgentName": {
-      "type": "string",
-      "description": "Human-readable agent name",
-      "example": "DiSSCo",
-      "$comment": "idx = 9"
     },
     "pidRecordIssueDate": {
       "type": "string",
       "description": "Date the PID record was created",
       "example": "2023-10-16T12:08:37.494Z",
-      "$comment": "idx = 10"
+      "$comment": "idx = 9"
     },
     "pidRecordIssueNumber": {
       "type": "integer",
       "description": "Starts with 1 and is incrementally increased by 1 every time the pid record is updated. Compatible with DOI schema requirements.",
       "example": "2",
-      "$comment": "idx = 11"
-    },
-    "structuralType": {
-      "enum": [
-        "digital",
-        "physical",
-        "performance",
-        "abstraction"
-      ],
-      "description": "Nature of the digital object, compatible with DOI schema requirements. The nature of a digital specimen object is always \"digital\". Other digital objects (outside DiSSCo) could be of physical, performance or abstraction nature.",
-      "$comment": "idx = 12"
+      "$comment": "idx = 10"
     },
     "pidStatus": {
       "enum": [
+        "TOMBSTONE",
         "DRAFT",
-        "ACTIVE",
-        "FAILED",
-        "TOMBSTONE"
+        "ACTIVE"
       ],
       "description": "A PID is considered to have a lifecycle, PID status indicates the status in the life cycle, e.g. draft, active, retired. PID statuses are described further in the PID infrastructure design.",
-      "$comment": "idx = 13"
+      "$comment": "idx = 11"
     },
     "HS_ADMIN": {
       "type": "string",
@@ -98,7 +79,7 @@
       "type": "string",
       "description": "XML document describing location(s) of the resource",
       "$comment": "idx = 101",
-      "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"JSON\" weight=\"1\"/></locations>"
+      "example": "<locations><location href=\"https://dev.dissco.tech/api/v1/annotations/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>"
     },
     "tombstoneText": {
       "type": "string",
@@ -109,7 +90,7 @@
       ],
       "$comment": "idx = 30"
     },
-    "ods:hasRelatedPID": {
+    "hasRelatedPid": {
       "type": "array",
       "description": "The PIDs of the object the tombstoned object is related to",
       "items": {
@@ -117,19 +98,19 @@
         "items": {
           "type": "object",
           "properties": {
-            "ods:ID": {
+            "pid": {
               "type": "string",
               "description": "The PID of the related object",
               "examples": [
                 "https://doi.org/10.1234/abcd"
               ]
             },
-            "ods:relationshipType": {
+            "relationshipType": {
               "type": "string",
               "description": "The type of relationship between the tombstoned object and the related object",
               "examples": [
-                "ods:relatedTo",
-                "ods:isDuplicateOf"
+                "isObsoletedBy",
+                "isIdenticalTo"
               ]
             }
           },
@@ -146,28 +127,21 @@
         "2021-06-01T12:00:000Z"
       ],
       "$comment": "idx = 32"
-    },
-    "sourceDataStandard": {
-      "type": "string",
-      "description": "Indicates standard source data adheres to, such as \"dwc\" or \"abcd\"",
-      "$comment": "idx = 30"
     }
   },
   "additionalProperties": false,
   "required": [
     "fdoProfile",
-    "fdoRecordLicense",
+    "fdoRecordLicenseId",
+    "fdoRecordLicenseName",
     "digitalObjectType",
     "digitalObjectName",
     "pid",
     "pidIssuer",
     "pidIssuerName",
-    "issuedForAgent",
     "pidRecordIssueDate",
     "pidRecordIssueNumber",
-    "structuralType",
-    "pidStatus",
     "10320/loc",
-    "sourceDataStandard"
+    "pidStatus"
   ]
 }
