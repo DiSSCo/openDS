@@ -45,15 +45,35 @@
     "@type": "schema:Person",
     "schema:name": "Jane Smith"
   },
-  "ods:TombstoneMetadata": {
+  "ods:hasTombstoneMetadata": {
     "@type": "ods:Tombstone",
     "ods:tombstoneDate": "2024-07-27T15:23:30.000Z",
-    "ods:tombstoneText": "This object was made by mistake",
-    "ods:TombstonedByAgent": {
-      "@id": "https://orcid.org/0000-0002-5669-2769",
-      "@type": "schema:Person",
-      "schema:name": "John Doe"
-    },
+    "ods:tombstoneText": "This object was made by mistake and tombstoned",
+    "ods:hasAgents": [
+      {
+        "@id": "https://orcid.org/0000-0002-5669-2769",
+        "@type": "schema:Person",
+        "schema:name": "Sam Leeflang",
+        "schema:email": "sam.leeflang@test.nl",
+        "ods:hasRoles": [
+          {
+            "@type": "schema:Role",
+            "schema:roleName": "curator",
+            "schema:startDate": "2023-10-02T12:31:34.806Z"
+          }
+        ],
+        "ods:hasIdentifiers": [
+          {
+            "@id": "https://orcid.org/0000-0002-5669-2769",
+            "@type": "ods:Identifier",
+            "dcterms:type": "orcid",
+            "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+            "ods:isIDResolvable": true,
+            "ods:isIDPersistent": true
+          }
+        ]
+      }
+    ],
     "ods:hasRelatedPID": [
       {
         "dcterms:identifier": "https://doi.org/10.1234/abcd",
