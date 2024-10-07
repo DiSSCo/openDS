@@ -23,7 +23,7 @@
     },
     "dwc:recordNumber": {
       "type": "string",
-      "description": "An identifier given to a ods:SpecimenPart at the time it was recorded. Often serves as a link between field notes and a ods:MaterialEntity record, such as a specimen collector's number",
+      "description": "An identifier given to a ods:SpecimenPart at the time it was recorded. Often serves as a link between field notes and a specimen record, such as a specimen collector's number",
       "examples": [
         "OPP 7101"
       ]

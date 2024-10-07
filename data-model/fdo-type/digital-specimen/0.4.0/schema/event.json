@@ -32,7 +32,7 @@
     },
     "dwc:lifeStage": {
       "type": "string",
-      "description": "The age class or life stage of the ods:MaterialEntity at the time the ods:Event was recorded",
+      "description": "The age class or life stage at the time the ods:Event was recorded",
       "examples": [
         "adult",
         "juvenile"
@@ -56,7 +56,7 @@
     },
     "dwc:vitality": {
       "type": "string",
-      "description": "An indication of whether a ods:MaterialEntity was alive or dead at the time of collection or observation",
+      "description": "An indication of whether the specimen was alive or dead at the time of collection or observation",
       "examples": [
         "alive",
         "dead"
