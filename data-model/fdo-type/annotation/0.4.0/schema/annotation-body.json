@@ -9,7 +9,7 @@
     "@type": {
       "type": "string",
       "const": "oa:TextualBody",
-      "description": "https://www.w3.org/TR/annotation-vocab/#textualbody"
+      "description": "The type of the object, in this case oa:TextualBody"
     },
     "oa:value": {
       "type": "array",

@@ -30,7 +30,7 @@
     "prov:wasRevisionOf": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI/2",
     "prov:wasGeneratedBy": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507"
   },
-  "ods:hasProvAgent": [
+  "ods:hasAgents": [
     {
       "@id": "https://orcid.org/0000-0002-1825-0097",
       "@type": "prov:Person",

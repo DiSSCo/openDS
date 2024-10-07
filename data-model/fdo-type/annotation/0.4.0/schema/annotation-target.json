@@ -47,10 +47,10 @@
           "properties": {
             "@type": {
               "type": "string",
-              "const": "ods:FieldSelector",
-              "description": "A selector for an individual field."
+              "const": "ods:TermSelector",
+              "description": "A selector for an individual term"
             },
-            "ods:field": {
+            "ods:term": {
               "type": "string",
               "description": "The full jsonPath in block notation of the field being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
               "examples": [
@@ -60,7 +60,7 @@
           },
           "required": [
             "@type",
-            "ods:field"
+            "ods:term"
           ],
           "additionalProperties": false
         },
@@ -70,7 +70,7 @@
             "@type": {
               "type": "string",
               "const": "ods:ClassSelector",
-              "description": "A selector for an individual class."
+              "description": "A selector for an individual class"
             },
             "ods:class": {
               "type": "string",
@@ -96,29 +96,29 @@
             },
             "ac:hasROI": {
               "type": "object",
-              "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_hasROI",
+              "description": "A region of interest located within the subject media item",
               "properties": {
                 "ac:xFrac": {
                   "type": "number",
-                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_xFrac",
+                  "description": "The horizontal position of a reference point, measured from the left side of the media item and expressed as a decimal fraction of the width of the media item",
                   "minimum": 0,
                   "maximum": 1
                 },
                 "ac:yFrac": {
                   "type": "number",
-                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_yFrac",
+                  "description": "The vertical position of a reference point, measured from the top of the media item and expressed as a decimal fraction of the height of the media item",
                   "minimum": 0,
                   "maximum": 1
                 },
                 "ac:widthFrac": {
                   "type": "number",
-                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_widthFrac",
+                  "description": "The width of the bounding rectangle, expressed as a decimal fraction of the width of the media item",
                   "minimum": 0,
                   "maximum": 1
                 },
                 "ac:heightFrac": {
                   "type": "number",
-                  "description": "https://ac.tdwg.org/termlist/2023-02-24#ac_heightFrac",
+                  "description": "The height of the bounding rectangle, expressed as a decimal fraction of the height of the media item",
                   "minimum": 0,
                   "maximum": 1
                 }
@@ -134,7 +134,7 @@
             "dcterms:conformsTo": {
               "type": "string",
               "const": "https://ac.tdwg.org/termlist/#711-region-of-interest-vocabulary",
-              "description": "https://purl.org/dc/terms/conformsTo"
+              "description": "Indicates the vocabulary that the ROI conforms to"
             }
           },
           "required": [

@@ -12,8 +12,8 @@
     "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
     "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
     "oa:hasSelector": {
-      "@type": "ods:FieldSelector",
-      "ods:field": "$['ods:hasEvent'][0]['ods:Location']['dwc:country']"
+      "@type": "ods:TermSelector",
+      "ods:term": "$['ods:hasEvent'][0]['ods:Location']['dwc:country']"
     }
   },
   "oa:hasBody": {

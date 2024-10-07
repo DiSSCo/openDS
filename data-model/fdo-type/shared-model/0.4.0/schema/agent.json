@@ -129,8 +129,7 @@
     }
   },
   "required": [
-    "@type",
-    "ods:hasRoles"
+    "@type"
   ],
   "additionalProperties": false
 }

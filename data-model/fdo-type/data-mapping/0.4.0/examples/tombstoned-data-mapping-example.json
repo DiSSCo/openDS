@@ -14,7 +14,7 @@
     "@type": "schema:Person",
     "schema:name": "John Doe"
   },
-  "ods:DefaultMapping": [
+  "ods:hasDefaultMapping": [
     {
       "ods:physicalSpecimenIDType": "Global"
     },
@@ -25,7 +25,7 @@
       "ods:organisationID": "https://ror.org/05xg72x27"
     }
   ],
-  "ods:FieldMapping": [
+  "ods:hasTermMapping": [
     {
       "ods:physicalSpecimenID": "dwc:catalogNumber"
     }
@@ -39,7 +39,25 @@
       {
         "@id": "https://orcid.org/0000-0002-5669-2769",
         "@type": "schema:Person",
-        "schema:name": "John Doe"
+        "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
+        "schema:name": "Sam Leeflang",
+        "ods:hasRoles": [
+          {
+            "@type": "schema:Role",
+            "schema:roleName": "curator",
+            "schema:startDate": "2023-10-02T12:31:34.806Z"
+          }
+        ],
+        "ods:hasIdentifiers": [
+          {
+            "@id": "https://orcid.org/0000-0002-5669-2769",
+            "@type": "ods:Identifier",
+            "dcterms:type": "orcid",
+            "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+            "ods:isIDResolvable": true,
+            "ods:isIDPersistent": true
+          }
+        ]
       }
     ]
   }

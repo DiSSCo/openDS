@@ -194,6 +194,71 @@
         "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
       ]
     },
+    "ods:topicOrigin": {
+      "type": "string",
+      "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected",
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin",
+        "Unclassified"
+      ],
+      "examples": [
+        "Natural"
+      ]
+    },
+    "ods:topicDomain": {
+      "type": "string",
+      "description": "High-level terms providing general domain information with which the objects are associated",
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material",
+        "Unclassified"
+      ],
+      "examples": [
+        "Life"
+      ]
+    },
+    "ods:topicDiscipline": {
+      "type": "string",
+      "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related",
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Geology",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
+        "Unclassified"
+      ],
+      "examples": [
+        "Botany"
+      ]
+    },
+    "ods:topicCategory": {
+      "type": "string",
+      "description": "Countable things (objects) served as a more detailed classification of each of the disciplines",
+      "examples": [
+        "Protozoa",
+        "Bryophytes",
+        "Water-ice sample"
+      ]
+    },
+    "ods:specimenName": {
+      "type": "string",
+      "description": "The accepted specimen name of the digital specimen",
+      "examples": [
+        "Roptrocerus typographi (Györfi, 1952)"
+      ]
+    },
     "dwc:informationWithheld": {
       "type": "string",
       "description": "Additional information that exists, but that has not been shared in the given record",
@@ -314,7 +379,7 @@
     },
     "dwc:dynamicProperties": {
       "type": "string",
-      "description": "\tA list of additional measurements, facts, characteristics, or assertions about the record. Meant to provide a mechanism for structured content",
+      "description": "A list of additional measurements, facts, characteristics, or assertions about the record. Meant to provide a mechanism for structured content",
       "examples": [
         "{\"relativeHumidity\": 28,\"airTemperatureInCelsius\": 22}"
       ]

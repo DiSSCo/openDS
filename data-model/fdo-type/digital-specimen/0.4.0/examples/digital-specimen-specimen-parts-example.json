@@ -8,27 +8,93 @@
   "dcterms:created": "2024-09-06T12:34:43.442Z",
   "ods:fdoType": "https://doi.org/21.T11148/894b1e6cad57e921764e",
   "ods:midsLevel": 1,
-  "ods:normalisedPhysicalSpecimenID": "https://data.biodiversitydata.nl/naturalis/specimen/ZMA.VER.207014",
-  "ods:physicalSpecimenID": "https://data.biodiversitydata.nl/naturalis/specimen/ZMA.VER.207014",
+  "ods:normalisedPhysicalSpecimenID": "https://geoloogia.info/specimen/273744",
+  "ods:physicalSpecimenID": "https://geoloogia.info/specimen/273744",
   "ods:physicalSpecimenIDType": "Resolvable",
   "ods:topicOrigin": "Natural",
-  "ods:topicDomain": "Life",
-  "ods:topicDiscipline": "Zoology",
+  "ods:topicDomain": "Earth System",
+  "ods:topicDiscipline": "Geology",
   "ods:isKnownToContainMedia": true,
-  "ods:specimenName": "Nais josinae Vejdovský, 1884",
-  "ods:sourceSystemID": "https://hdl.handle.net/TEST/JH1-C37-E7F",
-  "ods:sourceSystemName": "Naturalis Biodiversity Center (NL) - Vermes",
+  "ods:specimenName": "Dolomite and hematite? on quartz",
+  "ods:sourceSystemID": "https://hdl.handle.net/TEST/9YT-CVP-8NY",
+  "ods:sourceSystemName": "TalTech geological collections endpoint",
   "ods:livingOrPreserved": "Preserved",
   "ods:metadataLanguages": [
-    "eng"
+    "eng",
+    "est"
   ],
   "dcterms:license": "CC0 1.0",
-  "dwc:basisOfRecord": "PreservedSpecimen",
-  "dwc:preparations": "(microscopic slide)",
-  "ods:organisationID": "https://ror.org/0566bfb96",
-  "ods:organisationName": "Naturalis Biodiversity Center",
-  "dwc:datasetName": "Naturalis Biodiversity Center (NL) - Vermes",
-  "dcterms:rightsHolder": "Naturalis Biodiversity Center",
+  "dwc:basisOfRecord": "MineralSpecimen",
+  "dwc:preparations": "rock",
+  "ods:organisationID": "https://ror.org/049h10h83",
+  "ods:organisationName": "University of Tartu Natural History Museum and Botanical Garden",
+  "dwc:datasetName": "University of Tartu Natural History Museum Geological Collection",
+  "dwc:hasSpecimenParts": [
+    {
+      "@type": "ods:SpecimenPart",
+      "dwc:preparations": "mineral",
+      "ods:isMarkedAsType": false,
+      "ods:topicOrigin": "Natural",
+      "ods:topicDomain": "Earth System",
+      "ods:topicDiscipline": "Geology",
+      "ods:specimenName": "Dolomite",
+      "ods:hasIdentifications": [
+        {
+          "@id": "https://www.mindat.org/min-1304.html",
+          "@type": "dwc:Identification",
+          "dwc:identificationID": "https://www.mindat.org/min-1304.html",
+          "dwc:verbatimIdentification": "Dolomite",
+          "dwc:dateIdentified": "2009-02-20T08:40Z",
+          "dwc:identificationRemarks": "Dolomite is mixed with Hematite",
+          "dwc:identificationVerificationStatus": true,
+          "ods:hasAgents": [
+            {
+              "@type": "schema:Person",
+              "schema:name": "Beil, Hw.",
+              "ods:hasRoles": [
+                {
+                  "@type": "schema:Role",
+                  "schema:roleName": "identifier"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ods:SpecimenPart",
+      "dwc:preparations": "rock",
+      "ods:isMarkedAsType": false,
+      "ods:topicOrigin": "Natural",
+      "ods:topicDomain": "Earth System",
+      "ods:topicDiscipline": "Geology",
+      "ods:specimenName": "Hematite",
+      "ods:hasIdentifications": [
+        {
+          "@id": "https://www.mindat.org/min-1856.html",
+          "@type": "dwc:Identification",
+          "dwc:identificationID": "https://www.mindat.org/min-1856.html",
+          "dwc:dateIdentified": "2009-02-20T08:40Z",
+          "dwc:identificationRemarks": "Hematite is mixed with Dolomite",
+          "dwc:verbatimIdentification": "Hematite",
+          "dwc:identificationVerificationStatus": true,
+          "ods:hasAgents": [
+            {
+              "@type": "schema:Person",
+              "schema:name": "Beil, Hw.",
+              "ods:hasRoles": [
+                {
+                  "@type": "schema:Role",
+                  "schema:roleName": "identifier"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "ods:hasAssertions": [
     {
       "@id": "https://example.org/assertions/12345",
@@ -72,8 +138,8 @@
     {
       "@type": "ods:EntityRelationship",
       "dwc:relationshipOfResource": "hasOrganisationID",
-      "dwc:relatedResourceID": "0566bfb96",
-      "dwc:relatedResourceURI": "https://ror.org/0566bfb96",
+      "dwc:relatedResourceID": "049h10h83",
+      "dwc:relatedResourceURI": "https://ror.org/049h10h83",
       "dwc:relationshipEstablishedDate": "2024-09-06T12:33:56.999Z",
       "ods:hasAgents": [
         {
@@ -104,8 +170,8 @@
     {
       "@type": "ods:EntityRelationship",
       "dwc:relationshipOfResource": "hasSourceSystemID",
-      "dwc:relatedResourceID": "TEST/JH1-C37-E7F",
-      "dwc:relatedResourceURI": "https://hdl.handle.net/TEST/JH1-C37-E7F",
+      "dwc:relatedResourceID": "TEST/9YT-CVP-8NY",
+      "dwc:relatedResourceURI": "https://hdl.handle.net/TEST/9YT-CVP-8NY",
       "dwc:relationshipEstablishedDate": "2024-09-06T12:33:56.999Z",
       "ods:hasAgents": [
         {
@@ -167,8 +233,7 @@
     {
       "@type": "ods:EntityRelationship",
       "dwc:relationshipOfResource": "hasPhysicalIdentifier",
-      "dwc:relatedResourceID": "ZMA.VER.207014",
-      "dwc:relatedResourceURI": "https://data.biodiversitydata.nl/naturalis/specimen/ZMA.VER.207014",
+      "dwc:relatedResourceURI": "https://geoloogia.info/specimen/273744",
       "dwc:relationshipEstablishedDate": "2024-09-06T12:33:56.999Z",
       "ods:hasAgents": [
         {
@@ -198,9 +263,9 @@
     },
     {
       "@type": "ods:EntityRelationship",
-      "dwc:relationshipOfResource": "hasColID",
+      "dwc:relationshipOfResource": "hasLicense",
       "dwc:relatedResourceID": "45KTK",
-      "dwc:relatedResourceURI": "https://www.catalogueoflife.org/data/taxon/45KTK",
+      "dwc:relatedResourceURI": "http://creativecommons.org/licenses/by-nc/4.0/",
       "dwc:relationshipEstablishedDate": "2024-09-06T12:34:06.104Z",
       "ods:hasAgents": [
         {
@@ -227,15 +292,13 @@
           ]
         }
       ]
-    }
-  ],
-  "ods:hasIdentifications": [
+    },
     {
-      "@type": "ods:Identification",
-      "dwc:verbatimIdentification": "Nais josinae",
-      "ods:identificationType": "ods:TaxonIdentification",
-      "dwc:dateIdentified": "2009-02-20T08:40Z",
-      "ods:isVerifiedIdentification": true,
+      "@type": "ods:EntityRelationship",
+      "dwc:relationshipOfResource": "hasGeoCaseIdentifier",
+      "dwc:relatedResourceID": "TUG1608-6431",
+      "dwc:relatedResourceURI": "https://geocase.cetaf.org/specimen/TUG1608-6431",
+      "dwc:relationshipEstablishedDate": "2024-09-06T12:34:06.104Z",
       "ods:hasAgents": [
         {
           "@id": "https://orcid.org/0000-0002-5669-2769",
@@ -245,8 +308,8 @@
           "ods:hasRoles": [
             {
               "@type": "schema:Role",
-              "schema:roleName": "identifier",
-              "schema:startDate": "2024-10-02T12:31:34.806Z"
+              "schema:roleName": "curator",
+              "schema:startDate": "2023-10-02T12:31:34.806Z"
             }
           ],
           "ods:hasIdentifiers": [
@@ -260,30 +323,123 @@
             }
           ]
         }
-      ],
-      "ods:hasTaxonIdentifications": [
+      ]
+    },
+    {
+      "@type": "ods:EntityRelationship",
+      "dwc:relationshipOfResource": "hasMindatIdentifier",
+      "dwc:relatedResourceID": "min-1856",
+      "dwc:relatedResourceURI": "https://www.mindat.org/min-1856.html",
+      "dwc:relationshipEstablishedDate": "2024-09-06T12:34:06.104Z",
+      "ods:hasAgents": [
         {
-          "@id": "https://www.catalogueoflife.org/data/taxon/45KTK",
-          "@type": "ods:TaxonIdentification",
-          "dwc:taxonID": "https://www.catalogueoflife.org/data/taxon/45KTK",
-          "dwc:scientificName": "Nais josinae Vejdovský, 1884",
-          "ods:scientificNameHtmlLabel": "<i>Nais josinae</i> Vejdovský, 1884",
-          "dwc:scientificNameAuthorship": "Vejdovský, 1884",
-          "dwc:namePublishedInYear": "1884",
-          "dwc:taxonRank": "SPECIES",
-          "dwc:kingdom": "Animalia",
-          "dwc:phylum": "Annelida",
-          "dwc:class": "Clitellata",
-          "dwc:order": "Tubificida Jamieson, 1978",
-          "dwc:family": "Naididae Ehrenberg, 1831",
-          "dwc:subfamily": "Naidinae Ehrenberg, 1831",
-          "dwc:genus": "Specaria Sperber, 1939",
-          "dwc:specificEpithet": "josinae",
-          "dwc:taxonomicStatus": "SYNONYM",
-          "dwc:nomenclaturalCode": "ICZN",
-          "dwc:acceptedNameUsage": "Specaria josinae (Vejdovský, 1884)",
-          "dwc:acceptedNameUsageID": "https://www.catalogueoflife.org/data/taxon/4YGV2",
-          "dwc:genericName": "Nais"
+          "@id": "https://orcid.org/0000-0002-5669-2769",
+          "@type": "schema:Person",
+          "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
+          "schema:name": "Sam Leeflang",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "curator",
+              "schema:startDate": "2023-10-02T12:31:34.806Z"
+            }
+          ],
+          "ods:hasIdentifiers": [
+            {
+              "@id": "https://orcid.org/0000-0002-5669-2769",
+              "@type": "ods:Identifier",
+              "dcterms:type": "orcid",
+              "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+              "ods:isIDResolvable": true,
+              "ods:isIDPersistent": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ods:EntityRelationship",
+      "dwc:relationshipOfResource": "hasMindatIdentifier",
+      "dwc:relatedResourceID": "min-1304",
+      "dwc:relatedResourceURI": "https://www.mindat.org/min-1304.html",
+      "dwc:relationshipEstablishedDate": "2024-09-06T12:34:06.104Z",
+      "ods:hasAgents": [
+        {
+          "@id": "https://orcid.org/0000-0002-5669-2769",
+          "@type": "schema:Person",
+          "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
+          "schema:name": "Sam Leeflang",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "curator",
+              "schema:startDate": "2023-10-02T12:31:34.806Z"
+            }
+          ],
+          "ods:hasIdentifiers": [
+            {
+              "@id": "https://orcid.org/0000-0002-5669-2769",
+              "@type": "ods:Identifier",
+              "dcterms:type": "orcid",
+              "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+              "ods:isIDResolvable": true,
+              "ods:isIDPersistent": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "ods:EntityRelationship",
+      "dwc:relationshipOfResource": "hasMindatIdentifier",
+      "dwc:relatedResourceID": "min-3337",
+      "dwc:relatedResourceURI": "https://www.mindat.org/min-3337.html",
+      "dwc:relationshipEstablishedDate": "2024-09-06T12:34:06.104Z",
+      "ods:hasAgents": [
+        {
+          "@id": "https://orcid.org/0000-0002-5669-2769",
+          "@type": "schema:Person",
+          "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
+          "schema:name": "Sam Leeflang",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "curator",
+              "schema:startDate": "2023-10-02T12:31:34.806Z"
+            }
+          ],
+          "ods:hasIdentifiers": [
+            {
+              "@id": "https://orcid.org/0000-0002-5669-2769",
+              "@type": "ods:Identifier",
+              "dcterms:type": "orcid",
+              "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+              "ods:isIDResolvable": true,
+              "ods:isIDPersistent": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ods:hasIdentifications": [
+    {
+      "@id": "https://www.mindat.org/min-3337.html",
+      "@type": "ods:Identification",
+      "dwc:identificationID": "https://www.mindat.org/min-3337.html",
+      "dwc:verbatimIdentification": "Quartz",
+      "dwc:dateIdentified": "2009-02-20T08:40Z",
+      "ods:isVerifiedIdentification": true,
+      "ods:hasAgents": [
+        {
+          "@type": "schema:Person",
+          "schema:name": "Beil, Hw.",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "identifier"
+            }
+          ]
         }
       ]
     }
@@ -299,31 +455,40 @@
       "ods:isPartOfLabel": false
     },
     {
-      "@id": "https://data.biodiversitydata.nl/naturalis/specimen/ZMA.VER.207014",
+      "@id": "757-4714",
       "@type": "ods:Identifier",
-      "dcterms:type": "dwc:occurrenceID",
-      "dcterms:identifier": "https://data.biodiversitydata.nl/naturalis/specimen/ZMA.VER.207014",
+      "dcterms:type": "abcd:unitID",
+      "dcterms:identifier": "757-4714",
+      "ods:isIDResolvable": false,
+      "ods:isIDPersistent": true,
+      "ods:isPartOfLabel": true
+    },
+    {
+      "@id": "288037",
+      "@type": "ods:Identifier",
+      "dcterms:type": "abcd:unitIDNumeric",
+      "dcterms:identifier": "288037",
+      "ods:isIDResolvable": false,
+      "ods:isIDPersistent": true,
+      "ods:isPartOfLabel": false
+    },
+    {
+      "@id": "https://geocollections.info/specimen/288037",
+      "@type": "ods:Identifier",
+      "dcterms:type": "abcd:unitGUID",
+      "dcterms:identifier": "https://geocollections.info/specimen/288037",
       "ods:isIDResolvable": true,
       "ods:isIDPersistent": true,
       "ods:isPartOfLabel": false
     },
     {
-      "@id": "ZMA.VER.207014@CRS",
+      "@id": "https://geocollections.info/specimen/288037",
       "@type": "ods:Identifier",
-      "dcterms:type": "dwca:ID",
-      "dcterms:identifier": "ZMA.VER.207014@CRS",
-      "ods:isIDResolvable": false,
-      "ods:isIDPersistent": false,
+      "dcterms:type": "abcd:recordURI",
+      "dcterms:identifier": "https://geocollections.info/specimen/288037",
+      "ods:isIDResolvable": true,
+      "ods:isIDPersistent": true,
       "ods:isPartOfLabel": false
-    },
-    {
-      "@id": "ZMA.VER.207014",
-      "@type": "ods:Identifier",
-      "dcterms:type": "dwc:catalogNumber",
-      "dcterms:identifier": "ZMA.VER.207014",
-      "ods:isIDResolvable": false,
-      "ods:isIDPersistent": false,
-      "ods:isPartOfLabel": true
     }
   ],
   "ods:hasEvents": [
@@ -407,64 +572,6 @@
         "dwc:group": "Bathurst",
         "dwc:formation": "Summerville"
       }
-    }
-  ],
-  "ods:hasCitations": [
-    {
-      "@id": "http://doi.org/10.3897/zookeys.107.1608",
-      "@type": "ods:Citation",
-      "dcterms:identifier": "http://doi.org/10.3897/zookeys.107.1608",
-      "dcterms:type": "Journal Article",
-      "dcterms:date": "2020-08-15",
-      "dcterms:title": "Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae)",
-      "ods:pageNumber": "369-373.",
-      "dcterms:description": "New species ",
-      "dcterms:bibliographicCitation": "Platia G. & Van Meer C., 2020 - Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae). L'Entomologiste, 76 (6) : 369-373.",
-      "ods:isPeerReviewed": true,
-      "ods:hasAgents": [
-        {
-          "@id": "https://orcid.org/0009-0004-8647-4502",
-          "@type": "schema:Person",
-          "schema:identifier": "https://orcid.org/0009-0004-8647-4502",
-          "schema:name": "Platia G.",
-          "ods:hasRoles": [
-            {
-              "@type": "schema:Role",
-              "schema:roleName": "author",
-              "schema:position": 1
-            }
-          ],
-          "ods:hasIdentifiers": [
-            {
-              "@id": "https://orcid.org/0009-0004-8647-4502",
-              "@type": "ods:Identifier",
-              "dcterms:type": "orcid",
-              "dcterms:identifier": "https://orcid.org/0009-0004-8647-4502",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
-            },
-            {
-              "@id": "https://m.wikidata.org/wiki/Q18818845",
-              "@type": "ods:Identifier",
-              "dcterms:type": "wikidata",
-              "dcterms:identifier": "https://m.wikidata.org/wiki/Q18818845",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
-            }
-          ]
-        },
-        {
-          "@type": "schema:Person",
-          "schema:name": "Van Meer C",
-          "ods:hasRoles": [
-            {
-              "@type": "schema:Role",
-              "schema:roleName": "author",
-              "schema:position": 2
-            }
-          ]
-        }
-      ]
     }
   ],
   "ods:hasAgents": [

@@ -112,7 +112,7 @@
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/default-mapping.json"
       }
     },
-    "ods:hasFieldMapping": {
+    "ods:hasTermMapping": {
       "type": "array",
       "description": "Setting an explicit mapping for an ods term to a term from the incoming dataset. Key is the ods term, value the incoming data standard term",
       "examples": [

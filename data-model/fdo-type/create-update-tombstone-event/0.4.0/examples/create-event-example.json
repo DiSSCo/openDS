@@ -31,7 +31,7 @@
     "prov:value": {
       "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
       "@type": "ods:DataMapping",
-      "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+      "schema:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
       "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
       "schema:version": 1,
       "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
@@ -64,7 +64,7 @@
     },
     "prov:wasGeneratedBy": "7ba628d4-2e28-4ce4-ad1e-e99c97c20507"
   },
-  "ods:hasProvAgent": [
+  "ods:hasAgents": [
     {
       "@id": "https://orcid.org/0000-0002-1825-0097",
       "@type": "prov:Person",

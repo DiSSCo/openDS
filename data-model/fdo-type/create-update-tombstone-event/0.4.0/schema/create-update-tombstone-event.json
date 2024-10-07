@@ -18,7 +18,7 @@
       "description": "The type of the object, in this case ods:CreateUpdateTombstoneEvent",
       "const": "ods:CreateUpdateTombstoneEvent"
     },
-    "ods:ID": {
+    "dcterms:identifier": {
       "type": "string",
       "description": "The unique identifier of the Create Update Tombstone Event, this includes the version of the object",
       "examples": [
@@ -159,7 +159,7 @@
             {
               "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
               "@type": "ods:Mapping",
-              "ods:ID": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+              "schema:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
               "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
               "schema:version": 1,
               "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
@@ -211,11 +211,12 @@
       "required": [
         "@id",
         "@type",
+        "dcterms:identifier",
         "prov:wasGeneratedBy"
       ],
       "additionalProperties": false
     },
-    "ods:hasProvAgents": {
+    "ods:hasAgents": {
       "type": "array",
       "description": "Contains zero or more prov:Agent objects, connected based on the identifier with the `prov:Activity`",
       "items": {

@@ -14,7 +14,7 @@
     "@type": "schema:Person",
     "schema:name": "John Doe"
   },
-  "ods:DefaultMapping": [
+  "ods:hasDefaultMapping": [
     {
       "ods:physicalSpecimenIDType'": "Global"
     },
@@ -25,7 +25,7 @@
       "ods:organisationID": "https://ror.org/05xg72x27"
     }
   ],
-  "ods:FieldMapping": [
+  "ods:hasTermMapping": [
     {
       "ods:physicalSpecimenID": "dwc:catalogNumber"
     }
