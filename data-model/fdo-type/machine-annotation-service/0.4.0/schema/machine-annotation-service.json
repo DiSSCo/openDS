@@ -255,6 +255,7 @@
     "ods:fdoType",
     "schema:name",
     "schema:dateCreated",
+    "schema:creator",
     "schema:dateModified",
     "ods:containerImage",
     "ods:containerTag",
