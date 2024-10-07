@@ -8,5 +8,30 @@
   "chrono:latestChronometricAge": 3000,
   "chrono:latestChronometricAgeReferenceSystem": "BP",
   "chrono:chronometricAgeUncertaintyInYears": 500,
-  "chrono:materialDated": "Pottery"
+  "chrono:materialDated": "Pottery",
+  "ods:hasAgents": [
+    {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
+      "schema:name": "Sam Leeflang",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "measurer",
+          "schema:startDate": "2024-10-02T12:31:34.806Z"
+        }
+      ],
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://orcid.org/0000-0002-5669-2769",
+          "@type": "ods:Identifier",
+          "dcterms:type": "orcid",
+          "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+          "ods:isIDResolvable": true,
+          "ods:isIDPersistent": true
+        }
+      ]
+    }
+  ]
 }
