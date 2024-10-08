@@ -19,7 +19,7 @@
       "description": "An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set",
       "examples": [
         "https://www.catalogueoflife.org/data/taxon/5TXLM",
-        "https://www.gbif.org/species/212"
+        "https://www.catalogueoflife.org/data/taxon/6J6FX"
       ]
     },
     "dwc:scientificName": {
@@ -174,14 +174,17 @@
       "type": "string",
       "description": "The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) ods:TaxonIdentification",
       "examples": [
-        "Tamias minimus"
+        "Flaccisagitta hexaptera (d'Orbigny, 1836)",
+        "Lysimachia arvensis subsp. arvensis",
+        "https://www.catalogueoflife.org/data/taxon/BPC8M"
       ]
     },
     "dwc:acceptedNameUsageID": {
       "type": "string",
       "description": "An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon",
       "examples": [
-        "6W3C4"
+        "https://www.catalogueoflife.org/data/taxon/6J6FX",
+        "https://www.catalogueoflife.org/data/taxon/BPC8M"
       ]
     },
     "dwc:cultivarEpithet": {

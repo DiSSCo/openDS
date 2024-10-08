@@ -130,9 +130,9 @@
       "type": "string",
       "description": "The data standard that is being mapped from",
       "enum": [
-        "dwc",
-        "abcd",
-        "abcdefg"
+        "DwC",
+        "ABCD",
+        "ABCDEFG"
       ]
     },
     "ods:hasTombstoneMetadata": {

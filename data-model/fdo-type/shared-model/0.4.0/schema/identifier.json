@@ -22,15 +22,46 @@
       "const": "ods:Identifier",
       "description": "The type of the digital object, in this case a ods:Identifier"
     },
+    "dcterms:title": {
+      "type": "string",
+      "description": "A name for the identifier",
+      "examples": [
+        "dwc:occurrenceID",
+        "abcd:UnitID",
+        "ROR",
+        "ORCID",
+        "cetaf stable identifier"
+      ]
+    },
     "dcterms:type": {
       "type": "string",
-      "description": "The type of the identifier",
+      "description": "The type of the value in the `dcterms:identifier` field",
+      "enum": [
+        "ARK",
+        "arXiv",
+        "bibcode",
+        "DOI",
+        "EAN13",
+        "EISSN",
+        "Handle",
+        "IGSN",
+        "ISBN",
+        "ISSN",
+        "ISTC",
+        "LISSN",
+        "LSID",
+        "PMID",
+        "PURL",
+        "UPC",
+        "URL",
+        "URN",
+        "w3id",
+        "UUID",
+        "Other",
+        "locally unique identifier"
+      ],
       "examples": [
-        "dwc:catalogueNumber",
-        "dwca:id",
-        "orcid",
-        "wikidata",
-        "ror"
+        "DOI"
       ]
     },
     "dcterms:identifier": {
@@ -76,18 +107,30 @@
       "type": "boolean",
       "description": "Indicates whether the identifier is part of the physical label"
     },
-    "ods:isIDPersistent": {
-      "type": "boolean",
-      "description": "Indicates whether the identifier is a persistent identifier"
+    "ods:GupriLevel": {
+      "type": "string",
+      "description": "Indicates whether the identifier is a persistent identifier",
+      "enum": [
+        "ods:LocallyUniqueStable",
+        "ods:GloballyUniqueStable",
+        "ods:GloballyUniqueStableResolvable",
+        "ods:GloballyUniqueStablePersistentResolvable",
+        "ods:GloballyUniqueStablePersistentResolvableFDOCompliant"
+      ]
     },
-    "ods:isIDResolvable": {
-      "type": "boolean",
-      "description": "Indicates whether the identifier is resolvable"
+    "ods:identifierStatus": {
+      "type": "string",
+      "description": "Indicates the status of the identifier",
+      "enum": [
+        "ods:Preferred",
+        "ods:Alternative",
+        "ods:Superseded"
+      ]
     }
   },
   "required": [
     "@type",
-    "dcterms:type",
+    "dcterms:title",
     "dcterms:identifier"
   ],
   "additionalProperties": false

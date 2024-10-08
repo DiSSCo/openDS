@@ -119,15 +119,17 @@
       "pattern": "^(https?:\/\/ror\\.org\/0\\w{6}[0-9]{2})|^(https?:\/\/www\\.wikidata\\.org\/wiki\/Q\\w+)",
       "examples": [
         "https://ror.org/015hz7p22",
-        "https://www.wikidata.org/wiki/Q641676"
+        "https://www.wikidata.org/wiki/Q641676",
+        "https://ror.org/03wkt5x30"
       ]
     },
     "ods:organisationName": {
       "type": "string",
-      "description": "Full museum name according to ROR or Wikidata",
+      "description": "Primary organisation name according to ROR or Wikidata",
       "examples": [
         "National Museum of Natural History",
-        "Tallinn University of Technology"
+        "Tallinn University of Technology",
+        "Muséum national d'Histoire naturelle"
       ]
     },
     "dcterms:format": {
