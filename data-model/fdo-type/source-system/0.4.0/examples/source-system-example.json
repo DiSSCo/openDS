@@ -9,10 +9,22 @@
   "schema:description": "The herbarium collection of the University of Coimbra is one of the oldest in Portugal, with specimens dating back to the 18th century.",
   "schema:dateCreated": "2021-06-01T12:00:00.347Z",
   "schema:dateModified": "2021-06-01T12:00:00.347Z",
-  "schema:creator": {
-    "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+  "dcterms:creator": {
+    "@id": "https://orcid.org/0000-0002-5669-2769",
     "@type": "schema:Person",
-    "schema:name": "John Doe"
+    "schema:name": "John Doe",
+    "ods:hasIdentifiers": [
+      {
+        "@id": "https://orcid.org/0000-0002-5669-2769",
+        "@type": "ods:Identifier",
+        "dcterms:title": "orcid",
+        "dcterms:type": "URL",
+        "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+        "ods:isPartOfLabel": false,
+        "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+        "ods:identifierStatus": "Preferred"
+      }
+    ]
   },
   "schema:url": "http://ipt.gbif.pt/ipt/archive.do?r=coi",
   "ltc:collectionManagementSystem": "Specify 7",

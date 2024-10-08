@@ -16,18 +16,19 @@
     {
       "@id": "https://orcid.org/0000-0002-1825-0097",
       "@type": "ods:Identifier",
-      "dcterms:type": "orcid",
+      "dcterms:title": "orcid",
+      "dcterms:type": "URL",
       "dcterms:identifier": "https://orcid.org/0000-0002-1825-0097",
-      "ods:isIDResolvable": true,
-      "ods:isIDPersistent": true
+      "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+      "ods:identifierStatus": "Preferred"
     },
     {
       "@id": "https://www.wikidata.org/wiki/Q66581882",
       "@type": "ods:Identifier",
-      "dcterms:type": "wikidata",
+      "dcterms:title": "wikidata",
+      "dcterms:type": "URL",
       "dcterms:identifier": "https://www.wikidata.org/wiki/Q66581882",
-      "ods:isIDResolvable": true,
-      "ods:isIDPersistent": true
+      "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable"
     }
   ]
 }

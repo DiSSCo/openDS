@@ -25,7 +25,7 @@
       "type": "string",
       "description": "Indicates the type of identification. At the moment only ods:TaxonIdentification is supports. Expected to be extend with identification types for Geological or Mineral Identifications",
       "enum":[
-        "ods:TaxonIdentification"
+        "TaxonIdentification"
       ]
     },
     "dwc:verbatimIdentification": {

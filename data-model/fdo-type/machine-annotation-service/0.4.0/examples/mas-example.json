@@ -9,10 +9,22 @@
   "schema:description": "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship",
   "schema:dateCreated": "2021-06-01T12:00:01.345Z",
   "schema:dateModified": "2021-06-01T12:00:01.345Z",
-  "schema:creator": {
-    "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+  "dcterms:creator": {
+    "@id": "https://orcid.org/0000-0002-5669-2769",
     "@type": "schema:Person",
-    "schema:name": "John Doe"
+    "schema:name": "John Doe",
+    "ods:hasIdentifiers": [
+      {
+        "@id": "https://orcid.org/0000-0002-5669-2769",
+        "@type": "ods:Identifier",
+        "dcterms:title": "orcid",
+        "dcterms:type": "URL",
+        "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+        "ods:isPartOfLabel": false,
+        "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+        "ods:identifierStatus": "Preferred"
+      }
+    ]
   },
   "ods:containerImage": "public.ecr.aws/dissco/mindat-georeferencing",
   "ods:containerTag": "sha-cb76994",
@@ -40,7 +52,19 @@
     "@type": "schema:Organization",
     "schema:name": "DiSSCo",
     "schema:email": "contact@dissco.eu",
-    "schema:url": "https://www.dissco.eu"
+    "schema:url": "https://www.dissco.eu",
+    "ods:hasIdentifiers": [
+      {
+        "@id": "https://ror.org/04wxnsj81",
+        "@type": "ods:Identifier",
+        "dcterms:title": "ror",
+        "dcterms:type": "URL",
+        "dcterms:identifier": "https://ror.org/04wxnsj81",
+        "ods:isPartOfLabel": false,
+        "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+        "ods:identifierStatus": "Preferred"
+      }
+    ]
   },
   "schema:license": "https://opensource.org/licenses/Apache-2.0",
   "ods:dependency": [

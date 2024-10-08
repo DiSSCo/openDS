@@ -10,7 +10,7 @@
   "ods:sourceSystemID": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
   "ods:sourceSystemName": "Naturalis Biodiversity Center (NL) - Vermes",
   "dcterms:type": "Image",
-  "ods:status": "ods:Tombstone",
+  "ods:status": "Tombstone",
   "dcterms:format": "image/jpeg",
   "dcterms:title": "Image of a botanical sheet with label",
   "dcterms:description": "Image of a botanical sheet with label",
@@ -52,7 +52,7 @@
       "ods:hasAgents": [
         {
           "@id": "https://orcid.org/0000-0002-5669-2769",
-          "@type": "ods:Agent",
+          "@type": "schema:Person",
           "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
           "schema:name": "Sam Leeflang",
           "ods:hasRoles": [
@@ -67,10 +67,12 @@
             {
               "@id": "https://orcid.org/0000-0002-5669-2769",
               "@type": "ods:Identifier",
-              "dcterms:type": "orcid",
+              "dcterms:title": "orcid",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -86,13 +88,13 @@
       "dcterms:date": "2020-08-15",
       "dcterms:title": "Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae)",
       "ods:pageNumber": "369-373.",
-      "dcterms:description": "New species ",
+      "dcterms:description": "New species",
       "dcterms:bibliographicCitation": "Platia G. & Van Meer C., 2020 - Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae). L'Entomologiste, 76 (6) : 369-373.",
       "ods:isPeerReviewed": true,
       "ods:hasAgents": [
         {
           "@id": "https://orcid.org/0009-0004-8647-4502",
-          "@type": "ods:Agent",
+          "@type": "schema:Person",
           "schema:identifier": "https://orcid.org/0009-0004-8647-4502",
           "schema:name": "Platia G.",
           "ods:hasRoles": [
@@ -106,23 +108,27 @@
             {
               "@id": "https://orcid.org/0009-0004-8647-4502",
               "@type": "ods:Identifier",
-              "dcterms:type": "orcid",
+              "dcterms:title": "orcid",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://orcid.org/0009-0004-8647-4502",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             },
             {
               "@id": "https://m.wikidata.org/wiki/Q18818845",
               "@type": "ods:Identifier",
-              "dcterms:type": "wikidata",
+              "dcterms:title": "wikidata",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://m.wikidata.org/wiki/Q18818845",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         },
         {
-          "@type": "ods:Agent",
+          "@type": "schema:Person",
           "schema:name": "Van Meer C",
           "ods:hasRoles": [
             {
@@ -139,20 +145,20 @@
     {
       "@id": "ZMA.VER.207014@CRS",
       "@type": "ods:Identifier",
-      "dcterms:type": "dwca:ID",
+      "dcterms:title": "dwca:ID",
+      "dcterms:type": "locally unique identifier",
       "dcterms:identifier": "ZMA.VER.207014@CRS",
       "ods:isPartOfLabel": false,
-      "ods:isIDPersistent": false,
-      "ods:isIDResolvable": false
+      "ods:gupriLevel": "LocallyUniqueStable"
     },
     {
       "@id": "https://medialib.naturalis.nl/file/id/ZMA.VER.207014/format/large",
       "@type": "ods:Identifier",
-      "dcterms:type": "dcterms:identifier",
+      "dcterms:title": "dcterms:identifier",
+      "dcterms:type": "PURL",
       "dcterms:identifier": "https://medialib.naturalis.nl/file/id/ZMA.VER.207014/format/large",
       "ods:isPartOfLabel": false,
-      "ods:isIDPersistent": true,
-      "ods:isIDResolvable": true
+      "ods:gupriLevel": "GloballyUniqueStableResolvable"
     }
   ],
   "ods:hasEntityRelationships": [
@@ -178,10 +184,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -210,10 +218,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -242,10 +252,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -273,10 +285,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -305,10 +319,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -337,10 +353,12 @@
         {
           "@id": "https://orcid.org/0000-0002-5669-2769",
           "@type": "ods:Identifier",
-          "dcterms:type": "orcid",
+          "dcterms:title": "orcid",
+          "dcterms:type": "URL",
           "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-          "ods:isIDResolvable": true,
-          "ods:isIDPersistent": true
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+          "ods:identifierStatus": "Preferred"
         }
       ]
     }
@@ -366,10 +384,12 @@
           {
             "@id": "https://orcid.org/0000-0002-5669-2769",
             "@type": "ods:Identifier",
-            "dcterms:type": "orcid",
+            "dcterms:title": "orcid",
+            "dcterms:type": "URL",
             "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-            "ods:isIDResolvable": true,
-            "ods:isIDPersistent": true
+            "ods:isPartOfLabel": false,
+            "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+            "ods:identifierStatus": "Preferred"
           }
         ]
       }
@@ -377,7 +397,7 @@
     "ods:hasRelatedPID": [
       {
         "ods:ID": "https://doi.org/10.1234/abcd",
-        "ods:relationshipType": "ods:isDuplicateOf"
+        "ods:relationshipType": "IsDuplicateOf"
       }
     ]
   }

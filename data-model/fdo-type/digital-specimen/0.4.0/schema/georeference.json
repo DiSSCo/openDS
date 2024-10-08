@@ -91,7 +91,7 @@
     },
     "dwc:footprintWKT": {
       "type": "string",
-      "description": "\tA Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines the ods:Location. A ods:Location may have both a point-radius representation (see dwc:decimalLatitude) and a footprint representation, and they may differ from each other",
+      "description": "A Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines the ods:Location. A ods:Location may have both a point-radius representation (see dwc:decimalLatitude) and a footprint representation, and they may differ from each other",
       "examples": [
         "POLYGON ((10 20, 11 20, 11 21, 10 21, 10 20))"
       ]

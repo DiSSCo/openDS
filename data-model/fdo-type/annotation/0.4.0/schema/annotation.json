@@ -38,9 +38,9 @@
     },
     "ods:status": {
       "enum": [
-        "ods:Draft",
-        "ods:Active",
-        "ods:Tombstone"
+        "Draft",
+        "Active",
+        "Tombstone"
       ],
       "description": "The status of the Digital Object. A digital object can be in ods:Draft, when it is not published yet. ods:Active when it is published and the object is active and ods:Tombstone which means the object has been archived."
     },
@@ -174,9 +174,9 @@
     "ods:mergingDecisionStatus": {
       "type": "string",
       "enum": [
-        "ods:Pending",
-        "ods:Rejected",
-        "ods:Approved"
+        "Pending",
+        "Rejected",
+        "Approved"
       ],
       "description": "The merging status of the annotation. Only present when motivation is ods:adding or oa:editing"
     },

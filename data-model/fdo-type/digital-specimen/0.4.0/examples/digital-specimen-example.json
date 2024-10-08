@@ -58,10 +58,12 @@
             {
               "@id": "https://orcid.org/0000-0002-5669-2769",
               "@type": "ods:Identifier",
-              "dcterms:type": "orcid",
+              "dcterms:title": "orcid",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -92,10 +94,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -124,10 +128,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -155,10 +161,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -187,10 +195,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/XXX-XXX-XXX",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -219,10 +229,12 @@
             {
               "@id": "https://hdl.handle.net/TEST/123-123-123",
               "@type": "ods:Identifier",
+              "dcterms:title": "handle",
               "dcterms:type": "handle",
               "dcterms:identifier": "https://hdl.handle.net/TEST/123-123-123",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -253,10 +265,12 @@
             {
               "@id": "https://orcid.org/0000-0002-5669-2769",
               "@type": "ods:Identifier",
-              "dcterms:type": "orcid",
+              "dcterms:title": "orcid",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -292,38 +306,39 @@
     {
       "@id": "https://doi.org/TEST/WDR-Y9G-2AY",
       "@type": "ods:Identifier",
+      "dcterms:title": "DOI",
       "dcterms:type": "DOI",
       "dcterms:identifier": "https://doi.org/TEST/WDR-Y9G-2AY",
-      "ods:isIDResolvable": true,
-      "ods:isIDPersistent": true,
-      "ods:isPartOfLabel": false
+      "ods:isPartOfLabel": false,
+      "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+      "ods:identifierStatus": "Preferred"
     },
     {
       "@id": "https://data.biodiversitydata.nl/naturalis/specimen/ZMA.VER.207014",
       "@type": "ods:Identifier",
-      "dcterms:type": "dwc:occurrenceID",
+      "dcterms:title": "dwc:occurrenceID",
+      "dcterms:type": "PURL",
       "dcterms:identifier": "https://data.biodiversitydata.nl/naturalis/specimen/ZMA.VER.207014",
-      "ods:isIDResolvable": true,
-      "ods:isIDPersistent": true,
-      "ods:isPartOfLabel": false
+      "ods:isPartOfLabel": false,
+      "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable"
     },
     {
       "@id": "ZMA.VER.207014@CRS",
       "@type": "ods:Identifier",
-      "dcterms:type": "dwca:ID",
+      "dcterms:title": "dwca:ID",
+      "dcterms:type": "locally unique identifier",
       "dcterms:identifier": "ZMA.VER.207014@CRS",
-      "ods:isIDResolvable": false,
-      "ods:isIDPersistent": false,
-      "ods:isPartOfLabel": false
+      "ods:isPartOfLabel": false,
+      "ods:gupriLevel": "LocallyUniqueStable"
     },
     {
       "@id": "ZMA.VER.207014",
       "@type": "ods:Identifier",
-      "dcterms:type": "dwc:catalogNumber",
+      "dcterms:title": "dwc:catalogNumber",
+      "dcterms:type": "locally unique identifier",
       "dcterms:identifier": "ZMA.VER.207014",
-      "ods:isIDResolvable": false,
-      "ods:isIDPersistent": false,
-      "ods:isPartOfLabel": true
+      "ods:isPartOfLabel": true,
+      "ods:gupriLevel": "LocallyUniqueStable"
     }
   ],
   "ods:hasEvents": [
@@ -354,10 +369,12 @@
             {
               "@id": "https://orcid.org/0000-0002-5669-2769",
               "@type": "ods:Identifier",
-              "dcterms:type": "orcid",
+              "dcterms:title": "orcid",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         }
@@ -393,10 +410,12 @@
               {
                 "@id": "https://orcid.org/0000-0002-5669-2769",
                 "@type": "ods:Identifier",
-                "dcterms:type": "orcid",
+                "dcterms:title": "orcid",
+                "dcterms:type": "URL",
                 "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-                "ods:isIDResolvable": true,
-                "ods:isIDPersistent": true
+                "ods:isPartOfLabel": false,
+                "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+                "ods:identifierStatus": "Preferred"
               }
             ]
           }
@@ -438,18 +457,22 @@
             {
               "@id": "https://orcid.org/0009-0004-8647-4502",
               "@type": "ods:Identifier",
-              "dcterms:type": "orcid",
+              "dcterms:title": "orcid",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://orcid.org/0009-0004-8647-4502",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             },
             {
               "@id": "https://m.wikidata.org/wiki/Q18818845",
               "@type": "ods:Identifier",
-              "dcterms:type": "wikidata",
+              "dcterms:title": "wikidata",
+              "dcterms:type": "URL",
               "dcterms:identifier": "https://m.wikidata.org/wiki/Q18818845",
-              "ods:isIDResolvable": true,
-              "ods:isIDPersistent": true
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
             }
           ]
         },
@@ -484,10 +507,12 @@
         {
           "@id": "https://orcid.org/0000-0002-5669-2769",
           "@type": "ods:Identifier",
-          "dcterms:type": "orcid",
+          "dcterms:title": "orcid",
+          "dcterms:type": "URL",
           "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-          "ods:isIDResolvable": true,
-          "ods:isIDPersistent": true
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+          "ods:identifierStatus": "Preferred"
         }
       ]
     }

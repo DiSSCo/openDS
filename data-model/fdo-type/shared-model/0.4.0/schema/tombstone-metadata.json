@@ -65,9 +65,9 @@
             "type": "string",
             "description": "The type of relationship between the tombstoned object and the related object",
             "examples": [
-              "ods:relatedTo",
-              "ods:isDuplicateOf",
-              "ods:isReplacedWith"
+              "RelatedTo",
+              "IsDuplicateOf",
+              "IsReplacedWith"
             ]
           },
           "additionalProperties": false,

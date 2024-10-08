@@ -29,10 +29,12 @@
         {
           "@id": "https://orcid.org/0000-0002-5669-2769",
           "@type": "ods:Identifier",
-          "dcterms:type": "orcid",
+          "dcterms:title": "orcid",
+          "dcterms:type": "URL",
           "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
-          "ods:isIDResolvable": true,
-          "ods:isIDPersistent": true
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+          "ods:identifierStatus": "Preferred"
         }
       ]
     }

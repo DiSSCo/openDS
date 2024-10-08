@@ -37,9 +37,9 @@
     "ods:status": {
       "type": "string",
       "enum": [
-        "ods:Draft",
-        "ods:Active",
-        "ods:Tombstone"
+        "Draft",
+        "Active",
+        "Tombstone"
       ],
       "description": "The status of the Digital Object"
     },

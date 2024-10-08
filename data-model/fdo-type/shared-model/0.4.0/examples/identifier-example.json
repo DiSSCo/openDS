@@ -6,6 +6,5 @@
   "dcterms:identifier": "BMNH(E)1902475",
   "dcterms:subject": ["Registratie nummer"],
   "ods:isPartOfLabel": true,
-  "ods:GupriLevel": "ods:LocallyUniqueStable",
-  "ods:identifierStatus": "ods:Alternative"
+  "ods:GupriLevel": "LocallyUniqueStable"
 }

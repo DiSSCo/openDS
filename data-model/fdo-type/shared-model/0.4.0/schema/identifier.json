@@ -26,10 +26,11 @@
       "type": "string",
       "description": "A name for the identifier",
       "examples": [
-        "dwc:occurrenceID",
         "abcd:UnitID",
-        "ROR",
+        "dwc:occurrenceID",
         "ORCID",
+        "wikidata",
+        "ROR",
         "cetaf stable identifier"
       ]
     },
@@ -107,24 +108,24 @@
       "type": "boolean",
       "description": "Indicates whether the identifier is part of the physical label"
     },
-    "ods:GupriLevel": {
+    "ods:gupriLevel": {
       "type": "string",
       "description": "Indicates whether the identifier is a persistent identifier",
       "enum": [
-        "ods:LocallyUniqueStable",
-        "ods:GloballyUniqueStable",
-        "ods:GloballyUniqueStableResolvable",
-        "ods:GloballyUniqueStablePersistentResolvable",
-        "ods:GloballyUniqueStablePersistentResolvableFDOCompliant"
+        "LocallyUniqueStable",
+        "GloballyUniqueStable",
+        "GloballyUniqueStableResolvable",
+        "GloballyUniqueStablePersistentResolvable",
+        "GloballyUniqueStablePersistentResolvableFDOCompliant"
       ]
     },
     "ods:identifierStatus": {
       "type": "string",
       "description": "Indicates the status of the identifier",
       "enum": [
-        "ods:Preferred",
-        "ods:Alternative",
-        "ods:Superseded"
+        "Preferred",
+        "Alternative",
+        "Superseded"
       ]
     }
   },
