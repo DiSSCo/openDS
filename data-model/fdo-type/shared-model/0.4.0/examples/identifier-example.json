@@ -2,7 +2,7 @@
   "@id": "BMNH(E)1902475",
   "@type": "ods:Identifier",
   "dcterms:title": "dwc:catalogueNumber",
-  "dcterms:type": "locally unique identifier",
+  "dcterms:type": "Locally unique identifier",
   "dcterms:identifier": "BMNH(E)1902475",
   "dcterms:subject": ["Registratie nummer"],
   "ods:isPartOfLabel": true,

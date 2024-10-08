@@ -59,7 +59,7 @@
         "w3id",
         "UUID",
         "Other",
-        "locally unique identifier"
+        "Locally unique identifier"
       ],
       "examples": [
         "DOI"

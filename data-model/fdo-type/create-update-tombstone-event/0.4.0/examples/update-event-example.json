@@ -9,15 +9,15 @@
     "prov:wasAssociatedWith": [
       {
         "@id": "https://orcid.org/0000-0002-1825-0097",
-        "prov:hadRole": "ods:Approver"
+        "prov:hadRole": "Approver"
       },
       {
         "@id": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-        "prov:hadRole": "ods:Requestor"
+        "prov:hadRole": "Requestor"
       },
       {
         "@id": "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX",
-        "prov:hadRole": "ods:Generator"
+        "prov:hadRole": "Generator"
       }
     ],
     "prov:endedAtTime": "2024-06-11T09:14:00.456Z",
@@ -39,16 +39,28 @@
       "@type": "ods:DataMapping",
       "schema:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
       "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
-      "ods:status": "ods:Active",
+      "ods:status": "Active",
       "schema:version": 1,
       "schema:name": "Default Mapping for Herbarium of University of Coimbra (COI)",
       "schema:description": "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
       "schema:dateCreated": "2021-06-01T12:00:00.234Z",
       "schema:dateModified": "2021-06-06T13:22:00.234Z",
       "schema:creator": {
-        "@id": "e2befba6-9324-4bb4-9f41-d7dfae4a44b0",
+        "@id": "https://orcid.org/0000-0002-5669-2769",
         "@type": "schema:Person",
-        "schema:name": "John Doe"
+        "schema:name": "John Doe",
+        "ods:hasIdentifiers": [
+          {
+            "@id": "https://orcid.org/0000-0002-5669-2769",
+            "@type": "ods:Identifier",
+            "dcterms:title": "ORCID",
+            "dcterms:type": "URL",
+            "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+            "ods:isPartOfLabel": false,
+            "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+            "ods:identifierStatus": "Preferred"
+          }
+        ]
       },
       "ods:Mapping": {
         "ods:DefaultMapping": [
@@ -77,17 +89,53 @@
     {
       "@id": "https://orcid.org/0000-0002-1825-0097",
       "@type": "prov:Person",
-      "schema:name": "John Doe"
+      "schema:name": "John Doe",
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://orcid.org/0000-0002-5669-2769",
+          "@type": "ods:Identifier",
+          "dcterms:title": "ORCID",
+          "dcterms:type": "URL",
+          "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+          "ods:identifierStatus": "Preferred"
+        }
+      ]
     },
     {
       "@id": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
       "@type": "prov:SoftwareAgent",
-      "schema:name": "GBIF Linker Service"
+      "schema:name": "GBIF Linker Service",
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+          "@type": "ods:Identifier",
+          "dcterms:title": "handle",
+          "dcterms:type": "Handle",
+          "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+          "ods:identifierStatus": "Preferred"
+        }
+      ]
     },
     {
       "@id": "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX",
       "@type": "prov:SoftwareAgent",
-      "schema:name": "Digital Specimen Processor"
+      "schema:name": "Digital Specimen Processor",
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX",
+          "@type": "ods:Identifier",
+          "dcterms:title": "handle",
+          "dcterms:type": "Handle",
+          "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX",
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+          "ods:identifierStatus": "Preferred"
+        }
+      ]
     }
   ]
 }

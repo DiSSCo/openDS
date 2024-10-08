@@ -32,7 +32,7 @@
       {
         "@id": "https://orcid.org/0000-0002-5669-2769",
         "@type": "ods:Identifier",
-        "dcterms:title": "orcid",
+        "dcterms:title": "ORCID",
         "dcterms:type": "URL",
         "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
         "ods:isPartOfLabel": false,
@@ -52,7 +52,7 @@
         "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
         "@type": "ods:Identifier",
         "dcterms:title": "handle",
-        "dcterms:type": "handle",
+        "dcterms:type": "Handle",
         "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
         "ods:isPartOfLabel": false,
         "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
@@ -72,7 +72,7 @@
       {
         "@id": "https://orcid.org/0000-0002-5669-2769",
         "@type": "ods:Identifier",
-        "dcterms:title": "orcid",
+        "dcterms:title": "ORCID",
         "dcterms:type": "URL",
         "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
         "ods:isPartOfLabel": false,
@@ -102,7 +102,7 @@
           {
             "@id": "https://orcid.org/0000-0002-5669-2769",
             "@type": "ods:Identifier",
-            "dcterms:title": "orcid",
+            "dcterms:title": "ORCID",
             "dcterms:type": "URL",
             "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
             "ods:isPartOfLabel": false,

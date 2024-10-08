@@ -16,7 +16,7 @@
     {
       "@id": "https://orcid.org/0000-0002-1825-0097",
       "@type": "ods:Identifier",
-      "dcterms:title": "orcid",
+      "dcterms:title": "ORCID",
       "dcterms:type": "URL",
       "dcterms:identifier": "https://orcid.org/0000-0002-1825-0097",
       "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",

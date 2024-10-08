@@ -1,7 +1,7 @@
 {
   "@id": "https://orcid.org/0000-0002-5669-2769",
   "@type": "ods:Identifier",
-  "dcterms:title": "orcid",
+  "dcterms:title": "ORCID",
   "dcterms:type": "URL",
   "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
   "ods:isPartOfLabel": false,

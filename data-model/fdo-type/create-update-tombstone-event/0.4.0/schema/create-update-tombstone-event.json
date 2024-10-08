@@ -62,9 +62,9 @@
               },
               "prov:hadRole": {
                 "enum": [
-                  "ods:Approver",
-                  "ods:Requestor",
-                  "ods:Generator"
+                  "Approver",
+                  "Requestor",
+                  "Generator"
                 ],
                 "description": "The role of the agent in the activity"
               }
