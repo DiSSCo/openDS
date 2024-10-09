@@ -1,0 +1,157 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation-target.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Annotation Version 0.4.0",
+  "title": "Annotation Target",
+  "description": "Target of an annotation",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the target object",
+      "examples": [
+        "ods:DigitalSpecimen",
+        "ods:MachineAnnotationService"
+      ]
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another Annotation.",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "This is the handle to the type of the target object.",
+      "examples": [
+        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+        "https://doi.org/21.T11148/894b1e6cad57e921764e"
+      ]
+    },
+    "oa:hasSelector": {
+      "type": "object",
+      "description": "Optional field to indicate the part of the target object that is being annotated. It can be a field, a class or a region of interest.",
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "ods:TermSelector",
+              "description": "A selector for an individual term"
+            },
+            "ods:term": {
+              "type": "string",
+              "description": "The full jsonPath in block notation of the field being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
+              "examples": [
+                "$['ods:hasEvent'][0]['Location']['dwc:country']"
+              ]
+            }
+          },
+          "required": [
+            "@type",
+            "ods:term"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "ods:ClassSelector",
+              "description": "A selector for an individual class"
+            },
+            "ods:class": {
+              "type": "string",
+              "description": "The full jsonPath in block notation of the class being annotated. Following: https://goessner.net/articles/JsonPath/index.html#e2",
+              "examples": [
+                "$['ods:hasEvent'][0]['Location']['ods:GeoReference']"
+              ]
+            }
+          },
+          "required": [
+            "@type",
+            "ods:class"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "@type": {
+              "type": "string",
+              "const": "oa:FragmentSelector",
+              "description": "A selector for an specific Region of Interest (Roi). Only applicable on media objects."
+            },
+            "ac:hasROI": {
+              "type": "object",
+              "description": "A region of interest located within the subject media item",
+              "properties": {
+                "ac:xFrac": {
+                  "type": "number",
+                  "description": "The horizontal position of a reference point, measured from the left side of the media item and expressed as a decimal fraction of the width of the media item",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ac:yFrac": {
+                  "type": "number",
+                  "description": "The vertical position of a reference point, measured from the top of the media item and expressed as a decimal fraction of the height of the media item",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ac:widthFrac": {
+                  "type": "number",
+                  "description": "The width of the bounding rectangle, expressed as a decimal fraction of the width of the media item",
+                  "minimum": 0,
+                  "maximum": 1
+                },
+                "ac:heightFrac": {
+                  "type": "number",
+                  "description": "The height of the bounding rectangle, expressed as a decimal fraction of the height of the media item",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "ac:xFrac",
+                "ac:yFrac",
+                "ac:widthFrac",
+                "ac:heightFrac"
+              ],
+              "additionalProperties": false
+            },
+            "dcterms:conformsTo": {
+              "type": "string",
+              "const": "https://ac.tdwg.org/termlist/#711-region-of-interest-vocabulary",
+              "description": "Indicates the vocabulary that the ROI conforms to"
+            }
+          },
+          "required": [
+            "@type",
+            "ac:hasROI",
+            "dcterms:conformsTo"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "dcterms:identifier",
+    "ods:fdoType"
+  ],
+  "additionalProperties": false
+}

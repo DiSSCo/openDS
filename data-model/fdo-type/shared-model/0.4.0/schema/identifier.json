@@ -1,0 +1,138 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Identifier object Version 0.4.0",
+  "title": "Identifier",
+  "type": "object",
+  "description": "Object used to describe identifiers of a Digital Object, based on https://rs.gbif.org/extension/gbif/1.0/identifier.xml but includes ods specific terms",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Identifier object.",
+      "examples": [
+        "BMNH(E)1902475",
+        "RGM.800315",
+        "https://orcid.org/0000-0002-5669-2769",
+        "https://www.wikidata.org/wiki/Q66581882",
+        "https://ror.org/00bv4cx53"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Identifier",
+      "description": "The type of the digital object, in this case a ods:Identifier"
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "A name for the identifier",
+      "examples": [
+        "abcd:UnitID",
+        "dwc:occurrenceID",
+        "ORCID",
+        "wikidata",
+        "ROR",
+        "cetaf stable identifier"
+      ]
+    },
+    "dcterms:type": {
+      "type": "string",
+      "description": "The type of the value in the `dcterms:identifier` field",
+      "enum": [
+        "ARK",
+        "arXiv",
+        "bibcode",
+        "DOI",
+        "EAN13",
+        "EISSN",
+        "Handle",
+        "IGSN",
+        "ISBN",
+        "ISSN",
+        "ISTC",
+        "LISSN",
+        "LSID",
+        "PMID",
+        "PURL",
+        "UPC",
+        "URL",
+        "URN",
+        "w3id",
+        "UUID",
+        "Other",
+        "Locally unique identifier"
+      ],
+      "examples": [
+        "DOI"
+      ]
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "The value for the identifier",
+      "examples": [
+        "BMNH(E)1902475",
+        "RGM.800315",
+        "https://orcid.org/0000-0002-5669-2769",
+        "https://www.wikidata.org/wiki/Q66581882",
+        "https://ror.org/00bv4cx53"
+      ]
+    },
+    "dcterms:format": {
+      "type": "array",
+      "description": "All possible mime types of content that can be returned by identifier in case the identifier is resolvable. Plain UUIDs for example do not have a dc:format return type, as they are not resolvable on their own. For a list of MIME types see the list maintained by IANA: http://www.iana.org/assignments/media-types/index.html, in particular the text http://www.iana.org/assignments/media-types/text/ and application http://www.iana.org/assignments/media-types/application/ types. Frequently used values are text/html, text/xml, application/rdf+xml, application/json",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        ["application/json", "text/html"],
+        ["application/rdf+xml", "application/ld+json"]
+      ]
+    },
+    "dcterms:subject": {
+      "type": "array",
+      "description": "Additional keywords that the publisher may prefer to be attached to the identifier",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        [
+          "erecolnat",
+          "As available on label"
+        ],
+        [
+          "Registratie nummer",
+          "RMNH identifier"
+        ]
+      ]
+    },
+    "ods:isPartOfLabel": {
+      "type": "boolean",
+      "description": "Indicates whether the identifier is part of the physical label"
+    },
+    "ods:gupriLevel": {
+      "type": "string",
+      "description": "Indicates whether the identifier is a persistent identifier",
+      "enum": [
+        "LocallyUniqueStable",
+        "GloballyUniqueStable",
+        "GloballyUniqueStableResolvable",
+        "GloballyUniqueStablePersistentResolvable",
+        "GloballyUniqueStablePersistentResolvableFDOCompliant"
+      ]
+    },
+    "ods:identifierStatus": {
+      "type": "string",
+      "description": "Indicates the status of the identifier",
+      "enum": [
+        "Preferred",
+        "Alternative",
+        "Superseded"
+      ]
+    }
+  },
+  "required": [
+    "@type",
+    "dcterms:title",
+    "dcterms:identifier"
+  ],
+  "additionalProperties": false
+}

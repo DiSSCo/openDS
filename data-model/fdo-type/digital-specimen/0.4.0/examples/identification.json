@@ -1,0 +1,119 @@
+{
+  "@id": "1de006de-f809-476f-b344-570dd8965fc2",
+  "@type": "dwc:Identification",
+  "dwc:identificationID": "1de006de-f809-476f-b344-570dd8965fc2",
+  "ods:identificationType": "Taxon",
+  "dwc:typeStatus": "holotype",
+  "dwc:dateIdentified": "2009-02-20T08:40Z",
+  "ods:isVerifiedIdentification": true,
+  "ods:hasAgents": [
+    {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
+      "schema:name": "Sam Leeflang",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "identifier",
+          "schema:startDate": "2024-10-02T12:31:34.806Z"
+        }
+      ],
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://orcid.org/0000-0002-5669-2769",
+          "@type": "ods:Identifier",
+          "dcterms:title": "ORCID",
+          "dcterms:type": "URL",
+          "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+          "ods:identifierStatus": "Preferred"
+        }
+      ]
+    }
+  ],
+  "ods:hasCitations": [
+    {
+      "@id": "http://doi.org/10.3897/zookeys.107.1608",
+      "@type": "ods:Citation",
+      "dcterms:identifier": "http://doi.org/10.3897/zookeys.107.1608",
+      "dcterms:type": "Journal Article",
+      "dcterms:date": "2020-08-15",
+      "dcterms:title": "Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae)",
+      "ods:pageNumber": "369-373.",
+      "dcterms:description": "New species ",
+      "dcterms:bibliographicCitation": "Platia G. & Van Meer C., 2020 - Description d’Athous (Orthathous) chassaini n. sp., espèce nouvelle du Sud de la France (Coleoptera Elateridae Denticollinae). L'Entomologiste, 76 (6) : 369-373.",
+      "ods:isPeerReviewed": true,
+      "ods:hasAgents": [
+        {
+          "@id": "https://orcid.org/0009-0004-8647-4502",
+          "@type": "schema:Person",
+          "schema:identifier": "https://orcid.org/0009-0004-8647-4502",
+          "schema:name": "Platia G.",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "author",
+              "schema:position": 1
+            }
+          ],
+          "ods:hasIdentifiers": [
+            {
+              "@id": "https://orcid.org/0009-0004-8647-4502",
+              "@type": "ods:Identifier",
+              "dcterms:title": "ORCID",
+              "dcterms:type": "URL",
+              "dcterms:identifier": "https://orcid.org/0009-0004-8647-4502",
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
+            },
+            {
+              "@id": "https://m.wikidata.org/wiki/Q18818845",
+              "@type": "ods:Identifier",
+              "dcterms:title": "wikidata",
+              "dcterms:type": "URL",
+              "dcterms:identifier": "https://m.wikidata.org/wiki/Q18818845",
+              "ods:isPartOfLabel": false,
+              "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+              "ods:identifierStatus": "Preferred"
+            }
+          ]
+        },
+        {
+          "@type": "schema:Person",
+          "schema:name": "Van Meer C",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "author",
+              "schema:position": 2
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ods:hasTaxonIdentification": [
+    {
+      "@id": "https://www.catalogueoflife.org/data/taxon/4YJSY",
+      "@type": "ods:TaxonIdentification",
+      "dwc:taxonID": "https://www.catalogueoflife.org/data/taxon/4YJSY",
+      "dwc:scientificName": "Spermacoce hirsuta Willd.",
+      "ods:scientificNameHtmlLabel": "<i>Spermacoce hirsuta</i> Willd.",
+      "dwc:scientificNameAuthorship": "Willd.",
+      "dwc:taxonRank": "SPECIES",
+      "dwc:kingdom": "Plantae",
+      "dwc:phylum": "Tracheophyta",
+      "dwc:class": "Magnoliopsida",
+      "dwc:order": "Gentianales Juss. ex Bercht. & J. Presl",
+      "dwc:family": "Rubiaceae",
+      "dwc:genus": "Richardia L.",
+      "dwc:specificEpithet": "hirsuta",
+      "dwc:taxonomicStatus": "SYNONYM",
+      "dwc:acceptedNameUsage": "Richardia scabra L.",
+      "dwc:acceptedNameUsageID": "https://www.catalogueoflife.org/data/taxon/4SZKV"
+    }
+  ]
+}

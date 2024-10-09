@@ -1,0 +1,155 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/data-mapping.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Data Mapping Version 0.4.0",
+  "title": "DataMapping",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Data Mapping object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:DataMapping",
+      "const": "ods:DataMapping"
+    },
+    "schema:identifier": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Data Mapping object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://hdl.handle.net/20.5000.1025/XXX-YYY-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+        "https://doi.org/21.T11148/894b1e6cad57e921764e"
+      ]
+    },
+    "ods:status": {
+      "enum": [
+        "Draft",
+        "Active",
+        "Tombstone"
+      ],
+      "description": "The status of the Digital Object. A digital object can be in ods:Draft, when it is not published yet. ods:Active when it is published and the object is active and ods:Tombstone which means the object has been archived."
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "examples": [
+        1,
+        2,
+        3
+      ]
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Mapping as provided by the user",
+      "examples": [
+        "Default Mapping for Herbarium of University of Coimbra (COI)",
+        "Mapping for Naturalis Darwin Core Archives"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Mapping as provided by the user",
+      "examples": [
+        "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
+        "A mapping that can be used for all Naturalis datasets"
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, follows the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:00.445Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, follows the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
+    "schema:creator": {
+      "type": "object",
+      "description": "The creator of the Data Mapping, generally this will also be the only person able to change the data mapping",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:hasDefaultMapping": {
+      "type": "array",
+      "description": "A mapping object setting default values for ods terms. These default mappings will be set for each record in the dataset. Key is the ods term, value the default value to use",
+      "examples": [
+        [
+          {
+            "ods:physicalSpecimenIDType": "Global"
+          },
+          {
+            "ods:fdoType": "ZoologyVertebrateSpecimen"
+          },
+          {
+            "ods:organisationID": "https://ror.org/05xg72x27"
+          }
+        ]
+      ],
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/default-mapping.json"
+      }
+    },
+    "ods:hasTermMapping": {
+      "type": "array",
+      "description": "Setting an explicit mapping for an ods term to a term from the incoming dataset. Key is the ods term, value the incoming data standard term",
+      "examples": [
+        [
+          {
+            "ods:physicalSpecimenId": "dwc:catalogNumber"
+          }
+        ]
+      ],
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/field-mapping.json"
+      }
+    },
+    "ods:mappingDataStandard": {
+      "type": "string",
+      "description": "The data standard that is being mapped from",
+      "enum": [
+        "DwC",
+        "ABCD",
+        "ABCDEFG"
+      ]
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "@type",
+    "schema:identifier",
+    "ods:fdoType",
+    "schema:version",
+    "schema:dateCreated",
+    "schema:dateModified",
+    "schema:creator",
+    "ods:mappingDataStandard"
+  ],
+  "additionalProperties": false
+}

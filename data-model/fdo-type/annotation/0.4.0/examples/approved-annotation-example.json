@@ -1,0 +1,122 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "ods:Annotation",
+  "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "ods:status": "Tombstone",
+  "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+  "ods:version": 3,
+  "oa:motivation": "oa:editing",
+  "oa:hasTarget": {
+    "@id": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
+    "@type": "ods:DigitalSpecimen",
+    "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/XYZ-XYZ-XYZ",
+    "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+    "oa:hasSelector": {
+      "@type": "ods:TermSelector",
+      "ods:term": "$['ods:hasEvent'][0]['ods:Location']['dwc:country']"
+    }
+  },
+  "oa:hasBody": {
+    "@type": "oa:TextualBody",
+    "oa:value": [
+      "Venezuela"
+    ],
+    "dcterms:references": "https://api.gbif.org/v1/occurrence/search?occurrenceID=https://herbarium.bgbm.org/object/BW00965020&catalogNumber=B -W 00965 -02 0&basisOfRecord=PreservedSpecimen",
+    "ods:score": 0.9
+  },
+  "dcterms:creator": {
+    "@id": "https://orcid.org/0000-0002-5669-2769",
+    "@type": "schema:Person",
+    "schema:name": "John Doe",
+    "ods:hasIdentifiers": [
+      {
+        "@id": "https://orcid.org/0000-0002-5669-2769",
+        "@type": "ods:Identifier",
+        "dcterms:title": "ORCID",
+        "dcterms:type": "URL",
+        "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+        "ods:isPartOfLabel": false,
+        "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+        "ods:identifierStatus": "Preferred"
+      }
+    ]
+  },
+  "dcterms:created": "2024-06-27T12:00:00.000Z",
+  "dcterms:modified": "2024-07-27T15:23:30.000Z",
+  "as:generator": {
+    "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+    "@type": "schema:SoftwareApplication",
+    "schema:name": "Annotation Generator Service",
+    "ods:hasIdentifiers": [
+      {
+        "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+        "@type": "ods:Identifier",
+        "dcterms:title": "handle",
+        "dcterms:type": "Handle",
+        "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+        "ods:isPartOfLabel": false,
+        "ods:gupriLevel": "GloballyUniqueStablePersistentResolvableFDOCompliant",
+        "ods:identifierStatus": "Preferred"
+      }
+    ]
+  },
+  "dcterms:issued": "2024-06-27T12:00:00.000Z",
+  "ods:batchID": "batch-1234",
+  "ods:mergingDecisionStatus": "Approved",
+  "ods:mergingStateChangeDate": "2024-06-28T12:00:00.000Z",
+  "ods:MergingStateChangedBy": {
+    "@id": "https://orcid.org/0000-0002-5669-2769",
+    "@type": "schema:Person",
+    "schema:name": "Jane Smith",
+    "ods:hasIdentifiers": [
+      {
+        "@id": "https://orcid.org/0000-0002-5669-2769",
+        "@type": "ods:Identifier",
+        "dcterms:title": "ORCID",
+        "dcterms:type": "URL",
+        "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+        "ods:isPartOfLabel": false,
+        "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+        "ods:identifierStatus": "Preferred"
+      }
+    ]
+  },
+  "ods:hasTombstoneMetadata": {
+    "@type": "ods:Tombstone",
+    "ods:tombstoneDate": "2024-07-27T15:23:30.000Z",
+    "ods:tombstoneText": "This object was made by mistake and tombstoned",
+    "ods:hasAgents": [
+      {
+        "@id": "https://orcid.org/0000-0002-5669-2769",
+        "@type": "schema:Person",
+        "schema:name": "Sam Leeflang",
+        "schema:email": "sam.leeflang@test.nl",
+        "ods:hasRoles": [
+          {
+            "@type": "schema:Role",
+            "schema:roleName": "curator",
+            "schema:startDate": "2023-10-02T12:31:34.806Z"
+          }
+        ],
+        "ods:hasIdentifiers": [
+          {
+            "@id": "https://orcid.org/0000-0002-5669-2769",
+            "@type": "ods:Identifier",
+            "dcterms:title": "ORCID",
+            "dcterms:type": "URL",
+            "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+            "ods:isPartOfLabel": false,
+            "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+            "ods:identifierStatus": "Preferred"
+          }
+        ]
+      }
+    ],
+    "ods:hasRelatedPID": [
+      {
+        "dcterms:identifier": "https://doi.org/10.1234/abcd",
+        "ods:relationshipType": "HasBeenMergedInto"
+      }
+    ]
+  }
+}

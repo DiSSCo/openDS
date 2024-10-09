@@ -41,7 +41,7 @@ COPY fdo-profile/tettris-service/0.1.0/schema schema-root/schemas/fdo-profile/te
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/latest
 COPY fdo-profile/virtual-collection/0.1.0/schema schema-root/schemas/fdo-profile/virtual-collection/latest
 
-# Versioned FDO Type schemas
+# Version 3 of FDO Type schemas
 COPY fdo-type/annotation/0.3.0/schema schema-root/schemas/fdo-type/annotation/0.3.0
 COPY fdo-type/create-update-tombstone-event/0.3.0/schema schema-root/schemas/fdo-type/create-update-tombstone-event/0.3.0
 COPY fdo-type/digital-media/0.3.0/schema schema-root/schemas/fdo-type/digital-media/0.3.0
@@ -53,15 +53,25 @@ COPY fdo-type/source-system/0.3.0/schema schema-root/schemas/fdo-type/source-sys
 COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/0.1.0
 COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/vitual-collection/0.1.0
 
+# Version 4 of FDO Type schemas
+COPY fdo-type/annotation/0.4.0/schema schema-root/schemas/fdo-type/annotation/0.4.0
+COPY fdo-type/create-update-tombstone-event/0.4.0/schema schema-root/schemas/fdo-type/create-update-tombstone-event/0.4.0
+COPY fdo-type/digital-media/0.4.0/schema schema-root/schemas/fdo-type/digital-media/0.4.0
+COPY fdo-type/digital-specimen/0.4.0/schema schema-root/schemas/fdo-type/digital-specimen/0.4.0
+COPY fdo-type/machine-annotation-service/0.4.0/schema schema-root/schemas/fdo-type/machine-annotation-service/0.4.0
+COPY fdo-type/data-mapping/0.4.0/schema schema-root/schemas/fdo-type/data-mapping/0.4.0
+COPY fdo-type/shared-model/0.4.0/schema schema-root/schemas/fdo-type/shared-model/0.4.0
+COPY fdo-type/source-system/0.4.0/schema schema-root/schemas/fdo-type/source-system/0.4.0
+
 # Latest FDO Type schemas
-COPY fdo-type/annotation/0.3.0/schema schema-root/schemas/fdo-type/annotation/latest
-COPY fdo-type/create-update-tombstone-event/0.3.0/schema schema-root/schemas/fdo-type/create-update-tombstone-event/latest
-COPY fdo-type/digital-media/0.3.0/schema schema-root/schemas/fdo-type/digital-media/latest
-COPY fdo-type/digital-specimen/0.3.0/schema schema-root/schemas/fdo-type/digital-specimen/latest
-COPY fdo-type/machine-annotation-service/0.3.0/schema schema-root/schemas/fdo-type/machine-annotation-service/latest
-COPY fdo-type/data-mapping/0.3.0/schema schema-root/schemas/fdo-type/data-mapping/latest
-COPY fdo-type/shared-model/0.3.0/schema schema-root/schemas/fdo-type/shared-model/latest
-COPY fdo-type/source-system/0.3.0/schema schema-root/schemas/fdo-type/source-system/latest
+COPY fdo-type/annotation/0.4.0/schema schema-root/schemas/fdo-type/annotation/latest
+COPY fdo-type/create-update-tombstone-event/0.4.0/schema schema-root/schemas/fdo-type/create-update-tombstone-event/latest
+COPY fdo-type/digital-media/0.4.0/schema schema-root/schemas/fdo-type/digital-media/latest
+COPY fdo-type/digital-specimen/0.4.0/schema schema-root/schemas/fdo-type/digital-specimen/latest
+COPY fdo-type/machine-annotation-service/0.4.0/schema schema-root/schemas/fdo-type/machine-annotation-service/latest
+COPY fdo-type/data-mapping/0.4.0/schema schema-root/schemas/fdo-type/data-mapping/latest
+COPY fdo-type/shared-model/0.4.0/schema schema-root/schemas/fdo-type/shared-model/latest
+COPY fdo-type/source-system/0.4.0/schema schema-root/schemas/fdo-type/source-system/latest
 COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/latest
 COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/vitual-collection/latest
 

@@ -1,0 +1,19 @@
+{
+  "@id": "https://www.catalogueoflife.org/data/taxon/4YJSY",
+  "@type": "ods:TaxonIdentification",
+  "dwc:taxonID": "https://www.catalogueoflife.org/data/taxon/4YJSY",
+  "dwc:scientificName": "Spermacoce hirsuta Willd.",
+  "ods:scientificNameHtmlLabel": "<i>Spermacoce hirsuta</i> Willd.",
+  "dwc:scientificNameAuthorship": "Willd.",
+  "dwc:taxonRank": "SPECIES",
+  "dwc:kingdom": "Plantae",
+  "dwc:phylum": "Tracheophyta",
+  "dwc:class": "Magnoliopsida",
+  "dwc:order": "Gentianales Juss. ex Bercht. & J. Presl",
+  "dwc:family": "Rubiaceae",
+  "dwc:genus": "Richardia L.",
+  "dwc:specificEpithet": "hirsuta",
+  "dwc:taxonomicStatus": "SYNONYM",
+  "dwc:acceptedNameUsage": "Richardia scabra L.",
+  "dwc:acceptedNameUsageID": "https://www.catalogueoflife.org/data/taxon/4SZKV"
+}

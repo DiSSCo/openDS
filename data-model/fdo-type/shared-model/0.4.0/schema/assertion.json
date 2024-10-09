@@ -1,0 +1,134 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/assertion.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Assertion Version 0.4.0",
+  "title": "Assertion",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "Identical to the `dwc:measurementID`. An identifier for the dwc:MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set",
+      "examples": [
+        "9c752d22-b09a-11e8-96f8-529269fb1459",
+        "https://hdl.handle.net/20.500.123/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Assertion",
+      "description": "The type of the digital object, in this case a ods:Assertion"
+    },
+    "dwc:measurementID": {
+      "type": "string",
+      "description": "An identifier for the dwc:MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set",
+      "examples": [
+        "9c752d22-b09a-11e8-96f8-529269fb1459"
+      ]
+    },
+    "dwc:parentMeasurementID": {
+      "type": "string",
+      "description": "An identifier for a broader dwc:MeasurementOrFact that groups this and potentially other ods:Assertions",
+      "examples": [
+        "E1_E1_O1_M1"
+      ]
+    },
+    "dwc:measurementType": {
+      "type": "string",
+      "description": "The nature of the assertion",
+      "examples": [
+        "length"
+      ]
+    },
+    "dwciri:measurementType": {
+      "type": "string",
+      "description": "The nature of the assertion",
+      "examples": [
+        "http://vocab.nerc.ac.uk/collection/S10/current/"
+      ]
+    },
+    "dwc:measurementDeterminedDate": {
+      "type": "string",
+      "description": "The date on which the dwc:MeasurementOrFact was made",
+      "examples": [
+        "2024-05-30T15:16:00.000Z"
+      ]
+    },
+    "dwc:measurementValue": {
+      "type": "string",
+      "description": "The value of the assertion",
+      "examples": [
+        "10.0"
+      ]
+    },
+    "dwciri:measurementValue": {
+      "type": "string",
+      "description": "The value of the assertion",
+      "examples": [
+        "http://vocab.nerc.ac.uk/collection/S10/current/S103/"
+      ]
+    },
+    "dwc:measurementAccuracy": {
+      "type": "string",
+      "description": "The description of the potential error associated with the dwc:measurementValue",
+      "examples": [
+        "0.1",
+        "normal distribution with variation of 2 m"
+      ]
+    },
+    "dwc:measurementUnit": {
+      "type": "string",
+      "description": "The units associated with the dwc:measurementValue",
+      "examples": [
+        "m",
+        "cm",
+        "°C"
+      ]
+    },
+    "dwciri:measurementUnit": {
+      "type": "string",
+      "description": "The units associated with the dwc:measurementValue",
+      "examples": [
+        "http://vocab.nerc.ac.uk/collection/P06/current/UMSQ/"
+      ]
+    },
+    "dwc:measurementMethod": {
+      "type": "string",
+      "description": "A description of or reference to (publication, URI) the method or protocol used to determine the measurement, fact, characteristic, or assertion",
+      "examples": [
+        "measured with a ruler",
+        "barometric altimeter"
+      ]
+    },
+    "dwciri:measurementMethod": {
+      "type": "string",
+      "description": "A description of or reference to (publication, URI) the method or protocol used to determine the measurement, fact, characteristic, or assertion"
+    },
+    "dwc:measurementRemarks": {
+      "type": "string",
+      "description": "Comments or notes accompanying the dwc:MeasurementOrFact",
+      "examples": [
+        "The length was measured from the tip of the nose to the end of the tail"
+      ]
+    },
+    "ods:hasAgents": {
+      "type": "object",
+      "description": "The agent(s) who made the assertion, contains an ods:Agent object",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    },
+    "ods:hasCitations": {
+      "type": "array",
+      "description": "Contains the publication citation(s) that support the assertion",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/citation.json"
+      }
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

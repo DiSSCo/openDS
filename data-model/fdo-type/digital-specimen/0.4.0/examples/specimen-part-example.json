@@ -1,0 +1,31 @@
+{
+  "@type": "ods:SpecimenPart",
+  "dwc:preparations": "rock",
+  "ods:isMarkedAsType": false,
+  "ods:topicOrigin": "Natural",
+  "ods:topicDomain": "Earth System",
+  "ods:topicDiscipline": "Geology",
+  "ods:specimenName": "Dolomite",
+  "ods:hasIdentifications": [
+    {
+      "@id": "https://www.mindat.org/min-1304.html",
+      "@type": "dwc:Identification",
+      "dwc:identificationID": "https://www.mindat.org/min-1304.html",
+      "dwc:dateIdentified": "2009-02-20T08:40Z",
+      "dwc:identificationRemarks": "Dolomite is mixed with Hematite",
+      "dwc:identificationVerificationStatus": true,
+      "ods:hasAgents": [
+        {
+          "@type": "schema:Person",
+          "schema:name": "Beil, Hw.",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "identifier"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

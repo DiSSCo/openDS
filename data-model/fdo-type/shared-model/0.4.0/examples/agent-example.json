@@ -1,0 +1,34 @@
+{
+  "@id": "https://orcid.org/0000-0002-1825-0097",
+  "@type": "schema:Person",
+  "schema:identifier": "https://orcid.org/0000-0002-1825-0097",
+  "schema:name": "John Smith",
+  "ods:hasRoles": [
+    {
+      "@type": "schema:Role",
+      "schema:roleName": "collector",
+      "schema:startDate": "2023-10-02T12:31:34.806Z",
+      "schema:endDate": "2023-12-02T12:31:34.806Z",
+      "schema:position": 1
+    }
+  ],
+  "ods:hasIdentifiers": [
+    {
+      "@id": "https://orcid.org/0000-0002-1825-0097",
+      "@type": "ods:Identifier",
+      "dcterms:title": "ORCID",
+      "dcterms:type": "URL",
+      "dcterms:identifier": "https://orcid.org/0000-0002-1825-0097",
+      "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+      "ods:identifierStatus": "Preferred"
+    },
+    {
+      "@id": "https://www.wikidata.org/wiki/Q66581882",
+      "@type": "ods:Identifier",
+      "dcterms:title": "wikidata",
+      "dcterms:type": "URL",
+      "dcterms:identifier": "https://www.wikidata.org/wiki/Q66581882",
+      "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable"
+    }
+  ]
+}

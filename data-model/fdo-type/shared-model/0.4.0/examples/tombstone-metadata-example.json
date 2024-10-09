@@ -1,0 +1,38 @@
+{
+  "@type": "ods:Tombstone",
+  "ods:tombstoneDate": "2024-06-15T14:30:00Z",
+  "ods:tombstoneText": "This object was made by mistake and is a duplicate of another object",
+  "ods:hasAgents": [
+    {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:name": "Sam Leeflang",
+      "schema:email": "sam.leeflang@test.nl",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "curator",
+          "schema:startDate": "2023-10-02T12:31:34.806Z"
+        }
+      ],
+      "ods:hasIdentifiers": [
+        {
+          "@id": "https://orcid.org/0000-0002-5669-2769",
+          "@type": "ods:Identifier",
+          "dcterms:title": "ORCID",
+          "dcterms:type": "URL",
+          "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+          "ods:isPartOfLabel": false,
+          "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+          "ods:identifierStatus": "Preferred"
+        }
+      ]
+    }
+  ],
+  "ods:hasRelatedPID": [
+    {
+      "ods:ID": "https://doi.org/10.1234/abcd",
+      "ods:relationshipType": "ods:isDuplicateOf"
+    }
+  ]
+}

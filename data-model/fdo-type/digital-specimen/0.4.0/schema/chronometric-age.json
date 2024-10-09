@@ -1,0 +1,156 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/chronometric-age.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Chronometric Age Version 0.4.0",
+  "title": "ChronometricAge",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Chronometric Age object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:ChronometricAge",
+      "description": "The type of the digital object, in this case ods:ChronometricAge"
+    },
+    "chrono:chronometricAgeID": {
+      "type": "string",
+      "description": "An identifier for the set of information associated with a ChronometricAge",
+      "examples": [
+        "https://www.canadianarchaeology.ca/samples/70673"
+      ]
+    },
+    "chrono:verbatimChronometricAge": {
+      "type": "string",
+      "description": "The verbatim age for a specimen, whether reported by a dating assay, associated references, or legacy information",
+      "examples": [
+        "27 BC to 14 AD",
+        "250 AD"
+      ]
+    },
+    "chrono:uncalibratedChronometricAge": {
+      "type": "string",
+      "description": "The output of a dating assay before it is calibrated into an age using a specific conversion protocol.",
+      "examples": [
+        "1510 +/- 25 14C yr BP",
+        "16.26 Ma +/- 0.016"
+      ]
+    },
+    "chrono:chronometricAgeConversionProtocol": {
+      "type": "string",
+      "description": "The method used for converting the uncalibratedChronometricAge into a chronometric age in years, as captured in the earliestChronometricAge, earliestChronometricAgeReferenceSystem, latestChronometricAge, and latestChronometricAgeReferenceSystem fields.",
+      "examples": [
+        "INTCAL13",
+        "sequential 6 phase Bayesian model and IntCal13 calibration"
+      ]
+    },
+    "chrono:earliestChronometricAge": {
+      "type": "integer",
+      "description": "The maximum/earliest/oldest possible age of a specimen as determined by a dating method",
+      "examples": [
+        100,
+        1200
+      ]
+    },
+    "chrono:earliestChronometricAgeReferenceSystem": {
+      "type": "string",
+      "description": "The reference system associated with the earliestChronometricAge",
+      "examples": [
+        "BP",
+        "AD"
+      ]
+    },
+    "chrono:latestChronometricAge": {
+      "type": "integer",
+      "description": "The minimum/latest/youngest possible age of a specimen as determined by a dating method",
+      "examples": [
+        12,
+        540
+      ]
+    },
+    "chrono:latestChronometricAgeReferenceSystem": {
+      "type": "string",
+      "description": "The reference system associated with the latestChronometricAge",
+      "examples": [
+        "BCE",
+        "BP"
+      ]
+    },
+    "chrono:chronometricAgeUncertaintyInYears": {
+      "type": "integer",
+      "description": "The temporal uncertainty of the earliestChronometricAge and latestChronometicAge in years",
+      "examples": [
+        100,
+        1200
+      ]
+    },
+    "chrono:chronometricAgeUncertaintyMethod": {
+      "type": "string",
+      "description": "The method used to generate the value of chronometricAgeUncertaintyInYears",
+      "examples": [
+        "2-sigma calibrated range",
+        "Half of 95% confidence interval"
+      ]
+    },
+    "chrono:materialDated": {
+      "type": "string",
+      "description": "A description of the material on which the chronometricAgeProtocol was actually performed, if known.",
+      "examples": [
+        "Charred wood",
+        "Tooth"
+      ]
+    },
+    "chrono:materialDatedID": {
+      "type": "string",
+      "description": "An identifier for the MaterialSample on which the chronometricAgeProtocol was performed, if applicable",
+      "examples": [
+        "https://doi.org/10.22/XXX-XXX-XXX",
+        "https://www.ebi.ac.uk/metagenomics/samples/SRS1930158"
+      ]
+    },
+    "chrono:materialDatedRelationship": {
+      "type": "string",
+      "description": "The relationship of the materialDated to the subject of the ChronometricAge record, from which the ChronometricAge of the subject is inferred",
+      "examples": [
+        "sameAs",
+        "inContextWith"
+      ]
+    },
+    "chrono:chronometricAgeDeterminedDate": {
+      "type": "string",
+      "description": "The date on which the ChronometricAge was determined",
+      "examples": [
+        "2018-11-13T20:20:39+00:00",
+        "1906-06"
+      ]
+    },
+    "chrono:chronometricAgeReferences": {
+      "type": "string",
+      "description": "A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with the ChronometricAge.",
+      "examples": [
+        "https://doi.org/10.1007/s10814-019-09140-x",
+
+      ]
+    },
+    "chrono:chronometricAgeRemarks": {
+      "type": "string",
+      "description": "Notes or comments about the ChronometricAge",
+      "examples": [
+        "Beta Analytic number: 323913"
+      ]
+    }
+  },
+  "ods:hasAgents": {
+    "type": "array",
+    "description": "The agent(s) involved in the determination of the chronometric age, uses `ods:Agent`",
+    "items": {
+      "type": "object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    }
+  },
+  "required": [
+    "@type"
+  ],
+  "additionalProperties": false
+}

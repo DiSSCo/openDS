@@ -1,0 +1,266 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/machine-annotation-service/0.4.0/machine-annotation-service.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Machine Annotation Service Version 0.4.0",
+  "title": "MachineAnnotationService",
+  "type": "object",
+  "description": "Automated annotation services that enhance biodiversity data",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Machine Annotation Service object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://hdl.handle.net/20.5000.1025/JH1-C37-E7F"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:MachineAnnotationService",
+      "const": "ods:MachineAnnotationService"
+    },
+    "schema:identifier": {
+      "type": "string",
+      "description": "Handle of the Machine Annotation Service",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
+        "https://hdl.handle.net/20.5000.1025/JH1-C37-E7F"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/21.T11148/417a4f472f60f7974c12"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Active",
+        "Tombstone"
+      ],
+      "description": "The status of the Digital Object. A digital object can be in ods:Draft, when it is not published yet. ods:Active when it is published and the object is active and ods:Tombstone which means the object has been archived."
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1"
+    },
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Machine Annotation Service as provided by the user, https://schema.org/name",
+      "examples": [
+        "GBIF Linker Service"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Machine Annotation Service as provided by the user, https://schema.org/description",
+      "examples": [
+        "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship"
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:000Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
+    "schema:creator": {
+      "type": "object",
+      "description": "Contains information about the creator of this MachineAnnotationService Digital Object, the agent creating this record in DiSSCo's system",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:containerImage": {
+      "type": "string",
+      "description": "The URI to the location of the image in a public container repository. Should only contain the image name and not the tag",
+      "examples": [
+        "public.ecr.aws/dissco/mindat-georeferencing"
+      ]
+    },
+    "ods:containerTag": {
+      "type": "string",
+      "description": "The image tag of the container image. This should not be `latest` but point to a specific version. On an update of the application a new image tag should be generated and the Digital Object should be updated",
+      "examples": [
+        "sha-cb76994"
+      ]
+    },
+    "ods:hasTargetDigitalObjectFilter": {
+      "type": "object",
+      "description": "Filters describing the criteria that a Digital Object must meet in order to apply the MAS. No filters implies the MAS may run on *any* digital object. Field names are given in JSON paths, and accepted values for that field are provided as an arrays. An `*` can be used as a wildcard, indicating any value is seen as valid",
+      "examples": [
+        {
+          "$['ods:type']": [
+            "https://doi.org/21.T11148/894b1e6cad57e921764e"
+          ],
+          "$['ods:topicDiscipline']": [
+            "Astrogeology",
+            "Geology",
+            "Palaeontology",
+            "Other Geodiversity",
+            "Unclassified"
+          ],
+          "$['ods:hasEvent'][*]['ods:Location']['dwc:locality']": [
+            "*"
+          ]
+        }
+      ]
+    },
+    "schema:creativeWorkStatus": {
+      "type": "string",
+      "description": "The current status of the service in terms of its service lifecycle",
+      "examples": [
+        "Alpha",
+        "Production"
+      ]
+    },
+    "schema:codeRepository": {
+      "type": "string",
+      "format": "url",
+      "description": "Link to the repository where the un-compiled, human readable code and related code is located (SVN, GitHub, CodePlex)",
+      "examples": [
+        "https://github.com/rtdeb/GeoPick",
+        "https://github.com/DiSSCo/dissco-core-backend"
+      ]
+    },
+    "schema:programmingLanguage": {
+      "type": "string",
+      "description": "The primary programming language used by the MAS",
+      "examples": [
+        "Python",
+        "Java 17"
+      ]
+    },
+    "ods:serviceAvailability": {
+      "type": "string",
+      "description": "Availability commitment in uptime percentage of the service provider as described in the SLA",
+      "examples": [
+        "99.9%",
+        "95.0%"
+      ]
+    },
+    "schema:maintainer": {
+      "type": "object",
+      "description": "Party maintaining the code, could be an schema:Organisation or a schema:Person",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "schema:license": {
+      "type": "string",
+      "format": "url",
+      "description": "A license document which applies to this Machine Annotation Service",
+      "examples": [
+        "https://opensource.org/license/Apache-2.0",
+        "https://opensource.org/license/mit"
+      ]
+    },
+    "schema:ContactPoint": {
+      "type": "object",
+      "description": "The contact point for support and information for the Machine Annotation Service",
+      "properties": {
+        "schema:description": {
+          "type": "string",
+          "description": "General description of the contact point"
+        },
+        "schema:email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email of the contact point"
+        },
+        "schema:url": {
+          "type": "string",
+          "format": "url",
+          "description": "URL of the contact point, this could be a link to a contact form or a link to a github issues page"
+        },
+        "schema:telephone": {
+          "type": "string",
+          "description": "Telephone number of the contact point"
+        }
+      }
+    },
+    "ods:slaDocumentation": {
+      "type": "string",
+      "format": "url",
+      "description": "Link to SLA documentation of the Machine Annotation Service",
+      "examples": [
+        "https://www.dissco.tech/sla/mas"
+      ]
+    },
+    "ods:topicName": {
+      "type": "string",
+      "description": "Kafka topic through which the MAS receives messages. Defaults to PID of the Machine Annotation Service",
+      "examples": [
+        "p3r-7ff-s4n",
+        "fsj-g4m-l47"
+      ]
+    },
+    "ods:maxReplicas": {
+      "type": "integer",
+      "description": "The maximum amount of this MAS that can simultaneously run without causing issues",
+      "minimum": 1,
+      "examples": [
+        3
+      ]
+    },
+    "ods:batchingPermitted": {
+      "type": "boolean",
+      "description": "Whether or not this Machine Annotation Service can create Batch Annotations. Machine Annotations Service outputs must then comply with batchMetadata, see https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation-event.json"
+    },
+    "ods:timeToLive": {
+      "type": "integer",
+      "minimum": 3600,
+      "description": "Time in milliseconds the MAS message may remain in the Kafka Queue before being marked as timed out. Min 1 hour.",
+      "examples": [
+        86400000,
+        43200000
+      ]
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    },
+    "ods:hasEnvironmentalVariables": {
+      "type": "array",
+      "description": "Environmental variables to supply to the Machine Annotation Service, non-sensitive",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/environmental-variable.json"
+      }
+    },
+    "ods:hasSecretVariables": {
+      "type": "array",
+      "description": "Secret variables to supply to the Machine Annotation Service, sensitive",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/secret-variable.json"
+      }
+    }
+  },
+  "required": [
+    "@type",
+    "schema:identifier",
+    "ods:fdoType",
+    "schema:name",
+    "schema:dateCreated",
+    "schema:creator",
+    "schema:dateModified",
+    "ods:containerImage",
+    "ods:containerTag",
+    "ods:batchingPermitted",
+    "ods:timeToLive"
+  ],
+  "additionalProperties": false
+}

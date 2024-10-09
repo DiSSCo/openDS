@@ -1,0 +1,476 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/digitalobjects/digital-specimen/0.4.0/digital-specimen.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Digital Specimen Version 0.4.0",
+  "title": "DigitalSpecimen",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier of the Digital Specimen object, follows the Digital Object Identifier (DOI) standard",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "examples": [
+        "https://doi.org/10.22/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "description": "The type of the object, in this case ods:DigitalSpecimen",
+      "const": "ods:DigitalSpecimen"
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "The unique identifier of the Digital Specimen object, follows the Digital Object Identifier (DOI) standard.",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "examples": [
+        "https://doi.org/10.3535/XXX-XXX-XXX"
+      ]
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "minimum": 1,
+      "examples": [
+        1
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Active",
+        "Tombstone"
+      ],
+      "description": "The status of the Digital Object. A digital object can be in ods:Draft, when it is not published yet. ods:Active when it is published and the object is active and ods:Tombstone which means the object has been archived."
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "description": "The timestamp that the object was last changed, which resulted in a new version of the object. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "description": "The timestamp that the object was created in DiSSCo. following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX\"",
+      "format": "date-time",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+        "https://doi.org/21.T11148/894b1e6cad57e921764e"
+      ]
+    },
+    "ods:midsLevel": {
+      "type": "integer",
+      "description": "The level of the Minimum Information about a Digital Specimen of the object, for the full specification see https://www.tdwg.org/community/cd/mids/",
+      "minimum": 0,
+      "maximum": 3
+    },
+    "ods:normalisedPhysicalSpecimenID": {
+      "type": "string",
+      "description": "The physical specimen identifier of the object. When locally unique this is a combination between source-system-id and the local identifier. This identifier is used to check if an object exists in the DiSSCo infrastructure when the DOI is not available.",
+      "examples": [
+        "NHMD193630:040ck2b86",
+        "https://data.biodiversitydata.nl/naturalis/specimen/RGM.234626"
+      ]
+    },
+    "ods:physicalSpecimenID": {
+      "type": "string",
+      "description": "The physical specimen identifier of the object. The main identifier of the object is used (which can be indicated by the user through the DataMapping). If the ods:physicalSpecimenIDType is Resolvable or Global, this identifier is the same as the `ods:normalisedPhysicalSpecimenID`",
+      "examples": [
+        "https://hdl.handle.net/20.500.12000/1",
+        "NHMD193630",
+        "https://data.biodiversitydata.nl/naturalis/specimen/RGM.234626"
+      ]
+    },
+    "ods:physicalSpecimenIDType": {
+      "type": "string",
+      "description": "To indicate if type of the physical identifier, Resolvable means a resolvable identifier over the internet such as a PURL, Global means a globally unique identifier such as a UUID, Local means a locally identifier unique only within the dataset.",
+      "enum": [
+        "Resolvable",
+        "Global",
+        "Local"
+      ]
+    },
+    "ods:isKnownToContainMedia": {
+      "type": "boolean",
+      "description": "Indicates if there are any media objects attached to this specimen",
+      "examples": [
+        true
+      ]
+    },
+    "ods:sourceSystemID": {
+      "type": "string",
+      "description": "The handle to the source system object which retrieved the data from the CMS",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/0Z6-P2P-VR5",
+        "https://hdl.handle.net/20.5000.1025/24P-6R9-JQ5"
+      ]
+    },
+    "ods:sourceSystemName": {
+      "type": "string",
+      "description": "The name of the source system as provided to DiSSCo",
+      "examples": [
+        "Naturalis Biodiversity Center (NL) - Vermes",
+        "Chelicerata collection (TSZCh) The Arctic University Museum of Norway"
+      ]
+    },
+    "ods:metadataLanguages": {
+      "type": "array",
+      "description": "The language of the Digital Specimen metadata. Only indicate, not enforced. Recommended to use three letter code from ISO 639-2 codes found on https://id.loc.gov/vocabulary/iso639-2.html",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        [
+          "eng",
+          "fra",
+          "deu"
+        ], [
+          "dut"
+        ]
+      ]
+    },
+    "dcterms:license": {
+      "type": "string",
+      "description": "A legal document giving official permission to do something with the resource.",
+      "examples": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      ]
+    },
+    "dwc:basisOfRecord": {
+      "type": "string",
+      "description": "The specific nature of the data record",
+      "examples": [
+        "PreservedSpecimen",
+        "FossilSpecimen"
+      ]
+    },
+    "ods:organisationCode": {
+      "type": "string",
+      "description": "The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record.",
+      "examples": [
+        "MNF",
+        "MNHN"
+      ]
+    },
+    "ods:organisationID": {
+      "type": "string",
+      "description": "ROR or Wikidata identifier of the organisation",
+      "pattern": "^(https?:\/\/ror\\.org\/0\\w{6}[0-9]{2})|^(https?:\/\/www\\.wikidata\\.org\/wiki\/Q\\w+)",
+      "examples": [
+        "https://ror.org/015hz7p22",
+        "https://www.wikidata.org/wiki/Q641676",
+        "https://ror.org/03wkt5x30"
+      ]
+    },
+    "ods:organisationName": {
+      "type": "string",
+      "description": "Primary organisation name according to ROR or Wikidata",
+      "examples": [
+        "National Museum of Natural History",
+        "Tallinn University of Technology",
+        "Muséum national d'Histoire naturelle"
+      ]
+    },
+    "dwc:collectionCode": {
+      "type": "string",
+      "description": "The name, acronym, coden, or initialism identifying the collection or data set from which the record was derived",
+      "examples": [
+        "Mammals",
+        "EBIRD"
+      ]
+    },
+    "dwc:collectionID": {
+      "type": "string",
+      "description": "An identifier for the collection or dataset from which the record was derived",
+      "examples": [
+        "https://www.gbif.org/grscicoll/collection/fbd3ed74-5a21-4e01-b86a-33d36f032d9c"
+      ]
+    },
+    "ods:topicOrigin": {
+      "type": "string",
+      "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected",
+      "enum": [
+        "Natural",
+        "Human-made",
+        "Mixed origin",
+        "Unclassified"
+      ],
+      "examples": [
+        "Natural"
+      ]
+    },
+    "ods:topicDomain": {
+      "type": "string",
+      "description": "High-level terms providing general domain information with which the objects are associated",
+      "enum": [
+        "Life",
+        "Environment",
+        "Earth System",
+        "Extraterrestrial",
+        "Cultural Artefacts",
+        "Archive Material",
+        "Unclassified"
+      ],
+      "examples": [
+        "Life"
+      ]
+    },
+    "ods:topicDiscipline": {
+      "type": "string",
+      "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related",
+      "enum": [
+        "Anthropology",
+        "Botany",
+        "Astrogeology",
+        "Geology",
+        "Microbiology",
+        "Palaeontology",
+        "Zoology",
+        "Ecology",
+        "Other Biodiversity",
+        "Other Geodiversity",
+        "Unclassified"
+      ],
+      "examples": [
+        "Botany"
+      ]
+    },
+    "ods:topicCategory": {
+      "type": "string",
+      "description": "Countable things (objects) served as a more detailed classification of each of the disciplines",
+      "examples": [
+        "Protozoa",
+        "Bryophytes",
+        "Water-ice sample"
+      ]
+    },
+    "ods:specimenName": {
+      "type": "string",
+      "description": "The accepted specimen name of the digital specimen",
+      "examples": [
+        "Roptrocerus typographi (Györfi, 1952)"
+      ]
+    },
+    "dwc:informationWithheld": {
+      "type": "string",
+      "description": "Additional information that exists, but that has not been shared in the given record",
+      "examples": [
+        "location information not given for endangered species"
+      ]
+    },
+    "dwc:preparations": {
+      "type": "string",
+      "description": "A list (concatenated and separated) of preparations and preservation methods for a ods:SpecimenPart",
+      "examples": [
+        "fossil",
+        "herbrarium sheet"
+      ]
+    },
+    "dwc:disposition": {
+      "type": "string",
+      "description": "The current state of a specimen with respect to a collection",
+      "examples": [
+        "in collection",
+        "destroyed"
+      ]
+    },
+    "ods:isMarkedAsType": {
+      "type": "boolean",
+      "description": "The material entity is marked as a type specimen"
+    },
+    "dwc:dataGeneralizations": {
+      "type": "string",
+      "description": "Actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request",
+      "examples": [
+        "Coordinates generalized from original GPS coordinates to the nearest half degree grid cell."
+      ]
+    },
+    "ods:ownerOrganisationCode": {
+      "type": "string",
+      "description": "The name (or acronym) in use by the institution having ownership of the object(s) or information referred to in the record",
+      "examples": [
+        "APN",
+        "InBio"
+      ]
+    },
+    "dwc:datasetName": {
+      "type": "string",
+      "description": "The name identifying the data set from which the record was derived",
+      "examples": [
+        "Hummingbirds",
+        "Naturalis Biodiversity Center (NL) - Paleontology"
+      ]
+    },
+    "dwc:datasetID": {
+      "type": "string",
+      "description": "An identifier for the set of data. May be a global unique identifier or an identifier specific to a collection or institution",
+      "examples": [
+        "b15d4952-7d20-46f1-8a3e-556a512b04c5"
+      ]
+    },
+    "dcterms:accessRights": {
+      "type": "string",
+      "description": "Information about who access the resource or an indication of its security status. Access Rights may include information regarding access or restrictions based on privacy, security, or other policies",
+      "examples": [
+        "not-for-profit use only"
+      ]
+    },
+    "dcterms:rightsHolder": {
+      "type": "string",
+      "description": "A person or organization owning or managing rights over the resource",
+      "examples": [
+        "Museu de História Natural e da Ciência da Universidade do Porto"
+      ]
+    },
+    "dwc:organismID": {
+      "type": "string",
+      "description": "An identifier for the organism instance. May be a globally unique identifier or an identifier specific to the data set",
+      "examples": [
+        "http://arctos.database.museum/guid/WNMU:Mamm:1249"
+      ]
+    },
+    "dwc:organismName": {
+      "type": "string",
+      "description": "A textual name or label assigned to an organism instance",
+      "examples": [
+        "Boab Prison Tree",
+        "J pod"
+      ]
+    },
+    "dwc:organismScope": {
+      "type": "string",
+      "description": "A description of the kind of organism instance. Can be used to indicate whether the organism instance represents a discrete organism or if it represents a particular type of aggregation",
+      "examples": [
+        "colony",
+        "pack"
+      ]
+    },
+    "dwc:organismRemarks": {
+      "type": "string",
+      "description": "Comments or notes about the organism",
+      "examples": [
+        "One of a litter of six",
+        "Organism has been split up into multiple specimen, some of which are in different institutions"
+      ]
+    },
+    "dwc:organismQuantity": {
+      "type": "string",
+      "description": "A number or enumeration value for the quantity of organisms",
+      "examples": [
+        "27",
+        "12.5"
+      ]
+    },
+    "dwc:organismQuantityType": {
+      "type": "string",
+      "description": "A dwc:organismQuantityType must have a corresponding dwc:organismQuantity",
+      "examples": [
+        "individuals",
+        "% biomass"
+      ]
+    },
+    "dwc:dynamicProperties": {
+      "type": "string",
+      "description": "A list of additional measurements, facts, characteristics, or assertions about the record. Meant to provide a mechanism for structured content",
+      "examples": [
+        "{\"relativeHumidity\": 28,\"airTemperatureInCelsius\": 22}"
+      ]
+    },
+    "ods:hasSpecimenParts": {
+      "type": "array",
+      "description": "Contains all specimen parts that are part of this Digital Specimen based on for example a shared registration number",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/specimen-part.json"
+      }
+    },
+    "ods:hasAssertions": {
+      "type": "array",
+      "description": "Contains any assertions that can be made about the specimen, such as measurements",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/assertion.json"
+      }
+    },
+    "ods:hasEntityRelationships": {
+      "type": "array",
+      "description": "Contains relationships to external resources that provide further information about the specimen, for example about the taxonomy or the organisation",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/entity-relationship.json"
+      }
+    },
+    "ods:hasIdentifications": {
+      "type": "array",
+      "description": "Contains all identification that have been made on the specimen",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/identification.json"
+      }
+    },
+    "ods:hasIdentifiers": {
+      "type": "array",
+      "description": "Contains all identifiers that are connected to the specimen, either about the physical or digital specimen",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json"
+      }
+    },
+    "ods:hasCitations": {
+      "type": "array",
+      "description": "Contains information about any publication in which this specimen is mentioned",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/citation.json"
+      }
+    },
+    "ods:hasAgents": {
+      "type": "array",
+      "description": "Contains all agents that have are connected to the specimen",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    },
+    "ods:hasEvents": {
+      "type": "array",
+      "description": "Contains information about any events that occurred specifically on the specimen part, for example a sampling event",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/event.json"
+      }
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "dcterms:identifier",
+    "ods:version",
+    "ods:fdoType",
+    "dcterms:created",
+    "dcterms:modified",
+    "ods:midsLevel",
+    "ods:normalisedPhysicalSpecimenID",
+    "ods:physicalSpecimenID",
+    "ods:physicalSpecimenIDType",
+    "ods:sourceSystemID",
+    "ods:organisationID"
+  ],
+  "additionalProperties": false
+}

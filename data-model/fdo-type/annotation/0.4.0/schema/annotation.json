@@ -1,0 +1,215 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Annotation Version 0.4.0",
+  "title": "Annotation",
+  "description": "Information about the Annotation data model. This model has been based on the W3C Web Annotation model",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the Annotation object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:Annotation",
+      "const": "ods:Annotation"
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "The handle of the annotation. It is a unique identifier for the annotation. It is composed of the handle of the document followed by a slash and a unique identifier for the annotation.",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+        "https://doi.org/21.T11148/894b1e6cad57e921764e"
+      ]
+    },
+    "ods:status": {
+      "enum": [
+        "Draft",
+        "Active",
+        "Tombstone"
+      ],
+      "description": "The status of the Digital Object. A digital object can be in ods:Draft, when it is not published yet. ods:Active when it is published and the object is active and ods:Tombstone which means the object has been archived."
+    },
+    "ods:jobID": {
+      "type": "string",
+      "description": "Handle of the job record, if the annotation was produced by a Machine Annotation Service, only filled when annotation was created by a MAS",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "minimum": 1,
+      "examples": [
+        1,
+        3,
+        5
+      ]
+    },
+    "oa:motivation": {
+      "description": "The motivation for why an annotation was proposed. Based on a selection of https://www.w3.org/TR/annotation-model/#motivation-and-purpose. The motivation ods:adding and ods:deleting are added for DiSSCo's purposes.",
+      "enum": [
+        "ods:adding",
+        "ods:deleting",
+        "oa:assessing",
+        "oa:editing",
+        "oa:commenting"
+      ]
+    },
+    "oa:motivatedBy": {
+      "type": "string",
+      "description": "Describes the reason for the annotation",
+      "examples": [
+        "The country is incorrect"
+      ]
+    },
+    "oa:hasTarget": {
+      "type": "object",
+      "description": "Indicates the particular object and part of the object on which the annotation has been made",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation-target.json"
+    },
+    "oa:hasBody": {
+      "type": "object",
+      "description": "The body of the annotation contains the specific value of the annotation",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/annotation/0.4.0/annotation-body.json"
+    },
+    "dcterms:creator": {
+      "type": "object",
+      "description": "Contains information about the creator of the annotation",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "dcterms:created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time when the annotation was created, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2023-09-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time when the annotation was last modified, generating a new version. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:issued": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time when the annotation was generated. Generated is here seen as when the object was stored/indexed. In most case this will be the annotation-processing-service. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2023-09-02T13:31:34.806Z"
+      ]
+    },
+    "as:generator": {
+      "type": "object",
+      "description": "Object containing information on who generated the object. Generated is here seen as who stored/indexed the object. In most case this will be the annotation-processing-service. Contains an ods:Agent object.",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:hasAggregateRating": {
+      "type": "object",
+      "description": "The average rating based on multiple ratings or reviews",
+      "properties": {
+        "@type": {
+          "type": "string",
+          "const": "schema:AggregateRating",
+          "description": "Indicates which type of aggregateRating we are using."
+        },
+        "schema:ratingCount": {
+          "type": "integer",
+          "description": "The count of total number of ratings",
+          "minimum": 0,
+          "examples": [
+            3
+          ]
+        },
+        "schema:ratingValue": {
+          "type": "number",
+          "description": "The rating for the content",
+          "examples": [
+            4.5
+          ]
+        }
+      },
+      "required": [
+        "@type",
+        "schema:ratingCount",
+        "schema:ratingValue"
+      ],
+      "additionalProperties": false
+    },
+    "ods:batchID": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Internally generated PID to identify the batch the annotation was generated by",
+      "examples": [
+        "123e4567-e89b-12d3-a456-426614174000"
+      ]
+    },
+    "ods:placeInBatch": {
+      "type": "integer",
+      "description": "For batching only. Links annotation to batchMetadata provided in a batch event. If present, must correspond to an ods:placeInBatch in the batch metadata",
+      "examples": [
+        1,
+        5
+      ]
+    },
+    "ods:mergingDecisionStatus": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Rejected",
+        "Approved"
+      ],
+      "description": "The merging status of the annotation. Only present when motivation is ods:adding or oa:editing"
+    },
+    "ods:mergingStateChangeDate": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The date and time when the annotation was merging state was changed. Only present when motivation is ods:adding or oa:editing. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
+    },
+    "ods:hasMergingStateChangedBy": {
+      "type": "object",
+      "description": "Object containing information on who changed the merging state of the annotation. Only present when motivation is ods:adding or oa:editing. Contains an ods:Agent object.",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "ods:ID",
+    "rdf:type",
+    "ods:version",
+    "oa:motivation",
+    "oa:hasTarget",
+    "oa:hasBody",
+    "dcterms:creator",
+    "dcterms:created",
+    "dcterms:modified",
+    "as:generator",
+    "dcterms:issued"
+  ],
+  "additionalProperties": false
+}

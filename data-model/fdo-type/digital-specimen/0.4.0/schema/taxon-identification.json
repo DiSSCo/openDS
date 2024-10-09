@@ -1,0 +1,259 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/taxon-identification.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Taxon Identification object Version 0.4.0",
+  "title": "TaxonIdentification",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The identifier for the Taxon Identification object."
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:TaxonIdentification",
+      "description": "The type of the digital object, in this case a ods:TaxonIdentification"
+    },
+    "dwc:taxonID": {
+      "type": "string",
+      "description": "An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set",
+      "examples": [
+        "https://www.catalogueoflife.org/data/taxon/5TXLM",
+        "https://www.catalogueoflife.org/data/taxon/6J6FX"
+      ]
+    },
+    "dwc:scientificName": {
+      "type": "string",
+      "description": "The full scientific name, with authorship and date information if known. This should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the dwc:identificationQualifier term",
+      "examples": [
+        "Roptrocerus typographi (Györfi, 1952)",
+        "Alyssum strigosum Banks & Sol."
+      ]
+    },
+    "dwc:scientificNameID": {
+      "type": "string",
+      "description": "An identifier for the nomenclatural (not taxonomic) details of a scientific name",
+      "examples": [
+        "urn:lsid:ipni.org:names:37829-1:1.3"
+      ]
+    },
+    "ods:scientificNameHTMLLabel": {
+      "type": "string",
+      "description": "A Hyper Text Markup Language (HTML) representation of the scientific name. Includes correct formatting of the name.",
+      "examples": [
+        "<i>Absidia ginsan</i> Komin. et al., 1952",
+        "<i>Alyssum strigosum</i> Banks & Sol."
+      ]
+    },
+    "dwc:scientificNameAuthorship": {
+      "type": "string",
+      "description": "The authorship information for the dwc:scientificName formatted according to the conventions of the applicable dwc:nomenclaturalCode",
+      "examples": [
+        "(Torr.) J.T. Howell"
+      ]
+    },
+    "dwc:namePublishedInYear": {
+      "type": "string",
+      "description": "The four-digit year in which the dwc:scientificName was published",
+      "examples": [
+        "1992",
+        "2022"
+      ]
+    },
+    "dwc:taxonRank": {
+      "type": "string",
+      "description": "The taxonomic rank of the most specific name in the dwc:scientificName",
+      "examples": [
+        "species",
+        "genus"
+      ]
+    },
+    "dwc:verbatimTaxonRank": {
+      "type": "string",
+      "description": "The taxonomic rank of the most specific name in the dwc:scientificName as it appears in the original record",
+      "examples": [
+        "Agamospecies",
+        "apomict"
+      ]
+    },
+    "dwc:taxonRemarks": {
+      "type": "string",
+      "description": "Comments or notes about the taxon or name",
+      "examples": [
+        "This name is a misspelling in common use"
+      ]
+    },
+    "dwc:kingdom": {
+      "type": "string",
+      "description": "The full scientific name of the kingdom in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "animalia"
+      ]
+    },
+    "dwc:phylum": {
+      "type": "string",
+      "description": "The full scientific name of the phylum or division in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Chordata"
+      ]
+    },
+    "dwc:class": {
+      "type": "string",
+      "description": "The full scientific name of the class in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Hepaticopsida"
+      ]
+    },
+    "dwc:order": {
+      "type": "string",
+      "description": "The full scientific name of the order in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Carnivora"
+      ]
+    },
+    "dwc:family": {
+      "type": "string",
+      "description": "The full scientific name of the family in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Felidae"
+      ]
+    },
+    "dwc:subfamily": {
+      "type": "string",
+      "description": "The full scientific name of the subfamily in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Orchidoideae"
+      ]
+    },
+    "dwc:genus": {
+      "type": "string",
+      "description": "The full scientific name of the genus in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Puma"
+      ]
+    },
+    "dwc:specificEpithet": {
+      "type": "string",
+      "description": "The name of the first or species epithet of the dwc:scientificName",
+      "examples": [
+        "concolor"
+      ]
+    },
+    "dwc:taxonomicStatus": {
+      "type": "string",
+      "description": "The status of the use of the dwc:scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a ods:TaxonIdentification. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept",
+      "examples": [
+        "accepted"
+      ]
+    },
+    "dwc:nomenclaturalCode": {
+      "type": "string",
+      "description": "The nomenclatural code (or codes in the case of an ambiregnal name) under which the dwc:scientificName is constructed",
+      "examples": [
+        "ICBN",
+        "BC"
+      ]
+    },
+    "dwc:vernacularName": {
+      "type": "string",
+      "description": "A common or vernacular name",
+      "examples": [
+        "Meerval | Wels | Catfish | Silure glane | Wels | Waller | Siluro | Malle",
+        "American Eagle"
+      ]
+    },
+    "dwc:subgenus": {
+      "type": "string",
+      "description": "The full scientific name of the subgenus in which the ods:TaxonIdentification is classified. Values should include the genus to avoid homonym confusion",
+      "examples": [
+        "Strobus",
+        "Pilosella"
+      ]
+    },
+    "dwc:acceptedNameUsage": {
+      "type": "string",
+      "description": "The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) ods:TaxonIdentification",
+      "examples": [
+        "Flaccisagitta hexaptera (d'Orbigny, 1836)",
+        "Lysimachia arvensis subsp. arvensis",
+        "https://www.catalogueoflife.org/data/taxon/BPC8M"
+      ]
+    },
+    "dwc:acceptedNameUsageID": {
+      "type": "string",
+      "description": "An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon",
+      "examples": [
+        "https://www.catalogueoflife.org/data/taxon/6J6FX",
+        "https://www.catalogueoflife.org/data/taxon/BPC8M"
+      ]
+    },
+    "dwc:cultivarEpithet": {
+      "type": "string",
+      "description": "Part of the name of a cultivar, cultivar group or grex that follows the dwc:scientificName",
+      "examples": [
+        "King Edward"
+      ]
+    },
+    "dwc:genericName": {
+      "type": "string",
+      "description": "The genus part of the dwc:scientificName without authorship",
+      "examples": [
+        "Felis"
+      ]
+    },
+    "dwc:infragenericEpithet": {
+      "type": "string",
+      "description": "The infrageneric part of a binomial name at ranks above species but below genus",
+      "examples": [
+        "Abacetillus"
+      ]
+    },
+    "dwc:infraspecificEpithet": {
+      "type": "string",
+      "description": "The name of the lowest or terminal infraspecific epithet of the dwc:scientificName, excluding any rank designation",
+      "examples": [
+        "oxyadenia"
+      ]
+    },
+    "dwc:nomenclaturalStatus": {
+      "type": "string",
+      "description": "The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion",
+      "examples": [
+        "nom. illeg."
+      ]
+    },
+    "dwc:originalNameUsage": {
+      "type": "string",
+      "description": "The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated dwc:nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the dwc:scientificName or the senior/earlier homonym for replaced names",
+      "examples": [
+        "Pinus abies"
+      ]
+    },
+    "dwc:subtribe": {
+      "type": "string",
+      "description": "The full scientific name of the subtribe in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Plotinini"
+      ]
+    },
+    "dwc:superfamily": {
+      "type": "string",
+      "description": "The full scientific name of the superfamily in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Cerithioidea"
+      ]
+    },
+    "dwc:tribe": {
+      "type": "string",
+      "description": "The full scientific name of the tribe in which the ods:TaxonIdentification is classified",
+      "examples": [
+        "Arethuseae"
+      ]
+    }
+  },
+  "required": [
+    "@type",
+    "dwc:scientificName"
+  ],
+  "additionalProperties": false
+}
