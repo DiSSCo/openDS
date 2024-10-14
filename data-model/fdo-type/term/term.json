@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/term/latest/term.json",
-  "title": "DiSSCo openDS Terms Schema",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/term/0.1.0/term.json",
+  "title": "DiSSCo openDS Term Schema",
   "description": "A schema for defining standard terms in openDS.",
   "type": "object",
   "properties": {
@@ -43,12 +43,13 @@
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
     },
-    "ods:type": {
+    "ods:fdoType": {
       "type": "string",
       "description": "The DOI to the FDO type of the object",
-      "pattern": "^https://doi\\.org/[\\w.]+/[\\w.]+",
+      "pattern": "^https://doi\\.org/[\\w\\.]+/[\\w\\.]+",
       "examples": [
-        "https://doi.org/10.15468/1a2b3c"
+        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+        "https://doi.org/21.T11148/894b1e6cad57e921764e"
       ]
     },
     "ods:status": {
@@ -63,17 +64,17 @@
         "ods:Active"
       ]
     },
-    "schema:version": {
+    "ods:version": {
       "type": "integer",
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
       "minimum": 1,
-      "description": "Version of the Schema, https://schema.org/version",
       "examples": [
         1
       ]
     },
-    "schema:name": {
+    "dcterms:title": {
       "type": "string",
-      "description": "Name of the Term, https://schema.org/name",
+      "description": "A Name given to the resource, in this case openDS term name",
       "examples": [
         "ods:DigitalSpecimen"
       ]
@@ -85,26 +86,25 @@
         "Digital Specimen"
       ]
     },
-    "schema:dateCreated": {
+    "dcterms:created": {
       "type": "string",
-      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "description": "The timestamp that the object was created in DiSSCo, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
       "format": "date-time",
       "examples": [
-        "2021-06-01T12:00:000Z"
+        "2023-10-02T12:31:34.806Z"
       ]
     },
-    "schema:dateModified": {
+    "dcterms:modified": {
       "type": "string",
-      "description": "Timestamp of last modification. Internally generated, https://schema.org/dateModified",
-      "format": "date-time",
+      "description": "The timestamp that the object was last changed, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
       "examples": [
-        "2021-06-06T13:22:00.445Z"
+        "2023-10-02T12:31:34.806Z"
       ]
     },
-    "schema:creator": {
+    "dcterms:creator": {
       "type": "object",
-      "description": "Contains an ods:Agent object",
-      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json",
+      "description": "Contains information about the creator/proposer/requester of the term. This is an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
       "examples": [
         {
           "@id": "https://orcid.org/0000-0002-1825-0097",
@@ -114,16 +114,6 @@
         }
       ]
     },
-     "schema:contributor": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "List of contributors",
-      "examples": [
-        ["Jane Smith", "Bob Johnson"]
-      ]
-    },
     "skos:definition": {
       "type": "string",
       "description": "A definition of what the term represents.",
@@ -131,50 +121,35 @@
         "A digital representation of a physical specimen"
       ]
     },
-   
     "dcterms:licence": {
-      "type": "string",
-      "format": "uri",
-      "description": "License URI",
-      "enum": [
-        "https://creativecommons.org/licenses/by/4.0/",
-        "https://creativecommons.org/licenses/by-sa/4.0/",
-        "https://creativecommons.org/licenses/by-nc/4.0/",
-        "https://creativecommons.org/licenses/by-nc-sa/4.0/"
-      ],
-      "examples": [
-        "https://creativecommons.org/licenses/by/4.0/"
-      ]
+      "const": "https://spdx.org/licenses/CC0-1.0.json",
+      "description": "The licence for the term, required to be always public domain"
     },
     "ods:belongsToClass": {
-      "type": "string",
-      "format": "uri",
-      "description": "URI of the class this term belongs to",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URIs of the classes this term belongs to",
       "examples": [
-        "https://schema.org/Thing"
+        ["https://terms.dissco.tech/digital-specimen-terms#EntityRelationship", "http://purl.org/dc/dcmitype/Collection"]
       ]
     },
-    "ods:repeatable": {
-      "type": "boolean",
-      "description": "Indicates whether the term is repeatable",
-      "examples": [
-        true
-      ]
+    "owl:cardinality": {
+      "type": "integer",
+      "description": "Exact number of occurrences allowed for the term.",
+      "examples": [1]
     },
-    "ods:isRequired": {
-      "type": "boolean",
-      "description": "Indicates whether the term is required",
-      "examples": [
-        false
-      ]
+    "owl:minCardinality": {
+      "type": "integer",
+      "description": "Minimum number of occurrences required for the term.",
+      "examples": [1]
     },
-    "skos:broadMatch": {
-      "type": "string",
-      "format": "uri",
-      "description": "URI of a broader matching concept",
-      "examples": [
-        "http://rs.tdwg.org/dwc/terms/Occurrence"
-      ]
+    "owl:maxCardinality": {
+      "type": "integer",
+      "description": "Maximum number of occurrences allowed for the term.",
+      "examples": [1]
     },
     "owl:deprecated": {
       "type": "boolean",
@@ -186,10 +161,8 @@
   },
   "required": [
     "@type",
-    "ods:type",
+    "ods:fdoType",
     "dcterms:identifier",
-    "schema:name",
-    "schema:dateCreated",
-    "schema:dateModified"
+    "dcterms:title"
   ]
 }
