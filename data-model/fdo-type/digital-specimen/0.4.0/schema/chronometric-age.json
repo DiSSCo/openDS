@@ -129,8 +129,7 @@
       "type": "string",
       "description": "A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with the ChronometricAge.",
       "examples": [
-        "https://doi.org/10.1007/s10814-019-09140-x",
-
+        "https://doi.org/10.1007/s10814-019-09140-x"
       ]
     },
     "chrono:chronometricAgeRemarks": {
