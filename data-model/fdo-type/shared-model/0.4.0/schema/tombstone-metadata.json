@@ -69,13 +69,13 @@
               "IsDuplicateOf",
               "IsReplacedWith"
             ]
-          },
-          "additionalProperties": false,
-          "required": [
-            "@type",
-            "ods:relationshipType"
-          ]
-        }
+          }
+        },
+        "additionalProperties": false,
+        "required": [
+          "@type",
+          "ods:relationshipType"
+        ]
       }
     }
   },
