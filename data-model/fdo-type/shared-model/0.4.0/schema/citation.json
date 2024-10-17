@@ -80,7 +80,7 @@
       "description": "Is the citation peer reviewed?"
     },
     "ods:hasAgents": {
-      "type": "object",
+      "type": "array",
       "description": "The agent(s) who made the publication, contains an ods:Agent object",
       "items": {
         "type": "object",
