@@ -1,0 +1,77 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/data-mapping-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Data Mapping Request Version 0.4.0",
+  "title": "DataMapping",
+  "type": "object",
+  "properties": {
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Mapping as provided by the user",
+      "examples": [
+        "Default Mapping for Herbarium of University of Coimbra (COI)",
+        "Mapping for Naturalis Darwin Core Archives"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Mapping as provided by the user",
+      "examples": [
+        "The default mapping for the Herbarium of the University of Coimbra (COI) to the Darwin Core standard.",
+        "A mapping that can be used for all Naturalis datasets"
+      ]
+    },
+    "ods:hasDefaultMapping": {
+      "type": "array",
+      "description": "A mapping object setting default values for ods terms. These default mappings will be set for each record in the dataset. Key is the ods term, value the default value to use",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/default-mapping.json"
+      },
+      "examples": [
+        [
+          {
+            "ods:physicalSpecimenIDType": "cetaf"
+          },
+          {
+            "ods:type": "ZoologyVertebrateSpecimen"
+          },
+          {
+            "ods:organisationID": "https://ror.org/05xg72x27"
+          }
+        ]
+      ]
+    },
+    "ods:hasTermMapping": {
+      "type": "array",
+      "description": "Setting an explicit mapping for an ods term to a term from the incoming dataset. Key is the ods term, value the incoming data standard term",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/term-mapping.json"
+      },
+      "examples": [
+        [
+          {
+            "ods:physicalSpecimenID": "dwc:catalogNumber"
+          }
+        ]
+      ]
+    },
+    "ods:mappingDataStandard": {
+      "description": "Type of data standard we are mapping to",
+      "enum": [
+        "DwC",
+        "ABCD",
+        "ABCDEFG"
+      ]
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "schema:name",
+    "ods:mappingDataStandard"
+  ],
+  "additionalProperties": false
+}
