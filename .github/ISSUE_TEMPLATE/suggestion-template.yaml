@@ -1,6 +1,6 @@
 name: General suggestions openDS
 description: Provide general feedback on any of the Digital Object structures.
-labels: ["open-review", "suggestion"]
+labels: ["suggestion"]
 body:
   - type: textarea
     id: suggestion
