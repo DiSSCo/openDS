@@ -75,17 +75,23 @@ COPY fdo-type/source-system/0.4.0/schema schema-root/schemas/fdo-type/source-sys
 COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/latest
 COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/vitual-collection/latest
 
-# Versioned Developer schemas
+# Version 3 Developer schemas
 COPY developer-schema/annotation/0.3.0/schema schema-root/schemas/developer-schema/annotation/0.3.0
 COPY developer-schema/data-mapping/0.3.0/schema schema-root/schemas/developer-schema/data-mapping/0.3.0
 COPY developer-schema/machine-annotation-service/0.3.0/schema schema-root/schemas/developer-schema/machine-annotation-service/0.3.0
 COPY developer-schema/source-system/0.3.0/schema schema-root/schemas/developer-schema/source-system/0.3.0
 
+# Version 4 Developer schemas
+COPY developer-schema/annotation/0.4.0/schema schema-root/schemas/developer-schema/annotation/0.4.0
+COPY developer-schema/data-mapping/0.4.0/schema schema-root/schemas/developer-schema/data-mapping/0.4.0
+COPY developer-schema/machine-annotation-service/0.4.0/schema schema-root/schemas/developer-schema/machine-annotation-service/0.4.0
+COPY developer-schema/source-system/0.4.0/schema schema-root/schemas/developer-schema/source-system/0.4.0
+
 # Latest Developer schemas
-COPY developer-schema/annotation/0.3.0/schema schema-root/schemas/developer-schema/annotation/latest
-COPY developer-schema/data-mapping/0.3.0/schema schema-root/schemas/developer-schema/data-mapping/latest
-COPY developer-schema/machine-annotation-service/0.3.0/schema schema-root/schemas/developer-schema/machine-annotation-service/latest
-COPY developer-schema/source-system/0.3.0/schema schema-root/schemas/developer-schema/source-system/latest
+COPY developer-schema/annotation/0.4.0/schema schema-root/schemas/developer-schema/annotation/latest
+COPY developer-schema/data-mapping/0.4.0/schema schema-root/schemas/developer-schema/data-mapping/latest
+COPY developer-schema/machine-annotation-service/0.4.0/schema schema-root/schemas/developer-schema/machine-annotation-service/latest
+COPY developer-schema/source-system/0.4.0/schema schema-root/schemas/developer-schema/source-system/latest
 
 # Versioned internal schemas
 COPY internal-schema/annotation/0.1.0/schema schema-root/schemas/internal-schema/annotation/0.1.0
