@@ -41,7 +41,7 @@
         "Active",
         "Tombstone"
       ],
-      "description": "The status of the Digital Object"
+      "description": "The status of the Digital Object. A digital object can be in Draft, when it is not published yet. Active when it is published and the object is active and Tombstone which means the object has been archived."
     },
     "schema:version": {
       "type": "integer",

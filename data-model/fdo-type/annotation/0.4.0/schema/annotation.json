@@ -42,7 +42,7 @@
         "Active",
         "Tombstone"
       ],
-      "description": "The status of the Digital Object. A digital object can be in ods:Draft, when it is not published yet. ods:Active when it is published and the object is active and ods:Tombstone which means the object has been archived."
+      "description": "The status of the Digital Object. A digital object can be in Draft, when it is not published yet. Active when it is published and the object is active and Tombstone which means the object has been archived."
     },
     "ods:jobID": {
       "type": "string",
@@ -76,7 +76,8 @@
       "type": "string",
       "description": "Describes the reason for the annotation",
       "examples": [
-        "The country is incorrect"
+        "The country is incorrect",
+        "Identified a new link to a record in ENA"
       ]
     },
     "oa:hasTarget": {
