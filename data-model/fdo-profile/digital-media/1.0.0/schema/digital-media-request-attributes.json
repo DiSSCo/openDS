@@ -61,35 +61,44 @@
       "type": "string",
       "description": "Only mimetypes for audio, image, model, video, text should be provided. https://www.iana.org/assignments/media-types/media-types.xhtml"
     },
+    "license": {
+      "type": "string",
+      "description": "Maps to dcterms:license, unenforced value that may or may not be machine actionable. http://purl.org/dc/terms/license.",
+      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
+      "$comment": "idx = 409"
+    },
     "licenseName": {
       "type": "string",
       "description": "Human-readable name of the license",
       "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
       "$comment": "idx = 409"
     },
-    "licenseId": {
+    "licenseUrl": {
       "type": "string",
       "description": "Machine-actionable licensing information. Uses SPDX Identifiers.",
       "example": "https://spdx.org/licenses/CC0-1.0",
       "$comment": "idx = 410"
     },
-    "rightsHolderName": {
+    "rightsHolder": {
       "type": "string",
       "description": "If not present, defaults to mediaHost, https://purl.org/dc/terms/rightsHolder",
       "example": "https://ror.org/0566bfb96"
     },
-    "rightsHolderId": {
+    "rightsHolderPid": {
       "type": "string",
       "description": "Resolvable identifier of the rights holder",
       "example": "https://ror.org/0566bfb96"
     }
   },
   "required": [
+    "referentName",
     "mediaHost",
     "mediaHostName",
     "linkedDigitalObjectPid",
     "linkedDigitalObjectType",
-    "primaryMediaId"
+    "primaryMediaId",
+    "license",
+    "rightsHolder"
   ],
   "additionalProperties": false
 }
