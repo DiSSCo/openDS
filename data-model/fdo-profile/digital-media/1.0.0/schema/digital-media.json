@@ -184,7 +184,7 @@
       "$comment": "idx = 405"
     },
     "primaryMediaIdName": {
-      "example": "ac:accessUr",
+      "example": "ac:accessUrl",
       "$comment": "idx = 406"
     },
     "mediaType": {
@@ -213,23 +213,23 @@
     },
     "licenseName": {
       "type": "string",
-      "description": "http://purl.org/dc/terms/license.",
+      "description": "Maps to dcterms:license http://purl.org/dc/terms/license.",
       "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
       "$comment": "idx = 409"
     },
-    "licenseUrl": {
+    "licenseId": {
       "type": "string",
       "description": "Machine-actionable licensing information. Uses SPDX Identifiers.",
       "example": "https://spdx.org/licenses/CC0-1.0",
       "$comment": "idx = 410"
     },
-    "rightsHolder": {
+    "rightsHolderName": {
       "type": "string",
       "description": "Usually the creator of the object, holds the copyright for the object. Defaults to the supplier of the media object. if no other rights holder is specified",
       "example": "https://ror.org/0566bfb96",
       "$comment": "idx = 411"
     },
-    "rightsHolderPid": {
+    "rightsHolderId": {
       "type": "string",
       "description": "Identifier of the rights holder",
       "$comment": "idx = 412"
@@ -238,8 +238,6 @@
   "additionalProperties": false,
   "required": [
     "fdoProfile",
-    "fdoRecordLicenseId",
-    "fdoRecordLicenseName",
     "digitalObjectType",
     "digitalObjectName",
     "pid",
@@ -257,6 +255,6 @@
     "linkedDigitalObjectType",
     "primaryMediaId",
     "licenseName",
-    "rightsHolder"
+    "rightsHolderId"
   ]
 }

@@ -161,11 +161,11 @@
       "type": "string",
       "description": "For internal processing purposes only to make a local identifier globally unique. This is the primarySpecimenObjectId if it is globally unique or a combination of ROR ID string, source system ID string, primarySpecimenObjectId if it is a proprietary identifier.",
       "example": "0566bfb96:20.5000.1025/GEE-W3J-HL2:RMNH.1.2b",
-      "$comment": "idx = 203"
+      "$comment": "idx = 202"
     },
     "otherSpecimenIds": {
       "type": "array",
-      "$comment": "idx = 207",
+      "$comment": "idx = 203",
       "items": {
         "type": "object",
         "properties": {
@@ -185,8 +185,7 @@
           "identifierType"
         ],
         "additionalProperties": false
-      },
-      "$comment": "idx = 204"
+      }
     },
     "topicOrigin": {
       "enum": [
@@ -196,7 +195,7 @@
         "Unclassified"
       ],
       "description": "Highest-level terms identifying the fundamentals of the activities, in which context the objects in the collection were collected.",
-      "$comment": "idx = 205"
+      "$comment": "idx = 204"
     },
     "topicDomain": {
       "enum": [
@@ -209,7 +208,7 @@
         "Unclassified"
       ],
       "description": "High-level terms providing general domain information with which the objects are associated.",
-      "$comment": "idx = 206"
+      "$comment": "idx = 205"
     },
     "topicDiscipline": {
       "enum": [
@@ -226,7 +225,7 @@
         "Unclassified"
       ],
       "description": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related.",
-      "$comment": "idx = 207"
+      "$comment": "idx = 206"
     },
     "topicCategory": {
       "enum": [
@@ -281,7 +280,7 @@
         "Unclassified"
       ],
       "description": "Countable things (objects) served as a more detailed classification of each of the disciplines.",
-      "$comment": "idx = 208"
+      "$comment": "idx = 207"
     },
     "livingOrPreserved": {
       "enum": [
@@ -289,7 +288,7 @@
         "Preserved"
       ],
       "description": "State of specimen",
-      "$comment": "idx = 209"
+      "$comment": "idx = 208"
     },
     "materialSampleType": {
       "enum": [
@@ -301,17 +300,17 @@
         "Research product"
       ],
       "description": "https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html",
-      "$comment": "idx = 211"
+      "$comment": "idx = 209"
     },
     "markedAsType": {
       "type": "boolean",
       "description": "TRUE if the specimen is marked as type with a stamp or label.\n",
-      "$comment": "idx = 212"
+      "$comment": "idx = 210"
     },
     "catalogNumber": {
       "type": "string",
       "description": "Identifier of source system catalog",
-      "$comment": "idx = 213"
+      "$comment": "idx = 211"
     }
   },
   "additionalProperties": false,
