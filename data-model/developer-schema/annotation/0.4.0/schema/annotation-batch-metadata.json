@@ -29,7 +29,8 @@
         "required": [
           "inputField",
           "inputValue"
-        ]
+        ],
+        "additionalProperties": false
       },
       "minItems": 1
     }

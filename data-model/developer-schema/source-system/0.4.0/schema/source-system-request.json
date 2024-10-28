@@ -62,9 +62,9 @@
   },
   "required": [
     "schema:name",
-    "schema:uri",
+    "schema:url",
     "ods:translatorType",
-    "ods:mappingID"
+    "ods:dataMappingID"
   ],
   "additionalProperties": false
 }
