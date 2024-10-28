@@ -31,7 +31,7 @@ jobs:
       - name: Trivy - List all vulnerabilities
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: '${{ github.event.repository.name }}'
+          image-ref: ${{ env.REPO_LC }}
           format: 'table'
           ignore-unfixed: true
           vuln-type: 'os,library'
@@ -42,7 +42,7 @@ jobs:
         uses: aquasecurity/trivy-action@master
         if: github.event_name == 'pull_request'
         with:
-          image-ref: '${{ github.event.repository.name }}'
+          image-ref: ${{ env.REPO_LC }}
           format: 'table'
           ignore-unfixed: true
           trivyignores: .github/workflows/.trivyignore
