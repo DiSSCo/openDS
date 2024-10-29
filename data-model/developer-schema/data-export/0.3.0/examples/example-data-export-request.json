@@ -1,0 +1,15 @@
+{
+  "data": {
+    "type": "export-job",
+    "attributes": {
+      "searchParams": [
+        {
+          "inputField": "$['ods:organisationID']",
+          "inputValue": "https://ror.org/0566bfb96"
+        }
+      ],
+      "targetType": "https://doi.org/21.T11148/894b1e6cad57e921764e",
+      "exportType": "DOI_LIST"
+    }
+  }
+}
