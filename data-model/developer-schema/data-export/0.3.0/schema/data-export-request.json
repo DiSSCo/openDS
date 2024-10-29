@@ -1,0 +1,75 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/export-job/1.0.0/export-job-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Annotation Version 0.3.0",
+  "title": "Export job request",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "export-job"
+        },
+        "attributes": {
+          "type": "object",
+          "properties": {
+            "searchParams": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "inputField": {
+                    "type": "string",
+                    "description": "JsonPath (mixed notation) of field used to base annotation reasoning on. Indexes must be wildcards",
+                    "examples": [
+                      "digitalSpecimenWrapper.occurrences[*].location.dwc:country"
+                    ]
+                  },
+                  "inputValue": {
+                    "type": "string",
+                    "description": "Value of the field indicated above",
+                    "examples": [
+                      "United Kingdom"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "targetType": {
+              "description": "FDO type of the objects whose data is being exported",
+              "type": "string",
+              "enum": [
+                "https://doi.org/21.T11148/894b1e6cad57e921764e",
+                "https://doi.org/21.T11148/bbad8c4e101e8af01115"
+              ]
+            },
+            "exportType": {
+              "type": "string",
+              "enum": [
+                "DOI_LIST"
+              ],
+              "description": "Type of export job. Currently, only one kind of job is supported"
+            }
+          },
+          "additionalProperties": false,
+          "required": [
+            "searchParams",
+            "targetType",
+            "exportType"
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "additionalProperties": false
+}
