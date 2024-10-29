@@ -67,7 +67,7 @@
       ]
     },
     "ods:hasAgents": {
-      "type": "object",
+      "type": "array",
       "description": "The agent(s) who created the entityRelationship, contains an ods:Agent object",
       "items": {
         "type": "object",

@@ -122,6 +122,13 @@
         "Chelicerata collection (TSZCh) The Arctic University Museum of Norway"
       ]
     },
+    "ods:livingOrPreserved": {
+      "description": "Whether the specimen is living or preserved",
+      "enum": [
+        "Living",
+        "Preserved"
+      ]
+    },
     "ods:metadataLanguages": {
       "type": "array",
       "description": "The language of the Digital Specimen metadata. Only indicate, not enforced. Recommended to use three letter code from ISO 639-2 codes found on https://id.loc.gov/vocabulary/iso639-2.html",
@@ -377,6 +384,13 @@
       "examples": [
         "individuals",
         "% biomass"
+      ]
+    },
+    "dwc:verbatimLabel": {
+      "type": "string",
+      "description": "The content of this term should include no embellishments, prefixes, headers or other additions made to the text. Abbreviations must not be expanded and supposed misspellings must not be corrected. Lines or breakpoints between blocks of text that could be verified by seeing the original labels or images of them may be used. Examples of material entities include preserved specimens, fossil specimens, and material samples. Best practice is to use UTF-8 for all characters",
+      "examples": [
+        "ILL: Union Co. Wolf Lake by Powder Plant Bridge. 1 March 1975 Coll. S. Ketzler, S. Herbert\n\nMonotoma longicollis 4 ♂ Det TC McElrath 2018\n\nINHS Insect Collection 456782"
       ]
     },
     "dwc:dynamicProperties": {

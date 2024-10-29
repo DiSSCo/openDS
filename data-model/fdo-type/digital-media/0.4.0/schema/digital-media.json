@@ -403,7 +403,7 @@
       "description": "Contains zero or more ods:Assertion objects",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/assertion.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/assertion.json"
       }
     },
     "ods:hasCitations": {
@@ -411,7 +411,7 @@
       "description": "Contains zero or more ods:Citation objects",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/citation.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/citation.json"
       }
     },
     "ods:hasIdentifiers": {
@@ -419,7 +419,7 @@
       "description": "Contains zero or more ods:Identifier objects",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/identifier.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/identifier.json"
       }
     },
     "ods:hasEntityRelationships": {
@@ -427,7 +427,7 @@
       "description": "Contains zero or more ods:EntityRelationship objects",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/entity-relationship.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/entity-relationship.json"
       }
     },
     "ods:hasAgents": {
@@ -435,13 +435,13 @@
       "description": "Contains zero or more ods:Agent objects",
       "items": {
         "type": "object",
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/agent.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
       }
     },
     "ods:hasTombstoneMetadata": {
       "type": "object",
       "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
-      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.3.0/tombstone-metadata.json"
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
     }
   },
   "required": [
