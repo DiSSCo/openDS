@@ -1,0 +1,180 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/machine-annotation-service/0.4.0/machine-annotation-service-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Machine Annotation Service RequestVersion 0.4.0",
+  "title": "MachineAnnotationServiceRequest",
+  "type": "object",
+  "description": "Automated annotation services that enhance biodiversity data",
+  "properties": {
+    "schema:name": {
+      "type": "string",
+      "description": "Name of the Machine Annotation Service as provided by the user",
+      "examples": [
+        "GBIF Linker Service"
+      ]
+    },
+    "schema:description": {
+      "type": "string",
+      "description": "Description of the Machine Annotation Service as provided by the user",
+      "examples": [
+        "A service that links GBIF records to a DiSSCo Digital Specimen. It creates an EntityRelationship indicating the relationship"
+      ]
+    },
+    "ods:containerImage": {
+      "type": "string",
+      "description": "URI of the image of the containerized application",
+      "examples": [
+        "public.ecr.aws/dissco/mindat-georeferencing"
+      ]
+    },
+    "ods:containerTag": {
+      "type": "string",
+      "description": "Tag of the image",
+      "examples": [
+        "sha-cb76994"
+      ]
+    },
+    "ods:hasTargetDigitalObjectFilter": {
+      "type": "object",
+      "description": "Filters describing the criteria that must be met in order to apply the MAS. No filters implies the MAS may run on *any* digital object. Field names are given in JSON paths, and accepted values for that field are provided as an arrays",
+      "examples": [
+        {
+          "$.ods:type": [
+            "https://doi.org/21.T11148/894b1e6cad57e921764e"
+          ],
+          "$.ods:topicDiscipline": [
+            "Astrogeology",
+            "Geology",
+            "Palaeontology",
+            "Other Geodiversity",
+            "Unclassified"
+          ],
+          "$.hasEvent[*].Location.dwc:locality": [
+            "*"
+          ]
+        }
+      ]
+    },
+    "schema:creativeWorkStatus": {
+      "type": "string",
+      "description": "The current status of the service",
+      "examples": [
+        "Alpha",
+        "Production"
+      ]
+    },
+    "schema:codeRepository": {
+      "type": "string",
+      "format": "url",
+      "description": "Link to code base of MAS"
+    },
+    "schema:programmingLanguage": {
+      "type": "string",
+      "description": "The programming language of the MAS",
+      "examples": [
+        "Python"
+      ]
+    },
+    "ods:serviceAvailability": {
+      "type": "string",
+      "description": "Availability commitment of the service provider as described in the SLA"
+    },
+    "schema:maintainer": {
+      "type": "object",
+      "description": "Party maintaining the code, could be an schema:Organisation or a schema:Person",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "schema:license": {
+      "type": "string",
+      "format": "url",
+      "description": "License of the service, https://schema.org/license",
+      "examples": "https://opensource.org/licenses/Apache-2.0"
+    },
+    "ods:dependency": {
+      "type": "array",
+      "description": "Handles from other MAS that this MAS depends on",
+      "items": {
+        "type": "string",
+        "description": "Handle of the Machine Annotation Service that this MAS depends on",
+        "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}"
+      },
+      "examples": [
+        [
+          "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+        ]
+      ]
+    },
+    "schema:ContactPoint": {
+      "type": "object",
+      "description": "The contact point for support and information for the MAS, https://schema.org/ContactPoint",
+      "properties": {
+        "schema:description": {
+          "type": "string",
+          "description": "Description of the contact point, https://schema.org/description"
+        },
+        "schema:email": {
+          "type": "string",
+          "format": "email",
+          "description": "Email of the contact point, https://schema.org/email"
+        },
+        "schema:url": {
+          "type": "string",
+          "format": "url",
+          "description": "Email of the contact point, https://schema.org/email"
+        },
+        "schema:telephone": {
+          "type": "string",
+          "description": "Telephone number of the contact point, https://schema.org/telephone"
+        }
+      }
+    },
+    "ods:slaDocumentation": {
+      "type": "string",
+      "description": "Link to SLA documentation"
+    },
+    "ods:topicName": {
+      "type": "string",
+      "description": "Kafka topic through which the MAS receives messages. Defaults to PID of MAS"
+    },
+    "ods:maxReplicas": {
+      "type": "integer",
+      "description": "The maximum amount of this MAS that can simultaneously run without causing issues"
+    },
+    "ods:batchingPermitted": {
+      "type": "boolean",
+      "description": "Whether or not this MAS can create Batch Annotations. MAS outputs must then comply with batchMetadata, see https://schemas.dissco.tech/schemas/annotations/0.1.0/annotation-event.json"
+    },
+    "ods:timeToLive": {
+      "type": "integer",
+      "minimum": 3600,
+      "description": "Time in milliseconds the MAS message may remain in the Kafka Queue before being marked as timed out. Min 1 hour."
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    },
+    "ods:hasEnvironmentalVariables": {
+      "type": "array",
+      "description": "Environmental variables to supply to the MAS, non-sensitive",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/environmental-variable.json"
+      }
+    },
+    "ods:hasSecretVariables": {
+      "type": "array",
+      "description": "Secret variables to supply to the MAS",
+      "items": {
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/secret-variable.json"
+      }
+    }
+  },
+  "required": [
+    "schema:name",
+    "ods:containerImage",
+    "ods:containerTag",
+    "ods:batchingPermitted",
+    "ods:hasTargetDigitalObjectFilter"
+  ],
+  "additionalProperties": false
+}

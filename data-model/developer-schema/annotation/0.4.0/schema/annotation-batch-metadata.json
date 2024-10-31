@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/annotation/0.4.0/annotation-batch-metadata.json",
+  "properties": {
+    "ods:placeInBatch": {
+      "description": "For batching only. Links batch metadata to specific annotations in an event. Value must correspond to an annotation's ods:placeInBatch",
+      "type": "integer"
+    },
+    "searchParams": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "inputField": {
+            "type": "string",
+            "description": "JsonPath (mixed notation) of field used to base annotation reasoning on. Indexes must be wildcards",
+            "examples": [
+              "digitalSpecimenWrapper.occurrences[*].location.dwc:country"
+            ]
+          },
+          "inputValue": {
+            "type": "string",
+            "description": "Value stored at the field indicated in inputField",
+            "examples": [
+              "Netherlands"
+            ]
+          }
+        },
+        "required": [
+          "inputField",
+          "inputValue"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "ods:placeInBatch",
+    "searchParams"
+  ],
+  "additionalProperties": false
+}
