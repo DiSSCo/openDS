@@ -211,6 +211,22 @@
         "https://creativecommons.org/licenses/by-nc-sa/4.0/"
       ]
     },
+    "xmpRights:UsageTerms": {
+      "type": "string",
+      "description": "A collection of text instructions on how a resource can be legally used, given in a variety of languages",
+      "examples": [
+        "CC BY 4.0",
+        "CC BY-NC-SA 4.0"
+      ]
+    },
+    "xmpRights:WebStatement": {
+      "type": "string",
+      "description": "A Web URL for a statement of the ownership and usage rights for this resource",
+      "examples": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      ]
+    },
     "xmpRights:Owner": {
       "type": "string",
       "description": "A list of legal owners of the resource",
