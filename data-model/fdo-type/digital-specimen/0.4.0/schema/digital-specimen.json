@@ -451,7 +451,7 @@
     },
     "ods:hasAgents": {
       "type": "array",
-      "description": "Contains all agents that have are connected to the specimen",
+      "description": "Contains all agents that are connected to the specimen. Agents that are part of a specific part of the specimen should be added there. For example a Collector is connected to the CollectingEvent so is add in the event",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"

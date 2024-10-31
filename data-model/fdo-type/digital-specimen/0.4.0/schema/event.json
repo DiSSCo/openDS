@@ -22,6 +22,14 @@
         "running"
       ]
     },
+    "dwc:eventType": {
+      "type": "string",
+      "description": "The nature of the ods:Event. There can always be only one collecting event",
+      "examples": [
+        "Collecting",
+        "Observation"
+      ]
+    },
     "dwc:sex": {
       "type": "string",
       "description": "The sex of the biological individual(s) represented in the dwc:Event",
@@ -95,14 +103,6 @@
       "description": "An identifier given to the ods:Event in the field. Often serves as a link between field notes and the ods:Event",
       "examples": [
         "RV Sol 87-03-08"
-      ]
-    },
-    "dwc:eventType": {
-      "type": "string",
-      "description": "The nature of the ods:Event",
-      "examples": [
-        "Collecting",
-        "Observation"
       ]
     },
     "dwc:eventDate": {
@@ -234,6 +234,14 @@
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/assertion.json"
+      }
+    },
+    "ods:hasAgents": {
+      "type": "array",
+      "description": "Contains all agents that are connected to the specific event",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
       }
     },
     "ods:hasLocation": {
