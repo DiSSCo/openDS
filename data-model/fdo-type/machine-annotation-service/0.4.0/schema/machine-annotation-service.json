@@ -238,14 +238,14 @@
       "type": "array",
       "description": "Environmental variables to supply to the Machine Annotation Service, non-sensitive",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/environmental-variable.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/environmental-variable.json"
       }
     },
     "ods:hasSecretVariables": {
       "type": "array",
       "description": "Secret variables to supply to the Machine Annotation Service, sensitive",
       "items": {
-        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/secret-variable.json"
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/secret-variable.json"
       }
     }
   },
