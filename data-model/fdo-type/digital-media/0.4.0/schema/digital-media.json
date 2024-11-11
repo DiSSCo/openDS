@@ -227,14 +227,6 @@
         "https://creativecommons.org/licenses/by-nc-sa/4.0/"
       ]
     },
-    "xmpRights:Owner": {
-      "type": "string",
-      "description": "A list of legal owners of the resource",
-      "examples": [
-        "Unknown",
-        "Naturalis Biodiversity Center"
-      ]
-    },
     "dcterms:available": {
       "type": "string",
       "description": "Date (often a range) that the resource became or will become available",

@@ -115,7 +115,7 @@
             "Other Geodiversity",
             "Unclassified"
           ],
-          "$['ods:hasEvent'][*]['ods:Location']['dwc:locality']": [
+          "$['ods:hasEvents'][*]['ods:hasLocation']['dwc:locality']": [
             "*"
           ]
         }
