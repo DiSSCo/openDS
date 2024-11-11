@@ -1,0 +1,7 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/data-mapping/0.4.0/term-mapping.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Term Mapping Version 0.4.0",
+  "title": "Term Mapping",
+  "type": "object"
+}

@@ -88,7 +88,9 @@
       "type": "string",
       "format": "url",
       "description": "License of the service, https://schema.org/license",
-      "examples": "https://opensource.org/licenses/Apache-2.0"
+      "examples": [
+        "https://opensource.org/licenses/Apache-2.0"
+      ]
     },
     "ods:dependency": {
       "type": "array",
