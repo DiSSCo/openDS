@@ -140,7 +140,8 @@
           "eng",
           "fra",
           "deu"
-        ], [
+        ],
+        [
           "dut"
         ]
       ]
@@ -463,6 +464,14 @@
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/event.json"
+      }
+    },
+    "ods:hasChronometricAges": {
+      "type": "array",
+      "description": "Contains information about the chronometric age of the specimen part",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/digital-specimen/0.4.0/chronometric-age.json"
       }
     },
     "ods:hasTombstoneMetadata": {
