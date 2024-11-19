@@ -138,14 +138,14 @@
       "examples": [
         "Beta Analytic number: 323913"
       ]
-    }
-  },
-  "ods:hasAgents": {
-    "type": "array",
-    "description": "The agent(s) involved in the determination of the chronometric age, uses `ods:Agent`",
-    "items": {
-      "type": "object",
-      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:hasAgents": {
+      "type": "array",
+      "description": "The agent(s) involved in the determination of the chronometric age, uses `ods:Agent`",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
     }
   },
   "required": [
