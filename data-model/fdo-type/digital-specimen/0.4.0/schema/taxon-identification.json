@@ -45,6 +45,14 @@
         "<i>Alyssum strigosum</i> Banks & Sol."
       ]
     },
+    "ods:genusHTMLLabel": {
+      "type": "string",
+      "description": "A Hyper Text Markup Language (HTML) representation of the genus name. Includes correct formatting of the name.",
+      "examples": [
+        "<i>Absidia ginsan</i> Komin. et al., 1952",
+        "<i>Alyssum strigosum</i> Banks & Sol."
+      ]
+    },
     "dwc:scientificNameAuthorship": {
       "type": "string",
       "description": "The authorship information for the dwc:scientificName formatted according to the conventions of the applicable dwc:nomenclaturalCode",
