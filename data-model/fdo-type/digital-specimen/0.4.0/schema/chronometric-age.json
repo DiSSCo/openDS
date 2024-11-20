@@ -77,6 +77,14 @@
         "BP"
       ]
     },
+    "chrono:chronometricAgeProtocol": {
+      "type": "string",
+      "description": "A description of or reference to the methods used to determine the chronometric age.",
+      "examples": [
+        "Radiocarbon dating",
+        "Uranium-series dating"
+      ]
+    },
     "chrono:chronometricAgeUncertaintyInYears": {
       "type": "integer",
       "description": "The temporal uncertainty of the earliestChronometricAge and latestChronometicAge in years",
