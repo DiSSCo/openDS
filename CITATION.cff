@@ -8,7 +8,7 @@ message: >-
   metadata from this file.
 type: standard
 authors:
-  - name: Distributed Infrastructure for Scientific Collections
+  - name: Distributed System of Scientific Collections
     website: 'https://www.dissco.eu/'
 identifiers:
   - type: url
