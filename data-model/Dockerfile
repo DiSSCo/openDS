@@ -8,7 +8,7 @@ COPY fdo-profile/digital-specimen/0.1.0/schema/ schema-root/schemas/fdo-profile/
 COPY fdo-profile/doi-kernel/0.1.0/schema schema-root/schemas/fdo-profile/doi-kernel/0.1.0
 COPY fdo-profile/handle-kernel/0.1.0/schema schema-root/schemas/fdo-profile/handle-kernel/0.1.0
 COPY fdo-profile/data-mapping/0.1.0/schema schema-root/schemas/fdo-profile/data-mapping/0.1.0
-COPY fdo-profile/machine-annotation-service/0.1.0/schema schema-root/schemas/fdo-profile/mas/0.1.0
+COPY fdo-profile/machine-annotation-service/0.1.0/schema schema-root/schemas/fdo-profile/machine-annotation-service/0.1.0
 COPY fdo-profile/digital-media/0.1.0/schema schema-root/schemas/fdo-profile/digital-media/0.1.0
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/0.1.0
 COPY fdo-profile/source-system/0.1.0/schema schema-root/schemas/fdo-profile/source-system/0.1.0
@@ -31,7 +31,7 @@ COPY fdo-profile/annotation/1.0.0/schema schema-root/schemas/fdo-profile/annotat
 COPY fdo-profile/doi-kernel/1.0.0/schema schema-root/schemas/fdo-profile/doi-kernel/latest
 COPY fdo-profile/handle-kernel/1.0.0/schema schema-root/schemas/fdo-profile/handle-kernel/latest
 COPY fdo-profile/data-mapping/1.0.0/schema schema-root/schemas/fdo-profile/data-mapping/latest
-COPY fdo-profile/machine-annotation-service/1.0.0/schema schema-root/schemas/fdo-profile/mas/latest
+COPY fdo-profile/machine-annotation-service/1.0.0/schema schema-root/schemas/fdo-profile/machine-annotation-service/latest
 COPY fdo-profile/source-system/1.0.0/schema schema-root/schemas/fdo-profile/source-system/latest
 COPY fdo-profile/digital-media/1.0.0/schema schema-root/schemas/fdo-profile/digital-media/latest
 COPY fdo-profile/digital-specimen/1.0.0/schema schema-root/schemas/fdo-profile/digital-specimen/latest
