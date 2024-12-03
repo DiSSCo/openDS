@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/term/0.1.0/term.json",
+  "title": "DiSSCo openDS Term Schema",
+  "description": "A schema for defining standard terms in openDS.",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the term object",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, in this case ods:Term",
+      "const": "ods:Term",
+      "examples": [
+        "ods:Term"
+      ]
+    },
+    "rdf:type": {
+      "type": "object",
+      "properties": {
+        "@id": {
+          "type": "string",
+          "enum": [
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+            "http://www.w3.org/2000/01/rdf-schema#Class",
+            "http://www.w3.org/2002/07/owl#Class",
+            "http://www.w3.org/2004/02/skos/core#Concept"
+          ]
+        }
+      }
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "Handle of the Term",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https://doi\\.org/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+        "https://doi.org/21.T11148/894b1e6cad57e921764e"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object",
+      "examples": [
+        "ods:Active"
+      ]
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "minimum": 1,
+      "examples": [
+        1
+      ]
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "A Name given to the resource, in this case openDS term name",
+      "examples": [
+        "ods:DigitalSpecimen"
+      ]
+    },
+    "skos:prefLabel": {
+      "type": "string",
+      "description": "The preferred lexical label for the term",
+      "examples": [
+        "Digital Specimen"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "description": "The timestamp that the object was created in DiSSCo, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "description": "The timestamp that the object was last changed, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:creator": {
+      "type": "object",
+      "description": "Contains information about the creator/proposer/requester of the term. This is an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json",
+      "examples": [
+        {
+          "@id": "https://orcid.org/0000-0002-1825-0097",
+          "@type": "schema:Person",
+          "schema:name": "John Doe",
+          "schema:email": "john.doe@example.com"
+        }
+      ]
+    },
+    "skos:definition": {
+      "type": "string",
+      "description": "A definition of what the term represents.",
+      "examples": [
+        "A digital representation of a physical specimen"
+      ]
+    },
+    "dcterms:licence": {
+      "const": "https://spdx.org/licenses/CC0-1.0.json",
+      "description": "The licence for the term, required to be always public domain"
+    },
+    "ods:belongsToClass": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URIs of the classes this term belongs to",
+      "examples": [
+        ["https://terms.dissco.tech/digital-specimen-terms#EntityRelationship", "http://purl.org/dc/dcmitype/Collection"]
+      ]
+    },
+    "owl:cardinality": {
+      "type": "integer",
+      "description": "Exact number of occurrences allowed for the term.",
+      "examples": [1]
+    },
+    "owl:minCardinality": {
+      "type": "integer",
+      "description": "Minimum number of occurrences required for the term.",
+      "examples": [1]
+    },
+    "owl:maxCardinality": {
+      "type": "integer",
+      "description": "Maximum number of occurrences allowed for the term.",
+      "examples": [1]
+    },
+    "owl:deprecated": {
+      "type": "boolean",
+      "description": "Indicates whether the term is deprecated",
+      "examples": [
+        false
+      ]
+    }
+  },
+  "required": [
+    "@type",
+    "ods:fdoType",
+    "dcterms:identifier",
+    "dcterms:title"
+  ]
+}
