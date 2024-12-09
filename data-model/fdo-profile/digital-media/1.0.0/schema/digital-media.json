@@ -190,19 +190,6 @@
     "mediaType": {
       "type": "string",
       "description": "Describes the primary nature of the digital media",
-      "enum": [
-        "Collection",
-        "Dataset",
-        "Event",
-        "Image",
-        "InteractiveResource",
-        "MovingImage",
-        "PhysicalObject",
-        "Service",
-        "Software",
-        "Sound",
-        "Text"
-      ],
       "$comment": "idx = 407"
     },
     "mimeType": {
