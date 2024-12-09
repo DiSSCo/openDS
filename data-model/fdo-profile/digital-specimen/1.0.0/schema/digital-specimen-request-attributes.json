@@ -148,20 +148,12 @@
     },
     "materialSampleType": {
       "enum": [
-        "Whole organism specimen",
-        "Organism part",
-        "Organism product",
-        "Biome aggregation",
-        "Bundle biome aggregation",
-        "Fossil",
         "Any biological specimen",
-        "Aggregation",
-        "Slurry biome aggregation",
-        "Other solid object",
+        "Biological material sample",
         "Fluid in container",
-        "Anthropogenic aggregation",
-        "Artefact",
-        "Any aggregation specimen"
+        "Fluid in container",
+        "Non biologic solid object",
+        "Research product"
       ],
       "description": "https://isamplesorg.github.io/models/generated/vocabularies/specimenType.html"
     },
