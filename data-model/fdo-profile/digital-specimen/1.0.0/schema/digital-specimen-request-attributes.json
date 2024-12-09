@@ -167,7 +167,6 @@
     }
   },
   "required": [
-    "issuedForAgent",
     "specimenHost",
     "normalisedPrimarySpecimenObjectId"
   ],
