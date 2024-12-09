@@ -161,7 +161,7 @@
       "type": "boolean",
       "description": "TRUE if the specimen is marked as type with a stamp or label."
     },
-    "catalogIdentifier": {
+    "catalogNumber": {
       "type": "string",
       "description": "Identifier of source system catalog"
     }
