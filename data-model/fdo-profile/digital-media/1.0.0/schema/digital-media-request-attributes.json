@@ -61,12 +61,6 @@
       "type": "string",
       "description": "Only mimetypes for audio, image, model, video, text should be provided. https://www.iana.org/assignments/media-types/media-types.xhtml"
     },
-    "license": {
-      "type": "string",
-      "description": "Maps to dcterms:license, unenforced value that may or may not be machine actionable. http://purl.org/dc/terms/license.",
-      "example": "CC0 1.0 Universal (CC0 1.0) Public Domain Dedication",
-      "$comment": "idx = 409"
-    },
     "licenseName": {
       "type": "string",
       "description": "Human-readable name of the license",
@@ -97,7 +91,6 @@
     "linkedDigitalObjectPid",
     "linkedDigitalObjectType",
     "primaryMediaId",
-    "license",
     "rightsHolder"
   ],
   "additionalProperties": false
