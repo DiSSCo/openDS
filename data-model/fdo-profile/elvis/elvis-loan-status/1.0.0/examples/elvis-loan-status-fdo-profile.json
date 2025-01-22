@@ -1,0 +1,18 @@
+{
+  "fdoProfile": "https://doi.org/21.T11148/532ce6796e2828dd2be6",
+  "fdoRecordLicenseId": "https://spdx.org/licenses/CC0-1.0.json",
+  "fdoRecordLicenseName": "CC0 1.0 Universal",
+  "digitalObjectType": "",
+  "digitalObjectName": "ELViS Loan Status",
+  "pid": "https://doi.org/10.22/GEE-W3J-HL2",
+  "pidIssuer": "https://hdl.handle.net/10.17183",
+  "pidIssuerName": "DiSSCo",
+  "pidRecordIssueDate": "2023-10-16T12:08:37.494Z",
+  "pidRecordIssueNumber": 2,
+  "10320/loc": "<locations><location href=\"https://elvis.eu/loan-status/20.5000.1025/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>",
+  "pidStatus": "ACTIVE",
+  "specimenDoi": "https://doi.org/10.3535/AAA-BBB-CCC",
+  "hostInstitution": "https://ror.org/0566bfb96",
+  "hostInstitutionName": "Naturalis Biodiversity Center",
+  "requestId": "https://hdl.handle.net/20.5000.1025/1SD-P2R-991"
+}

@@ -1,8 +1,8 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/elvis/elvis-request/1.0.0/elvis-loan-request-fdo-profile.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/elvis/elvis-loan-status/1.0.0/elvis-loan-status-fdo-profile.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "description": "FDO Profile for a specimen loan request made through ELViS",
+  "description": "FDO Profile for status of a loan made through ELViS",
   "$comment": "FDO Profile Version 1.0.0",
   "properties": {
     "fdoProfile": {
@@ -52,7 +52,6 @@
     "pidRecordIssueDate": {
       "type": "string",
       "description": "Date the PID record was created",
-      "format": "date-time",
       "example": "2023-10-16T12:08:37.494Z",
       "$comment": "idx = 9"
     },
@@ -96,26 +95,29 @@
       "description": "The PIDs of the object the tombstoned object is related to",
       "items": {
         "type": "object",
-        "properties": {
-          "pid": {
-            "type": "string",
-            "description": "The PID of the related object",
-            "examples": [
-              "https://doi.org/10.1234/abcd"
-            ]
+        "items": {
+          "type": "object",
+          "properties": {
+            "pid": {
+              "type": "string",
+              "description": "The PID of the related object",
+              "examples": [
+                "https://doi.org/10.1234/abcd"
+              ]
+            },
+            "relationshipType": {
+              "type": "string",
+              "description": "The type of relationship between the tombstoned object and the related object",
+              "examples": [
+                "isObsoletedBy",
+                "isIdenticalTo"
+              ]
+            }
           },
-          "relationshipType": {
-            "type": "string",
-            "description": "The type of relationship between the tombstoned object and the related object",
-            "examples": [
-              "isObsoletedBy",
-              "isIdenticalTo"
-            ]
-          }
+          "additionalProperties": false
         },
-        "additionalProperties": false
-      },
-      "$comment": "idx = 31"
+        "$comment": "idx = 31"
+      }
     },
     "tombstoneDate": {
       "type": "string",
@@ -126,21 +128,13 @@
       ],
       "$comment": "idx = 32"
     },
-    "requestingInstitution": {
+    "specimenDoi": {
       "type": "string",
-      "description": "Wikidata ID or ROR of requesting institution",
+      "description": "DOI of the specimen in the loan",
       "examples": [
-        "https://ror.org/0566bfb96"
+        "https://doi.org/10.3535/AAA-BBB-CCC"
       ],
-      "$comment": "idx = 605"
-    },
-    "requestingInstitutionName": {
-      "type": "string",
-      "description": "Human-readable name of requesting institution",
-      "examples": [
-        "Naturalis Biodiversity Center"
-      ],
-      "$comment": "idx = 606"
+      "$comment": "idx = 613"
     },
     "hostInstitution": {
       "type": "string",
@@ -158,60 +152,13 @@
       ],
       "$comment": "idx = 608"
     },
-    "RAID": {
+    "requestId": {
       "type": "string",
-      "description": "Research Activity ID, see https://raid.org/",
+      "description": "Handle of the ELViS loan request",
       "examples": [
-        "https://doi.org/10.82841/ce855baf"
-      ],
-      "$comment": "idx = 609"
-    },
-    "anyOf": [
-      {
-        "properties": {
-          "specimenDois": {
-            "description": "List of specimen DOIs requested",
-            "type": "array",
-            "items": {
-              "type": "string",
-              "examples": [
-                "https://doi.org/10.3535/Y5D-CQL-FHH"
-              ],
-              "$comment": "idx = 610"
-            }
-          }
-        },
-        "required": [
-          "specimenDois"
-        ],
-        "additionalProperties": false
-      },
-      {
-        "properties": {
-          "askedType": {
-            "type": "string",
-            "description": "In the case of a generic request, the type of specimen that was requested",
-            "example": [
-              "lepidoptera"
-            ],
-            "$comment": "idx = 611"
-          },
-          "askedSpecies": {
-            "type": "string",
-            "description": "In the case of a generic request, the species of specimen that was requested",
-            "examples": [
-              "Danaus plexippus"
-            ],
-            "$comment": "idx = 612"
-          }
-        },
-        "required": [
-          "askedType",
-          "askedSpecies"
-        ],
-        "additionalProperties": false
-      }
-    ]
+        "https://hdl.handle.net/20.5000.1025/1SD-P2R-991"
+      ]
+    }
   },
   "additionalProperties": false,
   "required": [
@@ -227,8 +174,9 @@
     "pidRecordIssueNumber",
     "10320/loc",
     "pidStatus",
-    "requestDate",
+    "specimenDoi",
     "hostInstitution",
-    "hostInstitutionName"
+    "hostInstitutionName",
+    "requestId"
   ]
 }

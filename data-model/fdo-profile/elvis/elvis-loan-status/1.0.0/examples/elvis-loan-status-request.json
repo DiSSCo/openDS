@@ -1,0 +1,15 @@
+{
+  "data": {
+    "type": "",
+    "attributes": {
+      "locations": [
+        "https://example.com/location1",
+        "https://example.com/location2"
+      ],
+      "specimenDoi": "https://doi.org/10.3535/AAA-BBB-CCC",
+      "hostInstitution": "https://ror.org/0566bfb96",
+      "hostInstitutionName": "Naturalis Biodiversity Center",
+      "requestId": "https://hdl.handle.net/20.5000.1025/1SD-P2R-991"
+    }
+  }
+}

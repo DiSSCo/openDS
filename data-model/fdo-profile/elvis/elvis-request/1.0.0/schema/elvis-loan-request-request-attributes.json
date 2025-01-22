@@ -43,49 +43,56 @@
       "type": "string",
       "description": "Research Activity ID, see https://raid.org/"
     },
-    "anyOf": [
-      {
-        "properties": {
-          "specimenDois": {
-            "description": "List of specimen DOIs requested",
-            "type": "array",
-            "items": {
+    "loanedObject": {
+      "oneOf": [
+        {
+          "properties": {
+            "specimenDois": {
+              "description": "List of specimen DOIs requested",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "https://doi.org/10.3535/Y5D-CQL-FHH"
+                ]
+              }
+            }
+          },
+          "required": [
+            "specimenDois"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "askedType": {
               "type": "string",
+              "description": "In the case of a generic request, the type of specimen that was requested",
+              "example": [
+                "lepidoptera"
+              ]
+            },
+            "askedSpecies": {
+              "type": "string",
+              "description": "In the case of a generic request, the species of specimen that was requested",
               "examples": [
-                "https://doi.org/10.3535/Y5D-CQL-FHH"
+                "Danaus plexippus"
               ]
             }
-          }
-        },
-        "required": [
-          "specimenDois"
-        ],
-        "additionalProperties": false
-      },
-      {
-        "properties": {
-          "askedType": {
-            "type": "string",
-            "description": "In the case of a generic request, the type of specimen that was requested",
-            "example": [
-              "lepidoptera"
-            ]
           },
-          "askedSpecies": {
-            "type": "string",
-            "description": "In the case of a generic request, the species of specimen that was requested",
-            "examples": [
-              "Danaus plexippus"
-            ]
-          }
-        },
-        "required": [
-          "askedType",
-          "askedSpecies"
-        ],
-        "additionalProperties": false
-      }
-    ]
+          "required": [
+            "askedType",
+            "askedSpecies"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
   },
+  "required": [
+    "hostInstitution",
+    "hostInstitutionName",
+    "loanedObject"
+  ],
   "additionalProperties": false
 }
