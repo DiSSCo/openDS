@@ -113,7 +113,7 @@
       "type": "string",
       "description": "An identifier for the MaterialSample on which the chronometricAgeProtocol was performed, if applicable",
       "examples": [
-        "https://doi.org/10.22/XXX-XXX-XXX",
+        "https://doi.org/10.3535/XXX-XXX-XXX",
         "https://www.ebi.ac.uk/metagenomics/samples/SRS1930158"
       ]
     },

@@ -10,7 +10,7 @@
       "description": "The unique identifier of the Digital Specimen object, follows the Digital Object Identifier (DOI) standard",
       "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
-        "https://doi.org/10.22/XXX-XXX-XXX"
+        "https://doi.org/10.3535/XXX-XXX-XXX"
       ]
     },
     "@type": {

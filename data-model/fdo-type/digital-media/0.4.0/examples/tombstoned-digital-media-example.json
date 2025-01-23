@@ -1,7 +1,7 @@
 {
-  "@id": "https://doi.org/10.22/XXX-XXX-XXX",
+  "@id": "https://doi.org/10.3535/XXX-XXX-XXX",
   "@type": "ods:DigitalMedia",
-  "dcterms:identifier": "https://doi.org/10.22/XXX-XXX-XXX",
+  "dcterms:identifier": "https://doi.org/10.3535/XXX-XXX-XXX",
   "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
   "ods:version": 1,
   "dcterms:created": "2023-10-02T12:31:34.806Z",
