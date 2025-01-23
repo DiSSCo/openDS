@@ -10,7 +10,7 @@ Linking third-party/extended specimen data together, as openDS proposes, require
 
 You can become involved and contribute by making comments through Github issues. For this, we created two simple [Github templates](https://github.com/DiSSCo/openDS/issues/new/choose): one for feedback on a term and another for general comments. When commenting on a term please include the term name, for example, dwc:highestBiostratigraphicZone. Note that most terms are coming from existing standards but a few are openDS specific. We aim to apply controlled vocabularies for terms where appropriate to increase data quality and interoperability. These are not yet part of the documentation.
 
-DiSSCo is supported by different EU grants. A dedicated development team and other collaborators are working towards a robust openDS specification.  The implementation (under construction) can be tried out in our [Sandbox](https://sandbox.dissco.tech/). A JSON example of v0.3 in progress can be found through our development API, for example, https://dev.dissco.tech/api/v1/digital-specimen.
+DiSSCo is supported by different EU grants. A dedicated development team and other collaborators are working towards a robust openDS specification.  The implementation (under construction) can be tried out in our [Sandbox](https://sandbox.dissco.tech/). A JSON example of v0.4.0 in progress can be found through our development API, for example, https://dev.dissco.tech/api/v1/digital-specimen.
 
 
 
