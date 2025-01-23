@@ -10,7 +10,7 @@
       "description": "The unique identifier (DOI) of the Digital Media",
       "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+\/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
-        "https://doi.org/10.22/XXX-XXX-XXX"
+        "https://doi.org/10.3535/XXX-XXX-XXX"
       ]
     },
     "@type": {
@@ -23,8 +23,8 @@
       "description": "The unique identifier (DOI) of the Digital Media",
       "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
-        "https://doi.org/10.22/XXX-XXX-XXX",
-        "https://doi.org/10.22/XXX-XXX-YYY"
+        "https://doi.org/10.3535/XXX-XXX-XXX",
+        "https://doi.org/10.3535/XXX-XXX-YYY"
       ]
     },
     "ods:fdoType": {
