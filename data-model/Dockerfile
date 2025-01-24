@@ -25,6 +25,8 @@ COPY fdo-profile/source-system/1.0.0/schema schema-root/schemas/fdo-profile/sour
 COPY fdo-profile/digital-media/1.0.0/schema schema-root/schemas/fdo-profile/digital-media/1.0.0
 COPY fdo-profile/digital-specimen/1.0.0/schema/ schema-root/schemas/fdo-profile/digital-specimen/1.0.0
 COPY fdo-profile/tombstone/1.0.0/schema schema-root/schemas/fdo-profile/tombstone/1.0.0
+COPY fdo-profile/elvis/elvis-request/1.0.0/schema schema-root/schemas/fdo-profile/elvis/elvis-request/1.0.0
+COPY fdo-profile/elvis/elvis-loan-status/1.0.0/schema schema-root/schemas/fdo-profile/elvis/elvis-loan-status/1.0.0
 
 # Latest FDO Profile schemas
 COPY fdo-profile/annotation/1.0.0/schema schema-root/schemas/fdo-profile/annotation/latest
@@ -37,6 +39,8 @@ COPY fdo-profile/digital-media/1.0.0/schema schema-root/schemas/fdo-profile/digi
 COPY fdo-profile/digital-specimen/1.0.0/schema schema-root/schemas/fdo-profile/digital-specimen/latest
 COPY fdo-profile/tombstone/1.0.0/schema schema-root/schemas/fdo-profile/tombstone/latest
 
+COPY fdo-profile/elvis/elvis-request/1.0.0/schema schema-root/schemas/fdo-profile/elvis/elvis-request/latest
+COPY fdo-profile/elvis/elvis-loan-status/1.0.0/schema schema-root/schemas/fdo-profile/elvis/elvis-loan-status/latest
 COPY fdo-profile/tettris-service/0.1.0/schema schema-root/schemas/fdo-profile/tettris-service/latest
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/latest
 COPY fdo-profile/virtual-collection/0.1.0/schema schema-root/schemas/fdo-profile/virtual-collection/latest
