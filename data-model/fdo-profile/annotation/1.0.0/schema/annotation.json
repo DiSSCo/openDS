@@ -33,7 +33,7 @@
     "pid": {
       "type": "string",
       "description": "The PID of which the FDO record is part, in DiSSCo this is a Handle or DOI. It is recommended to store this pid also in the local collection management system for the specimen.",
-      "example": "https://doi.org/10.22/GEE-W3J-HL2",
+      "example": "https://doi.org/10.3535/GEE-W3J-HL2",
       "$comment": "idx = 6"
     },
     "pidIssuer": {
@@ -94,29 +94,26 @@
       "description": "The PIDs of the object the tombstoned object is related to",
       "items": {
         "type": "object",
-        "items": {
-          "type": "object",
-          "properties": {
-            "pid": {
-              "type": "string",
-              "description": "The PID of the related object",
-              "examples": [
-                "https://doi.org/10.1234/abcd"
-              ]
-            },
-            "relationshipType": {
-              "type": "string",
-              "description": "The type of relationship between the tombstoned object and the related object",
-              "examples": [
-                "isObsoletedBy",
-                "isIdenticalTo"
-              ]
-            }
+        "properties": {
+          "pid": {
+            "type": "string",
+            "description": "The PID of the related object",
+            "examples": [
+              "https://doi.org/10.1234/abcd"
+            ]
           },
-          "additionalProperties": false
+          "relationshipType": {
+            "type": "string",
+            "description": "The type of relationship between the tombstoned object and the related object",
+            "examples": [
+              "isObsoletedBy",
+              "isIdenticalTo"
+            ]
+          }
         },
-        "$comment": "idx = 31"
-      }
+        "additionalProperties": false
+      },
+      "$comment": "idx = 31"
     },
     "tombstoneDate": {
       "type": "string",

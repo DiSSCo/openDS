@@ -11,7 +11,7 @@
       "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another annotation.",
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-        "https://doi.org/10.22/XXX-XXX-XXX"
+        "https://doi.org/10.3535/XXX-XXX-XXX"
       ]
     },
     "@type": {
@@ -27,7 +27,7 @@
       "description": "This is the PID of the target object. Valid targets are the Digital Specimen, Digital Media Object or another Annotation.",
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX",
-        "https://doi.org/10.22/XXX-XXX-XXX"
+        "https://doi.org/10.3535/XXX-XXX-XXX"
       ]
     },
     "ods:fdoType": {

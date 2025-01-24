@@ -51,7 +51,7 @@
             "type": "string",
             "description": "The PID of the related object, used in cases of `ods:Annotation`, `ods:DigitalMedia` and `ods:DigitalSpecimen`",
             "examples": [
-              "https://doi.org/10.22/XXX-XXX-XXX"
+              "https://doi.org/10.3535/XXX-XXX-XXX"
             ]
           },
           "schema:identifier": {
