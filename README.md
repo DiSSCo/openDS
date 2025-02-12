@@ -2,7 +2,7 @@ Open Digital Specimen (openDS) is the cornerstone of DiSSCo's vision for a seaml
 
 As a digital surrogate on the internet, openDS encapsulates the essence of a "Digital Specimen," offering a solution for collections ranging from marine specimens to botanical and mineralogical holdings. Leveraging established biodiversity information standards such as Darwin Core, Minimal Information Digital Specimen, Latimer Core, Access to Biological Collection Data Schema, Extension FOR Geosciences, and the emerging Global Biodiversity Information Facility Unified Model, openDS harmonises and elevates the quality and machine actionability of scientific data.
 
-The openDS data model consists of a documented set of [JSON schemas](https://schemas.dissco.tech/) that describe the Digital Specimen and related digital objects. The documentation can be found here: https://dev.terms.dissco.tech/
+The openDS data model consists of a documented set of [JSON schemas](https://schemas.dissco.tech/) that describe the Digital Specimen and related digital objects. The documentation can be found here: https://terms.dissco.tech/ 
 
 ## How to become involved and contribute
 Linking third-party/extended specimen data together, as openDS proposes, requires many stakeholders to test and adopt the specification. This is especially the case for integrating data at multiple levels, like: specimen, collection types, species, genomics, and cross-discipline to geology, genomics, etc. This necessitates global collaboration among all players in the landscape converging towards a single specification as far as possible. 
