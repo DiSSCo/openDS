@@ -1,0 +1,32 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/elvis/elvis-request/1.0.0/elvis-loan-request-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "description": "Schema for making handle-creation requests to the DiSSCo Handle Manager for ELViS loan requests",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "data": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "TODO",
+          "description": "PID of the Digital Object Type"
+        },
+        "attributes": {
+          "type": "object",
+          "$ref": "https://schemas.dissco.tech/schemas/fdo-profile/elvis/elvis-request/1.0.0/elvis-loan-request-request-attributes.json"
+        }
+      },
+      "required": [
+        "type",
+        "attributes"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "additionalProperties": false
+}

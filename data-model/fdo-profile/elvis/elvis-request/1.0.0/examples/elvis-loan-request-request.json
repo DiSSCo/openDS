@@ -1,0 +1,22 @@
+{
+  "data": {
+    "type": "",
+    "attributes": {
+      "locations": [
+        "https://example.com/location1",
+        "https://example.com/location2"
+      ],
+      "requestingInstitution": "https://ror.org/0566bfb96",
+      "requestingInstitutionName": "Naturalis Biodiversity Center",
+      "hostInstitution": "https://ror.org/0566bfb96",
+      "hostInstitutionName": "Naturalis Biodiversity Center",
+      "RAID": "https://doi.org/10.82841/ce855baf",
+      "loanedObject": {
+        "specimenDois": [
+          "https://doi.org/10.3535/Y5D-CQL-FHH",
+          "https://doi.org/10.3535/ABC-XYZ-123"
+        ]
+      }
+    }
+  }
+}
