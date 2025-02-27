@@ -63,6 +63,7 @@
   },
   "required": [
     "schema:name",
+    "schema:url",
     "ods:translatorType",
     "ods:dataMappingID"
   ],
