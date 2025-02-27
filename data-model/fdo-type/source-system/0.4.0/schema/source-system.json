@@ -106,10 +106,11 @@
     },
     "ods:translatorType": {
       "type": "string",
-      "description": "The serialisation of the data the endpoint provides indicating what type of Translator is required",
+      "description": "The serialisation of the data the endpoint provides indicating what type of Translator is required. If 'none', no translator is used",
       "enum": [
         "dwca",
-        "biocase"
+        "biocase",
+        "none"
       ]
     },
     "ods:maximumRecords": {
