@@ -43,7 +43,8 @@
       "description": "The serialisation of the data the endpoint provides indicating what type of Translator is required",
       "enum": [
         "dwca",
-        "biocase"
+        "biocase",
+        "none"
       ]
     },
     "ods:dataMappingID": {
@@ -62,7 +63,6 @@
   },
   "required": [
     "schema:name",
-    "schema:url",
     "ods:translatorType",
     "ods:dataMappingID"
   ],

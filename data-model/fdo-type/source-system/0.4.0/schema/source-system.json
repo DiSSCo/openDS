@@ -140,7 +140,6 @@
     "schema:dateCreated",
     "schema:dateModified",
     "schema:creator",
-    "schema:url",
     "ods:translatorType",
     "ods:dataMappingID"
   ],
