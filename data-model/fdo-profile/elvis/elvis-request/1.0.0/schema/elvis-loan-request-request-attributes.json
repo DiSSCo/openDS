@@ -1,0 +1,98 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/elvis/elvis-request/1.0.0/elvis-loan-request-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for an ELViS loan request",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "requestingInstitution": {
+      "type": "string",
+      "description": "Wikidata ID or ROR of requesting institution",
+      "examples": [
+        "https://ror.org/0566bfb96"
+      ]
+    },
+    "requestingInstitutionName": {
+      "type": "string",
+      "description": "Human-readable name of requesting institution",
+      "examples": [
+        "Naturalis Biodiversity Center"
+      ]
+    },
+    "hostInstitution": {
+      "type": "string",
+      "description": "Wikidata ID or ROR of host institution",
+      "examples": [
+        "https://ror.org/0566bfb96"
+      ]
+    },
+    "hostInstitutionName": {
+      "type": "string",
+      "description": "Human-readable name of host institution",
+      "examples": [
+        "Naturalis Biodiversity Center"
+      ]
+    },
+    "RAID": {
+      "type": "string",
+      "description": "Research Activity ID, see https://raid.org/"
+    },
+    "loanedObject": {
+      "oneOf": [
+        {
+          "properties": {
+            "specimenDois": {
+              "description": "List of specimen DOIs requested",
+              "type": "array",
+              "items": {
+                "type": "string",
+                "examples": [
+                  "https://doi.org/10.3535/Y5D-CQL-FHH"
+                ]
+              }
+            }
+          },
+          "required": [
+            "specimenDois"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "properties": {
+            "askedType": {
+              "type": "string",
+              "description": "In the case of a generic request, the type of specimen that was requested",
+              "example": [
+                "lepidoptera"
+              ]
+            },
+            "askedSpecies": {
+              "type": "string",
+              "description": "In the case of a generic request, the species of specimen that was requested",
+              "examples": [
+                "Danaus plexippus"
+              ]
+            }
+          },
+          "required": [
+            "askedType",
+            "askedSpecies"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": [
+    "hostInstitution",
+    "hostInstitutionName",
+    "loanedObject"
+  ],
+  "additionalProperties": false
+}
