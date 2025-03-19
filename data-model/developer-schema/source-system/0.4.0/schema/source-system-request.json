@@ -27,6 +27,16 @@
         "http://ipt.gbif.pt/ipt/archive.do?r=coi"
       ]
     },
+    "ods:hasFilters": {
+      "type": "array",
+      "description": "List of filters to apply to ingesting from source system. How filters are implemented will vary per translator type.",
+      "examples": [
+        "<like path='/DataSets/DataSet/Metadata/Description/Representation/Title'>Herbarium Senckenbergianum (FR)</like>"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
     "ltc:collectionManagementSystem": {
       "type": "string",
       "description": "The collection management system that the source system is using, https://rs.tdwg.org/ltc/terms/collectionManagementSystem",
@@ -43,8 +53,7 @@
       "description": "The serialisation of the data the endpoint provides indicating what type of Translator is required",
       "enum": [
         "dwca",
-        "biocase",
-        "none"
+        "biocase"
       ]
     },
     "ods:dataMappingID": {
