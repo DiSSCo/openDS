@@ -27,15 +27,6 @@
       "example": "Naturalis Biodiversity Center",
       "$comment": "idx = 401"
     },
-    "linkedDigitalObjectPid": {
-      "type": "string",
-      "description": "Handle or DOI, the DO to which the media should be linked.",
-      "example": "https://hdl.handle.net/20.5000.1025/3X0-WA3-J8Q"
-    },
-    "linkedDigitalObjectType": {
-      "type": "string",
-      "description": "The DO type to which the media is linked, one of: digital specimen, agent, facility, supplementary material"
-    },
     "primaryMediaId": {
       "type": "string",
       "description": "Primary ID supplied by the original provider for the media (compatible with ac:providerManagedID). the mediaUrl may be the ID itself, for example: https://data.nhm.ac.uk/media/93012a86-a00f-435a-a985-8e3c0ab6e51b",
@@ -88,8 +79,6 @@
     "referentName",
     "mediaHost",
     "mediaHostName",
-    "linkedDigitalObjectPid",
-    "linkedDigitalObjectType",
     "primaryMediaId",
     "rightsHolder"
   ],

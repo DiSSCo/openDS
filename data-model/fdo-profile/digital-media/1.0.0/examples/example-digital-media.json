@@ -16,8 +16,6 @@
   "referentName": "Some digital object",
   "mediaHost": "https://ror.org/0566bfb96",
   "mediaHostName": "Naturalis Biodiversity Center",
-  "linkedDigitalObjectPid": "https://doi.org/10.3535/GR0-WWV-3RT",
-  "linkedDigitalObjectType": "https://doi.org/21.T11148/d8de0819e144e4096645",
   "primaryMediaId": "https://mediaphoto.mnhn.fr/media/1620403020391dDLZHWzqVzfk5Az3",
   "licenseName": "https://spdx.org/licenses/CC0-1.0.json",
   "rightsHolder": "https://ror.org/0566bfb96"
