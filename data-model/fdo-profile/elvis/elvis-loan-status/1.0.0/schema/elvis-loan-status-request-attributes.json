@@ -1,0 +1,50 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/elvis/elvis-loan-status/1.0.0/elvis-loan-status-request-attributes.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a MAS",
+  "$comment": "FDO Profile Version 1.0.0",
+  "properties": {
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Additional URLs to be appended to the 10320/loc field"
+    },
+    "specimenDoi": {
+      "type": "string",
+      "description": "DOI of the specimen in the loan",
+      "examples": [
+        "https://doi.org/10.3535/AAA-BBB-CCC"
+      ]
+    },
+    "hostInstitution": {
+      "type": "string",
+      "description": "Wikidata ID or ROR of host institution",
+      "examples": [
+        "https://ror.org/0566bfb96"
+      ]
+    },
+    "hostInstitutionName": {
+      "type": "string",
+      "description": "Human-readable name of host institution",
+      "examples": [
+        "Naturalis Biodiversity Center"
+      ]
+    },
+    "requestId": {
+      "type": "string",
+      "description": "Handle of the ELViS loan request",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/1SD-P2R-991"
+      ]
+    }
+  },
+  "required": [
+    "specimenDoi",
+    "hostInstitutionName",
+    "hostInstitution",
+    "requestId"
+  ],
+  "additionalProperties": false
+}
