@@ -31,7 +31,7 @@
         "number",
         "boolean"
       ],
-      "description": "A list of values that",
+      "description": "Contains a single value that the Digital Object property should match.",
       "examples": [
         "https://doi.org/10.3535/DY5-8NC-L2A",
         "Zoology"
@@ -39,7 +39,7 @@
     },
     "ods:predicateValues": {
       "type": "array",
-      "description": "",
+      "description": "Contains a list of values that the Digital Object property should match. This is together with the predicateType 'in'.",
       "items": {
         "type": [
           "string",

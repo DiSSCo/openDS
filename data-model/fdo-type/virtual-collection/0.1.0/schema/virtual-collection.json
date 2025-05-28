@@ -108,7 +108,7 @@
         "dcterms:identifier",
         "ods:fdoType",
         "ods:status",
-        "ods:version",
+        "schema:version",
         "ltc:collectionName",
         "ods:hasTargetDigitalObjectFilter",
         "schema:dateCreated",
