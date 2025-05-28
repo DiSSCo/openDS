@@ -1,0 +1,34 @@
+{
+  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@type": "VirtualCollection",
+  "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
+  "ods:status": "Active",
+  "schema:version": 1,
+  "ltc:collectionName": "Bumblebee Collection of South Holland",
+  "ltc:description": "A virtual reference collection including key bumblebee specimens",
+  "schema:dateCreated": "2025-06-01T12:00:00.323Z",
+  "schema:dateModified": "2025-06-06T13:22:00.445Z",
+  "schema:creator": {
+    "@id": "https://orcid.org/0000-0002-5669-2769",
+    "@type": "schema:Person",
+    "schema:name": "Sam Leeflang",
+    "ods:hasIdentifiers": [
+      {
+        "@id": "https://orcid.org/0000-0002-5669-2769",
+        "@type": "ods:Identifier",
+        "dcterms:title": "ORCID",
+        "dcterms:type": "URL",
+        "dcterms:identifier": "https://orcid.org/0000-0002-5669-2769",
+        "ods:gupriLevel": "GloballyUniqueStablePersistentResolvable",
+        "ods:identifierStatus": "Preferred"
+      }
+    ]
+  },
+  "ods:hasTargetDigitalObjectFilter": {
+    "ods:predicateType": "equals",
+    "ods:predicateKey": "$['ods:hasIdentifications'][*]['ods:hasTaxonIdentifications'][*]['dwc:genus']",
+    "ods:predicateValue": "bombus"
+  },
+  "ods:hasTombstoneMetadata": null
+}

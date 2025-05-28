@@ -1,0 +1,129 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/secret-variable.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Target Digital Object Filter Version 0.4.0",
+  "title": "TargetDigitalObjectFilter",
+  "type": "object",
+  "description": "This object contains the filters that can be used to indicate to which Digital Objects the action applies. This has been modelled after the GBIF predicate API (https://techdocs.gbif.org/en/data-use/api-downloads#predicates)",
+  "properties": {
+    "ods:predicateType": {
+      "description": "The type of the filter, which can be one of the following: equals, and, or, not. This is used to indicate how the filter should be applied to the Digital Object.",
+      "enum": [
+        "equals",
+        "and",
+        "or",
+        "not",
+        "in"
+      ]
+    },
+    "ods:predicateKey": {
+      "type": "string",
+      "description": "The propertyName of the Digital Object to filter on. This should be the full path",
+      "examples": [
+        "$[ods:id]",
+        "$['ods:topicDiscipline']",
+        "$['ods:hasEvents'][*]['dwc:year']"
+      ]
+    },
+    "ods:predicateValue": {
+      "type": [
+        "string",
+        "number",
+        "boolean"
+      ],
+      "description": "A list of values that",
+      "examples": [
+        "https://doi.org/10.3535/DY5-8NC-L2A",
+        "Zoology"
+      ]
+    },
+    "ods:predicateValues": {
+      "type": "array",
+      "description": "",
+      "items": {
+        "type": [
+          "string",
+          "number",
+          "boolean"
+        ],
+        "examples": [
+          [
+            "https://doi.org/10.3535/DY5-8NC-L2A",
+            "https://doi.org/10.3535/VNX-L8T-H9A",
+            "https://doi.org/10.3535/9YK-3RC-9M3"
+          ],
+          [
+            1970,
+            1971,
+            1972
+          ]
+        ]
+      }
+    },
+    "ods:hasPredicates": {
+      "type": "array",
+      "description": "A list of sub-filters that can be used to filter on multiple properties or values. This is used to create more complex filters.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "ods:predicateType": {
+            "description": "The type of the filter, which can be one of the following: equals, and, or, not. This is used to indicate how the filter should be applied to the Digital Object.",
+            "enum": [
+              "equals",
+              "and",
+              "or",
+              "not",
+              "in"
+            ]
+          },
+          "ods:predicateKey": {
+            "type": "string",
+            "description": "The propertyName of the Digital Object to filter on. This should be the full path",
+            "examples": [
+              "$[ods:id]",
+              "$['ods:topicDiscipline']"
+            ]
+          },
+          "ods:predicateValue": {
+            "type": [
+              "string",
+              "number",
+              "boolean"
+            ],
+            "description": "A list of values that",
+            "examples": [
+              "https://doi.org/10.3535/DY5-8NC-L2A",
+              "Zoology"
+            ]
+          },
+          "ods:predicateValues": {
+            "type": "array",
+            "description": "",
+            "items": {
+              "type": [
+                "string",
+                "number",
+                "boolean"
+              ],
+              "examples": [
+                [
+                  "https://doi.org/10.3535/DY5-8NC-L2A",
+                  "https://doi.org/10.3535/VNX-L8T-H9A",
+                  "https://doi.org/10.3535/9YK-3RC-9M3"
+                ]
+              ]
+            }
+          }
+        },
+        "required": [
+          "ods:predicateType",
+          "ods:predicateKey"
+        ]
+      }
+    }
+  },
+  "additionalProperties": false,
+  "required": [
+    "ods:predicateType"
+  ]
+}

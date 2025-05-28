@@ -1,0 +1,15 @@
+{
+  "ods:predicateType": "and",
+  "ods:hasPredicates": [
+    {
+      "ods:predicateType": "in",
+      "ods:predicateKey": "$['ods:id']",
+      "ods:predicateValues": ["https://doi.org/10.15468/holotype1", "https://doi.org/10.15468/holotype2"]
+    },
+    {
+      "ods:predicateType": "not",
+      "ods:predicateKey": "$['ods:organisationID']",
+      "ods:predicateValue": "https://ror.org/0566bfb96"
+    }
+  ]
+}

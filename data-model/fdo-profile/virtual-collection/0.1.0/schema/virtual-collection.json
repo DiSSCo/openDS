@@ -150,15 +150,10 @@
       "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_collectionName A short title that summarizes the collection objects contained within the ObjectGroup",
       "$comment": "idx = 900"
     },
-    "conditionsOfAccess": {
-      "type": "string",
-      "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_conditionsOfAccess Information about who can access the collection being described or an indication of its security status",
-      "$comment": "idx = 901"
-    },
     "description": {
       "type": "string",
       "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_description A free text description or narrative about the collection.",
-      "$comment": "idx = 902"
+      "$comment": "idx = 901"
     }
   },
   "additionalProperties": false,
