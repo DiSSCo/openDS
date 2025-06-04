@@ -5,7 +5,8 @@
       "locations": [
         "https://grscicollections.org/collections/12345/locations/67890"
       ],
-      "collectionName": "NHM Lepidoptera 1867"
+      "collectionName": "NHM Lepidoptera 1867",
+      "basisOfScheme": "Reference Collection"
     }
   }
 }

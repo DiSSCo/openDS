@@ -7,6 +7,7 @@
   "schema:version": 1,
   "ltc:collectionName": "Holotypes Botany Collection",
   "ltc:description": "A virtual collection of specific botanical holotypes. Excluding the Naturalis collections.",
+  "ltc:basisOfScheme": "Reference Collection",
   "schema:dateCreated": "2025-03-01T12:00:00.323Z",
   "schema:creator": {
     "@id": "https://orcid.org/0000-0002-5669-2769",
@@ -38,6 +39,5 @@
         "ods:predicateValue": "https://ror.org/0566bfb96"
       }
     ]
-  },
-  "ods:hasTombstoneMetadata": null
+  }
 }

@@ -14,10 +14,19 @@
     "collectionName": {
       "type": "string",
       "description": "Name of the Virtual Collection as provided by the user"
-    }
+    },
+    "type": "string",
+    "description": "This property is intended to summarise the reason for grouping a number objects together.",
+    "enum": [
+      "Reference Collection",
+      "Community Collection",
+      "Personal Collection",
+      "Campaign Collection"
+    ]
   },
   "required": [
-    "virtualCollectionName"
+    "collectionName",
+    "basisOfScheme"
   ],
   "additionalProperties": false
 }

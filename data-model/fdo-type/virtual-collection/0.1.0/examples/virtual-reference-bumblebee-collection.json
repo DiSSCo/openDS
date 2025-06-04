@@ -7,6 +7,7 @@
   "schema:version": 1,
   "ltc:collectionName": "Bumblebee Collection of South Holland",
   "ltc:description": "A virtual reference collection including key bumblebee specimens",
+  "ltc:basisOfScheme": "Reference Collection",
   "schema:dateCreated": "2025-06-01T12:00:00.323Z",
   "schema:dateModified": "2025-06-06T13:22:00.445Z",
   "schema:creator": {
