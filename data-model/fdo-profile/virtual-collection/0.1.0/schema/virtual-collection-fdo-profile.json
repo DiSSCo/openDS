@@ -129,10 +129,16 @@
       "description": "A short title that summarizes the collection objects contained within the ObjectGroup",
       "$comment": "idx = 900"
     },
-    "description": {
+    "basisOfScheme": {
       "type": "string",
-      "description": "A free text description or narrative about the collection.",
-      "$comment": "idx = 901"
+      "description": "This property is intended to summarise the reason for grouping a number objects together.",
+      "enum": [
+        "reference collection",
+        "community collection",
+        "personal collection",
+        "campaign collection"
+      ],
+      "$comment": "idx = 902"
     }
   },
   "additionalProperties": false,
@@ -149,6 +155,7 @@
     "pidRecordIssueNumber",
     "10320/loc",
     "pidStatus",
-    "collectionName"
+    "collectionName",
+    "basisOfScheme"
   ]
 }
