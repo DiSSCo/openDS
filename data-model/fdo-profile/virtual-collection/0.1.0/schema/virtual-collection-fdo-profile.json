@@ -134,9 +134,7 @@
       "description": "This property is intended to summarise the reason for grouping a number objects together.",
       "enum": [
         "Reference Collection",
-        "Community Collection",
-        "Personal Collection",
-        "Campaign Collection"
+        "Community Collection"
       ],
       "$comment": "idx = 902"
     }
