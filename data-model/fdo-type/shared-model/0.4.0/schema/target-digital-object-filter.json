@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/secret-variable.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/shared/0.4.0/target-digital-object-filter.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Target Digital Object Filter Version 0.4.0",
   "title": "TargetDigitalObjectFilter",
