@@ -67,6 +67,7 @@
         "type": "object",
         "properties": {
           "ods:predicateType": {
+            "type": "string",
             "description": "The type of the filter, which can be one of the following: equals, and, or, not. This is used to indicate how the filter should be applied to the Digital Object.",
             "enum": [
               "equals",
