@@ -1,127 +1,135 @@
 {
-    "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtualcollection/0.1.0/virtualcollection.json",
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$comment": "DigitalObject Version 0.1.0",
-    "title": "VirtualCollection",
-    "type": "object",
-    "properties": {
-        "@id": {
-            "type": "string",
-            "description": "The PID of the object in the form of a handle, which is also the URL to the object.",
-            "pattern": "^https:\/\/hdl\\.handle\\.net\/20\\.5000\\.1025\/.{3}-.{3}-.{3}$",
-            "examples": [
-                "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-            ]
-        },
-        "@type": {
-            "type": "string",
-            "description": "The type of the object, which is always VirtualCollection.",
-            "const": "VirtualCollection",
-            "examples": [
-                "VirtualCollection"
-            ]
-        },
-        "dcterms:identifier": {
-            "type": "string",
-            "description": "PID of the object.",
-            "pattern": "^https:\/\/hdl\\.handle\\.net\/20\\.5000\\.1025\/.{3}-.{3}-.{3}$",
-            "examples": [
-                "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-            ]
-        },
-        "ods:fdoType": {
-            "type": "string",
-            "description": "The DOI to the FDO type of the object",
-            "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/[\\w\\.]+",
-            "examples": [
-                "https://doi.org/10.15468/1a2b3c"
-            ]
-        },
-        "ods:status": {
-            "type": "string",
-            "enum": [
-                "Draft",
-                "Active",
-                "Tombstone"
-            ],
-            "description": "The status of the Digital Object. A digital object can be in Draft, when it is not published yet. Active when it is published and the object is active and Tombstone which means the object has been archived."
-        },
-        "schema:version": {
-            "type": "integer",
-            "minimum": 1,
-            "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
-            "examples": [
-                1,
-                2,
-                3
-            ]
-        },
-        "ltc:collectionName": {
-            "type": "string",
-            "description": "A short title that summarizes the collection objects contained in the virtual collection.",
-            "examples": [
-                "Bumblebee Collection of South Holland"
-            ]
-        },
-        "ltc:description": {
-            "type": "string",
-            "description": "A description or narrative about the collection.",
-            "examples": [
-                "A virtual reference collection including key bumblebee specimens"
-            ]
-        },
-        "ltc:basisOfScheme": {
-            "type": "string",
-            "description": "This property is intended to summarise the reason for grouping a number objects together.",
-            "enum": [
-                "Reference Collection",
-                "Community Collection"
-            ]
-        },
-        "schema:dateCreated": {
-            "type": "string",
-            "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
-            "format": "date-time",
-            "examples": [
-                "2021-06-01T12:00:00.323Z"
-            ]
-        },
-        "schema:dateModified": {
-            "type": "string",
-            "description": "Timestamp of last modification. Internally generated, follows the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
-            "format": "date-time",
-            "examples": [
-                "2021-06-06T13:22:00.445Z"
-            ]
-        },
-        "schema:creator": {
-            "type": "object",
-            "description": "Contains an ods:Agent object",
-            "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
-        },
-        "ods:hasTargetDigitalObjectFilter": {
-           "type": "object",
-            "description": "Contains the filters that the collection uses",
-            "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json"
-        },
-        "ods:hasTombstoneMetadata": {
-            "type": "object",
-            "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
-            "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
-        }
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtual-collection/0.1.0/virtual-collection.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "DigitalObject Version 0.1.0",
+  "title": "VirtualCollection",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The PID of the object in the form of a handle, which is also the URL to the object.",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
     },
-    "required": [
-        "@id",
-        "@type",
-        "dcterms:identifier",
-        "ods:fdoType",
-        "ods:status",
-        "schema:version",
-        "ltc:collectionName",
-        "ltc:basisOfScheme",
-        "ods:hasTargetDigitalObjectFilter",
-        "schema:dateCreated",
-        "schema:creator"
-    ],
-    "additionalProperties": false
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, which is always VirtualCollection.",
+      "const": "VirtualCollection",
+      "examples": [
+        "VirtualCollection"
+      ]
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "PID of the object.",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The DOI to the FDO type of the object",
+      "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/[\\w\\.]+",
+      "examples": [
+        "https://doi.org/10.15468/1a2b3c"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Active",
+        "Tombstone"
+      ],
+      "description": "The status of the Digital Object. A digital object can be in Draft, when it is not published yet. Active when it is published and the object is active and Tombstone which means the object has been archived."
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "examples": [
+        1,
+        2,
+        3
+      ]
+    },
+    "ltc:collectionName": {
+      "type": "string",
+      "description": "A short title that summarizes the collection objects contained in the virtual collection.",
+      "examples": [
+        "Bumblebee Collection of South Holland"
+      ]
+    },
+    "ltc:description": {
+      "type": "string",
+      "description": "A description or narrative about the collection.",
+      "examples": [
+        "A virtual reference collection including key bumblebee specimens"
+      ]
+    },
+    "ltc:basisOfScheme": {
+      "type": "string",
+      "description": "This property is intended to summarise the reason for grouping a number of objects together.",
+      "enum": [
+        "Reference Collection",
+        "Community Collection"
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:00.323Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, follows the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
+    "schema:contentURL": {
+      "type": "string",
+      "description": "URI for a media item that is representative for the virtual collection",
+      "examples": [
+        "https://image.bgbm.org/images/internal/HerbarThumbs/B100272813_1700",
+        "https://medialib.naturalis.nl/file/id/RGM.924559/format/large"
+      ]
+    },
+    "schema:creator": {
+      "type": "object",
+      "description": "Contains an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:hasTargetDigitalObjectFilter": {
+      "type": "object",
+      "description": "Contains the filters that the collection uses",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json"
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "dcterms:identifier",
+    "ods:fdoType",
+    "ods:status",
+    "schema:version",
+    "ltc:collectionName",
+    "ltc:basisOfScheme",
+    "ods:hasTargetDigitalObjectFilter",
+    "schema:dateCreated",
+    "schema:creator"
+  ],
+  "additionalProperties": false
 }

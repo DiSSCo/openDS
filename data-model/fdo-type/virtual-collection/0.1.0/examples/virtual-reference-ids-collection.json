@@ -1,13 +1,14 @@
 {
-  "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "@id": "https://doi.org/TEST/WDR-Y9G-2AY",
   "@type": "VirtualCollection",
-  "dcterms:identifier": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
+  "dcterms:identifier": "https://doi.org/TEST/WDR-Y9G-2AY",
   "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
   "ods:status": "Active",
   "schema:version": 1,
   "ltc:collectionName": "Holotypes Botany Collection",
   "ltc:description": "A virtual collection of specific botanical holotypes. Excluding the Naturalis collections.",
   "ltc:basisOfScheme": "Reference Collection",
+  "schema:contentURL": "https://image.bgbm.org/images/internal/HerbarThumbs/B100272813_1700",
   "schema:dateCreated": "2025-03-01T12:00:00.323Z",
   "schema:creator": {
     "@id": "https://orcid.org/0000-0002-5669-2769",
