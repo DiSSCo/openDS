@@ -51,7 +51,7 @@ COPY fdo-type/data-mapping/0.3.0/schema schema-root/schemas/fdo-type/data-mappin
 COPY fdo-type/shared-model/0.3.0/schema schema-root/schemas/fdo-type/shared-model/0.3.0
 COPY fdo-type/source-system/0.3.0/schema schema-root/schemas/fdo-type/source-system/0.3.0
 COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/0.1.0
-COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/vitual-collection/0.1.0
+COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/virtual-collection/0.1.0
 
 # Version 4 of FDO Type schemas
 COPY fdo-type/annotation/0.4.0/schema schema-root/schemas/fdo-type/annotation/0.4.0
@@ -73,7 +73,7 @@ COPY fdo-type/data-mapping/0.4.0/schema schema-root/schemas/fdo-type/data-mappin
 COPY fdo-type/shared-model/0.4.0/schema schema-root/schemas/fdo-type/shared-model/latest
 COPY fdo-type/source-system/0.4.0/schema schema-root/schemas/fdo-type/source-system/latest
 COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/latest
-COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/vitual-collection/latest
+COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/virtual-collection/latest
 
 # Version 3 Developer schemas
 COPY developer-schema/annotation/0.3.0/schema schema-root/schemas/developer-schema/annotation/0.3.0
