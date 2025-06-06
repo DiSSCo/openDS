@@ -2,7 +2,7 @@
   "@id": "https://doi.org/TEST/WDR-Y9G-2AY",
   "@type": "VirtualCollection",
   "dcterms:identifier": "https://doi.org/TEST/WDR-Y9G-2AY",
-  "ods:fdoType": "https://doi.org/10.15468/1a2b3c",
+  "ods:fdoType": "https://hdl.handle.net/21.T11148/2ac65a933b7a0361b651",
   "ods:status": "Active",
   "schema:version": 1,
   "ltc:collectionName": "Holotypes Botany Collection",

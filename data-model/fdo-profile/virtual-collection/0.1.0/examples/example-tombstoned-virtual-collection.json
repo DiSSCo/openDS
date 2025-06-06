@@ -1,11 +1,11 @@
 {
-  "10320/loc": "<locations><location href=\"https://dev.dissco.tech/api/v1/virtual-collection/TEST/FFR-RTL-B8K\" id=\"0\" weight=\"1\"/></locations>",
+  "10320/loc": "<locations><location href=\"https://dev.dissco.tech/api/v1/virtual-collection/10.3535/GEE-W3J-HL2\" id=\"0\" weight=\"1\"/></locations>",
   "fdoProfile": "https://hdl.handle.net/21.T11148/6fc9f9381f875249ff1f",
   "fdoRecordLicenseId": "https://spdx.org/licenses/CC0-1.0.json",
   "fdoRecordLicenseName": "CC0 1.0 Universal",
   "digitalObjectType": "https://hdl.handle.net/21.T11148/2ac65a933b7a0361b651",
   "digitalObjectName": "Virtual Collection",
-  "pid": "https://hdl.handle.net/TEST/FFR-RTL-B8K",
+  "pid": "https://doi.org/10.3535/GEE-W3J-HL2",
   "pidIssuer": "https://ror.org/02wddde16",
   "pidIssuerName": "Distributed System of Scientific Collections",
   "pidRecordIssueDate": "2023-11-17T11:57:02.933Z",
