@@ -1,11 +1,12 @@
 {
   "data": {
-    "type": "https://hdl.handle.net/21.T11148/532ce6796e2828dd2be6",
+    "type": "https://hdl.handle.net/21.T11148/2ac65a933b7a0361b651",
     "attributes": {
-      "pidIssuer": "https://ror.org/04wxnsj81",
-      "issuedForAgent": "https://ror.org/0566bfb96",
-      "structuralType": "digital",
-      "collectionName": "NHM Lepidoptera 1867"
+      "locations": [
+        "https://grscicollections.org/collections/12345/locations/67890"
+      ],
+      "collectionName": "NHM Lepidoptera 1867",
+      "basisOfScheme": "Reference Collection"
     }
   }
 }

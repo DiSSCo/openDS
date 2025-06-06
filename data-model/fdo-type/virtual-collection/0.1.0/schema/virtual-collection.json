@@ -1,184 +1,135 @@
 {
-    "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtualcollection/0.1.0/virtualcollection.json",
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$comment": "DigitalObject Version 0.1.0",
-    "title": "VirtualCollection",
-    "type": "object",
-    "properties": {
-        "ods:id": {
-            "type": "string",
-            "description": "PID of the object.",
-            "pattern": "^https:\/\/hdl\\.handle\\.net\/20\\.5000\\.1025\/.{3}-.{3}-.{3}$",
-            "examples": [
-                "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
-            ]
-        },
-        "rdf:type": {
-            "type": "string",
-            "description": "The type is always VirtualCollections. https://www.w3.org/TR/rdf12-schema/#ch_type",
-            "const": "VirtualCollections"
-        },
-        "ods:version": {
-            "type": "integer",
-            "description": "The version of the object.",
-            "examples": [
-                1
-            ]
-        },
-        "dcterms:creator": {
-            "type": "object",
-            "description": "The creator of the collection.",
-            "properties": {
-                "ods:type": {
-                    "type": "string",
-                    "description": "The type of creator of the collection.",
-                    "examples": [
-                        "foaf:Person"
-                    ],
-                    "enum": [
-                        "foaf:Person",
-                        "foaf:Organisation",
-                        "oa:SoftwareAgent"
-                    ],
-                    "required": [
-                        "ods:id",
-                        "ods:type"
-                    ]
-                },
-                "foaf:name": {
-                    "type": "string",
-                    "description": "The name of the creator. https://xmlns.com/foaf/0.1/#term_name.",
-                    "examples": [
-                        "My Name"
-                    ]
-                }
-            }
-        },
-        "ltc:ObjectGroup": {
-            "type": "object",
-            "description": "https://tdwg.github.io/ltc/quick-reference/#ObjectGroup An intentionally grouped set of objects with one or more common characteristics.",
-            "properties": {
-                "ltc:conditionsOfAccess": {
-                    "type": "string",
-                    "description": " https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_conditionsOfAccess Information about who can access the collection being described or an indication of its security status.",
-                    "examples": [
-                        "Open to the public"
-                    ]
-                },
-                "ltc:collectionName": {
-                    "type": "string",
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_collectionName A short title that summarizes the collection objects contained within the ObjectGroup.",
-                    "examples": [
-                        "Arctiacaja1991Netherlands"
-                    ]
-                },
-                "ltc:description": {
-                    "type": "string",
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#ObjectGroup_description A free text description or narrative about the collection.",
-                    "examples": [
-                        "A virtual collection representing all butterfly specimens in South Holland"
-                    ]
-                }
-            }
-        },
-        "ltc:MeasurementOrFact": {
-            "type": "object",
-            "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_MeasurementOrFact A measurement of or fact about a class within the standard, or a relationship between the ObjectGroup and an associated class.",
-            "properties": {
-                "dwc:measurementType": {
-                    "type": "string",
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementType The nature of the measurement, fact, characteristic, or assertion.",
-                    "examples": [
-                        "Object Count"
-                    ]
-                },
-                "dwc:measurementValue": {
-                    "type": "number",
-                    "description": "https://tdwg.github.io/ltc/terms/index.html#MeasurementOrFact_measurementValue The numerical value of the measurement.",
-                    "examples": [
-                        100
-                    ]
-                },
-                "dwc:measurementUnit": {
-                    "type": "string",
-                    "description": "https://tdwg.github.io/ltc/terms/#MeasurementOrFact_measurementUnit The units associated with the measurementValue.",
-                    "examples": [
-                        "mm, C, km, count, percentage, category"
-                    ]
-                }
-            },
-            "required": [
-                "dwc:measurementType",
-                "dwc:measurementValue",
-                "dwc:measurementUnit"
-            ]
-        },
-        "ods:searchFilters": {
-            "type": "array",
-            "description": "Search filters selected for the virtual collection.",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "filterKey": {
-                        "type": "string",
-                        "description": "Key of the filter.",
-                        "examples": [
-                            "country",
-                            "midsLevel"
-                        ]
-                    },
-                    "filterValue": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "description": "Value or configuration of the filter.",
-                        "examples": [
-                            [
-                                "Netherlands",
-                                "Belgium"
-                            ],
-                            [
-                                "1"
-                            ]
-                        ]
-                    }
-                },
-                "required": [
-                    "filterKey",
-                    "filterValue"
-                ]
-            },
-            "examples": [
-                [
-                    {
-                        "filterKey": "country",
-                        "filterValue": [
-                            "Netherlands",
-                            "Belgium"
-                        ]
-                    },
-                    {
-                        "filterKey": "midsLevel",
-                        "filterValue": [
-                            "1"
-                        ]
-                    }
-                ]
-            ]
-        },
-        "ltc:basisOfScheme": {
-            "type": "string",
-            "description": "A summary of the basis or purpose for the LatimerCoreScheme. This property is intended to summarize the reason for grouping a number of ObjectGroups within the LatimerCoreScheme, and the purpose for which the data is intended to be used."
-        }
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtual-collection/0.1.0/virtual-collection.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "DigitalObject Version 0.1.0",
+  "title": "VirtualCollection",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The PID of the object in the form of a handle, which is also the URL to the object.",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
     },
-    "required": [
-        "rdf:type",
-        "ods:id",
-        "ods:version",
-        "ods:searchFilters",
-        "dcterms:creator",
-        "ltc:ObjectGroup"
-    ],
-    "additionalProperties": false
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, which is always VirtualCollection.",
+      "const": "VirtualCollection",
+      "examples": [
+        "VirtualCollection"
+      ]
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "PID of the object.",
+      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The Handle to the FDO type of the object",
+      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/21.T11148/2ac65a933b7a0361b651"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Active",
+        "Tombstone"
+      ],
+      "description": "The status of the Digital Object. A digital object can be in Draft, when it is not published yet. Active when it is published and the object is active and Tombstone which means the object has been archived."
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "examples": [
+        1,
+        2,
+        3
+      ]
+    },
+    "ltc:collectionName": {
+      "type": "string",
+      "description": "A short title that summarizes the collection objects contained in the virtual collection.",
+      "examples": [
+        "Bumblebee Collection of South Holland"
+      ]
+    },
+    "ltc:description": {
+      "type": "string",
+      "description": "A description or narrative about the collection.",
+      "examples": [
+        "A virtual reference collection including key bumblebee specimens"
+      ]
+    },
+    "ltc:basisOfScheme": {
+      "type": "string",
+      "description": "This property is intended to summarise the reason for grouping a number of objects together.",
+      "enum": [
+        "Reference Collection",
+        "Community Collection"
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:00.323Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, follows the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
+    "schema:contentURL": {
+      "type": "string",
+      "description": "URI for a media item that is representative for the virtual collection",
+      "examples": [
+        "https://image.bgbm.org/images/internal/HerbarThumbs/B100272813_1700",
+        "https://medialib.naturalis.nl/file/id/RGM.924559/format/large"
+      ]
+    },
+    "schema:creator": {
+      "type": "object",
+      "description": "Contains an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:hasTargetDigitalObjectFilter": {
+      "type": "object",
+      "description": "Contains the filters that the collection uses",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json"
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "dcterms:identifier",
+    "ods:fdoType",
+    "ods:status",
+    "schema:version",
+    "ltc:collectionName",
+    "ltc:basisOfScheme",
+    "ods:hasTargetDigitalObjectFilter",
+    "schema:dateCreated",
+    "schema:creator"
+  ],
+  "additionalProperties": false
 }
