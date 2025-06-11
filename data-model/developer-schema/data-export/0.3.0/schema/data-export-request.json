@@ -48,16 +48,23 @@
             "exportType": {
               "type": "string",
               "enum": [
-                "DOI_LIST"
+                "DOI_LIST",
+                "DWC_DP",
+                "DWCA"
               ],
               "description": "Type of export job. Currently, only one kind of job is supported"
+            },
+            "isSourceSystemJob": {
+              "type": "boolean",
+              "description": "Indicates if the export job is for a source system. If true, the system will not send an email but will add the download link to the sourceSystem. Only available for export-type dwc-dp and dwca. The searchParam should only contain the sourceSystem."
             }
           },
           "additionalProperties": false,
           "required": [
             "searchParams",
             "targetType",
-            "exportType"
+            "exportType",
+            "isSourceSystemJob"
           ]
         }
       },
