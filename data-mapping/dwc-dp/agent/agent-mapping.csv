@@ -1,0 +1,5 @@
+agentID,$.ods:hasIdentifications[*].ods:hasAgents[*].schema:identifier,Generate if not available
+agentType,$.ods:hasIdentifications[*].ods:hasAgents[*].@type,
+agentTypeIRI,,
+agentTypeVocabulary,"Hardcoded to ""https://schema.org/agent""",
+preferredAgentName,$.ods:hasIdentifications[*].ods:hasAgents[*].schema:name,

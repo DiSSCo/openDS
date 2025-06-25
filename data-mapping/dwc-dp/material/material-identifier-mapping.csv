@@ -1,0 +1,7 @@
+,We exclude dwc:catalogNumber as it is mapped directly and the dwca:ID
+identifier,$.ods:hasIdentifiers.@id
+materialEntityID,$.ods:physicalSpecimenID
+identifierType,$.ods:hasIdentifiers.@id.dcterms:title
+identifierTypeIRI,
+identifierTypeVocabulary,
+identifierLanguage,

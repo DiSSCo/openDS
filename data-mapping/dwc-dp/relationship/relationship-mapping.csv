@@ -1,0 +1,17 @@
+relationshipID,$.ods:hasEntityRelationships[*].@id
+subjectResourceID,$.ods:physicalSpecimenID
+subjectResourceType,"Hardcoded to ""MaterialEntity"""
+subjectResourceTypeIRI,
+subjectResourceTypeVocabulary,
+relationshipType,$.ods:hasEntityRelationships[*].dwc:relationshipOfResource
+relationshipTypeIRI,
+relationshipTypeVocabulary,
+relatedResourceID,$.ods:hasEntityRelationships[*].dwc:relationshipOfResourceID
+relatedResourceType,
+relatedResourceTypeIRI,
+relatedResourceTypeVocabulary,
+relationshipOrder,
+relationshipAccordingTo,$.ods:hasEntityRelationships[*].ods:hasAgents[0].schema:name
+relationshipAccordingToID,$.ods:hasEntityRelationships[*].ods:hasAgents[0].@id
+relationshipEffectiveDate,$.ods:hasEntityRelationships[*].dwc:relationshipEstablishedDate
+relationshipRemarks,$.ods:hasEntityRelationships[*].dwc:relationshipRemarks

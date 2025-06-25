@@ -1,0 +1,47 @@
+materialEntityID,$.ods:physicalSpecimenID
+eventID,$.ods:hasEvents[*].@id
+materialCategory,
+materialEntityType,
+digitalSpecimenID,$.@id
+institutionCode,$.ods:organisationCode
+institutionID,$.ods:organisationID
+ownerInstitutionCode,$.ods:ownerOrganisationCode
+ownerInstitutionID,
+collectionCode,$.dwc:collectionCode
+collectionID,$.dwc:collectionID
+catalogNumber,"Filled based on an Identifier if the Identifier title is ""dwc:catalogNumber"""
+otherCatalogNumbers,Not filled we use material-identifier for otherCatalogNumbers
+collectedBy,$.ods:hasAgents
+collectedByID,$.ods:hasAgents
+objectQuantity,
+objectQuantityType,
+recordNumber,"Filled based on an Identifier if the Identifier title is ""dwc:recordNumber"""
+preparations,$.dwc:preparations
+disposition,$.dwc:disposition
+verbatimLabel,$.dwc:verbatimLabel
+associatedSequences,
+materialReferences,$.dwc:collectionID
+informationWithheld,$.dwc:informationWithheld
+dataGeneralizations,$.dwc:dataGeneralizations
+materialEntityRemarks,
+evidenceForOccurrenceID,
+derivedFromMaterialEntityID,
+derivationEventID,
+derivationType,
+isPartOfMaterialEntityID,
+verbatimIdentification,
+taxonFormula,
+typeStatus,
+typeDesignationType,
+identifiedBy,
+identifiedByID,
+dateIdentified,
+identificationReferences,
+identificationVerificationStatus,
+identificationRemarks,
+taxonID,
+higherClassificationName,
+higherClassificationRank,
+scientificName,
+taxonRank,
+taxonRemarks,

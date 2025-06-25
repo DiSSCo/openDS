@@ -1,0 +1,6 @@
+identifier,$.ods:hasIdentifications[*].ods:hasAgents[*].hasIdentifiers[*].@id
+materialEntityID,$.ods:hasIdentifications[*].ods:hasAgents[*].schema:identifier
+identifierType,$.ods:hasIdentifications[*].ods:hasAgents[*].hasIdentifiers[*].dcterms:title
+identifierTypeIRI,
+identifierTypeVocabulary,
+identifierLanguage,
