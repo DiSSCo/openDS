@@ -247,6 +247,13 @@
       "items": {
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/secret-variable.json"
       }
+    },
+    "ods:isIngestionCompatible": {
+      "type": "boolean",
+      "description": "Indicates if the MAS may be run on specimen and/or media as they are ingested into DiSSCo. Should be able to support the appropriate amount of traffic.",
+      "examples": [
+        true
+      ]
     }
   },
   "required": [
