@@ -143,8 +143,10 @@
       },
       "description": "Handles of machine annotation services that are triggered during the ingestion of this source system. These MASs target specimens in the source system",
       "examples": [
-        "https://hdl.handle.net/20.5000.1025/RB1-DRW-88Y",
-        "https://hdl.handle.net/20.5000.1025/F28-90S-SQX"
+        [
+          "https://hdl.handle.net/20.5000.1025/RB1-DRW-88Y",
+          "https://hdl.handle.net/20.5000.1025/F28-90S-SQX"
+        ]
       ]
     },
     "ods:mediaMachineAnnotationServices": {
@@ -155,8 +157,10 @@
       },
       "description": "Handles of machine annotation services that are triggered during the ingestion of this source system. These MASs target media in the source system",
       "examples": [
-        "https://hdl.handle.net/20.5000.1025/RB1-DRW-88Y",
-        "https://hdl.handle.net/20.5000.1025/F28-90S-SQX"
+        [
+          "https://hdl.handle.net/20.5000.1025/RB1-DRW-88Y",
+          "https://hdl.handle.net/20.5000.1025/F28-90S-SQX"
+        ]
       ]
     },
     "ods:hasTombstoneMetadata": {
