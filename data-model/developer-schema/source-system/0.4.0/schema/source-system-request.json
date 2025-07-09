@@ -64,6 +64,34 @@
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
     },
+    "ods:specimenMachineAnnotationServices": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}"
+      },
+      "description": "Handles of machine annotation services that are triggered during the ingestion of this source system. These MASs target specimens in the source system",
+      "examples": [
+        [
+          "https://hdl.handle.net/20.5000.1025/RB1-DRW-88Y",
+          "https://hdl.handle.net/20.5000.1025/F28-90S-SQX"
+        ]
+      ]
+    },
+    "ods:mediaMachineAnnotationServices": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}"
+      },
+      "description": "Handles of machine annotation services that are triggered during the ingestion of this source system. These MASs target media in the source system",
+      "examples": [
+        [
+          "https://hdl.handle.net/20.5000.1025/RB1-DRW-88Y",
+          "https://hdl.handle.net/20.5000.1025/F28-90S-SQX"
+        ]
+      ]
+    },
     "ods:hasTombstoneMetadata": {
       "type": "object",
       "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
