@@ -1,0 +1,20 @@
+identificationID,$.ods:hasIdentifications[*].dwc:identificationID
+basedOnOccurrenceID,
+basedOnMaterialEntityID,$.ods:physicalSpecimenID
+basedOnNucleotideSequenceID,
+basedOnNucleotideAnalysisID,
+basedOnMediaID,
+identificationType,"Hardcoded ""MaterialEntity"""
+verbatimIdentification,$.ods:hasIdentifications[*].dwc:verbatimIdentification
+isAcceptedIdentification,
+taxonFormula,$.ods:hasIdentifications[*].dwc:taxonFormula
+typeStatus,$.ods:hasIdentifications[*].dwc:typeStatus
+typeDesignationType,
+typifiedName,
+identifiedBy,$.ods:hasIdentifications[*].ods:hasAgents
+identifiedByID,$.ods:hasIdentifications[*].ods:hasAgents
+dateIdentified,$.ods:hasIdentifications[*].dwc:dateIdentified
+identificationReferences,
+taxonAssignmentMethod,
+identificationVerificationStatus,$.ods:hasIdentifications[*].dwc:identificationVerificationStatus
+identificationRemarks,$.ods:hasIdentifications[*].dwc:identificationRemarks

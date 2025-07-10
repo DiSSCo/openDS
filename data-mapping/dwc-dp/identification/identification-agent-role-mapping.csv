@@ -1,0 +1,7 @@
+agentID,$.ods:hasIdentifications[*].ods:hasAgents[*].schema:identifier
+identificationID,$.ods:hasIdentifications[*].dwc:identificationID
+agentRole,$.ods:hasIdentifications[*].ods:hasAgents[*].ods:hasRoles[*].schema:roleName
+agentRoleIRI,
+agentRoleVocabulary,"Hardcoded to ""https://schema.org/agent"""
+agentRoleOrder,$.ods:hasIdentifications[*].ods:hasAgents[*].ods:hasRoles[*].schema:position
+agentRoleDate,Combination of $.ods:hasIdentifications[*].ods:hasAgents[*].ods:hasRoles[*].schema:startDate and $.ods:hasIdentifications[*].ods:hasAgents[*].ods:hasRoles[*].schema:endDate

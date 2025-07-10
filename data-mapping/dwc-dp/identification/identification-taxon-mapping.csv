@@ -1,0 +1,8 @@
+identificationID,$.ods:hasIdentifications[*].dwc:identificationID
+taxonID,$.ods:hasIdentifications[*].ods:hasTaxonIdentifications[*].dwc:taxonID
+taxonOrder,
+higherClassificationName,$.ods:hasIdentifications[*].ods:hasTaxonIdentifications[*].dwc:kingdom
+higherClassificationRank,"Hardcoded to ""dwc:kingdom"""
+scientificName,$.ods:hasIdentifications[*].ods:hasTaxonIdentifications[*].dwc:scientificName
+taxonRank,$.ods:hasIdentifications[*].ods:hasTaxonIdentifications[*].dwc:taxonRank
+taxonRemarks,$.ods:hasIdentifications[*].ods:hasTaxonIdentifications[*].dwc:taxonRemarks
