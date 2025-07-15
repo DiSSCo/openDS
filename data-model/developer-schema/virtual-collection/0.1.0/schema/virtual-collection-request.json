@@ -1,0 +1,55 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/virtual-collection/0.1.0/virtual-collection-request.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Virtual Collection Request Version 0.1.0",
+  "title": "VirtualCollectionRequest",
+  "type": "object",
+  "properties": {
+    "ltc:collectionName": {
+      "type": "string",
+      "description": "A short title that summarizes the collection objects contained in the virtual collection.",
+      "examples": [
+        "Bumblebee Collection of South Holland"
+      ]
+    },
+    "ltc:description": {
+      "type": "string",
+      "description": "A description or narrative about the collection.",
+      "examples": [
+        "A virtual reference collection including key bumblebee specimens"
+      ]
+    },
+    "ltc:basisOfScheme": {
+      "type": "string",
+      "description": "This property is intended to summarise the reason for grouping a number of objects together.",
+      "enum": [
+        "Reference Collection",
+        "Community Collection"
+      ]
+    },
+    "schema:contentURL": {
+      "type": "string",
+      "description": "URI for a media item that is representative for the virtual collection",
+      "examples": [
+        "https://image.bgbm.org/images/internal/HerbarThumbs/B100272813_1700",
+        "https://medialib.naturalis.nl/file/id/RGM.924559/format/large"
+      ]
+    },
+    "ods:hasTargetDigitalObjectFilter": {
+      "type": "object",
+      "description": "Contains the filters that the collection uses",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json"
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "ltc:collectionName",
+    "ltc:basisOfScheme",
+    "ods:hasTargetDigitalObjectFilter"
+  ],
+  "additionalProperties": false
+}

@@ -1,5 +1,5 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/source-system/0.4.0/source-system-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/source-system/0.4.0/source-system-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$comment": "Source System Request Version 0.4.0",
   "title": "SourceSystemRequest",
