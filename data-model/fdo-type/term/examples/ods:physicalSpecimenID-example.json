@@ -1,0 +1,32 @@
+{
+  "@id": "https://hdl.handle.net/20.500.1025/physicalSpecimenID",
+  "@type": "ods:Term",
+  "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+  "ods:version": 1,
+  "ods:status": "ods:Active",
+  "dcterms:title": "ods:physicalSpecimenID",
+  "skos:prefLabel": "Physical Specimen ID",
+  "skos:definition": "The physical specimen identifier of the object. The main identifier of the object is used (which can be indicated by the user through the DataMapping). If the ods:physicalSpecimenIDType is Resolvable or Global, this identifier is the same as the `ods:normalisedPhysicalSpecimenID`.",
+  "skos:note": "Used in multiple schemas including the Digital Specimen FDO.",
+  "skos:example": "https://data.biodiversitydata.nl/naturalis/specimen/RGM.234626",
+  "dcterms:created": "2025-07-30T10:00:00Z",
+  "dcterms:modified": "2025-07-30T10:00:00Z",
+  "rdfs:range": [
+    "https://terms.dissco.tech/digital-specimen-terms#DigitalSpecimen"
+  ],
+  "owl:deprecated": false,
+  "ods:hasAgents": [
+    {
+      "@id": "https://orcid.org/0000-0002-1825-0097",
+      "@type": "schema:Person",
+      "schema:name": "First Second",
+      "schema:identifier": "https://orcid.org/0000-0002-1825-0097",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "creator"
+        }
+      ]
+    }
+  ]
+}
