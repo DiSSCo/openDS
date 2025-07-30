@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schemas.dissco.tech/schemas/fdo-type/term/0.1.0/term.json",
   "title": "DiSSCo openDS Term Schema",
-  "description": "A schema for defining standard terms in openDS.",
+  "description": "A schema for defining standard terms used in openDS.",
   "type": "object",
   "properties": {
     "@id": {
@@ -12,6 +12,11 @@
       "examples": [
         "https://hdl.handle.net/20.500.1025/DigitalSpecimen"
       ]
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Term",
+      "description": "The type of the digital object, in this case a ods:Term"
     },
     "ods:fdoType": {
       "type": "string",
@@ -91,10 +96,9 @@
       "type": "string",
       "description": "An example usage of the term.",
       "examples": [
-        "A record of a butterfly specimen collected in the field"
+        "ods:physicalSpecimenID is used in Digital Specimen data schema"
       ]
     },
-   
     "dcterms:created": {
       "type": "string",
       "description": "The timestamp that the object was created in DiSSCo, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
@@ -110,7 +114,6 @@
         "2023-10-02T12:31:34.806Z"
       ]
     },
-  
     "dcterms:hasVersion": {
       "type": "string",
       "description": "A related resource that is a version, edition, or adaptation of the described resource.",
@@ -138,11 +141,19 @@
     }
   },
   "required": [
-    "@id",
+   "@id",
+   "@type",
     "ods:version",
     "ods:fdoType",
     "dcterms:created",
-    "dcterms:modified",
-    "dcterms:title"
-  ]
+    "dcterms:modified", 
+    "dcterms:title",
+    "owl:deprecated",
+    "skos:prefLabel",
+    "skos:definition",
+    "ods:hasAgents",
+    "ods:status",  
+    "rdfs:range"
+  ],
+    "additionalProperties": false
 }
