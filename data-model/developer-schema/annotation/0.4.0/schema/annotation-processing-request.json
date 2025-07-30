@@ -78,7 +78,6 @@
   "required": [
     "oa:motivation",
     "oa:hasTarget",
-    "oa:hasBody",
     "dcterms:creator",
     "dcterms:created"
   ],
