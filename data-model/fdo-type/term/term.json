@@ -55,6 +55,21 @@
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
       }
     },
+    "ods:hasControlledValues": {
+      "type": "array",
+      "description": "The controlled vocabulary values that this term accepts. Each URI represents a valid value for this term.",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/([^/]+)/([^/]+)$"
+      },
+      "examples": [
+        [
+          "https://hdl.handle.net/20.500.1025/topicDiscipline/Botany",
+          "https://hdl.handle.net/20.500.1025/topicDiscipline/Geology"
+        ]
+      ]
+    },
     "dcterms:title": {
       "type": "string",
       "description": "A Name given to the resource, in this case openDS term name",
@@ -72,6 +87,17 @@
         "type": "string"
       }
     },
+    "skos:member": {
+  "type": "array",
+  "description": "Indicates that this term is a member of a specific concept scheme or collection",
+  "items": {
+    "type": "string",
+    "format": "uri"
+  },
+  "examples": [
+    ["https://terms.dissco.tech/digital-specimen-terms", "https://vocabularies.dissco.tech/core-terms"]
+  ]
+}
     "skos:definition": {
       "type": "string",
       "description": "A definition of what the term represents.",
