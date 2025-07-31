@@ -84,6 +84,12 @@
         "https://hdl.handle.net/20.500.1025/topicDiscipline"
       ]
     },
+    "skos:broader": {
+  "type": "string",
+  "format": "uri",
+  "description": "The broader controlled value in the hierarchy",
+  "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/([^/]+)/([^/]+)$"
+}
     "owl:deprecated": {
       "type": "boolean",
       "description": "Indicates whether the value is deprecated",
