@@ -12,7 +12,7 @@
   "dcterms:created": "2025-07-30T10:00:00Z",
   "dcterms:modified": "2025-07-30T10:00:00Z",
   "rdfs:range": [
-    "https://terms.dissco.tech/digital-specimen-terms#DigitalSpecimen"
+    "https://hdl.handle.net/20.500.1025/DigitalSpecimen"
   ],
   "owl:deprecated": false,
   "ods:hasAgents": [
