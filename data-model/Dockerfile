@@ -81,6 +81,7 @@ COPY developer-schema/data-mapping/0.3.0/schema schema-root/schemas/developer-sc
 COPY developer-schema/machine-annotation-service/0.3.0/schema schema-root/schemas/developer-schema/machine-annotation-service/0.3.0
 COPY developer-schema/source-system/0.3.0/schema schema-root/schemas/developer-schema/source-system/0.3.0
 COPY developer-schema/data-export/0.3.0/schema schema-root/schemas/developer-schema/data-export/0.3.0
+COPY developer-schema/virtual-collection/0.1.0/schema schema-root/schemas/developer-schema/virtual-collection/0.1.0
 
 # Version 4 Developer schemas
 COPY developer-schema/annotation/0.4.0/schema schema-root/schemas/developer-schema/annotation/0.4.0
@@ -94,9 +95,15 @@ COPY developer-schema/data-mapping/0.4.0/schema schema-root/schemas/developer-sc
 COPY developer-schema/machine-annotation-service/0.4.0/schema schema-root/schemas/developer-schema/machine-annotation-service/latest
 COPY developer-schema/source-system/0.4.0/schema schema-root/schemas/developer-schema/source-system/latest
 COPY developer-schema/data-export/0.3.0/schema schema-root/schemas/developer-schema/data-export/latest
+COPY developer-schema/virtual-collection/0.1.0/schema schema-root/schemas/developer-schema/virtual-collection/latest
 
 # Versioned internal schemas
 COPY internal-schema/annotation/0.1.0/schema schema-root/schemas/internal-schema/annotation/0.1.0
 
 # Latest internal schemas
 COPY internal-schema/annotation/0.1.0/schema schema-root/schemas/internal-schema/annotation/latest
+
+# SSSOM Mappings
+COPY data-mapping/0.4.0/sssom_dwc_dp.tsv schema-root/schemas/data-mapping/0.4.0/sssom_dwc_dp.tsv
+COPY data-mapping/0.4.0/sssom_dwca.tsv schema-root/schemas/data-mapping/0.4.0/sssom_dwca.tsv
+COPY data-mapping/0.4.0/sssom_abcdefg.tsv schema-root/schemas/data-mapping/0.4.0/sssom_abcdefg.tsv
