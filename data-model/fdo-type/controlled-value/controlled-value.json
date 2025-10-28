@@ -8,9 +8,10 @@
     "@id": {
       "type": "string",
       "description": "The unique identifier (handle) of the controlled value",
-      "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/.+",
+      "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/[a-zA-Z0-9/_-]+$",
       "examples": [
-        "https://hdl.handle.net/20.500.1025/topicDiscipline/Botany"
+        "https://hdl.handle.net/20.500.1025/topicDiscipline/Botany",
+        "https://hdl.handle.net/20.500.1025/status/Active"
       ]
     },
     "@type": {
@@ -20,14 +21,14 @@
     },
     "ods:fdoType": {
       "type": "string",
-      "description": "The DOI to the FDO type of the object",
-      "pattern": "^https://doi\\.org/[\\w\\.]+/[\\w\\.]+",
+      "description": "The Handle to the FDO type of the object",
+      "pattern": "^https://hdl\\.handle\\.net/[0-9]+\\.[0-9A-Z]+/[a-f0-9]+$",
       "examples": [
-        "https://doi.org/21.T11148/bbad8c4e101e8af01115",
-        "https://doi.org/21.T11148/894b1e6cad57e921764e"
+        "https://hdl.handle.net/21.T11148/bbad8c4e101e8af01115",
+        "https://hdl.handle.net/21.T11148/894b1e6cad57e921764e"
       ]
     },
-     "ods:status": {
+    "ods:status": {
       "type": "string",
       "enum": [
         "ods:Draft",
@@ -47,9 +48,9 @@
         1
       ]
     },
- "ods:hasAgents": {
+    "ods:hasAgents": {
       "type": "array",
-      "description": "Contains all agents that are connected to the specimen. Agents that are part of a specific part of the specimen should be added there. For example, a Collector is connected to the CollectingEvent so is added in the event.",
+      "description": "Contains all agents that are connected to this digital object.",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
@@ -59,7 +60,9 @@
       "type": "string",
       "description": "The title of the controlled value",
       "examples": [
-        "Botany"
+        "Botany",
+        "Geology",
+        "Preserved"
       ]
     },
     "skos:prefLabel": {
@@ -85,17 +88,19 @@
       ]
     },
     "skos:broader": {
-  "type": "string",
-  "format": "uri",
-  "description": "The broader controlled value in the hierarchy",
-  "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/([^/]+)/([^/]+)$"
-}
+      "type": "string",
+      "format": "uri",
+      "description": "The broader controlled value in the hierarchy",
+      "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/([^/]+)/([^/]+)$"
+    },
     "owl:deprecated": {
       "type": "boolean",
       "description": "Indicates whether the value is deprecated",
-      "examples": [false]
+      "examples": [
+        "false"
+      ]
     },
-      "dcterms:created": {
+    "dcterms:created": {
       "type": "string",
       "format": "date-time",
       "description": "Timestamp of creation"
@@ -109,6 +114,8 @@
   "required": [
     "@id",
     "@type",
+    "ods:status",
+    "ods:fdoType",
     "dcterms:title",
     "skos:prefLabel",
     "skos:definition",
@@ -116,7 +123,6 @@
     "owl:deprecated",
     "ods:version",
     "ods:hasAgents",
-    "dcterms:created",
-    "dcterms:modified"
+    "dcterms:created"
   ]
 }
