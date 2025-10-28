@@ -1,17 +1,32 @@
 {
   "@id": "https://hdl.handle.net/20.500.1025/topicDiscipline",
   "@type": "ods:Term",
-  "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+  "ods:fdoType": "https://doi.org/21.T11148/770bce19da07e2e1106c",
   "ods:status": "ods:Active",
   "ods:version": 1,
-  "ods:hasAgents": [],
+  "ods:hasAgents": [
+    {
+      "@id": "https://orcid.org/0000-0002-5669-2769",
+      "@type": "schema:Person",
+      "schema:identifier": "https://orcid.org/0000-0002-5669-2769",
+      "schema:name": "Sam Leeflang",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "modifier",
+          "schema:startDate": "2025-01-17T09:00:00.000Z",
+          "schema:endDate": "2025-01-17T09:00:00.000Z"
+        }
+      ]
+    }
+  ],
   "dcterms:title": "ods:topicDiscipline",
   "skos:prefLabel": "Topic Discipline",
-  "skos:definition": "Add def here.",
+  "skos:definition": "Overarching classification of the scientific discipline to which the objects within the collection belong or are related",
   "dcterms:created": "2025-01-15T09:00:00.000Z",
-  "dcterms:modified": "2025-01-15T09:00:00.000Z",
-   "rdfs:range": [
-    "https://hdl.handle.net/20.500.1025/topicDiscipline"
+  "dcterms:modified": "2025-01-17T09:00:00.000Z",
+  "rdfs:range": [
+    "https://hdl.handle.net/20.500.1025/DigitalSpecimen"
   ],
   "owl:deprecated": false,
   "ods:hasControlledValues": [
