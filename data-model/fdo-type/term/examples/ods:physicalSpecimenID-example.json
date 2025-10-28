@@ -1,7 +1,7 @@
 {
   "@id": "https://hdl.handle.net/20.500.1025/physicalSpecimenID",
   "@type": "ods:Term",
-  "ods:fdoType": "https://doi.org/21.T11148/bbad8c4e101e8af01115",
+  "ods:fdoType": "https://doi.org/21.T11148/770bce19da07e2e1106c",
   "ods:version": 1,
   "ods:status": "ods:Active",
   "dcterms:title": "ods:physicalSpecimenID",
@@ -10,7 +10,6 @@
   "skos:note": "Used in multiple schemas including the Digital Specimen FDO.",
   "skos:example": "https://data.biodiversitydata.nl/naturalis/specimen/RGM.234626",
   "dcterms:created": "2025-07-30T10:00:00Z",
-  "dcterms:modified": "2025-07-30T10:00:00Z",
   "rdfs:range": [
     "https://hdl.handle.net/20.500.1025/DigitalSpecimen"
   ],
