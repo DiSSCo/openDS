@@ -9,6 +9,7 @@
       "type": "string",
       "description": "The unique identifier of the Digital Specimen object, follows the Digital Object Identifier (DOI) standard",
       "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "$comment": "Not annotatable",
       "examples": [
         "https://doi.org/10.3535/XXX-XXX-XXX"
       ]
@@ -19,6 +20,7 @@
     },
     "dcterms:identifier": {
       "type": "string",
+      "$comment": "Not annotatable",
       "description": "The unique identifier of the Digital Specimen object, follows the Digital Object Identifier (DOI) standard.",
       "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
@@ -28,6 +30,7 @@
     "ods:version": {
       "type": "integer",
       "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "$comment": "Not annotatable",
       "minimum": 1,
       "examples": [
         1
@@ -45,6 +48,7 @@
     "dcterms:modified": {
       "type": "string",
       "description": "The timestamp that the object was last changed, which resulted in a new version of the object. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "$comment": "Not annotatable",
       "examples": [
         "2023-10-02T12:31:34.806Z"
       ]
@@ -53,6 +57,7 @@
       "type": "string",
       "description": "The timestamp that the object was created in DiSSCo. following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX\"",
       "format": "date-time",
+      "$comment": "Not annotatable",
       "examples": [
         "2023-10-02T12:31:34.806Z"
       ]
@@ -60,6 +65,7 @@
     "ods:fdoType": {
       "type": "string",
       "description": "The DOI to the FDO type of the object",
+      "$comment": "Not annotatable",
       "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
       "examples": [
         "https://doi.org/21.T11148/bbad8c4e101e8af01115",
@@ -68,6 +74,7 @@
     },
     "ods:midsLevel": {
       "type": "integer",
+      "$comment": "Not annotatable",
       "description": "The level of the Minimum Information about a Digital Specimen of the object, for the full specification see https://www.tdwg.org/community/cd/mids/",
       "minimum": 0,
       "maximum": 3
@@ -75,6 +82,7 @@
     "ods:normalisedPhysicalSpecimenID": {
       "type": "string",
       "description": "The physical specimen identifier of the object. When locally unique this is a combination between source-system-id and the local identifier. This identifier is used to check if an object exists in the DiSSCo infrastructure when the DOI is not available.",
+      "$comment": "Not annotatable",
       "examples": [
         "NHMD193630:040ck2b86",
         "https://data.biodiversitydata.nl/naturalis/specimen/RGM.234626"
@@ -83,6 +91,7 @@
     "ods:physicalSpecimenID": {
       "type": "string",
       "description": "The physical specimen identifier of the object. The main identifier of the object is used (which can be indicated by the user through the DataMapping). If the ods:physicalSpecimenIDType is Resolvable or Global, this identifier is the same as the `ods:normalisedPhysicalSpecimenID`",
+      "$comment": "Not annotatable",
       "examples": [
         "https://hdl.handle.net/20.500.12000/1",
         "NHMD193630",
@@ -100,6 +109,7 @@
     },
     "ods:isKnownToContainMedia": {
       "type": "boolean",
+      "$comment": "Not annotatable",
       "description": "Indicates if there are any media objects attached to this specimen",
       "examples": [
         true
