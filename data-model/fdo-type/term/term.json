@@ -21,9 +21,9 @@
  "ods:fdoType": {
       "type": "string",
       "description": "The Handle to the FDO type of the object",
-      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "pattern": "^https://hdl\\.handle\\.net/\\d{2}\\.[A-Z]\\d+/[a-fA-F0-9-]+$",  
       "examples": [
-        "https://hdl.handle.net/21.T11148/2ac65a933b7a0361b651"
+        "https:\/\/hdl.handle.net/21.T11148/770bce19da07e2e1106c"
       ]
     },
    "ods:status": {
@@ -48,7 +48,7 @@
     },
  "ods:hasAgents": {
       "type": "array",
-      "description": "Contains all agents that are connected to the specimen. Agents that are part of a specific part of the specimen should be added there. For example, a Collector is connected to the CollectingEvent so is added in the event.",
+      "description": "Contains agents that are connected to this digital object.",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
@@ -60,7 +60,7 @@
       "items": {
         "type": "string",
         "format": "uri",
-        "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/([^/]+)/([^/]+)$"
+       "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$" 
       },
       "examples": [
         [
@@ -81,41 +81,21 @@
       "description": "The preferred lexical label for the term",
       "examples": [
         "Digital Specimen"
-      ],
-      "@language": {
-        "type": "string"
-      }
+      ]
     },
-    "skos:member": {
-  "type": "array",
-  "description": "Indicates that this term is a member of a specific concept scheme or collection",
-  "items": {
-    "type": "string",
-    "format": "uri"
-  },
-  "examples": [
-    ["https://terms.dissco.tech/digital-specimen-terms", "https://vocabularies.dissco.tech/core-terms"]
-  ]
-},
     "skos:definition": {
       "type": "string",
       "description": "A definition of what the term represents.",
       "examples": [
         "A digital representation of a physical specimen"
-      ],
-  "@language": {
-        "type": "string"
-      }
+      ]
     },
     "skos:note": {
       "type": "string",
       "description": "A note field to capture contexts and other information around the decision.",
       "examples": [
         "This term was discussed in projectX"
-      ],
-      "@language": {
-        "type": "string"
-      }
+      ]
     },
   "skos:example": {
       "type": "string",
@@ -177,8 +157,8 @@
     "skos:prefLabel",
     "skos:definition",
     "ods:hasAgents",
-    "ods:status",  
-    "rdfs:range"
+    "ods:status",
+    "skos:example"  
   ],
     "additionalProperties": false
 }
