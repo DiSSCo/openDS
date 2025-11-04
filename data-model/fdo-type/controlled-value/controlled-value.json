@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/controlled-value/0.1.0/controlled-value.json",
+  "title": "DiSSCo Controlled Value",
+  "description": "A schema for defining individual controlled values used in openDS Terms.",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the controlled value",
+      "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/[a-zA-Z0-9/_-]+$",
+      "examples": [
+        "https://hdl.handle.net/20.500.1025/topicDiscipline/Botany",
+        "https://hdl.handle.net/20.500.1025/status/Active"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:ControlledValue",
+      "description": "The type of the digital object"
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The Handle to the FDO type of the object",
+      "pattern": "^https://hdl\\.handle\\.net/[0-9]+\\.[0-9A-Z]+/[a-f0-9]+$",
+      "examples": [
+        "https://hdl.handle.net/21.T11148/bbad8c4e101e8af01115",
+        "https://hdl.handle.net/21.T11148/894b1e6cad57e921764e"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object",
+      "examples": [
+        "ods:Active"
+      ]
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "minimum": 1,
+      "examples": [
+        1
+      ]
+    },
+    "ods:hasAgents": {
+      "type": "array",
+      "description": "Contains all agents that are connected to this digital object.",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "The title of the controlled value",
+      "examples": [
+        "Botany",
+        "Geology",
+        "Preserved"
+      ]
+    },
+    "skos:prefLabel": {
+      "type": "string",
+      "description": "Preferred label for the value",
+      "examples": [
+        "Botany"
+      ]
+    },
+    "skos:definition": {
+      "type": "string",
+      "description": "A concise definition of the controlled value",
+      "examples": [
+        "The scientific study of plants."
+      ]
+    },
+    "skos:inScheme": {
+      "type": "string",
+      "format": "uri",
+      "description": "The PID of the Term (e.g. ods:topicDiscipline) this value belongs to",
+      "examples": [
+        "https://hdl.handle.net/20.500.1025/topicDiscipline"
+      ]
+    },
+    "skos:broader": {
+      "type": "string",
+      "format": "uri",
+      "description": "The broader controlled value in the hierarchy",
+      "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/([^/]+)/([^/]+)$"
+    },
+    "owl:deprecated": {
+      "type": "boolean",
+      "description": "Indicates whether the value is deprecated",
+      "examples": [
+        "false"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of creation"
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of last modification"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "ods:status",
+    "ods:fdoType",
+    "dcterms:title",
+    "skos:prefLabel",
+    "skos:definition",
+    "skos:inScheme",
+    "owl:deprecated",
+    "ods:version",
+    "ods:hasAgents",
+    "dcterms:created"
+  ]
+}

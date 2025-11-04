@@ -1,0 +1,29 @@
+{
+  "@id": "https://hdl.handle.net/20.500.1025/topicDiscipline/Botany",
+  "@type": "ods:ControlledValue",
+  "ods:fdoType": "https://hdl.handle.net/21.T11148/bbad8c4e101e8af01115",
+  "ods:status": "ods:Active",
+  "ods:version": 1,
+  "ods:hasAgents": [
+    {
+      "@type": "schema:Person",
+      "schema:identifier": "https://orcid.org/0000-0001-1234-5678",
+      "schema:name": "FirstName LastName",
+      "ods:hasRoles": [
+        {
+          "@type": "schema:Role",
+          "schema:roleName": "creator",
+          "schema:startDate": "2024-01-15T10:30:00Z",
+          "schema:position": 1
+        }
+      ]
+    }
+  ],
+  "dcterms:title": "Botany",
+  "skos:prefLabel": "Botany",
+  "skos:definition": "The scientific study of plants.",
+  "skos:inScheme": "https://hdl.handle.net/20.500.1025/topicDiscipline",
+  "owl:deprecated": false,
+  "dcterms:created": "2024-01-15T10:30:00Z",
+  "dcterms:modified": "2024-10-15T14:22:00Z"
+}
