@@ -8,6 +8,7 @@
     "@id": {
       "type": "string",
       "description": "The unique identifier (DOI) of the Digital Media",
+      "$comment": "Not annotatable",
       "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+\/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
         "https://doi.org/10.3535/XXX-XXX-XXX"
@@ -16,11 +17,13 @@
     "@type": {
       "type": "string",
       "description": "The type of the object, in this cas ods:DigitalMedia",
+      "$comment": "Not annotatable",
       "const": "ods:DigitalMedia"
     },
     "dcterms:identifier": {
       "type": "string",
       "description": "The unique identifier (DOI) of the Digital Media",
+      "$comment": "Not annotatable",
       "pattern": "^https:\/\/doi\\.org/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
       "examples": [
         "https://doi.org/10.3535/XXX-XXX-XXX",
@@ -30,6 +33,7 @@
     "ods:fdoType": {
       "type": "string",
       "description": "The DOI to the FDO type of the object",
+      "$comment": "Not annotatable",
       "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/[\\w\\.]+",
       "examples": [
         "https://doi.org/21.T11148/bbad8c4e101e8af01115",
@@ -38,6 +42,7 @@
     },
     "ods:version": {
       "type": "integer",
+      "$comment": "Not annotatable",
       "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
       "minimum": 1,
       "examples": [
@@ -57,6 +62,7 @@
     "dcterms:modified": {
       "type": "string",
       "description": "The timestamp that the object was last changed, which resulted in a new version of the object. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "$comment": "Not annotatable",
       "examples": [
         "2023-10-02T12:31:34.806Z",
         "2023-09-15T08:45:12.123Z"
@@ -65,6 +71,7 @@
     "dcterms:created": {
       "type": "string",
       "description": "The timestamp that the object was created in DiSSCo, Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "$comment": "Not annotatable",
       "format": "date-time",
       "examples": [
         "2023-10-02T12:31:34.806Z",
