@@ -201,7 +201,6 @@
     "@id",
     "@type",
     "dcterms:identifier",
-    "rdf:type",
     "ods:version",
     "oa:motivation",
     "oa:hasTarget",
