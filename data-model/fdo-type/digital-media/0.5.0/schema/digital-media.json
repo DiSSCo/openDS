@@ -134,7 +134,7 @@
     },
     "dcterms:format": {
       "type": "string",
-      "description": "The file format, physical medium, or dimensions of the resource. Best practise to use Mime types",
+      "description": "The file format, physical medium, or dimensions of the resource. Best practise to use MIME types",
       "examples": [
         "image/jpeg",
         "image/png",

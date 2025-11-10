@@ -383,6 +383,12 @@
           "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",
           "@type": "schema:SoftwareApplication",
           "schema:name": "DiSSCo Image Thumbnail Service",
+          "ods:hasRoles": [
+            {
+              "@type": "schema:Role",
+              "schema:roleName": "processing-service"
+            }
+          ],
           "ods:hasIdentifiers": [
             {
               "@id": "https://hdl.handle.net/20.5000.1025/ABC-DEF-GHI",

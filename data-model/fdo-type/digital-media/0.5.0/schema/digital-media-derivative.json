@@ -42,7 +42,7 @@
     },
     "ac:accessURI": {
       "type": "string",
-      "description": "This is the URI through which DiSSCo will retrieve the media item and serves as the main identifier for the media item before a DOI is available",
+      "description": "This is the URI through which the media derivative will be made publicly available",
       "examples": [
         "https://image.bgbm.org/images/internal/HerbarThumbs/B100272813_1700",
         "https://medialib.naturalis.nl/file/id/RGM.924559/format/large"
@@ -50,7 +50,7 @@
     },
     "dcterms:format": {
       "type": "string",
-      "description": "The file format, physical medium, or dimensions of the resource. Best practise to use Mime types",
+      "description": "The file format, physical medium, or dimensions of the resource. Best practise to use MIME types",
       "examples": [
         "image/jpeg",
         "image/png",
