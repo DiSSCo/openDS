@@ -1,0 +1,219 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/digital-media/0.5.0/digital-media-derivative.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "Digital Media Derivative Version 0.5.0",
+  "title": "DigitalMediaDerivative",
+  "type": "object",
+  "properties": {
+    "dcterms:modified": {
+      "type": "string",
+      "description": "The timestamp that the object was last changed, which resulted in a new version of the object. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2023-10-02T12:31:34.806Z",
+        "2023-09-15T08:45:12.123Z"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "description": "The timestamp that the object was created in DiSSCo, Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2023-10-02T12:31:34.806Z",
+        "2023-09-15T08:45:12.123Z"
+      ]
+    },
+    "dcterms:type": {
+      "type": "string",
+      "description": "Describing the nature or type of the Digital Media, restricted to the controlled vocabulary of https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#DCMIType",
+      "enum": [
+        "Collection",
+        "Dataset",
+        "Event",
+        "Image",
+        "InteractiveResource",
+        "MovingImage",
+        "PhysicalObject",
+        "Service",
+        "Software",
+        "Sound",
+        "StillImage",
+        "Text"
+      ]
+    },
+    "ac:accessURI": {
+      "type": "string",
+      "description": "This is the URI through which DiSSCo will retrieve the media item and serves as the main identifier for the media item before a DOI is available",
+      "examples": [
+        "https://image.bgbm.org/images/internal/HerbarThumbs/B100272813_1700",
+        "https://medialib.naturalis.nl/file/id/RGM.924559/format/large"
+      ]
+    },
+    "dcterms:format": {
+      "type": "string",
+      "description": "The file format, physical medium, or dimensions of the resource. Best practise to use Mime types",
+      "examples": [
+        "image/jpeg",
+        "image/png",
+        "image/tiff"
+      ]
+    },
+    "ac:subtype": {
+      "type": "string",
+      "format": "iri",
+      "description": "A class, represented by an IRI, that provides for more specialization of the media item type than dcterms:type",
+      "examples": [
+        "http://rs.tdwg.org/acsubtype/values/Animation",
+        "http://rs.tdwg.org/acsubtype/values/Drawing",
+        "http://rs.tdwg.org/acsubtype/values/Photograph",
+        "http://rs.tdwg.org/acsubtype/values/RecordedOrganism"
+      ]
+    },
+    "ac:subtypeLiteral": {
+      "type": "string",
+      "description": "A class, represented by a controlled value string, that provides for more specialization of the media item type than dc:type",
+      "examples": [
+        "Animation",
+        "Drawing",
+        "Photograph",
+        "RecordedOrganism"
+      ]
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "A name given to the resource. Concise title, name, or brief descriptive label of institution, resource collection, or individual resource. This field SHOULD include the complete title with all the subtitles, if any",
+      "examples": [
+        "Image of a botanical sheet with label",
+        "Sound recording of the specimen in the field"
+      ]
+    },
+    "dcterms:description": {
+      "type": "string",
+      "description": "A free-text account of the content of the resource",
+      "examples": [
+        "Image of a botanical sheet with label",
+        "Sound recording of the specimen in the field"
+      ]
+    },
+    "dcterms:rights": {
+      "type": "string",
+      "description": "Information about rights held in and over the resource. Recommended best practise is to use a URI for the rights",
+      "examples": [
+        "https://creativecommons.org/licenses/by/4.0/",
+        "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+      ]
+    },
+    "ac:comments": {
+      "type": "string",
+      "description": "Any comment provided on the media resource, as free-form text",
+      "examples": [
+        "This is a test object",
+        "This object is not yet published"
+      ]
+    },
+    "ac:variant": {
+      "type": "string",
+      "format": "iri",
+      "description": "The category describing this Service Access Point variant, denoted by an IRI",
+      "examples": [
+        "http://rs.tdwg.org/acvariant/values/v001",
+        "http://rs.tdwg.org/acvariant/values/v005"
+      ]
+    },
+    "ac:variantLiteral": {
+      "type": "string",
+      "description": "The category describing this Service Access Point variant, denoted by a controlled value string",
+      "examples": [
+        "Thumbnail",
+        "Good Quality"
+      ]
+    },
+    "ac:variantDescription": {
+      "type": "string",
+      "description": "Text that describes this Service Access Point variant. Most variants (thumb, low-res, high-res) are self-explanatory and it is best practice to leave this property empty if no special description is needed",
+      "examples": [
+        "Video shortened instead of simply quality reduced"
+      ]
+    },
+    "exif:PixelYDimension": {
+      "type": "integer",
+      "description": "Information specific to compressed data. When a compressed file is recorded, the valid height of the meaningful image shall be recorded in this tag, whether or not there is padding data or a restart marker. This tag shall not exist in an uncompressed file",
+      "examples": [
+        1080,
+        1920
+      ]
+    },
+    "exif:PixelXDimension": {
+      "type": "integer",
+      "description": "Information specific to compressed data. When a compressed file is recorded, the valid width of the meaningful image shall be recorded in this tag, whether or not there is padding data or a restart marker. This tag shall not exist in an uncompressed file",
+      "examples": [
+        1920,
+        1080
+      ]
+    },
+    "ac:tag": {
+      "type": "array",
+      "description": "A list of tags or keywords that describe the media item",
+      "items": {
+        "type": "string"
+      },
+      "examples": [
+        [
+          "Herbarium",
+          "Botany",
+          "Leaf"
+        ],
+        [
+          "Insect",
+          "Entomology",
+          "Head"
+        ]
+      ]
+    },
+    "ac:subjectOrientation": {
+      "type": "string",
+      "format": "iri",
+      "description": "Specific orientation (= direction, view angle) of the subject represented in the media resource with respect to the acquisition device, denoted by an IRI",
+      "examples": [
+        "http://rs.tdwg.org/acorient/values/r0002",
+        "http://rs.tdwg.org/acorient/values/r0004"
+      ]
+    },
+    "ac:subjectOrientationLiteral": {
+      "type": "string",
+      "description": "Specific orientation (= direction, view angle) of the subject represented in the media resource with respect to the acquisition device, denoted by a controlled value string",
+      "examples": [
+        "Frontal",
+        "Lateral"
+      ]
+    },
+    "ac:subjectPart": {
+      "type": "string",
+      "format": "iri",
+      "description": "The portion or product of organism morphology, behaviour, environment, etc. that is either predominantly shown or particularly well exemplified by the media resource, denoted by an IRI",
+      "examples": [
+        "http://rs.tdwg.org/acpart/values/p0027",
+        "http://rs.tdwg.org/acpart/values/p0031"
+      ]
+    },
+    "ac:subjectPartLiteral": {
+      "type": "string",
+      "description": "The portion or product of organism morphology, behaviour, environment, etc. that is either predominantly shown or particularly well exemplified by the media resource, denoted by a controlled value string",
+      "examples": [
+        "Head",
+        "Wing"
+      ]
+    },
+    "ods:hasAgents": {
+      "type": "array",
+      "description": "Contains zero or more ods:Agent objects",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    }
+  },
+  "required": [
+    "ac:accessURI"
+  ],
+  "additionalProperties": false
+}

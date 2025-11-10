@@ -63,10 +63,13 @@ COPY fdo-type/data-mapping/0.4.0/schema schema-root/schemas/fdo-type/data-mappin
 COPY fdo-type/shared-model/0.4.0/schema schema-root/schemas/fdo-type/shared-model/0.4.0
 COPY fdo-type/source-system/0.4.0/schema schema-root/schemas/fdo-type/source-system/0.4.0
 
+# Version 5 of FDO Type schemas
+COPY fdo-type/digital-media/0.5.0/schema schema-root/schemas/fdo-type/digital-media/0.5.0
+
 # Latest FDO Type schemas
 COPY fdo-type/annotation/0.4.0/schema schema-root/schemas/fdo-type/annotation/latest
 COPY fdo-type/create-update-tombstone-event/0.4.0/schema schema-root/schemas/fdo-type/create-update-tombstone-event/latest
-COPY fdo-type/digital-media/0.4.0/schema schema-root/schemas/fdo-type/digital-media/latest
+COPY fdo-type/digital-media/0.5.0/schema schema-root/schemas/fdo-type/digital-media/latest
 COPY fdo-type/digital-specimen/0.4.0/schema schema-root/schemas/fdo-type/digital-specimen/latest
 COPY fdo-type/machine-annotation-service/0.4.0/schema schema-root/schemas/fdo-type/machine-annotation-service/latest
 COPY fdo-type/data-mapping/0.4.0/schema schema-root/schemas/fdo-type/data-mapping/latest
