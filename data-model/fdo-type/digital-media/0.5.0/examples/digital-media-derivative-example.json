@@ -365,7 +365,7 @@
   ],
   "ods:hasMediaDerivatives": [
     {
-      "ac:accessURI": "https://api.dissco.eu/digital-media/v1/10.3535/XXX-XXX-XXX/tumbnail",
+      "ac:accessURI": "https://api.dissco.eu/digital-media/v1/10.3535/XXX-XXX-XXX/thumbnail",
       "dcterms:rights": "https://creativecommons.org/licenses/by/4.0/",
       "dcterms:created": "2025-11-04T13:38:34.806Z",
       "dcterms:type": "StillImage",
