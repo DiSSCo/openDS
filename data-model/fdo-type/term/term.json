@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/term/0.1.0/term.json",
+  "title": "DiSSCo openDS Term Schema",
+  "description": "A schema for defining standard terms used in openDS.",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The unique identifier (handle) of the term object",
+      "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/([^/]+)$",
+      "examples": [
+        "https://hdl.handle.net/20.500.1025/DigitalSpecimen"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "const": "ods:Term",
+      "description": "The type of the digital object, in this case a ods:Term"
+    },
+ "ods:fdoType": {
+      "type": "string",
+      "description": "The Handle to the FDO type of the object",
+      "pattern": "^https://hdl\\.handle\\.net/\\d{2}\\.[A-Z]\\d+/[a-fA-F0-9-]+$",  
+      "examples": [
+        "https:\/\/hdl.handle.net/21.T11148/770bce19da07e2e1106c"
+      ]
+    },
+   "ods:status": {
+      "type": "string",
+      "enum": [
+        "ods:Draft",
+        "ods:Active",
+        "ods:Tombstone"
+      ],
+      "description": "The status of the Digital Object",
+      "examples": [
+        "ods:Active"
+      ]
+    },
+    "ods:version": {
+      "type": "integer",
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "minimum": 1,
+      "examples": [
+        1
+      ]
+    },
+ "ods:hasAgents": {
+      "type": "array",
+      "description": "Contains agents that are connected to this digital object.",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+      }
+    },
+    "ods:hasControlledValues": {
+      "type": "array",
+      "description": "The controlled vocabulary values that this term accepts. Each URI represents a valid value for this term.",
+      "items": {
+        "type": "string",
+        "format": "uri",
+       "pattern": "^https://hdl\\.handle\\.net/20\\.500\\.1025/[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$" 
+      },
+      "examples": [
+        [
+          "https://hdl.handle.net/20.500.1025/topicDiscipline/Botany",
+          "https://hdl.handle.net/20.500.1025/topicDiscipline/Geology"
+        ]
+      ]
+    },
+    "dcterms:title": {
+      "type": "string",
+      "description": "A Name given to the resource, in this case openDS term name",
+      "examples": [
+        "ods:DigitalSpecimen"
+      ]
+    },
+    "skos:prefLabel": {
+      "type": "string",
+      "description": "The preferred lexical label for the term",
+      "examples": [
+        "Digital Specimen"
+      ]
+    },
+    "skos:definition": {
+      "type": "string",
+      "description": "A definition of what the term represents.",
+      "examples": [
+        "A digital representation of a physical specimen"
+      ]
+    },
+    "skos:note": {
+      "type": "string",
+      "description": "A note field to capture contexts and other information around the decision.",
+      "examples": [
+        "This term was discussed in projectX"
+      ]
+    },
+  "skos:example": {
+      "type": "string",
+      "description": "An example usage of the term.",
+      "examples": [
+        "ods:physicalSpecimenID is used in Digital Specimen data schema"
+      ]
+    },
+    "dcterms:created": {
+      "type": "string",
+      "description": "The timestamp that the object was created in DiSSCo, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:modified": {
+      "type": "string",
+      "description": "The timestamp that the object was last changed, following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "examples": [
+        "2023-10-02T12:31:34.806Z"
+      ]
+    },
+    "dcterms:hasVersion": {
+      "type": "string",
+      "description": "A related resource that is a version, edition, or adaptation of the described resource.",
+      "examples": [
+        "1.0.1"
+      ]
+    },
+    "rdfs:range": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      },
+      "description": "URIs of the classes this term ranges to or belongs to",
+      "examples": [
+        ["https://terms.dissco.tech/digital-specimen-terms#EntityRelationship", "http://purl.org/dc/dcmitype/Collection"]
+      ]
+    },
+    "owl:deprecated": {
+      "type": "boolean",
+      "description": "Indicates whether the term is deprecated",
+      "examples": [
+        false
+      ]
+    }
+  },
+  "required": [
+   "@id",
+   "@type",
+    "ods:version",
+    "ods:fdoType",
+    "dcterms:created",
+    "dcterms:modified", 
+    "dcterms:title",
+    "owl:deprecated",
+    "skos:prefLabel",
+    "skos:definition",
+    "ods:hasAgents",
+    "ods:status",
+    "skos:example"  
+  ],
+    "additionalProperties": false
+}
