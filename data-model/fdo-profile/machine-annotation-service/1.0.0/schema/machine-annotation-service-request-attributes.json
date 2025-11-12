@@ -1,7 +1,7 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/handle-kernel/1.0.0/handle-request-attributes.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-profile/machine-annotation-service/1.0.0/machine-annotation-attributes.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a generic Handle",
+  "description": "Attributes of a request to the DiSSCo PID API to create a FDO Record for a Machine Annotation Service",
   "$comment": "FDO Profile Version 1.0.0",
   "properties": {
     "locations": {
