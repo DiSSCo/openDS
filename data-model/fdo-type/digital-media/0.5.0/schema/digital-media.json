@@ -56,6 +56,7 @@
     },
     "dcterms:modified": {
       "type": "string",
+      "format": "date-time",
       "description": "The timestamp that the object was last changed, which resulted in a new version of the object. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
       "examples": [
         "2023-10-02T12:31:34.806Z",
