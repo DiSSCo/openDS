@@ -114,13 +114,13 @@
     },
     "ltc:hasGeographicContext": {
       "type": "array",
-      "description": "Contains the geographic context of the virtual collection, for example the country or region that the collection focuses on.",
+      "description": "Contains the geographic context of the virtual collection, for example the country or region that the collection focuses on. Included from Latimer Core http://rs.tdwg.org/ltc/terms/hasGeographicContext",
       "items": {
         "type": "object",
         "properties": {
           "dwc:country": {
             "type": "string",
-            "description": "The country that is part of the geographic context of the virtual collection, following the controlled vocabulary of https://dwc.tdwg.org/terms/#dwc:country",
+            "description": "The country that is part of the geographic context of the virtual collection, following https://dwc.tdwg.org/terms/#dwc:country",
             "examples": [
               "Netherlands",
               "Italy"
