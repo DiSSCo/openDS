@@ -41,6 +41,13 @@ COPY fdo-profile/tettris-service/0.1.0/schema schema-root/schemas/fdo-profile/te
 COPY fdo-profile/organisation/0.1.0/schema schema-root/schemas/fdo-profile/organisation/latest
 COPY fdo-profile/virtual-collection/0.1.0/schema schema-root/schemas/fdo-profile/virtual-collection/latest
 
+#Version 1 of FDO Type schemas
+COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/0.1.0
+COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/virtual-collection/0.1.0
+
+# Version 2 of FDO Type schemas
+COPY fdo-type/virtual-collection/0.2.0/schema schema-root/schemas/fdo-type/virtual-collection/0.2.0
+
 # Version 3 of FDO Type schemas
 COPY fdo-type/annotation/0.3.0/schema schema-root/schemas/fdo-type/annotation/0.3.0
 COPY fdo-type/create-update-tombstone-event/0.3.0/schema schema-root/schemas/fdo-type/create-update-tombstone-event/0.3.0
@@ -50,8 +57,6 @@ COPY fdo-type/machine-annotation-service/0.3.0/schema schema-root/schemas/fdo-ty
 COPY fdo-type/data-mapping/0.3.0/schema schema-root/schemas/fdo-type/data-mapping/0.3.0
 COPY fdo-type/shared-model/0.3.0/schema schema-root/schemas/fdo-type/shared-model/0.3.0
 COPY fdo-type/source-system/0.3.0/schema schema-root/schemas/fdo-type/source-system/0.3.0
-COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/0.1.0
-COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/virtual-collection/0.1.0
 
 # Version 4 of FDO Type schemas
 COPY fdo-type/annotation/0.4.0/schema schema-root/schemas/fdo-type/annotation/0.4.0
@@ -76,7 +81,13 @@ COPY fdo-type/data-mapping/0.4.0/schema schema-root/schemas/fdo-type/data-mappin
 COPY fdo-type/shared-model/0.4.0/schema schema-root/schemas/fdo-type/shared-model/latest
 COPY fdo-type/source-system/0.4.0/schema schema-root/schemas/fdo-type/source-system/latest
 COPY fdo-type/tettris-service/0.1.0/schema schema-root/schemas/fdo-type/tettris-service/latest
-COPY fdo-type/virtual-collection/0.1.0/schema schema-root/schemas/fdo-type/virtual-collection/latest
+COPY fdo-type/virtual-collection/0.2.0/schema schema-root/schemas/fdo-type/virtual-collection/latest
+
+# Version 1 Developer schemas
+COPY developer-schema/virtual-collection/0.1.0/schema schema-root/schemas/developer-schema/virtual-collection/0.1.0
+
+# Version 2 Developer schemas
+COPY developer-schema/virtual-collection/0.2.0/schema schema-root/schemas/developer-schema/virtual-collection/0.2.0
 
 # Version 3 Developer schemas
 COPY developer-schema/annotation/0.3.0/schema schema-root/schemas/developer-schema/annotation/0.3.0
@@ -84,7 +95,6 @@ COPY developer-schema/data-mapping/0.3.0/schema schema-root/schemas/developer-sc
 COPY developer-schema/machine-annotation-service/0.3.0/schema schema-root/schemas/developer-schema/machine-annotation-service/0.3.0
 COPY developer-schema/source-system/0.3.0/schema schema-root/schemas/developer-schema/source-system/0.3.0
 COPY developer-schema/data-export/0.3.0/schema schema-root/schemas/developer-schema/data-export/0.3.0
-COPY developer-schema/virtual-collection/0.1.0/schema schema-root/schemas/developer-schema/virtual-collection/0.1.0
 
 # Version 4 Developer schemas
 COPY developer-schema/annotation/0.4.0/schema schema-root/schemas/developer-schema/annotation/0.4.0
@@ -98,7 +108,7 @@ COPY developer-schema/data-mapping/0.4.0/schema schema-root/schemas/developer-sc
 COPY developer-schema/machine-annotation-service/0.4.0/schema schema-root/schemas/developer-schema/machine-annotation-service/latest
 COPY developer-schema/source-system/0.4.0/schema schema-root/schemas/developer-schema/source-system/latest
 COPY developer-schema/data-export/0.3.0/schema schema-root/schemas/developer-schema/data-export/latest
-COPY developer-schema/virtual-collection/0.1.0/schema schema-root/schemas/developer-schema/virtual-collection/latest
+COPY developer-schema/virtual-collection/0.2.0/schema schema-root/schemas/developer-schema/virtual-collection/latest
 
 # Versioned internal schemas
 COPY internal-schema/annotation/0.1.0/schema schema-root/schemas/internal-schema/annotation/0.1.0
