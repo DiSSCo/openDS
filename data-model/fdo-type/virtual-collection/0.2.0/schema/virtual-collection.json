@@ -1,14 +1,14 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtual-collection/0.1.0/virtual-collection.json",
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtual-collection/0.2.0/virtual-collection.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "DigitalObject Version 0.1.0",
+  "$comment": "DigitalObject Version 0.2.0",
   "title": "VirtualCollection",
   "type": "object",
   "properties": {
     "@id": {
       "type": "string",
       "description": "The PID of the object in the form of a handle, which is also the URL to the object.",
-      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
@@ -24,7 +24,7 @@
     "dcterms:identifier": {
       "type": "string",
       "description": "PID of the object.",
-      "pattern": "^https:\/\/doi\\.org\/[\\w\\.]+/(\\w){3}-(\\w){3}-(\\w){3}",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
       "examples": [
         "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
       ]
@@ -32,7 +32,7 @@
     "ods:fdoType": {
       "type": "string",
       "description": "The Handle to the FDO type of the object",
-      "pattern": "^https:\/\/hdl\\.handle\\.net\/[\\w.]+\/(.){3}-(.){3}-(.){3}",
+      "pattern": "^https:\\/\\/hdl\\.handle\\.net\\/[\\w\\/.]+",
       "examples": [
         "https://hdl.handle.net/21.T11148/2ac65a933b7a0361b651"
       ]
@@ -114,7 +114,7 @@
     },
     "ltc:hasGeographicContext": {
       "type": "array",
-      "description": "Contains the geographic context of the virtual collection, for example the country or region that the collection focuses on. Included from Latimer Core http://rs.tdwg.org/ltc/terms/hasGeographicContext",
+      "description": "Contains the geographic context of the virtual collection. It refers to how the collection is being used and not to the specimen geography that is are included in the collection. For example, the Finish hoverflies Reference collection can include specimen collected in other countries. Included from Latimer Core http://rs.tdwg.org/ltc/terms/hasGeographicContext.",
       "items": {
         "type": "object",
         "properties": {
@@ -131,7 +131,7 @@
     },
     "ods:hasEntityRelationships": {
       "type": "array",
-      "description": "Contains relationships to external resources that provide further information about the virtual collection, for example references to non DiSSCo specimen or publications",
+      "description": "Contains relationships to external resources that provide further information about the virtual collection, for example references to non-DiSSCo specimens or publications",
       "items": {
         "type": "object",
         "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/entity-relationship.json"

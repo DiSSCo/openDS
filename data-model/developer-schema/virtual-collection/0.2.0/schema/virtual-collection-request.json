@@ -1,7 +1,7 @@
 {
-  "$id": "https://schemas.dissco.tech/schemas/developer-schema/virtual-collection/0.1.0/virtual-collection-request.json",
+  "$id": "https://schemas.dissco.tech/schemas/developer-schema/virtual-collection/0.2.0/virtual-collection-request.json",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$comment": "Virtual Collection Request Version 0.1.0",
+  "$comment": "Virtual Collection Request Version 0.2.0",
   "title": "VirtualCollectionRequest",
   "type": "object",
   "properties": {
