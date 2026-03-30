@@ -1,0 +1,160 @@
+{
+  "$id": "https://schemas.dissco.tech/schemas/fdo-type/virtual-collection/0.2.0/virtual-collection.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "DigitalObject Version 0.2.0",
+  "title": "VirtualCollection",
+  "type": "object",
+  "properties": {
+    "@id": {
+      "type": "string",
+      "description": "The PID of the object in the form of a handle, which is also the URL to the object.",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "@type": {
+      "type": "string",
+      "description": "The type of the object, which is always VirtualCollection.",
+      "const": "VirtualCollection",
+      "examples": [
+        "VirtualCollection"
+      ]
+    },
+    "dcterms:identifier": {
+      "type": "string",
+      "description": "PID of the object.",
+      "pattern": "^https://hdl\\.handle\\.net/[\\w.]+/(.){3}-(.){3}-(.){3}",
+      "examples": [
+        "https://hdl.handle.net/20.5000.1025/XXX-XXX-XXX"
+      ]
+    },
+    "ods:fdoType": {
+      "type": "string",
+      "description": "The Handle to the FDO type of the object",
+      "pattern": "^https:\\/\\/hdl\\.handle\\.net\\/[\\w\\/.]+",
+      "examples": [
+        "https://hdl.handle.net/21.T11148/2ac65a933b7a0361b651"
+      ]
+    },
+    "ods:status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Active",
+        "Tombstone"
+      ],
+      "description": "The status of the Digital Object. A digital object can be in Draft, when it is not published yet. Active when it is published and the object is active and Tombstone which means the object has been archived."
+    },
+    "schema:version": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "The version of the object, each change generates a new version. The version starts at 1 and each change will increment the version number with 1",
+      "examples": [
+        1,
+        2,
+        3
+      ]
+    },
+    "ltc:collectionName": {
+      "type": "string",
+      "description": "A short title that summarizes the collection objects contained in the virtual collection.",
+      "examples": [
+        "Bumblebee Collection of South Holland"
+      ]
+    },
+    "ltc:description": {
+      "type": "string",
+      "description": "A description or narrative about the collection.",
+      "examples": [
+        "A virtual reference collection including key bumblebee specimens"
+      ]
+    },
+    "ltc:basisOfScheme": {
+      "type": "string",
+      "description": "This property is intended to summarise the reason for grouping a number of objects together.",
+      "enum": [
+        "Reference Collection",
+        "Community Collection"
+      ]
+    },
+    "schema:dateCreated": {
+      "type": "string",
+      "description": "Timestamp of creation. Internally generated, https://schema.org/dateCreated",
+      "format": "date-time",
+      "examples": [
+        "2021-06-01T12:00:00.323Z"
+      ]
+    },
+    "schema:dateModified": {
+      "type": "string",
+      "description": "Timestamp of last modification. Internally generated, follows the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX",
+      "format": "date-time",
+      "examples": [
+        "2021-06-06T13:22:00.445Z"
+      ]
+    },
+    "schema:contentURL": {
+      "type": "string",
+      "description": "URI for a media item that is representative for the virtual collection",
+      "examples": [
+        "https://image.bgbm.org/images/internal/HerbarThumbs/B100272813_1700",
+        "https://medialib.naturalis.nl/file/id/RGM.924559/format/large"
+      ]
+    },
+    "schema:creator": {
+      "type": "object",
+      "description": "Contains an ods:Agent object",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
+    },
+    "ods:hasTargetDigitalObjectFilter": {
+      "type": "object",
+      "description": "Contains the filters that the collection uses",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json"
+    },
+    "ltc:hasGeographicContext": {
+      "type": "array",
+      "description": "Contains the geographic context of the virtual collection. It refers to how the collection is being used and not to the specimen geography that is are included in the collection. For example, the Finish hoverflies Reference collection can include specimen collected in other countries. Included from Latimer Core http://rs.tdwg.org/ltc/terms/hasGeographicContext.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dwc:country": {
+            "type": "string",
+            "description": "The country that is part of the geographic context of the virtual collection, following https://dwc.tdwg.org/terms/#dwc:country",
+            "examples": [
+              "Netherlands",
+              "Italy"
+            ]
+          }
+        }
+      }
+    },
+    "ods:hasEntityRelationships": {
+      "type": "array",
+      "description": "Contains relationships to external resources that provide further information about the virtual collection, for example references to non-DiSSCo specimens or publications",
+      "items": {
+        "type": "object",
+        "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/entity-relationship.json"
+      }
+    },
+    "ods:hasTombstoneMetadata": {
+      "type": "object",
+      "description": "Object containing the tombstone metadata of the object. Only present when ods:status is ods:Tombstone",
+      "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/tombstone-metadata.json"
+    }
+  },
+  "required": [
+    "@id",
+    "@type",
+    "dcterms:identifier",
+    "ods:fdoType",
+    "ods:status",
+    "schema:version",
+    "ltc:collectionName",
+    "ltc:basisOfScheme",
+    "ods:hasTargetDigitalObjectFilter",
+    "schema:dateCreated",
+    "schema:creator"
+  ],
+  "additionalProperties": false
+}
