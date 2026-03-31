@@ -112,21 +112,11 @@
       "description": "Contains the filters that the collection uses",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json"
     },
-    "ltc:hasGeographicContext": {
+    "ods:significanceForCountries": {
       "type": "array",
-      "description": "Contains the geographic context of the virtual collection. It refers to how the collection is being used and not to the specimen geography that is are included in the collection. For example, the Finish hoverflies Reference collection can include specimen collected in other countries. Included from Latimer Core http://rs.tdwg.org/ltc/terms/hasGeographicContext.",
+      "description": "Contains all countries for which the virtual collection has significance, when empty or absent it signals that significance is not limited to specific countries. A controlled value list will be used.",
       "items": {
-        "type": "object",
-        "properties": {
-          "dwc:country": {
-            "type": "string",
-            "description": "The country that is part of the geographic context of the virtual collection, following https://dwc.tdwg.org/terms/#dwc:country",
-            "examples": [
-              "Netherlands",
-              "Italy"
-            ]
-          }
-        }
+        "type": "string"
       }
     },
     "ods:hasEntityRelationships": {

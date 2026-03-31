@@ -32,12 +32,8 @@
     "ods:predicateKey": "$['ods:hasIdentifications'][*]['ods:hasTaxonIdentifications'][*]['dwc:genus']",
     "ods:predicateValue": "bombus"
   },
-  "ltc:hasGeographicContext": [
-    {
-      "dwc:country": "Netherlands"
-    },
-    {
-      "dwc:country": "Belgium"
-    }
+  "ods:significanceForCountries": [
+    "Netherlands",
+    "Belgium"
   ]
 }
