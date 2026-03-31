@@ -4,7 +4,10 @@ on:
     branches:
       - master
   pull_request:
-    types: [ opened, synchronize, reopened ]
+    types: [opened, synchronize, reopened]
+  schedule:
+    - cron: "0 4  * * MON" # run on Monday at 4 AM
+  workflow_dispatch:  # Allow manual triggering
 jobs:
   build:
     name: Build
@@ -29,7 +32,7 @@ jobs:
         run: |
           docker build -t $REPO_LC data-model/
       - name: Trivy - List all vulnerabilities
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@v0.35.0
         with:
           image-ref: ${{ env.REPO_LC }}
           format: 'table'
@@ -39,7 +42,7 @@ jobs:
           TRIVY_SKIP_DB_UPDATE: true
           TRIVY_SKIP_JAVA_DB_UPDATE: true
       - name: Trivy - Stop on Severe Vulnerabilities
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@v0.35.0
         if: github.event_name == 'pull_request'
         with:
           image-ref: ${{ env.REPO_LC }}
@@ -64,15 +67,26 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: "{{defaultContext}}:data-model"
-          push: ${{ github.event_name != 'pull_request' }}
+          push: ${{ github.event_name == 'push' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
       - name: Set outputs
         id: vars
         run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       - name: Push tag
-        if: github.event_name != 'pull_request'
+        if: github.event_name == 'push'
         uses: anothrNick/github-tag-action@1.36.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CUSTOM_TAG: sha-${{ steps.vars.outputs.sha_short }}
+  scan:
+    name: gitleaks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
