@@ -40,7 +40,7 @@
       "description": "Contains the filters that the collection uses",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/target-digital-object-filter.json"
     },
-    "ods:hasSignificanceForCountries": {
+    "ods:significanceForCountries": {
       "type": "array",
       "description": "Contains all countries for which the virtual collection has significance, when empty or absent it signals that significance is not limited to specific countries. A controlled value list will be used.",
       "items": {

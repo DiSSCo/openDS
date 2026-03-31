@@ -32,7 +32,7 @@
     "ods:predicateKey": "$['ods:hasIdentifications'][*]['ods:hasTaxonIdentifications'][*]['dwc:genus']",
     "ods:predicateValue": "bombus"
   },
-  "ods:hasSignificanceForCountries": [
+  "ods:significanceForCountries": [
     "Netherlands",
     "Belgium"
   ]
