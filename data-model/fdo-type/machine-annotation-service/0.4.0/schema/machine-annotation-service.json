@@ -202,7 +202,7 @@
     },
     "ods:topicName": {
       "type": "string",
-      "description": "Kafka topic through which the MAS receives messages. Defaults to PID of the Machine Annotation Service",
+      "description": "RabbitMQ queue name through which the MAS receives messages. Value is the suffix of the Machine Annotation Service PID",
       "examples": [
         "p3r-7ff-s4n",
         "fsj-g4m-l47"

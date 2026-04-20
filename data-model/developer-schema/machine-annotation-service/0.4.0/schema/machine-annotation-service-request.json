@@ -134,10 +134,6 @@
       "type": "string",
       "description": "Link to SLA documentation"
     },
-    "ods:topicName": {
-      "type": "string",
-      "description": "Kafka topic through which the MAS receives messages. Defaults to PID of MAS"
-    },
     "ods:maxReplicas": {
       "type": "integer",
       "description": "The maximum amount of this MAS that can simultaneously run without causing issues"

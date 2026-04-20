@@ -179,16 +179,16 @@
         "Rejected",
         "Approved"
       ],
-      "description": "The merging status of the annotation. Only present when motivation is ods:adding or oa:editing"
+      "description": "The merging status of the annotation. Only present when motivation is ods:adding, oa:editing, or ods:deleting"
     },
     "ods:mergingStateChangeDate": {
       "type": "string",
       "format": "date-time",
-      "description": "The date and time when the annotation was merging state was changed. Only present when motivation is ods:adding or oa:editing. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
+      "description": "The date and time when the annotation was merging state was changed. Only present when motivation is ods:adding, oa:editing, or ods:deleting. Following the ISO Date Time Format yyyy-MM-dd'T'HH:mm:ss.SSSXXX"
     },
     "ods:hasMergingStateChangedBy": {
       "type": "object",
-      "description": "Object containing information on who changed the merging state of the annotation. Only present when motivation is ods:adding or oa:editing. Contains an ods:Agent object.",
+      "description": "Object containing information on who changed the merging state of the annotation. Only present when motivation is ods:adding, oa:editing, or ods:deleting. Contains an ods:Agent object.",
       "$ref": "https://schemas.dissco.tech/schemas/fdo-type/shared-model/0.4.0/agent.json"
     },
     "ods:hasTombstoneMetadata": {
