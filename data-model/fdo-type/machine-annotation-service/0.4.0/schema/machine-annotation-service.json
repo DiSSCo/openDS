@@ -261,6 +261,7 @@
     "schema:identifier",
     "ods:fdoType",
     "schema:name",
+    "ods:topicName",
     "schema:dateCreated",
     "schema:creator",
     "schema:dateModified",
